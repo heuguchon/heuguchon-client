@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<contents>
+    <rows
+     enabled="false"
+     name="camera_actions"
+     value="">
+        <columns
+         type="icontext"
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         label="카메라"
+         name="lst_action"
+         value="캠_자유캠_끄기" />
+    </rows>
+    <rows
+     name="look_up"
+     value="위_보기">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="위 보기" />
+    </rows>
+    <rows
+     name="look_down"
+     value="아래 보기">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="아래 보기" />
+    </rows>
+    <rows
+     name="move_forward"
+     value="전진">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="카메라 전면" />
+    </rows>
+    <rows
+     name="move_backward"
+     value="뒤로가기">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="카메라 후면" />
+    </rows>
+    <rows
+     name="move_forward_fast"
+     value="빠른 전진">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="빠른 카메라 전면" />
+    </rows>
+    <rows
+     name="move_backward_fast"
+     value="빠른 후진">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="빠른 카메라 후면" />
+    </rows>
+    <rows
+     name="spin_over"
+     value="회전">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="카메라 회전" />
+    </rows>
+    <rows
+     name="spin_under"
+     value="아래로 회전">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="카메라 아래로 회전" />
+    </rows>
+    <rows
+     name="pan_up"
+     value="위에서 찍기">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="위에서 찍기" />
+    </rows>
+    <rows
+     name="pan_down"
+     value="아래에서 찍기">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="아래에서 찍기" />
+    </rows>
+    <rows
+     name="pan_left"
+     value="왼쪽에서 찍기">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="왼쪽에서 찍기" />
+    </rows>
+    <rows
+     name="pan_right"
+     value="오른쪽에서 찍기">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="오른쪽에서 찍기t" />
+    </rows>
+    <rows
+     name="pan_in"
+     value="안에서 찍기">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="안에서 찍기" />
+    </rows>
+    <rows
+     name="pan_out"
+     value="밖에서 찍기">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="밖에서 찍기" />
+    </rows>
+    <rows
+     name="spin_around_ccw"
+     value="반시계방향으로 회전">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         tool_tip="카메라 반시계방향 회전"
+         value="반시계방향" />
+    </rows>
+    <rows
+     name="spin_around_cw"
+     value="시계방향 회전">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         tool_tip="카메라 시계방향 회전"
+         value="시계방향" />
+    </rows>
+    <rows
+     name="move_forward_sitting"
+     value="앉은채로 전진">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="앉은채로 전면" />
+    </rows>
+    <rows
+     name="move_backward_sitting"
+     value="앉은채로 후진">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="앉은채로 후면" />
+    </rows>
+    <rows
+     name="spin_over_sitting"
+     value="앉아서 회전">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="앉은채로 카메라 회전" />
+    </rows>
+    <rows
+     name="spin_under_sitting"
+     value="앉아서 아래로 회전">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="앉은채로 카메라 아래로 회전" />
+    </rows>
+    <rows
+     name="spin_around_ccw_sitting"
+     value="앉아서 반시계방향으로 회전">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         tool_tip="앉은채로 카메라 반시계방향 회전"
+         value="앉은채로 반시계방향" />
+    </rows>
+    <rows
+     name="spin_around_cw_sitting"
+     value="시계방향 회전">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         tool_tip="앉은채로 카메라 시계방향 회전"
+         value="앉은채로 시계방향" />
+    </rows>
+</contents>

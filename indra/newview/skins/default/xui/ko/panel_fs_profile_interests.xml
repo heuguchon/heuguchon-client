@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ top="0"
+ left="0"
+ width="420"
+ height="480"
+ layout="topleft"
+ follows="all"
+ name="panel_profile_interests"
+ label="흥미">
+
+    <loading_indicator
+     top="5"
+     right="-10"
+     height="23"
+     width="23"
+     layout="topleft"
+     follows="top|right"
+     name="progress_indicator"
+     visible="false" />
+    <text
+     top="10"
+     left="4"
+     height="16"
+     width="70"
+     layout="topleft"
+     follows="left|top"
+     name="I Want To:"
+     halign="right">
+        하고싶습니다:
+    </text>
+        <check_box
+         top_delta="0"
+         left="75"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="chk0"
+         label="건설"
+         enabled="false" />
+        <check_box
+         left_pad="80"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="chk1"
+         label="탐험"
+         enabled="false" />
+        <check_box
+         top_pad="1"
+         left="75"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="chk2"
+         label="만남"
+         enabled="false" />
+        <check_box
+         left_pad="80"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="chk6"
+         label="고용됨"
+         enabled="false" />
+        <check_box
+         top_pad="1"
+         left="75"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="chk3"
+         label="그룹"
+         enabled="false" />
+        <check_box
+         left_pad="80"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="chk4"
+         label="구매"
+         enabled="false" />
+        <check_box
+         top_pad="1"
+         left="75"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="chk5"
+         label="판매"
+         enabled="false" />
+        <check_box
+         left_pad="80"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="chk7"
+         label="고용"
+         enabled="false" />
+        <line_editor
+         top_pad="6"
+         left="76"
+         height="16"
+         width="330"
+         layout="topleft"
+         follows="left|top|right"
+         name="want_to_edit"
+         max_length_bytes="254" />
+
+    <text
+     top_pad="15"
+     left="4"
+     height="16"
+     width="70"
+     layout="topleft"
+     follows="left|top"
+     name="Skills:"
+     halign="right">
+        기술:
+    </text>
+        <check_box
+         top_delta="0"
+         left="75"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="schk0"
+         label="텍스쳐"
+         enabled="false" />
+        <check_box
+         left_pad="80"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="schk1"
+         label="건설"
+         enabled="false" />
+<!-- The next two are out of order on purpose due to the odd layout used in v1.x -->
+        <check_box
+         top_pad="1"
+         left="75"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="schk3"
+         label="모델링"
+         enabled="false" />
+        <check_box
+         left_pad="80"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="schk2"
+         label="이벤트 계획"
+         enabled="false" />
+        <check_box
+         top_pad="1"
+         left="75"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="schk4"
+         label="스크립팅"
+         enabled="false" />
+        <check_box
+         left_pad="80"
+         height="16"
+         width="90"
+         layout="topleft"
+         follows="left|top"
+         name="schk5"
+         label="사용자 지정 문자"
+         enabled="false" />
+        <line_editor
+         top_pad="6"
+         left="76"
+         height="16"
+         width="330"
+         layout="topleft"
+         follows="left|top|right"
+         name="skills_edit"
+         max_length_bytes="254" />
+
+    <text
+     top_pad="15"
+     left="4"
+     height="16"
+     width="70"
+     layout="topleft"
+     follows="left|top"
+     name="Languages:"
+     halign="right" >
+    언어:
+    </text>
+        <line_editor
+         top_delta="-1"
+         left="76"
+         height="16"
+         width="330"
+         layout="topleft"
+         follows="left|top|right"
+         name="languages_edit"
+         max_length_bytes="254" />
+</panel>
+

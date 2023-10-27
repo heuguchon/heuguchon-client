@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ height="700"
+ layout="topleft"
+ name="avatar_texture_debug"
+ help_topic="avatar_texture_debug"
+ save_rect="true"
+ title="Avatar Textures"
+ width="940"
+ can_resize="false">
+    <floater.string
+     name="InvalidAvatar">
+        유효하지 않은 아바타
+    </floater.string>
+
+    <scroll_container
+     color="SL-Background"
+     opaque="true"
+     follows="all"
+     height="680"
+     layout="topleft"
+     left="5"
+     top_pad="15"
+     name="profile_scroll"
+     reserve_scroll_corner="false"
+     width="930">
+    <panel
+     name="scroll_content_panel"
+     follows="left|top"
+     min_height="300"
+     min_width="300"
+     layout="topleft"
+     top="0"
+     background_visible="false"
+     left="0"
+     height="1165"
+     width="1015">
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left="15"
+     name="label"
+     top="20"
+     width="90">
+        구워진
+텍스쳐
+    </text>
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left_pad="22"
+     name="composite_label"
+     top_delta="0"
+     width="120">
+        구성요소
+텍스쳐
+    </text>
+    <button
+     height="40"
+     label="콘솔에 ID 덤프"
+     label_selected="Dump"
+     layout="topleft"
+     name="Dump"
+     top_delta="0"
+	 right="-10"
+     width="150" />
+
+    <panel
+     name="scroll_content_panel"
+     follows="left|top"
+     min_height="300"
+     layout="topleft"
+     top="43"
+     background_visible="false"
+     height="930"
+     left="0"
+     width="1230">
+
+    <texture_picker
+     height="103"
+     label="머리카락"
+     layout="topleft"
+     left="10"
+     name="hair-baked"
+     top="17"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="머리카락"
+     layout="topleft"
+     left_pad="21"
+     name="hair_grain"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="머리카락 알파"
+     layout="topleft"
+     left_pad="7"
+     name="hair_alpha"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="머리카락 문신"
+     layout="topleft"
+     left_pad="7"
+     name="hair_tattoo"
+     top_delta="0"
+     width="92" />
+
+    <texture_picker
+     height="103"
+     label="머리"
+     layout="topleft"
+     left="10"
+     name="head-baked"
+     top_delta="100"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="화장"
+     layout="topleft"
+     left_pad="21"
+     name="head_bodypaint"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="머리 알파"
+     layout="topleft"
+     left_pad="7"
+     name="head_alpha"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="머리 문신"
+     layout="topleft"
+     left_pad="7"
+     name="head_tattoo"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="머리 Unv 문신"
+     layout="topleft"
+     left_pad="7"
+     name="head_universal_tattoo"
+     top_delta="0"
+     width="92" />
+
+    <texture_picker
+     height="103"
+     label="눈"
+     layout="topleft"
+     left="10"
+     name="eyes-baked"
+     top_delta="100"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="눈"
+     layout="topleft"
+     left_pad="21"
+     name="eyes_iris"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="눈 알파"
+     layout="topleft"
+     left_pad="7"
+     name="eyes_alpha"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="눈 문신"
+     layout="topleft"
+     left_pad="7"
+     name="eyes_tattoo"
+     top_delta="0"
+     width="92" />
+
+    <texture_picker
+     height="103"
+     label="상체"
+     layout="topleft"
+     left="10"
+     name="upper-baked"
+     top_delta="100"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="상체 바디페인트"
+     layout="topleft"
+     left_pad="21"
+     name="upper_bodypaint"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="속 셔츠"
+     layout="topleft"
+     left_pad="7"
+     name="upper_undershirt"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="장갑"
+     layout="topleft"
+     left_pad="7"
+     name="upper_gloves"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="셔츠"
+     layout="topleft"
+     left_pad="7"
+     name="upper_shirt"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="윗옷"
+     layout="topleft"
+     left_pad="7"
+     name="upper_jacket"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="상부 알파"
+     layout="topleft"
+     left_pad="7"
+     name="upper_alpha"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="상부 문신"
+     layout="topleft"
+     left_pad="7"
+     name="upper_tattoo"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="상부 Unv 문신"
+     layout="topleft"
+     left_pad="7"
+     name="upper_universal_tattoo"
+     top_delta="0"
+     width="92" />
+
+    <texture_picker
+     height="103"
+     label="하체"
+     layout="topleft"
+     left="10"
+     name="lower-baked"
+     top_delta="100"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="하체 바디페인트"
+     layout="topleft"
+     left_pad="21"
+     name="lower_bodypaint"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="속옷"
+     layout="topleft"
+     left_pad="7"
+     name="lower_underpants"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="양말"
+     layout="topleft"
+     left_pad="7"
+     name="lower_socks"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="신발"
+     layout="topleft"
+     left_pad="7"
+     name="lower_shoes"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="바지"
+     layout="topleft"
+     left_pad="7"
+     name="lower_pants"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="자켓"
+     layout="topleft"
+     left_pad="7"
+     name="lower_jacket"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="하부 알파"
+     layout="topleft"
+     left_pad="7"
+     name="lower_alpha"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="하부 문신"
+     layout="topleft"
+     left_pad="7"
+     name="lower_tattoo"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="하부 Unv 문신"
+     layout="topleft"
+     left_pad="7"
+     name="lower_universal_tattoo"
+     top_delta="0"
+     width="92" />
+
+    <texture_picker
+     height="103"
+     label="치마"
+     layout="topleft"
+     left="10"
+     name="skirt-baked"
+     top_delta="100"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="치마"
+     layout="topleft"
+     left_pad="21"
+     name="skirt"
+     top_delta="0"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="치마 문신"
+     layout="topleft"
+     left_pad="7"
+     name="skirt_tattoo"
+     top_delta="0"
+     width="92" />
+
+    <texture_picker
+     height="103"
+     label="왼팔"
+     layout="topleft"
+     left="10"
+     name="leftarm-baked"
+     top_delta="100"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="왼팔 문신"
+     layout="topleft"
+     left_pad="21"
+     name="leftarm_tattoo"
+     top_delta="0"
+     width="92" />
+
+    <texture_picker
+     height="103"
+     label="왼다리"
+     layout="topleft"
+     left="10"
+     name="leftleg-baked"
+     top_delta="100"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="왼다리 문신"
+     layout="topleft"
+     left_pad="21"
+     name="leftleg_tattoo"
+     top_delta="0"
+     width="92" />
+
+    <texture_picker
+     height="103"
+     label="AUX 1"
+     layout="topleft"
+     left="10"
+     name="aux1-baked"
+     top_delta="100"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="AUX 1 문신"
+     layout="topleft"
+     left_pad="21"
+     name="aux1_tattoo"
+     top_delta="0"
+     width="92" />
+
+    <texture_picker
+     height="103"
+     label="AUX 2"
+     layout="topleft"
+     left="10"
+     name="aux2-baked"
+     top_delta="100"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="AUX 2 문신"
+     layout="topleft"
+     left_pad="21"
+     name="aux2_tattoo"
+     top_delta="0"
+     width="92" />
+
+    <texture_picker
+     height="103"
+     label="AUX 3"
+     layout="topleft"
+     left="10"
+     name="aux3-baked"
+     top_delta="100"
+     width="92" />
+    <texture_picker
+     height="103"
+     label="AUX 3 문신"
+     layout="topleft"
+     left_pad="21"
+     name="aux3_tattoo"
+     top_delta="0"
+     width="92" />
+</panel>
+</panel>
+</scroll_container>
+</floater>

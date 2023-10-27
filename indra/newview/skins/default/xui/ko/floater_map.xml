@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ positioning="none"
+ bg_alpha_image_overlay="DkGray"
+ legacy_header_height="0"
+ can_minimize="true" 
+ can_resize="true"
+ header_height="0"
+ height="200"
+ layout="topleft"
+ min_height="64"
+ min_width="64"
+ name="Map"
+ title=""
+ help_topic="map"
+ save_rect="true"
+ save_visibility="true"
+ single_instance="true"
+ width="200">
+    <!-- RLVa shows the anonymized name on the regular tooltip when @shownames=n restricted (rather than show the avatar inspector) --> 
+    <floater.string
+     name="ToolTipMsg">
+        [AGENT][REGION](두 번 클릭하여 지도를 열고 이동-끌어 이동)
+    </floater.string>
+	<floater.string
+     name="AltToolTipMsg">
+		[REGION](두 번 클릭하여 순간이동, 이동-끌어서 이동)
+	</floater.string>
+	<floater.string name="mini_map_caption">
+	미니맵
+    </floater.string>
+    <net_map
+     bg_color="Transparent"
+     follows="top|left|bottom|right"
+     layout="topleft"
+     left="0"
+     mouse_opaque="false"
+     name="Net Map"
+     width="200"
+     height="218"
+     top="0"/>
+    <text
+     type="string"
+     length="1"
+     bottom="218"
+     label="북"
+     layout="topleft"
+     left="0"
+     name="floater_map_north"
+     right="10"
+     text_color="1 1 1 0.7"
+     top="209"
+     valign="center">
+        북
+    </text>
+    <text
+     type="string"
+     length="1"
+     bottom="218"
+     label="동"
+     layout="topleft"
+     left="0"
+     name="floater_map_east"
+     right="10"
+     text_color="1 1 1 0.7"
+     top="209"
+     valign="center">
+        동
+    </text>
+    <text
+     type="string"
+     length="1"
+     bottom="218"
+     label="서"
+     layout="topleft"
+     left="0"
+     name="floater_map_west"
+     right="12"
+     text_color="1 1 1 0.7"
+     top="209"
+     valign="center">
+        서
+    </text>
+    <text
+     type="string"
+     length="1"
+     bottom="218"
+     label="남"
+     layout="topleft"
+     left="0"
+     name="floater_map_south"
+     right="10"
+     text_color="1 1 1 0.7"
+     top="209"
+     valign="center">
+        남
+    </text>
+    <text
+     type="string"
+     length="1"
+     bottom="218"
+     label="남동"
+     layout="topleft"
+     left="0"
+     name="floater_map_southeast"
+     right="20"
+     text_color="1 1 1 0.7"
+     top="209"
+     valign="center">
+        남동
+    </text>
+    <text
+     type="string"
+     length="1"
+     bottom="218"
+     label="북동"
+     layout="topleft"
+     left="0"
+     name="floater_map_northeast"
+     right="20"
+     text_color="1 1 1 0.7"
+     top="209"
+     valign="center">
+        북동
+    </text>
+    <text
+     type="string"
+     length="1"
+     bottom="218"
+     label="남서"
+     layout="topleft"
+     left="0"
+     name="floater_map_southwest"
+     right="20"
+     text_color="1 1 1 0.7"
+     top="209"
+     valign="center">
+        남서
+    </text>
+    <text
+     type="string"
+     length="1"
+     bottom="218"
+     label="북서"
+     layout="topleft"
+     left="0"
+     name="floater_map_northwest"
+     right="21"
+     text_color="1 1 1 0.7"
+     top="209"
+     valign="center">
+        북서
+    </text>
+</floater>

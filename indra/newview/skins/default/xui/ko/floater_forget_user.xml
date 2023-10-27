@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ height="258"
+ layout="topleft"
+ name="groups"
+ help_topic="forget_username"
+ title="기억된 유저 이름"
+ width="280">
+    <scroll_list
+     height="173"
+     layout="topleft"
+     left="12"
+     name="user_list"
+     top="24"
+     width="256">
+        <scroll_list.columns
+         name="user"
+         width="248" />
+    </scroll_list>
+    <button
+     height="20"
+     label="잊기"
+     label_selected="Forget"
+     layout="topleft"
+     left_delta="90"
+     name="forget"
+     top_pad="8"
+     width="80" />
+    <check_box
+     height="20"
+     label="또한 이 사용자 이름에 대한 로컬 데이터 삭제"
+     layout="topleft"
+     left="15"
+     name="delete_data"
+     top_pad="5"
+     width="260"
+     tool_tip="로컬 파일(채팅 기록, 마지막 세션 스크린샷, 브라우저 쿠키, 텔레포트 기록, 도구 모음 설정 등)을 삭제합니다. 일부 로컬 파일은 그리드 간에 공유됩니다."/>
+</floater>

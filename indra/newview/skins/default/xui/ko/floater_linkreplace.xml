@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ name="linkreplace"
+ help_topic="fs_linkreplace"
+ positioning="centered"
+ title="인벤토리 링크 바꾸기"
+ width="333"
+ height="150"
+ save_rect="true"
+ can_minimize="true"
+ can_close="true">
+	<string name="Ready">
+		준비...
+	</string>
+	<string name="TargetNotFound">
+		대상 항목을 찾을 수 없습니다.
+	</string>
+	<string name="ItemsIdentical">
+		소스와 대상이 동일합니다.
+	</string>
+	<string name="ItemsFound">
+		[NUM] 인벤토리 링크 발견.
+	</string>
+	<string name="ItemsRemaining">
+		남은 링크: [NUM]
+	</string>
+	<string name="ReplaceFinished">
+		재고 링크 교체가 완료되었습니다..
+	</string>
+	<text
+	 type="string"
+	 follows="left|top"
+	 font="SansSerif"
+	 height="23"
+	 layout="topleft"
+	 left="10"
+	 width="35"
+	 name="source_label"
+	 top="10">
+		나이:
+	</text>
+	<inventory_link_replace_drop_target
+	 name="source_uuid_editor"
+	 follows="left|top|right"
+	 height="23"
+	 layout="topleft"
+	 left_pad="10"
+	 max_length_bytes="255"
+	 top_delta="-3"
+	 right="-10"
+	 tool_tip="교체할 현재 재고 품목을 여기에 끌어다 놓으십시오."/>
+	<text
+	 type="string"
+	 follows="left|top"
+	 font="SanSerif"
+	 height="23"
+	 layout="topleft"
+	 top_pad="10"
+	 left="10"
+	 right="-10"
+	 name="delete_text">
+		이 품목에 대한 링크가 제거됩니다.
+	</text>
+	<text
+	 type="string"
+	 follows="left|top"
+	 font="SansSerif"
+	 height="23"
+	 layout="topleft"
+	 left="10"
+	 width="35"
+	 name="target_label"
+	 top_delta="0">
+		새로운:
+	</text>
+	<inventory_link_replace_drop_target
+	 name="target_uuid_editor"
+	 follows="left|top|right"
+	 height="23"
+	 layout="topleft"
+	 left_pad="10"
+	 max_length_bytes="255"
+	 top_delta="-3"
+	 right="-10"
+	 tool_tip="새 재고 항목을 여기에 끌어다 놓으십시오."/>
+	<check_box
+	 follows="top|left"
+	 height="20"
+	 label="링크만 삭제"
+	 left="10"
+	 right="-10"
+	 layout="topleft"
+	 top_pad="5"
+	 name="delete_links_only"/>
+	<text
+	 type="string"
+	 follows="left|top|right"
+	 font="SansSerif"
+	 height="20"
+	 layout="topleft"
+	 left="10"
+	 right="-10"
+	 name="status_text"
+	 top_pad="10">
+		준비...
+	</text>
+	<button
+	 top_pad="5"
+	 left="10"
+	 height="22"
+	 width="90"
+	 follows="left|top"
+	 mouse_opaque="true"
+	 halign="center"
+	 name="btn_refresh"
+	 label="새로고침"/>
+	<button
+	 top_delta="0"
+	 right="-10"
+	 height="22"
+	 width="90"
+	 follows="right|top"
+	 mouse_opaque="true"
+	 halign="center"
+	 name="btn_start"
+	 label="시작"/>
+</floater>

@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<mimetypes name="default">
+	<defaultlabel>
+		(알 수 없음)
+	</defaultlabel>
+	<defaultwidget>
+		없음
+	</defaultwidget>
+	<defaultimpl>
+		media_plugin_cef
+	</defaultimpl>
+	<widgetset name="web">
+		<label name="web_label">
+			웹 콘텐츠(내용)
+		</label>
+		<icon>
+			icn_media_web.tga
+		</icon>
+		<default_type>
+			텍스트/html
+		</default_type>
+		<tooltip name="web_tooltip">
+			이 위치에 웹 콘텐츠가 있습니다.
+		</tooltip>
+		<playtip name="web_playtip">
+			웹 콘텐츠 보기
+		</playtip>
+		<allow_resize>
+			참
+		</allow_resize>
+		<allow_looping>
+			거짓
+		</allow_looping>
+	</widgetset>
+	<widgetset name="movie">
+		<label name="movie_label">
+			영화
+		</label>
+		<default_type>
+			영상/*
+		</default_type>
+		<icon>
+			icn_media_movie.tga
+		</icon>
+		<tooltip name="movie_tooltip">
+			여기서 상영할 영화가 있습니다
+		</tooltip>
+		<playtip name="movie_playtip">
+			영화 재생
+		</playtip>
+		<allow_resize>
+			거짓
+		</allow_resize>
+		<allow_looping>
+			참
+		</allow_looping>
+	</widgetset>
+	<widgetset name="image">
+		<label name="image_label">
+			이미지
+		</label>
+		<icon>
+			icn_media_web.tga
+		</icon>
+		<default_type>
+			이미지/*
+		</default_type>
+		<tooltip name="image_tooltip">
+			이 위치에 이미지가 있습니다.
+		</tooltip>
+		<playtip name="image_playtip">
+			이 위치 및 이미지 보기
+		</playtip>
+		<allow_resize>
+			거짓
+		</allow_resize>
+		<allow_looping>
+			거짓
+		</allow_looping>
+	</widgetset>
+	<widgetset name="audio">
+		<label name="audio_label">
+			오디오
+		</label>
+		<icon>
+			icn_media_web.tga
+		</icon>
+		<default_type>
+			오디오/*
+		</default_type>
+		<tooltip name="audio_tooltip">
+			이 위치에 오디오가 있습니다.
+		</tooltip>
+		<playtip name="audio_playtip">
+			이 위치 및 오디오 재생
+		</playtip>
+		<allow_resize>
+			거짓
+		</allow_resize>
+		<allow_looping>
+			참
+		</allow_looping>
+	</widgetset>
+	<widgetset name="none">
+		<label name="none_label">
+			콘텐츠 없음
+		</label>
+		<default_type>
+			없음/없음
+		</default_type>
+		<icon>
+			icn_media_web.tga
+		</icon>
+		<tooltip name="none_tooltip">
+			여기 미디어가 없음
+		</tooltip>
+		<playtip name="none_playtip" />
+		<allow_resize>
+			거짓
+		</allow_resize>
+		<allow_looping>
+			거짓
+		</allow_looping>
+	</widgetset>
+	<scheme name="rtsp">
+		<label name="rtsp_label">
+			실시간 스트리밍
+		</label>
+		<widgettype>
+			영화
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</scheme>
+	<mimetype name="blank">
+		<label name="blank_label">
+			- 없음 -
+		</label>
+		<widgettype>
+			없음
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype name="none/none">
+		<label name="none/none_label">
+			- 없음 -
+		</label>
+		<widgettype>
+			없음
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype name="audio/*">
+		<label name="audio2_label">
+			오디오
+		</label>
+		<widgettype>
+			오디오
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype name="video/*">
+		<label name="video2_label">
+			영상
+		</label>
+		<widgettype>
+			영화
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype name="image/*">
+		<label name="image2_label">
+			이미지
+		</label>
+		<widgettype>
+			이미지
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype menu="1" name="video/vnd.secondlife.qt.legacy">
+		<label name="vnd.secondlife.qt.legacy_label">
+			영화 (QuickTime)
+		</label>
+		<widgettype>
+			영화
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype name="application/javascript">
+		<label name="application/javascript_label">
+			자바스크립트
+		</label>
+		<widgettype>
+			웹
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype name="application/ogg">
+		<label name="application/ogg_label">
+			Ogg 오디오/영상
+		</label>
+		<widgettype>
+			오디오
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype name="application/pdf">
+		<label name="application/pdf_label">
+			PDF 문서
+		</label>
+		<widgettype>
+			이미지
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype name="application/postscript">
+		<label name="application/postscript_label">
+			포스트스크립트 문서
+		</label>
+		<widgettype>
+			이미지
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype name="application/rtf">
+		<label name="application/rtf_label">
+			Rich Text (RTF)
+		</label>
+		<widgettype>
+			이미지
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype name="application/smil">
+		<label name="application/smil_label">
+			동기화된 멀티미디어 통합 언어 (SMIL)
+		</label>
+		<widgettype>
+			영화
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype name="application/xhtml+xml">
+		<label name="application/xhtml+xml_label">
+			웹 페이지 (XHTML)
+		</label>
+		<widgettype>
+			웹
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype name="application/x-director">
+		<label name="application/x-director_label">
+			매크로미디어 디렉터
+		</label>
+		<widgettype>
+			이미지
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype name="audio/mid">
+		<label name="audio/mid_label">
+			오디오 (MIDI)
+		</label>
+		<widgettype>
+			오디오
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype name="audio/mpeg">
+		<label name="audio/mpeg_label">
+			오디오 (MP3)
+		</label>
+		<widgettype>
+			오디오
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype name="audio/x-aiff">
+		<label name="audio/x-aiff_label">
+			오디오 (AIFF)
+		</label>
+		<widgettype>
+			오디오
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype name="audio/x-wav">
+		<label name="audio/x-wav_label">
+			오디오 (WAV)
+		</label>
+		<widgettype>
+			오디오
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype menu="1" name="image/bmp">
+		<label name="image/bmp_label">
+			이미지 (BMP)
+		</label>
+		<widgettype>
+			이미지
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype menu="1" name="image/gif">
+		<label name="image/gif_label">
+			이미지 (GIF)
+		</label>
+		<widgettype>
+			이미지
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype menu="1" name="image/jpeg">
+		<label name="image/jpeg_label">
+			이미지 (JPEG)
+		</label>
+		<widgettype>
+			이미지
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype menu="1" name="image/png">
+		<label name="image/png_label">
+			이미지 (PNG)
+		</label>
+		<widgettype>
+			이미지
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype name="image/svg+xml">
+		<label name="image/svg+xml_label">
+			이미지 (SVG)
+		</label>
+		<widgettype>
+			이미지
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype menu="1" name="image/tiff">
+		<label name="image/tiff_label">
+			이미지 (TIFF)
+		</label>
+		<widgettype>
+			이미지
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype menu="1" name="text/html">
+		<label name="text/html_label">
+			웹 페이지
+		</label>
+		<widgettype>
+			웹
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype menu="1" name="text/plain">
+		<label name="text/plain_label">
+			텍스트
+		</label>
+		<widgettype>
+			텍스트
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype name="text/xml">
+		<label name="text/xml_label">
+			XML
+		</label>
+		<widgettype>
+			텍스트
+		</widgettype>
+		<impl>
+			media_plugin_cef
+		</impl>
+	</mimetype>
+	<mimetype menu="1" name="video/mpeg">
+		<label name="video/mpeg_label">
+			영화 (MPEG)
+		</label>
+		<widgettype>
+			영화
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype name="video/mp4">
+		<label name="video/mp4_label">
+			영화 (MP4)
+		</label>
+		<widgettype>
+			영화
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype menu="1" name="video/quicktime">
+		<label name="video/quicktime_label">
+			영화 (QuickTime)
+		</label>
+		<widgettype>
+			영화
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype name="video/x-ms-asf">
+		<label name="video/x-ms-asf_label">
+			영화 (Windows Media ASF)
+		</label>
+		<widgettype>
+			영화
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype name="video/x-ms-wmv">
+		<label name="video/x-ms-wmv_label">
+			영화 (Windows Media WMV)
+		</label>
+		<widgettype>
+			영화
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+	<mimetype menu="1" name="video/x-msvideo">
+		<label name="video/x-msvideo_label">
+			영화 (AVI)
+		</label>
+		<widgettype>
+			영화
+		</widgettype>
+		<impl>
+			media_plugin_libvlc
+		</impl>
+	</mimetype>
+</mimetypes>

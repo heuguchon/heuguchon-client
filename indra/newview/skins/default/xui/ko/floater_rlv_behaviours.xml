@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+  positioning="cascading"
+  can_close="true"
+  can_minimize="true"
+  can_resize="true"
+  height="300"
+  min_height="300"
+  min_width="450"
+  name="rlv_behaviours"
+  save_rect="true"
+  save_visibility="false"
+  single_instance="true"
+  title="RLV 제한 활성화"
+  width="450">
+  <tab_container
+    follows="all"
+    layout="topleft"
+    left="8"
+    name="behaviour_tab"
+    height="266"
+    right="-8"
+    tab_height="23"
+    tab_min_width="120"
+    tab_position="top"
+    top="0" >
+    <panel
+      follows="all"  height="265"
+      label="제한"
+      layout="topleft"
+      name="behaviour_panel"
+      top="0">
+      <scroll_list
+	     draw_border="false"
+	     draw_heading="true"
+	     draw_stripes="true"
+	     follows="all"
+	     height="266"
+	     layout="topleft"
+	     multi_select="false"
+	     name="behaviour_list"
+		 sort_column="0"
+	     tool_tip="현재 RLVa 제한 목록"
+	     top_pad="0" >
+        <scroll_list.columns label="제한" name="behaviour" width="80" />
+        <scroll_list.columns label="개체 이름" name="issuer" />
+      </scroll_list>
+    </panel>
+    <panel
+      follows="all"  height="265"
+      label="예외"
+      layout="topleft"
+      name="exception_panel"
+      top="0"> 
+      <scroll_list
+	     draw_border="false"
+	     draw_heading="true"
+	     draw_stripes="true"
+	     follows="all"
+	     height="266"
+	     layout="topleft"
+	     multi_select="false"
+	     name="exception_list"
+		 sort_column="0"
+	     tool_tip="현재 RLVa 예외 목록"
+	     top_pad="0" >
+        <scroll_list.columns label="예외" name="behaviour" width="80" />
+        <scroll_list.columns label="소스" name="option" width="105" />
+        <scroll_list.columns label="개체 이름" name="issuer" />
+      </scroll_list>
+    </panel>
+    <panel
+      follows="all"  height="265"
+      label="수정자"
+      layout="topleft"
+      name="modifier_panel"
+      top="0">
+      <scroll_list
+       draw_border="false"
+       draw_heading="true"
+       draw_stripes="true"
+       follows="all"
+       height="266"
+       layout="topleft"
+       multi_select="false"
+       name="modifier_list"
+       sort_column="0"
+       tool_tip="현재 RLVa 한정자 목록."
+       top_pad="0" >
+        <scroll_list.columns label="수정자" name="modifier" width="105" />
+        <scroll_list.columns label="값" name="value" width="105" />
+        <scroll_list.columns label="주된 개체" name="primary" />
+      </scroll_list>
+    </panel>
+  </tab_container>
+  <panel
+   background_visible="false"
+   follows="left|right|bottom"
+   height="25"
+   label="bottom_panel"
+   layout="topleft"
+   name="bottom_panel"
+   top_pad="0">
+    <button
+     image_hover_unselected="Toolbar_Left_Over"
+     image_overlay="Copy"
+     image_overlay_alignment="left"
+     image_selected="Toolbar_Left_Selected"
+     image_unselected="Toolbar_Left_Off"
+     label="클립보드에 복사"
+     left="0"
+     name="copy_btn"
+     top="1"
+     width="150" />
+    <icon
+     follows="left|right"
+     image_name="Toolbar_Right_Off"
+     left_pad="1"
+     name="dummy_icon"
+     top="1"
+     right="-1" />
+  </panel>
+</floater>

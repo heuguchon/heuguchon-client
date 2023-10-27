@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<context_menu
+	layout="topleft"
+	name="Avatar Context Menu">
+	<menu_item_call
+		label="프로필 보기"
+		layout="topleft"
+		name="View Profile">
+		<menu_item_call.on_click
+			function="Avatar.Profile" />
+	</menu_item_call>
+	<menu_item_call
+		label="친구 추가"
+		layout="topleft"
+		name="Add Friend">
+		<menu_item_call.on_click
+			function="Avatar.AddFriend" />
+		<menu_item_call.on_enable
+			function="Avatar.EnableItem"
+			parameter="can_add" />
+	</menu_item_call>
+	<menu_item_call
+		label="집합에 추가"
+		layout="topleft"
+		name="Add to Set">
+		<menu_item_call.on_click
+			function="Avatar.AddToContactSet" />
+	</menu_item_call>
+	<menu_item_call
+		label="친구 삭제"
+		layout="topleft"
+		name="Remove Friend">
+		<menu_item_call.on_click
+			function="Avatar.RemoveFriend" />
+		<menu_item_call.on_enable
+			function="Avatar.EnableItem"
+			parameter="can_delete" />
+	</menu_item_call>
+	<menu_item_call
+		label="IM"
+		layout="topleft"
+		name="IM">
+		<menu_item_call.on_click
+			function="Avatar.IM" />
+	</menu_item_call>
+	<menu_item_call
+		label="전화"
+		layout="topleft"
+		name="Call">
+		<menu_item_call.on_click
+			function="Avatar.Call" />
+		<menu_item_call.on_enable
+			function="Avatar.EnableItem"
+			parameter="can_call" />
+	</menu_item_call>
+	<menu_item_call
+		label="지도"
+		layout="topleft"
+		name="Map">
+		<menu_item_call.on_click
+			function="Avatar.ShowOnMap" />
+		<menu_item_call.on_enable
+			function="Avatar.EnableItem"
+			parameter="can_show_on_map" />
+	</menu_item_call>
+	<menu_item_call
+		label="추적"
+		layout="topleft"
+		name="Track">
+		<menu_item_call.on_click
+			function="Nearby.People.TrackAvatar" />
+	</menu_item_call>
+	<menu name="MarkAvatar" label="Mark...">
+		<menu_item_call
+			label="빨강"
+			name="MarkRed">
+			<menu_item_call.on_click
+				function="Nearby.People.SetAvatarMarkColor"
+				parameter="Red"/>
+		</menu_item_call>
+		<menu_item_call
+		label="초록"
+		name="MarkGreen">
+			<menu_item_call.on_click
+				function="Nearby.People.SetAvatarMarkColor"
+				parameter="Green"/>
+		</menu_item_call>
+		<menu_item_call
+		label="파랑"
+		name="MarkBlue">
+			<menu_item_call.on_click
+				function="Nearby.People.SetAvatarMarkColor"
+				parameter="Blue"/>
+		</menu_item_call>
+		<menu_item_call
+			label="보라"
+			name="MarkPurple">
+			<menu_item_call.on_click
+				function="Nearby.People.SetAvatarMarkColor"
+				parameter="Purple"/>
+		</menu_item_call>
+		<menu_item_call
+			label="노랑"
+			name="MarkYellow">
+			<menu_item_call.on_click
+				function="Nearby.People.SetAvatarMarkColor"
+				parameter="LtYellow"/>
+		</menu_item_call>
+		<menu_item_separator/>
+		<menu_item_call
+			label="표시 지우기"
+			name="Clear Mark">
+			<menu_item_call.on_click
+				function="Nearby.People.ClearAvatarMarkColor"/>
+		</menu_item_call>
+		<menu_item_separator/>
+		<menu_item_call
+			label="모든 표시 지우기"
+			name="Clear Marks">
+			<menu_item_call.on_click
+				function="Nearby.People.ClearAllAvatarMarkColors"/>
+		</menu_item_call>
+	</menu>
+	<menu_item_call
+		label="공유"
+		layout="topleft"
+		name="Share">
+		<menu_item_call.on_click
+			function="Avatar.Share" />
+		<menu_item_call.on_enable
+			function="Avatar.EnableItem"
+			parameter="can_open_inventory" />
+	</menu_item_call>
+	<menu_item_call
+		label="결제"
+		layout="topleft"
+		name="Pay">
+		<menu_item_call.on_click
+			function="Avatar.Pay" />
+		<menu_item_call.on_enable
+			function="Avatar.EnableItem"
+			parameter="can_pay"/>
+	</menu_item_call>
+	<menu_item_call
+		label="순간이동 제공"
+		name="teleport">
+		<menu_item_call.on_click
+			function="Avatar.OfferTeleport"/>
+		<menu_item_call.on_enable
+			function="Avatar.EnableItem"
+			parameter="can_offer_teleport"/>
+	</menu_item_call>
+	<menu_item_call
+		label="텔레포트 요청"
+		name="request_teleport">
+		<menu_item_call.on_click
+			function="Avatar.TeleportRequest"/>
+		<menu_item_call.on_enable
+			function="Avatar.EnableItem"
+			parameter="can_request_teleport"/>
+	</menu_item_call>
+	<menu_item_call
+		label="순간이동"
+		name="teleport_to">
+		<menu_item_call.on_click
+			function="Nearby.People.TeleportToAvatar"/>
+	</menu_item_call>
+	<menu_item_call
+		label="확대"
+		name="zoom_in">
+		<menu_item_call.on_click
+			function="Avatar.ZoomIn"/>
+		<menu_item_call.on_visible
+			function="Avatar.VisibleZoomIn"/>
+	</menu_item_call>
+	<menu_item_call
+		label="그룹에 초대"
+		name="GroupInvite">
+		<menu_item_call.on_click
+			function="Avatar.GroupInvite" />
+	</menu_item_call>
+	<menu_item_call
+		label="스크립트 정보 얻기"
+		name="ScriptInfo">
+		<menu_item_call.on_click
+			function="Avatar.getScriptInfo" />
+		<menu_item_call.on_enable
+			function="EnableBridgeFunction" />
+	</menu_item_call>
+
+	<menu_item_separator />
+
+	<menu_item_check
+		label="차단/차단 해제"
+		layout="topleft"
+		name="Block/Unblock">
+		<menu_item_check.on_click
+			function="Avatar.BlockUnblock" />
+		<menu_item_check.on_check
+			function="Avatar.CheckItem"
+			parameter="is_blocked" />
+		<menu_item_check.on_enable
+			function="Avatar.EnableItem"
+			parameter="can_block" />
+	</menu_item_check>
+	<menu_item_call
+		label="신고"
+		name="report">
+		<menu_item_call.on_click
+			function="Avatar.Report"/>
+	</menu_item_call>  
+	<menu_item_call
+		label="얼리기"
+		name="freeze">
+		<menu_item_call.on_click
+			function="Avatar.Freeze"/>
+		<menu_item_call.on_visible
+			function="Avatar.VisibleFreezeEject"/>
+	</menu_item_call>
+	<menu_item_call
+		label="구획 배출"
+		name="eject">
+		<menu_item_call.on_click
+			function="Avatar.Eject"/>
+		<menu_item_call.on_visible
+			function="Avatar.VisibleFreezeEject"/>
+	</menu_item_call>
+	<menu_item_call
+		label="재산 걷어차기"
+		name="kick">
+		<menu_item_call.on_click
+			function="Avatar.Kick"/>
+		<menu_item_call.on_visible
+			function="Avatar.VisibleKickTeleportHome"/>
+	</menu_item_call>
+	<menu_item_call
+		label="재산 순간이동 집"
+		name="teleport_home">
+		<menu_item_call.on_click
+			function="Avatar.TeleportHome"/>
+		<menu_item_call.on_visible
+			function="Avatar.VisibleKickTeleportHome"/>
+	</menu_item_call>
+	<menu_item_call
+		label="재산 금지"
+		name="estate_ban">
+		<menu_item_call.on_click
+			function="Avatar.EstateBan"/>
+		<menu_item_call.on_visible
+			function="Avatar.VisibleKickTeleportHome"/>
+	</menu_item_call>
+	<menu_item_call
+		label="리렌더"
+		name="derender">
+		<menu_item_call.on_click
+			function="Avatar.Derender"/>
+	</menu_item_call>
+	<menu_item_call
+		label="디렌더 &amp; 블랙리스트"
+		name="derender_permanent">
+		<menu_item_call.on_click
+			function="Avatar.DerenderPermanent"/>
+	</menu_item_call>
+	<menu label="렌더링 설정" name="render_settings">
+		<menu_item_check
+			label="일반 렌더링"
+			name="av_render_normal">
+			<menu_item_check.on_click
+				function="Nearby.People.SetRenderMode"
+				parameter="0" />
+			<menu_item_check.on_check
+				function="Nearby.People.CheckRenderMode"
+				parameter="0" />
+		</menu_item_check>
+		<menu_item_check
+			label="렌더링 안 함"
+			name="av_render_never">
+			<menu_item_check.on_click
+				function="Nearby.People.SetRenderMode"
+				parameter="1" />
+			<menu_item_check.on_check
+				function="Nearby.People.CheckRenderMode"
+				parameter="1" />
+		</menu_item_check>
+		<menu_item_check
+			label="전체 렌더링"
+			name="av_render_always">
+			<menu_item_check.on_click
+				function="Nearby.People.SetRenderMode"
+				parameter="2" />
+			<menu_item_check.on_check
+				function="Nearby.People.CheckRenderMode"
+				parameter="2" />
+		</menu_item_check>
+	</menu>
+</context_menu>

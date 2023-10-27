@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toggleable_menu
+ name="Teleport History Gear Context Menu"
+ left="0"
+ bottom="0"
+ visible="false"
+ mouse_opaque="false"
+ opaque="true"
+ color="MenuDefaultBgColor"
+ drop_shadow="true" >
+    <menu_item_call
+     label="모든 폴더 확장"
+     name="Expand all folders">
+        <menu_item_call.on_click
+         function="TeleportHistory.GearMenu.Action"
+         parameter="expand_all" />
+        <on_enable
+         function="TeleportHistory.GearMenu.Enable"
+         parameter="expand_all" />
+    </menu_item_call>
+    <menu_item_call
+     label="모든 폴더 축소"
+     name="Collapse all folders">
+        <menu_item_call.on_click
+         function="TeleportHistory.GearMenu.Action"
+         parameter="collapse_all" />
+        <on_enable
+         function="TeleportHistory.GearMenu.Enable"
+         parameter="collapse_all" />
+    </menu_item_call>
+  <!-- FS:Beq [timezone support for teleport history] -->
+  <menu name="TPHistoryTimeZone" label="표준 시간대 선택...">
+    <menu_item_check
+    name="teleport_history_tz_utc"
+    label="UTC">
+      <on_click
+        function="TeleportHistory.TimeZone.Set"
+        parameter="utc" />
+      <on_check
+        function="TeleportHistory.TimeZone.Check"
+        parameter="utc" />
+    </menu_item_check>
+    <menu_item_check
+        name="teleport_history_tz_slt"
+        label="SLT">
+      <on_click
+        function="TeleportHistory.TimeZone.Set"
+        parameter="slt" />
+      <on_check
+        function="TeleportHistory.TimeZone.Check"
+        parameter="slt" />
+    </menu_item_check>
+    <menu_item_check
+        name="teleport_history_tz_local"
+        label="로컬">
+      <on_click
+        function="TeleportHistory.TimeZone.Set"
+        parameter="local" />
+      <on_check
+        function="TeleportHistory.TimeZone.Check"
+        parameter="local" />
+    </menu_item_check>
+  </menu>
+    <!-- /FS:Beq [timezone support for teleport history] -->
+    <menu name="Show Menu" label="Show...">
+        <menu_item_check
+         name="Show Position"
+         label="위치">
+            <on_click
+             function="ToggleControl"
+             parameter="FSTeleportHistoryShowPosition" />
+            <on_check
+             function="CheckControl"
+             parameter="FSTeleportHistoryShowPosition" />
+        </menu_item_check>
+        <menu_item_check
+         name="Show Date"
+         label="날짜">
+            <on_click
+             function="ToggleControl"
+             parameter="FSTeleportHistoryShowDate" />
+            <on_check
+             function="CheckControl"
+             parameter="FSTeleportHistoryShowDate" />
+        </menu_item_check>
+    </menu>
+    <menu_item_separator layout="topleft" />
+    <menu_item_call
+     label="순간이동 기록 지우기"
+     name="Clear Teleport History">
+        <menu_item_call.on_click
+         function="TeleportHistory.GearMenu.Action"
+         parameter="clear_history" />
+        <on_enable
+         function="TeleportHistory.GearMenu.Enable"
+         parameter="clear_history" />
+    </menu_item_call>    
+</toggleable_menu>

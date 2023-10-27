@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ height="282"
+ width="500"
+ help_topic="collada_export"
+ layout="topleft"
+ legacy_header_height="18"
+ name="floater_export_collada"
+ min_width="250"
+ min_height="268"
+ save_rect="true"
+ title="콜라다로 저장...">
+  <floater.string name="texture_progress">
+	 [OBJECT] 콜라다 저장: 텍스쳐 저장 ([COUNT] 유지)
+  </floater.string>
+  <floater.string name="floater_title">
+	[OBJECT]를 콜라다로 저장...
+  </floater.string>
+  <layout_stack
+	follows="all"
+	layout="topleft"
+	width="500"
+	height="262"
+	left="0"
+	orientation="horizontal"
+	top="18"
+	name="resizing_stack">
+	<layout_panel
+	 follows="left|top|bottom"
+	 layout="topleft"
+	 left="0"
+	 min_width="5"
+	 width="250"
+	 height="262"
+	 name="control_panel">
+	<text
+	 follows="left|top"
+	 height="15"
+	 layout="topleft"
+	 left="4"
+	 name="ObjectInfoText"
+	 top="2"
+	 width="235">
+		개체 정보
+	</text>
+	<text
+	 follows="left|top"
+	 height="15"
+	 layout="topleft"
+	 name="NameText"
+	 top_pad="2"
+	 width="235">
+		이름: [NAME]
+	</text>
+	<text
+	 follows="left|top"
+	 height="15"
+	 layout="topleft"
+	 name="exportable_prims"
+	 top_pad="2"
+	 width="235">
+		내보내기 가능한 프림: [COUNT]/[TOTAL]
+	</text>
+	<text
+	 follows="left|top"
+	 height="15"
+	 layout="topleft"
+	 name="exportable_textures"
+	 top_pad="2"
+	 width="235">
+		내보내기 가능한 텍스쳐: [COUNT]/[TOTAL]
+	</text>
+	<text
+	 follows="left|bottom"
+	 height="15"
+	 layout="topleft"
+	 left="4"
+	 name="OptionsText"
+	 top_pad="42"
+	 width="235">
+		옵션:
+	</text>
+	<check_box
+	 control_name="DAEExportTextures"
+	 follows="left|bottom"
+	 height="16"
+	 label="텍스쳐 저장"
+	 layout="topleft"
+	 left_delta="8"
+	 name="export_textures_check"
+	 top_pad="2"
+	 width="235">
+		<check_box.commit_callback
+		 function="ColladaExport.TextureExport" />
+	</check_box>
+	<check_box
+	 control_name="DAEExportConsolidateMaterials"
+	 follows="left|bottom"
+	 height="16"
+	 label="텍스쳐 통합"
+	 layout="topleft"
+	 name="consolidate_check"
+	 top_pad="2"
+	 width="235" />
+	<check_box
+	 control_name="DAEExportSkipTransparent"
+	 follows="left|bottom"
+	 height="16"
+	 label="투명함 건너뛰기"
+	 layout="topleft"
+	 name="skip_transparent_check"
+	 top_pad="2"
+	 width="235" />
+	<check_box
+	 control_name="DAEExportTextureParams"
+	 follows="left|bottom"
+	 height="16"
+	 label="텍스처 파라미터 적용"
+	 layout="topleft"
+	 name="texture_params_check"
+	 top_pad="2"
+	 width="235" />
+	<check_box
+	 control_name="DAEExportSingleUVMap"
+	 follows="left|bottom"
+	 height="16"
+	 label="단일 UV 지도"
+	 layout="topleft"
+	 name="single_uv_map_check"
+	 top_pad="2"
+	 width="235" />
+	<text
+	 follows="left|bottom"
+	 height="15"
+	 layout="topleft"
+	 left="4"
+	 name="TextureFormatText"
+	 top_pad="2"
+	 width="235">
+		텍스쳐 형식:
+	</text>
+	<combo_box
+	 enabled_control="DAEExportTextures"
+	 control_name="DAEExportTexturesFormat"
+	 follows="left|bottom"
+	 layout="topleft"
+	 height="23"
+	 allow_text_entry="false"
+	 top_pad="0"
+	 left="4"
+	 name="texture_type_combo"
+	 width="122">
+		<combo_box.item label="TARGA" name="tga" value="0"/>
+		<combo_box.item label="PNG" name="png" value="1"/>
+		<combo_box.item label="JPEG2000" name="j2c" value="2"/>
+	</combo_box>
+	<button
+	 layout="topleft"
+	 follows="left|bottom"
+	 height="23"
+	 label="다른 이름으로 저장..."
+	 name="export_btn"
+	 top_delta="0"
+	 left_pad="2"
+	 width="122" />
+	</layout_panel>
+	<layout_panel
+	 visibility_control="DAEExportTextures"
+	 follows="all"
+	 layout="topleft"
+	 left="0"
+	 min_width="5"
+	 width="250"
+	 height="262"
+	 name="tex_layout_panel">
+	  <scroll_container
+	   opaque="false"
+	   follows="all"
+	   layout="topleft"
+	   left="1"
+	   right="-1"
+	   top="2"
+	   bottom="-1"
+	   name="textures_scroll">
+		  <panel
+		   name="textures_panel"
+		   layout="topleft"
+		   enabled="false"
+		   top="1"
+		   left="1"
+		   right="-1"
+		   bottom="-1" />
+	</scroll_container>
+	</layout_panel>
+  </layout_stack>
+</floater>

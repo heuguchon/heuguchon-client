@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<menu
+ height="101"
+ label="미니맵"
+ layout="topleft"
+ left="100"
+ mouse_opaque="false"
+ name="Popup"
+ top="724"
+ visible="false"
+ width="128">
+  <menu_item_call
+   label="프로필 보기"
+   name="View Profile">
+    <menu_item_call.on_click
+     function="Minimap.ShowProfile"
+     parameter="closest" />
+  </menu_item_call>
+  <menu
+   label="프로필 보기"
+   name="View Profiles">
+  </menu>
+	<menu_item_call
+		label="집합에 추가"
+		name="Add to Set Multiple">
+		<menu_item_call.on_click
+			function="Minimap.AddToContactSet"/>
+	</menu_item_call>
+  <menu_item_call
+   label="캠"
+   name="Cam">
+   <menu_item_call.on_click
+    function="Minimap.Cam" />
+   </menu_item_call>
+	<menu name="MarkAvatar" label="표시...">
+		<menu_item_call
+			label="빨강"
+			name="MarkRed">
+			<menu_item_call.on_click
+				function="Minimap.Mark"
+				parameter="Red"/>
+		</menu_item_call>
+		<menu_item_call
+		label="초록"
+		name="MarkGreen">
+			<menu_item_call.on_click
+				function="Minimap.Mark"
+				parameter="Green"/>
+		</menu_item_call>
+		<menu_item_call
+		label="파랑"
+		name="MarkBlue">
+			<menu_item_call.on_click
+				function="Minimap.Mark"
+				parameter="Blue"/>
+		</menu_item_call>
+		<menu_item_call
+			label="보라"
+			name="MarkPurple">
+			<menu_item_call.on_click
+				function="Minimap.Mark"
+				parameter="Purple"/>
+		</menu_item_call>
+		<menu_item_call
+			label="노랑"
+			name="MarkYellow">
+			<menu_item_call.on_click
+				function="Minimap.Mark"
+				parameter="LtYellow"/>
+		</menu_item_call>
+		<menu_item_separator/>
+		<menu_item_call
+			label="표시 지우기"
+			name="Clear Mark">
+			<menu_item_call.on_click
+				function="Minimap.ClearMark"/>
+		</menu_item_call>
+		<menu_item_separator/>
+		<menu_item_call
+			label="모든 표시 지우기"
+			name="Clear Marks">
+			<menu_item_call.on_click
+				function="Minimap.ClearMarks"/>
+		</menu_item_call>
+	</menu>
+
+	<menu
+		name="More Options"
+		label="더 많은 옵션...">
+		<menu_item_call
+			label="친구 추가"
+			name="Add Friend">
+			<menu_item_call.on_click
+				function="Minimap.AddFriend"/>
+			<menu_item_call.on_enable
+				function="Minimap.CanAddFriend"/>
+		</menu_item_call>
+		<menu_item_call
+			label="집합 추가"
+			name="Add to Set">
+			<menu_item_call.on_click
+				function="Minimap.AddToContactSet"/>
+		</menu_item_call>
+		<menu_item_call
+			label="친구 삭제"
+			name="Remove Friend">
+			<menu_item_call.on_click
+				function="Minimap.RemoveFriend"/>
+			<menu_item_call.on_enable
+				function="Minimap.CanRemoveFriend"/>
+		</menu_item_call>
+		<menu_item_call
+			label="IM"
+			name="IM">
+			<menu_item_call.on_click
+				function="Minimap.IM"/>
+		</menu_item_call>
+		<menu_item_call
+			label="전화"
+			name="Call">
+			<menu_item_call.on_click
+				function="Minimap.Call"/>
+			<menu_item_call.on_enable
+				function="Minimap.CanCall"/>
+		</menu_item_call>
+		<menu_item_call
+			label="지도"
+			name="Map">
+			<menu_item_call.on_click
+				function="Minimap.Map"/>
+			<menu_item_call.on_enable
+				function="Minimap.CanMap"/>
+		</menu_item_call>
+		<menu_item_call
+			label="공유"
+			name="Share">
+			<menu_item_call.on_click
+				function="Minimap.Share"/>
+			<menu_item_call.on_enable
+				function="Minimap.CanShare"/>
+		</menu_item_call>
+		<menu_item_call
+			label="결제"
+			name="Pay">
+			<menu_item_call.on_click
+				function="Minimap.Pay"/>
+		</menu_item_call>
+		<menu_item_call
+			label="순간이동 제공"
+			name="teleport">
+			<menu_item_call.on_click
+				function="Minimap.OfferTeleport"/>
+			<menu_item_call.on_enable
+				function="Minimap.CanOfferTeleport"/>
+		</menu_item_call>
+		<menu_item_call
+			label="순간이동 요청"
+			name="request_teleport">
+			<menu_item_call.on_click
+				function="Minimap.RequestTeleport"/>
+			<menu_item_call.on_enable
+				function="Minimap.CanRequestTeleport"/>
+		</menu_item_call>
+		<menu_item_call
+			label="~로 순간이동"
+			name="teleport_to">
+			<menu_item_call.on_click
+				function="Minimap.TeleportToAvatar"/>
+		</menu_item_call>
+		<menu_item_call
+			label="그룹에 초대"
+			name="GroupInvite">
+			<menu_item_call.on_click
+				function="Minimap.GroupInvite"/>
+		</menu_item_call>
+		<menu_item_call
+			label="스크립트 정보 얻기"
+			name="ScriptInfo">
+			<menu_item_call.on_click
+				function="Minimap.GetScriptInfo"/>
+			<menu_item_call.on_enable
+				function="EnableBridgeFunction"/>
+		</menu_item_call>
+
+		<menu_item_separator />
+
+		<menu_item_check
+			label="차단/차단 해제"
+			name="Block/Unblock">
+			<menu_item_check.on_click
+				function="Minimap.BlockUnblock"/>
+			<menu_item_check.on_check
+				function="Minimap.IsBlocked"/>
+			<menu_item_check.on_enable
+				function="Minimap.CanBlock"/>
+		</menu_item_check>
+		<menu_item_call
+			label="신고"
+			name="report">
+			<menu_item_call.on_click
+				function="Minimap.Report"/>
+		</menu_item_call>  
+		<menu_item_call
+			label="얼리기"
+			name="freeze">
+			<menu_item_call.on_click
+				function="Minimap.Freeze"/>
+			<menu_item_call.on_visible
+				function="Minimap.VisibleFreezeEject"/>
+		</menu_item_call>
+		<menu_item_call
+			label="구획 배출"
+			name="eject">
+			<menu_item_call.on_click
+				function="Minimap.Eject"/>
+			<menu_item_call.on_visible
+				function="Minimap.VisibleFreezeEject"/>
+		</menu_item_call>
+		<menu_item_call
+			label="재산 걷어차기"
+			name="kick">
+			<menu_item_call.on_click
+				function="Minimap.Kick"/>
+			<menu_item_call.on_visible
+				function="Minimap.VisibleKickTeleportHome"/>
+		</menu_item_call>
+		<menu_item_call
+			label="재산 순간이동 집"
+			name="teleport_home">
+			<menu_item_call.on_click
+				function="Minimap.TeleportHome"/>
+			<menu_item_call.on_visible
+				function="Minimap.VisibleKickTeleportHome"/>
+		</menu_item_call>
+		<menu_item_call
+			label="재산 금지"
+			name="estate_ban">
+			<menu_item_call.on_click
+				function="Minimap.EstateBan"/>
+			<menu_item_call.on_visible
+				function="Minimap.VisibleKickTeleportHome"/>
+		</menu_item_call>
+		<menu_item_call
+			label="디렌더"
+			name="derender">
+			<menu_item_call.on_click
+				function="Minimap.Derender"/>
+		</menu_item_call>
+		<menu_item_call
+			label="디렌더 + 블랙리스트"
+			name="derender_permanent">
+			<menu_item_call.on_click
+				function="Minimap.DerenderPermanent"/>
+		</menu_item_call>
+	</menu>
+
+  <menu_item_separator
+   name="Profile Separator" />
+  <menu_item_call
+    label="추적 시작"
+    name="Start Tracking">
+    <menu_item_call.on_click
+    function="Minimap.StartTracking" />
+  </menu_item_call>
+  <menu_item_call
+    label="추적 중지"
+    name="Stop Tracking">
+    <menu_item_call.on_click
+    function="Minimap.Tracker"
+    parameter="task_properties" />
+  </menu_item_call>
+  <menu_item_separator
+  name="Stop Tracking Separator" />
+  <menu
+   label="확대"
+   name="Minimap Zoom">
+	<menu_item_call
+     label="닫기"
+     name="Zoom Close">
+        <menu_item_call.on_click
+         function="Minimap.Zoom"
+         parameter="close" />
+    </menu_item_call>
+    <menu_item_call
+     label="중간"
+     name="Zoom Medium">
+        <menu_item_call.on_click
+         function="Minimap.Zoom"
+         parameter="medium" />
+    </menu_item_call>
+    <menu_item_call
+     label="먼"
+     name="Zoom Far">
+        <menu_item_call.on_click
+         function="Minimap.Zoom"
+         parameter="far" />
+    </menu_item_call>
+    <menu_item_separator/>
+    <menu_item_call
+     label="기본값"
+     name="Zoom Default">
+        <menu_item_call.on_click
+         function="Minimap.Zoom"
+         parameter="default" />
+    </menu_item_call>
+  </menu>
+  <menu
+   label="표시"
+   name="Minimap Show">
+    <menu_item_check
+     label="개체"
+     name="Objects">
+      <menu_item_check.on_click
+       function="ToggleControl"
+       parameter="MiniMapObjects" />
+      <menu_item_check.on_check
+       control="MiniMapObjects" />
+    </menu_item_check>
+    <menu_item_check
+     label="물리학 개체"
+     name="Physical Objects">
+      <menu_item_check.on_check
+       function="CheckControl"
+       parameter="FSNetMapPhysical" />
+      <menu_item_check.on_click
+       function="ToggleControl"
+       parameter="FSNetMapPhysical" />
+      <menu_item_check.on_enable
+       control="MiniMapObjects" />
+    </menu_item_check>
+    <menu_item_check
+	 label="스크립트 개체"
+	 name="Scripted Objects">
+      <menu_item_check.on_check
+       function="CheckControl"
+       parameter="FSNetMapScripted" />
+      <menu_item_check.on_click
+       function="ToggleControl"
+       parameter="FSNetMapScripted" />
+      <menu_item_check.on_enable
+       control="MiniMapObjects" />
+    </menu_item_check>
+    <menu_item_check
+     label="Temp On Rez Objects"
+     name="Temp On Rez Objects">
+      <menu_item_check.on_check
+       function="CheckControl"
+       parameter="FSNetMapTempOnRez" />
+      <menu_item_check.on_click
+       function="ToggleControl"
+       parameter="FSNetMapTempOnRez" />
+      <menu_item_check.on_enable
+       control="MiniMapObjects" />
+    </menu_item_check>
+    <menu_item_separator />
+    <menu_item_check
+     label="속성 선"
+     name="Property Lines">
+      <menu_item_check.on_click
+       function="Minimap.ToggleOverlay"
+       parameter="MiniMapPropertyLines" />
+      <menu_item_check.on_check
+       control="MiniMapPropertyLines" />
+    </menu_item_check>
+    <menu_item_check
+     label="판매중인 구획"
+     name="Parcels for Sale">
+      <menu_item_check.on_click
+       function="Minimap.ToggleOverlay"
+       parameter="MiniMapForSaleParcels" />
+      <menu_item_check.on_check
+       control="MiniMapForSaleParcels" />
+      <menu_item_check.on_enable
+       control="MiniMapPropertyLines" />
+    </menu_item_check>
+    <menu_item_separator />
+    <menu_item_check
+     label="지역 텍스쳐"
+     name="Terrain Textures">
+      <menu_item_check.on_click
+       function="Minimap.TextureType"
+       parameter="terrain" />
+      <menu_item_check.on_check
+       function="Minimap.CheckTextureType"
+       parameter="terrain" />
+    </menu_item_check>
+    <menu_item_check
+     label="세계 지도 텍스쳐"
+     name="World Map Textures">
+      <menu_item_check.on_click
+       function="Minimap.TextureType"
+       parameter="maptile" />
+      <menu_item_check.on_check
+       function="Minimap.CheckTextureType"
+       parameter="maptile" />
+    </menu_item_check>
+  </menu>
+    <menu_item_check
+       label="지도 돌리기"
+       name="Rotate Map">
+          <menu_item_check.on_check
+             control="MiniMapRotate" />
+          <menu_item_check.on_click
+             function="ToggleControl"
+             parameter="MiniMapRotate" />
+    </menu_item_check>
+    <menu_item_check
+       label="자동 중앙"
+       name="Auto Center">
+          <menu_item_check.on_check
+             control="MiniMapAutoCenter" />
+          <menu_item_check.on_click
+             function="ToggleControl"
+             parameter="MiniMapAutoCenter" />
+    </menu_item_check>
+    <menu
+     label="채팅 거리 호출음"
+     name="Chat Distance Rings Menu">
+      <menu_item_check
+         label="채팅 거리 호출음 표시"
+         name="Chat Distance Rings">
+            <menu_item_check.on_check
+               control="MiniMapChatRing" />
+            <menu_item_check.on_click
+               function="ToggleControl"
+               parameter="MiniMapChatRing" />
+      </menu_item_check>
+      <menu_item_separator />
+      <menu_item_check
+         label="위스퍼 거리 호출음 표시"
+         name="Whisper Distance Ring">
+            <menu_item_check.on_check
+               control="FSMiniMapWhisperRing" />
+            <menu_item_check.on_click
+               function="ToggleControl"
+               parameter="FSMiniMapWhisperRing" />
+      </menu_item_check>
+      <menu_item_check
+         label="채팅 거리 호출음 표시"
+         name="Chat Distance Ring">
+            <menu_item_check.on_check
+               control="FSMiniMapChatRing" />
+            <menu_item_check.on_click
+               function="ToggleControl"
+               parameter="FSMiniMapChatRing" />
+      </menu_item_check>
+      <menu_item_check
+         label="외침 거리 호출음 표시"
+         name="Shout Distance Ring">
+            <menu_item_check.on_check
+               control="FSMiniMapShoutRing" />
+            <menu_item_check.on_click
+               function="ToggleControl"
+               parameter="FSMiniMapShoutRing" />
+      </menu_item_check>
+    </menu>
+    <menu_item_separator />
+    <menu_item_call
+     label="장소 프로필"
+     name="Place Profile">
+        <menu_item_call.on_click
+         function="Minimap.ShowProfile"
+         parameter="place" />
+    </menu_item_call>
+    <menu_item_call
+     label="세계 지도"
+     name="World Map">
+        <menu_item_call.on_click
+         function="Floater.Show"
+         parameter="world_map" />
+    </menu_item_call>
+</menu>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+	can_resize="true"
+	default_tab_group="1"
+	height="590"
+	help_topic="fs_search"
+	layout="topleft"
+	legacy_header_height="0"
+	min_height="590"
+	min_width="660"
+	name="floater_fs_search"
+	positioning="centered"
+	save_rect="true"
+	single_instance="true"
+	title="Firestorm 검색"
+	width="780">
+	<!-- Strings -->
+	<floater.string name="string.location">
+		위치: [LOCATION]
+	</floater.string>
+	<floater.string name="string.traffic">
+		트래픽: [DWELL]
+	</floater.string>
+	<floater.string name="string.area">
+		지역: [AREA]
+	</floater.string>
+	<floater.string name="string.members">
+		구성원: [MEMBER_COUNT]
+	</floater.string>
+	<floater.string name="string.founder">
+		설립자: [FOUNDER]
+	</floater.string>
+	<floater.string name="string.age">
+		나이: [AGE]
+	</floater.string>
+	<floater.string name="string.partner">
+		파트너: [PARTNER]
+	</floater.string>
+	<floater.string name="string.listing_price">
+		상장 가격: [LISTING_PRICE]
+	</floater.string>
+	<floater.string name="string.slurl">
+		[SLURL]
+	</floater.string>
+	<floater.string name="string.duration">
+		기간: [DURATION]
+	</floater.string>
+	<floater.string name="string.covercharge">
+		커버: [COVERCHARGE]
+	</floater.string>
+	<!-- Tab time -->
+	<tab_container
+		layout="topleft"
+		follows="all"
+		top="1"
+		left="0"
+		name="ls_tabs"
+		tab_min_width="90"
+		tab_position="top"
+		width="780"
+		height="585">
+		<panel
+			class="panel_ls_web"
+			filename="panel_fs_search_legacy_web.xml"
+			label="웹 서치"
+			layout="topleft"
+			name="panel_ls_web" />
+		<panel
+			class="panel_ls_people"
+			filename="panel_fs_search_legacy_people.xml"
+			label="사람들"
+			layout="topleft"
+			name="panel_ls_people" />
+		<panel
+			class="panel_ls_groups"
+			filename="panel_fs_search_legacy_groups.xml"
+			label="그룹"
+			layout="topleft"
+			name="panel_ls_groups" />
+		<panel
+			class="panel_ls_places"
+			filename="panel_fs_search_legacy_places.xml"
+			label="장소"
+			layout="topleft"
+			name="panel_ls_places" />
+		<panel
+			class="panel_ls_land"
+			filename="panel_fs_search_legacy_land.xml"
+			label="땅 판매"
+			layout="topleft"
+			name="panel_ls_land" />
+		<panel
+			class="panel_ls_events"
+			filename="panel_fs_search_legacy_events.xml"
+			label="이벤트"
+			layout="topleft"
+			name="panel_ls_events" />
+		<panel
+			class="panel_ls_classifieds"
+			filename="panel_fs_search_legacy_classifieds.xml"
+			label="분류된 것"
+			layout="topleft"
+			name="panel_ls_classifieds" />
+	</tab_container>
+	<!-- Details/Action Panes -->
+	<panel
+		border="true"
+		follows="top|right|bottom"
+		height="508"
+		layout="topleft"
+		left="412"
+		top="80"
+		width="366"
+		name="panel_ls_details">
+		<text_editor
+		left="12"
+		top="5"
+		height="24"
+		width="340"
+		layout="topleft"
+		follows="left|top|right"
+		name="title"
+		bg_visible="false"
+		border_visible="false"
+		allow_scroll="false"
+		h_pad="0"
+		v_pad="0"
+		halign="center"
+		enabled="false"
+		use_ellipses="true"
+		font="SansSerifHugeBold"
+		value="정의되지 않은 이름" />
+		<texture_picker
+		enabled="false"
+		fallback_image="Generic_Person_Large"
+		follows="left|top|right"
+		height="210"
+		layout="topleft"
+		left="43"
+		name="snapshot"
+		top_pad="4"
+		width="280"/>
+		<text_editor
+		left="20"
+		top_pad="2"
+		height="16"
+		width="180"
+		layout="topleft"
+		follows="left|top|right"
+		name="aux1"
+		bg_visible="false"
+		border_visible="false"
+		h_pad="0"
+		v_pad="0"
+		word_wrap="true"
+		enabled="false"
+		max_length="117"
+		allow_scroll="false"
+		parse_urls="true"
+		value="보조 정보 필드 1"/>
+		<text_editor
+		left_pad="4"
+		top_delta="0"
+		height="16"
+		width="140"
+		layout="topleft"
+		follows="left|top|right"
+		name="aux2"
+		bg_visible="false"
+		border_visible="false"
+		h_pad="0"
+		v_pad="0"
+		word_wrap="true"
+		enabled="false"
+		max_length="117"
+		allow_scroll="false"
+		parse_urls="true"
+		value="보조 정보 필드 2"/>
+		<icon
+		follows="top|right"
+		height="16"
+		image_name="Unknown_Icon"
+		layout="topleft"
+		left="20"
+		top_pad="2"
+		name="maturity_icon"
+		width="18" />
+		<text_editor
+		left_pad="4"
+		top_delta="0"
+		height="28"
+		width="302"
+		layout="topleft"
+		follows="left|top|right"
+		name="location"
+		bg_visible="false"
+		border_visible="false"
+		h_pad="0"
+		v_pad="0"
+		word_wrap="true"
+		enabled="false"
+		max_length="117"
+		allow_scroll="false"
+		parse_urls="true"
+		value="위치 정보 필드"/>
+		<text_editor
+		left="20"
+		top_pad="12"
+		height="154"
+		width="324"
+		layout="topleft"
+		follows="left|top|right"
+		name="desc"
+		bg_visible="false"
+		border_visible="false"
+		h_pad="0"
+		v_pad="0"
+		word_wrap="true"
+		parse_urls="true"
+		enabled="false"
+		max_length="1000"
+		trusted_content="false"
+		value="당신은 상상력의 열쇠로 이 문을 엽니다. 그 너머에는 또 다른 차원이 있습니다. 소리의 차원, 시각의 차원, 마음의 차원. 여러분은 그림자와 실체, 사물과 아이디어의 땅으로 이동하고 있습니다. 여러분은 이제 막 트와일라잇 존으로 넘어왔습니다. 여러분이 지금 보고 있는 것은 진짜입니다. 스크린의 소송 당사자들은 배우가 아닙니다. 그들은 진정한 시민입니다. 그들은 진정한 시민입니다. 그들은 작은 청구법원에 그들의 주장을 제기했고, 그들의 소송을 취하하고, 이 포럼에서 그들을 여기에 정착시키도록 설득했습니다. 인민 법원."/>
+		<button
+		layout="topleft"
+		follows="left|bottom"
+		height="23"
+		label="프로필 열기"
+		name="people_profile_btn"
+		top="484"
+		left="3"
+		width="120" />
+		<button
+		layout="topleft"
+		follows="left|bottom"
+		height="23"
+		label="메세지 전송"
+		name="people_message_btn"
+		width="120"
+		left_pad="1" />
+		<button
+		layout="topleft"
+		follows="left|bottom"
+		height="23"
+		label="친구 추가"
+		name="people_friend_btn"
+		width="120"
+		left_pad="1" />
+		<button
+		layout="topleft"
+		follows="left|bottom"
+		height="23"
+		label="프로필 열기"
+		name="group_profile_btn"
+		top="484"
+		left="3"
+		width="120" />
+		<button
+		layout="topleft"
+		follows="left|bottom"
+		height="23"
+		label="채팅 참가"
+		name="group_message_btn"
+		width="120"
+		left_pad="1" />
+		<button
+		layout="topleft"
+		follows="left|bottom"
+		height="23"
+		label="그룹 참가"
+		name="group_join_btn"
+		width="120"
+		left_pad="1" />
+		<button
+		layout="topleft"
+		follows="left|bottom"
+		height="23"
+		label="순간이동"
+		name="teleport_btn"
+		top="484"
+		left="3"
+		width="120" />
+		<button
+		layout="topleft"
+		follows="left|bottom"
+		height="23"
+		label="지도에서 표시"
+		name="map_btn"
+		width="120"
+		left_pad="1" />
+		<button
+		layout="topleft"
+		follows="left|bottom"
+		height="23"
+		label="상기시키기"
+		name="event_reminder_btn"
+		width="120"
+		left_pad="1" />
+		<loading_indicator
+		left="134"
+		top="320"
+		follows="left|top|right"
+		mouse_opaque="false"
+		name="loading"
+		images_per_sec="1.0"
+		tab_stop="false"
+		height="100"
+		width="100"
+		visible="false" >
+			<images>
+				<image name="ProgressLarge_1"/>
+				<image name="ProgressLarge_2"/>
+				<image name="ProgressLarge_3"/>
+				<image name="ProgressLarge_4"/>
+				<image name="ProgressLarge_5"/>
+				<image name="ProgressLarge_6"/>
+				<image name="ProgressLarge_7"/>
+				<image name="ProgressLarge_8"/>
+				<image name="ProgressLarge_9"/>
+				<image name="ProgressLarge_10"/>
+				<image name="ProgressLarge_11"/>
+				<image name="ProgressLarge_12"/>
+			</images>
+		</loading_indicator>
+	</panel>
+</floater>

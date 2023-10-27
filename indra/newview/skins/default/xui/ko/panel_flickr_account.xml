@@ -1,0 +1,79 @@
+<panel
+	 height="540"
+	 width="272"
+	 layout="topleft"
+   name="panel_flickr_account">
+  <string
+      name="flickr_connected"
+      value="~로 Flickr 에 연결되어 있습니다.:" />
+  <string
+      name="flickr_disconnected"
+      value="Flickr에 연결되지 않음" />
+  <text
+   layout="topleft"
+   length="1"
+   follows="top|left"
+   font="SansSerif"
+   height="16"
+   left="10"
+   name="account_caption_label"
+   top="5"
+   type="string">
+    Flickr에 연결되지 않음.
+  </text>
+  <text
+   layout="topleft"
+   top_pad="2"
+   length="1"
+   follows="top|left"
+   font="SansSerif"
+   height="16"
+   left="10"
+   name="account_name_label"
+   parse_urls="true"
+   type="string"/>
+  <panel
+    layout="topleft"
+    name="panel_buttons"
+    height="345"
+    left="0">
+    <button
+     layout="topleft"
+     follows="left|top|right"
+     top_pad="9"
+     visible="true"
+	 left="10"
+	 right="-10"
+     height="23"
+     label="연결..."
+     name="connect_btn"
+     width="210">
+      <commit_callback function="SocialSharing.Connect"/>
+    </button>
+
+    <button
+     layout="topleft"
+     follows="left|top|right"
+     top_delta="0"
+	 left="10"
+	 right="-10"
+     height="23"
+     label="연결끊김"
+     name="disconnect_btn"
+     width="210"
+     visible="false">
+      <commit_callback function="SocialSharing.Disconnect"/>
+    </button>
+    <text
+      layout="topleft"
+      length="1"
+      follows="top|left"
+      height="16"
+      left="10"
+      name="account_learn_more_label"
+      top_pad="5"
+      type="string">
+      [http://community.secondlife.com/t5/English-Knowledge-Base/Second-Life-Share-Flickr/ta-p/2435609 Flickr에 게시하는 방법에 대해 알아보기]
+    </text>
+  </panel>
+</panel>

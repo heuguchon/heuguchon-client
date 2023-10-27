@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ top="0"
+ left="0"
+ width="420"
+ height="480"
+ layout="topleft"
+ follows="all"
+ name="panel_notes"
+ label="주의 사항 &amp; 개인 정보">
+
+    <loading_indicator
+     top="3"
+     right="-10"
+     height="23"
+     width="23"
+     layout="topleft"
+     follows="top|right"
+     name="progress_indicator"
+     visible="false" />
+
+    <text
+     top="6"
+     left="6"
+     right="-6"
+     height="16"
+     layout="topleft"
+     follows="left|top|right"
+     name="status_message"
+     font.style="BOLD"
+     value="이 아바타에 대한 개인 정보:" />
+
+    <text_editor
+     top_pad="4"
+     left="6"
+     right="-6"
+     height="335"
+     layout="topleft"
+     follows="all"
+     name="notes_edit"
+     max_length="1000"
+     enabled="false"
+     word_wrap="true" />
+
+    <text
+     follows="left|bottom|right"
+     height="16"
+     layout="topleft"
+     left="6"
+     name="status_message2"
+     top_pad="8"
+     font.style="BOLD"
+     value="이 아바타 허용:"
+     right="-6"/>
+
+    <check_box
+     left="10"
+     height="16"
+     width="293"
+     layout="topleft"
+     follows="left|bottom|right"
+     name="status_check"
+     label="온라인 상태 확인"
+     enabled="false" />
+
+    <check_box
+     left="10"
+     height="16"
+     width="293"
+     layout="topleft"
+     follows="left|bottom|right"
+     name="map_check"
+     label="세계 지도에서 나를 찾아라."
+     enabled="false" />
+
+    <check_box
+     left="10"
+     height="16"
+     width="293"
+     layout="topleft"
+     follows="left|bottom|right"
+     name="objects_check"
+     label="내 개체 편집, 삭제 또는 가져오기"
+     enabled="false" />
+</panel>

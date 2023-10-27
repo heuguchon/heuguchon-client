@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<teleport_messages>
+	<message_set name="errors">
+		<message name="invalid_tport">
+			순간이동 시도는 분당 6회로 제한된다. 문제가 있으면 1분 정도 기다렸다가 다시 순간이동을 시도하세요. 문제가 지속되면 로그아웃했다가 다시 로그인하십시오.
+		</message>
+		<message name="invalid_region_handoff">
+			영역 교차 처리 중 문제가 발생했습니다. 지역을 가로지르기 전에 다시 로그인해야 할 수 있습니다.
+이 메시지가 계속 표시되면 [SUPPORT_SITE]를 확인하십시오.
+		</message>
+		<message name="blocked_tport">
+			죄송합니다, 순간이동은 현재 차단되어 있습니다. 잠시 후에 다시 시도하십시오.
+그래도 순간이동을 할 수 없으면 로그아웃했다가 다시 로그인하여 문제를 해결하십시오.
+		</message>
+		<message name="nolandmark_tport">
+			죄송합니다. 시스템이 랜드마크 대상을 찾을 수 없습니다.
+		</message>
+		<message name="timeout_tport">
+			죄송합니다. 시스템에서 순간이동 연결을 완료할 수 없습니다.
+잠시 후에 다시 시도하십시오.
+		</message>
+		<message name="NoHelpIslandTP">
+웰컴 아일랜드로 순간이동으로 돌아갈 수 없습니다.
+&apos로 이동아일랜드 퍼블릭 &apos; 자습서 반복을 환영합니다.
+		</message>
+		<message name="noaccess_tport">
+			죄송합니다. 해당 순간이동 대상에 액세스할 수 없습니다.
+		</message>
+		<message name="missing_attach_tport">
+			첨부 파일이 아직 도착하지 않았습니다. 몇 초 더 기다리거나 순간이동을 시도하기 전에 로그아웃했다가 다시 로그인하십시오.
+		</message>
+		<message name="too_many_uploads_tport">
+			이 영역의 자산 대기열은 현재 막혔으므로 텔레포트 요청을 적시에 성공할 수 없습니다. 잠시 후 다시 시도하거나 덜 붐비는 지역으로 이동하십시오.
+		</message>
+		<message name="expired_tport">
+			죄송합니다. 시스템에서 순간이동 요청을 적시에 완료할 수 없습니다. 잠시 후 다시 시도하십시오.
+		</message>
+		<message name="expired_region_handoff">
+			죄송합니다. 시스템이 지역 건널목을 적시에 완료할 수 없습니다. 잠시 후 다시 시도하십시오.
+		</message>
+		<message name="preexisting_tport">
+			죄송합니다. 시스템에서 순간이동을 시작할 수 없습니다. 잠시 후 다시 시도하십시오.
+		</message>
+		<message name="no_host">
+			순간이동 대상을 찾을 수 없습니다. 대상이 일시적으로 사용할 수 없거나 더 이상 존재하지 않을 수 있습니다. 잠시 후 다시 시도하십시오.
+		</message>
+		<message name="no_inventory_host">
+			재고 시스템을 현재 사용할 수 없습니다.
+		</message>
+    <message name="MustGetAgeRegion">
+      이 지역에 들어가려면 18세 이상이어야 합니다.
+    </message>
+    <message name="RegionTPSpecialUsageBlocked">
+      지역을 입력할 수 없습니다. '[REGION_NAME]'은 스킬 게임 영역이며, 참가하려면 특정 기준을 충족해야 합니다. 자세한 내용은 [http://wiki.secondlife.com/wiki/Linden_Lab_Official:Second_Life_Skill_Gaming_FAQ 스킬 게임 FAQ]를 참조하십시오.
+          </message>
+  </message_set>
+	<message_set name="progress">
+		<message name="sending_dest">
+			대상으로 전송.
+		</message>
+		<message name="redirecting">
+			다른 위치로 재위치조정.
+		</message>
+		<message name="relaying">
+			대상으로 릴레이 중.
+		</message>
+		<message name="sending_home">
+			홈 위치 요청 전송 중.
+		</message>
+		<message name="sending_landmark">
+			랜드마크 위치 요청 전송 중.
+		</message>
+		<message name="completing">
+			순간이동 완료 중.
+		</message>
+		<message name="completed_from">
+			[T_SURL]에서 순간이동 완료
+		</message>
+		<message name="resolving">
+			대상 확인 중.
+		</message>
+		<message name="contacting">
+			새 지역에 연락하는 중.
+		</message>
+		<message name="arriving">
+			도착 중...
+		</message>
+		<message name="requesting">
+			순간이동 요청하는 중...
+		</message>
+    <message name="pending">
+      순간이동 대기 중...
+    </message>
+  </message_set>
+</teleport_messages>

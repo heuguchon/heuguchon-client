@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toggleable_menu
+ layout="topleft"
+ name="Gear COF">
+    <menu
+     label="새로운 의상"
+     layout="topleft"
+     name="COF.Gear.New_Clothes" />
+    <menu
+     label="새로운 신체 부위"
+     layout="topleft"
+     name="COF.Gear.New_Body_Parts" />
+</toggleable_menu>

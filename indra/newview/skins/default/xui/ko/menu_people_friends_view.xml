@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toggleable_menu
+     name="menu_group_plus"
+     left="0" bottom="0" visible="false"
+     mouse_opaque="false">
+  <menu_item_check
+   label="이름으로 정렬"
+   name="sort_name">
+      <menu_item_check.on_click
+       function="People.Friends.ViewSort.Action"
+       parameter="sort_name" />
+      <menu_item_check.on_check
+       function="People.Friends.ViewSort.CheckItem"
+       parameter="sort_name" />
+  </menu_item_check>
+  <menu_item_check
+   label="사용자 이름으로 정렬"
+   name="sort_username">
+      <menu_item_check.on_click
+       function="People.Friends.ViewSort.Action"
+       parameter="sort_username" />
+      <menu_item_check.on_check
+       function="People.Friends.ViewSort.CheckItem"
+       parameter="sort_username" />
+  </menu_item_check>
+  <menu_item_check
+   label="상태로 정렬"
+   name="sort_status">
+      <menu_item_check.on_click
+       function="People.Friends.ViewSort.Action"
+       parameter="sort_status" />
+      <menu_item_check.on_check
+       function="People.Friends.ViewSort.CheckItem"
+       parameter="sort_status" />
+  </menu_item_check>
+  <menu_item_separator layout="topleft" />
+  <menu_item_check name="view_icons" label="사람 아이콘 보기">
+    <menu_item_check.on_click
+     function="People.Friends.ViewSort.Action"
+     parameter="view_icons" />
+    <menu_item_check.on_check
+     function="CheckControl"
+     parameter="FriendsListShowIcons" />
+  </menu_item_check>
+  <menu_item_check name="view_permissions" label="권한 부여 보기">
+    <menu_item_check.on_click
+     function="People.Friends.ViewSort.Action"
+     parameter="view_permissions" />
+    <menu_item_check.on_check
+     function="CheckControl"
+     parameter="FriendsListShowPermissions" />
+  </menu_item_check>
+  <menu_item_check name="view_conversation" label="대화 로그 보기...">
+    <menu_item_check.on_check
+     function="Floater.Visible"
+     parameter="conversation" />
+    <menu_item_check.on_enable
+     function="Conversation.IsConversationLoggingAllowed" />
+    <menu_item_check.on_click
+     function="Floater.Toggle"
+     parameter="conversation" />
+  </menu_item_check>
+</toggleable_menu>

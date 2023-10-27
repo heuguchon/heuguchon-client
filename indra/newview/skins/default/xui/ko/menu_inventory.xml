@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<menu
+ bottom="825"
+ layout="topleft"
+ name="Popup"
+ visible="false">
+	<menu_item_call
+        label="목록 생성"
+        layout="topleft"
+        name="Marketplace Create Listing">
+		<menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="marketplace_create_listing" />
+	</menu_item_call>
+	<menu_item_call
+        label="연관 목록"
+        layout="topleft"
+        name="Marketplace Associate Listing">
+		<menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="marketplace_associate_listing" />
+	</menu_item_call>
+	<menu_item_call
+        label="목록 가져오기(새로고침)"
+        layout="topleft"
+        name="Marketplace Get Listing">
+		<menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="marketplace_get_listing" />
+	</menu_item_call>
+	<menu_item_call
+        label="오류 확인"
+        layout="topleft"
+        name="Marketplace Check Listing">
+		<menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="marketplace_check_listing" />
+	</menu_item_call>
+	<menu_item_call
+        label="목록 확인"
+        layout="topleft"
+        name="Marketplace Edit Listing">
+		<menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="marketplace_edit_listing" />
+	</menu_item_call>
+	<menu_item_call
+        label="목록"
+        layout="topleft"
+        name="Marketplace List">
+		<menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="marketplace_list" />
+	</menu_item_call>
+	<menu_item_call
+        label="목록 해제"
+        layout="topleft"
+        name="Marketplace Unlist">
+		<menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="marketplace_unlist" />
+	</menu_item_call>
+	<menu_item_call
+        label="활성화"
+        layout="topleft"
+        name="Marketplace Activate">
+		<menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="marketplace_activate" />
+	</menu_item_call>
+	<menu_item_call
+        label="비활성화"
+        layout="topleft"
+        name="Marketplace Deactivate">
+		<menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="marketplace_deactivate" />
+	</menu_item_call>
+	<menu_item_separator
+    layout="topleft"
+    name="Marketplace Listings Separator" />
+    <menu_item_call
+     label="공유"
+     layout="topleft"
+     name="Share"
+     visible="true">
+        <menu_item_call.on_click
+         function="Inventory.Share" />
+    </menu_item_call>
+    <menu_item_call
+     label="열기"
+     layout="topleft"
+     name="Task Open">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="task_open" />
+    </menu_item_call>
+    <menu_item_call
+     label="재생"
+     layout="topleft"
+     name="Task Play">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="task_play" />
+    </menu_item_call>
+    <menu_item_call
+     label="소유물"
+     layout="topleft"
+     name="Task Properties">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="task_properties" />
+    </menu_item_call>
+    <menu_item_call
+     label="개명"
+     layout="topleft"
+     name="Task Rename">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="rename" />
+    </menu_item_call>
+    <menu_item_call
+     label="삭제"
+     layout="topleft"
+     name="Task Remove">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="delete" />
+    </menu_item_call>
+    <menu_item_call
+     label="쓰레기 비우기"
+     layout="topleft"
+     name="Empty Trash">
+        <menu_item_call.on_click
+         function="Inventory.EmptyTrash"
+         parameter="rename" />
+    </menu_item_call>
+    <menu_item_call
+     label="빈 분실물 센터"
+     layout="topleft"
+     name="Empty Lost And Found">
+        <menu_item_call.on_click
+         function="Inventory.EmptyLostAndFound"
+         parameter="rename" />
+    </menu_item_call>
+    <menu_item_call
+     label="새 폴더"
+     layout="topleft"
+     name="New Folder">
+        <menu_item_call.on_click
+         function="Inventory.DoCreate"
+         parameter="category" />
+    </menu_item_call>
+    <menu_item_call
+     label="새 의상"
+     layout="topleft"
+     name="New Outfit">
+        <menu_item_call.on_click
+         function="Inventory.DoCreate"
+         parameter="outfit" />
+    </menu_item_call>
+    <menu_item_call
+     label="새 스크립트"
+     layout="topleft"
+     name="New Script">
+        <menu_item_call.on_click
+         function="Inventory.DoCreate"
+         parameter="lsl" />
+    </menu_item_call>
+    <menu_item_call
+     label="새 노트카드"
+     layout="topleft"
+     name="New Note">
+        <menu_item_call.on_click
+         function="Inventory.DoCreate"
+         parameter="notecard" />
+    </menu_item_call>
+    <menu_item_call
+     label="새 제스쳐"
+     layout="topleft"
+     name="New Gesture">
+        <menu_item_call.on_click
+         function="Inventory.DoCreate"
+         parameter="gesture" />
+    </menu_item_call>
+    <menu
+     label="새 옷"
+     layout="topleft"
+     name="New Clothes">
+        <menu_item_call
+         label="새 셔츠"
+         layout="topleft"
+         name="New Shirt">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="shirt" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 바지"
+         layout="topleft"
+         name="New Pants">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="pants" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 신발"
+         layout="topleft"
+         name="New Shoes">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="shoes" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 양말"
+         layout="topleft"
+         name="New Socks">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="socks" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 자켓"
+         layout="topleft"
+         name="New Jacket">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="jacket" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 치마"
+         layout="topleft"
+         name="New Skirt">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="skirt" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 장갑"
+         layout="topleft"
+         name="New Gloves">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="gloves" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 속셔츠"
+         layout="topleft"
+         name="New Undershirt">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="undershirt" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 속옷"
+         layout="topleft"
+         name="New Underpants">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="underpants" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 알파 마스크"
+         layout="topleft"
+         name="New Alpha Mask">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="alpha" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 문신"
+         layout="topleft"
+         name="New Tattoo">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="tattoo" />
+        </menu_item_call>
+      <menu_item_call
+         label="새 유니버셜"
+         layout="topleft"
+         name="New Universal">
+        <menu_item_call.on_click
+         function="Inventory.DoCreate"
+         parameter="universal" />
+      </menu_item_call>
+        <menu_item_call
+         label="새로운 몸매"
+         layout="topleft"
+         name="New Physics">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="physics" />
+        </menu_item_call>
+    </menu>
+    <menu
+     label="새로운 몸 부분"
+     layout="topleft"
+     name="New Body Parts">
+        <menu_item_call
+         label="새로운 모양"
+         layout="topleft"
+         name="New Shape">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="shape" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 피부"
+         layout="topleft"
+         name="New Skin">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="skin" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 머리"
+         layout="topleft"
+         name="New Hair">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="hair" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 눈"
+         layout="topleft"
+         name="New Eyes">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="eyes" />
+        </menu_item_call>
+    </menu>
+    <menu
+     label="새 설정"
+     layout="topleft"
+     name="New Settings">
+        <menu_item_call
+         label="새 하늘"
+         layout="topleft"
+         name="New Sky">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="sky"/>
+            <menu_item_call.on_enable
+                    function="Inventory.EnvironmentEnabled" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 물"
+         layout="topleft"
+         name="New Water">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="water"/>
+            <menu_item_call.on_enable
+                    function="Inventory.EnvironmentEnabled" />
+        </menu_item_call>
+        <menu_item_call
+         label="새 요일 주기"
+         layout="topleft"
+         name="New Day Cycle">
+            <menu_item_call.on_click
+             function="Inventory.DoCreate"
+             parameter="daycycle"/>
+            <menu_item_call.on_enable
+                    function="Inventory.EnvironmentEnabled" />
+        </menu_item_call>
+    </menu>
+    <menu
+     label="기본값으로 사용하기"
+     layout="topleft"
+     name="upload_def">
+      <menu_item_call
+       label="이미지 업로드"
+       layout="topleft"
+       name="Image uploads">
+        <menu_item_call.on_click
+         function="Inventory.FileUploadLocation"
+         parameter="texture" />
+      </menu_item_call>
+      <menu_item_call
+       label="소리 업로드"
+       layout="topleft"
+       name="Sound uploads">
+        <menu_item_call.on_click
+         function="Inventory.FileUploadLocation"
+         parameter="sound" />
+      </menu_item_call>
+      <menu_item_call
+       label="애니메이션 업로드"
+       layout="topleft"
+       name="Animation uploads">
+        <menu_item_call.on_click
+         function="Inventory.FileUploadLocation"
+         parameter="animation" />
+      </menu_item_call>
+      <menu_item_call
+       label="모델 업로드"
+       layout="topleft"
+       name="Model uploads">
+        <menu_item_call.on_click
+         function="Inventory.FileUploadLocation"
+         parameter="model" />
+      </menu_item_call>
+    </menu>
+    <menu
+     label="타입 변경"
+     layout="topleft"
+     name="Change Type">
+        <menu_item_call
+         label="기본값"
+         layout="topleft"
+         name="Default">
+            <menu_item_call.on_click
+             function="Inventory.DoToSelected"
+             parameter="change_folder_type_default" />
+        </menu_item_call>
+        <menu_item_call
+         label="장갑"
+         layout="topleft"
+         name="Gloves">
+            <menu_item_call.on_click
+             function="Inventory.DoToSelected"
+             parameter="change_folder_type_gloves" />
+        </menu_item_call>
+        <menu_item_call
+         label="자켓"
+         layout="topleft"
+         name="Jacket">
+            <menu_item_call.on_click
+             function="Inventory.DoToSelected"
+             parameter="change_folder_type_jacket" />
+        </menu_item_call>
+        <menu_item_call
+         label="바지"
+         layout="topleft"
+         name="Pants">
+            <menu_item_call.on_click
+             function="Inventory.DoToSelected"
+             parameter="change_folder_type_pants" />
+        </menu_item_call>
+        <menu_item_call
+         label="모양"
+         layout="topleft"
+         name="Shape">
+            <menu_item_call.on_click
+             function="Inventory.DoToSelected"
+             parameter="change_folder_type_shape" />
+        </menu_item_call>
+        <menu_item_call
+         label="신발"
+         layout="topleft"
+         name="Shoes">
+            <menu_item_call.on_click
+             function="Inventory.DoToSelected"
+             parameter="change_folder_type_shoes" />
+        </menu_item_call>
+        <menu_item_call
+         label="셔츠"
+         layout="topleft"
+         name="Shirt">
+            <menu_item_call.on_click
+             function="Inventory.DoToSelected"
+             parameter="change_folder_type_shirt" />
+        </menu_item_call>
+        <menu_item_call
+         label="치마"
+         layout="topleft"
+         name="Skirt">
+            <menu_item_call.on_click
+             function="Inventory.DoToSelected"
+             parameter="change_folder_type_skirt" />
+        </menu_item_call>
+        <menu_item_call
+         label="속옷"
+         layout="topleft"
+         name="Underpants">
+            <menu_item_call.on_click
+             function="Inventory.DoToSelected"
+             parameter="change_folder_type_underpants" />
+        </menu_item_call>
+        <menu_item_call
+         label="속 셔츠"
+         layout="topleft"
+         name="Undershirt">
+            <menu_item_call.on_click
+             function="Inventory.DoToSelected"
+             parameter="change_folder_type_undershirt" />
+        </menu_item_call>
+    </menu>
+    <menu_item_call
+     label="순간이동"
+     layout="topleft"
+     name="Landmark Open">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="open" />
+    </menu_item_call>
+    <menu_item_call
+     label="열기"
+     layout="topleft"
+     name="Animation Open">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="open" />
+    </menu_item_call>
+    <menu_item_call
+     label="열기"
+     layout="topleft"
+     name="Sound Open">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="open" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft"
+     name="Folder Wearables Separator" />
+    <menu_item_call
+     label="현재 의상 교체"
+     layout="topleft"
+     name="Replace Outfit">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="replaceoutfit" />
+    </menu_item_call>
+    <menu_item_call
+     label="현재 의상에서 추가"
+     layout="topleft"
+     name="Add To Outfit">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="addtooutfit" />
+    </menu_item_call>
+    <menu_item_call
+     label="아이템 입기"
+     layout="topleft"
+     name="Wear Items">
+      <menu_item_call.on_click
+       function="Inventory.DoToSelected"
+       parameter="replaceitems" />
+    </menu_item_call>
+    <menu_item_call
+     label="현재 의상에서 제거"
+     layout="topleft"
+     name="Remove From Outfit">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="removefromoutfit" />
+    </menu_item_call>
+    <menu_item_call
+     label="의상 목록 클립보드에 복사"
+     layout="topleft"
+     name="Copy outfit list to clipboard">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="copyoutfittoclipboard" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft"
+     name="Outfit Separator" />
+    <menu_item_call
+     label="원본 찾기"
+     layout="topleft"
+     name="Find Original">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="goto" />
+    </menu_item_call>
+    <menu_item_call
+     label="항목 정리"
+     layout="topleft"
+     name="Purge Item">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="purge"/>
+    </menu_item_call>
+    <menu_item_call
+     label="아이템 복구"
+     layout="topleft"
+     name="Restore Item">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="restore" />
+    </menu_item_call>
+    <menu_item_call
+     label="열기"
+     layout="topleft"
+     name="Open">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="open" />
+    </menu_item_call>
+    <menu_item_call
+     label="원본 열기"
+     layout="topleft"
+     name="Open Original">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="open_original" />
+    </menu_item_call>
+    <menu_item_call
+     label="속성"
+     layout="topleft"
+     name="Properties">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="properties" />
+    </menu_item_call>
+    <menu_item_call
+     label="개명"
+     layout="topleft"
+     name="Rename">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="rename" />
+    </menu_item_call>
+    <menu_item_call
+     label="보호"
+     layout="topleft"
+     name="ProtectFolder">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="protect_folder" />
+    </menu_item_call>
+    <menu_item_call
+     label="보호되지 않음"
+     layout="topleft"
+     name="UnprotectFolder">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="unprotect_folder" />
+    </menu_item_call>
+    <menu_item_call
+     label="재산 복사 UUID"
+     layout="topleft"
+     name="Copy Asset UUID">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="copy_uuid" />
+    </menu_item_call>
+    <menu_item_call
+     label="메인 뷰에서 보기"
+     layout="topleft"
+     name="Show in Main Panel">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="show_in_main_panel" />
+    </menu_item_call>
+    <menu_item_call
+     label="마지막 위치로 복구"
+     layout="topleft"
+     name="Restore to Last Position">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="restoreToWorld" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" 
+     name="Copy Separator" />
+    <menu_item_call
+     label="복사"
+     layout="topleft"
+     name="Copy">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="copy" />
+    </menu_item_call>
+    <menu_item_call
+     label="자르기"
+     layout="topleft"
+     name="Cut">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="cut" />
+    </menu_item_call>
+    <menu_item_call
+     label="붙이기"
+     layout="topleft"
+     name="Paste">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="paste" />
+    </menu_item_call>
+    <menu_item_call
+     label="링크로 붙여넣기"
+     layout="topleft"
+     name="Paste As Link">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="paste_link" />
+    </menu_item_call>
+    <menu_item_call 
+     label="모든 링크 찾기"
+     layout="topleft"
+     name="Find Links">
+        <menu_item_call.on_click
+         function="Inventory.CustomAction"
+         parameter="find_links" />
+    </menu_item_call>
+    <menu_item_call
+     label="링크 대체"
+     layout="topleft"
+     name="Replace Links">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="replace_links" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" 
+     name="Paste Separator" />
+    <menu_item_call
+     label="삭제"
+     layout="topleft"
+     name="Delete">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="delete" />
+    </menu_item_call>
+    <menu_item_call
+     label="끊어진 링크 정리"
+     layout="topleft"
+     name="Cleanup broken Links">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="cleanup_broken_links"/>
+    </menu_item_call>
+    <menu_item_call
+     label="기본 폴더로 이동"
+     layout="topleft"
+     name="Move to Default Folder">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="move_to_default_folder" />
+    </menu_item_call>
+    <menu_item_call
+     label="분실물센터로 이동"
+     layout="topleft"
+     name="Move to Lost And Found">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="move_to_lost_and_found" />
+    </menu_item_call>
+    <menu_item_call
+     label="시스템 폴더 삭제"
+     layout="topleft"
+     name="Delete System Folder">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="delete_system_folder" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" />
+    <menu_item_separator
+     layout="topleft" />
+    <menu_item_call
+     label="회의 채팅 시작"
+     layout="topleft"
+     name="Conference Chat Folder">
+        <menu_item_call.on_click
+         function="Inventory.BeginIMSession"
+         parameter="everyone" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" />
+    <menu_item_call
+     label="재생"
+     layout="topleft"
+     name="Sound Play">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="sound_play" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft"
+     name="Landmark Separator" />
+    <menu_item_call
+    label="복사 SLurl"
+    layout="topleft"
+    name="url_copy">
+       <menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="copy_slurl" />
+   </menu_item_call> 
+   <menu_item_call
+     label="랜드마크에 대해"
+     layout="topleft"
+     name="About Landmark">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="about" />
+    </menu_item_call>
+   <menu_item_call
+     label="지도에서 표시"
+     layout="topleft"
+     name="show_on_map">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="show_on_map" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" 
+     name="Animation Separator" />
+    <menu_item_call
+     label="인월드 재생"
+     layout="topleft"
+     name="Animation Play">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="playworld" />
+    </menu_item_call>
+    <menu_item_call
+     label="로컬 재생"
+     layout="topleft"
+     name="Animation Audition">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="playlocal" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" 
+     name="Send Instant Message Separator" />
+    <menu_item_call
+     label="인스턴스 메세지 전송"
+     layout="topleft"
+     name="Send Instant Message">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="begin_im" />
+    </menu_item_call>
+    <menu_item_call
+     label="순간이동 제안..."
+     layout="topleft"
+     name="Offer Teleport...">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="lure" />
+    </menu_item_call>
+    <menu_item_call
+     label="순간이동 요청..."
+     layout="topleft"
+     name="Request Teleport...">
+        <menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="request_lure" />
+    </menu_item_call>
+    <menu_item_call
+     label="회의 채팅 시작"
+     layout="topleft"
+     name="Conference Chat">
+        <menu_item_call.on_click
+         function="Inventory.BeginIMSession"
+         parameter="selected" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" 
+     name="Gesture Separator" />
+    <menu_item_call
+     label="활성화"
+     layout="topleft"
+     name="Activate">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="activate" />
+    </menu_item_call>
+    <menu_item_call
+     label="비활성화"
+     layout="topleft"
+     name="Deactivate">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="deactivate" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" 
+     name="Texture Separator" />
+    <menu_item_call
+     label="다른이름으로 저장"
+     layout="topleft"
+     name="Save As">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="save_as" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" 
+     name="Wearable And Object Separator"/>
+    <menu_item_call
+     label="입기"
+     layout="topleft"
+     name="Wearable And Object Wear">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="wear" />
+    </menu_item_call>
+    <menu_item_call
+     label="추가"
+     layout="topleft"
+     name="Wearable Add">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="wear_add" />
+    </menu_item_call>
+    <menu
+     label="붙이기"
+     layout="topleft"
+     name="Attach To" />
+    <menu
+     label="HUD에 붙이기"
+     layout="topleft"
+     name="Attach To HUD" />
+    <menu_item_call
+     label="터치"
+     layout="topleft"
+     name="Attachment Touch">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="touch" />
+    </menu_item_call>
+    <menu_item_call
+     label="수정"
+     layout="topleft"
+     name="Wearable Edit">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="edit" />
+    </menu_item_call>
+    <menu_item_call
+     label="텍스쳐 새로고침"
+     layout="topleft"
+     name="Texture Refresh Attachment">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="texture_refresh_attachment" />
+    </menu_item_call>
+    <menu_item_call
+     label="자기 자신으로부터 분리"
+     layout="topleft"
+     name="Detach From Yourself">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="detach" />
+    </menu_item_call>
+    <menu_item_call
+     label="벗기"
+     layout="topleft"
+     name="Take Off">
+        <menu_item_call.on_click
+         function="Inventory.DoToSelected"
+         parameter="take_off" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" 
+     name="Settings Separator" />
+    <menu_item_call
+            name="Settings Apply Local"
+            layout="topleft"
+            label="자기자신에게만 적용">
+        <menu_item_call.on_click 
+                function="Inventory.DoToSelected"
+                parameter="apply_settings_local" />
+    </menu_item_call>
+    <menu_item_call
+            name="Settings Apply Parcel"
+            layout="topleft"
+            label="구획에 적용">
+        <menu_item_call.on_click 
+                function="Inventory.DoToSelected"
+                parameter="apply_settings_parcel" />
+    </menu_item_call>
+	<menu_item_separator
+	 layout="topleft"
+	 name="Marketplace Separator" />
+	<menu_item_call
+        label="마켓플레이스 목록에 복사"
+        layout="topleft"
+        name="Marketplace Copy">
+		<menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="copy_to_marketplace_listings" />
+	</menu_item_call>
+	<menu_item_call
+        label="마켓플레이스 목록으로 이동"
+        layout="topleft"
+        name="Marketplace Move">
+		<menu_item_call.on_click
+        function="Inventory.DoToSelected"
+        parameter="move_to_marketplace_listings" />
+	</menu_item_call>
+	<menu_item_call
+     label="--옵션 없음--"
+     layout="topleft"
+     name="--no options--" />
+    <menu_item_separator
+     layout="topleft" />
+</menu>

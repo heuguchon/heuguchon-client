@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="27"
+ can_resize="true"
+ height="500"
+ name="voice_effects"
+ help_topic="voice_effects"
+ title="음성 모핑 미리 보기"
+ background_visible="true"
+ label="장소"
+ layout="topleft"
+ min_height="360"
+ min_width="200"
+ save_rect="true"
+ width="300">
+  <string name="no_voice_effect">
+    (음성 모프 없음)
+  </string>
+  <string name="active_voice_effect">
+    (활성화)
+  </string>
+  <string name="unsubscribed_voice_effect">
+    (구독 취소)
+  </string>
+  <string name="new_voice_effect">
+    (새로운!)
+  </string>
+
+  <!--  effect names begin -->
+  <string name="effect_Arena">아레나</string>
+  <string name="effect_Beast">맹수</string>
+  <string name="effect_Buff">애호가</string>
+  <string name="effect_Buzz">버즈</string>
+  <string name="effect_Camille">카밀</string>
+  <string name="effect_Creepy">소름</string>
+  <string name="effect_CreepyBot">소름봇</string>
+  <string name="effect_Cyber">사이버</string>
+  <string name="effect_DeepBot">딥봇</string>
+  <string name="effect_Demon">악마</string>
+  <string name="effect_Female Elf">여성 엘프</string>
+  <string name="effect_Flirty">경박</string>
+  <string name="effect_Foxy">여우</string>
+  <string name="effect_Halloween 2010 Bonus">할로윈_2010_보너스</string>
+  <string name="effect_Helium">헬륨</string>
+  <string name="effect_Husky">허스키</string>
+  <string name="effect_Husky Whisper">허스키한 속삭임</string>
+  <string name="effect_Intercom">인터콤</string>
+  <string name="effect_Julia">줄리아</string>
+  <string name="effect_Lo Lilt">낮은 억양</string>
+  <string name="effect_Macho">마초</string>
+  <string name="effect_Micro">초소형</string>
+  <string name="effect_Mini">미니</string>
+  <string name="effect_Model">모델</string>
+  <string name="effect_Nano">나노</string>
+  <string name="effect_Nightmare">악몽</string>
+  <string name="effect_PopBot">팝봇</string>
+  <string name="effect_Rachel">레이첼</string>
+  <string name="effect_Radio">라디오</string>
+  <string name="effect_Robot">로봇</string>
+  <string name="effect_Roxanne">록산느</string>
+  <string name="effect_Rumble">럼블</string>
+  <string name="effect_Sabrina">사브리나</string>
+  <string name="effect_Samantha">사만다</string>
+  <string name="effect_Sexy">섹시</string>
+  <string name="effect_Shorty">짧은</string>
+  <string name="effect_Smaller">작은</string>
+  <string name="effect_Sneaky">교활한</string>
+  <string name="effect_Stallion">종마</string>
+  <string name="effect_Sultry">열정적</string>
+  <string name="effect_Thunder">번개</string>
+  <string name="effect_Vixen">빈첸</string>
+  <string name="effect_WhinyBot">위니봇</string>
+  <!--  effect names end -->
+
+ <text
+   height="16"
+   word_wrap="true"
+   use_ellipses="true"
+   type="string"
+   follows="left|top|right"
+   layout="topleft"
+   font="SansSerifBold"
+   text_color="White"
+   left="10"
+   name="preview_text"
+   right="-10"
+   top="27">미리 보려면
+   </text>
+  <text
+   height="23"
+   word_wrap="true"
+   use_ellipses="true"
+   type="string"
+   follows="left|top|right"
+   layout="topleft"
+   left="10"
+   name="status_text"
+   right="-5"
+   top_pad="0">
+샘플을 녹음한 다음 음성을 클릭하여 소리가 어떻게 들리는지 확인합니다.
+  </text>
+  <button
+   follows="left|top"
+   height="23"
+   label="녹화"
+   layout="topleft"
+   left="10"
+   name="record_btn"
+   tool_tip="Record a sample of your voice."
+   top_pad="5"
+   width="100">
+    <button.commit_callback
+     function="VoiceEffect.Record" />
+  </button>
+  <button
+   follows="left|top"
+   height="23"
+   label="정지"
+   layout="topleft"
+   left_delta="0"
+   name="record_stop_btn"
+   top_delta="0"
+   width="100">
+    <button.commit_callback
+     function="VoiceEffect.Stop" />
+  </button>
+  <text
+   height="23"
+   halign="right"
+   use_ellipses="true"
+   type="string"
+   follows="left|top|right"
+   layout="topleft"
+   left_pad="10"
+   top_delta="10"
+   name="voice_morphing_link"
+   right="-10">
+    [[URL] 지금 구독]
+  </text>
+  <scroll_list
+   bottom="-10"
+   draw_heading="true"
+   follows="all"
+   layout="topleft"
+   left="10"
+   multi_select="false"
+   name="voice_effect_list"
+   right="-10"
+   tool_tip="음성 샘플을 녹음한 다음 효과를 클릭하여 미리 보기."
+   top="95">
+    <scroll_list.columns
+     label="음성 이름"
+     name="name"
+     relative_width="0.60" />
+    <scroll_list.columns
+     dynamic_width="true"
+     label="만료됨"
+     name="expires"
+     relative_width="0.30" />
+  </scroll_list>
+
+</floater>

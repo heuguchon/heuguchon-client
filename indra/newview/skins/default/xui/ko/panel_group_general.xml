@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ label="일반"
+ width="470"
+ height="410"
+ class="panel_group_general"
+ name="general_tab"
+ layout="topleft"
+ follows="all">
+    <panel.string
+     name="help_text">
+        일반 탭에는 이 그룹에 대한 일반 정보, 구성원 목록, 일반 그룹 환경설정 및 구성원 옵션이 있습니다.
+
+추가 도움말을 보려면 마우스를 옵션 위에 놓으십시오.
+    </panel.string>
+    <panel.string
+     name="group_info_unchanged">
+        일반 그룹 정보가 변경되었습니다.
+    </panel.string>
+    <panel.string
+     name="incomplete_member_data_str">
+        구성원 데이터를 검색하는 중
+    </panel.string>
+
+   <panel
+    name="group_general_panel"
+    left="3"
+    top="-408"
+    height="408"
+    width="467"
+    follows="all"
+    layout="topleft">
+
+    <text
+     name="group_key_label"
+     left="0"
+     top="2"
+     width="68"
+     height="20"
+     type="string"
+     follows="top|left"
+     layout="topleft">
+    그룹 키:
+    </text>
+
+    <view_border
+      left_pad="0"
+      top="0"
+      width="282"
+      height="18"
+      bevel_style="in"
+      follows="left|top|right"
+      name="info_border" />
+     <text_editor
+      name="group_key"
+      label="그룹 키:"
+      left_delta="0"
+      top_delta="0"
+      width="282"
+      height="20"
+      h_pad="4"
+      v_pad="3"
+      bg_visible="false"
+      enabled="false"
+      allow_scroll="false"
+      initial_value="(loading...)"
+      follows="top|left|right"
+      layout="topleft" />
+
+
+    <button
+     name="copy_uri"
+     left_pad="4"
+     right="-1"
+     height="20"
+     label="URI 복사"
+     follows="top|right" />
+
+    <text
+     name="prepend_founded_by"
+     left="0"
+     top_pad="4"
+     width="68"
+     height="20"
+     type="string"
+     follows="top|left"
+     layout="topleft">
+    설립자:
+    </text>
+
+    <text
+     icon_positioning="left"
+     name="founder_name"
+     left_pad="4"
+     height="20"
+     width="278"
+     initial_value="(loading...)"
+     type="string"
+     use_ellipses="true"
+     follows="top|left|right"
+     layout="topleft" />
+
+    <button
+     name="copy_name"
+     left_pad="4"
+     right="-1"
+     height="20"
+     label="이름 복사"
+     follows="top|right" />
+	 
+    <texture_picker
+     name="insignia"
+     tool_tip="사진을 선택하려면 클릭하십시오."
+     height="110"
+     left="0"
+     top_pad="4"
+     width="100"
+     default_image_name="Generic_Group_Large"
+     label=""
+     no_commit_on_selection="true"
+     follows="left|top"
+     layout="topleft" />
+
+    <text_editor
+     bg_readonly_color="Transparent"
+     name="charter"
+     left_pad="4"
+     top_pad="-109"
+     right="-1"
+     height="86"
+     type="string"
+     follows="left|top|right"
+     max_length="511"
+     word_wrap="true"
+     layout="topleft">
+    그룹 헌장
+    </text_editor>
+
+    <text
+     name="join_cost_text"
+     width="246"
+     top_pad="8"
+     height="20"
+     halign="right"
+     type="string"
+     visible="true"
+     follows="top|right"
+     layout="topleft">
+    가입 (L$00000)
+    </text>
+
+    <button
+     name="btn_join"
+     top_delta="-4"
+     left_pad="4"
+     right="-1"
+     height="20"
+     label="지금 가입!"
+     visible="true"
+     follows="top|right"
+     layout="topleft" />
+
+    <name_list
+     left="0"
+     top_pad="4"
+     height="115"
+     column_padding="0"
+     draw_heading="true"
+     heading_height="23"
+     name="visible_members"
+     multi_select="true"
+     short_names="false"
+     follows="all"
+     layout="topleft">
+        <name_list.columns
+         label="회원"
+         name="name"
+         relative_width="0.4" />
+        <name_list.columns
+         label="제목"
+         name="title"
+         relative_width="0.4" />
+        <name_list.columns
+         label="상태"
+         name="status"
+         relative_width="0.2" />
+    </name_list>
+
+    <layout_stack
+     name="group_preferences_layout"
+     top_pad="4"
+     right="-1"
+     height="131"
+     orientation="horizontal"
+     follows="bottom|left|right"
+     layout="topleft">
+
+    <layout_panel
+     width="228"
+     name="user_preferences_container"
+     bevel_style="in"
+     border="true"
+     user_resize="true"
+     follows="top|left|right"
+     layout="topleft">
+
+        <text
+         left="0"
+         top_pad="4"
+         width="300"
+         type="string"
+         height="16"
+         text_color="EmphasisColor"
+         name="my_group_settngs_label"
+         follows="left|top|right"
+         layout="topleft">
+        내 그룹 설정
+        </text>
+
+        <check_box
+         height="16"
+         label="내 프로필에 표시"
+         layout="topleft"
+         left="0"
+         name="list_groups_in_profile"
+         tool_tip="프로필에 이 그룹을 표시할지 여부를 설정합니다"
+         top_pad="4"
+         width="295" />
+
+        <check_box
+         height="16"
+         font="SansSerifSmall"
+         label="그룹 통지 수신"
+         layout="topleft"
+         left="0"
+         name="receive_notices"
+         tool_tip="이 그룹에서 통지를 수신할지 여부를 설정합니다. 이 그룹이 스팸 메일을 보내는 경우 이 상자의 선택을 취소합니다."
+         top_pad="4"
+         width="300" />
+
+        <!-- <exodus> -->
+        <check_box
+         height="16"
+         font="SansSerifSmall"
+         label="그룹 인스턴트 메시지 수신"
+         layout="topleft"
+         left="0"
+         name="receive_chat"
+         tool_tip="이 그룹에 대한 그룹 채팅 참여 여부를 설정합니다."
+         top_pad="5"
+         width="300" />
+        <!-- </exodus> -->
+
+         <text
+         name="active_title_label"
+         left="0"
+         top_pad="9"
+         width="200"
+         height="12"
+         type="string"
+         follows="left|top|right"
+         layout="topleft">
+            현재 제목:
+        </text>
+
+        <combo_box
+         follows="left|top|right"
+         height="23"
+         layout="topleft"
+         left="0"
+         right="-5"
+         name="active_title"
+         tool_tip="이 그룹이 활성 상태일 때 아바타의 이름 태그에 나타나는 제목을 설정합니다."
+         top_pad="2" />
+
+    </layout_panel>
+
+    <layout_panel
+     name="preferences_divider"
+     width="2"
+     border="false"
+     auto_resize="false"
+     user_resize="false"
+     follows="top|left|right"
+     layout="topleft" />
+
+    <layout_panel
+     name="group_preferences_container"
+     width="228"
+     bevel_style="in"
+     border="true"
+     user_resize="true"
+     follows="top|left|right"
+     layout="topleft">
+
+
+        <text
+         follows="left|top|right"
+         left="4"
+         height="16"
+         type="string"
+         text_color="EmphasisColor"
+         name="group_settngs_label"
+         right="-1"
+         layout="topleft">
+         그룹 설정
+        </text>
+
+        <check_box
+         name="show_in_group_list"
+         tool_tip="검색 결과에서 이 그룹을 볼 수 있도록 허용"
+         label="검색에서 표시"
+         left="0"
+         top_pad="4"
+         width="10"
+         height="16"
+         initial_value="true"
+         layout="topleft" />
+
+        <check_box
+         name="open_enrollement"
+         label="누구나 가입 가능"
+         tool_tip="이 그룹이 초대되지 않고 새 구성원을 가입시킬지 여부를 설정합니다."
+         top_pad="4"
+         left="0"
+         height="16"
+         width="10"
+         layout="topleft" />
+        <check_box
+         name="check_enrollment_fee"
+         tool_tip="그룹에 가입하는 데 등록 비용이 필요한지 여부를 설정합니다"
+         label="가입비"
+         top_pad="4"
+         width="10"
+         height="16"
+         layout="topleft" />
+        <spinner
+         name="spin_enrollment_fee"
+         tool_tip="가입비가 확인되면 새 회원이 그룹에 가입하려면 이 비용을 지불해야 합니다."
+         top_pad="0"
+         left_pad="14"
+         width="100"
+         height="16"
+         label="L$"
+         label_width="20"
+         decimal_digits="0"
+         increment="1"
+         max_val="99999"
+         follows="top|left"
+         layout="topleft" />
+        <combo_box
+         name="group_mature_check"
+         tool_tip="성숙도 등급은 그룹에 허용되는 내용 및 동작 유형을 지정합니다"
+         left="0"
+         top_pad="8"
+         right="-1"
+         height="23"
+         follows="left|right|top"
+         layout="topleft">
+            <combo_item name="select_mature" value="Select">
+            - 성숙 등급 선택 -
+            </combo_item>
+            <combo_box.item
+             label="중간 내용"
+             name="mature"
+             value="Mature" />
+            <combo_box.item
+             label="일반 내용"
+             name="pg"
+             value="Not Mature" />
+        </combo_box>
+    </layout_panel>
+    </layout_stack>
+    </panel>
+</panel>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ can_resize="true"
+ height="500"
+ layout="topleft"
+ name="floater_test_layout"
+ help_topic="floater_test_layout"
+ translate="false"
+ width="500">
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left="10"
+     top="84"
+     width="200">
+        하단 400 좌측 10
+    </text>
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left_delta="0"
+     top_pad="4"
+     width="200">
+        하단 델타 -20
+    </text>
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left_delta="0"
+     top_pad="64"
+     width="200">
+        하단 300 좌측 10, 델타_하단 이어야합니다
+    </text>
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left_pad="40"
+     top_delta="0"
+     width="200">
+        하단 300 좌측 250, 델타_좌측 이어야합니다
+    </text>
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left="10"
+     top="204"
+     width="200">
+        하단 280 좌측 10, 절대 위치 이어야합니다
+    </text>
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left_pad="40"
+     top_delta="-2"
+     width="200">
+        하단 282 좌측 250, 델타_좌측과 델타_하단 이어야합니다
+    </text>
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left="10"
+     top="234"
+     width="200">
+        하단 250 좌측 10, 절대 위치 이어야합니다
+    </text>
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left="250"
+     top="244"
+     width="200">
+        하단 240 좌측 250, 절대 위치 이어야합니다
+    </text>
+</floater>

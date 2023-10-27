@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ height="170"
+ layout="topleft"
+ name="floater_lagmeter"
+ help_topic="floater_lagmeter"
+ save_rect="true"
+ title="지연계"
+ width="350">
+    <floater.string
+     name="max_title_msg">
+        지연계
+    </floater.string>
+    <floater.string
+     name="max_width_px">
+        360
+    </floater.string>
+    <floater.string
+     name="min_title_msg">
+        지연
+    </floater.string>
+    <floater.string
+     name="min_width_px">
+        90
+    </floater.string>
+    <floater.string
+     name="client_text_msg">
+        클라이언트
+    </floater.string>
+    <floater.string
+     name="client_frame_rate_critical_fps">
+        10
+    </floater.string>
+    <floater.string
+     name="client_frame_rate_warning_fps">
+        15
+    </floater.string>
+    <floater.string
+     name="client_frame_time_window_bg_msg">
+        일반 창, 배경 창
+    </floater.string>
+    <floater.string
+     name="client_frame_time_critical_msg">
+        클라이언트 프레임률이 [CLIENT_FRAME_RATE_CRITICAL]보다 낮습니다.
+            </floater.string>
+    <floater.string
+     name="client_frame_time_warning_msg">
+        [CLIENT_FRAME_RATE_CRITICAL]과 [CLIENT_FRAME_RATE_WARNING] 사이의 클라이언트 프레임 속도
+            </floater.string>
+    <floater.string
+     name="client_frame_time_normal_msg">
+        일반
+    </floater.string>
+    <floater.string
+     name="client_draw_distance_cause_msg">
+        가능한 원인: 그리기 거리가 너무 높게 설정됨
+    </floater.string>
+    <floater.string
+     name="client_texture_loading_cause_msg">
+        가능한 원인: 이미지 로딩
+    </floater.string>
+    <floater.string
+     name="client_texture_memory_cause_msg">
+        가능한 원인: 메모리에 이미지가 너무 많습니다.
+    </floater.string>
+    <floater.string
+     name="client_complex_objects_cause_msg">
+        가능한 원인: 씬(scene)에 복잡한 객체가 너무 많습니다.
+    </floater.string>
+    <floater.string
+     name="network_text_msg">
+        네트워크
+    </floater.string>
+    <floater.string
+     name="network_packet_loss_critical_pct">
+        10
+    </floater.string>
+    <floater.string
+     name="network_packet_loss_warning_pct">
+        5
+    </floater.string>
+    <floater.string
+     name="network_packet_loss_critical_msg">
+        패킷의 [NETWORK_PACKET_LOSS_CRITICAL]%에서 연결이 끊기고 있습니다.
+    </floater.string>
+    <floater.string
+     name="network_packet_loss_warning_msg">
+        연결이 패킷의 [NETWORK_PACKET_LOSS_WARNING]%-[NETWORK_PACKET_LOSS_CRITICAL]%를 손실하고 있습니다.
+    </floater.string>
+    <floater.string
+     name="network_performance_normal_msg">
+        일반
+    </floater.string>
+    <floater.string
+     name="network_ping_critical_ms">
+        600
+    </floater.string>
+    <floater.string
+     name="network_ping_warning_ms">
+        300
+    </floater.string>
+    <floater.string
+     name="network_ping_critical_msg">
+        연결 ping 시간이 [NETWORK_PING_CRITICAL]ms를 초과합니다.
+    </floater.string>
+    <floater.string
+     name="network_ping_warning_msg">
+        연결 ping 시간은 [NETWORK_PING_WARNING]-[NETWORK_PING_CRITICAL]ms입니다.
+            </floater.string>
+    <floater.string
+     name="network_packet_loss_cause_msg">
+        연결 불량 또는 &apos;대역폭&apos;선호도가 너무 높음.
+    </floater.string>
+    <floater.string
+     name="network_ping_cause_msg">
+        연결 불량 또는 파일 공유 앱 가능성.
+    </floater.string>
+    <floater.string
+     name="server_text_msg">
+        서버
+    </floater.string>
+    <floater.string
+     name="server_frame_rate_critical_fps">
+        20
+    </floater.string>
+    <floater.string
+     name="server_frame_rate_warning_fps">
+        30
+    </floater.string>
+    <floater.string
+     name="server_single_process_max_time_ms">
+        20
+    </floater.string>
+    <floater.string
+     name="server_frame_time_critical_msg">
+        시뮬레이터 프레임률이 [SERVER_FRAME_RATE_CRITICAL]보다 낮습니다.
+            </floater.string>
+    <floater.string
+     name="server_frame_time_warning_msg">
+        [SERVER_FRAME_RATE_CRITICAL]과 [SERVER_FRAME_RATE_WARNING] 사이의 시뮬레이터 프레임률
+    </floater.string>
+    <floater.string
+     name="server_frame_time_normal_msg">
+        일반
+    </floater.string>
+    <floater.string
+     name="server_physics_cause_msg">
+        가능한 원인: 물리적 개체가 너무 많습니다.
+    </floater.string>
+    <floater.string
+     name="server_scripts_cause_msg">
+        가능한 원인: 스크립팅된 개체가 너무 많습니다.
+    </floater.string>
+    <floater.string
+     name="server_net_cause_msg">
+        가능한 원인: 네트워크 트래픽이 너무 많습니다.
+    </floater.string>
+    <floater.string
+     name="server_agent_cause_msg">
+        가능한 원인: 지역에 움직이는 사람이 너무 많습니다.
+    </floater.string>
+    <floater.string
+     name="server_images_cause_msg">
+        가능한 원인: 이미지 계산이 너무 많습니다
+    </floater.string>
+    <floater.string
+     name="server_generic_cause_msg">
+        가능한 원인: 시뮬레이터 부하가 너무 무겁습니다.
+    </floater.string>
+    <floater.string
+     name="smaller_label">
+        &gt;&gt;
+    </floater.string>
+    <floater.string
+     name="bigger_label">
+        &lt;&lt;
+    </floater.string>
+    <button
+     follows="top|left"
+     height="16"
+     image_selected="LagStatus_Good"
+     image_unselected="LagStatus_Good"
+     layout="topleft"
+     left="8"
+     name="client_lagmeter"
+     tab_stop="false"
+     tool_tip="클라이언트 지연 상태"
+     top="22"
+     width="16" />
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     font="SansSerif"
+     height="16"
+     layout="topleft"
+     left_pad="3"
+     name="client"
+     top_delta="2"
+     width="128">
+        클라이언트
+    </text>
+    <text
+     invisiblity_control="LagMeterShrunk"
+     type="string"
+     length="1"
+     bottom="40"
+     follows="left|top"
+     font="SansSerif"
+     height="16"
+     layout="topleft"
+     left="110"
+     name="client_text"
+     right="-10">
+        일반
+    </text>
+    <text
+     invisiblity_control="LagMeterShrunk"
+     bottom="56"
+     follows="left|top"
+     height="16"
+     layout="topleft"
+     left="40"
+     name="client_lag_cause"
+     right="-32" />
+    <button
+     follows="top|left"
+     height="16"
+     image_selected="LagStatus_Warning"
+     image_unselected="LagStatus_Warning"
+     layout="topleft"
+     left="8"
+     name="network_lagmeter"
+     tab_stop="false"
+     tool_tip="네트워크 지연 상태"
+     top="62"
+     width="16" />
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     font="SansSerif"
+     height="16"
+     layout="topleft"
+     left_pad="3"
+     name="network"
+     top_delta="2"
+     width="128">
+        네트워크
+    </text>
+    <text
+     invisiblity_control="LagMeterShrunk"
+     type="string"
+     length="1"
+     bottom="80"
+     follows="left|top"
+     font="SansSerif"
+     height="16"
+     layout="topleft"
+     left="110"
+     name="network_text"
+     right="-10">
+        일반
+    </text>
+    <text
+     invisiblity_control="LagMeterShrunk"
+     bottom="96"
+     follows="left|top"
+     height="16"
+     layout="topleft"
+     left="40"
+     name="network_lag_cause"
+     right="-32" />
+    <button
+     follows="top|left"
+     height="16"
+     image_selected="LagStatus_Critical"
+     image_unselected="LagStatus_Critical"
+     layout="topleft"
+     left="8"
+     name="server_lagmeter"
+     tab_stop="false"
+     tool_tip="서버 지연 상태"
+     top="102"
+     width="16" />
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     font="SansSerif"
+     height="16"
+     layout="topleft"
+     left_pad="3"
+     name="server"
+     top_delta="2"
+     width="60">
+        서버
+    </text>
+    <text
+     invisiblity_control="LagMeterShrunk"
+     type="string"
+     length="1"
+     bottom="120"
+     follows="left|top"
+     font="SansSerif"
+     height="16"
+     layout="topleft"
+     left="110"
+     name="server_text"
+     right="-10">
+        일반
+    </text>
+    <text
+     invisiblity_control="LagMeterShrunk"
+     bottom="136"
+     follows="left|top"
+     height="16"
+     layout="topleft"
+     left="40"
+     name="server_lag_cause"
+     right="-32" />
+    <button
+     follows="left|top"
+     height="20"
+     label="&gt;&gt;"
+     layout="topleft"
+     left="10"
+     name="minimize"
+	 tool_tip="Toggle floater size"
+     top_delta="24"
+     width="40">
+        <button.commit_callback
+         function="LagMeter.ClickShrink" />
+    </button>
+</floater>

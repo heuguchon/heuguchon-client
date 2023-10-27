@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ can_close="false"
+ can_minimize="false"
+ can_tear_off="false"
+ height="125"
+ layout="topleft"
+ name="incoming call"
+ help_topic="incoming_call"
+ sound_flags="0"
+ width="550">
+    <floater.string
+     name="lifetime">
+        5
+    </floater.string>
+    <floater.string
+     name="localchat">
+        근처 음성 채팅
+    </floater.string>
+    <floater.string
+     name="anonymous">
+        익명
+    </floater.string>
+    <floater.string
+     name="VoiceInviteP2P">
+        전화 수신중.
+    </floater.string>
+    <floater.string
+     name="VoiceInviteAdHoc">
+        전화 회의 대화로 음성 채팅 통화에 참여했습니다.
+    </floater.string>
+    <floater.string
+     name="VoiceInviteGroup">
+      방금 '[GROUP]' 음성 채널에 가입했습니다.
+    </floater.string>
+    <floater.string
+     name="VoiceInviteQuestionGroup">
+      [CURRENT_CHAT]을(를) 종료하고 '[GROUP]'을(를) 사용하여 통화에 참여하시겠습니까?
+          </floater.string>
+    <floater.string
+     name="VoiceInviteQuestionDefault">
+      [CURRENT_CHAT]을(를) 종료하고 이 음성 채팅에 참여하시겠습니까?
+          </floater.string>
+    <avatar_icon
+     enabled="false"
+     follows="left|top"
+     height="36"
+     image_name="icon_avatar_online.tga"
+     layout="topleft"
+     left_delta="19"
+     top="20"
+     width="36" />
+    <group_icon
+     enabled="false"
+     follows="left|top"
+     height="36"
+     layout="topleft"
+     top="20"
+     width="36" />
+    <text
+     clip_partial="true"
+     font="SansSerifLarge"
+     height="37"
+     layout="topleft"
+     left="77"
+     name="caller name"
+     top="20"
+     use_ellipses="true"
+     width="475"
+     word_wrap="true" />
+     <button
+     height="24"
+     label="정답"
+     label_selected="Answer"
+     layout="topleft"
+     left="70"
+     name="Accept"
+     top_pad="5"
+     width="120" />
+    <button
+     height="24"
+     label="무시"
+     label_selected="Ignore"
+     layout="topleft"
+     name="Reject"
+     left_pad="10"
+     width="120" />
+    <button
+     height="24"
+     label="대신 IM 열기"
+     layout="topleft"
+     name="Start IM"
+     left_pad="10"
+     width="120" />
+    <text
+     clip_partial="true"
+     font="SansSerif"
+     height="30"
+     layout="topleft"
+     left="77"
+     name="question"
+     top_pad="5"
+     use_ellipses="true"
+     width="475"
+     word_wrap="true">
+     응답하면 현재 음성 대화에서 연결이 끊어집니다.
+    </text>
+</floater>

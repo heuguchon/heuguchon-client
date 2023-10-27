@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ positioning="centered"
+ can_resize="false"
+ height="325"
+ layout="topleft"
+ name="outfit_photo_preview"
+ help_topic="preview_texture"
+ width="410">
+   <floater.string
+     name="Title">
+        텍스쳐: [NAME]
+    </floater.string>
+    <floater.string
+     name="exceed_limits">
+        최대 장비 사진 크기는 [MAX_WIDTH]*[MAX_HEIGHT]입니다. 다른 텍스쳐를 선택하십시오.
+    </floater.string>
+    <floater.string
+     name="photo_confirmation">
+         [OUTFIT]의 의상 사진으로 설정하시겠습니까?
+    </floater.string>
+    <text
+     type="string"
+     halign="right"
+     length="1"
+     follows="right|bottom"
+     height="16"
+     layout="topleft"
+     left="110"
+     name="dimensions"
+     top="255"
+     width="200">
+        [WIDTH]px x [HEIGHT]px
+    </text>
+    <text
+     type="string"
+     follows="left|top"
+     height="16"
+     layout="topleft"
+     name="notification"
+     left="25"
+     halign="center"
+     top_pad="5"
+     width="360">
+    </text>
+    <button
+     follows="right|bottom"
+     height="22"
+     label="OK"
+     layout="topleft"
+     name="ok_btn"
+     top_pad="5"
+     right="-115"
+     top_delta="0"
+     width="90" />
+    <button
+     follows="right|bottom"
+     height="22"
+     label="취소"
+     layout="topleft"
+     name="cancel_btn"
+     right="-20"
+     top_delta="0"
+     width="90" />
+</floater>

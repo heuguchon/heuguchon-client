@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+    positioning="cascading"
+    can_tear_off="false"
+    height="498"
+    layout="topleft"
+    name="floater_pathfinding_console"
+    help_topic="floater_pathfinding_console"
+    reuse_instance="true"
+    save_rect="true"
+    single_instance="true"
+    title="경로 찾기 보기/테스트"
+    width="240">
+  <floater.string name="no_havok">경로 찾기를 위한 나브메쉬</floater.string>
+	
+  <floater.string name="navmesh_viewer_status_unknown"></floater.string>
+  <floater.string name="navmesh_viewer_status_library_not_implemented">경로 지정 라이브러리 구현을 찾을 수 없습니다.</floater.string>
+  <floater.string name="navmesh_viewer_status_region_not_enabled">이 영역은 경로 찾기에 사용할 수 없습니다.</floater.string>
+  <floater.string name="navmesh_viewer_status_region_loading">영역 로드 완료 대기 중.</floater.string>
+  <floater.string name="navmesh_viewer_status_checking_version">나브메쉬의 상태 확인.</floater.string>
+  <floater.string name="navmesh_viewer_status_downloading">나브메쉬 다운로드 중.</floater.string>
+  <floater.string name="navmesh_viewer_status_updating">서버에서 나브메쉬가 변경되었습니다. 최신 나브메쉬 다운로드.</floater.string>
+  <floater.string name="navmesh_viewer_status_has_navmesh">최신 나브메쉬가 다운로드되었습니다..</floater.string>
+  <floater.string name="navmesh_viewer_status_error">나브메쉬를 성공적으로 다운로드할 수 없음.</floater.string>
+  <floater.string name="navmesh_simulator_status_unknown"></floater.string>
+  <floater.string name="navmesh_simulator_status_pending">나브메쉬에 보류 중인 변경 사항이 있음.</floater.string>
+  <floater.string name="navmesh_simulator_status_building">나브메쉬의 건물.</floater.string>
+  <floater.string name="navmesh_simulator_status_some_pending">일부 나브메쉬 영역에 보류 중인 변경 사항이 있습니다.</floater.string>
+  <floater.string name="navmesh_simulator_status_some_building">일부 나브메쉬 지역이 건설 중입니다.</floater.string>
+  <floater.string name="navmesh_simulator_status_pending_and_building">일부 나브메쉬 지역은 보류 중인 변경 사항이 있으며 다른 지역은 구축 중입니다.</floater.string>
+  <floater.string name="navmesh_simulator_status_complete">나브메쉬는 최신 버전입니다.</floater.string>
+  <floater.string name="pathing_unknown"></floater.string>
+  <floater.string name="pathing_library_not_implemented">경로 지정 라이브러리 구현을 찾을 수 없습니다.</floater.string>
+  <floater.string name="pathing_region_not_enabled">이 영역은 경로 찾기에 사용할 수 없습니다.</floater.string>
+  <floater.string name="pathing_choose_start_and_end_points">시작점과 끝점을 선택하십시오.</floater.string>
+  <floater.string name="pathing_choose_start_point">시작 지점을 선택하십시오.</floater.string>
+  <floater.string name="pathing_choose_end_point">끝점을 선택하십시오.</floater.string>
+  <floater.string name="pathing_path_valid">경로는 주황색으로 표시됩니다.</floater.string>
+  <floater.string name="pathing_path_invalid">선택한 점 사이의 경로를 찾을 수 없습니다.</floater.string>
+  <floater.string name="pathing_error">경로 생성 중 오류가 발생했습니다.</floater.string>
+  <panel
+      name="pathfinding_console_main"
+      border="false"
+      bevel_style="none"
+      follows="left|top"
+      layout="topleft"
+      left="12"
+      top_pad="10"
+      height="61"
+      width="214">
+    <text
+        name="viewer_status_label"
+        height="13"
+        word_wrap="true"
+        use_ellipses="false"
+        type="string"
+        text_color="LabelTextColor"
+        length="1"
+        layout="topleft"
+        left="0"
+        top_pad="0"
+        width="214">
+      뷰어 상태
+    </text>
+    <text
+        height="40"
+        word_wrap="true"
+        use_ellipses="false"
+        type="string"
+        text_color="PathfindingGoodColor"
+        length="1"
+        follows="left|top"
+        layout="topleft"
+        left="0"
+        name="pathfinding_viewer_status"
+        top_pad="8"
+        width="214">
+    </text>
+  </panel>
+  <panel
+      name="pathfinding_console_simulator"
+      border="false"
+      bevel_style="none"
+      follows="left|top"
+      layout="topleft"
+      left="12"
+      height="66"
+      width="214">
+    <text
+        name="simulator_status_label"
+        height="13"
+        word_wrap="true"
+        use_ellipses="false"
+        type="string"
+        text_color="LabelTextColor"
+        length="1"
+        layout="topleft"
+        left="0"
+        top_pad="5"
+        width="214">
+      시뮬레이터 상태
+    </text>
+    <text
+        height="40"
+        word_wrap="true"
+        use_ellipses="false"
+        type="string"
+        text_color="PathfindingGoodColor"
+        length="1"
+        follows="left|top"
+        layout="topleft"
+        left="0"
+        name="pathfinding_simulator_status"
+        top_pad="8"
+        width="214">
+    </text>
+  </panel>
+		 
+  <view_border
+      bevel_style="none"
+      follows="top|left"
+      layout="topleft"
+      left="12"
+      top="182"
+      height="305"
+      width="213"
+      visible="true" />
+  <tab_container
+      follows="left|top"
+      layout="topleft"
+      tab_position="top"
+      name="view_test_tab_container"
+      left="12"
+      top="161"
+      height="328"
+      width="214">
+    <panel
+        border="false"
+        bevel_style="none"
+        follows="left|top"
+        layout="topleft"
+        name="view_panel"
+        label="보기">
+      <text
+          height="13"
+          word_wrap="true"
+          use_ellipses="false"
+          type="string"
+          text_color="LabelTextColor"
+          text_readonly_color="LabelDisabledColor"
+          name="show_label"
+          length="1"
+          follows="left|top"
+          layout="topleft"
+          top_pad="20"
+          left="12"
+          width="200">
+        표시:
+      </text>
+      <check_box
+          height="19"
+          label="월드"
+          layout="topleft"
+          name="show_world"
+          top_pad="4"
+          width="90" />
+      <check_box
+          height="19"
+          label="이동만 가능"
+          layout="topleft"
+          left="32"
+          name="show_world_movables_only"
+          top_pad="4"
+          width="90" />
+      <check_box
+          height="19"
+          label="나브메쉬"
+          left="12"
+          layout="topleft"
+          name="show_navmesh"
+          top_pad="7"
+          width="90" />
+      <text
+          height="13"
+          word_wrap="true"
+          use_ellipses="false"
+          type="string"
+          text_color="LabelTextColor"
+          text_readonly_color="LabelDisabledColor"
+          name="show_walkability_label"
+          length="1"
+          follows="left|top"
+          layout="topleft"
+          left="32"
+          width="180">
+        보행성 지도 표시:
+      </text>
+      <combo_box
+          height="19"
+          layout="topleft"
+          left="32"
+          name="show_heatmap_mode"
+          top_pad="8"
+          width="156">
+        <combo_box.item
+            label="표시하지 않음"
+            name="show_heatmap_mode_none"
+            value="0" />
+        <combo_box.item
+            label="문자 유형 A"
+            name="show_heatmap_mode_a"
+            value="1" />
+        <combo_box.item
+            label="문자 유형 B"
+            name="show_heatmap_mode_b"
+            value="2" />
+        <combo_box.item
+            label="문자 유형 C"
+            name="show_heatmap_mode_c"
+            value="3" />
+        <combo_box.item
+            label="문자 유형 D"
+            name="show_heatmap_mode_d"
+            value="4" />
+      </combo_box>
+      <check_box
+          height="19"
+          label="걸어서 갈 수 있는"
+          layout="topleft"
+          left="12"
+          name="show_walkables"
+          top_pad="10"
+          width="90" />
+      <check_box
+          height="19"
+          label="재료량"
+          layout="topleft"
+          name="show_material_volumes"
+          top_pad="4"
+          width="90" />
+      <check_box
+          height="19"
+          label="정적 장애물"
+          layout="topleft"
+          name="show_static_obstacles"
+          top_pad="4"
+          width="90" />
+      <check_box
+          height="19"
+          label="제외 볼륨"
+          layout="topleft"
+          name="show_exclusion_volumes"
+          top_pad="4"
+          width="90" />
+      <check_box
+          height="19"
+          label="수상기"
+          layout="topleft"
+          name="show_water_plane"
+          top_pad="4"
+          width="90" />
+      <check_box
+          height="19"
+          label="X선 비전 포함"
+          layout="topleft"
+          name="show_xray"
+          top_pad="4"
+          width="90" />
+    </panel>
+    <panel
+        border="false"
+        bevel_style="none"
+        follows="left|top"
+        layout="topleft"
+        name="test_panel"
+        label="시험경로">
+      <text
+          height="14"
+          word_wrap="true"
+          use_ellipses="false"
+          type="string"
+          text_color="LabelTextColor"
+          text_readonly_color="LabelDisabledColor"
+          name="ctrl_click_label"
+          length="1"
+          left="12"
+          follows="left|top"
+          layout="topleft"
+          top_pad="20"
+          width="202">
+        Ctrl 키를 누른 상태에서 클릭하여 시작 지점 선택.
+      </text>
+      <text
+          height="14"
+          word_wrap="true"
+          use_ellipses="false"
+          type="string"
+          text_color="LabelTextColor"
+          text_readonly_color="LabelDisabledColor"
+          name="shift_click_label"
+          length="1"
+          follows="left|top"
+          layout="topleft"
+          top_pad="5"
+          width="202">
+        Shift 클릭으로 끝점 선택.
+      </text>
+      <view_border
+          bevel_style="none"
+          follows="top|left"
+          layout="topleft"
+          height="0"
+          width="185"
+          top_pad="13"
+          visible="true" />
+      <text
+          height="14"
+          word_wrap="true"
+          use_ellipses="false"
+          type="string"
+          text_color="LabelTextColor"
+          text_readonly_color="LabelDisabledColor"
+          name="character_width_label"
+          length="1"
+          follows="left|top"
+          layout="topleft"
+          top_pad="14"
+          width="202">
+        문자 너비
+      </text>
+      <slider
+          decimal_digits="1"
+          height="14"
+          increment="0.1"
+          layout="topleft"
+          follows="left|top"
+          max_val="2"
+          min_val="0.2"
+          name="character_width"
+          top_pad="5"
+          value="1"
+          width="145" />
+      <text
+          height="14"
+          word_wrap="false"
+          use_ellipses="false"
+          type="string"
+          text_color="LabelTextColor"
+          text_readonly_color="LabelDisabledColor"
+          name="character_width_unit_label"
+          length="1"
+          follows="left|top"
+          layout="topleft"
+          top_pad="-14"
+          left_pad="0"
+          width="20">
+        m
+      </text>
+      <text
+          height="14"
+          word_wrap="true"
+          use_ellipses="false"
+          type="string"
+          text_color="LabelTextColor"
+          text_readonly_color="LabelDisabledColor"
+          name="character_type_label"
+          length="1"
+          follows="left|top"
+          layout="topleft"
+          left_pad="-165"
+          top_pad="13"
+          width="202">
+        문자 유형
+      </text>
+      <combo_box
+          follows="top|left"
+          layout="topleft"
+          height="19"
+          width="156"
+          top_pad="5"
+          name="path_character_type">
+        <combo_box.item
+            label="없음"
+            name="path_character_type_none"
+            value="0" />
+        <combo_box.item
+            label="A"
+            name="path_character_type_a"
+            value="1" />
+        <combo_box.item
+            label="B"
+            name="path_character_type_b"
+            value="2" />
+        <combo_box.item
+            label="C"
+            name="path_character_type_c"
+            value="3" />
+        <combo_box.item
+            label="D"
+            name="path_character_type_d"
+            value="4" />
+      </combo_box>
+      <text
+          height="14"
+          word_wrap="true"
+          use_ellipses="false"
+          type="string"
+          text_color="PathfindingGoodColor"
+          length="1"
+          follows="left|top"
+          layout="topleft"
+          name="path_test_status"
+          top_pad="11"
+          width="202">
+      </text>
+      <button
+          follows="left|top"
+          height="22"
+          label="경로 지우기"
+          layout="topleft"
+          name="clear_path"
+          top_pad="27"
+          width="96"/>
+    </panel>
+  </tab_container>
+</floater>

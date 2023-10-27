@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ can_resize="true"
+ height="400"
+ layout="topleft"
+ name="floater_test_radiogroup"
+ help_topic="floater_test_radiogroup"
+ translate="false"
+ width="400">
+    <radio_group
+     height="54"
+     layout="topleft"
+     left="10"
+     name="parcel_voice_channel"
+     top="46"
+     width="219">
+        <radio_item
+         height="16"
+         label="에스테이트 공간 채널 사용"
+         layout="topleft"
+         left="3"
+         name="Estate"
+         top="3"
+         width="463" />
+        <radio_item
+         height="16"
+         label="전용 공간 채널 사용"
+         layout="topleft"
+         left_delta="0"
+         name="Private"
+         top_delta="16"
+         width="463" />
+        <radio_item
+         height="16"
+         label="이 구획에서 공간 오디오 사용 안 함"
+         layout="topleft"
+         left_delta="0"
+         name="Disabled"
+         top_delta="16"
+         width="463" />
+    </radio_group>
+    <radio_group
+     height="50"
+     layout="topleft"
+     left_delta="0"
+     name="simple_radio_group"
+     top_pad="50"
+     width="150">
+        <radio_item
+         bottom="20"
+         height="16"
+         label="레이블 속성의 레이블"
+         layout="topleft"
+         name="label_radio_item" />
+        <radio_item
+         bottom_delta="20"
+         height="16"
+         label="텍스트 내용의 레이블"
+         layout="topleft"
+         name="contents_radio_item" />
+    </radio_group>
+    <radio_group
+     draw_border="false"
+     height="50"
+     layout="topleft"
+     left_delta="0"
+     name="no_border_radio_group"
+     top_pad="50"
+     width="150">
+        <radio_item
+         bottom="20"
+         height="16"
+         label="경계선 없음 1"
+         layout="topleft"
+         name="foo_radio_item" />
+        <radio_item
+         bottom_delta="20"
+         height="16"
+         label="경계선 없음 2"
+         layout="topleft"
+         name="bar_item" />
+    </radio_group>
+</floater>

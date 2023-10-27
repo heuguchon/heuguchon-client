@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ can_resize="true"
+ height="500"
+ layout="topleft"
+ name="floater_test_line_editor"
+ help_topic="floater_test_line_editor"
+ translate="false"
+ width="400">
+  <line_editor
+   height="20"
+   layout="topleft"
+   left="10"
+   name="enabled_line_editor"
+   top="40"
+   tool_tip="선 편집기 사용가능"
+   width="200">
+    선 편집기 사용가능
+  </line_editor>
+  <line_editor
+   height="20"
+   layout="topleft"
+   left_delta="0"
+   name="ascii_line_editor"
+   prevalidate_callback="ascii"
+   tool_tip="ascii 선 편집기"
+   top_pad="10" 
+   width="200">
+    ASCII 만 선 편집기입니다
+  </line_editor>
+  <line_editor
+   enabled="false"
+   height="20"
+   layout="topleft"
+   left_delta="0"
+   name="disabled_line_editor"
+   top_pad="10"
+   tool_tip="선 편집기 사용 불가"
+   width="200">
+    선 편집기 사용 불가
+  </line_editor>
+  <line_editor
+   height="20"
+   layout="topleft"
+   left_delta="0"
+   name="enabled_colored_line_editor"
+   text_color="1 0 0 1" 
+   top_pad="10"
+   tool_tip="빨간색 텍스트 줄 편집기 사용"
+   width="200">
+    빨간색 텍스트 줄 편집기 사용
+  </line_editor>
+  <line_editor
+    enabled="false"
+   height="20"
+   layout="topleft"
+   left_delta="0"
+   name="disabled_colored_line_editor"
+    text_readonly_color="1 0 0 1" 
+   top_pad="10"
+   tool_tip="색상 선 편집기 사용 불가"
+   width="200">
+    빨간색 텍스트 줄 편집기 사용 불가
+  </line_editor>
+  <line_editor
+   height="20"
+   left_delta="0"
+   name="left_pad_editor"
+   text_pad_left="25"
+   top_pad="10"
+   width="200">
+    25 px 좌측 텍스트 패딩
+  </line_editor>
+  <line_editor
+   height="20"
+   left_delta="0"
+   name="left_pad_editor"
+   text_pad_right="75"
+   top_pad="10"
+   width="200">
+    75 px 우측 텍스트 패딩
+  </line_editor>
+  <line_editor
+   height="20"
+   left_delta="0"
+   name="left_pad_editor"
+   text_pad_left="25"
+   text_pad_right="75"
+   top_pad="10"
+   width="200">
+    25 px 좌측 75 px 우측 텍스트 패딩
+  </line_editor>
+  <!-- "search_editor" is a specialized line_editor that shows read-only
+       help text until the user clicks in the widget. -->
+  <search_editor
+   follows="left|top|right"
+   height="20"
+   label="Type here to search"
+   layout="topleft"
+   left_delta="0"
+   name="search editor"
+   tool_tip="편집기 검색"
+   top_pad="10"
+   width="200" />
+</floater>

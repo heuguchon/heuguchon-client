@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<context_menu
+ layout="topleft"
+ name="Participant List Context Menu">
+    <menu_item_call
+     label="프로필 보기"
+     layout="topleft"
+     name="View Profile">
+        <on_click
+         function="Avatar.Profile" />
+        <on_enable
+         function="ParticipantList.EnableItem"
+         parameter="can_view_profile" />
+    </menu_item_call>
+    <menu_item_call
+     label="친구 추가"
+     layout="topleft"
+     name="Add Friend">
+        <on_click
+         function="Avatar.AddFriend" />
+        <on_enable
+         function="ParticipantList.EnableItem"
+         parameter="can_add" />
+    </menu_item_call>
+	<menu_item_call
+	 label="집합에 추가"
+	 layout="topleft"
+	 name="Add to Set">
+		<menu_item_call.on_click
+		 function="Avatar.AddToContactSet" />
+	</menu_item_call>
+    <menu_item_call
+     label="IM"
+     layout="topleft"
+     name="IM">
+        <on_click
+         function="Avatar.IM" />
+        <on_enable
+         function="ParticipantList.EnableItem"
+         parameter="can_im" />
+    </menu_item_call>
+    <menu_item_call
+     label="전화"
+     layout="topleft"
+     name="Call">
+        <on_click
+         function="Avatar.Call" />
+        <on_enable
+         function="ParticipantList.EnableItem"
+         parameter="can_call" />
+    </menu_item_call>
+    <menu_item_call
+     label="공유"
+     layout="topleft"
+     name="Share">
+        <on_click
+         function="Avatar.Share" />
+        <on_enable
+         function="ParticipantList.EnableItem"
+         parameter="can_share" />
+    </menu_item_call>
+    <menu_item_call
+     label="결제"
+     layout="topleft"
+     name="Pay">
+        <on_click
+         function="Avatar.Pay" />
+        <on_enable
+         function="ParticipantList.EnableItem"
+         parameter="can_pay" />
+    </menu_item_call>
+    <menu_item_call
+     label="확대"
+     layout="topleft"
+     name="zoom_in">
+      <menu_item_call.on_click
+       function="Avatar.ZoomIn" />
+      <menu_item_call.on_enable
+       function="ParticipantList.EnableItem"
+       parameter="can_zoom_in"/>
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft"
+     name="Sort Separator" />
+    <menu_item_check
+     label="이름으로 정렬"
+     layout="topleft"
+     name="SortByName">
+        <on_check
+         function="ParticipantList.CheckItem"
+         parameter="is_sorted_by_name" />
+        <on_click
+         function="ParticipantList.Sort"
+         parameter="sort_by_name" />
+    </menu_item_check>
+    <menu_item_check
+     label="최근 스피커별로 정렬"
+     layout="topleft"
+     name="SortByRecentSpeakers">
+        <on_check
+         function="ParticipantList.CheckItem"
+         parameter="is_sorted_by_recent_speakers" />
+        <on_click
+         function="ParticipantList.Sort"
+         parameter="sort_by_recent_speakers" />
+    </menu_item_check>
+    <menu_item_separator
+     layout="topleft"
+     name="View Icons Separator" />
+    <menu_item_check
+     label="사람 아이콘 보기"
+     layout="topleft"
+     name="View Icons">
+        <on_check
+         function="CheckControl"
+         parameter="ParticipantListShowIcons" />
+        <on_click
+         function="ToggleControl"
+         parameter="ParticipantListShowIcons" />
+    </menu_item_check>
+    <menu_item_separator
+     layout="topleft" />
+    <menu_item_check
+     label="음성 차단"
+     layout="topleft"
+     name="Block/Unblock">
+        <on_check
+         function="ParticipantList.CheckItem"
+         parameter="is_blocked" />
+        <on_click
+         function="Avatar.BlockUnblock" />
+        <on_enable
+         function="ParticipantList.EnableItem"
+         parameter="can_block" />
+    </menu_item_check>
+    <menu_item_check
+     label="텍스트 차단"
+     layout="topleft"
+     name="MuteText">
+        <on_check
+         function="ParticipantList.CheckItem"
+         parameter="is_muted" />
+        <on_click
+         function="ParticipantList.ToggleMuteText" />
+        <on_enable
+         function="ParticipantList.EnableItem"
+         parameter="can_mute_text" />
+    </menu_item_check>
+    <menu_item_separator
+     layout="topleft" 
+     name="Moderator Options Separator"/>
+    <context_menu
+     label="중재자 옵션"
+     layout="topleft"
+     name="Moderator Options">
+        <menu_item_call
+         label="그룹에서 탈출"
+         layout="topleft"
+         name="EjectSelected">
+            <on_click
+             function="ParticipantList.Eject" />
+            <on_enable
+             function="ParticipantList.EnableItem"
+             parameter="can_eject" />
+        </menu_item_call>
+        <menu_item_separator
+         layout="topleft"
+         name="moderate_voice_separator" />
+        <menu_item_call
+         label="텍스트 채팅 허가"
+         layout="topleft"
+         name="AllowTextChat">
+            <on_click
+             function="ParticipantList.AllowTextChat"
+             parameter="allow" />
+            <on_enable
+             function="ParticipantList.EnableItem"
+             parameter="can_allow_text_chat" />
+        </menu_item_call>
+        <menu_item_call
+         label="텍스트 채팅 금지"
+         layout="topleft"
+         name="ForbidTextChat">
+            <on_click
+             function="ParticipantList.AllowTextChat"
+             parameter="forbid" />
+            <on_enable
+             function="ParticipantList.EnableItem"
+             parameter="can_allow_text_chat" />
+        </menu_item_call>
+        <menu_item_call
+         label="이 참가자 음소거"
+         layout="topleft"
+         name="ModerateVoiceMuteSelected">
+            <on_click
+             function="ParticipantList.ModerateVoice"
+             parameter="selected" />
+            <on_enable
+             function="ParticipantList.EnableItem.Moderate"
+             parameter="can_moderate_voice" />
+        </menu_item_call>
+        <menu_item_call
+         label="이 참가자 음소거 해제"
+         layout="topleft"
+         name="ModerateVoiceUnMuteSelected">
+            <on_click
+             function="ParticipantList.ModerateVoice"
+             parameter="selected" />
+            <on_enable
+             function="ParticipantList.EnableItem.Moderate"
+             parameter="can_moderate_voice" />
+        </menu_item_call>
+        <menu_item_call
+         label="모두 음소거"
+         layout="topleft"
+         name="ModerateVoiceMute">
+            <on_click
+             function="ParticipantList.ModerateVoice"
+             parameter="mute_all" />
+            <on_enable
+             function="ParticipantList.EnableItem.Moderate"
+             parameter="can_moderate_voice" />
+        </menu_item_call>
+        <menu_item_call
+         label="모두 음소거 해제"
+         layout="topleft"
+         name="ModerateVoiceUnmute">
+            <on_click
+             function="ParticipantList.ModerateVoice"
+             parameter="unmute_all" />
+            <on_enable
+             function="ParticipantList.EnableItem.Moderate"
+             parameter="can_moderate_voice" />
+        </menu_item_call>
+    </context_menu>
+	<menu_item_separator layout="topleft" name="Group Ban Separator"/>
+	<menu_item_call
+		 label="멤버 금지"
+		 layout="topleft"
+		 name="BanMember">
+			<on_click function="Avatar.BanMember" parameter="ban_member" />
+			<on_enable function="ParticipantList.EnableItem" parameter="can_ban_member" />
+	</menu_item_call>		
+</context_menu>

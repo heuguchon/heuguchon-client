@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toggleable_menu
+ bottom="806"
+ layout="topleft"
+ left="0"
+ mouse_opaque="false"
+ name="menu_gear_default"
+ visible="false">
+    <menu_item_call
+     label="새 인벤토리 창"
+     layout="topleft"
+     shortcut="control|shift|I"
+     name="new_window">
+        <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="new_window" />
+    </menu_item_call>
+    <menu_item_check
+     label="보호된 폴더"
+     name="Protected Folders">
+        <menu_item_check.on_check
+         function="Floater.Visible"
+         parameter="fs_protectedfolders" />
+        <menu_item_check.on_click
+         function="Floater.Toggle"
+         parameter="fs_protectedfolders" />
+    </menu_item_check>
+    <menu_item_separator
+     layout="topleft" />
+    <menu_item_check
+     label="이름으로 정렬"
+     layout="topleft"
+     name="sort_by_name">
+        <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="sort_by_name" />
+        <on_check
+         function="Inventory.GearDefault.Check"
+         parameter="sort_by_name" />
+    </menu_item_check>
+    <menu_item_check
+     label="최근 순으로 정렬"
+     layout="topleft"
+     name="sort_by_recent">
+        <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="sort_by_recent" />
+        <on_check
+         function="Inventory.GearDefault.Check"
+         parameter="sort_by_recent" />         
+    </menu_item_check>
+    <menu_item_check
+     label="항상 이름으로 정렬"
+     layout="topleft"
+     name="sort_folders_by_name">
+        <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="sort_folders_by_name" />
+        <on_check
+         function="Inventory.GearDefault.Check"
+         parameter="sort_folders_by_name" />
+    </menu_item_check>
+    <menu_item_check
+     label="시스템 폴더를 맨 위로 정렬"
+     layout="topleft"
+     name="sort_system_folders_to_top">
+        <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="sort_system_folders_to_top" />
+        <on_check
+         function="Inventory.GearDefault.Check"
+         parameter="sort_system_folders_to_top" />
+    </menu_item_check>
+    <menu_item_separator
+     layout="topleft" />
+
+	<!-- <FS:Zi> Extended Inventory Search -->
+	<context_menu
+		label="로 검색..."
+		name="inventory_search_menu"
+		top="0">
+		<menu_item_check
+			name="inventory_search_by_name"
+			label="이름">
+			<on_click
+				function="Inventory.SearchType.Set"
+				parameter="search_by_name" />
+			<on_check
+				function="Inventory.SearchType.Check"
+				parameter="search_by_name" />
+		</menu_item_check>
+		<menu_item_check
+			name="inventory_search_by_creator"
+			label="생성자">
+			<on_click
+				function="Inventory.SearchType.Set"
+				parameter="search_by_creator" />
+			<on_check
+				function="Inventory.SearchType.Check"
+				parameter="search_by_creator" />
+		</menu_item_check>
+		<menu_item_check
+			name="inventory_search_by_description"
+			label="묘사">
+			<on_click
+				function="Inventory.SearchType.Set"
+				parameter="search_by_description" />
+			<on_check
+				function="Inventory.SearchType.Check"
+				parameter="search_by_description" />
+		</menu_item_check>
+		<menu_item_check
+			name="inventory_search_by_uuid"
+			label="UUID">
+			<on_click
+				function="Inventory.SearchType.Set"
+				parameter="search_by_UUID" />
+			<on_check
+				function="Inventory.SearchType.Check"
+				parameter="search_by_UUID" />
+		</menu_item_check>
+		<menu_item_separator />
+		<menu_item_check
+			name="inventory_search_by_all"
+			label="모두">
+			<on_click
+				function="Inventory.SearchType.Set"
+				parameter="search_by_all" />
+			<on_check
+				function="Inventory.SearchType.Check"
+				parameter="search_by_all" />
+		</menu_item_check>
+	</context_menu>
+    <!-- </FS:Zi> Extended Inventory Search -->
+
+    <menu_item_separator
+     layout="topleft" />
+    <menu_item_check
+     label="두 번 클릭하면 개체 추가"
+     layout="topleft"
+     name="add_inv_toggle">
+       <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="add_objects_on_double_click" />
+        <on_check
+         function="Inventory.GearDefault.Check"
+         parameter="add_objects_on_double_click" />
+    </menu_item_check>
+    <menu_item_check
+     label="더블클릭으로 옷 추가"
+     layout="topleft"
+     name="add_invclothing_toggle">
+       <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="add_clothing_on_double_click" />
+        <on_check
+         function="Inventory.GearDefault.Check"
+         parameter="add_clothing_on_double_click" />
+    </menu_item_check>
+    <menu_item_separator
+     layout="topleft" />
+    <menu_item_call
+     label="필터 표시..."
+     layout="topleft"
+     name="show_filters">
+        <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="show_filters" />
+    </menu_item_call>
+    <menu_item_call
+     label="필터 리셋"
+     layout="topleft"
+     name="reset_filters">
+        <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="reset_filters" />
+    </menu_item_call>
+    <menu_item_call
+     label="모든 폴더 닫기"
+     layout="topleft"
+     name="close_folders">
+        <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="close_folders" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" />
+    <menu_item_call
+     label="분실물 센터 비우기"
+     layout="topleft"
+     name="empty_lostnfound">
+        <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="empty_lostnfound" />
+        <on_enable
+         function="Inventory.GearDefault.Enable"
+         parameter="empty_lostnfound" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" />
+    <menu_item_call 
+         label="텍스쳐 다른이름으로 저장"
+         layout="topleft"
+         name="Save Texture As">
+            <on_click
+             function="Inventory.GearDefault.Custom.Action"
+             parameter="save_texture" />
+            <on_enable
+			 function="Inventory.GearDefault.Enable"
+			 parameter="save_texture" />
+        </menu_item_call>
+    <menu_item_call
+     label="공유"
+     layout="topleft"
+     name="Share"
+     visible="true">
+     <on_click
+         function="Inventory.Share" />
+     <on_enable
+         function="Inventory.GearDefault.Enable"
+         parameter="share" />
+    </menu_item_call>
+    <menu_item_call 
+         label="원본 찾기"
+         layout="topleft"
+         name="Find Original">
+            <on_click
+             function="Inventory.GearDefault.Custom.Action"
+             parameter="find_original" />
+            <on_enable
+			 function="Inventory.GearDefault.Enable"
+			 parameter="find_original" />
+        </menu_item_call>
+    <menu_item_call 
+         label="모든 링크 찾기"
+         layout="topleft"
+         name="Find All Links">
+            <on_click
+             function="Inventory.GearDefault.Custom.Action"
+             parameter="find_links" />
+            <on_enable
+			 function="Inventory.GearDefault.Enable"
+			 parameter="find_links" />
+        </menu_item_call>
+    <menu_item_call 
+         label="링크 대체"
+         layout="topleft"
+         name="Replace Links">
+            <on_click
+             function="Inventory.GearDefault.Custom.Action"
+             parameter="replace_links" />
+        </menu_item_call>
+    <menu_item_separator
+     layout="topleft" />
+
+	<!-- ## Zi: Filter Links Menu -->
+	<menu_item_check
+		name="inventory_filter_show_links"
+		label="링크 표시">
+		<on_click
+			function="Inventory.FilterLinks.Set"
+			parameter="show_links" />
+		<on_check
+			function="Inventory.FilterLinks.Check"
+			parameter="show_links" />
+	</menu_item_check>
+	<menu_item_check
+		name="inventory_filter_only_links"
+		label="링크만 표시">
+		<on_click
+			function="Inventory.FilterLinks.Set"
+			parameter="only_links" />
+		<on_check
+			function="Inventory.FilterLinks.Check"
+			parameter="only_links" />
+	</menu_item_check>
+	<menu_item_check
+		name="inventory_filter_hide_links"
+		label="링크 숨기기">
+		<on_click
+			function="Inventory.FilterLinks.Set"
+			parameter="hide_links" />
+		<on_check
+			function="Inventory.FilterLinks.Check"
+			parameter="hide_links" />
+	</menu_item_check>
+	<menu_item_separator />
+	<!-- ## Zi: Filter Links Menu -->
+
+	<!-- <FS:Zi> FIRE-1175 - Filter Permissions Menu -->
+	<menu_item_check
+		name="inventory_filter_only_modify"
+		label="수정만 가능">
+		<on_click
+			function="Inventory.FilterPermissions.Set"
+			parameter="only_modify" />
+		<on_check
+			function="Inventory.FilterPermissions.Check"
+			parameter="only_modify" />
+	</menu_item_check>
+	<menu_item_check
+		name="inventory_filter_only_copy"
+		label="복사만 가능">
+		<on_click
+			function="Inventory.FilterPermissions.Set"
+			parameter="only_copy" />
+		<on_check
+			function="Inventory.FilterPermissions.Check"
+			parameter="only_copy" />
+	</menu_item_check>
+	<menu_item_check
+		name="inventory_filter_only_transfer"
+		label="전송 가능 표시">
+		<on_click
+			function="Inventory.FilterPermissions.Set"
+			parameter="only_transfer" />
+		<on_check
+			function="Inventory.FilterPermissions.Check"
+			parameter="only_transfer" />
+	</menu_item_check>
+	<menu_item_separator />
+	<!-- </FS:Zi> -->
+
+	<menu_item_call
+     label="쓰레기 비우기"
+     layout="topleft"
+     name="empty_trash">
+        <on_click
+         function="Inventory.GearDefault.Custom.Action"
+         parameter="empty_trash" />
+        <on_enable
+         function="Inventory.GearDefault.Enable"
+         parameter="empty_trash" />
+    </menu_item_call>
+</toggleable_menu>

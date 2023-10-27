@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ height="380"
+ label="회원 초대"
+ layout="topleft"
+ left="0"
+ name="invite_panel"
+ top="380"
+ width="210">
+    <panel.string
+     name="confirm_invite_owner_str">
+        새 소유자를 초대하시겠습니까? 이 작업은 영구적입니다!
+    </panel.string>
+    <panel.string
+     name="loading">
+        (로딩중...)
+    </panel.string>
+    <panel.string
+     name="already_in_group">
+        선택한 일부 주민은 이미 그룹에 속해 있으므로 초대를 보내지 않았습니다.
+    </panel.string>
+	<panel.string
+     name="invite_selection_too_large">
+		그룹 초대장이 발송되지 않았습니다. 너무 많은 거주자를 선택했습니다. 그룹 초대는 요청당 100개로 제한됩니다.
+	</panel.string>
+    <text
+     type="string"
+     length="1"
+     height="54"
+     layout="topleft"
+     left="7"
+     name="help_text"
+     top="28"
+     word_wrap="true"
+     width="200">
+        여러 명의 거주자를 선택하여 그룹에 초대할 수 있습니다. &apos; 클릭시작하려면 상주 선택 도구 열기.
+    </text>
+    <button
+     height="20"
+     label="거주자 선택 도구 열기"
+     layout="topleft"
+     left_delta="-2"
+     name="add_button"
+     top_delta="44"
+     width="200" />
+    <name_list
+     allow_calling_card_drop="true"
+     column_padding="0"
+     height="174"
+     layout="topleft"
+     left_delta="0"
+     multi_select="true"
+     name="invitee_list"
+     tool_tip="Ctrl 키를 누른 상태에서 거주자 이름을 클릭하여 다중 선택"
+     top_pad="4"
+     width="200" />
+    <button
+     height="20"
+     label="목록에서 선택 항목 제거"
+     layout="topleft"
+     left_delta="0"
+     name="remove_button"
+     tool_tip="초대 목록에서 위에서 선택한 거주자를 제거합니다"
+     top_pad="4"
+     width="200" />
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left_delta="4"
+     name="role_text"
+     top_pad="5"
+     word_wrap="true"
+     width="200">
+        사용자를 할당할 역할 선택:
+    </text>
+    <combo_box
+     height="20"
+     layout="topleft"
+     left_delta="0"
+     name="role_name"
+     tool_tip="구성원을 할당할 수 있는 역할 목록에서 선택"
+     top_delta="16"
+     width="196" />
+    <button
+     height="20"
+     label="초대장 전송"
+     layout="topleft"
+     left="4"
+     name="invite_button"
+     top="356"
+     width="135" />
+    <button
+     height="20"
+     label="취소"
+     layout="topleft"
+     left_pad="2"
+     name="cancel_button"
+     top_delta="0"
+     width="65" />
+	 <string 
+	 name="GroupInvitation">
+	 그룹 초대
+	 </string>
+</panel>

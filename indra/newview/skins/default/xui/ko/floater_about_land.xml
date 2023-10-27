@@ -1,0 +1,2263 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ positioning="cascading"
+ can_tear_off="false"
+ height="425"
+ layout="topleft"
+ name="floaterland"
+ help_topic="floaterland"
+ save_rect="true"
+ title="랜드에 대하여"
+ width="490">
+    <floater.string
+      name="maturity_icon_general">
+      "Parcel_PG_Dark"
+    </floater.string>
+    <floater.string
+      name="maturity_icon_moderate">
+      "Parcel_M_Dark"
+    </floater.string>
+    <floater.string
+      name="maturity_icon_adult">
+      "Parcel_R_Dark"
+    </floater.string>
+    <floater.string
+     name="Hours">
+        [HOURS] 시간.
+    </floater.string>
+    <floater.string
+     name="Hour">
+        시간.
+    </floater.string>
+    <floater.string
+     name="Minutes">
+        [MINUTES] 분.
+    </floater.string>
+    <floater.string
+     name="Minute">
+        분.
+    </floater.string>
+    <floater.string
+     name="Seconds">
+        [SECONDS] 초.
+    </floater.string>
+    <floater.string
+     name="Remaining">
+        남은
+    </floater.string>
+    <floater.string
+     name="Always">
+        항상
+    </floater.string>
+    <tab_container
+     follows="all"
+     height="410"
+     layout="topleft"
+     left="0"
+     name="landtab"
+     tab_position="top"
+     tab_height="25"
+     tab_min_width="50"
+     top="10"
+     width="489">
+        <panel
+         border="false"
+         follows="all"
+         label="일반"
+         layout="topleft"
+         left="0"
+         help_topic="land_general_tab"
+         name="land_general_panel"
+         top="0">
+            <panel.string
+             name="new users only">
+                새 거주자만
+            </panel.string>
+            <panel.string
+             name="anyone">
+                누구나
+            </panel.string>
+            <panel.string
+             name="area_text">
+                지역
+            </panel.string>
+            <panel.string
+             name="area_size_text">
+                [AREA] m²
+            </panel.string>
+            <panel.string
+             name="auction_id_text">
+                경매 아이디: [ID]
+            </panel.string>
+            <panel.string
+             name="need_tier_to_modify">
+                이 땅을 수정하려면 구매를 승인해야 합니다.
+            </panel.string>
+            <panel.string
+             name="group_owned_text">
+                (그룹 소유)
+            </panel.string>
+            <panel.string
+             name="profile_text">
+                프로필
+            </panel.string>
+            <panel.string
+             name="info_text">
+                정보
+            </panel.string>
+            <panel.string
+             name="public_text">
+                (공공의)
+            </panel.string>
+            <panel.string
+             name="none_text">
+                (없음)
+            </panel.string>
+            <panel.string
+             name="sale_pending_text">
+                (판매 보류 중)
+            </panel.string>
+            <panel.string
+             name="no_selection_text">
+                선택된 구획이 없습니다.
+            </panel.string>
+            <panel.string name="time_stamp_template">
+              [wkday,datetime,slt] [mth,datetime,slt] [day,datetime,slt] [hour,datetime,slt]:[min,datetime,slt]:[second,datetime,slt] [year,datetime,slt]
+            </panel.string>
+			<panel.string name="error_resolving_uuid">
+				구획 ID를 확인할 수 없습니다.
+			</panel.string>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="Name:"
+             top="6"
+             width="100">
+                이름:
+            </text>
+            <line_editor
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left_pad="2"
+             max_length_bytes="63"
+             name="Name"
+             top_delta="0"
+             width="365" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="13"
+             layout="topleft"
+             left="10"
+             name="UUID:"
+             width="100">
+                구획 아이디:
+            </text>
+            <line_editor
+             follows="left|top"
+             height="20"
+             layout="topleft"
+             left_pad="2"
+             max_length_chars="63"
+             name="UUID"
+             top_delta="0"
+             width="365" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="Description:"
+             width="100">
+                묘사:
+            </text>
+            <text_editor
+             follows="left|top|right"
+             height="52"
+             layout="topleft"
+             left_pad="2"
+             name="Description"
+             spellcheck="true"
+             top_delta="0"
+             width="365"
+             word_wrap="true" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left="10"
+             name="LandType"
+             top_pad="5"
+             width="100">
+                타입:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left_pad="2"
+             name="LandTypeText"
+             top_delta="0"
+             width="250">
+                본토 / 주택
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left="10"
+             name="ContentRating"
+             width="100">
+                별점:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="18"
+             layout="topleft"
+             left_pad="2"
+             valign="center" 
+             name="ContentRatingText"
+             top_delta="-2"
+             width="250">
+                성인
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left="10"
+             name="Owner:"
+             top_pad="3"
+             width="100">
+                소유주:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left_pad="2"
+             name="OwnerText"
+             translate="false"
+             use_ellipses="true" 
+             width="360">
+                로딩중...
+            </text>
+             <button
+     follows="right"
+     height="21"
+     image_pressed="Info_Press"
+     image_unselected="Info_Over"
+     left_pad="3"
+     name="info_btn"
+     top_delta="-2"
+     width="16" />
+          <!--  <button
+             follows="left|top"
+             height="23"
+             label="프로필"
+             layout="topleft"
+             left_pad="4"
+             name="Profile..."
+             width="90" />-->
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left="10"
+             name="Group:"
+             top_pad="7"
+             width="100">
+                그룹:
+            </text>
+
+            <text
+             follows="left|top"
+             height="16"
+             left_pad="2"
+             layout="topleft"
+             name="GroupText"
+             translate="false"
+             width="240">
+로딩중...  
+	    </text>
+            <button
+     follows="right"
+     height="21"
+     image_pressed="Info_Press"
+     image_unselected="Info_Over"
+     left_pad="3"
+     name="info_btn"
+     top_delta="-2"
+     width="16" />
+            <button
+             follows="left|top"
+             height="23"
+             label="설정"
+             layout="topleft"
+             left_pad="4"
+             right="-10"
+             name="Set..."
+             width="90"
+             top_delta="-2"/>
+            <check_box
+             enabled="false"
+             height="14"
+             label="그룹에 문서 허용"
+             layout="topleft"
+             left="108"
+             name="check deed"
+             tool_tip="그룹 임원은 이 토지를 그룹에 양도할 수 있으므로 그룹&apos;의 토지 할당에 의해 지원된다."
+             top_pad="3"
+             width="146" />
+            <button
+             enabled="false"
+             follows="left|top"
+             height="23"
+             label="증서"
+             layout="topleft"
+             left_pad="2"
+             right="-10"
+             name="Deed..."
+             tool_tip="선택된 그룹의 임원일 경우에만 토지를 양도할 수 있습니다."
+             top_delta="-2"
+             width="90" />
+            <check_box
+             enabled="false"
+             height="14"
+             label="소유자가 증서를 통해 기부함"
+             layout="topleft"
+             left="108"
+             name="check contrib"
+             tool_tip="토지가 그룹에 양도되면, 이전 소유자는 그것을 지탱할 수 있는 충분한 토지 할당을 기부한다."
+             width="199"
+             top_pad="-2"/>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left="10"
+             name="For Sale:"
+             width="100">
+                판매중:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left_pad="2"
+             name="Not for sale."
+             width="186">
+                비매품
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left_delta="0"
+             name="For Sale: Price L$[PRICE]."
+             width="226">
+                가격: L$[PRICE] (L$[PRICE_PER_SQM]/m²)
+            </text>
+            <text
+             enabled="false"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left_delta="0"
+             name="SalePending"
+             top_pad="5"
+             width="324" />
+            <button
+             follows="left|top"
+             height="23"
+             label="랜드 판매"
+             layout="topleft"
+             left_pad="5"
+             right="-10"
+             name="Sell Land..."
+             width="145"
+             top_delta="-25"/>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left_delta="-199"
+             name="For sale to"
+             top_delta="22"
+             use_ellipses="true" 
+             width="340">
+                ~에 판매: [BUYER]
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left_delta="0"
+             name="Sell with landowners objects in parcel."
+             top_pad="0"
+             width="250">
+                판매에 포함된 개체
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left_delta="0"
+             name="Selling with no objects in parcel."
+             top_delta="5"
+             width="250">
+                판매에 포함되지 않은 개체
+            </text>
+            <button
+             follows="left|top"
+             height="23"
+             label="랜드 판매 취소"
+             label_selected="Cancel Land Sale"
+             layout="topleft"
+             right="-10"
+             name="Cancel Land Sale"
+             left_pad="5"
+             top_pad="5"
+             width="180" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left="10"
+             name="Claimed:"
+             top="283"
+             width="100">
+                요청:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="14"
+             layout="topleft"
+             left_pad="2"
+             name="DateClaimText"
+             top_delta="0"
+             width="186">
+                8월 15일 화요일 13:47:25 2006
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="PriceLabel"
+             top_pad="2"
+             width="100">
+                지역:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_pad="2"
+             name="PriceText"
+             top_delta="0"
+             width="186">
+                4048 m²
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="Traffic:"
+             top="315"
+             width="100">
+                교통량:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_pad="2"
+             name="DwellText"
+             top_delta="0"
+             width="186">
+                로딩중...
+            </text>
+
+            <button
+             enabled="false"
+             follows="left|top"
+             height="23"
+             label="지역 구매"
+             layout="topleft"
+             left_delta="52"
+			 top_pad="5"
+             name="Buy Land..."
+             width="130" />
+			<button
+             enabled="false"
+             follows="left|top"
+             height="23"
+             label="린든 세일"
+             layout="topleft"
+             left="10"
+             name="Linden Sale..."
+             tool_tip="토지는 소유해야 하며, 내용을 설정해야 하며, 아직 경매에 부쳐서는 안 됩니다."
+             top_pad="-23"
+             width="150" />
+            <button
+             enabled="true"
+             follows="left|top"
+             height="23"
+             label="스크립트 정보"
+             layout="topleft"
+             left="10"
+             name="Scripts..."
+             top_pad="1"
+             width="150" />
+            <button
+             enabled="false"
+             follows="left|top"
+             height="23"
+             label="그룹을 위해 구매"
+             layout="topleft"
+             right="-10"
+             name="Buy For Group..."
+             top_delta="0"
+             width="180" />
+            <button
+             enabled="false"
+             follows="left|top"
+             height="23"
+             label="패스 구매"
+             layout="topleft"
+             left_delta="-135"
+             name="Buy Pass..."
+             tool_tip="이 땅에 임시로 접근할 수 있는 통로가 있다."
+             top_delta="0"
+             width="130" />
+            <button
+             follows="left|top"
+             height="23"
+             label="땅 버리기"
+             layout="topleft"
+             right="-10"
+             name="Abandon Land..."
+             top_pad="-47"
+             width="180" />
+            <button
+             follows="left|top"
+             height="23"
+             label="랜드 회수"
+             layout="topleft"
+             left_delta="0"
+             name="Reclaim Land..."
+             top_delta="-25"
+             width="180" />
+        </panel>
+        <panel
+         border="true"
+         follows="all"
+         label="규약"
+         layout="topleft"
+         left="0"
+         top="0"
+         help_topic="land_covenant_tab"
+         name="land_covenant_panel">
+            <panel.string
+             name="can_resell"
+             word_wrap="true">
+                이 지역의 매입된 토지는 재판매될 수 있습니다.
+            </panel.string>
+            <panel.string
+             name="can_not_resell"
+             word_wrap="true">
+                이 지역에서 구입한 토지는 재판매할 수 없습니다.
+            </panel.string>
+            <panel.string
+             name="can_change"
+             word_wrap="true">
+                이 지역에서 구입한 토지는 결합되거나 분할될 수 있습니다.
+            </panel.string>
+            <panel.string
+             name="can_not_change"
+             word_wrap="true">
+                이 지역에서 구입한 토지는 결합되거나 분할될 수 없습니다.
+            </panel.string>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             mouse_opaque="false"
+             name="estate_section_lbl"
+             top="10"
+             width="100">
+                부동산:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_pad="0"
+             mouse_opaque="false"
+             name="estate_name_text"
+             top_delta="0"
+             width="260">
+                본토
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             mouse_opaque="false"
+             name="estate_owner_lbl"
+             width="100">
+                소유주:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_pad="0"
+             mouse_opaque="false"
+             name="estate_owner_text"
+             width="300">
+                (없음)
+            </text>
+            <text_editor
+             type="string"
+             length="1"
+             enabled="false"
+             follows="all"
+             height="200"
+             layout="topleft"
+             left="10"
+             max_length="65535"
+             name="covenant_editor"
+             bg_visible="false"
+             width="470"
+             word_wrap="true">
+                이 부동산에 대해 제공된 계약이 없습니다.
+            </text_editor>
+            <text
+             type="string"
+             length="1"
+             follows="right|top"
+             height="16"
+             halign="right"
+             layout="topleft"
+             right="-10"
+             top_pad="0"
+             mouse_opaque="false"
+             name="covenant_timestamp_text"
+             width="460">
+               1969년 12월 31일 수요일 16:00:00 마지막 수정
+                            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             mouse_opaque="false"
+             name="region_section_lbl"
+             width="100">
+                지역:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_pad="10"
+             mouse_opaque="false"
+             name="region_name_text"
+             width="150">
+                로딩중...
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             mouse_opaque="false"
+             name="region_landtype_lbl"
+             width="100">
+                타입:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_pad="10"
+             mouse_opaque="false"
+             name="region_landtype_text"
+             width="200">
+                본토 / 주택
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             mouse_opaque="false"
+             name="region_maturity_lbl"
+             width="100">
+                별점:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_pad="10"
+             top_delta="-1" 
+             mouse_opaque="false"
+             name="region_maturity_text"
+             valign="center" 
+             width="150">
+                성인
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             mouse_opaque="false"
+             name="resellable_lbl"
+             top_pad="9" 
+             width="100">
+                재판매:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_pad="10"
+             mouse_opaque="false"
+             name="resellable_clause"
+             word_wrap="true"
+             width="360">
+                이 지역의 토지는 재판매할 수 없습니다.
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="30"
+             layout="topleft"
+             left="10"
+             mouse_opaque="false"
+             name="changeable_lbl"
+             width="100">
+                세분:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="30"
+             layout="topleft"
+             left_pad="10"
+             mouse_opaque="false"
+             name="changeable_clause"
+             word_wrap="true"
+             width="330">
+                이 지역의 토지는 결합/분할할 수 없습니다.
+            </text>
+        </panel>
+        <panel
+         border="true"
+         follows="all"
+         label="개체"
+         layout="topleft"
+         left="0"
+         top="0"
+         help_topic="land_objects_tab"
+         name="land_objects_panel">
+            <panel.string
+             name="objects_available_text">
+                [COUNT] [MAX] 중 ([사용 가능])
+            </panel.string>
+            <panel.string
+             name="objects_deleted_text">
+               [COUNT] [MAX] 중 ([DELETED]가 삭제됩니다)
+            </panel.string>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="parcel_object_bonus"
+             top="4"
+             visible="false"
+             width="364">
+                영역 개체 보너스 계수: [BONUS]
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_delta="0"
+             name="Simulator primitive usage:"
+             top_pad="4"
+             width="364">
+               지역 용량:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_delta="190"
+             name="objects_available"
+             top_delta="0"
+             width="260">
+                [COUNT] [MAX] 중 ([사용 가능])
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="Primitives parcel supports:"
+             top="44"
+             width="172">
+                구획 랜드 용량:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_delta="190"
+             name="object_contrib_text"
+             top_delta="0"
+             width="212">
+                [COUNT]
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="Primitives on parcel:"
+             top="64"
+             width="152">
+                구획 랜드 충격:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_delta="190"
+             name="total_objects_text"
+             top_delta="0"
+             width="48">
+                [COUNT]
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left="28"
+             name="Owned by parcel owner:"
+             top="84"
+             width="176">
+                구획 소유주에 의해 소유됨:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left_delta="172"
+             name="owner_objects_text"
+             top_delta="0"
+             width="48">
+                [COUNT]
+            </text>
+            <button
+             bottom="100"
+             enabled="false"
+             follows="left|top"
+             height="23"
+             label="표시"
+             label_selected="Show"
+             layout="topleft"
+             name="ShowOwner"
+             right="-140"
+             width="60"
+             top_delta="-6"/>
+            <button
+             bottom="100"
+             enabled="false"
+             follows="left|top"
+             height="23"
+             label="반납"
+             layout="topleft"
+             name="ReturnOwner..."
+             right="-10"
+             tool_tip="소유자에게 개체 반환."
+             width="119"
+             top_delta="0"/>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left="28"
+             name="Set to group:"
+             top_pad="5"
+             width="176">
+                그룹에 설정:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left_delta="172"
+             name="group_objects_text"
+             top_delta="0"
+             width="48">
+                [COUNT]
+            </text>
+            <button
+             bottom="120"
+             enabled="false"
+             follows="left|top"
+             label="표시"
+             height="23"
+             label_selected="Show"
+             layout="topleft"
+             name="ShowGroup"
+             right="-140"
+             width="60"
+             top_delta="-6"/>
+            <button
+             bottom="120"
+             enabled="false"
+             follows="left|top"
+             height="23"
+             label="반납"
+             layout="topleft"
+             name="ReturnGroup..."
+             right="-10"
+             tool_tip="소유자에게 개체 반환."
+             width="119"
+             top_delta="0"/>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left="28"
+             name="Owned by others:"
+             top_pad="5"
+             width="176">
+                타인 소유:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left_delta="172"
+             name="other_objects_text"
+             top_delta="0"
+             width="48">
+                [COUNT]
+            </text>
+            <button
+             bottom="140"
+             enabled="false"
+             follows="left|top"
+             height="23"
+             label="표시"
+             label_selected="Show"
+             layout="topleft"
+             name="ShowOther"
+             right="-140"
+             width="60"
+             top_delta="-6"/>
+            <button
+             bottom="140"
+             enabled="false"
+             follows="left|top"
+             height="23"
+             label="반납"
+             layout="topleft"
+             name="ReturnOther..."
+             right="-10"
+             tool_tip="소유자에게 개체 반환."
+             width="119"
+             top_delta="0"/>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left="28"
+             name="Selected / sat upon:"
+             top_pad="5"
+             width="230">
+                선택 / 의 위에 앉기:
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left_delta="220"
+             name="selected_objects_text"
+             top_delta="0"
+             width="48">
+                [COUNT]
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left="10"
+             name="Autoreturn"
+             top_pad="0"
+             width="412"
+             word_wrap="true">
+                다른 거주자&apos; 개체 자동 반환(분, 꺼짐의 경우 0):
+                                </text>
+            <line_editor
+             border_style="line"
+             border_thickness="1"
+             bottom="180"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             max_length_bytes="6"
+             name="clean other time"
+             left_pad="0"
+             width="46"
+             top_delta="-2"/>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left="10"
+             name="Object Owners:"
+             top_pad="10"
+             width="104">
+                개체 소유주:
+            </text>
+             <button
+     follows="top|right"
+     height="23"
+     image_overlay="Refresh_Off"
+     layout="topleft"
+     name="Refresh List"
+     left_pad="5"
+     right="-183"
+     tool_tip="개체 목록 새로 고침"
+     width="20"
+  top_delta="-6"/>
+            <button
+             enabled="false"
+             follows="left|top"
+             height="23"
+             label="개체 반납"
+             layout="topleft"
+             left_pad="6"
+             name="Return objects..."
+             top_delta="0"
+             right="-10"
+             width="164" />
+            <name_list
+             column_padding="0"
+             draw_heading="true"
+             follows="all"
+             height="180"
+             layout="topleft"
+             left="10"
+             name="owner list"
+             name_column="name"
+             width="470">
+                <name_list.columns
+                 label="타입"
+                 name="type"
+                 sort_column="online_status"
+                 width="50" />
+                <name_list.columns
+                 name="online_status"
+                 width="-1" />
+                <name_list.columns
+                 dynamic_width="true"
+                 label="이름"
+                 name="name" />
+                <name_list.columns
+                 label="개수"
+                 name="count"
+                 width="67" />
+                <name_list.columns
+                 label="가장 최근"
+                 name="mostrecent"
+                 width="163" />
+            </name_list>
+        </panel>
+        <panel
+         border="true"
+         follows="all"
+         label="옵션"
+         layout="topleft"
+         help_topic="land_options_tab"
+         name="land_options_panel"
+         left="0"
+         top="0">
+            <panel.string
+             name="search_enabled_tooltip">
+                검색 결과에서 이 구획을 볼 수 있도록 허용
+            </panel.string>
+            <panel.string
+             name="search_disabled_small_tooltip">
+                이 구획의 면적이 128m² 이하이기 때문에 이 옵션을 사용할 수 없습니다.
+큰 구획만 검색에 나열할 수 있습니다.
+            </panel.string>
+            <panel.string
+             name="search_disabled_permissions_tooltip">
+                이 구획의 옵션을 수정할 수 없으므로 이 옵션을 사용할 수 없습니다.
+                            </panel.string>
+            <panel.string
+             name="mature_check_mature">
+                중간 내용
+            </panel.string>
+            <panel.string
+             name="mature_check_adult">
+                성인 내용
+            </panel.string>
+            <panel.string
+             name="mature_check_mature_tooltip">
+                소포 정보 또는 내용물이 보통으로 간주됩니다.
+            </panel.string>
+            <panel.string
+             name="mature_check_adult_tooltip">
+                소포 정보 또는 내용물은 성인인 것으로 간주됩니다.
+                            </panel.string>
+            <panel.string
+             name="landing_point_none">
+                (없음)
+            </panel.string>
+            <panel.string
+             name="push_restrict_text">
+                푸시 없음
+            </panel.string>
+            <panel.string
+             name="push_restrict_region_text">
+                푸시 없음(지역 재정의)
+                            </panel.string>
+            <panel.string
+             name="DirectoryFree">
+                검색에 장소 표시
+            </panel.string>
+            <panel.string
+             name="DirectoryFee">
+                검색에 장소 표시(L$[DIRECTORY_FEE]/주)
+                            </panel.string>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             text_color="White"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="allow_label"
+             top="10"
+             width="278">
+                다른 거주자에게 허용:
+            </text>
+	<!-- <FS:WF> FIRE-6604 : Reinstate the "Allow Other Residents to Edit Terrain" option in About Land -->
+          <text
+           type="string"
+           length="1"
+           follows="left|top"
+           height="16"
+           layout="topleft"
+           left="20"
+           name="allow_label1"
+           width="150">
+            지역 수정:
+          </text>
+
+          <check_box
+             height="16"
+             label="모두"
+             layout="topleft"
+             name="edit land check"
+             tool_tip="확인되면 누구나 땅을 테라포밍할 수 있습니다. 항상 자신의 영역을 편집할 수 있으므로 이 옵션을 선택하지 않은 상태로 두는 것이 가장 좋습니다."
+             left_pad="2"
+             width="130" />
+			 
+  	     <text
+          font="SansSerifSmall"
+          type="string"
+          text_color="White_50"
+          length="1"
+          follows="left|top"
+          height="16"
+          layout="topleft"
+          left_pad="-55"
+          name="caution_text"
+          width="200">
+           (주의하여 사용!)
+         </text>
+		 
+	<!-- <FS:WF> FIRE-6604 END -->
+          <text
+           type="string"
+           length="1"
+           follows="left|top"
+           height="16"
+           layout="topleft"
+           left="20"
+           name="allow_label0"
+           width="150">
+            Fly:
+          </text>
+
+          <check_box
+             height="16"
+             label="모두"
+             layout="topleft"
+             name="check fly"
+             tool_tip="이 옵션을 선택하면 거주자가 해당 땅에서 비행할 수 있습니다. 만약 체크하지 않으면, 그들은 오직 당신의 땅으로 그리고 위로 날아갈 수 있습니다."
+             left_pad="2"
+             width="130" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="20"
+             name="allow_label2"
+             width="150">
+                빌드:
+            </text>
+            <check_box
+             height="16"
+             label="모두"
+             layout="topleft"
+             left_pad="2"
+             name="edit objects check"
+             tool_tip="이 옵션을 선택하면 거주자가 해당 토지에 개체를 만들고 크기를 조정할 수 있습니다."
+             width="130" />
+            <check_box
+             height="16"
+             label="그룹"
+             layout="topleft"
+             left_pad="2"
+             name="edit group objects check"
+             tool_tip="이 옵션을 선택하면 구획 그룹 구성원이 해당 토지에 개체를 만들고 크기를 조정할 수 있습니다."
+             width="70" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="20"
+             name="allow_label3"
+             width="150">
+                개체 항목:
+            </text>
+            <check_box
+             height="16"
+             label="모두"
+             layout="topleft"
+             left_pad="2"
+             name="all object entry check"
+             tool_tip="이 옵션을 선택하면 거주자가 다른 소포에 있는 기존 물체를 이 소포에 옮길 수 있습니다."
+             top_delta="0"
+             width="130" />
+            <check_box
+             height="16"
+             label="그룹"
+             layout="topleft"
+             left_pad="2"
+             name="group object entry check"
+             tool_tip="이 옵션을 선택하면 구획 그룹 구성원이 다른 구획에서 이 구획으로 기존 객체를 이동할 수 있습니다."
+             top_delta="0"
+             width="70" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="20"
+             name="allow_label4"
+             width="150">
+                스크립트 실행:
+            </text>
+            <check_box
+             height="16"
+             label="모두"
+             layout="topleft"
+             left_pad="2"
+             name="check other scripts"
+             tool_tip="이 옵션을 선택하면 거주자가 첨부 파일을 포함하여 소포에 대한 스크립트를 실행할 수 있습니다."
+             top_delta="0"
+             width="130" />
+            <check_box
+             height="16"
+             label="그룹"
+             layout="topleft"
+             left_pad="2"
+             name="check group scripts"
+             tool_tip="이 옵션을 선택하면 구획 그룹 구성원이 첨부 파일을 포함하여 구획에서 스크립트를 실행할 수 있습니다."
+             top_delta="0"
+             width="70" />
+          <panel
+            bevel_style="none"
+            border="true"
+            top="160"
+            bottom="160"
+            follows="left|bottom|right"
+            left="20"
+            right="-20"/>
+          <check_box
+             height="16"
+             label="안전한 (데미지 없음)"
+             layout="topleft"
+             left="18"
+             name="check safe"
+             tool_tip="이 옵션을 선택하면 육지를 안전으로 설정하여 피해 전투를 비활성화합니다. 삭제하면 데미지 전투가 활성화됩니다."
+             top="140"
+             width="200" />
+            <check_box
+             height="16"
+             label="푸시 없음"
+             layout="topleft"
+             left_pad="5"
+             name="PushRestrictCheck"
+             tool_tip="스크립트가 푸시되지 않도록 합니다. 이 옵션을 선택하면 토지에서의 중단 동작을 방지하는 데 유용할 수 있습니다."
+             top="140"
+             width="119" />
+            <check_box
+             height="16"
+             label="검색에 장소 표시 (L$30/주)"
+             layout="topleft"
+             left="18"
+             name="ShowDirectoryCheck"
+             tool_tip="검색 결과에서 이 구획을 볼 수 있도록 허용"
+             top="162"
+             width="430" />
+            <combo_box
+             enabled="true"
+             height="23"
+             layout="topleft"
+             left="20"
+             top="204"
+             name="land category"
+             visible="true"
+             width="140">
+                <combo_box.item
+                 label="아무 카테고리"
+                 name="item0"
+                 value="없음" />
+                <combo_box.item
+                 label="린든 위치"
+                 name="item1"
+                 value="린든" />
+                <combo_box.item
+                 label="예술 &amp; 문화"
+                 name="item3"
+                 value="예술" />
+                <combo_box.item
+                 label="비즈니스"
+                 name="item4"
+                 value="상점" />
+                <combo_box.item
+                 label="교육"
+                 name="item5"
+                 value="교육적인" />
+                <combo_box.item
+                 label="게임"
+                 name="item6"
+                 value="게임" />
+                <combo_box.item
+                 label="놀기"
+                 name="item7"
+                 value="모이다" />
+                <combo_box.item
+                 label="신참 친구"
+                 name="item8"
+                 value="신참" />
+                <combo_box.item
+                 label="공원 &amp; 자연"
+                 name="item9"
+                 value="공원" />
+                <combo_box.item
+                 label="주택지"
+                 name="item10"
+                 value="집" />
+                <combo_box.item
+                 label="쇼핑"
+                 name="item11"
+                 value="쇼핑" />
+                <combo_box.item
+                 label="대여"
+                 name="item13"
+                 value="대여" />
+                <combo_box.item
+                 label="다른"
+                 name="item12"
+                 value="다른" />
+            </combo_box>
+            <check_box
+             height="16"
+             label="중간 내용"
+             layout="topleft"
+             left="18"
+             name="MatureCheck"
+             top="184"
+             label_text.valign="center" 
+             label_text.v_pad="-1" 
+             tool_tip=" "
+             width="200" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="20"
+             name="Snapshot:"
+             text_color="White"
+             top="235"
+             width="200">
+                스냅샷:
+            </text>
+            <texture_picker
+             follows="left|top"
+             top_pad="0"
+             height="150"
+             layout="topleft"
+             left="20"
+             name="snapshot_ctrl"
+             fallback_image="default_land_picture.j2c" 
+             tool_tip="Click to choose a picture"
+             width="195" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             text_color="LtGray"
+             text_readonly_color="LabelDisabledColor"
+             height="32"
+             layout="topleft"
+             left="245"
+             top="184"
+             name="allow_see_label"
+             width="205"
+             word_wrap="true">
+              다른 구획의 아바타는 이 구획의 아바타를 보고 대화할 수 있습니다
+            </text>
+            <check_box
+             height="16"
+             follows="top"
+             layout="topleft"
+             left="224"
+             top="184"
+             name="SeeAvatarsCheck"
+             tool_tip="다른 구획의 아바타가 이 구획의 아바타를 보고 대화할 수 있도록 허용하고 사용자는 해당 구획의 아바타를 보고 대화할 수 있습니다."
+             width="10" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="255"
+             top="282"
+             text_color="White"
+             name="landing_point"
+             word_wrap="true"
+             width="200">
+                착륙 지점: [LANDING]
+            </text>
+            <button
+             follows="right|top"
+             top_pad="0"
+             height="23"
+             label="집합"
+             label_selected="Set"
+             layout="topleft"
+             name="Set"
+             left="255"
+             tool_tip="방문자가 도착하는 도착 지점을 설정합니다. 이 소포 안의 아바타&apos; 위치로 설정합니다."
+             width="50" />
+            <button
+             follows="right|top"
+             height="23"
+             label="청소"
+             label_selected="Clear"
+             layout="topleft"
+             left_pad="5"
+             name="Clear"
+             tool_tip="착륙 지점 지우기"
+             width="55" />
+            <button
+             follows="right|top"
+             height="23"
+             label="순간이동"
+             label_selected="Teleport"
+             layout="topleft"
+             left_pad="5"
+             name="teleport_to_landing_point"
+             tool_tip="착륙 지점으로 순간이동"
+             width="55" />
+            <text
+             type="string"
+             length="1"
+             text_color="White"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="255"
+             top_pad="10"
+             name="Teleport Routing: "
+             width="200">
+                순간이동 라우팅:
+            </text>
+            <combo_box
+             height="23"
+             layout="topleft"
+             name="landing type"
+             top_pad="0"
+             tool_tip="텔레포트 라우팅 - 사용자의 땅에서 텔레포트를 처리하는 방법을 선택합니다"
+             width="120">
+                <combo_box.item
+                 enabled="true"
+                 label="차단"
+                 name="Blocked"
+                 value="차단된" />
+                <combo_box.item
+                 enabled="true"
+                 label="착륙 지점"
+                 name="LandingPoint"
+                 value="착륙지점" />
+                <combo_box.item
+                 enabled="true"
+                 label="아무데나"
+                 name="Anywhere"
+                 value="아무데나" />
+            </combo_box>
+        </panel>
+        <panel
+         border="true"
+         follows="all"
+         label="미디어"
+         layout="topleft"
+         left="0"
+         top="0"
+         help_topic="land_media_tab"
+         name="land_media_panel">
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="20"
+             layout="topleft"
+             left="10"
+             name="with media:"
+             top="10"
+             width="100">
+                타입:
+            </text>
+            <combo_box
+             height="23"
+             layout="topleft"
+             left_pad="0"
+             name="media type"
+             tool_tip="URL이 동영상, 웹 페이지 또는 기타 미디어인지 지정"
+             width="120"
+             top_delta="0"/>
+            <text
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_pad="10"
+             name="mime_type"
+             width="200" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="20"
+             layout="topleft"
+             left="10"
+             name="at URL:"
+             width="100"
+             top_pad="10">
+                홈페이지:
+            </text>
+            <line_editor
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left_pad="0"
+             max_length_bytes="255"
+             name="media_url"
+             select_on_focus="true"
+             width="300"
+             top_delta="0"/>
+            <button
+             follows="right|top"
+             height="23"
+             label="집합"
+             layout="topleft"
+             left_pad="5"
+             name="set_media_url"
+             width="70"
+             top_delta="0"/>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left="10"
+             name="Description:"
+             width="364"
+             top_pad="10">
+                묘사:
+            </text>
+            <line_editor
+             follows="left|top"
+             height="20"
+             layout="topleft"
+             left="110"
+             max_length_bytes="255"
+             name="url_description"
+             select_on_focus="true"
+             tool_tip="Text displayed next to play/load button"
+             top_delta="0"
+             width="300" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="Media texture:"
+             top_pad="10"
+             width="364"
+             word_wrap="true">
+                텍스쳐 대체:
+            </text>
+            <texture_picker
+             allow_no_texture="true"
+             default_image_name="Default"
+             follows="left|top"
+             height="80"
+             layout="topleft"
+             left="110"
+             name="media texture"
+             tool_tip="사진을 선택하려면 클릭하십시오"
+             top_delta="0"
+             width="64" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="80"
+             layout="topleft"
+             left_pad="8"
+             name="replace_texture_help"
+             width="300"
+             word_wrap="true"
+             top_delta="0">
+             이 질감을 사용하는 개체는 재생 화살표를 클릭한 후 동영상 또는 웹 페이지를 표시합니다. 다른 질감을 선택하려면 축소판 그림을 선택하십시오.
+            </text>
+            <check_box
+             height="16"
+             label="자동 스케일"
+             layout="topleft"
+             left="107"
+             name="media_auto_scale"
+             top_pad="-10"
+             tool_tip="이 옵션을 선택하면 이 구획의 내용 크기가 자동으로 조정됩니다. 시각적으로 약간 느리고 품질이 낮을 수 있지만 다른 텍스처 스케일링 또는 정렬은 필요하지 않습니다."
+             width="200" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="20"
+             layout="topleft"
+             left="10"
+             name="media_size"
+             tool_tip="웹 미디어를 렌더링할 크기. 기본값으로 0으로 유지."
+             width="100"
+             top_pad="10">
+                크기:
+            </text>
+            <spinner
+             decimal_digits="0"
+             enabled="false"
+             follows="left|top"
+             halign="right"
+             height="23"
+             increment="1"
+             initial_value="0"
+             layout="topleft"
+             left_pad="0"
+             max_val="1024"
+             name="media_size_width"
+             tool_tip="웹 미디어를 렌더링할 크기. 기본값으로 0으로 유지."
+             top_delta="0"
+             width="64" />
+            <spinner
+             decimal_digits="0"
+             enabled="false"
+             follows="left|top"
+             halign="right"
+             height="23"
+             increment="1"
+             initial_value="0"
+             layout="topleft"
+             left_pad="16"
+             max_val="1024"
+             name="media_size_height"
+             tool_tip="웹 미디어를 렌더링할 크기. 기본값으로 0으로 유지."
+             top_delta="0"
+             width="64" />
+            <text
+             type="string"
+             length="1"
+             bottom_delta="0"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left_pad="5"
+             name="pixels"
+             right="-10">
+                픽셀
+            </text>
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="Options:"
+             top_pad="10"
+             width="100">
+                옵션:
+            </text>
+            <check_box
+             height="16"
+             label="루프"
+             layout="topleft"
+             left_pad="-3"
+             name="media_loop"
+             tool_tip="루프에서 미디어를 재생합니다. 미디어 재생이 완료되면 미디어가 처음부터 다시 시작됩니다."
+             top_delta="-1"
+             width="200" />
+        </panel>
+        <panel
+         border="true"
+         follows="all"
+         label="소리"
+         layout="topleft"
+         left="0"
+         top="0"
+         help_topic="land_audio_tab"
+         name="land_audio_panel">
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             top="10"
+             name="MusicURL:"
+             width="364">
+                음악 URL:
+            </text>
+            <combo_box
+             follows="left|top"
+             height="23"
+             layout="topleft"
+             left="100"
+             max_chars="255"
+             name="music_url"
+             top_delta="0"
+             right="-76"
+             allow_text_entry="true"
+             allow_new_values="true"/>
+            <button
+             follows="left|top"
+             height="23"
+             image_overlay="AddItem_Off"
+             layout="topleft"
+             left_pad="0"
+             top_delta="0"
+             name="stream_add_btn"
+             tool_tip="저장된 스트림 목록에 음악 스트림 URL 추가"
+             width="23" />
+            <button
+             follows="left|top"
+             height="23"
+             image_overlay="MinusItem_Off"
+             layout="topleft"
+             left_pad="2"
+             top_delta="0"
+             name="stream_delete_btn"
+             tool_tip="저장된 스트림 목록에서 음악 스트림 URL 제거"
+             width="23" />
+            <button
+			 enabled="true"
+             follows="left|top"
+             height="23"
+             image_overlay="Copy"
+             layout="topleft"
+             left_pad="2"
+             top_delta="0"
+             name="stream_copy_btn"
+             tool_tip="음악 스트림 URL을 클립보드에 복사"
+             width="23" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="Sound:"
+             top_pad="10"
+             width="100">
+                소리:
+            </text>
+            <check_box
+             height="16"
+             label="이 구획으로 제스처 및 개체 소리 제한"
+             layout="topleft"
+             name="check sound local"
+             left_pad="0"
+             width="292" />
+          <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             name="Avatar Sounds:"
+             top_pad="10"
+             width="100">
+               아바타 소리:
+          </text>
+          <check_box
+             height="16"
+             label="모두"
+             layout="topleft"
+             left_pad="0"
+             name="all av sound check"
+             top_delta="0"
+             width="130" />
+          <check_box
+             height="16"
+             label="그룹"
+             layout="topleft"
+             left_pad="0"
+             name="group av sound check"
+             top_delta="0"
+             width="70" />
+            <text
+             type="string"
+             length="1"
+             follows="left|top"
+             height="16"
+             layout="topleft"
+             left="10"
+             mouse_opaque="false"
+             name="Voice settings:"
+             top_pad="10"
+             width="100">
+                음성:
+            </text>
+            <check_box
+             height="16"
+             label="음성 사용"
+             layout="topleft"
+             left_pad="0"
+             name="parcel_enable_voice_channel"
+             width="300" />
+            <check_box
+             enabled="false"
+             height="16"
+             label="음성 사용(에스테이트에서 설정)"
+             layout="topleft"
+             left="110"
+             name="parcel_enable_voice_channel_is_estate_disabled"
+             top_delta="0"
+             width="300" />
+            <check_box
+             height="16"
+             label="이 소포에 음성 제한"
+             layout="topleft"
+             left="110"
+             name="parcel_enable_voice_channel_local"
+             width="300" />
+        </panel>
+        <panel
+         border="true"
+         follows="all"
+         label="접근"
+         layout="topleft"
+         left="0"
+         top="0"
+         help_topic="land_access_tab"
+         name="land_access_panel">
+			<panel.string
+			 name="access_estate_defined">
+				(에스테이트에 의해 정의됨)
+			</panel.string>
+      <panel.string
+             name="estate_override">
+                이러한 옵션 중 하나 이상이 자산 수준에서 설정되었습니다.
+            </panel.string>
+            <check_box
+             follows="top|left"
+             height="16"
+             layout="topleft"
+             left="8"
+             name="public_access"
+             tool_tip=""
+             label="누구나 방문 가능(이 옵션을 선택 취소하면 금지선이 작성됨)"
+             top_pad="10" 
+             width="278" />
+            <check_box
+             follows="top|left"
+             height="16"
+             label="18+ [ESTATE_AGE_LIMIT]"
+             layout="topleft"
+             left_delta="20"
+             name="limit_age_verified"
+             tool_tip="거주자는 18세 이상이어야 이 소포를 이용할 수 있습니다. 자세한 내용은 [SUPPORT_SITE]를 참조하십시오."
+             top_pad="4"
+             width="278" />
+            <check_box
+             follows="top|left"
+             height="16"
+             label="파일에 결제 정보가 있어야 합니다 [ESTATE_PAYMENT_LIMIT]"
+             layout="topleft"
+             left_delta="0"
+             name="limit_payment"
+             tool_tip="거주자들은 이 소포에 접근하기 위해 지불 정보를 가지고 있어야 한다. 자세한 내용은 [SUPPORT_SITE]를 참조하십시오."
+             top_pad="4"
+             width="278" />
+            <check_box
+             height="16"
+             label="제한 없이 그룹 [GROUP] 허용"
+             layout="topleft"
+             left="8"
+             name="GroupCheck"
+             tool_tip="일반 탭에서 그룹 설정."
+             top="73"
+             width="278" />
+            <check_box
+             enabled="false"
+             height="16"
+             label="패스를 판매합니다:"
+             layout="topleft"
+             left_delta="0"
+             name="PassCheck"
+             tool_tip="이 구획에 대한 임시 액세스 허용"
+             top_pad="4"
+             width="120" />
+            <combo_box
+             height="23"
+             layout="topleft"
+             left_pad="22"
+             name="pass_combo"
+             top_delta="0"
+             width="100">
+                <combo_box.item
+                 label="아무나"
+                 name="Anyone"
+                 value="아무나" />
+                <combo_box.item
+                 label="그룹"
+                 name="Group"
+                 value="그룹" />
+            </combo_box>
+            <spinner
+             enabled="false"
+             follows="left|top"
+             height="23"
+             increment="1"
+             initial_value="10"
+             label="가격은 L$:"
+             label_width="120"
+             layout="topleft"
+             left="28"
+             max_val="500"
+             min_val="1"
+             name="PriceSpin"
+             top_pad="5"
+             width="200" />
+            <spinner
+             enabled="false"
+             follows="left|top"
+             height="23"
+             increment="0.25"
+             initial_value="1"
+             label="접근 시간:"
+             label_width="120"
+             layout="topleft"
+             left_delta="0"
+             max_val="24"
+             min_val="0.01"
+             name="HoursSpin"
+             top_pad="5"
+             width="200" />
+            <text
+             type="string"
+             length="1"
+             follows="top|left"
+             height="16"
+             layout="topleft"
+             left="8"
+             name="OwnerLimited"
+             top_pad="5"
+             width="400">
+                (부동산 소유자가 이러한 선택을 제한했을 수 있습니다)
+            </text>            
+            <panel
+            name="Allowed_layout_panel"
+            follows="top|left"
+            left="10"
+            height="170"
+             top_pad="8"
+            width="240">
+            <text
+             type="string"
+             length="1"
+             follows="left|right|top"
+             height="16"
+             label="항상 허락"
+             layout="topleft"
+             left="0"
+             name="AllowedText"
+             top="0"
+             width="230">
+                항상 허락 ([COUNT]/[MAX])
+            </text>
+            <name_list
+             column_padding="0"
+             follows="top|bottom"
+             heading_height="14"
+             height="125"
+             layout="topleft"
+             left="0"
+             multi_select="true"
+             name="AccessList"
+             tool_tip="([LISTED] 상장, [MAX] 최대)"
+             width="230" />
+            <button
+             follows="bottom"
+             height="23"
+             label="추가"
+             layout="topleft"
+             left="0"
+             name="add_allowed"
+             width="100" />
+            <button
+             follows="bottom"
+             height="23"
+             label="제거"
+             label_selected="Remove"
+             layout="topleft"
+             left_pad="10"
+             name="remove_allowed"
+             right="-10"
+             width="100" />
+             </panel>
+            <panel
+            name="Banned_layout_panel"
+            follows="top|right"
+            height="170"
+            width="240"
+            left_pad="2">
+            <text
+             type="string"
+             length="1"
+             follows="left|right|top"
+             height="16"
+             label="금지"
+             layout="topleft"
+             left="0"
+             name="BanCheck"
+             top="0"
+             width="200">
+                금지된 ([COUNT]/[MAX])
+            </text>
+            <name_list
+             column_padding="0"
+             follows="top|bottom"
+             heading_height="16"
+             height="125"
+             layout="topleft"
+             left="0"
+             multi_select="true"
+             draw_heading="true"
+             name="BannedList"
+             tool_tip="([LISTED] 상장, [MAX] 최대)"
+             width="230">
+             <columns
+              label="이름"
+              name="name"
+              width="155" />
+             <columns
+              label="기간"
+              name="duration"
+              width="75" />
+            </name_list>
+            <button
+             follows="bottom"
+             height="23"
+             label="추가"
+             layout="topleft"
+             left="0"
+             name="add_banned"
+             width="100" />
+            <button
+             enabled="false"
+             follows="bottom"
+             height="23"
+             label="제거"
+             label_selected="Remove"
+             layout="topleft"
+             left_pad="10"
+             name="remove_banned"
+             right="-10"
+             width="100" />
+             </panel>
+        </panel>
+       <panel
+          border="true"
+          follows="all"
+          label="경험"
+          layout="topleft"
+          left="0"
+          top="0"
+          help_topic="land_experiences_tab"
+          name="land_experiences_panel"
+          filename="panel_region_experiences.xml">
+       </panel>
+       <panel
+          border="true"
+          follows="all"
+          label="환경"
+          layout="topleft"
+          left="0"
+          top="0"
+          help_topic="land_environment_tab"
+          name="land_environment_panel"
+          filename="panel_region_environment.xml">
+       </panel>
+    </tab_container>
+</floater>

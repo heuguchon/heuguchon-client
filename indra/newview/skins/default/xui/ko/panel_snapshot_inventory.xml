@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ height="380"
+ layout="topleft"
+ name="panel_snapshot_inventory"
+ width="490">
+    <icon
+     follows="top|left"
+     height="18"
+     image_name="Snapshot_Inventory"
+     layout="topleft"
+     left="12"
+     mouse_opaque="true"
+     name="title_icon"
+     top="6"
+     width="18" />
+    <text
+     follows="top|left|right"
+     font="SansSerifBold"
+     height="14"
+     layout="topleft"
+     left_pad="12"
+     length="1"
+     name="title"
+     right="-10"
+     text_color="white"
+     type="string"
+     top_delta="3">
+        인벤토리
+    </text>
+    <view_border 
+     bevel_style="in"
+     follows="left|top|right" 
+     height="1"
+     left="9"
+     layout="topleft"
+     name="hr"
+     right="-5"
+     top_pad="5"
+     />
+    <combo_box
+     follows="top|left|right"
+     height="20"
+     label="결의안"
+     layout="topleft"
+     left_delta="0"
+     name="texture_size_combo"
+     right="-5"
+     top_pad="5">
+        <combo_box.item
+         label="작음 (128x128)"
+         name="Small(128x128)"
+         value="[i128,i128]" />
+        <combo_box.item
+         label="중간 (256x256)"
+         name="Medium(256x256)"
+         value="[i256,i256]" />
+        <combo_box.item
+         label="큼 (512x512)"
+         name="Large(512x512)"
+         value="[i512,i512]" />
+        <combo_box.item
+         label="지금 창(512x512)"
+         name="CurrentWindow"
+         value="[i0,i0]" />
+        <combo_box.item
+         label="사용자화"
+         name="Custom"
+         value="[i-1,i-1]" />
+    </combo_box>
+    <spinner
+     allow_text_entry="false"
+     decimal_digits="0"
+     follows="left|top"
+     height="20"
+     increment="32"
+     label="폭 x 높이"
+     label_width="90"
+     layout="topleft"
+     left="10"
+     max_val="6016"
+     min_val="32"
+     name="inventory_snapshot_width"
+     top_pad="7"
+     width="144" />
+    <spinner
+     allow_text_entry="false"
+     decimal_digits="0"
+     follows="left|top"
+     height="20"
+     increment="32"
+     label=""
+     label_width="0"
+     layout="topleft"
+     left_pad="0"
+     max_val="6016"
+     min_val="32"
+     name="inventory_snapshot_height"
+     top_delta="0"
+     width="54" />
+    <check_box
+     top_pad="12"
+     follows="left|top"
+     label="비율 제한"
+     layout="topleft"
+     left="10"
+     name="inventory_keep_aspect_check"
+     visible="false" />
+    <check_box
+     control_name="TemporaryUpload"
+     top_pad="-10"
+     follows="left|top"
+     label="임시 업로드"
+     layout="topleft"
+     left="10"
+     name="inventory_temp_upload"
+     visible="false" />
+    <text
+     follows="top|left"
+     font="SansSerif"
+     height="56"
+     layout="topleft"
+     left="10"
+     length="1"
+     name="hint_lbl"
+     top_pad="1"
+     width="200"
+     type="string"
+     word_wrap="true">
+        이미지를 텍스처로 저장하려면 정사각형 형식 중 하나를 선택합니다.
+    </text>
+    <button
+     follows="right|bottom"
+     height="23"
+     label="&#x25B6; 선택"
+     layout="topleft"
+     name="cancel_btn"
+     right="-5"
+     top="337"
+     width="97">
+      <button.commit_callback
+       function="Inventory.Cancel" />
+    </button>
+    <button
+     follows="left|bottom"
+     height="23"
+     label="저장"
+     layout="topleft"
+     left="10"
+     name="save_btn"
+     top_delta="0"
+     width="97">
+      <button.commit_callback
+       function="Inventory.Save" />
+    </button>
+</panel>

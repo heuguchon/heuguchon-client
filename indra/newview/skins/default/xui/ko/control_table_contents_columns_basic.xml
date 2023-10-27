@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<contents>
+    <columns
+     relative_width="0.34"
+     label="행동"
+     name="lst_action" />
+    <columns
+     relative_width="0.22"
+     label="기본 제어"
+     name="lst_ctrl1" />
+    <columns
+     relative_width="0.22"
+     label="대안 1"
+     name="lst_ctrl2" />
+    <columns
+     relative_width="0.22"
+     label="대안 2"
+     name="lst_ctrl3" />
+</contents>

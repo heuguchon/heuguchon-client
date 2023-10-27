@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ can_minimize="false"
+ height="130"
+ layout="topleft"
+ name="block by name"
+ help_topic="mute_by_name"
+ title="이름으로 개체 차단"
+ width="375">
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     font="SansSerifLarge"
+     height="16"
+     layout="topleft"
+     left="10"
+     top="25"
+     name="message">
+        객체 차단:
+    </text>
+    <line_editor
+     type="string"
+     length="1"
+     follows="top|right"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     left_delta="0"
+     name="object_name"
+     top_pad="5"
+     width="350">
+        개체 이름
+    </line_editor>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     font="SansSerifSmall"
+     height="16"
+     layout="topleft"
+     left="30"
+     name="note">
+      * 개체 텍스트만 차단하고 소리는 차단하지 않음
+    </text>
+    <button
+     follows="bottom|left"
+     height="23"
+     label="OK"
+     layout="topleft"
+     left="155"
+     name="OK"
+     top_pad="10"
+     width="100" />
+    <button
+     follows="bottom|right"
+     height="23"
+     label="취소"
+     layout="topleft"
+     left_pad="5"
+     name="Cancel"
+     width="100" />
+</floater>

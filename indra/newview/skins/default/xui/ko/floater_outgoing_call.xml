@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ can_close="false"
+ can_minimize="false"
+ can_tear_off="false"
+ height="125"
+ layout="topleft"
+ name="outgoing call"
+ help_topic="outgoing_call"
+ save_dock_state="true"
+ title="전화"
+ width="410">
+    <floater.string
+     name="lifetime">
+        5
+    </floater.string>
+    <floater.string
+     name="localchat">
+        주변 음성 채팅
+    </floater.string>
+    <floater.string
+     name="anonymous">
+        익명
+    </floater.string>
+    <floater.string
+     name="VoiceInviteP2P">
+        수신중
+    </floater.string>
+    <floater.string
+     name="VoiceInviteAdHoc">
+        전화 회의 대화로 음성 채팅 통화에 참여했습니다.
+    </floater.string>
+    <avatar_icon
+     enabled="false"
+     follows="left|top"
+     height="36"
+     image_name="icon_avatar_online.tga"
+     layout="topleft"
+     left_delta="19"
+     top="35"
+     width="36" />
+    <group_icon
+     enabled="false"
+     follows="left|top"
+     height="36"
+     layout="topleft"
+     top="35"
+     width="36" />
+    <text
+     font="SansSerifLarge"
+     height="20"
+     layout="topleft"
+     left="77"
+     name="connecting"
+     top="27"
+     visible="false"
+     width="315"
+     word_wrap="true"
+     parse_urls="false">
+[CALLEE_NAME]에 연결하는 중
+    </text>
+    <text
+     font="SansSerifLarge"
+     height="20"
+     layout="topleft"
+     left="77"
+     name="calling"
+     top="27"
+     width="315"
+     word_wrap="true"
+     parse_urls="false">
+ [CALLEE_NAME] 전화
+    </text>
+    <text
+     font="SansSerifLarge"
+     height="20"
+     layout="topleft"
+     left="77"
+     name="noanswer"
+     top="27"
+     width="315"
+     word_wrap="true">
+무응답. 나중에 다시 시도해 주십시오.
+    </text>
+  <text
+   font="SansSerifLarge"
+   height="40"
+   layout="topleft"
+   left="77"
+   name="nearby"
+   top="27"
+   width="315"
+   word_wrap="true"
+   parse_urls="false">
+    [VOICE_CHANNEL_NAME]에서 연결이 끊어졌습니다. [RECONNECT_NEARBY]
+      </text>
+  <text
+   font="SansSerifLarge"
+   height="40"
+   layout="topleft"
+   left="77"
+   name="nearby_P2P_by_other"
+   top="27"
+   width="315"
+   word_wrap="true"
+   parse_urls="false">
+    통화가 종료되었습니다.  [RECONNECT_NEARBY]
+  </text>
+  <text
+   font="SansSerifLarge"
+   height="40"
+   layout="topleft"
+   left="77"
+   name="nearby_P2P_by_agent"
+   top="27"
+   width="315"
+   word_wrap="true"
+   parse_urls="false">
+    통화를 종료했습니다.  [RECONNECT_NEARBY]
+  </text>
+  <text
+     font="SansSerif"
+     height="50"
+     layout="topleft"
+     left="77"
+     name="leaving"
+     top="62"
+     width="315"
+     word_wrap="true"
+     parse_urls="false">
+ [CURRENT_CHAT] 떠나기.
+    </text>
+  <button
+     height="24"
+     label="취소"
+     label_selected="Cancel"
+     left="70"
+     layout="topleft"
+     name="Cancel"
+     left_pad="10"
+     width="100" />
+</floater>

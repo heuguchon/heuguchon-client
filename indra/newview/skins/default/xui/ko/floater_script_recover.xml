@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+  can_close="false"
+  can_minimize="false"
+  can_resize="false"
+  height="275"
+  positioning="centered"
+  name="script_recover"
+  single_instance="true"
+  title="스크립트 회복"
+  width="350">
+
+  <text
+   follows="top|left|right"
+   height="60"
+   layout="topleft"
+   left="15"
+   length="1"
+   name="txt2"
+   top="10"
+   type="string"
+   word_wrap="true"
+   width="330">
+      [APP_NAME] 최근 뷰어 충돌로 인해 남아 있을 수 있는 복구 가능한 스크립트가 탐지되었습니다.
+  
+이러한 스크립트를 복구하도록 선택하면 해당 스크립트는 인벤토리의 '분실된 문서' 폴더에 저장됩니다.
+  </text>
+
+  <scroll_list
+   draw_border="false"
+   draw_heading="true"
+   draw_stripes="true"
+   follows="all"
+   height="150"
+   layout="topleft"
+   left="10"
+   multi_select="false"
+   name="script_list"
+   top_pad="10"
+   width="330">
+    <scroll_list.columns
+      label=""
+      name="script_check"
+      width="20" />
+    <scroll_list.columns
+      label="스크립트 이름"
+      name="script_name"
+      width="170" />
+  </scroll_list>
+
+  <button
+    follows="bottom|left"
+    height="25"
+    label="회복"
+    left="65"
+    name="recover_btn"
+    top_pad="10"
+    width="100" />
+  <button
+    follows="bottom|left"
+    height="25"
+    label="취소"
+    left_pad="20"
+    name="cancel_btn"
+    width="100" />
+
+</floater>

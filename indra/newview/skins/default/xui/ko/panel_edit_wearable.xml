@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ background_visible="false"
+ bevel_style="in"
+ follows="all"
+ height="570"
+ help_topic="fs_edit_body_part"
+ label="의상"
+ layout="topleft"
+ left="0"
+ name="panel_edit_wearable"
+ top="0"
+ width="333">
+    <string
+     name="edit_shape_title">
+        모양 편집중
+    </string>
+    <string
+     name="edit_skin_title">
+        피부 편집중
+    </string>
+    <string
+     name="edit_hair_title">
+        머리카락 편집중
+    </string>
+    <string
+     name="edit_eyes_title">
+        눈 편집중
+    </string>
+    <string
+     name="edit_shirt_title">
+        셔츠 편집중
+    </string>
+    <string
+     name="edit_pants_title">
+        바지 편집중
+    </string>
+    <string
+     name="edit_shoes_title">
+        신발 편집중
+    </string>
+    <string
+     name="edit_socks_title">
+        양말 편집중
+    </string>
+    <string
+     name="edit_jacket_title">
+        겉옷 편집중
+    </string>
+    <string
+     name="edit_skirt_title">
+        치마 편집중
+    </string>
+    <string
+     name="edit_gloves_title">
+        장갑 편집중
+    </string>
+    <string
+     name="edit_undershirt_title">
+        속 셔츠 편집중
+    </string>
+    <string
+     name="edit_underpants_title">
+        속옷 편집중
+    </string>
+    <string
+     name="edit_alpha_title">
+        알파 마스크 편집중
+    </string>
+    <string
+     name="edit_tattoo_title">
+        문신 편집중
+    </string>
+  <string
+   name="edit_universal_title">
+    유니버설 편집중
+  </string>
+    <string
+     name="edit_physics_title">
+        물리학 편집중
+    </string>
+    <string
+     name="shape_desc_text">
+        모양:
+    </string>
+    <string
+     name="skin_desc_text">
+        피부:
+    </string>
+    <string
+     name="hair_desc_text">
+        머리카락:
+    </string>
+    <string
+     name="eyes_desc_text">
+        눈:
+    </string>
+    <string
+     name="shirt_desc_text">
+        셔츠:
+    </string>
+    <string
+     name="pants_desc_text">
+        바지:
+    </string>
+    <string
+     name="shoes_desc_text">
+        신발:
+    </string>
+    <string
+    name="socks_desc_text">
+        양말:
+    </string>
+    <string
+     name="jacket_desc_text">
+        겉옷:
+    </string>
+    <string
+     name="skirt_desc_text">
+        치마:
+    </string>
+    <string
+    name="gloves_desc_text">
+        장갑:
+    </string>
+    <string
+     name="undershirt_desc_text">
+        속셔츠:
+    </string>
+    <string
+     name="underpants_desc_text">
+        속옷:
+    </string>
+    <string
+     name="alpha_desc_text">
+        알파 마스크:
+    </string>
+    <string
+     name="tattoo_desc_text">
+        문신:
+    </string>
+  <string
+     name="universal_desc_text">
+    유니버설:
+  </string>
+    <string
+     name="physics_desc_text">
+        물리학:
+    </string>
+    <!-- Default width of the button should be to show it without label.
+     Button will be extedned in code to show whole label when wearable is being changed.
+    -->
+    <labeled_back_button
+     follows="top|left"
+     height="24"
+     image_hover_unselected="BackButton_Over"
+     image_pressed="BackButton_Press"
+     image_unselected="BackButton_Off"
+     layout="topleft"
+     label="저장"
+     left="11"
+     name="back_btn"
+     pad_left="24"
+     tool_tip="Return to Edit Outfit"
+     top="3"
+     width="30"
+     use_draw_context_alpha="false" />
+    <text
+     follows="top|left|right"
+     font="SansSerifHugeBold"
+     height="22"
+     layout="topleft"
+     left_pad="8"
+     name="edit_wearable_title"
+     text_color="White"
+     top="3"
+     value="모양 편집중"
+     use_ellipses="true"
+     width="274" />
+    <panel
+     background_opaque="false"
+     background_visible="false"
+     bg_alpha_color="DkGray2"
+     bg_opaque_color="DkGray2"
+     border="false"
+     follows="top|left|right"
+     height="60"
+     label="셔츠"
+     layout="topleft"
+     left="10"
+     name="wearable_type_panel"
+     top_pad="10"
+     width="313">
+        <text
+         follows="top|left|right"
+         font="SansSerifSmallBold"
+         height="16"
+         layout="topleft"
+         left="10"
+         name="description_text"
+         text_color="White"
+         top="10"
+         value="모양:"
+         width="150" />
+        <radio_group
+         control_name="AvatarSex"
+         follows="top|right"
+         height="20"
+         layout="topleft"
+         left="210"
+         name="sex_radio"
+         top="5"
+         width="110">
+            <radio_item
+             follows="all"
+             height="16"
+             label=""
+             layout="topleft"
+             left="0"
+             name="sex_male"
+             tool_tip="남성"
+             value="1"
+             width="40" />
+            <radio_item
+             follows="all"
+             height="16"
+             label=""
+             layout="topleft"
+             left_pad="10"
+             name="sex_female"
+             tool_tip="여성"
+             value="0"
+             width="40"/>
+        </radio_group>
+        <!--  graphical labels for the radio buttons above -->
+        <icon
+         follows="top|right"
+         height="16"
+         image_name="icons/Male.png"
+         layout="topleft"
+         left="230"
+         name="male_icon"
+         tool_tip="남성"
+         top="7"
+         width="16" />
+        <icon
+         follows="top|right"
+         height="16"
+         image_name="icons/Female.png"
+         layout="topleft"
+         left="280"
+         name="female_icon"
+         tool_tip="여성"
+         top="7"
+         width="16" />
+        <line_editor
+         follows="all"
+         height="23"
+         layout="topleft"
+         left="10"
+         max_length_bytes="63"
+         name="description"
+         prevalidate_callback="ascii"
+         select_on_focus="true"
+         text_color="Black"
+         top_pad="3"
+         width="290" />
+    </panel>
+    <panel
+     follows="all"
+     height="433"
+     layout="topleft"
+     left="0"
+     name="edit_subpanel_container"
+     top_pad="2"
+     width="333">
+    <!-- the shape editing panel is taller than the others
+		      because it also displays avatar height -->
+        <panel
+         filename="panel_edit_shape.xml"
+         follows="all"
+         height="433"
+         layout="topleft"
+         left="0"
+         name="edit_shape_panel"
+         top="0"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_skin.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_skin_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_hair.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_hair_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_eyes.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_eyes_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_shirt.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_shirt_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_pants.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_pants_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_shoes.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_shoes_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_socks.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_socks_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_jacket.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_jacket_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_skirt.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_skirt_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_gloves.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_gloves_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_undershirt.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_undershirt_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_underpants.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_underpants_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_alpha.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_alpha_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_tattoo.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_tattoo_panel"
+         top="8"
+         visible="false"
+         width="333" />
+      <panel
+         filename="panel_edit_universal.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_universal_panel"
+         top="8"
+         visible="false"
+         width="333" />
+        <panel
+         filename="panel_edit_physics.xml"
+         follows="all"
+         height="425"
+         layout="topleft"
+         left="0"
+         name="edit_physics_panel"
+         top="8"
+         visible="false"
+         width="333" />
+    </panel>
+    <panel
+     follows="bottom|left|right"
+     height="23"
+     layout="topleft"
+     left="2"
+     name="button_panel"
+     top_pad="6"
+     width="326">
+        <layout_stack
+         follows="bottom|left|right"
+         height="23"
+         layout="topleft"
+         mouse_opaque="false"
+         name="button_panel_ls"
+         left="0"
+         orientation="horizontal"
+         top="0"
+         width="326">
+            <layout_panel
+             follows="bottom|left|right"
+             height="23"
+             layout="bottomleft"
+             left="0"
+             mouse_opaque="false"
+             name="save_as_btn_lp"
+             auto_resize="true"
+             width="151">
+                <button
+                 follows="bottom|left|right"
+                 height="23"
+                 label="다른 이름으로 저장"
+                 layout="topleft"
+                 left="1"
+                 name="save_as_button"
+                 top="0"
+                 width="150" />
+            </layout_panel>
+            <layout_panel
+             follows="bottom|left|right"
+             height="23"
+             layout="bottomleft"
+             left="0"
+             mouse_opaque="false"
+             name="revert_btn_lp"
+             auto_resize="true"
+             width="151">
+                <button
+                 follows="bottom|left|right"
+                 height="23"
+                 label="변경 취소"
+                 layout="topleft"
+                 left="1"
+                 name="revert_button"
+                 top="0"
+                 width="150" />
+            </layout_panel>
+            <layout_panel
+             follows="bottom|left|right"
+             height="23"
+             layout="bottomleft"
+             left_pad="3"
+             mouse_opaque="false"
+             name="import_btn_lp"
+             auto_resize="true"
+             width="151">
+                <button
+                 follows="bottom|left|right"
+                 height="23"
+                 label="불러오기"
+                 layout="topleft"
+                 left="1"
+                 name="import_btn"
+                 top="0"
+                 width="150" />
+            </layout_panel>
+        </layout_stack>
+    </panel>
+</panel>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ border="true"
+ follows="all"
+ height="440"
+ layout="topleft"
+ left="1"
+ top="1"
+ width="540"
+ label="피부"
+ name="skin_panel">
+
+    <button
+     image_color="SL-White"
+     image_color_disabled="SL-White"
+     scale_image="true"
+     display_pressed_state="false"
+     hover_glow_amount="0.0"
+     left="30"
+     top="20"
+     follows="left|top"
+     layout="topleft"
+     width="414"
+     height="225"
+     name="skin_preview"
+     image_selected="Blank"
+     image_unselected="Blank" />
+
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="15"
+     layout="topleft"
+     left="30"
+     name="skin_textbox"
+     top_pad="15"
+     width="400">
+        피부:
+    </text>
+    <combo_box
+     follows="left|top"
+     height="23"
+     layout="topleft"
+     left="50"
+     max_chars="135"
+     name="skin_combobox"
+     width="200">
+    </combo_box>
+    <text
+     font="SansSerifSmall"
+     type="string"
+     text_color="White_50"
+     length="1"
+     follows="left|top"
+     height="18"
+     layout="topleft"
+     left_pad="10"
+     name="skin_textbox1"
+     width="200">
+        (재시작 요청)
+    </text>
+
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="15"
+     layout="topleft"
+     left="30"
+     top_pad="15"
+     name="theme_textbox"
+     width="200">
+        색 구성표:
+    </text>
+    <combo_box
+     follows="left|top"
+     height="23"
+     layout="topleft"
+     left="50"
+     name="theme_combobox"
+     width="200">
+    </combo_box>
+    <text
+     font="SansSerifSmall"
+     type="string"
+     text_color="White_50"
+     length="1"
+     follows="left|top"
+     height="18"
+     layout="topleft"
+     left_pad="10"
+     name="theme_textbox2"
+     width="200">
+        (재시작 요청)
+    </text>
+
+    <check_box
+     control_name="FSSkinClobbersToolbarPrefs"
+     enabled="true"
+     follows="left|top"
+     height="16"
+     initial_value="true"
+     label="스킨을 변경할 때 툴바를 스킨의 기본 레이아웃으로 재설정."
+	 tool_tip="이 옵션을 선택하면 스킨이 디자인한 도구 모음 단추 레이아웃이 유지되고 스킨을 변경할 때 선택한 단추 사용자 지정이 무시됩니다."
+     layout="topleft"
+     left="30"
+     top_pad="15"
+     name="reset_toolbar_settings"
+     width="200" />
+
+    <check_box
+     control_name="FSToolbarsResetOnModeChange"
+     enabled="true"
+     follows="left|top"
+     height="16"
+     initial_value="true"
+     label="로그인 모드를 변경할 때 도구 모음을 로그인 모드의 기본 레이아웃으로 재설정."
+	 tool_tip="이 옵션을 선택하면 로그인 모드의 설계된 도구 모음 단추 레이아웃이 유지되고 로그인 모드를 변경할 때 선택한 단추 사용자 지정이 무시됩니다."
+     layout="topleft"
+     left="30"
+     top_pad="5"
+     name="FSToolbarsResetOnModeChange"
+     width="200" />
+
+    <check_box
+     control_name="FSUseLegacyCursors"
+     follows="left|top"
+     height="16"
+     initial_value="true"
+     label="뷰어 1 스타일 커서 사용"
+     layout="topleft"
+     left="30"
+     top_pad="5"
+     name="use_legacy_cursors"
+     width="200" />
+    <text
+     font="SansSerifSmall"
+     type="string"
+     text_color="White_50"
+     length="1"
+     follows="left|top"
+     height="18"
+     layout="topleft"
+     left_pad="30"
+     name="theme_textbox3"
+     width="200">
+        (재시작 요청)
+    </text>
+
+
+
+
+
+</panel>

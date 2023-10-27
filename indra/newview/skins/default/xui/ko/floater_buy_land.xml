@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ can_minimize="false"
+ height="484"
+ layout="topleft"
+ name="buy land"
+ help_topic="buy_land"
+ single_instance="true"
+ title="Buy Land"
+ width="740">
+    <floater.string
+     name="can_resell">
+        재판매 가능.
+    </floater.string>
+    <floater.string
+     name="can_not_resell">
+        재판매 불가능.
+    </floater.string>
+    <floater.string
+     name="can_change">
+        결합 또는 세분화 될 수 있습니다.
+    </floater.string>
+    <floater.string
+     name="can_not_change">
+        결합 또는 세분화 될 수 없습니다.
+    </floater.string>
+    <floater.string
+     name="cant_buy_for_group">
+        활성 그룹의 토지를 구입할 수 있는 권한이 없습니다.
+    </floater.string>
+    <floater.string
+     name="no_land_selected">
+        선택된 토지가 없습니다.
+    </floater.string>
+    <floater.string
+     name="multiple_parcels_selected">
+        여러 개의 서로 다른 구획이 선택되었습니다. 
+더 작은 영역을 선택하십시오.
+    </floater.string>
+    <floater.string
+     name="no_permission">
+        활성 그룹의 토지를 구입할 수 있는 권한이 없습니다.
+    </floater.string>
+    <floater.string
+     name="parcel_not_for_sale">
+        선택한 소포는 비매품입니다.
+    </floater.string>
+    <floater.string
+     name="group_already_owns">
+        그룹이 이미 구획을 소유하고 있습니다.
+    </floater.string>
+    <floater.string
+     name="you_already_own">
+        이미 구획을 소유하고 있습니다.
+    </floater.string>
+    <floater.string
+     name="set_to_sell_to_other">
+        선택한 구획이 다른 당사자에게 판매되도록 설정되었습니다.
+    </floater.string>
+    <floater.string
+     name="no_public_land">
+        선택한 지역에 공용 토지가 없습니다.
+    </floater.string>
+    <floater.string
+     name="not_owned_by_you">
+        다른 거주자가 소유한 토지가 선택됨. 
+더 작은 영역을 선택하십시오.
+    </floater.string>
+    <floater.string
+     name="processing">
+        구매 처리 중...
+ 
+(1~2분 정도 소요됩니다.)
+    </floater.string>
+    <floater.string
+     name="fetching_error">
+        토지 구매 정보를 가져오는 동안 오류가 발생했습니다.
+    </floater.string>
+    <floater.string
+     name="buying_will">
+        이 토지를 구매하는 것은:
+    </floater.string>
+    <floater.string
+     name="buying_for_group">
+        그룹으로 토지를 구매하는 것은:
+    </floater.string>
+    <floater.string
+     name="cannot_buy_now">
+        지금은 구매할 수 없습니다:
+    </floater.string>
+    <floater.string
+     name="not_for_sale">
+        비매품:
+    </floater.string>
+    <floater.string
+     name="none_needed">
+        필요 없음
+    </floater.string>
+    <floater.string
+     name="must_upgrade">
+        계정을 소유 토지로 업그레이드해야 합니다.
+    </floater.string>
+    <floater.string
+     name="cant_own_land">
+        당신의 계좌는 땅을 소유할 수 있다.
+    </floater.string>
+    <floater.string
+     name="land_holdings">
+        당신은 [BUYER] m²의 땅을 소유하고 있다.
+    </floater.string>
+    <floater.string
+     name="pay_to_for_land">
+        이 토지에 대해 [SELLER]에게 L$[AMOUNT]을 지불합니다.
+    </floater.string>
+    <floater.string
+     name="buy_for_US">
+        대략 L$ [AMOUNT] 에 구매. [LOCAL_AMOUNT],
+    </floater.string>
+    <floater.string
+     name="parcel_meters">
+        이 구획은 [AMOUNT] m²
+    </floater.string>
+    <floater.string
+     name="premium_land">
+        이 땅은 프리미엄입니다, 그리고 [AMOUNT] m² 이 청구됩니다.
+    </floater.string>
+    <floater.string
+     name="discounted_land">
+        이 땅은 할인됐습니다, 그리고 [AMOUNT] m² 이 청구됩니다.
+    </floater.string>
+    <floater.string
+     name="meters_supports_object">
+        [AMOUNT] m² 는
+ [AMOUNT2] 개체를 지원합니다
+    </floater.string>
+    <floater.string
+     name="sold_with_objects">
+        개체와 함께 팔리는
+    </floater.string>
+    <floater.string
+     name="sold_without_objects">
+        개체 포함 안됨
+    </floater.string>
+    <floater.string
+     name="info_price_string">
+        L$ [PRICE]
+(L$ [PRICE_PER_SQM]/m²)
+[SOLD_WITH_OBJECTS]
+    </floater.string>
+    <floater.string
+     name="insufficient_land_credits">
+        그룹 [GROUP]은 구입이 완료되기 전에 이 구획을 충당하기에 충분한 토지 사용 공제가 필요합니다.
+    </floater.string>
+    <floater.string
+     name="have_enough_lindens">
+        당신은 이 땅을 사기에 충분한 L$[AMOUNT]를 가지고 있습니다..
+    </floater.string>
+    <floater.string
+     name="not_enough_lindens">
+     L$ [AMOUNT] 만 있고,  L$ [AMOUNT2] 가 더 필요합니다.
+    </floater.string>
+    <floater.string
+     name="balance_left">
+        구매 후 L$ [AMOUNT]가 남습니다.
+    </floater.string>
+    <floater.string
+     name="balance_needed">
+        이 땅을 구입하려면 최소 L$[AMOUNT]를 구입해야 합니다..
+    </floater.string>
+    <floater.string
+     name="no_parcel_selected">
+        (선택된 구획 없음)
+    </floater.string>
+    <floater.string
+     name="icon_PG"
+     translate="false"
+     value="Parcel_PG_Dark"/>
+    <floater.string
+     name="icon_M"
+     translate="false"
+     value="Parcel_M_Dark"/>
+    <floater.string
+     name="icon_R"
+     translate="false"
+     value="Parcel_R_Dark"/>
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="14"
+     layout="topleft"
+     left="440"
+     name="region_name_label"
+     right="550"
+     top="21"
+     width="60"
+     word_wrap="true">
+        지역:
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="14"
+     layout="topleft"
+     left_delta="125"
+     name="region_name_text"
+     top_delta="0"
+     use_ellipses="true"
+     width="150">
+        (알 수 없음)
+    </text>
+    <icon
+     follows="left|top"
+     height="16"
+     layout="topleft"
+     name="rating_icon"
+     top_delta="-2"
+     width="18"/>
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="14"
+     layout="topleft"
+     left="440"
+     name="region_type_label"
+     right="550"
+     width="60"
+     word_wrap="true">
+        타입:
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="14"
+     layout="topleft"
+     left_delta="125"
+     name="region_type_text"
+     top_delta="0"
+     use_ellipses="true"
+     width="170">
+        (알 수 없음)
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="14"
+     layout="topleft"
+     left="440"
+     name="estate_name_label"
+     right="550"
+     width="60"
+     word_wrap="true">
+        재산:
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="14"
+     layout="topleft"
+     left_delta="125"
+     name="estate_name_text"
+     top_delta="0"
+     use_ellipses="true"
+     width="170">
+        (알 수 없음)
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="20"
+     layout="topleft"
+     left="440"
+     name="estate_owner_label"
+     right="565"
+     width="120"
+     word_wrap="true">
+        재산 소유주:
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="20"
+     layout="topleft"
+     left_delta="125"
+     name="estate_owner_text"
+     top_delta="0"
+     use_ellipses="true"
+     width="170">
+        (알 수 없음)
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     font="SansSerif"
+     height="16"
+     layout="topleft"
+     left="440"
+     name="resellable_changeable_label"
+     right="725"
+     width="260"
+     word_wrap="true">
+        이 지역의 매입 토지:
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="16"
+     layout="topleft"
+     left="470"
+     name="resellable_clause"
+     right="725"
+     width="260"
+     word_wrap="true">
+        재판매 가능 여부.
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="16"
+     layout="topleft"
+     left="470"
+     name="changeable_clause"
+     right="725"
+     width="260"
+     word_wrap="true">
+        결합 또는 세분될 수 있거나 없을 수 있습니다.
+    </text>
+    <text
+     type="string"
+     length="1"
+     height="16"
+     layout="topleft"
+     left="440"
+     name="covenant_text"
+     right="725"
+     width="260">
+        재산 계약에 동의해야 합니다.:
+    </text>
+    <text
+     follows="left|top"
+     height="12"
+     layout="topleft"
+     name="covenant_timestamp_text"
+     right="-15"
+     top="175"
+     width="281"
+     word_wrap="true" />
+    <text_editor
+     type="string"
+     length="1"
+     enabled="false"
+     follows="top|right"
+     height="237"
+     layout="topleft"
+     left="444"
+     max_length="65535"
+     name="covenant_editor"
+     right="725"
+     top="192"
+     width="271"
+     word_wrap="true">
+        로딩중...
+    </text_editor>
+    <check_box
+     height="20"
+     label="위에서 정의한 계약에 동의합니다."
+     layout="topleft"
+     left="440"
+     name="agree_covenant"
+     right="725"
+     width="275" />
+    <texture_picker
+     enabled="false"
+     fallback_image="default_land_picture.j2c"
+     follows="top|left"
+     height="135"
+     layout="topleft"
+     left="16"
+     name="info_image"
+     top="28"
+     width="180" />
+    <text
+     type="string"
+     length="1"
+     bottom_delta="-119"
+     follows="top|left"
+     height="16"
+     layout="topleft"
+     left="204"
+     name="info_parcel_label"
+     top="30"
+     width="48">
+        구획:
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     font="SansSerif"
+     height="16"
+     layout="topleft"
+     left_delta="16"
+     name="info_parcel"
+     top_pad="1"
+     width="180">
+        Scotopteryx 138,204
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     height="16"
+     layout="topleft"
+     left="204"
+     name="info_size_label"
+     top_pad="1"
+     width="48">
+        크기:
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     font="SansSerif"
+     height="32"
+     layout="topleft"
+     left_delta="16"
+     name="info_size"
+     top_pad="1"
+     width="180">
+        1024 m²
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     height="16"
+     layout="topleft"
+     left="204"
+     name="info_price_label"
+     top_pad="1"
+     width="48">
+        가격:
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     font="SansSerif"
+     height="16"
+     layout="topleft"
+     left_delta="16"
+     name="info_price"
+     top_pad="1"
+     width="180">
+        L$ 1500
+(L$ 1.1/m²)
+개체와 함께 팔리는
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     font="SansSerifHuge"
+     height="24"
+     layout="topleft"
+     left="16"
+     name="info_action"
+     top="166"
+     width="350">
+        이 땅을 사는 것은:
+    </text>
+    <locate
+     height="6"
+     layout="topleft" />
+    <icon
+     follows="top|left"
+     height="64"
+     image_name="badge_note.j2c"
+     layout="topleft"
+     left="0"
+     name="step_error"
+     width="64" />
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     height="160"
+     layout="topleft"
+     left="72"
+     name="error_message"
+     right="435"
+     top="208"
+     width="215"
+     word_wrap="true">
+        뭔가 잘못된 것 &apos; 같습니다.
+    </text>
+    <button
+     follows="bottom|left"
+     height="20"
+     label="웹사이트로 이동"
+     layout="topleft"
+     left_delta="0"
+     name="error_web"
+     top_delta="154"
+     width="120" />
+    <locate
+     height="-200"
+     layout="topleft" />
+    <icon
+     follows="top|left"
+     height="64"
+     image_name="badge_ok.j2c"
+     layout="topleft"
+     left="0"
+     name="step_1"
+     width="64" />
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     font="SansSerifBig"
+     height="32"
+     layout="topleft"
+     left="72"
+     name="account_action"
+     right="438"
+     top="200"
+     width="218"
+     wrap="true">
+        프리미엄 멤버쉽으로 업그레이드.
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     height="16"
+     layout="topleft"
+     left="72"
+     name="account_reason"
+     right="400"
+     width="180">
+        프리미엄 회원만 토지를 소유할 수 있습니다.
+    </text>
+    <combo_box
+     follows="top|left"
+     height="16"
+     layout="topleft"
+     left="80"
+     name="account_level"
+     width="336">
+        <combo_box.item
+         label="US$9.95/월, 매월 결제"
+         name="US$9.95/month,billedmonthly" />
+        <combo_box.item
+         label="US$7.50/월, 매분기 결제"
+         name="US$7.50/month,billedquarterly" />
+        <combo_box.item
+         label="US$6.00/월, 매년 결제"
+         name="US$6.00/month,billedannually" />
+    </combo_box>
+    <locate
+     height="5"
+     layout="topleft" />
+    <icon
+     follows="top|left"
+     height="64"
+     image_name="badge_note.j2c"
+     layout="topleft"
+     left="0"
+     name="step_2"
+     top_pad="-10"
+     width="64" />
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     font="SansSerifBig"
+     height="32"
+     layout="topleft"
+     left="72"
+     name="land_use_action"
+     right="438"
+     top="279"
+     width="218"
+     wrap="true">
+        월 토지 사용료를 월 US$40로 인상하십시오.
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     height="32"
+     layout="topleft"
+     left="72"
+     name="land_use_reason"
+     right="435"
+     width="215"
+     word_wrap="true">
+        당신은 1309m²의 땅을 가지고 있습니다.
+이 소포는 512m²의 땅이다.
+    </text>
+    <locate
+     height="5"
+     layout="topleft" />
+    <icon
+     follows="top|left"
+     height="64"
+     image_name="badge_note.j2c"
+     layout="topleft"
+     left="0"
+     name="step_3"
+     width="64" />
+    <text
+     type="string"
+     length="1"
+     bottom_delta="-22"
+     follows="top|left"
+     font="SansSerifBig"
+     height="32"
+     layout="topleft"
+     left="72"
+     name="purchase_action"
+     right="438"
+     wrap="true">
+        조 레지던트에게 땅값 L$4000을 지불
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     height="16"
+     layout="topleft"
+     left="72"
+     name="currency_reason"
+     right="400">
+         L$ 2,100를 가지고 있습니다.
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     height="16"
+     layout="topleft"
+     left_delta="0"
+     name="currency_action"
+     top_pad="9"
+     width="95">
+        추가 L$ 구매
+    </text>
+    <locate
+     height="0"
+     layout="topleft"
+     width="8" />
+    <line_editor
+     type="string"
+     length="1"
+     follows="top|right"
+     height="16"
+     layout="topleft"
+     left="170"
+     name="currency_amt"
+     top="424"
+     width="80">
+        1000
+    </line_editor>
+    <locate
+     height="0"
+     layout="topleft"
+     width="8" />
+    <text
+     type="string"
+     length="1"
+     follows="top|right"
+     height="16"
+     layout="topleft"
+     left="260"
+     name="currency_est"
+     top="425"
+     width="178">
+        대략. [LOCAL_AMOUNT]
+    </text>
+    <text
+     type="string"
+     length="1"
+     follows="top|left"
+     height="16"
+     layout="topleft"
+     left="72"
+     name="currency_balance"
+     right="400">
+        당신은 L$2,100를 가지고 있습니다.
+    </text>
+    <button
+     follows="bottom|left"
+     height="20"
+     label="구매"
+     layout="topleft"
+     left="440"
+     name="buy_btn"
+     top="454"
+     width="100" />
+    <check_box
+     follows="bottom|left"
+     height="20"
+     label="그룹에서 기여 [AMOUNT] m³를 제거합니다."
+     layout="topleft"
+     left_pad="3"
+     name="remove_contribution"
+     visible="false"
+     width="275" />
+    <button
+     follows="bottom|right"
+     height="20"
+     label="취소"
+     layout="topleft"
+     left="-90"
+     name="cancel_btn"
+     top="454"
+     width="80" />
+</floater>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ height="300"
+ layout="topleft"
+ mouse_opaque="true"
+ name="contact_sets_panel"
+ width="355">
+    <panel.string
+     name="empty_list">
+    주소록 집합이 비어있습니다.
+    </panel.string>
+    <panel.string
+     name="no_sets">
+    집합 없음
+    </panel.string>
+    <panel.string
+     name="all_sets">
+    모든 집합
+    </panel.string>
+    <panel.string
+     name="pseudonyms">
+    별칭
+    </panel.string>
+    <panel.string
+     name="non_friends">
+    친구 없음
+    </panel.string>
+    <combo_box
+     follows="left|top|right"
+     layout="topleft"
+     height="18"
+     top="1"
+     left="4"
+     name="combo_sets"
+     width="197" />
+    <button
+     top_delta="0"
+     follows="top|right"
+     layout="topleft"
+     height="18" 
+     image_overlay="Script_Config"
+     left_pad="1"
+     name="config_btn"
+     tool_tip="선택한 연락처 집합 구성"
+     width="20" />
+    <button
+     top_delta="0"
+     follows="top|right"
+     layout="topleft"
+     height="18"
+     image_overlay="AddItem_Off"
+     left_pad="1"
+     name="add_set_btn"
+     tool_tip="새 연락처 세트 추가"
+     width="20" />
+    <button
+     top_delta="0"
+     follows="top|right"
+     layout="topleft"
+     height="18"
+     image_overlay="TrashItem_Off"
+     left_pad="1"
+     name="remove_set_btn"
+     tool_tip="선택한 연락처 집합 제거"
+     width="20" />
+	<view_border
+	 top="22"
+	 left="4"
+	 right="-92"
+	 bottom="-26"
+	 layout="topleft"
+	 follows="all"
+	 bevel_style="in"
+	 name="info_border" />
+	<avatar_list
+     left="6"
+     width="255"
+     top="25"
+     bottom="-29"
+	 follows="all"
+	 layout="topleft"
+     show_profile_btn="true"
+     show_speaking_indicator="false"
+     show_voice_volume="false"
+     show_permissions_granted="true"
+     show_icons="true"
+     allow_select="true"
+	 multi_select="true"
+     keep_one_selected="false"
+     name="contact_list" />
+    <!-- Action buttons -->
+	<button
+	 top="1"
+	 follows="top|right"
+	 layout="topleft"
+	 height="22"
+	 label="추가..."
+	 left="269"
+	 name="add_btn"
+	 tool_tip="현재 연락처 집합에 아바타 추가"
+	 width="80" />
+    <button
+     top_pad="3"
+     follows="top|right"
+     layout="topleft"
+     height="22"
+     label="제거..."
+     name="remove_btn"
+     tool_tip="현재 연락처 집합에서 이 아바타 제거"
+     width="80" />
+	<button
+	 top_pad="3"
+	 follows="top|right"
+	 layout="topleft"
+	 height="22"
+	 label="프로필..."
+	 name="profile_btn"
+	 tool_tip="이 아바타의 프로필 열기"
+	 width="80" />
+    <button
+     top_pad="3"
+     follows="top|right"
+     layout="topleft"
+     height="22"
+     label="IM..."
+     name="start_im_btn"
+     tool_tip="인스턴트 메시지 대화 시작"
+     width="80" />
+	<button
+	 top_pad="3"
+	 follows="top|right"
+	 layout="topleft"
+	 height="22"
+	 label="순간이동..."
+	 name="offer_teleport_btn"
+	 tool_tip="현재 위치로 텔레포트를 제공합니다."
+	 width="80" />
+	<button
+	 top_pad="10"
+	 follows="top|right"
+	 layout="topleft"
+	 height="22"
+	 label="별칭 설정..."
+	 name="set_pseudonym_btn"
+	 tool_tip="이 아바타에 가명을 지정합니다."
+	 width="80" />
+	<button
+	 top_pad="3"
+	 follows="top|right"
+	 layout="topleft"
+	 height="22"
+	 label="별칭 제거..."
+	 name="remove_pseudonym_btn"
+	 tool_tip="아바타의 가명 제거"
+	 width="80" />
+	<button
+	 top_pad="3"
+	 follows="top|right"
+	 layout="topleft"
+	 height="22"
+	 label="전시 이름 제거..."
+	 name="remove_displayname_btn"
+	 tool_tip="아바타의 표시 이름 제거"
+	 width="80" />
+    <text
+     bottom="-4"
+     left="6"
+     follows="bottom|left"
+     layout="topleft"
+     height="14"
+     name="member_count"
+     width="80">
+    멤버들: [COUNT]
+    </text>
+</panel>

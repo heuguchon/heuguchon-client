@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<context_menu
+ layout="topleft"
+ name="Land Pie">
+    <menu_item_call
+     label="랜드에 관하여"
+     name="Place Information...">
+        <menu_item_call.on_click
+         function="Floater.Show"
+         parameter="about_land" />
+        <menu_item_call.on_enable
+         function="Floater.CanShow"
+         parameter="about_land" />
+    </menu_item_call>
+ <!--   <menu_item_call
+     label="Go Here"
+     name="Go Here">
+        <menu_item_call.on_click
+         function="GoToObject" />
+    </menu_item_call>-->
+    <menu_item_call
+     label="여기 앉기"
+     name="Sit Here">
+        <menu_item_call.on_click
+         function="Land.Sit" />
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" />
+        <menu_item_call
+     enabled="false"
+     label="이 랜드 구매"
+     name="Land Buy">
+        <menu_item_call.on_click
+         function="Land.Buy" />
+        <menu_item_call.on_enable
+         function="World.EnableBuyLand" />
+    </menu_item_call>
+   <menu_item_call
+     enabled="false"
+     label="패스 구매"
+     name="Land Buy Pass">
+        <menu_item_call.on_click
+         function="Land.BuyPass" />
+        <menu_item_call.on_enable
+         function="Land.EnableBuyPass" />
+    </menu_item_call>
+            <menu_item_separator
+     layout="topleft" />
+   <menu_item_call
+     enabled="false"
+     label="빌드"
+     name="Create">
+        <menu_item_call.on_click
+         function="Land.Build" />
+        <menu_item_call.on_enable
+         function="EnableEdit" />
+    </menu_item_call>
+    <menu_item_call
+     enabled="false"
+     label="지역 편집"
+     name="Edit Terrain">
+        <menu_item_call.on_click
+         function="Land.Edit" />
+        <menu_item_call.on_enable
+         function="EnableEdit" />
+    </menu_item_call>
+   <menu_item_separator
+       layout="topleft" />
+  <menu_item_call
+     enabled="false"
+     label="블록 입자 소유자"
+     name="Mute Particle">
+    <menu_item_call.on_click
+     function="Particle.Mute" />
+    <menu_item_call.on_enable
+     function="EnableMuteParticle" />
+  </menu_item_call>
+</context_menu>

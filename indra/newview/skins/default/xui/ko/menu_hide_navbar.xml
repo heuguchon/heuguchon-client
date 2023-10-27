@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<menu
+ height="201"
+ layout="topleft"
+ left="100"
+ mouse_opaque="false"
+ name="hide_navbar_menu"
+ top="624"
+ visible="false"
+ width="128">
+    <menu_item_check
+         label="탐색 및 검색 표시줄 표시"
+         name="ShowNavbarNavigationPanel">
+           <on_click
+             function="ToggleControl"
+             parameter="ShowNavbarNavigationPanel" /> 
+             <on_check
+             function="CheckControl"
+             parameter="ShowNavbarNavigationPanel" />
+    </menu_item_check>
+    <menu_item_check
+         label="검색 표시줄 표시"
+         name="ShowSearchTopBar">
+           <on_click
+             function="ToggleControl"
+             parameter="ShowSearchTopBar" /> 
+             <on_check
+             function="CheckControl"
+             parameter="ShowSearchTopBar" />
+             <on_enable
+             function="CheckControl"
+             parameter="ShowNavbarNavigationPanel" />
+    </menu_item_check>
+    <menu_item_check
+         label="즐겨찾기 모음 표시"
+         name="ShowNavbarFavoritesPanel">
+           <on_click
+             function="ToggleControl"
+             parameter="ShowNavbarFavoritesPanel" /> 
+             <on_check
+             function="CheckControl"
+             parameter="ShowNavbarFavoritesPanel" />
+    </menu_item_check>
+    <!-- AO - remove this option, problematic
+    <menu_item_check
+         label="Show Mini-Location Bar"
+         layout="topleft"
+         name="ShowMiniLocationPanel">
+           <on_click
+             function="ToggleControl"
+             parameter="ShowMiniLocationPanel" />
+             <on_check
+             function="CheckControl"
+             parameter="ShowMiniLocationPanel" />
+    </menu_item_check>
+    -->
+    <menu_item_separator/>
+    <menu_item_check
+         label="위치 표시"
+         name="ShowMenuBarLocation">
+           <on_click
+             function="ToggleControl"
+             parameter="ShowMenuBarLocation" /> 
+             <on_check
+             function="CheckControl"
+             parameter="ShowMenuBarLocation" />
+    </menu_item_check>
+    <menu_item_check
+         label="시뮬레이터 버전 표시"
+         name="FSStatusbarShowSimulatorVersion">
+           <on_click
+             function="ToggleControl"
+             parameter="FSStatusbarShowSimulatorVersion" /> 
+             <on_check
+             function="CheckControl"
+             parameter="FSStatusbarShowSimulatorVersion" />
+             <on_enable
+             function="CheckControl"
+             parameter="ShowMenuBarLocation" />
+    </menu_item_check>
+    <menu_item_check
+         label="메뉴 검색 표시"
+         name="FSMenuSearch">
+           <on_click
+             function="ToggleControl"
+             parameter="MenuSearch" /> 
+             <on_check
+             function="CheckControl"
+             parameter="MenuSearch" />
+    </menu_item_check>
+    <menu_item_check
+         label="통화 잔고 표시"
+         name="FSShowCurrencyBalanceInStatusbar">
+           <on_click
+             function="ToggleControl"
+             parameter="FSShowCurrencyBalanceInStatusbar" /> 
+             <on_check
+             function="CheckControl"
+             parameter="FSShowCurrencyBalanceInStatusbar" />
+    </menu_item_check>
+    <menu_item_check
+         label="미디어 조작 표시"
+         name="FSEnableVolumeControls">
+           <on_click
+             function="ToggleControl"
+             parameter="FSEnableVolumeControls" /> 
+             <on_check
+             function="CheckControl"
+             parameter="FSEnableVolumeControls" />
+    </menu_item_check>
+    <menu_item_check
+         label="초당 프레임 표시"
+         name="FSStatusBarShowFPS">
+           <on_click
+             function="ToggleControl"
+             parameter="FSStatusBarShowFPS" /> 
+             <on_check
+             function="CheckControl"
+             parameter="FSStatusBarShowFPS" />
+    </menu_item_check>
+    <menu_item_check
+         label="트래픽 표시기 표시"
+         name="ShowNetStats">
+           <on_click
+             function="ToggleControl"
+             parameter="ShowNetStats" /> 
+             <on_check
+             function="CheckControl"
+             parameter="ShowNetStats" />
+    </menu_item_check>
+    <menu_item_separator/>
+    <menu_item_check
+         label="좌표 표시"
+         name="Coordinates">
+           <on_click
+             function="ToggleControl"
+             parameter="NavBarShowCoordinates" />
+             <on_check
+              control="NavBarShowCoordinates" />
+    </menu_item_check>
+    <menu_item_check
+         label="구획 사용 권한 표시"
+         name="Parcel Properties">
+           <on_click
+             function="ToggleControl"
+             parameter="NavBarShowParcelProperties" />
+             <on_check
+              control="NavBarShowParcelProperties" />
+    </menu_item_check>
+</menu>

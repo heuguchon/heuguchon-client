@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<context_menu
+ name="Outfit Wearable Context Menu">
+    <menu_item_call
+     label="대체"
+     layout="topleft"
+     visible="false"
+     name="wear_replace">
+        <on_click
+         function="Wearable.Wear" />
+    </menu_item_call>
+    <menu_item_call
+     label="입기"
+     layout="topleft"
+     visible="false"
+     name="wear_wear">
+        <on_click
+         function="Wearable.Wear" />
+    </menu_item_call>
+    <menu_item_call
+     label="추가"
+     layout="topleft"
+     visible="false"
+     name="wear_add">
+        <on_click
+         function="Wearable.Add" />
+    </menu_item_call>
+    <context_menu
+     label="부착"
+     layout="topleft"
+     name="wearable_attach_to" />
+    <context_menu
+     label="HUD에 부착"
+     layout="topleft"
+     name="wearable_attach_to_hud" />
+    <menu_item_call
+     label="터치"
+     layout="topleft"
+     name="touch"
+     visible="false"
+     on_click.function="Attachment.Touch"
+     />
+    <menu_item_call
+     label="편집"
+     layout="topleft"
+     name="edit"
+     visible="false"
+     on_click.function="Wearable.Edit"
+     />
+    <menu_item_call
+     label="벗기 / 탈착"
+     layout="topleft"
+     visible="false"
+     name="take_off_or_detach">
+        <on_click
+         function="Wearable.TakeOffDetach" />
+    </menu_item_call>
+    <menu_item_call
+     label="탈착"
+     layout="topleft"
+     visible="false"
+     name="detach">
+        <on_click
+         function="Attachment.Detach" />
+    </menu_item_call>
+    <menu_item_call
+     label="벗기"
+     layout="topleft"
+     visible="false"
+     name="take_off">
+        <on_click
+         function="Clothing.TakeOff" />
+    </menu_item_call>
+    <menu_item_call
+     label="아이템 프로필"
+     layout="topleft"
+     visible="false"
+     name="object_profile">
+        <on_click
+         function="Attachment.Profile" />
+    </menu_item_call>
+    <menu_item_separator />
+    <menu_item_call
+     label="원본 표시"
+     layout="topleft"
+     visible="false"
+     name="show_original">
+        <on_click
+         function="Wearable.ShowOriginal" />
+    </menu_item_call>
+    <menu_item_call
+     label="새로 만들기"
+     layout="topleft"
+     visible="false"
+     name="create_new"
+     translate="false">
+        <on_click
+         function="Wearable.CreateNew" />
+    </menu_item_call>
+    <menu_item_call
+     label="--옵션 없음--"
+     layout="topleft"
+     visible="false"
+     name="--no options--"
+     translate="false">
+    </menu_item_call>
+</context_menu>

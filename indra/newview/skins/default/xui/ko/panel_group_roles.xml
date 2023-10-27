@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ width="470"
+ height="420"
+ label="회원 &amp; 역할"
+ layout="topleft"
+ left="0"
+ top="0"
+ follows="all"
+ name="roles_tab">
+
+    <panel.string
+     name="default_needs_apply_text">
+        저장되지 않은 변경 사항이 있습니다.
+    </panel.string>
+    <panel.string
+     name="want_apply_text">
+        변경 내용을 저장하시겠습니까?
+    </panel.string>
+    <panel.string
+     name="help_text" />
+
+    <!-- separates the tab panel from the options underneath -->
+
+    <tab_container
+     name="roles_tab_container"
+     left="0"
+     top="0"
+     right="-1"
+     height="188"
+     halign="center"
+     tab_position="top"
+     follows="top|left|right"
+     layout="topleft">
+
+<!-- MEMBERS sub tab -->
+
+        <panel
+         name="members_sub_tab"
+         label="회원"
+         tool_tip="Members"
+         help_topic="roles_members_tab"
+         left="0"
+         top="0"
+         right="-1"
+         height="188"
+         class="panel_group_members_subtab"
+         follows="all"
+         layout="topleft">
+
+            <panel.string
+             name="help_text">
+                구성원에게 할당된 역할을 추가하거나 제거할 수 있습니다.
+Ctrl 키를 누른 상태에서 여러 멤버를 선택하고
+이름을 클릭하기.
+            </panel.string>
+            <panel.string
+             name="donation_area">
+                [AREA] m²
+            </panel.string>
+            <panel.string
+             name="power_folder_icon" translate="false">
+                인벤토리 폴더 닫힘
+            </panel.string>
+            <panel.string
+             name="power_all_have_icon" translate="false">
+                체크박스 켜짐
+            </panel.string>
+            <panel.string
+             name="power_partial_icon" translate="false">
+                체크박스 꺼짐
+            </panel.string>
+
+            <filter_editor
+             layout="topleft"
+             top="5"
+             left="5"
+             right="-5"
+             height="22"
+             search_button_visible="false"
+             follows="left|top|right"
+             label="회원 필터"
+             name="filter_input" />
+
+            <name_list
+             name="member_list"
+             left="1"
+             top_pad="5"
+             right="-1"
+             height="129"
+             column_padding="2"
+             draw_heading="true"
+             multi_select="true"
+             short_names="false"
+             follows="all"
+             layout="topleft">
+
+                <name_list.columns
+                 label="회원"
+                 name="name"
+                 relative_width="0.50" />
+                <name_list.columns
+                 label="기부"
+                 name="donated"
+                 relative_width="0.15" />
+                <name_list.columns
+                 label="상태"
+                 name="online"
+                 relative_width="0.18" />
+                <name_list.columns
+                 label="제목"
+                 name="title"
+                 relative_width="0.18" />
+            </name_list>
+
+            <button
+             name="member_invite"
+             label="초대"
+             left="3"
+             top_pad="4"
+             width="100"
+             height="23"
+             follows="bottom|left"
+             layout="topleft" />
+
+            <button
+             name="member_eject"
+             label="방출"
+             left_pad="4"
+             width="100"
+             height="23"
+             follows="bottom|left"
+             layout="topleft" />
+
+            <button
+             height="23"
+             label="멤버(들) 금지"
+             follows="bottom|left"
+             left_pad="4"
+             name="member_ban"
+             width="100"
+             layout="topleft" />
+
+            <button
+             name="export_list"
+             label="내보내기 목록"
+             left_pad="4"
+             width="100"
+             height="23"
+             follows="bottom|left"
+             layout="topleft" />
+        </panel>
+
+<!-- ROLES sub tab -->
+
+        <panel
+         name="roles_sub_tab"
+         label="역할"
+         tool_tip="역할"
+         help_topic="roles_roles_tab"
+         left="0"
+         top="0"
+         right="-1"
+         height="188"
+         class="panel_group_roles_subtab"
+         follows="all"
+         layout="topleft">
+           <!-- <button
+             enabled="false"
+             height="20"
+             label="Show All"
+             layout="topleft"
+             top="-65"
+             right="-5"
+             name="show_all_button"
+             width="100" />-->
+            <panel.string
+             name="help_text">
+            역할에는 구성원이 수행할 수 있는 권한의 제목과 허용된 목록이 있습니다. 
+            구성원은 하나 이상의 역할에 속할 수 있습니다.
+          한 그룹은 모든 사용자 및 소유자 역할을 포함하여 최대 10개의 역할을 가질 수 있습니다.
+            </panel.string>
+            <panel.string
+             name="cant_delete_role">
+            &apos;여러분 &apos; 및 &apos;소유자&apos; 역할은 특별하므로 삭제할 수 없습니다.
+            </panel.string>
+            <panel.string
+             name="power_folder_icon" translate="false">
+            인벤토리 폴더 닫힘
+            </panel.string>
+            <panel.string
+             name="power_all_have_icon" translate="false">
+            체크박스 켜짐
+            </panel.string>
+            <panel.string
+             name="power_partial_icon" translate="false">
+            체크박스 꺼짐
+            </panel.string>
+
+            <filter_editor
+             layout="topleft"
+             top="5"
+             left="5"
+             right="-5"
+             height="22"
+             search_button_visible="false"
+             follows="left|top|right"
+             label="역할 필터"
+             name="filter_input" />
+
+            <scroll_list
+             name="role_list"
+             left="3"
+             top_pad="5"
+             right="-1"
+             height="129"
+             column_padding="0"
+             draw_heading="true"
+             draw_stripes="false"
+             heading_height="23"
+             search_column="1"
+             follows="all"
+             layout="topleft">
+
+                <scroll_list.columns
+                 label="역할"
+                 name="name"
+               relative_width="0.45"  />
+                <scroll_list.columns
+                 label="제목"
+                 name="title"
+               relative_width="0.45"  />
+                <scroll_list.columns
+                 label="#"
+                 name="members"
+               relative_width="0.15"  />
+            </scroll_list>
+
+            <button
+             name="role_create"
+             label="새로운 역할"
+             left="3"
+             top_pad="4"
+             width="100"
+             height="23"
+             follows="bottom|left"
+             layout="topleft" />
+
+            <button
+             follows="bottom|left"
+             height="23"
+             label="역할 복사"
+             layout="topleft"
+             left_pad="4"
+             name="role_copy"
+             width="100" />
+
+            <button
+             name="role_delete"
+             label="역할 삭제"
+             left_pad="4"
+             width="100"
+             height="23"
+             follows="bottom|left"
+             layout="topleft" />
+        </panel>
+
+<!-- ABILITIES sub tab -->
+
+        <panel
+         name="actions_sub_tab"
+         label="능력"
+         tool_tip="능력&apos; 묘사과 해당 기능을 실행할 수 있는 역할 및 구성원을 볼 수 있습니다."
+         help_topic="roles_actions_tab"
+         left="0"
+         top="0"
+         right="-1"
+         height="188"
+         class="panel_group_actions_subtab"
+         follows="all"
+         layout="topleft">
+
+            <panel.string
+             name="help_text">
+                역할의 구성원은 기능을 사용하여 이 그룹에서 특정 작업을 수행할 수 있습니다. 다양한 능력이 있습니다.
+            </panel.string>
+            <panel.string
+             name="power_folder_icon" translate="false">
+                인벤토리 폴더 닫힘
+            </panel.string>
+            <panel.string
+             name="power_all_have_icon" translate="false">
+                체크박스 켜짐
+            </panel.string>
+            <panel.string
+             name="power_partial_icon" translate="false">
+                체크박스 꺼짐
+            </panel.string>
+
+         <filter_editor
+         layout="topleft"
+         top="5"
+         left="5"
+         right="-5"
+         height="22"
+         search_button_visible="false"
+         follows="left|top|right"
+         label="능력 필터"
+         name="filter_input" />
+
+        <scroll_list
+         name="action_list"
+         tool_tip="세부 정보를 볼 수 있는 기능 선택"
+         left="0"
+         top_pad="5"
+         right="-1"
+         height="161"
+         column_padding="0"
+         draw_stripes="true"
+         search_column="2"
+         follows="all"
+         layout="topleft">
+
+
+
+            <scroll_list.columns
+             label=""
+             name="icon"
+             width="2" />
+            <scroll_list.columns
+             label=""
+             name="checkbox"
+             width="20" />
+            <scroll_list.columns
+             label=""
+             name="action"/>
+
+        </scroll_list>
+        </panel>
+
+    <panel
+     border="false"
+     height="303"
+     label="금지된 거주자"
+     layout="topleft"
+     left="0"
+     right="-1"
+     help_topic="roles_banlist_tab"
+     name="banlist_sub_tab"
+     class="panel_group_banlist_subtab"
+     tool_tip="이 그룹에서 금지된 거주자 보기."
+     width="310">
+      <panel.string
+       name="help_text">
+        금지 목록에 있는 거주자는 그룹에 가입할 수 없습니다.
+      </panel.string>
+      <panel.string
+       name="ban_count_template">
+        금지 수: [COUNT]/[LIMIT]
+      </panel.string>
+      <name_list
+           column_padding="0"
+           draw_heading="true"
+           height="136"
+           follows="left|top|right"
+           layout="topleft"
+           left="0"
+           right="-1"
+           multi_select="true"
+           name="ban_list"
+           short_names="false"
+           sort_column="0"
+           name_column="name"
+           top_pad="5">
+        <name_list.columns
+         label="거주자"
+         name="name"
+         font.name="SANSSERIF_SMALL"
+         font.style="NORMAL"
+         relative_width="0.7" />
+        <name_list.columns
+         label="금지된 날짜"
+         name="ban_date"
+         relative_width="0.3" />
+      </name_list>
+      <button
+        follows="top|left"
+        height="23"
+        label="금지된 거주자"
+        layout="topleft"
+        left="3"
+        name="ban_create"
+        tool_tip="그룹에서 거주자 금지"
+        width="120" />
+      <button
+        follows="top|left"
+        height="23"
+        label="금지 제거"
+        layout="topleft"
+        left_pad="5"
+        name="ban_delete"
+        tool_tip="그룹에서 선택한 거주자 금지 해제"
+        width="120" />
+      <button
+        follows="top|left"
+        height="23"
+        width="23"
+        image_overlay="Refresh_Off"
+        layout="topleft"
+        left_pad="5"
+        name="ban_refresh"
+        tool_tip="금지 목록 새로 고침"
+        />
+      <text
+        type="string"
+        height="18"
+        left_pad="5"
+        follows="top|left|right"
+        layout="topleft"
+        name="ban_count"
+        use_ellipses="true"
+        right="-1">
+      </text>
+    </panel>
+  </tab_container>
+
+<!--    </layout_panel> -->
+
+    <!-- UI elements that get hidden or shown, depending on the currently selected tab -->
+    <!-- currently commented out due to a bug or misbehavior of <scroll_list> and <name_list> in conjunction with <layout_stack> and follows="all" -->
+<!--
+    <layout_panel
+     height="100"
+     min_height="50"
+     right="-1"
+     name="group_members_roles_layout_panel"
+     user_resize="true"
+     follows="all"
+     layout="topleft">
+-->
+<!-- MEMBERS footer -->
+
+    <panel
+     name="members_footer"
+     top="192"
+     left="4"
+     right="-2"
+     height="224"
+     background_visible="false"
+     bg_alpha_color="FloaterUnfocusBorderColor"
+     follows="all"
+     visible="false"
+     layout="topleft">
+
+    <!-- currently commented out due to a bug or misbehavior of <scroll_list> and <name_list> in conjunction with <layout_stack> and follows="all" -->
+
+<!--
+    <layout_stack
+     name="group_members_footer_layout_stack"
+     top_pad="4"
+     right="-1"
+     height="100"
+     orientation="horizontal"
+     follows="all"
+     layout="topleft">
+
+    <layout_panel
+     right="-1"
+     name="group_roles_layout_panel"
+     user_resize="true"
+     follows="all"
+     layout="topleft">
+
+//-->
+
+        <text
+         name="assigned_roles_label"
+         left="0"
+         right="-1"
+         top_pad="4"
+         height="16"
+         type="string"
+         text_color="EmphasisColor"
+         follows="left|top|right"
+         layout="topleft">
+        할당된 역할
+        </text>
+
+        <scroll_list
+         name="member_assigned_roles"
+         top_pad="0"
+         right="-1"
+         height="93"
+         draw_stripes="true"
+         follows="top|left|right"
+         layout="topleft">
+            <scroll_list.columns
+             label=""
+             name="checkbox"
+             width="20" />
+            <scroll_list.columns
+             label=""
+             name="role"
+             width="135" />
+        </scroll_list>
+
+<!--
+
+    </layout_panel>
+
+    <layout_panel
+     right="-1"
+     min_height="94"
+     name="group_members_tab_layout_panel"
+     user_resize="true"
+     layout="topleft">
+
+//-->
+        <text
+         type="string"
+         top_pad="4"
+         right="-1"
+         height="16"
+         follows="left|top|right"
+         text_color="EmphasisColor"
+         name="static2"
+         layout="topleft">
+        허용된 능력
+        </text>
+
+        <scroll_list
+         tool_tip="허용된 각 능력에 대한 자세한 내용은 능력 탭을 참조하십시오"
+         right="-1"
+         top_pad="0"
+         height="93"
+         draw_stripes="true"
+         name="member_allowed_actions"
+         search_column="2"
+         follows="all"
+         layout="topleft">
+            <scroll_list.columns
+             label=""
+             name="icon"
+             width="2" />
+            <scroll_list.columns
+             label=""
+             name="checkbox"
+             width="20" />
+            <scroll_list.columns
+             label=""
+             name="action"/>
+        </scroll_list>
+<!--
+    </layout_panel>
+    </layout_stack>
+//-->
+    </panel>
+
+<!-- ROLES footer -->
+
+    <panel
+     name="roles_footer"
+     top="192"
+     left="0"
+     right="-1"
+     height="226"
+     background_visible="false"
+     bg_alpha_color="FloaterUnfocusBorderColor"
+     mouse_opaque="false"
+     visible="false"
+     follows="all"
+     layout="topleft">
+
+        <text
+         name="role_name_label"
+         left="5"
+         top_pad="3"
+         width="70"
+         height="16"
+         type="string"
+         follows="left|top"
+         layout="topleft">
+        역할 이름
+        </text>
+
+        <line_editor
+         name="role_name"
+         left_pad="4"
+         right="-1"
+         height="20"
+         type="string"
+         layout="topleft"
+         follows="left|top|right"
+         max_length_bytes="20">
+        </line_editor>
+
+        <text
+         name="role_title_label"
+         top_pad="4"
+         left="5"
+         width="70"
+         height="16"
+         type="string"
+         follows="left|top"
+         layout="topleft">
+        역할 제목
+        </text>
+
+        <line_editor
+         name="role_title"
+         left_pad="4"
+         right="-1"
+         height="20"
+         type="string"
+         follows="left|top|right"
+         max_length_bytes="20"
+         layout="topleft">
+        </line_editor>
+
+        <check_box
+         top_pad="4"
+         height="16"
+         label="회원 드러냄"
+         right="-140"
+         layout="topleft"
+         name="role_visible_in_list"
+         tool_tip="허용된 각 기능에 대한 자세한 내용은 능력 탭을 참조하십시오. 이 역할의 구성원이 그룹 외부의 사용자에게 일반 탭에 표시되는지 여부 설정."
+         width="16"
+         follows="top|right"/>
+
+        <text
+         name="description_label"
+         top_delta="0"
+         left="5"
+         right="-1"
+         height="16"
+         type="string"
+         follows="left|top"
+         layout="topleft">
+        묘사
+        </text>
+
+        <text_editor
+         type="string"
+         layout="topleft"
+         follows="left|top|right"
+         right="-1"
+         max_length="295"
+         height="37"
+         name="role_description"
+         top_pad="0"
+         left="5"
+         width="300"
+         word_wrap="true">
+        </text_editor>
+
+<!--
+    <layout_stack
+     name="role_members_abilities_layout_stack"
+     top_pad="4"
+     right="-1"
+     height="55"
+     orientation="horizontal"
+     follows="all"
+     layout="topleft">
+
+    <layout_panel
+     right="-1"
+     name="role_members_layout_panel"
+     user_resize="true"
+     follows="all"
+     layout="topleft">
+
+     we need to use <panel> for now
+//-->
+    <panel
+     name="group_roles_layout_panel"
+     left="5"
+     top_pad="4"
+     right="-1"
+     height="85"
+     follows="top|left|right"
+     layout="topleft">
+
+        <text
+         name="assigned_members_label"
+         left="0"
+         top_pad="0"
+         right="-1"
+         height="16"
+         type="string"
+         follows="left|top|right"
+         text_color="EmphasisColor"
+         layout="topleft">
+        할당된 구성원
+        </text>
+
+        <name_list
+         name="role_assigned_members"
+         left="0"
+         top_pad="0"
+         right="-1"
+         height="69"
+         draw_stripes="true"
+         multi_select="true"
+         follows="all"
+         layout="topleft" />
+
+    </panel>
+
+<!--
+    </layout_panel>
+
+    <layout_panel
+     right="-1"
+     name="role_members_layout_panel"
+     user_resize="true"
+     follows="all"
+     layout="topleft">
+//-->
+    <panel
+     name="group_roles_layout_panel2"
+     top_pad="4"
+     right="-1"
+     height="36"
+     follows="all"
+     layout="topleft">
+
+        <text
+         name="allowed_abilities_label"
+         left="0"
+         top_pad="0"
+         right="-1"
+         height="16"
+         type="string"
+         text_color="EmphasisColor"
+         follows="left|top|right"
+         layout="topleft">
+        허용된 능력
+        </text>
+
+        <scroll_list
+         name="role_allowed_actions"
+         tool_tip="허용된 각 능력에 대한 자세한 내용은 능력 탭을 참조하십시오."
+         top_pad="0"
+         right="-1"
+         height="20"
+         draw_stripes="true"
+         search_column="2"
+         follows="all"
+         layout="topleft">
+
+            <scroll_list.columns
+             label=""
+             name="icon"
+             width="2" />
+            <scroll_list.columns
+             label=""
+             name="checkbox"
+             width="20" />
+            <scroll_list.columns
+             label=""
+             name="action"/>
+        </scroll_list>
+<!--
+    </layout_panel>
+    </layout_stack>
+//-->
+
+    </panel>
+    </panel>
+
+<!-- ABILITIES footer -->
+
+    <panel
+     name="actions_footer"
+     top="192"
+     left="4"
+     right="-4"
+     height="226"
+     background_visible="false"
+     bg_alpha_color="FloaterUnfocusBorderColor"
+     mouse_opaque="false"
+     visible="false"
+     follows="all"
+     layout="topleft">
+
+        <panel
+         top="0"
+         left="0"
+         right="-1"
+         height="60"
+         border="true"
+         bevel_style="in"
+         follows="left|top|right"
+         layout="topleft"
+	 name="action_description_panel">
+
+        <text_editor
+         name="action_description"
+         top="0"
+         left="0"
+         right="-1"
+         height="60"
+         halign="left"
+         bg_readonly_color="Transparent"
+         font="SansSerifSmall"
+         type="string"
+         enabled="false"
+         max_length="512"
+         word_wrap="true"
+         follows="left|top|right"
+         layout="topleft">
+        이 능력은 &apos;이 그룹에서 구성원 제거&apos;. 소유자만 다른 소유자를 꺼낼 수 있습니다.
+        </text_editor>
+
+    </panel>
+<!--
+        <layout_stack
+         name="abilities_members_actions_layout_stack"
+         top_pad="4"
+         right="-1"
+         height="116"
+         orientation="horizontal"
+         follows="top"
+         layout="topleft">
+
+        <layout_panel
+         right="-1"
+         name="abilities_members_layout_panel"
+         user_resize="true"
+         follows="top"
+         layout="topleft">
+//-->
+
+        <text
+         name="action_roles_label"
+         left="0"
+         top_pad="0"
+         right="-1"
+         height="16"
+         type="string"
+         text_color="EmphasisColor"
+         follows="left|top|right"
+         layout="topleft">
+        이 기능이 있는 역할
+        </text>
+
+        <scroll_list
+         name="action_roles"
+         top_pad="0"
+         right="-1"
+         height="90"
+         follows="left|top|right"
+         layout="topleft" />
+<!--
+        </layout_panel>
+        <layout_panel
+         right="-1"
+         name="abilities_actions_layout_panel"
+         user_resize="true"
+         follows="top"
+         layout="topleft">
+//-->
+
+        <text
+         name="action_members_label"
+         top_pad="0"
+         right="-1"
+         height="16"
+         type="string"
+         text_color="EmphasisColor"
+         follows="top|left|right"
+         layout="topleft">
+        이 능력을 가진 회원
+        </text>
+
+        <name_list
+         name="action_members"
+         left="0"
+         top_pad="0"
+         right="-1"
+         height="46"
+         multi_select="true"
+         follows="all"
+         layout="topleft" />
+<!--
+        </layout_panel>
+        </layout_stack>
+//-->
+    </panel>
+<!--
+	</layout_panel>
+    </layout_stack>
+//-->
+</panel>

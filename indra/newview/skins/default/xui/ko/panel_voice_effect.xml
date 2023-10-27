@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ follows="all"
+ height="26"
+ layout="topleft"
+ name="panel_voice_effect"
+ width="200">
+  <string name="no_voice_effect">
+    음성 모핑 끄기
+  </string>
+  <string name="preview_voice_effects">
+    음성 모핑 미리 보기  ▶
+  </string>
+  <string name="get_voice_effects">
+    음성 모핑 가져오기  ▶
+  </string>
+  <combo_box
+   enabled="false"
+   follows="left|top|right"
+   height="23"
+   name="voice_effect"
+   tool_tip="음성을 변경하려면 음성 형태 선택"
+   top_pad="0"
+   width="200">
+    <combo_box.item
+     label="음성 모핑 끄기"
+     name="no_voice_effect"
+	 top_pad="0"
+     value="0" />
+    <combo_box.commit_callback
+     function="Voice.CommitVoiceEffect" />
+  </combo_box>
+</panel>

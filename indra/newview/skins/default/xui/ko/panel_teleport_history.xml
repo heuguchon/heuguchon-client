@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="Teleport History" bottom="0" height="400" left="0" width="313"
+     help_topic="panel_teleport_history"
+     border="false" follows="left|top|right|bottom">
+    <accordion
+     follows="left|top|right|bottom"
+     height="385"
+     layout="topleft"
+     left="3"
+     top="0"
+     name="history_accordion"
+     width="307">
+        <no_matched_tabs_text
+         name="no_matched_teleports_msg"
+         value="찾고 있는 것을 찾지 못했습니까?  [secondlife:///app/search/places/[SEARCH_TERM] 검색] 시도." />
+        <no_visible_tabs_text
+         name="no_teleports_msg"
+         value="순간이동 기록이 비어 있습니다. [secondlife:///app/search/places/ 검색] 시도." />
+	    <accordion_tab
+         layout="topleft"
+         name="today"
+         title="오늘">
+            <flat_list_view
+             follows="all"
+             height="150"
+             layout="topleft"
+             left="0"
+             name="today_items"
+             top="0"
+             width="307">
+	        </flat_list_view>
+	    </accordion_tab>
+        <accordion_tab
+         layout="topleft"
+         name="yesterday"
+         title="어제">
+            <flat_list_view
+             follows="all"
+             height="150"
+             layout="topleft"
+             left="0"
+             name="yesterday_items"
+             top="0"
+             width="307">
+	        </flat_list_view>
+	    </accordion_tab>
+        <accordion_tab
+         layout="topleft"
+         name="2_days_ago"
+         title="2 일전">
+            <flat_list_view
+             follows="all"
+             height="150"
+             layout="topleft"
+             left="0"
+             name="2_days_ago"
+             top="0"
+             width="307">
+	        </flat_list_view>
+	    </accordion_tab>
+        <accordion_tab
+         layout="topleft"
+         name="3_days_ago"
+         title="3 일전">
+            <flat_list_view
+             follows="all"
+             height="150"
+             layout="topleft"
+             left="0"
+             name="3_days_ago"
+             top="0"
+             width="307">
+	        </flat_list_view>
+	    </accordion_tab>
+        <accordion_tab
+         layout="topleft"
+         name="4_days_ago"
+         title="4 일전">
+            <flat_list_view
+             follows="all"
+             height="150"
+             layout="topleft"
+             left="0"
+             name="4_days_ago"
+             top="0"
+             width="307">
+	        </flat_list_view>
+	    </accordion_tab>
+        <accordion_tab
+         layout="topleft"
+         name="5_days_ago"
+         title="5 일전">
+            <flat_list_view
+             follows="all"
+             height="150"
+             layout="topleft"
+             left="0"
+             name="5_days_ago_items"
+             top="0"
+             width="307">
+	        </flat_list_view>
+	    </accordion_tab>
+        <accordion_tab
+         layout="topleft"
+         name="6_days_and_older"
+         title="6 일 혹은 더 오래전">
+            <flat_list_view
+             follows="all"
+             height="150"
+             layout="topleft"
+             left="0"
+             name="6_days_and_older_items"
+             top="0"
+             width="307">
+	        </flat_list_view>
+	    </accordion_tab>
+        <accordion_tab
+         layout="topleft"
+         name="1_month_and_older"
+         title="1 달 혹은 더 오래전">
+            <flat_list_view
+             follows="all"
+             height="150"
+             layout="topleft"
+             left="0"
+             name="1_month_and_older_items"
+             top="0"
+             width="307">
+	        </flat_list_view>
+	    </accordion_tab>
+        <accordion_tab
+         layout="topleft"
+         name="6_months_and_older"
+         title="6 달 혹은 더 오래전">
+            <flat_list_view
+             follows="all"
+             height="150"
+             layout="topleft"
+             left="0"
+             name="6_months_and_older_items"
+             top="0"
+             width="307">
+	        </flat_list_view>
+	    </accordion_tab>
+    </accordion>
+</panel>

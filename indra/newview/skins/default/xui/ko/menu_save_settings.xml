@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toggleable_menu
+        height="602"
+        layout="topleft"
+        mouse_opaque="false"
+        name="save_settings_menu"
+        width="120">
+    <menu_item_check
+            name="save_settings" 
+            label="저장">
+        <menu_item_check.on_check
+                function="FlyoutCombo.Button.Check"
+                userdata="save" />
+        <menu_item_check.on_click
+                function="FlyoutCombo.Button.Action"
+                userdata="save"/>
+    </menu_item_check>
+    <menu_item_check 
+            name="save_as_new_settings" 
+            label="다른이름으로 저장">
+        <menu_item_check.on_check
+                function="FlyoutCombo.Button.Check"
+                userdata="saveas" />
+        <menu_item_check.on_click
+                function="FlyoutCombo.Button.Action"
+                userdata="saveas" />
+    </menu_item_check>
+    <menu_item_check
+            name="commit_changes"
+            label="커밋">
+        <menu_item_check.on_check
+                function="FlyoutCombo.Button.Check"
+                userdata="commit" />
+        <menu_item_check.on_click
+                function="FlyoutCombo.Button.Action"
+                userdata="commit" />
+    </menu_item_check>
+    <menu_item_check
+            name="apply_local"
+            label="나에게만 적용">
+        <menu_item_check.on_check
+                function="FlyoutCombo.Button.Check"
+                userdata="local" />
+        <menu_item_check.on_click 
+                function="FlyoutCombo.Button.Action"
+                userdata="local" />
+    </menu_item_check>
+    <menu_item_check
+            name="apply_parcel"
+            label="구획에 적용">
+        <menu_item_check.on_check
+                function="FlyoutCombo.Button.Check"
+                userdata="parcel" />
+        <menu_item_check.on_click
+                function="FlyoutCombo.Button.Action"
+                userdata="parcel" />
+    </menu_item_check>
+    <menu_item_check
+            name="apply_region"
+            label="지역에 적용">
+        <menu_item_check.on_check
+                function="FlyoutCombo.Button.Check"
+                userdata="region" />
+        <menu_item_check.on_click
+                function="FlyoutCombo.Button.Action"
+                userdata="region" />
+    </menu_item_check>
+</toggleable_menu>

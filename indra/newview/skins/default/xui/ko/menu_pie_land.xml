@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<pie_menu
+    name="Land Pie">
+    <pie_slice
+        label="랜드에 관하여..."
+        name="Place Information...">
+        <pie_slice.on_click
+            function="Floater.Show"
+            parameter="about_land" />
+    </pie_slice>
+    <pie_slice
+        enabled="false"
+        label="생성"
+        name="Create">
+        <pie_slice.on_click
+            function="Land.Build" />
+        <pie_slice.on_enable
+            function="EnableEdit" />
+    </pie_slice>
+    <pie_slice
+        label="여기로 가기"
+        name="Go Here">
+        <pie_slice.on_click
+            function="GoToObject" />
+    </pie_slice>
+    <pie_slice
+        label="여기 앉기"
+        name="Sit Here">
+        <pie_slice.on_click
+            function="Land.Sit" />
+    </pie_slice>
+    <pie_slice
+        enabled="false"
+        label="부품 음소거. 소유."
+        name="Mute Particle">
+        <pie_slice.on_click
+            function="Particle.Mute" />
+        <pie_slice.on_enable
+            function="EnableMuteParticle" />
+    </pie_slice>
+    <pie_slice
+        enabled="false"
+        label="패스 구매"
+        name="Land Buy Pass Pie">
+        <pie_slice.on_click
+            function="Land.BuyPass" />
+        <pie_slice.on_enable
+            function="Land.EnableBuyPass" />
+    </pie_slice>
+    <pie_slice
+        enabled="false"
+        label="지역 수정"
+        name="Edit Terrain">
+        <pie_slice.on_click
+            function="Land.Edit" />
+        <pie_slice.on_enable
+            function="EnableEdit" />
+    </pie_slice>
+    <pie_slice
+        enabled="false"
+        label="이 땅 구매"
+        name="Land Buy Pie">
+        <pie_slice.on_click
+            function="Land.Buy" />
+        <pie_slice.on_enable
+            function="World.EnableBuyLand" />
+    </pie_slice>
+</pie_menu>

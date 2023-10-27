@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel 
+ border="true" 
+ enabled="true" 
+ follows="left|top|right|bottom"
+ height="500" 
+ label="일반" 
+ left="102" 
+ mouse_opaque="true"
+ name="Media Settings General" 
+ help_topic = "media_settings_general"
+ width="365">
+
+  <text
+   bottom_delta="-25"
+   follows="top|left"
+   height="15"
+   left="10"
+   name="home_label">
+    홈페이지:
+  </text>
+  <text
+   visible="false" 
+   bottom_delta="0"
+   follows="top|left"
+   height="15"
+   left_delta="64"
+   text_color="red"
+   name="home_fails_whitelist_label">
+    (이 페이지는 지정된 화이트리스트를 통과하지 않습니다)
+  </text>
+  <line_editor 
+   max_length_bytes="1024"
+   bottom_delta="-24" 
+   enabled="true" 
+   follows="left|top" 
+   font="SansSerif"
+   height="20" 
+   left="10" 
+   name="home_url"
+   tool_tip="이 미디어 원본의 홈 페이지"
+   width="340"> 
+    <!--  <line_editor.commit_callback
+	     function="Media.CommitHomeURL"/> -->
+  </line_editor>
+
+  <web_browser
+   border_visible="true"
+   bottom_delta="-133"
+   follows="top|left"
+   left="120"
+   name="preview_media"
+   width="128"
+   height="128"
+   start_url="about:blank"
+   decouple_texture_size="true" />
+  
+  <text
+   bottom_delta="-15"
+   follows="top|left"
+   height="15"
+   left="164"
+   name="preview_label">
+    미리보기
+  </text>
+  
+  <text 
+   bottom_delta="-20" 
+   follows="top|left" 
+   height="15" 
+   left="10" 
+   name="current_url_label">
+    현재 페이지:
+  </text>
+  <text 
+   name="current_url"
+   max_length="1024"
+   use_ellipses="true"
+   bottom_delta="-20" 
+   enabled="false" 
+   follows="left|top" 
+   font="SansSerif"
+   height="20" 
+   left="10" 
+   tool_tip="이 미디어 원본의 현재 페이지"
+   value="" 
+   width="340" />
+  <button 
+   bottom_delta="-20" 
+   follows="top|left" 
+   height="20" 
+   label="초기화"
+   left_delta="233" 
+   name="current_url_reset_btn" 
+   width="110"/>
+  <check_box 
+   bottom_delta="-25" 
+   enabled="true" 
+   follows="left|top" 
+   font="SansSerifSmall"
+   height="16"
+   initial_value="false"
+   label="자동 루프" 
+   left="10" 
+   mouse_opaque="true"
+   name="auto_loop" 
+   radio_style="false" 
+   width="150" />
+  <check_box 
+   bottom_delta="-25" 
+   visible="false" 
+   enabled="false" 
+   follows="left|top" 
+   font="SansSerifSmall"
+   height="16" 
+   initial_value="false"
+   label="첫 번째 클릭 상호 작용" 
+   left_delta="0" 
+   mouse_opaque="true"
+   name="first_click_interact" 
+   radio_style="false" 
+   width="150" />
+
+  <check_box 
+   bottom_delta="0" 
+   enabled="true" 
+   follows="left|top"
+   font="SansSerifSmall"
+   height="16" 
+   initial_value="false"
+   label="자동 확대" 
+   left_delta="0" 
+   mouse_opaque="true"
+   name="auto_zoom" 
+   radio_style="false" 
+   width="150" />
+
+  <check_box 
+   bottom_delta="-25" 
+   enabled="true" 
+   follows="left|top" 
+   font="SansSerifSmall"
+   height="16" 
+   initial_value="false"
+   label="미디어 자동 재생" 
+   left="10" 
+   mouse_opaque="true"
+   name="auto_play" 
+   radio_style="false" 
+   width="150" />
+   
+  <text 
+   bottom_delta="-14" 
+   follows="top|left" 
+   height="15" 
+   left="30" 
+   width="340" 
+   enabled="false" 
+   name="media_setting_note">
+    참고: 거주자는 이 설정을 재정의할 수 있습니다.
+  </text>
+
+  <check_box 
+   bottom_delta="-25" 
+   enabled="true" 
+   follows="left|top" 
+   font="SansSerifSmall"
+   height="16" 
+   initial_value="false"
+   label="객체 면의 미디어 자동 스케일 조정" 
+   left="10" 
+   mouse_opaque="true"
+   name="auto_scale" 
+   radio_style="false" 
+   width="150" />
+   
+  <text 
+   bottom_delta="-20" 
+   follows="top|left" 
+   height="15" 
+   left="30" 
+   name="size_label">
+    크기:
+  </text>
+  
+  <spinner 
+   bottom_delta="0"
+   decimal_digits="0" 
+   enabled="true" 
+   follows="left|top" 
+   height="16"
+   increment="1" 
+   initial_value="256" 
+   label="" 
+   label_width="0"
+   left_delta="68" 
+   max_val="2048" 
+   min_val="0" 
+   mouse_opaque="true"
+   name="width_pixels" 
+   width="50" />
+   
+  <text bottom_delta="0" follows="top|left" height="15" left_delta="60" name="X_label">
+	X
+  </text>
+  <spinner 
+	  bottom_delta="0"
+	  decimal_digits="0"
+	  enabled="true"
+	  follows="left|top" 
+	  height="16"
+	  increment="1"
+	  initial_value="256" 
+	  label=""
+	  label_width="0"
+	  left_delta="20" 
+	  max_val="2048" 
+	  min_val="0"
+	  mouse_opaque="true"
+	  name="height_pixels"
+	  width="50" />
+ 
+</panel>

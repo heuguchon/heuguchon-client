@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ height="112"
+ width="280"
+ layout="topleft"
+ positioning="centered"
+ legacy_header_height="18"
+ can_resize="false"
+ name="floater_fs_add_contact"
+ title="주소록 집합에 추가...">
+	<floater.string name="no_sets">
+		사용 가능한 연락처 집합 없음.
+	</floater.string>
+	<floater.string name="text_add_single">
+		[NAME]을(를) 추가할 연락처 세트를 선택하십시오:
+	</floater.string>
+	<floater.string name="text_add_multiple">
+		[COUNT] 아바타를 추가할 연락처 세트를 선택하십시오:
+	</floater.string>
+	<text
+	 type="string"
+	 follows="left|top"
+	 height="35"
+	 layout="topleft"
+	 left="8"
+	 name="textfield"
+	 word_wrap="true"
+	 top="20"
+	 width="265">
+	</text>
+	<combo_box
+	 follows="left|top"
+	 layout="topleft"
+	 height="23"
+	 allow_text_entry="false"
+	 top_pad="4"
+	 left="8"
+	 name="contact_sets"
+	 width="239"/>
+    <button
+     left_pad="2"
+     top_delta="0"
+     follows="top|right"
+     layout="topleft"
+     height="24"
+	 image_overlay="AddItem_Off"
+     name="add_set_btn"
+     width="24" />
+	<button
+	 left="8"
+	 top_pad="3"
+	 follows="top|right"
+	 layout="topleft"
+	 height="22"
+	 label="집합에 추가"
+	 name="add_btn"
+	 width="130" />
+	<button
+	 left_pad="5"
+	 top_delta="0"
+	 follows="top|right"
+	 layout="topleft"
+	 height="22"
+	 label="취소"
+	 name="cancel_btn"
+	 width="130" />
+</floater>

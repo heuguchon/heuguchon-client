@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<context_menu
+ layout="topleft"
+ name="Friends Popup">  
+    <menu_item_call
+     label="프로필 보기"
+     layout="topleft"
+     name="show_agent">
+        <menu_item_call.on_click
+         function="Contacts.Friends.ShowProfile"/>
+    </menu_item_call>
+    <menu_item_call
+     label="IM 전송..."
+     layout="topleft"
+     name="send_im">
+        <menu_item_call.on_click
+         function="Contacts.Friends.SendIM"/>
+    </menu_item_call>
+    <menu_item_call
+     label="채팅 내용 보기..."
+     layout="topleft"
+     name="chat_history">
+        <menu_item_call.on_click
+         function="Contacts.Friends.Calllog"/>
+        <menu_item_call.on_enable
+         function="Contacts.Friends.EnableItem"
+         parameter="can_callog"/>
+    </menu_item_call>
+    <menu_item_call
+     label="집합에 추가..."
+     layout="topleft"
+     name="Add to Set">
+        <menu_item_call.on_click
+         function="Contacts.Friends.AddToContactSet"/>
+    </menu_item_call>
+    <menu_item_call
+     label="친구에게 확대"
+     layout="topleft"
+     name="zoom_agent">
+        <menu_item_call.on_click
+         function="Contacts.Friends.ZoomIn"/>
+        <menu_item_call.on_enable
+         function="Contacts.Friends.EnableZoomIn"/>
+    </menu_item_call>
+    <menu_item_call
+     label="친구에게 순간이동"
+     layout="topleft"
+     name="teleportto_agent">
+        <menu_item_call.on_click
+         function="Contacts.Friends.TeleportToTarget"/>
+        <menu_item_call.on_enable
+         function="Contacts.Friends.EnableItem"
+         parameter="teleport_to"/>
+    </menu_item_call>
+    <menu_item_call
+     label="순간이동 제공"
+     layout="topleft"
+     name="offer_teleport">
+        <menu_item_call.on_click
+         function="Contacts.Friends.OfferTeleport"/>
+        <menu_item_call.on_enable
+         function="Contacts.Friends.EnableItem"
+         parameter="offer_teleport"/>
+    </menu_item_call>
+    <menu_item_call
+     label="순간이동 요청"
+     layout="topleft"
+     name="request_teleport">
+        <menu_item_call.on_click
+         function="Contacts.Friends.RequestTeleport"/>
+        <menu_item_call.on_enable
+         function="Contacts.Friends.EnableItem"
+         parameter="request_teleport"/>
+    </menu_item_call>
+    <menu_item_call
+     label="결제"
+     layout="topleft"
+     name="pay">
+        <menu_item_call.on_click
+         function="Contacts.Friends.Pay"/>
+    </menu_item_call>
+    <menu_item_call
+     label="친구 추적"
+     layout="topleft"
+     name="track_agent">
+        <menu_item_call.on_click
+         function="Contacts.Friends.TrackAvatar"/>
+        <menu_item_call.on_enable
+         function="Contacts.Friends.EnableItem"
+         parameter="track_avatar"/>
+    </menu_item_call>
+    <menu_item_call
+     label="친구 삭제..."
+     layout="topleft"
+     name="remove_friend">
+        <menu_item_call.on_click
+         function="Contacts.Friends.RemoveFriend"/>
+        <menu_item_call.on_enable
+         function="Contacts.Friends.EnableItem"
+         parameter="remove_friend"/>
+    </menu_item_call>
+    <menu_item_separator
+     layout="topleft" />
+    <menu_item_call
+     label="클립보드에 이름 복사"
+     layout="topleft"
+     name="url_copy_label">
+        <menu_item_call.on_click
+         function="Contacts.Friends.CopyLabel"/>
+    </menu_item_call>
+    <menu_item_call
+     label="클립보드에 URL 복사"
+     layout="topleft"
+     name="url_copy">
+        <menu_item_call.on_click
+         function="Contacts.Friends.CopyUrl"/>
+    </menu_item_call>
+    <menu_item_separator/>
+    <menu name="options" label="Options...">
+        <menu_item_check
+         label="사용자 이름 열 표시"
+         name="show_username">
+            <menu_item_check.on_click
+             function="ToggleControl"
+             parameter="FSFriendListColumnShowUserName"/>
+            <menu_item_check.on_check
+             control="FSFriendListColumnShowUserName"/>
+            <menu_item_check.on_enable
+             function="Contacts.Friends.EnableItem"
+             parameter="FSFriendListColumnShowUserName"/>
+        </menu_item_check>
+        <menu_item_check
+         label="표시 이름 열 표시"
+         name="show_displayname">
+            <menu_item_check.on_click
+             function="ToggleControl"
+             parameter="FSFriendListColumnShowDisplayName"/>
+            <menu_item_check.on_check
+             control="FSFriendListColumnShowDisplayName"/>
+            <menu_item_check.on_enable
+             function="Contacts.Friends.EnableItem"
+             parameter="FSFriendListColumnShowDisplayName"/>
+        </menu_item_check>
+        <menu_item_check
+         label="전체 이름 열 표시"
+         name="show_fullname">
+            <menu_item_check.on_click
+             function="ToggleControl"
+             parameter="FSFriendListColumnShowFullName"/>
+            <menu_item_check.on_check
+             control="FSFriendListColumnShowFullName"/>
+            <menu_item_check.on_enable
+             function="Contacts.Friends.EnableItem"
+             parameter="FSFriendListColumnShowFullName"/>
+        </menu_item_check>
+        <menu_item_check
+         label="권한 열 표시"
+         name="show_permissions">
+            <menu_item_check.on_click
+             function="ToggleControl"
+             parameter="FSFriendListColumnShowPermissions"/>
+            <menu_item_check.on_check
+             control="FSFriendListColumnShowPermissions"/>
+        </menu_item_check>
+        <menu_item_separator/>
+        <menu_item_check
+         label="사용자 이름별로 정렬"
+         name="sort_by_username">
+            <menu_item_check.on_click
+             function="Contacts.Friends.SelectOption"
+             parameter="sort_by_username"/>
+            <menu_item_check.on_check
+             function="Contacts.Friends.CheckOption"
+             parameter="sort_by_username"/>
+        </menu_item_check>
+        <menu_item_check
+         label="표시 이름별로 정렬"
+         name="sort_by_displayname">
+            <menu_item_check.on_click
+             function="Contacts.Friends.SelectOption"
+             parameter="sort_by_displayname"/>
+            <menu_item_check.on_check
+             function="Contacts.Friends.CheckOption"
+             parameter="sort_by_displayname"/>
+        </menu_item_check>
+        <menu_item_separator/>
+        <menu_item_check
+         label="전체 이름 형식 사용자 이름(표시 이름)"
+         name="format_username_displayname">
+            <menu_item_check.on_click
+             function="Contacts.Friends.SelectOption"
+             parameter="format_username_displayname"/>
+            <menu_item_check.on_check
+             function="Contacts.Friends.CheckOption"
+             parameter="format_username_displayname"/>
+            <menu_item_check.on_enable
+             function="Contacts.Friends.EnableItem"
+             parameter="FSFriendListFullNameFormat"/>
+        </menu_item_check>
+        <menu_item_check
+         label="전체 이름 형식 표시 이름(사용자 이름)"
+         name="format_displayname_username">
+            <menu_item_check.on_click
+             function="Contacts.Friends.SelectOption"
+             parameter="format_displayname_username"/>
+            <menu_item_check.on_check
+             function="Contacts.Friends.CheckOption"
+             parameter="format_displayname_username"/>
+            <menu_item_check.on_enable
+             function="Contacts.Friends.EnableItem"
+             parameter="FSFriendListFullNameFormat"/>
+        </menu_item_check>
+        <menu_item_separator/>
+        <menu_item_check
+         label="검색 필터 표시"
+         name="friend_filter">
+            <menu_item_check.on_click
+             function="ToggleControl"
+             parameter="FSContactListShowSearch"/>
+            <menu_item_check.on_check
+             control="FSContactListShowSearch"/>
+        </menu_item_check>
+    </menu>
+    <menu_item_separator/>
+    <menu_item_check
+     label="친구의 온라인 상태 표시"
+     name="GlobalOnlineStatusToggle">
+        <menu_item_check.on_click
+         function="TogglePerAccountControl"
+         parameter="GlobalOnlineStatusToggle"/>
+        <menu_item_check.on_check
+         function="CheckPerAccountControl"
+         parameter="GlobalOnlineStatusToggle"/>
+    </menu_item_check>
+</context_menu>

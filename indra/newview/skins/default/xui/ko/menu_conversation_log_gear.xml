@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toggleable_menu
+ layout="topleft"
+ name="Conversation Context Menu">
+    <menu_item_call
+     label="IM..."
+     layout="topleft"
+     name="IM">
+        <on_click
+         function="Calllog.Action"
+         parameter="im" />
+        <on_enable
+         function="Calllog.Enable"
+         parameter="can_im" />
+    </menu_item_call>
+    <menu_item_call
+     label="음성 전화..."
+     layout="topleft"
+     name="Call">
+        <on_click
+         function="Calllog.Action"
+         parameter="call" />
+        <on_enable
+         function="Calllog.Enable"
+         parameter="can_call" />
+    </menu_item_call>
+    <menu_item_call
+     label="채팅 내용 열기..."
+     layout="topleft"
+     name="Chat history">
+        <on_click
+         function="Calllog.Action"
+         parameter="chat_history" />
+        <on_enable
+         function="Calllog.Enable"
+         parameter="can_view_chat_history" />
+    </menu_item_call>
+    <menu_item_call
+     label="채팅 내용 외부 열기..."
+     layout="topleft"
+     name="Chat history External">
+        <on_click
+         function="Calllog.Action"
+         parameter="chat_history_external" />
+        <on_enable
+         function="Calllog.Enable"
+         parameter="can_view_chat_history" />
+    </menu_item_call>
+    <menu_item_call
+     label="프로필 보기"
+     layout="topleft"
+     name="View Profile">
+        <on_click
+         function="Calllog.Action"
+         parameter="view_profile" />
+        <on_enable
+         function="Calllog.Enable"
+         parameter="can_view_profile" />
+    </menu_item_call>
+    <menu_item_call
+    label="순간이동 제안"
+    name="teleport">
+      <on_click
+       function="Calllog.Action"
+       parameter="offer_teleport"/>
+      <on_enable
+      function="Calllog.Enable"
+      parameter="can_offer_teleport"/>
+    </menu_item_call>
+    <menu_item_call
+    label="순간이동 요청"
+    name="request_teleport">
+      <on_click
+       function="Calllog.Action"
+       parameter="request_teleport"/>
+      <on_enable
+      function="Calllog.Enable"
+      parameter="can_request_teleport"/>
+    </menu_item_call>
+    <menu_item_separator />
+    <menu_item_call
+     label="친구 추가"
+     layout="topleft"
+     name="add_friend">
+        <on_click
+         function="Calllog.Action"
+         parameter="add_friend"/>
+        <on_visible
+         function="Calllog.Check"
+         parameter="is_not_friend" />
+    </menu_item_call>
+    <menu_item_call
+     label="친구 삭제"
+     layout="topleft"
+     name="remove_friend">
+        <on_click
+         function="Calllog.Action"
+         parameter="remove_friend"/>
+        <on_visible
+         function="Calllog.Check"
+         parameter="is_friend" />
+    </menu_item_call>
+    <menu_item_call
+     label="그룹에 초대..."
+     layout="topleft"
+     name="Invite">
+        <on_click
+         function="Calllog.Action"
+         parameter="invite_to_group"/>
+        <on_enable
+         function="Calllog.Enable"
+         parameter="can_invite_to_group" />
+    </menu_item_call>
+    <menu_item_separator />
+    <menu_item_call
+     label="지도"
+     layout="topleft"
+     name="Map">
+        <on_click
+         function="Calllog.Action"
+         parameter="show_on_map" />
+        <on_enable
+         function="Calllog.Enable"
+         parameter="can_show_on_map" />
+    </menu_item_call>
+    <menu_item_call
+     label="공유"
+     layout="topleft"
+     name="Share">
+        <on_click
+         function="Calllog.Action"
+         parameter="share" />
+        <on_enable
+         function="Calllog.Enable"
+         parameter="can_share" />
+    </menu_item_call>
+    <menu_item_call
+     label="결제"
+     layout="topleft"
+     name="Pay">
+        <on_click
+         function="Calllog.Action"
+         parameter="pay" />
+        <on_enable
+         function="Calllog.Enable"
+         parameter="can_pay" />
+    </menu_item_call>
+    <menu_item_check
+     label="차단/차단해제"
+     layout="topleft"
+     name="Block/Unblock">
+        <menu_item_check.on_click
+         function="Calllog.Action"
+         parameter="block"/>
+        <menu_item_check.on_check
+         function="Calllog.Check"
+         parameter="is_blocked" />
+        <menu_item_check.on_enable
+         function="Calllog.Enable"
+         parameter="can_block" />
+    </menu_item_check>
+
+</toggleable_menu>

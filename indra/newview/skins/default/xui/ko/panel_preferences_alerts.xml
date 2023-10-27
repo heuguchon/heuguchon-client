@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ border="true"
+ follows="all"
+ height="440"
+ layout="topleft"
+ left="1"
+ top="1"
+ width="540"
+ label="팝업"
+ name="popups">
+<tab_container
+ label="알림"
+ layout="topleft"
+ follows="all"
+ top="5"
+ bottom="-1"
+ left="1"
+ right="-1"
+ name="tabs"
+ tab_min_width="50"
+ tab_position="top">
+ 
+    <!-- World -->
+    <panel
+     top_pad="5"
+     bottom="-1"
+     left="1"
+     right="-1"
+     follows="all"
+     label="세상"
+     name="tab-world">
+
+    <check_box
+     control_name="NotifyMoneyChange"
+     height="16"
+     label="L$를 사용하거나 받을 때 알림"
+     layout="topleft"
+     left="10"
+     name="notify_money_change_checkbox"
+     top="10"
+     width="450" />
+    <check_box
+     enabled_control="NotifyMoneyChange"
+     layout="topleft"
+     follows="left|top"
+     left="20"
+     top_pad="3"
+     height="16"
+     control_name="FSPaymentInfoInChat"
+     name="FSPaymentInfoInChat"
+     label="토스트 대신 인근 채팅에서 L$ 트랜잭션 신고"/>
+    <check_box
+     control_name="FSShowServerVersionChangeNotice"
+     height="16"
+     label="영역을 변경하는 동안 시뮬레이터 버전이 변경되면 알림"
+     layout="topleft"
+     left="10"
+     name="FSShowServerVersionChangeNotice"
+     top_pad="3"
+     tool_tip="순간이동을 하는 동안 또는 영역을 가로지르는 동안 시뮬레이터 버전이 변경될 경우 알림을 표시합니다.."
+     width="450"/>
+    <check_box
+     control_name="AutoQueryGridStatus"
+     height="16"
+     label="쿼리 상태입니다.로그인 시 최신 뉴스를 보려면 secondlifegrid.net를 참조하십시오."
+     layout="topleft"
+     name="AutoQueryGridStatus"
+     top_pad="3"
+     width="450"/>
+
+    <check_box
+      control_name="FSEnableGrowl"
+      height="16"
+      label="성장 알림 실행"
+      layout="topleft"
+      left="10"
+      name="notify_growl_checkbox"
+      top_pad="15"
+      width="450"/>
+    <check_box
+      enabled_control="FSEnableGrowl"
+      layout="topleft"
+      follows="left|top"
+      left_delta="10"
+      top_pad="3"
+      height="16"
+      control_name="FSGrowlWhenActive"
+      name="notify_growl_always_checkbox"
+      label="Firestorm이 활성화된 경우에도 Growl 알림 표시"/>
+    <check_box
+      enabled_control="FSEnableGrowl"
+      layout="topleft"
+      follows="left|top"
+      top_pad="3"
+      height="16"
+      control_name="FSFilterGrowlKeywordDuplicateIMs"
+      name="FSFilterGrowlKeywordDuplicateIMs"
+      label="중복 IM이 이미 키워드 경고의 일부로 표시된 경우 필터링"/>
+
+    </panel>
+
+    <!-- People -->
+    <panel
+     top_pad="5"
+     bottom="-1"
+     left="1"
+     right="-1"
+     follows="all"
+     label="사람들"
+     name="tab-people">
+
+    <check_box
+     control_name="FSFlashOnMessage"
+     height="16"
+     label="[APP_NAME]이(가) 포커스에 없을 때 앱 아이콘 깜박임"
+     layout="topleft"
+     left="10"
+     name="FSFlashOnMessage"
+     top="10"
+     width="450"/>
+    <check_box
+     control_name="FSFlashOnObjectIM"
+     enabled_control="FSFlashOnMessage"
+     height="16"
+     label="또한 개체로부터 인스턴트 메시지를 수신할 때 앱 아이콘 깜박임"
+     layout="topleft"
+     left="20"
+     name="FSFlashOnObjectIM"
+     top_pad="3"
+     width="450"/>
+    <check_box
+     control_name="FSShowDisplayNameUpdateNotification"
+     height="16"
+     label="다른 사용자가 표시 이름을 변경할 때 알림"
+     layout="topleft"
+     left="10"
+     top_pad="3"
+     name="FSShowDisplayNameUpdateNotification"
+     width="450" />
+    <check_box
+     control_name="FSReportBlockToNearbyChat"
+     height="16"
+     label="다른 사용자를 차단하거나 차단을 해제할 때 알림"
+     layout="topleft"
+     left="10"
+     top_pad="3"
+     name="FSReportBlockToNearbyChat"
+     width="450" />
+    <text
+        type="string"
+        length="1"
+        follows="top|left"
+        height="15"
+        layout="topleft"
+        left="10"
+        top_pad="10"
+        name="friends_logon_label"
+        width="430">
+        친구가 로그인하거나 로그아웃할 때 알림:
+    </text>
+    <check_box
+    control_name="ChatOnlineNotification"
+    height="16"
+    label="건배"
+    layout="topleft"
+    name="friends_online_notify_checkbox"
+    top_pad="5"
+    left_delta="5"
+    width="100" />
+    <check_box
+      control_name="OnlineOfflinetoNearbyChat"
+      name="OnlineOfflinetoNearbyChat"
+      label="근처 대화 및 콘솔"
+      layout="topleft"
+      left_pad="0"
+      height="18"
+      width="190">
+      <check_box.commit_callback
+      function="Pref.Online_Notices" />
+    </check_box>
+    <check_box
+      enabled="false"
+      control_name="OnlineOfflinetoNearbyChatHistory"
+      follows="left|top"
+      height="18"
+      label="근처 대화만"
+      layout="topleft"
+      left_pad="0"
+      name="OnlineOfflinetoNearbyChatHistory"
+      width="180" />
+
+	</panel>
+
+    <!-- Objects & Scripts -->
+    <panel
+     top_pad="5"
+     bottom="-1"
+     left="1"
+     right="-1"
+     follows="all"
+     label="개체 &amp; 스크립트"
+     name="tab-objects">
+
+    <check_box
+     control_name="FSFlashOnScriptDialog"
+     height="16"
+     label="스크립트 대화 상자를 받고 [APP_NAME]이(가) 포커스에 없을 때 앱 아이콘 깜박임"
+     layout="topleft"
+     left="10"
+     name="FSFlashOnScriptDialog"
+     top="10"
+     width="450"/>
+    <check_box
+     top_pad="3"
+     control_name="FSCollisionMessagesInChat"
+     height="16"
+     label="충돌 알림을 인근 채팅에 신고"
+     layout="topleft"
+     name="FSCollisionMessagesInChat"
+     width="450" />
+	<check_box
+     control_name="ShowScriptErrors"
+     follows="left|top"
+     height="16"
+     label="신고 스크립트 오류:"
+     layout="topleft"
+     left="10"
+     top_pad="3"
+     name="show_script_errors"
+     width="450" />
+    <radio_group
+     enabled_control="ShowScriptErrors"
+     control_name="ShowScriptErrorsLocation"
+     follows="top|left"
+     height="16"
+     layout="topleft"
+     top_pad="5"
+     name="show_script_errors_location"
+     width="250">
+        <radio_item
+         height="16"
+         label="근처 대화"
+         layout="topleft"
+         left_delta="5"
+         name="script_0"
+         top="0"
+         value="0"
+         width="100" />
+        <radio_item
+         height="16"
+         label="창 분할"
+         layout="topleft"
+         left_delta="100"
+         name="script_1"
+         top_delta="0"
+         value="1"
+         width="100" />
+    </radio_group>
+
+	<check_box
+		control_name="FSReportTotalScriptCountChanges"
+		height="16"
+		label="보고 영역의 총 스크립트 수 변경 사항:"
+		layout="topleft"
+		left="10"
+		top_pad="15"
+		name="FSReportTotalScriptCountChanges"
+		width="450" />
+	<spinner
+		top_pad="3"
+		control_name="FSReportTotalScriptCountChangesThreshold"
+		enabled_control="FSReportTotalScriptCountChanges"
+		decimal_digits="0"
+		layout="topleft"
+		follows="left|top"
+		height="18"
+		left_delta="10"
+		increment="1"
+		max_val="10000"
+		min_val="0"
+		name="FSReportTotalScriptCountChangesThreshold"
+		width="90"
+		tool_tip="신고하기 전에 총 스크립트 수 임계값 변경 [기본값: 100]"/>
+
+    <check_box
+     control_name="FSReportCollisionMessages"
+     height="16"
+     label="채널의 스크립트에 충돌 알림 신고:"
+     layout="topleft"
+     left="10"
+     top_pad="20"
+     name="FSReportCollisionMessages"
+     width="450" />
+    <spinner
+      top_pad="3"
+      control_name="FSReportCollisionMessagesChannel"
+      enabled_control="FSReportCollisionMessages"
+      decimal_digits="0"
+      layout="topleft"
+      follows="left|top"
+      height="18"
+      left_delta="10"
+      increment="1"
+      initial_value="-25000"
+      max_val="2147483647"
+      min_val="-2147483648"
+      name="FSReportCollisionMessagesChannel"
+      width="90"
+      tool_tip="충돌 메시지를 스크립트에 신고하는 데 사용되는 채널 [기본값: -25000]"/>
+
+    </panel>
+
+    <!-- Inventory -->
+    <panel
+     top_pad="5"
+     bottom="-1"
+     left="1"
+     right="-1"
+     follows="all"
+     label="인벤토리"
+     name="tab-inventory">
+
+    <check_box
+     layout="topleft"
+     follows="left|top"
+     top="10"
+     height="16"
+     left="10"
+     control_name="FSShowUploadPaymentToast"
+     name="FSShowUploadPaymentToast"
+     label="업로드 비용이 청구될 때 알림" />
+    <check_box
+     control_name="FSLandmarkCreatedNotification"
+     height="16"
+     label="랜드마크가 생성되면 알림"
+     layout="topleft"
+     name="landmark_created_checkbox"
+     top_pad="3" />
+    <check_box
+     control_name="FSDisableReturnObjectNotification"
+     height="16"
+     label="'개체가 인벤토리로 반환되었습니다' 알림 사용 안 함"
+     layout="topleft"
+     name="FSDisableReturnObjectNotification"
+     top_pad="3" />
+    <check_box
+     control_name="FSLogSnapshotsToLocal"
+     height="16"
+     label="저장된 스냅샷의 파일 이름을 대화 기록에 기록."
+     layout="topleft"
+     name="FSLogSnapshotsToLocal"
+     top_pad="3" />
+    <check_box
+     top_pad="3"
+     left="10"
+     label="너무 빨리 들어오는 개체의 항목에 대해 알림"
+     control_name="FSNotifyIncomingObjectSpam"
+     follows="left|top"
+     height="16"
+     name="FSNotifyIncomingObjectSpam"
+     width="200" />
+    <check_box
+     top_pad="3"
+     left="10"
+     label="너무 빨리 들어오는 다른 거주자의 품목에 대해 알림"
+     control_name="FSNotifyIncomingObjectSpamFrom"
+     follows="left|top"
+     height="16"
+     name="FSNotifyIncomingObjectSpamFrom"
+     width="200" />
+    <slider
+     left="10"
+     top_pad="3"
+     name="FSOfferThrottleMaxCount"
+     control_name="FSOfferThrottleMaxCount"
+     decimal_digits="0"
+     enabled="true"
+     follows="left|top"
+     height="18"
+     increment="1"
+     initial_value="5"
+     label="들어오는 물체가 스로틀 임계값을 제공합니다.:"
+     label_width="225"
+     max_val="20"
+     min_val="1"
+     show_text="true"
+     width="350"
+     tool_tip="들어오는 개체 제공이 제한되기 10초 이내에 제공되는 임계값을 설정합니다. 기본값 5" />
+    </panel>
+
+    <!-- Alerts -->
+    <panel
+     top_pad="5"
+     bottom="-1"
+     left="1"
+     right="-1"
+     follows="all"
+     label="알람"
+     name="tab-alerts">
+    <text
+     type="string"
+     follows="top|left|right"
+     height="12"
+     left="10"
+     name="show_label"
+     tool_tip="뷰어의 경고 목록입니다. 경고를 사용하려면 왼쪽 표시를 선택하고, 경고를 숨기려면 선택을 취소합니다.."
+     top="8"
+     right="-10">
+       표시하거나 숨길 수 있는 뷰어 경고:
+    </text>
+    <filter_editor
+     follows="top|left|right"
+     height="22"
+     right="-10"
+     top_pad="8"
+     label="필터 알람"
+     name="popup_filter"
+     text_pad_left="6"
+     tool_tip="관심 있는 검색어를 여기에 입력하십시오. 전체 텍스트의 부분 일치에 대한 결과가 표시됩니다.">
+       <filter_editor.commit_callback
+        function="Pref.UpdatePopupFilter" />
+    </filter_editor>
+    <!-- Making scroll lists follow="all" results in all kinds of havoc :( -Zi -->
+    <scroll_list
+     follows="top|left|right"
+     height="344"
+     top_pad="8"
+     sort_column="2"
+     sort_ascending="true"
+     multi_select="true"
+     name="all_popups"
+     right="-10">
+        <!-- using a blank padding column to make things look prettier, since "halign" doesn't seem to work for checkboxes -Zi -->
+        <column label="" name="make_pretty" width="1" />
+        <column label="표시" name="alert_enabled_check" width="22" />
+        <column label="알림" name="alert_label" width="460" />
+        <scroll_list.commit_callback
+         function="Pref.SelectPopup" />
+    </scroll_list>
+    </panel>
+</tab_container>
+</panel>

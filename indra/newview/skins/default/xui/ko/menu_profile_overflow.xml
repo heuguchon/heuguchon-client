@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toggleable_menu
+ height="50"
+ layout="topleft"
+ mouse_opaque="false"
+ name="profile_overflow_menu"
+ width="120">
+    <!--<menu_item_call
+     label="지도"
+     layout="topleft"
+     name="show_on_map">
+        <menu_item_call.on_click
+         function="Profile.ShowOnMap" />
+        <menu_item_call.on_enable
+         function="Profile.EnableShowOnMap" />
+    </menu_item_call>
+    <menu_item_call
+     label="결제"
+     layout="topleft"
+     name="pay">
+        <menu_item_call.on_click
+         function="Profile.Pay" />
+    </menu_item_call>-->
+    <menu_item_call
+     label="공유"
+     layout="topleft"
+     name="share">
+        <menu_item_call.on_click
+         function="Profile.Share" />
+    </menu_item_call>
+    <menu_item_call
+     label="전화"
+     layout="topleft"
+     name="call">
+        <menu_item_call.on_click
+         function="Profile.Call" />
+        <menu_item_call.on_visible
+         function="Profile.EnableCall" />
+    </menu_item_call>
+   <!--<menu_item_call
+   label="차단"
+   name="block">
+    <menu_item_call.on_click
+     function="Profile.BlockUnblock"/>
+    <menu_item_call.on_visible
+     function="Profile.EnableBlock" />
+  </menu_item_call>
+  <menu_item_call
+   label="차단해제"
+   name="unblock">
+    <menu_item_call.on_click
+     function="Profile.BlockUnblock"/>
+    <menu_item_call.on_visible
+     function="Profile.EnableUnblock" />
+  </menu_item_call>-->
+  <menu_item_call
+   label="연락처 집합에 추가"
+   layout="topleft"
+   name="add_to_contact_set">
+    <menu_item_call.on_click
+     function="Profile.AddToContactSet" />
+  </menu_item_call>
+  <menu_item_call
+   label="이름 복사"
+   layout="topleft"
+   name="copy_name_to_clipboard">
+    <menu_item_call.on_click
+     function="Profile.CopyNameToClipboard" />
+  </menu_item_call>
+  <menu_item_call
+   label="URI 복사"
+   layout="topleft"
+   name="copy_uri_to_clipboard">
+    <menu_item_call.on_click
+     function="Profile.CopyURI" />
+  </menu_item_call>
+  <menu_item_call
+   label="UUID 복사"
+   layout="topleft"
+   name="copy_key_to_clipboard">
+    <menu_item_call.on_click
+     function="Profile.CopyKey" />
+  </menu_item_call>
+  <menu_item_call
+   label="걷어차기"
+   layout="topleft"
+   name="kick">
+    <menu_item_call.on_click
+     function="Profile.Kick" />
+    <menu_item_call.on_visible
+     function="Profile.EnableGod" />
+  </menu_item_call>
+  <menu_item_call
+   label="얼리기"
+   layout="topleft"
+   name="freeze">
+    <menu_item_call.on_click
+     function="Profile.Freeze" />
+    <menu_item_call.on_visible
+     function="Profile.EnableGod" />
+  </menu_item_call>
+  <menu_item_call
+   label="해동"
+   layout="topleft"
+   name="unfreeze">
+    <menu_item_call.on_click
+     function="Profile.Unfreeze" />
+    <menu_item_call.on_visible
+     function="Profile.EnableGod" />
+  </menu_item_call>
+  <menu_item_call
+   label="CSR"
+   layout="topleft"
+   name="csr">
+    <menu_item_call.on_click
+     function="Profile.CSR" />
+    <menu_item_call.on_visible
+     function="Profile.EnableGod" />
+  </menu_item_call>
+-->
+  <menu_item_call
+   label="신고"
+   layout="topleft"
+   name="report">
+    <menu_item_call.on_click
+     function="Profile.Report" />
+  </menu_item_call>
+</toggleable_menu>

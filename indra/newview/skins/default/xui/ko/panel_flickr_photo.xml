@@ -1,0 +1,312 @@
+    <panel
+      height="540"
+      width="272"
+	  follows="all"
+      layout="topleft"
+      name="panel_flickr_photo">
+            <combo_box
+             control_name="FlickrPhotoResolution"
+             follows="left|top"
+			 layout="topleft"
+             top="5"
+             left="10"
+             name="resolution_combobox"
+             tool_tip="이미지 해상도"
+             height="21"
+             width="124">
+              <combo_box.item
+               label="현재 창"
+               name="CurrentWindow"
+               value="[i0,i0]" />
+              <combo_box.item
+               label="320x240"
+               name="320x240"
+               value="[i320,i240]" />
+              <combo_box.item
+               label="640x480"
+               name="640x480"
+               value="[i640,i480]" />
+              <combo_box.item
+               label="800x600"
+               name="800x600"
+               value="[i800,i600]" />
+              <combo_box.item
+               label="1024x768"
+               name="1024x768"
+               value="[i1024,i768]" />
+              <combo_box.item
+               label="1280x1024"
+               name="1280x1024"
+               value="[i1280,i1024]" />
+              <combo_box.item
+               label="1600x1200"
+               name="1600x1200"
+               value="[i1600,i1200]" />
+              <combo_box.item
+               label="사용자 설정"
+               name="Custom"
+               value="[i-1,i-1]" />
+            </combo_box>
+            <combo_box
+               follows="left|top"
+			   layout="topleft"
+               name="filters_combobox"
+               tool_tip="이미지 필터"
+               top_delta="0"
+               left_pad="4"
+               height="21"
+               width="124">
+                <combo_box.item
+                 label="필터 없음"
+                 name="NoFilter"
+                 value="필터 없음" />
+            </combo_box>
+            <spinner
+             allow_text_entry="false"
+             decimal_digits="0"
+             follows="left|top"
+             height="20"
+             increment="32"
+             layout="topleft"
+             left="10"
+             max_val="6016"
+             min_val="32"
+             name="custom_snapshot_width"
+             top_pad="7"
+             width="54" />
+            <text
+             length="1"
+             follows="top|left|right"
+             layout="topleft"
+             height="16"
+             left_pad="3"
+             name="spinner_x_lbl"
+             top_delta="3"
+             width="8"
+             type="string">
+              x
+            </text>
+            <spinner
+             allow_text_entry="false"
+             decimal_digits="0"
+             follows="left|top"
+             height="20"
+             increment="32"
+             label=""
+             label_width="0"
+             layout="topleft"
+             left_pad="0"
+             max_val="6016"
+             min_val="32"
+             name="custom_snapshot_height"
+             top_delta="-3"
+             width="54" />
+            <check_box
+             follows="left|top"
+             layout="topleft"
+             initial_value="true"
+             label="가로 세로 비율 유지"
+             name="keep_aspect_ratio"
+             left_pad="4"
+             height="16"
+             top_delta="4"/>
+            <panel
+                height="150"
+                width="250"
+                visible="true"
+                name="thumbnail_placeholder"
+                top_pad="3"
+                follows="left|top|right"
+				layout="topleft"
+				right="-10"
+                left="10">
+            </panel>
+			<text
+                follows="left|top"
+				layout="topleft"
+                font="SansSerif"
+                text_color="EmphasisColor"
+                height="14"
+                top_pad="2"
+                left="10"
+                length="1"
+                halign="center"
+                name="working_lbl"
+                type="string"
+                visible="true"
+                width="251">
+                새로고침중...
+            </text>
+			<view_border 
+			 bevel_style="in"
+			 follows="left|top"
+			 layout="topleft"
+			 height="1"
+			 left="10"
+			 name="refresh_border"
+			 width="250"
+			 top_pad="0"/>
+            <button
+             follows="left|top"
+			 layout="topleft"
+             height="23"
+             label="새로고침"
+             left="10"
+             top_pad="5"
+             name="new_snapshot_btn"
+             tool_tip="새로고침 하려면 클릭하시오"
+             visible="true"
+             width="100" >
+             <button.commit_callback
+               function="SocialSharing.RefreshPhoto" />
+            </button>
+            <button
+                follows="right|top"
+				layout="topleft"
+                height="23"
+                label="미리보기"
+                right="-10"
+                top_delta="0"
+                name="big_preview_btn"
+                tool_tip="미리보기를 전환하려면 클릭하십시오."
+                is_toggle="true"
+                visible="true"
+                width="100" >
+                <button.commit_callback
+                function="SocialSharing.BigPreview" />
+            </button>
+            <text
+             length="1"
+             follows="top|left|right"
+			 layout="topleft"
+             font="SansSerif"
+             height="16"
+             left="10"
+             name="title_label"
+             top_pad="5"
+             type="string">
+              제목:
+            </text>
+            <line_editor
+             follows="left|top"
+			 layout="topleft"
+             height="20"
+             width="250"
+             left="10"
+             length="1"
+             top_pad="0"
+             max_length_chars="256"
+             name="photo_title"
+             type="string">
+            </line_editor>
+            <text
+             length="1"
+             follows="top|left|right"
+			 layout="topleft"
+             font="SansSerif"
+             height="16"
+             left="10"
+			 right="-10"
+             name="description_label"
+             top_pad="5"
+			 width="25"
+             type="string">
+              묘사:
+            </text>
+            <text_editor
+             follows="left|top"
+			 layout="topleft"
+             height="50"
+             width="249"
+             left="10"
+             length="1"
+             top_pad="0"
+             max_length="700"
+             name="photo_description"
+             spellcheck="true"
+             type="string"
+             word_wrap="true">
+            </text_editor>
+            <check_box
+             follows="left|top"
+			 layout="topleft"
+             initial_value="true"
+             label="설명 끝에 위치 포함"
+             name="add_location_cb"
+              left="9"
+              height="16"
+             top_pad="8"/>
+            <text
+             length="1"
+             follows="top|left"
+			 layout="topleft"
+             font="SansSerif"
+             height="16"
+             left="10"
+             name="tags_label"
+             top_pad="2"
+             tool_tip="태그를 공백으로 구분합니다. 다중 단어 태그에 &quot;&quot; 사용"
+             type="string">
+              태그:
+            </text>
+            <text_editor
+             follows="left|top"
+			 layout="topleft"
+             height="70"
+             width="249"
+             left="10"
+             length="1"
+             top_pad="0"
+             max_length="700"
+             name="photo_tags"
+             type="string"
+             word_wrap="true">
+            </text_editor>
+            <combo_box
+             control_name="FlickrPhotoRating"
+             follows="left|top"
+			 layout="topleft"
+             top_pad="5"
+             left="10"
+             name="rating_combobox"
+             tool_tip="Flickr 내용 등급"
+             height="21"
+             width="250">
+              <combo_box.item
+               label="안전 Flickr 등급"
+               name="SafeRating"
+               value="1" />
+              <combo_box.item
+               label="적당한 Flickr 등급"
+               name="ModerateRating"
+               value="2" />
+              <combo_box.item
+               label="제한 Flickr 등급"
+               name="RestrictedRating"
+               value="3" />
+            </combo_box>
+          <button
+           follows="left|top"
+		   layout="topleft"
+           top_pad="5"
+           left="10"
+           height="23"
+           label="공유"
+           name="post_photo_btn"
+           width="100">
+            <button.commit_callback
+             function="SocialSharing.SendPhoto" />
+          </button>
+          <button
+               follows="right|top"
+			   layout="topleft"
+               height="23"
+               label="취소"
+               name="cancel_photo_btn"
+               right="-10"
+               top_delta="0"
+               width="100">
+            <button.commit_callback
+             function="SocialSharing.Cancel" />
+          </button>
+    </panel>

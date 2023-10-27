@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ height="330"
+ label="거주자 금지"
+ layout="topleft"
+ left="0"
+ name="bulk_ban_panel"
+ top="330"
+ width="210">
+  <panel.string
+   name="loading">
+    (로딩중...)
+  </panel.string>
+  <panel.string
+     name="ban_selection_too_large">
+    그룹 금지가 전송되지 않았습니다. 너무 많은 거주자를 선택했습니다. 그룹 금지는 요청당 100개로 제한됩니다.
+  </panel.string>
+  <panel.string
+     name="ban_not_permitted">
+    그룹 금지가 전송되지 않음: '금지 목록 관리' 기능이 없습니다.
+  </panel.string>
+  <panel.string
+     name="ban_limit_fail">
+    그룹 금지가 전송되지 않음: 그룹이 허용된 금지 레코드 제한에 도달했습니다.
+  </panel.string>
+  <panel.string
+     name="partial_ban">
+    일부 그룹 금지가 전송되지 않았습니다:
+[REASONS]
+  </panel.string>
+  <panel.string
+     name="ban_failed">
+    그룹 금지가 전송되지 않았습니다:
+[REASONS]
+  </panel.string>
+  <panel.string
+     name="residents_already_banned">
+    - 다음 거주자가 이미 금지되었습니다: [RESIDENTS].
+  </panel.string>
+  <panel.string
+     name="ban_limit_reached">
+    - 금지되지 않은 에이전트에 이어 금지 제한에 도달했습니다: [RESIDENTS].
+  </panel.string>
+  <panel.string
+     name="cant_ban_yourself">
+    - 그룹에서 자신을 금지할 수 없습니다.
+  </panel.string>
+  <text
+   type="string"
+   length="1"
+   height="54"
+   layout="topleft"
+   left="7"
+   name="help_text"
+   top="28"
+   word_wrap="true"
+   width="200">
+    그룹에서 금지할 여러 거주자를 선택할 수 있습니다. 클릭 &apos; 시작하려면 거주자 선택 도구 열기.
+  </text>
+  <button
+   height="20"
+   label="거주자 선택 도구 열기"
+   layout="topleft"
+   left_delta="-2"
+   name="add_button"
+   top_delta="44"
+   width="200" />
+  <name_list
+   allow_calling_card_drop="true"
+   column_padding="0"
+   height="174"
+   layout="topleft"
+   left_delta="0"
+   multi_select="true"
+   name="banned_agent_list"
+   tool_tip="Ctrl 키를 누른 상태에서 거주자 이름을 클릭하여 다중 선택"
+   top_pad="4"
+   width="200" />
+  <button
+   height="20"
+   label="목록에서 선택 항목 제거"
+   layout="topleft"
+   left_delta="0"
+   name="remove_button"
+   tool_tip="위에서 선택한 거주자를 금지 목록에서 제거합니다."
+   top_pad="4"
+   width="200" />
+  <button
+   height="20"
+   label="거주자 금지"
+   layout="topleft"
+   left="4"
+   name="ban_button"
+   top_delta="30"
+   width="135" />
+  <button
+   height="20"
+   label="취소"
+   layout="topleft"
+   left_pad="2"
+   name="cancel_button"
+   top_delta="0"
+   width="65" />
+  <string
+  name="GroupBulkBan">
+    그룹 금지
+  </string>
+</panel>

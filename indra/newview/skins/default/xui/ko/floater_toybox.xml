@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+  can_close="true"
+  can_dock="false"
+  can_minimize="false"
+  can_resize="false"
+  height="525"
+  help_topic="toybox"
+  layout="topleft"
+  legacy_header_height="18"
+  name="Toybox"
+  positioning="centered"
+  save_rect="true"
+  single_instance="true"
+  title="툴바 버튼"
+  width="975">
+  <text
+    follows="left|top"
+    font="SansSerifMedium"
+    valign="top"
+    halign="left"
+    height="20"
+    layout="topleft"
+    left="20"
+    length="1"
+    name="toybox label 1"
+    right="-20"
+    top="35"
+    type="string">
+      도구 모음으로 또는 도구 모음에서 끌어 단추 추가 또는 제거.
+  </text>
+  <text
+    follows="left|top"
+    font="SansSerifMedium"
+    valign="top"
+    halign="left"
+    height="20"
+    layout="topleft"
+    left="20"
+    length="1"
+    name="toybox label 2"
+    right="-20"
+    top="55"
+    type="string">
+      버튼은 각 도구 모음의 설정에 따라 표시된 대로 또는 아이콘 전용으로 표시됩니다.
+  </text>
+  <toolbar
+    bottom="350"
+    button_display_mode="icons_with_text"
+    follows="all"
+    left="20"
+    button_icon_and_text.button_width.max="140"
+    button_icon_and_text.button_width.min="70"
+    name="toybox_toolbar"
+    pad_left="5"
+    pad_right="5"
+    pad_top="5"
+    pad_bottom="5"
+    pad_between="15"
+    read_only="true"
+    right="-20"
+    side="top"
+    top="85">
+    <button_panel background_visible="false" />
+    <button_icon_and_text image_unselected="PushButton_Off"
+                          image_selected="PushButton_Off"
+                          image_disabled_selected="PushButton_Disabled"
+                          image_disabled="PushButton_Disabled"
+                          label_color="ButtonLabelColor"
+                          label_color_selected="ButtonLabelColor"
+                          label_color_disabled="ButtonLabelDisabledColor"
+                          label_color_disabled_selected="ButtonLabelDisabledColor"
+                          image_color="ButtonImageColor"
+                          image_color_disabled="ButtonImageColor"
+                          flash_color="ButtonUnselectedFgColor"
+                          halign="left"
+                          hover_glow_amount="0.15"
+                          sound_flags="0"
+                          display_pressed_state="false" />
+  </toolbar>
+  <panel
+    bevel_style="none"
+    border="true"
+    bottom="445"
+    follows="left|bottom|right"
+    left="20"
+    right="-20"
+    top="445" />
+  <button
+    follows="left|bottom|right"
+    height="23"
+    label="모든 툴바 지우기"
+    label_selected="Clear all toolbars"
+    disabled_control="LockToolbars"
+    layout="topleft"
+    left="185"
+    name="btn_clear_all"
+    top="462"
+    width="130">
+    <button.commit_callback function="Toybox.ClearAll" />
+  </button>
+  <button
+    follows="left|bottom|right"
+    height="23"
+    label="기본값 복원"
+    label_selected="Restore defaults"
+    disabled_control="LockToolbars"
+    layout="topleft"
+    left="335"
+    name="btn_restore_defaults"
+    top="462"
+    width="130">
+    <button.commit_callback function="Toybox.RestoreDefaults" />
+  </button>
+  <check_box
+    follows="left|bottom|right"
+    height="23"
+    label="잠금"
+    layout="topleft"
+    left_pad="16"
+    name="check_toolbars_locked"
+    control_name="LockToolbars"
+    tool_tip="실수로 단추를 끌거나 제거할 수 없도록 도구 모음을 잠그려면 이 상자를 선택합니다."
+    width="130">
+  </check_box>
+</floater>

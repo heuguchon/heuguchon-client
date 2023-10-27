@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ can_minimize="false"
+ can_resize="true" 
+ height="535"
+ layout="topleft"
+ name="sell land"
+ help_topic="sell_land"
+ single_instance="true"
+ title="랜드 판매"
+ width="313">
+    <scroll_container
+     color="DkGray2"
+     follows="left|top|right|bottom"
+     height="520"
+     layout="topleft"
+     name="profile_scroll"
+     reserve_scroll_corner="true"
+     opaque="true"
+     top="15"
+     width="313">
+    <panel
+            name="scroll_content_panel"
+	    follows="left|top|right"
+	    layout="topleft"
+	    top="0"
+	    left="0"
+	    width="293"
+	    height="615">
+    <texture_picker
+     enabled="false"
+     follows="top|left"
+     height="135"
+     left="60"
+     name="info_image"
+     top="20"
+     width="180" />
+    <text
+     top="150"
+     follows="top|left"
+     left="16"
+     name="info_parcel_label"
+     width="70">
+        구획:
+    </text>
+    <text
+     top_delta="0"
+     follows="top|left"
+     height="16"
+     left="78"
+     name="info_parcel"
+     right="-20">
+        구획 이름
+    </text>
+    <text
+     follows="top|left"
+     left="16"
+     name="info_size_label"
+     width="70">
+        크기:
+    </text>
+    <text
+     follows="top|left"
+     top_delta="0"
+     height="32"
+     left="78"
+     name="info_size"
+     right="-20">
+        [AREA] m²
+    </text>
+    <text
+     follows="top|left"
+     font="SansSerifBig"
+     height="24"
+     left="16"
+     name="info_action"
+     text_color="white"
+     top="195"
+     width="200">
+        이 소포를 팔기 위해서는:
+    </text>
+    <text
+     follows="top|left"
+     font="SansSerif"
+     height="16"
+     left="30"
+     name="price_label">
+        1. 가격을 책정하시오:
+    </text>
+    <text
+     follows="top|left"
+     height="16"
+     left="40"
+     name="price_text">
+        적절한 가격을 선택합니다.
+    </text>
+    <text
+     height="16"
+     left="40"
+     name="price_ld"
+     width="20">
+        L$
+    </text>
+    <line_editor
+     follows="top|left"
+     height="18"
+     left_delta="20"
+     name="price"
+     top_delta="0"
+     width="100">
+        0
+    </line_editor>
+    <text
+     height="16"
+     left="40"
+     name="price_per_m"
+     top_delta="25"
+     width="200">
+        (m² 당 L$[PER_METER])
+    </text>
+    <text
+     follows="top|left"
+     font="SansSerif"
+     height="16"
+     left="30"
+     name="sell_to_label">
+        2. ~에게 랜드를 판매합니다:
+    </text>
+    <text
+     follows="top|left"
+     height="25"
+     left="40"
+     word_wrap="true"
+     name="sell_to_text"
+     right="-20">
+        누구에게 판매할지 또는 특정 구매자에게 판매할지 선택.
+    </text>
+    <combo_box
+     follows="top|left"
+     height="18"
+     left_delta="0"
+     name="sell_to"
+     top_delta="32"
+     width="130">
+        <combo_box.item
+         enabled="false"
+         label="- 하나 선택 -"
+         name="--selectone--"
+         value="select" />
+        <combo_box.item
+         label="누구든"
+         name="Anyone"
+         value="anyone" />
+        <combo_box.item
+         label="특정한 인원:"
+         name="Specificuser:"
+         value="user" />
+    </combo_box>
+    <line_editor
+     enabled="false"
+     follows="top|left"
+     height="18"
+     left_delta="0"
+     name="sell_to_agent"
+     top_pad="4"
+     width="150" />
+    <button
+     height="20"
+     label="선택"
+     left_pad="5"
+     name="sell_to_select_agent"
+     top_delta="0"
+     width="90" />
+    <text
+     follows="top|left"
+     font="SansSerif"
+     height="16"
+     left="30"
+     name="sell_objects_label"
+     width="266">
+        3. 랜드와 개체를 판매합니까?
+    </text>
+    <text
+     font="SansSerifSmall"
+     follows="top|left"
+     height="25"
+     word_wrap="true"
+     left="40"
+     name="sell_objects_text">
+        토지 소유자의 &apos; 양도 가능 물체가 소포로 소유권이 변경됩니다.
+    </text>
+    <radio_group
+     top_pad="5"
+     follows="top|left"
+     height="40"
+     left="40"
+     name="sell_objects"
+     right="-20">
+        <radio_item
+         bottom="40"
+         height="0"
+         left="2"
+         name="none"
+         visible="false" />
+        <radio_item
+         top_pad="10"
+         height="18"
+         label="아니요, 물건의 소유권을 유지하십시오"
+         left="2"
+         name="no" />
+        <radio_item
+         top_pad="10"
+         height="16"
+         label="예, 땅과 개체를 판매합니다"
+         left="2"
+         name="yes" />
+    </radio_group>
+    <button
+     height="20"
+     label="개체 표시"
+     name="show_objects"
+     left="70"
+     top_pad="10"
+     width="140" />
+    <text
+     bottom_delta="30"
+     follows="top|left"
+     font="SansSerifBig"
+     height="16"
+     left="16"
+     name="nag_message_label"
+     right="-5">
+        기억: 모든 판매는 최종 판매입니다.
+    </text>
+    <button
+     follows="bottom|left"
+     height="20"
+     label="분양지 설정"
+     left_delta="0"
+     name="sell_btn"
+     top_pad="10"
+     width="185" />
+    <button
+     follows="bottom|left"
+     height="20"
+     label="취소"
+     left_pad="5"
+     name="cancel_btn"
+     top_delta="0"
+     width="85" />
+    </panel>
+    </scroll_container>
+</floater>

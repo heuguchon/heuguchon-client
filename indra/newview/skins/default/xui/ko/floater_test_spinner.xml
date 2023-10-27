@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ can_resize="true"
+ height="400"
+ layout="topleft"
+ name="floater_test_spinner"
+ help_topic="floater_test_spinner"
+ translate="false"
+ width="450">
+    <spinner
+     height="32"
+     label="일반 스피너"
+     layout="topleft"
+     left="10"
+     label_width="100"
+     name="generic_spinner"
+     top="40"
+     width="350" />
+    <spinner
+     height="20"
+     label="콜백 스피너"
+     label_width="100"
+     layout="topleft"
+     left_delta="0"
+     name="callback_spinner"
+     top_pad="20"
+     width="400" />
+    <spinner
+     height="20"
+     label="컬러풀 스피너"
+     layout="topleft"
+     left_delta="0"
+     name="colorful_spinner"
+     top_pad="20"
+     width="250" />
+    <spinner
+     height="20"
+     increment="1"
+     initial_value="2.0"
+     label="값 스피너"
+     layout="topleft"
+     left_delta="0"
+     max_val="5"
+     min_val="1"
+     name="value_spinner"
+     top_pad="20"
+     width="250" />
+    <spinner
+     height="20"
+     label="미니 스피너 1"
+     layout="topleft"
+     left_delta="0"
+     name="mini_spinner_1"
+     top_pad="20"
+     width="200" />
+    <spinner
+     height="20"
+     label="미니 스피너 2"
+     layout="topleft"
+     left_pad="20"
+     name="mini_spinner_2"
+     top_delta="0"
+     width="200" />
+    <spinner
+     control_name="RenderFogRatio"
+     decimal_digits="1"
+     height="20"
+     label="조작 스피너"
+     layout="topleft"
+     left="10"
+     max_val="20"
+     min_val="10"
+     name="control_spinner"
+     top="260"
+     width="250" />
+    <spinner
+     follows="left"
+     height="20"
+     label="왼쪽 팔로우"
+     label_width="85"
+     layout="topleft"
+     left_delta="0"
+     name="follows_left"
+     top_pad="20"
+     width="250" />
+    <spinner
+     follows="right"
+     height="20"
+     label="오른쪽 팔로우"
+     label_width="85"
+     layout="topleft"
+     left_delta="0"
+     name="follows_right"
+     top_pad="20"
+     width="250" />
+</floater>

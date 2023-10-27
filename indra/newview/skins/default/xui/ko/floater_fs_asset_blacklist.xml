@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater
+ name="fs_asset_blacklist"
+ help_topic="fs_asset_blacklist"
+ title="재산 블랙리스트"
+ min_width="650"
+ min_height="320"
+ width="750"
+ height="320"
+ save_rect="true"
+ can_resize="true"
+ can_minimize="true"
+ can_close="true"
+ can_drag_on_left="false">
+	<floater.string name="asset_object">
+		개체
+	</floater.string>
+	<floater.string name="asset_texture">
+		텍스쳐
+	</floater.string>
+	<floater.string name="asset_sound">
+		소리
+	</floater.string>
+	<floater.string name="asset_resident">
+		거주자
+	</floater.string>
+	<floater.string name="asset_unknown">
+		알 수 없음
+	</floater.string>
+	<floater.string name="unknown_object">
+		알 수 없는 개체
+	</floater.string>
+	<floater.string name="unknown_region">
+		알 수 없는 지역
+	</floater.string>
+	<floater.string name="asset_permanent">
+		&#x2714;
+	</floater.string>
+	<floater.string name="DateFormatString">
+		[year,datetime,local]/[mthnum,datetime,local]/[day,datetime,local] [hour,datetime,local]:[min,datetime,local]:[second,datetime,local]
+	</floater.string>
+	<filter_editor
+	 follows="left|top|right"
+	 height="23"
+	 layout="topleft"
+	 left="4"
+	 label="재산 블랙리스트 필터"
+	 max_length_chars="300"
+	 name="filter_input"
+	 top="4"
+	 right="-4" />
+	<fs_scroll_list
+	 name="result_list"
+	 left="4"
+	 right="-4"
+	 top="30"
+	 bottom="-36"
+	 follows="all"
+	 column_padding="10"
+	 draw_heading="true"
+	 draw_stripes="true"
+	 multi_select="true"
+	 persist_sort_order="true"
+	 primary_sort_only="true"
+	 search_column="0"
+	 sort_column="0">
+		<columns
+		 name="name"
+		 label="이름"
+		 dynamicwidth="true"
+		 />
+		<columns
+		 name="region"
+		 label="지역"
+		 width="100"
+		 />
+		<columns
+		 name="type"
+		 label="타입"
+		 width="60"
+		 />
+		<columns
+		 name="date"
+		 label="일자"
+		 sort_column="date_sort"
+		 width="120"
+		 />
+		<columns
+		 name="permanent"
+		 label="영구적"
+		 width="80"
+		 />
+		<columns
+		 name="date_sort"
+		 width="-1"
+		 />
+		<columns
+		 name="asset_type"
+		 width="-1"
+		 />
+		<row>
+			<column column="name">[UNKNOWN] 템플릿 아이템</column>
+			<column column="region">[UNKNOWN] 템플릿 아이템</column>
+			<column column="type">알 수 없음</column>
+			<column column="date">2012-12-11 13:37:00</column>
+			<column column="permanent">&#x2714;</column>
+		</row>
+	</fs_scroll_list>
+	<button
+	 name="remove_btn"
+	 label="선택한 항목 제거"
+	 font="SansSerif"
+	 height="24"
+	 width="150"
+	 left="4"
+	 bottom="-6"
+	 follows="left|bottom"/>
+	<button
+	 name="remove_temp_btn"
+	 label="임시적으로 지우기"
+	 font="SansSerif"
+	 height="24"
+	 width="150"
+	 left_pad="10"
+	 bottom="-6"
+	 follows="left|bottom"/>
+	<button
+	 name="play_btn"
+	 label="소리 재생"
+	 tool_tip="선택한 소리를 재생합니다. 한 번에 하나의 소리 항목만 선택하여 재생할 수 있습니다."
+	 font="SansSerif"
+	 height="24"
+	 width="90"
+	 left_pad="10"
+	 bottom="-6"
+	 follows="left|bottom"/>
+	<button
+	 name="stop_btn"
+	 label="소리 정지"
+	 tool_tip="지금 재생중인 소리 정지."
+	 font="SansSerif"
+	 height="24"
+	 width="90"
+	 left_delta="0"
+	 bottom="-6"
+	 follows="left|bottom"/>
+	<button
+	 name="close_btn"
+	 label="닫기"
+	 font="SansSerif"
+	 height="24"
+	 width="100"
+	 right="-4"
+	 bottom="-6"
+	 follows="right|bottom"/>
+</floater>

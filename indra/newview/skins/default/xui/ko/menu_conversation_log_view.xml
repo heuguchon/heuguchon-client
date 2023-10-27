@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toggleable_menu
+     name="menu_conversation_view"
+     left="0" bottom="0" visible="false"
+     mouse_opaque="false">
+  <menu_item_check
+   label="이름으로 정렬"
+   name="sort_by_name">
+      <on_click
+       function="CallLog.Action"
+       parameter="sort_by_name"/>
+      <on_check
+       function="CallLog.Check"
+       parameter="sort_by_name"/>
+  </menu_item_check>
+  <menu_item_check
+   label="날짜로 정렬"
+   name="sort_by_date">
+      <on_click
+       function="CallLog.Action"
+       parameter="sort_by_date" />
+      <on_check
+       function="CallLog.Check"
+       parameter="sort_by_date" />
+  </menu_item_check>
+  <menu_item_separator />
+  <menu_item_check
+   label="맨 위에 친구 정렬"
+   name="sort_by_friends">
+      <on_click
+       function="CallLog.Action"
+       parameter="sort_friends_on_top" />
+      <on_check
+       function="CallLog.Check"
+       parameter="sort_friends_on_top" />
+  </menu_item_check>
+  <menu_item_separator />
+  <menu_item_call
+   label="주변 대화 내용 보기..."
+   name="view_nearby_chat_history">
+      <on_click
+       function="CallLog.Action"
+       parameter="view_nearby_chat_history" />
+  </menu_item_call>
+</toggleable_menu>

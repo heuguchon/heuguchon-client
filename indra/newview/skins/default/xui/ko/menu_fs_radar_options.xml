@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toggleable_menu
+ name="menu_group_plus">
+	<menu_item_check
+	 label="레이더 위에 최소 지도 표시"
+	 name="ShowRadarMinimap">
+		<menu_item_check.on_check
+		 control="ShowRadarMinimap"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="ShowRadarMinimap"/>
+		<menu_item_check.on_enable
+		 function="RLV.EnableIfNot"
+		 parameter="showminimap"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="결과를 특정 반지름으로 제한"
+	 name="LimitRadarByRange">
+		<menu_item_check.on_check
+		 control="LimitRadarByRange"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="LimitRadarByRange"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="음소거 및 블랙리스트에 있는 아바타 표시"
+	 name="FSRadarShowMutedAndDerendered">
+		<menu_item_check.on_check
+		 control="FSRadarShowMutedAndDerendered"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="FSRadarShowMutedAndDerendered"/>
+	</menu_item_check>
+	<context_menu
+	 label="레이더 이름 형식"
+	 name="radarNameFormat">
+		<menu_item_check
+		 label="이름 표시"
+		 name="radarFmtDN"
+		 enabled_control="UseDisplayNames">
+			<menu_item_check.on_check
+			 function="Radar.NameFmtCheck"
+			 parameter="DN"/>
+			<menu_item_check.on_click
+			 function="Radar.NameFmt"
+			 parameter="DN"/>
+		</menu_item_check>
+		<menu_item_check
+		 label="사용자 이름"
+		 name="radarFmtUN">
+			<menu_item_check.on_check
+			 function="Radar.NameFmtCheck"
+			 parameter="UN"/>
+			<menu_item_check.on_click
+			 function="Radar.NameFmt"
+			 parameter="UN"/>
+		</menu_item_check>
+		<menu_item_check
+		 label="이름 표시(사용자 이름)"
+		 name="radarFmtDNUN"
+		 enabled_control="UseDisplayNames">
+			<menu_item_check.on_check
+			 function="Radar.NameFmtCheck"
+			 parameter="DNUN"/>
+			<menu_item_check.on_click
+			 function="Radar.NameFmt"
+			 parameter="DNUN"/>
+		</menu_item_check>
+		<menu_item_check
+		 label="사용자 이름(이름 표시)"
+		 name="radarFmtUNDN"
+		 enabled_control="UseDisplayNames">
+			<menu_item_check.on_check
+			 function="Radar.NameFmtCheck"
+			 parameter="UNDN"/>
+			<menu_item_check.on_click
+			 function="Radar.NameFmt"
+			 parameter="UNDN"/>
+		</menu_item_check>
+	</context_menu>
+	<context_menu
+	 label="표시된 열"
+	 name="visible_columns">
+		<menu_item_check
+		 label="음성"
+		 name="voice_level">
+			<menu_item_check.on_check
+			 function="Radar.EnableColumn"
+			 parameter="voice_level"/>
+			<menu_item_check.on_click
+			 function="Radar.ToggleColumn"
+			 parameter="voice_level"/>
+		</menu_item_check>
+		<menu_item_check
+		 label="같은 지역"
+		 name="in_region">
+			<menu_item_check.on_check
+			 function="Radar.EnableColumn"
+			 parameter="in_region"/>
+			<menu_item_check.on_click
+			 function="Radar.ToggleColumn"
+			 parameter="in_region"/>
+		</menu_item_check>
+		<menu_item_check
+		 label="타이핑 상태"
+		 name="typing_status">
+			<menu_item_check.on_check
+			 function="Radar.EnableColumn"
+			 parameter="typing_status"/>
+			<menu_item_check.on_click
+			 function="Radar.ToggleColumn"
+			 parameter="typing_status"/>
+		</menu_item_check>
+		<menu_item_check
+		 label="앉기 상태"
+		 name="sitting_status">
+			<menu_item_check.on_check
+			 function="Radar.EnableColumn"
+			 parameter="sitting_status"/>
+			<menu_item_check.on_click
+			 function="Radar.ToggleColumn"
+			 parameter="sitting_status"/>
+		</menu_item_check>
+		<menu_item_check
+		 label="깃발"
+		 name="flags">
+			<menu_item_check.on_check
+			 function="Radar.EnableColumn"
+			 parameter="flags"/>
+			<menu_item_check.on_click
+			 function="Radar.ToggleColumn"
+			 parameter="flags"/>
+		</menu_item_check>
+		<menu_item_check
+		 label="메모"
+		 name="has_notes">
+			<menu_item_check.on_check
+			 function="Radar.EnableColumn"
+			 parameter="has_notes"/>
+			<menu_item_check.on_click
+			 function="Radar.ToggleColumn"
+			 parameter="has_notes"/>
+		</menu_item_check>
+		<menu_item_check
+		 label="나이"
+		 name="age">
+			<menu_item_check.on_check
+			 function="Radar.EnableColumn"
+			 parameter="age"/>
+			<menu_item_check.on_click
+			 function="Radar.ToggleColumn"
+			 parameter="age"/>
+		</menu_item_check>
+		<menu_item_check
+		 label="보이는"
+		 name="seen">
+			<menu_item_check.on_check
+			 function="Radar.EnableColumn"
+			 parameter="seen"/>
+			<menu_item_check.on_click
+			 function="Radar.ToggleColumn"
+			 parameter="seen"/>
+		</menu_item_check>
+	</context_menu>
+	<menu_item_check
+	 label="거리를 기준으로 한 색상 이름"
+	 name="radarColorNamesBasedOnDistance">
+		<menu_item_check.on_check
+		 control="FSRadarColorNamesByDistance"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="FSRadarColorNamesByDistance"/>
+	</menu_item_check>
+	<menu_item_separator layout="topleft"/>
+	<context_menu
+	 label="신고"
+	 name="report_to_menu">
+		<menu_item_check
+		 label="근처 대화"
+		 name="radar_nearby_chat">
+			<menu_item_check.on_check
+			 function="Radar.ReportToCheck"
+			 parameter="radar_nearby_chat"/>
+			<menu_item_check.on_click
+			 function="Radar.ReportTo"
+			 parameter="radar_nearby_chat"/>
+		</menu_item_check>
+		<menu_item_check
+		 label="알림 토스트"
+		 name="radar_nearby_chat">
+			<menu_item_check.on_check
+			 function="Radar.ReportToCheck"
+			 parameter="radar_toasts"/>
+			<menu_item_check.on_click
+			 function="Radar.ReportTo"
+			 parameter="radar_toasts"/>
+		</menu_item_check>
+	</context_menu>
+	<menu_item_check
+	 label="미니맵의 주변 채팅 거리 링"
+	 name="MiniMapChatRing">
+		<menu_item_check.on_check
+		 control="MiniMapChatRing"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="MiniMapChatRing"/>
+		<menu_item_check.on_visible
+		 function="CheckControl"
+		 parameter="ShowRadarMinimap"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="보고서 그리기 범위 입력"
+	 name="RadarReportDrawRangeEnter">
+		<menu_item_check.on_check
+		 control="RadarReportDrawRangeEnter"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="RadarReportDrawRangeEnter"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="보고서 그리기 범위 이탈"
+	 name="RadarReportDrawRangeLeave">
+		<menu_item_check.on_check
+		 control="RadarReportDrawRangeLeave"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="RadarReportDrawRangeLeave"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="채팅 범위로 들어가는 보고서"
+	 name="RadarReportChatRangeEnter">
+		<menu_item_check.on_check
+		 control="RadarReportChatRangeEnter"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="RadarReportChatRangeEnter"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="채팅 범위 밖으로 나가는 보고서"
+	 name="RadarReportChatRangeLeave">
+		<menu_item_check.on_check
+		 control="RadarReportChatRangeLeave"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="RadarReportChatRangeLeave"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="지역 입력 보고서"
+	 name="RadarReportSimRangeEnter">
+		<menu_item_check.on_check
+		 control="RadarReportSimRangeEnter"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="RadarReportSimRangeEnter"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="해당 지역을 떠나는 보고서"
+	 name="RadarReportSimRangeLeave">
+		<menu_item_check.on_check
+		 control="RadarReportSimRangeLeave"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="RadarReportSimRangeLeave"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="보고서 아바타 연령 알림"
+	 name="RadarReportAgeAlert">
+		<menu_item_check.on_check
+		 control="RadarAvatarAgeAlert"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="RadarAvatarAgeAlert"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="보고서 스크립트에 경고 입력"
+	 name="RadarEnterChannelAlert">
+		<menu_item_check.on_check
+		 control="RadarEnterChannelAlert"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="RadarEnterChannelAlert"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="스크립트에 종료 알림 보고"
+	 name="RadarLeaveChannelAlert">
+		<menu_item_check.on_check
+		 control="RadarLeaveChannelAlert"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="RadarLeaveChannelAlert"/>
+		<menu_item_check.on_enable
+		 function="RLV.EnableIfNot"
+		 parameter="showminimap"/>
+	</menu_item_check>
+	<menu_item_check
+	 label="LSL-Client Bridge를 통한 레이더 향상"
+	 name="FSRadarEnhanceByBridge"
+	 enabled_control="UseLSLBridge">
+		<menu_item_check.on_check
+		 control="FSRadarEnhanceByBridge"/>
+		<menu_item_check.on_click
+		 function="ToggleControl"
+		 parameter="FSRadarEnhanceByBridge"/>
+	</menu_item_check>
+	<menu_item_separator layout="topleft"/>
+	<menu_item_call
+	 name="show_blocked_list"
+	 label="차단된 거주자 &amp;및 개체 열기">
+		<menu_item_call.on_click
+		 function="Radar.Option.Action"
+		 userdata="panel_block_list_sidetray"/>
+	</menu_item_call>
+</toggleable_menu>

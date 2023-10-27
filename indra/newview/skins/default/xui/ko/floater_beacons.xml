@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ height="332"
+ layout="topleft"
+ name="beacons"
+ help_topic="beacons"
+ save_rect="true"
+ save_visibility="true"
+ single_instance="true"
+ title="비콘"
+ width="240">
+    <panel
+     follows="left|top|right|bottom"
+     height="327"
+     layout="topleft"
+     left="10"
+     name="beacons_panel"
+     top="20"
+     width="230">
+        <text
+         follows="all"
+         height="16"
+         font="SansSerif"
+         name="label_show"
+         text_color="White"
+         type="string">
+            보기 :
+         </text>
+        <check_box
+         height="16"
+         layout="topleft"
+         label="장면의 조명에 대한 경계 상자"
+         name="lights_bounding_boxes">
+          <check_box.on_check
+           function="Advanced.CheckInfoDisplay"
+           parameter="lights"/>
+          <check_box.check_button.commit_callback
+           function="Advanced.ToggleInfoDisplay"
+           parameter="lights"/>
+        </check_box>
+        <check_box
+         top_pad="2"
+         control_name="renderbeacons"
+         height="16"
+         width="100"
+         label="비콘들"
+         layout="topleft"
+         name="beacons" >
+          <check_box.commit_callback
+           function="Beacons.UICheck" />
+        </check_box>
+         <check_box
+         control_name="renderhighlights"
+         height="16"
+         left_pad="10"
+         label="하이라이트"
+         layout="topleft"
+         name="highlights" >
+          <check_box.commit_callback
+           function="Beacons.UICheck" />
+        </check_box>
+        <check_box
+         top_pad="2"
+         control_name="FSRenderBeaconText"
+         height="16"
+         width="100"
+         label="뷰어 창의 비콘 정보 텍스트"
+         layout="topleft"
+         left="0"
+         name="FSRenderBeaconText"/>
+        <text
+         type="string"
+         length="1"
+         follows="left|top"
+         height="16"
+         layout="topleft"
+         left="20"
+         tool_tip="비콘 폭"
+         name="beacon_width_label"
+         top_pad="4"
+         width="128">
+            폭:
+        </text>
+        <slider
+         control_name="DebugBeaconLineWidth"
+         decimal_digits="0"
+         height="16"
+         increment="1"
+         initial_value="1"
+         layout="topleft"
+         max_val="16"
+         min_val="1"
+         name="beacon_width"
+         top_pad="0"
+         width="180" />
+         <text
+         follows="all"
+         height="16"
+         font="SansSerif"
+         left="0"
+         top_pad="5"
+         name="label_objects"
+         text_color="White"
+         type="string">
+           이 개체들을 위한:
+         </text>
+         <check_box
+         control_name="physicalbeacon"
+         height="16"
+         left="0"
+         label="물리"
+         layout="topleft"
+         name="physical" >
+          <check_box.commit_callback
+           function="Beacons.UICheck" />
+        </check_box>
+        <check_box
+         control_name="scriptsbeacon"
+         height="16"
+         left="0"
+         top_pad="2"
+         label="스크립트"
+         layout="topleft"
+         name="scripted">
+          <check_box.commit_callback
+           function="Beacons.UICheck" />
+        </check_box>
+         <check_box
+         control_name="scripttouchbeacon"
+         height="16"
+         top_pad="2"
+         left="20"
+         label="터치만"
+         layout="topleft"
+         name="touch_only" >
+          <check_box.commit_callback
+           function="Beacons.UICheck" />
+        </check_box>
+        <check_box
+         control_name="soundsbeacon"
+         height="16"
+         left="0"
+         top_pad="2"
+         label="소리 자료"
+         layout="topleft"
+         name="sounds" >
+          <check_box.commit_callback
+           function="Beacons.UICheck" />
+        </check_box>
+        <check_box
+         control_name="particlesbeacon"
+         height="16"
+         top_pad="2"
+         label="입자 자료"
+         layout="topleft"
+         name="particles" >
+          <check_box.commit_callback
+           function="Beacons.UICheck" />
+        </check_box>
+         <check_box
+         control_name="moapbeacon"
+         height="16"
+         left="0"
+         top_pad="2"
+         label="미디어 자료"
+         layout="topleft"
+         name="moapbeacon" >
+          <check_box.commit_callback
+           function="Beacons.UICheck" />
+        </check_box>
+        <view_border
+         bevel_style="in"
+         height="0"
+         layout="topleft"
+         left="0"
+         name="cost_text_border"
+         top_pad="5"
+         width="220"/>
+        <text
+         follows="all"
+         height="16"
+         font="SansSerif"
+         left="0"
+         top_pad="7"
+         name="label_objects"
+         text_color="White"
+         type="string">
+           방향 표시:
+         </text>
+        <check_box
+         control_name="sunbeacon"
+         height="16"
+         label="태양"
+         layout="topleft"
+         name="sun" >
+          <check_box.commit_callback
+           function="Beacons.UICheck" />
+        </check_box>
+        <check_box
+         control_name="moonbeacon"
+         height="16"
+         label="달"
+         layout="topleft"
+         top_pad="2"
+         name="moon" >
+          <check_box.commit_callback
+           function="Beacons.UICheck" />
+        </check_box>
+
+    </panel>
+</floater>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+	positioning="centered"
+	legacy_header_height="18"
+	can_resize="true"
+	can_dock="false"
+	can_close="true"
+	height="352"
+	min_height="320"
+	min_width="200"
+	layout="topleft"
+	name="animation_overrider"
+	help_topic="animation_overrider"
+	save_rect="true"
+	save_visibility="true"
+	single_instance="true"
+	save_dock_state="false"
+	title="애니메이션 덮어쓰기"
+	width="200">
+
+	<floater.string
+		name="ao_no_sets_loaded">
+불러온 세트가 없습니다
+	</floater.string>
+
+	<floater.string
+		name="ao_no_animations_loaded">
+불러온 애니메이션이 없습니다
+	</floater.string>
+	<floater.string
+		name="ao_dnd_only_on_full_interface">
+전체 인터페이스 창에서만 애니메이션 노트 카드를 드래그 앤 드롭할 수 있습니다. 렌치 아이콘을 클릭하여 엽니다.
+	</floater.string>
+
+	<panel
+		name="animation_overrider_outer_panel"
+		filename="panel_ao.xml"
+		left="0"
+		top="16"
+		width="200"
+		height="334"
+		follows="all"
+		layout="topleft">
+	</panel>
+</floater>

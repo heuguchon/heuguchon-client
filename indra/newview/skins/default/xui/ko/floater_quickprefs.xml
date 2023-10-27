@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+    positioning="centered"
+    legacy_header_height="18"
+    can_resize="false"
+    can_dock="true"
+    can_close="true"
+    height="178"
+    width="260"
+    layout="topleft"
+    name="quickprefs"
+    help_topic="fs_quick_preferences"
+    save_rect="true"
+    save_visibility="true"
+    single_instance="true"
+    save_dock_state="true"
+    title="빠른 환경설정">
+<panel
+    name="quickprefs"
+    left="0"
+    top="16"
+    width="260"
+    height="155"
+    follows="all"
+    layout="topleft">
+    <layout_stack
+     layout="topleft"
+     follows="all"
+     name="options_stack"
+     left="0"
+     top="4"
+     width="260"
+     height="0"
+     orientation="vertical"
+     border_size="0">
+        <!-- <FS:Zi> dummy panel to make XUI validation happy -->
+        <layout_panel
+         layout="topleft"
+         follows="all"
+         name="dummy_options_panel"
+         visible="false"
+         height="20">
+        </layout_panel>
+     </layout_stack>
+
+     <view_border
+      layout="topleft"
+      follows="left|right|bottom"
+      name="divider_line_dynamic_to_static"
+      top_pad="2"
+      left="2"
+      height="2"
+      right="-2" />
+
+     <layout_stack
+      layout="topleft"
+      follows="left|right|bottom"
+      name="wl_options_stack"
+      left="0"
+      top_pad="0"
+      width="260"
+      height="150"
+      orientation="vertical">
+
+     <layout_panel
+      layout="topleft"
+      follows="all"
+      name="wl_options_panel"
+      invisibility_control="QuickPrefsEditMode"
+      height="150">
+        <text
+            type="string"
+            length="1"
+            follows="left|top"
+            height="10"
+            layout="topleft"
+            left="5"
+            name="HoverHeightLabel"
+            tool_tip="아바타 호버 높이 설정"
+            mouse_opaque="false"
+            top_pad="5"
+            width="90">
+            호버 높이:
+        </text>
+        <slider
+            text_width="40"
+            enabled="false"
+            can_edit_text="true"
+            decimal_digits="3"
+            follows="left|right|top"
+            height="16"
+            increment="0.001"
+            initial_value="0.0"
+            layout="topleft"
+            left_pad="5"
+            name="HoverHeightSlider"
+            top_delta="-2"
+            right="-7" />
+<!--<FS:HG> FIRE-6340, FIRE-6567 - Setting Bandwidth issues -->
+        <text
+            type="string"
+            length="1"
+            follows="left|top"
+            height="10"
+            layout="topleft"
+            left="5"
+            name="Maximum bandwidth"
+            tool_tip="네트워크 대역폭을 Kbps(킬로비트/초)로 설정합니다."
+            mouse_opaque="false"
+            top_pad="5"
+            width="90">
+            최대 대역폭:
+        </text>
+        <slider
+            text_width="40"
+            can_edit_text="true"
+            control_name="ThrottleBandwidthKBPS"
+            decimal_digits="0"
+            follows="left|right|top"
+            height="16"
+            increment="50"
+            initial_value="500"
+            layout="topleft"
+            left_pad="5"
+            max_val="3000"
+            min_val="50"
+            name="max_bandwidth"
+            top_delta="-2"
+            right="-7" />
+        <text
+            type="string"
+            length="1"
+            follows="left|top"
+            height="18"
+            layout="topleft"
+            left="5"
+            name="Maximum complexity"
+            tool_tip="시각적으로 복잡한 아바타가 젤리 인형으로 그려지는 시점을 제어합니다."
+            mouse_opaque="false"
+            top_pad="5"
+            width="90">
+            최대 복잡도:
+        </text>
+        <slider
+            text_width="40"
+            control_name="IndirectMaxComplexity"
+            decimal_digits="0"
+            follows="left|right|top"
+            height="16"
+            increment="1"
+            initial_value="101"
+            layout="topleft"
+            left_pad="5"
+            max_val="101"
+            min_val="1"
+            name="IndirectMaxComplexity"
+            show_text="false"
+            top_delta="-2"
+            right="-58" />
+        <text
+            type="string"
+            length="1"
+            follows="left|top"
+            height="16"
+            layout="topleft"
+            left_pad="5"
+            name="IndirectMaxComplexityText"
+            text_readonly_color="LabelDisabledColor"
+            top_delta="2"
+            width="50">
+            제한 없음
+        </text>
+ <!--</FS:HG> FIRE-6340, FIRE-6567 - Setting Bandwidth issues -->
+        <text
+            type="string"
+            length="1"
+            follows="left|top"
+            height="10"
+            layout="topleft"
+            left="5"
+            name="WL Sky"
+            tool_tip="하늘을 위한 사전 설정"
+            mouse_opaque="false"
+            top_delta="24"
+            width="90">
+            하늘:
+        </text>
+        <combo_box
+            follows="left|top"
+            height="20"
+            layout="topleft"
+            left_delta="58"
+            name="WLPresetsCombo"
+            top_delta="-4"
+            width="150" />
+        <button
+            enabled="true"
+            name="WLPrevPreset"
+            follows="left|top"
+            height="20"
+            width="20"
+            bottom_delta="-0"
+            left_delta="152"
+            label=""
+            label_selected=""
+            image_overlay="Arrow_Left_Off"
+            scale_image="true" />
+        <button
+            enabled="true"
+            name="WLNextPreset"
+            follows="left|top"
+            height="20"
+            width="20"
+            bottom_delta="-0"
+            left_delta="21"
+            label=""
+            label_selected=""
+            image_overlay="Arrow_Right_Off"
+            scale_image="true" />
+        <text
+            type="string"
+            length="1"
+            follows="left|top"
+            height="10"
+            layout="topleft"
+            left="5"
+            name="WL Water"
+            tool_tip="물에 대한 사전 설정"
+            mouse_opaque="false"
+            top_delta="25"
+            width="90">
+            물:
+        </text>
+        <combo_box
+            follows="left|top"
+            height="20"
+            layout="topleft"
+            left_delta="58"
+            name="WaterPresetsCombo"
+            top_delta="-4"
+            width="150" />
+        <button
+            enabled="true"
+            name="WWPrevPreset"
+            follows="left|top"
+            height="20"
+            width="20"
+            bottom_delta="-0"
+            left_delta="152"
+            label=""
+            label_selected=""
+            image_overlay="Arrow_Left_Off"
+            scale_image="true" />
+        <button
+            enabled="true"
+            name="WWNextPreset"
+            follows="left|top"
+            height="20"
+            width="20"
+            bottom_delta="-0"
+            left_delta="21"
+            label=""
+            label_selected=""
+            image_overlay="Arrow_Right_Off"
+            scale_image="true" />
+        <text
+            type="string"
+            length="1"
+            follows="left|top"
+            height="10"
+            layout="topleft"
+            left="5"
+            name="Day Cycle"
+            tool_tip="주간 주기에 맞는 사전 설정"
+            mouse_opaque="false"
+            top_delta="24"
+            width="90">
+            주간 주기:
+        </text>
+        <combo_box
+            follows="left|top"
+            height="20"
+            layout="topleft"
+            left_delta="58"
+            name="DCPresetsCombo"
+            top_delta="-4"
+            width="150" />
+        <button
+            enabled="true"
+            name="DCPrevPreset"
+            follows="left|top"
+            height="20"
+            width="20"
+            bottom_delta="-0"
+            left_delta="152"
+            label=""
+            label_selected=""
+            image_overlay="Arrow_Left_Off"
+            scale_image="true" />
+        <button
+            enabled="true"
+            name="DCNextPreset"
+            follows="left|top"
+            height="20"
+            width="20"
+            bottom_delta="-0"
+            left_delta="21"
+            label=""
+            label_selected=""
+            image_overlay="Arrow_Right_Off"
+            scale_image="true" />
+        <button
+            enabled="true"
+            name="btn_personal_lighting"
+            follows="left|top"
+            height="20"
+            width="208"
+            top_delta="25"
+            left="5"
+            label="개인 조명...">
+            <button.commit_callback
+             function="Floater.ToggleOrBringToFront"
+             parameter="env_adjust_snapshot" />
+            <button.on_enable
+             function="RLV.EnableIfNot"
+             parameter="setenv" />
+        </button>
+                <button
+                 name="ResetToRegionDefault"
+                 label=""
+                 tool_tip="환경 옵션을 공유 환경으로 재설정."
+                 enabled="true"
+                 top_delta="0"
+                 left="215"
+                 height="20"
+                 width="20"
+                 follows="left|top"
+                 image_overlay="StopReload_Off"
+                 label_selected=""
+                 scale_image="true"
+                />
+                <!-- <FS:Zi> floater titlebar button to edit dynamic quickprefs -->
+                <button
+                 name="button_edit"
+                 label=""
+                 tool_tip="빠른 기본 설정 컨트롤을 구성하려면 여기를 클릭하십시오"
+                 top_delta="0"
+                 left="236"
+                 height="20"
+                 width="20"
+                 follows="right|top"
+                 layout="topleft"
+                 control_name="QuickPrefsEditMode"
+                 image_overlay="Edit_Wrench"
+                 toggle="true"
+                />
+        <!-- </FS:Zi> -->
+
+    </layout_panel>
+    </layout_stack>
+</panel>
+
+<!-- <FS:Zi> Dynamic quick prefs: edit overlay -->
+<panel
+ layout="topleft"
+ follows="left|right|bottom"
+ name="edit_overlay_panel"
+ visibility_control="QuickPrefsEditMode"
+ left="1"
+ top="-138"
+ right="-1"
+ height="143">
+
+<view_border
+ layout="topleft"
+ follows="all"
+ name="divider_line_edit_options"
+ left="0"
+ top="0"
+ right="-1"
+ height="2" />
+
+<button
+ layout="topleft"
+ follows="left|top"
+ name="move_up_button"
+ tool_tip="선택한 컨트롤을 한 슬롯 위로 이동"
+ enabled_control="QuickPrefsSelectedControl"
+ image_overlay="Arrow_Up"
+ top="8"
+ left="4"
+ width="20"
+ height="23"/>
+
+<button
+ layout="topleft"
+ follows="left|top"
+ name="add_new_button"
+ tool_tip="새 빠른 기본 설정 컨트롤 추가"
+ image_overlay="AddItem_Off"
+ left_pad="4"
+ top_delta="0"
+ width="20"
+ height="23" />
+
+<line_editor
+ layout="topleft"
+ follows="left|top"
+ name="label_edit"
+ enabled_control="QuickPrefsSelectedControl"
+ tool_tip="여기에 컨트롤의 레이블을 입력합니다."
+ label="레이블 조작:"
+ left_pad="4"
+ width="185"
+ height="23" />
+
+<button
+ layout="topleft"
+ follows="left|top"
+ name="move_down_button"
+ tool_tip="선택한 컨트롤을 한 슬롯 아래로 이동"
+ enabled_control="QuickPrefsSelectedControl"
+ image_overlay="Arrow_Down"
+ left="4"
+ width="20"
+ height="23" />
+
+<combo_box
+ layout="topleft"
+ follows="left|top"
+ name="control_name_combo"
+ enabled_control="QuickPrefsSelectedControl"
+ tool_tip="디버그 설정 목록에서 제어 선택"
+ left_pad="4"
+ width="225"
+ height="23">
+<combo_box.item
+ type="string"
+ label="=== 선택 ==="
+ name="control_name_list_header"
+ value="" />
+</combo_box>
+
+<text
+ layout="topleft"
+ follows="left|top"
+ name="control_type_label"
+ enabled_control="QuickPrefsSelectedControl"
+ left="4"
+ top_pad="8"
+ width="42"
+ height="23">
+종류:
+</text>
+
+<combo_box
+ layout="topleft"
+ follows="left|top"
+ name="control_type_combo_box"
+ tool_tip="이 설정에 사용할 사용자 인터페이스 컨트롤 유형을 선택하십시오"
+ enabled_control="QuickPrefsSelectedControl"
+ left_pad="4"
+ top_delta="-5"
+ width="135"
+ height="23">
+<!-- do not use <combo_item>Foo</combo_item>, it doesn't work -->
+<combo_box.item
+ type="string"
+ label="체크박스"
+ name="Checkbox"
+ value="0" />
+<combo_box.item
+ type="string"
+ label="텍스트"
+ name="Text"
+ value="1" />
+<combo_box.item
+ type="string"
+ label="스피너"
+ name="Spinner"
+ value="2" />
+<combo_box.item
+ type="string"
+ label="슬라이더"
+ name="Slider"
+ value="3" />
+<combo_box.item
+ type="string"
+ label="라디오"
+ name="Radio"
+ value="4" />
+<combo_box.item
+ type="string"
+ label="색깔 3"
+ name="Color 3"
+ value="5" />
+<combo_box.item
+ type="string"
+ label="색깔 4"
+ name="Color 4"
+ value="6" />
+</combo_box>
+
+<!-- enable/disable done in code depending on the type of control chosen -->
+<check_box
+ layout="topleft"
+ enabled="false"
+ follows="left|top"
+ name="control_integer_checkbox"
+ tool_tip="설정이 정수 값(예: 정수만 포함)인 경우 이 확인란을 활성화합니다."
+ enabled_control="QuickPrefsSelectedControl"
+ left_pad="4"
+ height="20"
+ top_delta="0"
+ width="16"
+ label="정수" />
+
+<!-- enable/disable additionally done in code depending on the type of control chosen -->
+<spinner
+ layout="topleft"
+ enabled="false"
+ follows="left|top"
+ name="control_min_edit"
+ tool_tip="선택할 수 있는 가장 낮은 값"
+ enabled_control="QuickPrefsSelectedControl"
+ decimal_digits="2"
+ label="최소:"
+ label_width="32"
+ min_val="-100000.0"
+ max_val="100000.0"
+ increment="1.0"
+ left="4"
+ top_pad="7"
+ width="81"
+ height="22" />
+<spinner
+ layout="topleft"
+ enabled="false"
+ follows="left|top"
+ name="control_max_edit"
+ tool_tip="선택할 수 있는 가장 높은 값"
+ enabled_control="QuickPrefsSelectedControl"
+ decimal_digits="2"
+ label="최대:"
+ label_width="32"
+ min_val="-100000.0"
+ max_val="100000.0"
+ increment="1.0"
+ left_pad="4"
+ width="81"
+ height="22" />
+<spinner
+ layout="topleft"
+ enabled="false"
+ follows="left|top"
+ name="control_increment_edit"
+ tool_tip="스피너에서 위쪽/아래쪽 화살표를 클릭하거나 슬라이더에서 커서 키를 사용할 때 값의 증분"
+ enabled_control="QuickPrefsSelectedControl"
+ decimal_digits="2"
+ label="Incr:"
+ label_width="32"
+ min_val="-100000.0"
+ max_val="100000.0"
+ increment="1.0"
+ left_pad="4"
+ width="81"
+ height="22" />
+<button
+ layout="topleft"
+ follows="right_top"
+ name="Restore_Btn"
+ tool_tip="기본 설정 복원"
+ label="재설정"
+ left="4"
+ width="120"
+ top_pad="4"
+ height="16" />
+<!-- reverse the image names here beause we have a toggle ON button -->
+<button
+ layout="topleft"
+ follows="right|top"
+ name="button_close"
+ tool_tip="오버레이 편집 패널을 닫습니다"
+ toggle="true"
+ control_name="QuickPrefsEditMode"
+ image_unselected="Icon_Close_Press"
+ image_selected="Icon_Close_Foreground"
+ left="-18"
+ width="16"
+ top="10"
+ height="16" />
+</panel>
+
+</floater>

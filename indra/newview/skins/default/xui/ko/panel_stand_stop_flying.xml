@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!-- Width and height of this panel is adapted in code to fit the parent panel -->
+<panel
+ follows="all"
+ height="21"
+ layout="topright"
+ name="panel_stand_stop_flying"
+ mouse_opaque="false"
+ visible="true"
+ width="158">
+    <button
+     follows="left|bottom"
+     height="19"
+     label="일어서기"
+     layout="topleft"
+     left="1"
+     name="stand_btn"
+     tool_tip="일어서려면 여기를 클릭하십시오."
+     top="2"
+     visible="false"
+     width="77" />
+    <button
+     follows="left|bottom"
+     height="19"
+     label="비행 중지"
+     layout="topleft"
+     left_delta="0"
+     name="stop_fly_btn"
+     tool_tip="비행 중지"
+     top="2"
+     visible="false"
+     width="77" />
+    <button
+     follows="right|bottom"
+     height="19"
+     label="비행캠"
+     layout="topleft"
+     right="-5"
+     name="flycam_btn"
+     tool_tip="비행캠 모드 중지"
+     top="2"
+     visible="false"
+     width="77">
+        <commit_callback
+         function="View.JoystickFlycam" />
+    </button>
+</panel>

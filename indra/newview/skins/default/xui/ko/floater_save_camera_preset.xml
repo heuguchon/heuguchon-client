@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<floater
+ legacy_header_height="18"
+ height="180"
+ help_topic="floater_save_preset"
+ layout="topleft"
+ name="save_camera_preset"
+ positioning="centered"
+ save_rect="true"
+ title="카메라 사전설정 저장"
+ width="240">
+
+    <string name="btn_label_save">저장</string>
+    <string name="btn_label_replace">대체</string>
+    <radio_group
+     height="85"
+     layout="topleft"
+     left="5"
+     top="15"
+     width="150"
+     name="radio_save_preset">
+     <radio_item
+      label="새로운 사전설정으로 저장"
+      name="new_preset"
+      top="10" 
+      layout="topleft"
+      height="16" 
+      value="0"/>
+     <radio_item
+      label="사전설정 대체"
+      name="replace_preset"
+      layout="topleft"
+      top="70" 
+      height="16" 
+      value="1"/>
+    </radio_group> 
+    <line_editor
+     commit_on_focus_lost="false"
+     follows="top|left"
+     height="23"
+     layout="topleft"
+     left="26"
+     name="preset_txt_editor"
+     width="200"
+     top="45"/>
+    <button
+     follows="top|left"
+     height="25"
+     label="저장"
+     layout="topleft"
+     top="145"
+     left="10"
+     name="save"
+     width="100"/>
+    <button
+     follows="bottom|right"
+     height="25"
+     label="취소"
+     layout="topleft"
+     left_pad="20"
+     name="cancel"
+     width="100"/>
+<!-- *HACK to correctly draw drop-down list over the buttons-->
+    <combo_box
+     follows="top|left"
+     layout="topleft"
+     left="26"
+     name="preset_combo"
+     top_delta="-40"
+     width="200"/>
+</floater>

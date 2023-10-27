@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater can_close="false" can_drag_on_left="false" can_minimize="false"
+     can_resize="false" height="160" min_height="160" width="300" min_width="300"
+     name="Import Collada" title="Import Scene">
+
+  <text bottom_delta="40" left="20" name="mesh count" height="15" follows="top|left">
+	메쉬: [COUNT]
+  </text>
+
+  <text bottom_delta="20" left="20" name="texture count" height="15" follows="top|left">
+	텍스쳐: [COUNT]
+  </text>
+
+  <text bottom_delta="40" left="10" name="status" height="15" follows="top|left">
+    상태: [STATUS]
+  </text>
+
+   <button
+	  bottom_delta="40"
+      name="cancel"
+      label="취소"
+      enabled="true"
+      height="20"
+      layout="topleft"
+      left="125"
+      width="75" />
+
+   <button
+	  bottom_delta="0"
+      name="ok"
+      label="OK"
+      enabled="true"
+      height="20"
+      layout="topleft"
+      left="210"
+      width="75" />
+
+  <string name="status_idle">Idle</string>
+  <string name="status_uploading">업로드중 [NAME]</string>
+  <string name="status_creating">개체 생성중 [NAME]</string>
+  
+ </floater>

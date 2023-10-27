@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ border="true"
+ follows="top|left"
+ height="320"
+ help_topic="panel_region_general_tab"
+ label="지역"
+ layout="topleft"
+ left="0"
+ name="General"
+ top="320"
+ width="480">
+    <text
+     follows="left|top"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     left="10"
+     name="region_text_lbl"
+     top="10"
+     width="100">
+        지역:
+    </text>
+    <text
+     follows="left|top"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     left_delta="50"
+     name="region_text"
+     top_delta="0"
+     width="400">
+        알 수 없음
+    </text>
+    <text
+     follows="right|top"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     top_delta="0"
+     right="-100"
+     name="estate_id_lbl"
+     width="80">
+        사유지 ID:
+    </text>
+    <line_editor
+     follows="right|top"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     top_delta="0"
+     name="estate_id"
+     right="-10"
+     initial_value="unknown"
+     width="85" />
+    <text
+     follows="left|top"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     left="10"
+     name="region_type_lbl"
+     top="30"
+     width="100">
+        유형:
+    </text>
+    <text
+     follows="left|top"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     left_delta="50"
+     name="region_type"
+     top_delta="0"
+     width="225">
+        알 수 없음
+    </text>
+    <text
+     follows="right|top"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     top_delta="0"
+     right="-100"
+     name="grid_position_lbl"
+     width="80">
+        그리드 위치:
+    </text>
+    <line_editor
+     follows="right|top"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     right="-55"
+     name="grid_position_x"
+     top_delta="0"
+     initial_value="unknown"
+     width="40" />
+    <line_editor
+     follows="right|top"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     right="-10"
+     name="grid_position_y"
+     top_delta="0"
+     initial_value="unknown"
+     width="40" />
+    <text
+     follows="left|top"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     left="10"
+     name="version_channel_text_lbl"
+     top="50"
+     width="100">
+        버전:
+    </text>
+    <text
+     follows="left|top"
+     font="SansSerif"
+     height="20"
+     layout="topleft"
+     left_delta="50"
+     name="version_channel_text"
+     top_delta="0"
+     right="-10">
+        알 수 없음
+    </text>
+    <check_box
+     height="20"
+     label="테라포밍 차단"
+     layout="topleft"
+     left="10"
+     name="block_terraform_check"
+     top="70"
+     width="80" />
+    <check_box
+     height="20"
+     label="날기 차단"
+     layout="topleft"
+     left="10"
+     name="block_fly_check"
+     top="90"
+     width="80" />
+    <check_box
+     height="20"
+     label="구획 날아서 이동 차단"
+     layout="topleft"
+     left="10"
+     name="block_fly_over_check"
+     tool_tip="소포 위를 비행하지 않도록 접근 검사를 위쪽으로 연장합니다"
+     top="110"
+     width="90" />
+  <check_box
+     height="20"
+     label="손상 허용"
+     layout="topleft"
+     left="10"
+     name="allow_damage_check"
+     top="130"
+     width="80" />
+    <check_box
+     height="20"
+     label="푸시 제한"
+     layout="topleft"
+     left="10"
+     name="restrict_pushobject"
+     top="150"
+     width="80" />
+    <check_box
+     height="20"
+     label="랜드 재판매 허용"
+     layout="topleft"
+     left="10"
+     name="allow_land_resell_check"
+     top="170"
+     width="80" />
+    <check_box
+     height="20"
+     label="랜드 참가/나눔 허용"
+     layout="topleft"
+     left="10"
+     name="allow_parcel_changes_check"
+     top="190"
+     width="80" />
+    <check_box
+     height="20"
+     label="검색 시 랜드 표시 차단"
+     layout="topleft"
+     left="10"
+     name="block_parcel_search_check"
+     tool_tip="검색 결과에서 이 지역 및 해당 구획을 볼 수 있도록 합니다"
+     top="210"
+     width="80" />
+	<spinner
+     decimal_digits="0"
+     follows="left|top"
+     height="20"
+     increment="1"
+     label="에이전트 제한"
+     label_width="97"
+     layout="topleft"
+     left="10"
+     max_val="100"
+     min_val="1"
+     name="agent_limit_spin"
+     top="260"
+     width="170" />
+    <spinner
+     follows="left|top"
+     height="20"
+     increment="0.5"
+     label="개체 보너스"
+     label_width="97"
+     layout="topleft"
+     left="10"
+     max_val="10"
+     min_val="1"
+     name="object_bonus_spin"
+     top="280"
+     width="170" />
+    <text
+     follows="left|top"
+     height="20"
+     label="성숙함"
+     layout="topleft"
+     left="10"
+     name="access_text"
+     top="310"
+     width="100">
+        별점:
+    </text>
+    <icons_combo_box
+     follows="left|top"
+     height="20"
+     label="적당함"
+     layout="topleft"
+     left_delta="100"
+     name="access_combo"
+     top_delta="0"
+     width="105">
+        <icons_combo_box.drop_down_button
+         image_overlay="Parcel_M_Light"
+         image_overlay_alignment="left"
+         imgoverlay_label_space="3"
+         pad_left="3"/>
+        <icons_combo_box.item
+         label="성인"
+         name="Adult"
+         value="42">
+            <item.columns
+             halign="center"
+             type="icon"
+             value="Parcel_R_Light"
+             width="20"/>
+          </icons_combo_box.item>
+        <icons_combo_box.item
+         label="적당함"
+         name="Mature"
+         value="21">
+            <item.columns
+             halign="center"
+             type="icon"
+             value="Parcel_M_Light"
+             width="20"/>
+        </icons_combo_box.item>
+        <icons_combo_box.item
+         label="일반"
+         name="PG"
+         value="13">
+            <item.columns
+             halign="center"
+             type="icon"
+             value="Parcel_PG_Light"
+             width="20"/>
+        </icons_combo_box.item>
+    </icons_combo_box>
+    <button
+     enabled="false"
+     follows="left|top"
+     height="20"
+     label="적용"
+     layout="topleft"
+     left="108"
+     name="apply_btn"
+     top="340"
+     width="100"/> 
+    <button
+     follows="left|top"
+     height="20"
+     label="한 거주자 집으로 순간이동..."
+     layout="topleft"
+     left="10"
+     name="kick_btn"
+     top_pad="10"
+     width="250" />
+    <button
+     follows="left|top"
+     height="20"
+     label="모든 거주자 집으로 순간이동..."
+     layout="topleft"
+     left_delta="0"
+     name="kick_all_btn"
+     top_pad="3"
+     width="250" />
+    <button
+     follows="left|top"
+     height="20"
+     label="지역으로 메시지 보내기..."
+     layout="topleft"
+     left_delta="0"
+     name="im_btn"
+     top_pad="20"
+     width="200" />
+    <button
+     follows="left|top"
+     height="20"
+     label="텔레허브 관리..."
+     layout="topleft"
+     left="250"
+     name="manage_telehub_btn"
+     top="70"
+     width="150">
+		<button.commit_callback
+         function="RegionInfo.ManageTelehub" />
+    </button>
+</panel>

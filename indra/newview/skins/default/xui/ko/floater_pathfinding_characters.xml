@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+    positioning="cascading"
+    can_resize="true"
+    can_tear_off="false"
+    height="273"
+    width="635"
+    min_height="273"
+    min_width="635"
+    layout="topleft"
+    name="floater_pathfinding_characters"
+    help_topic="floater_pathfinding_characters"
+    reuse_instance="true"
+    save_rect="false"
+    single_instance="true"
+    title="경로 찾기 문자">
+  <floater.string name="messaging_initial"></floater.string>
+  <floater.string name="messaging_get_inprogress">경로 찾기 문자를 쿼리하는 중 ...</floater.string>
+  <floater.string name="messaging_get_error">경로 찾기 문자를 쿼리하는 동안 오류가 감지됨.</floater.string>
+  <floater.string name="messaging_set_inprogress"></floater.string>
+  <floater.string name="messaging_set_error"></floater.string>
+  <floater.string name="messaging_complete_none_found">경로 찾기 문자 없음.</floater.string>
+  <floater.string name="messaging_complete_available">[NUM_SELECTED] [NUM_TOTAL] 중에서 선택한 문자.</floater.string>
+  <floater.string name="messaging_not_enabled">이 영역은 경로 찾기에 사용할 수 없습니다.</floater.string>
+  <floater.string name="character_cpu_time">[CPU_TIME] µs</floater.string>
+  <floater.string name="character_owner_loading">[로딩중]</floater.string>
+  <floater.string name="character_owner_unknown">[알 수 없음]</floater.string>
+  <floater.string name="character_owner_group">[그룹]</floater.string>
+  <panel
+      name="pathfinding_chars_main"
+      border="false"
+      bevel_style="none"
+      follows="left|top|right|bottom"
+      layout="topleft"
+      height="191"
+      width="635">
+    <scroll_list
+        column_padding="0"
+        draw_heading="true"
+        follows="all"
+        height="135"
+        layout="topleft"
+        left="18"
+        top_pad="10"
+        tab_stop="false"
+        multi_select="true"
+        name="objects_scroll_list"
+        width="600">
+      <scroll_list.columns
+          label="이름"
+          name="name"
+          dynamic_width="true" />
+      <scroll_list.columns
+          label="묘사"
+          name="description"
+          width="172" />
+      <scroll_list.columns
+          label="소유주"
+          name="owner"
+          width="141" />
+      <scroll_list.columns
+          label="CPU"
+          name="cpu_time"
+          width="60" />
+      <scroll_list.columns
+          label="고도"
+          name="altitude"
+          width="64" />
+    </scroll_list>
+    <text
+        height="26"
+        word_wrap="true"
+        use_ellipses="false"
+        type="string"
+        text_color="LabelTextColor"
+        length="1"
+        follows="left|bottom|right"
+        layout="topleft"
+        name="messaging_status"
+        top_pad="17"
+        width="238">
+      특징:
+    </text>
+    <button
+        follows="right|bottom"
+        height="21"
+        label="목록 새로고침"
+        layout="topleft"
+        name="refresh_objects_list"
+        top_pad="-29"
+        left_pad="0"
+        width="115"/>
+    <button
+        follows="right|bottom"
+        height="21"
+        label="모두 선택"
+        layout="topleft"
+        name="select_all_objects"
+        top_pad="-21"
+        left_pad="8"
+        width="115"/>
+    <button
+        follows="right|bottom"
+        height="21"
+        label="선택 안함"
+        layout="topleft"
+        name="select_none_objects"
+        top_pad="-21"
+        left_pad="8"
+        width="115"/>
+  </panel>
+  <view_border
+      bevel_style="none"
+      follows="left|right|bottom"
+      height="0"
+      layout="topleft"
+      name="horiz_separator"
+      top_pad="0"
+      left="18"
+      width="600"/>
+  <panel
+      name="pathfinding_chars_actions"
+      border="false"
+      bevel_style="none"
+      follows="left|right|bottom"
+      layout="topleft"
+      left="0"
+      height="67"
+      width="635">
+    <text
+        height="13"
+        word_wrap="false"
+        use_ellipses="false"
+        type="string"
+        text_color="LabelTextColor"
+        text_readonly_color="LabelDisabledColor"
+        length="1"
+        follows="left|bottom|right"
+        layout="topleft"
+        name="actions_label"
+        left="18"
+        top_pad="8"
+        width="242">
+      선택한 캐릭터에 대한 작업:
+    </text>
+    <check_box
+        height="19"
+        follows="left|bottom"
+        label="비콘 표시"
+        layout="topleft"
+        name="show_beacon"
+        top_pad="-16"
+        left_pad="0"
+        width="150" />
+    <check_box
+        height="19"
+        follows="left|bottom"
+        label="물리 캡슐 표시"
+        layout="topleft"
+        name="show_physics_capsule"
+        top_pad="-19"
+        left_pad="0"
+        width="150" />
+    <button
+        follows="left|bottom"
+        height="22"
+        label="가져감"
+        layout="topleft"
+        name="take_objects"
+        top_pad="9"
+        left="18"
+        width="94"/>
+    <button
+        follows="left|bottom"
+        height="22"
+        label="복사하기"
+        layout="topleft"
+        name="take_copy_objects"
+        top_pad="-22"
+        left_pad="6"
+        width="94"/>
+    <button
+        follows="left|bottom"
+        height="22"
+        label="그곳으로 순간이동 시켜주십시오"
+        layout="topleft"
+        name="teleport_me_to_object"
+        tool_tip="문자를 하나만 선택한 경우에만 사용 가능."
+        top_pad="-22"
+        left_pad="26"
+        width="159"/>
+    <button
+        follows="right|bottom"
+        height="22"
+        label="반납"
+        layout="topleft"
+        name="return_objects"
+        top_pad="-22"
+        left_pad="26"
+        width="94"/>
+    <button
+        follows="right|bottom"
+        height="22"
+        label="삭제"
+        layout="topleft"
+        name="delete_objects"
+        top_pad="-22"
+        left_pad="6"
+        width="94"/>
+  </panel>
+</floater>

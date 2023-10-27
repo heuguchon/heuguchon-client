@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<pie_menu
+    name="Attachment Pie">
+
+    <pie_slice
+        label="프로필..."
+        name="Profile...">
+        <pie_slice.on_click
+            function="ShowAgentProfile"
+            parameter="agent" />
+    </pie_slice>
+    <pie_slice
+        enabled="false"
+        label="버리기"
+        name="Drop">
+        <pie_slice.on_click
+            function="Attachment.Drop" />
+        <pie_slice.on_enable
+            function="Attachment.EnableDrop" />
+    </pie_slice>
+    <pie_menu
+        name="Attachment Pie More"
+        label="더 &gt;">
+
+        <pie_slice
+            enabled="true"
+            label="텍스쳐 새로고침"
+            name="Texture Refresh">
+            <pie_slice.on_click
+                function="Object.TexRefresh" />
+        </pie_slice>
+        <pie_slice
+            enabled="true"
+            label="스크립트 정보"
+            name="ScriptInfo">
+            <pie_slice.on_click
+                function="Tools.ScriptInfo" />
+            <pie_slice.on_enable
+                function="Object.EnableScriptInfo" />
+        </pie_slice>
+        <pie_slice
+            enabled="false"
+            label="터치"
+            name="Attachment Object Touch">
+            <pie_slice.on_click
+                function="Object.Touch" />
+            <pie_slice.on_enable
+                function="Object.EnableTouch"
+                name="EnableTouch"/>
+        </pie_slice>
+        <pie_menu
+            name="DerenderMenu"
+            label="데렌더 &gt;">
+			<pie_separator />
+			<pie_separator />
+			<pie_separator />
+			<pie_slice
+				enabled="true"
+				label="임시적"
+				name="Derender">
+				<pie_slice.on_click
+					function="Object.Derender" />
+				<pie_slice.on_enable
+					function="Object.EnableDerender" />
+			</pie_slice>
+			<pie_slice
+				enabled="true"
+				label="블랙리스트"
+				name="DerenderPermanent">
+				<pie_slice.on_click
+					function="Object.DerenderPermanent" />
+				<pie_slice.on_enable
+					function="Object.EnableDerender" />
+			</pie_slice>
+        </pie_menu>
+        <pie_menu
+            name="ExportMenu"
+            label="다른이름으로 저장 &gt;">
+            <pie_slice
+                enabled="false"
+                label="백업"
+                name="Backup">
+                <pie_slice.on_click
+                    function="Object.Export" />
+                <pie_slice.on_enable
+                    function="Object.EnableExport" />
+            </pie_slice>
+            <pie_slice
+                enabled="false"
+                label="콜라다"
+                name="Collada">
+                <pie_slice.on_click
+                    function="Object.ExportCollada" />
+                <pie_slice.on_enable
+                    function="Object.EnableExport" />
+            </pie_slice>
+        </pie_menu>
+        <pie_separator/>
+        <pie_slice
+            label="조사"
+            name="Avatar Inspect">
+            <pie_slice.on_click
+                function="Floater.Show"
+                parameter="inspect" />
+            <pie_slice.on_enable
+                function="Object.EnableInspect" />
+        </pie_slice>
+            <pie_slice
+                label="텍스쳐"
+                name="Debug...">
+                <pie_slice.on_click
+                    function="Avatar.Debug" />
+            </pie_slice>
+
+    </pie_menu>
+    <pie_slice
+        label="여기 앉기"
+        start_autohide="true"
+        name="Sit Down Here">
+        <pie_slice.on_click
+            function="Self.SitDown"
+            parameter="" />
+        <pie_slice.on_enable
+            function="Self.EnableSitDown" />
+    </pie_slice>
+    <pie_slice
+        label="일어서기"
+        autohide="true"
+        name="Stand Up">
+        <pie_slice.on_click
+            function="Self.StandUp" />
+        <pie_slice.on_enable
+            function="Self.EnableStandUp" />
+    </pie_slice>
+    <pie_slice
+        enabled="false"
+        label="떼기"
+        name="Detach">
+        <pie_slice.on_click
+            function="Attachment.Detach" />
+        <pie_slice.on_enable
+            function="Attachment.EnableDetach" />
+    </pie_slice>
+    <pie_slice
+        label="제스쳐..."
+        name="Gestures">
+        <pie_slice.on_click
+            function="Floater.Toggle"
+            parameter="gestures" />
+    </pie_slice>
+
+    <pie_menu
+        label="외모 &gt;"
+        name="Appearance &gt;">
+
+        <pie_slice label="Edit Shape"
+           name="Edit My Shape">
+           <pie_slice.on_click
+               function="EditShape" />
+           <pie_slice.on_enable
+               function="Edit.EnableEditShape" />
+        </pie_slice>
+		<pie_menu
+			name="ResetMenu"
+			label="초기화 &gt;">
+			<pie_slice
+				label="스켈레톤. &amp; Anim."
+				name="Reset Skeleton And Animations">
+				<pie_slice.on_click
+					function="Avatar.ResetSkeletonAndAnimations" />
+			</pie_slice>
+			<pie_slice
+				label="스켈레톤"
+				name="Reset Skeleton">
+				<pie_slice.on_click
+					function="Avatar.ResetSkeleton" />
+			</pie_slice>
+			<pie_slice
+				label="메쉬 LOD"
+				name="Reset Mesh LOD">
+				<pie_slice.on_click
+					function="Avatar.ResetMeshLOD" />
+			</pie_slice>
+		</pie_menu>
+        <pie_separator />
+        <pie_separator />
+
+        <pie_slice label="의상 수정"
+           name="Edit My Outfit">
+           <pie_slice.on_click
+               function="EditOutfit" />
+           <pie_slice.on_enable
+               function="Edit.EnableCustomizeAvatar" />
+        </pie_slice>
+		<pie_separator />
+		<pie_slice
+			label="XML 버리기"
+			name="Dump XML">
+			<pie_slice.on_click
+				function="Advanced.AppearanceToXML" />
+			<pie_slice.on_visible
+				function="Advanced.EnableAppearanceToXML"/>
+		</pie_slice>
+		<pie_slice
+		 label="호버 높이"
+		 name="Hover Height">
+			<pie_slice.on_click
+			 function="HoverHeight" />
+			<pie_slice.on_enable
+			 function="Edit.EnableHoverHeight" />
+		</pie_slice>
+
+    </pie_menu>
+
+    <pie_slice
+        enabled="false"
+        label="수정"
+        name="Edit...">
+        <pie_slice.on_click
+            function="Object.Edit" />
+        <pie_slice.on_enable
+            function="EnableEdit" />
+    </pie_slice>
+
+</pie_menu>

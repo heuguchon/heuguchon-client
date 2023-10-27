@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<toggleable_menu
+   create_jump_keys="true"
+   layout="topleft"
+   mouse_opaque="false"
+   visible="false"
+   name="Gear Menu">
+  <menu_item_call
+   label="터치"
+   layout="topleft"
+   enabled="true"
+   name="touch">    
+    <menu_item_call.on_click
+     function="InspectObject.Touch"/>
+    <menu_item_call.on_visible
+     function="Object.EnableTouch" />
+  </menu_item_call>
+  <menu_item_call
+  label="앉기"
+  layout="topleft"
+  name="sit">
+    <menu_item_call.on_click
+     function="InspectObject.Sit"/>
+    <menu_item_call.on_visible
+     function="Object.EnableSit"/>
+  </menu_item_call>
+  <menu_item_call
+   label="결제"
+   layout="topleft"
+   name="pay">
+    <menu_item_call.on_click
+     function="InspectObject.Pay"/>
+    <menu_item_call.on_visible
+     function="EnablePayObject" />
+  </menu_item_call>
+  <menu_item_call
+   label="구매"
+   layout="topleft"
+   enabled="true" 
+   name="buy">
+    <menu_item_call.on_click
+     function="InspectObject.Buy"/>
+    <menu_item_call.on_visible
+     function="Object.VisibleBuy" />
+  </menu_item_call>
+  <menu_item_call
+   label="가지고 가기"
+   layout="topleft"
+   name="take">
+    <menu_item_call.on_click
+     function="Object.Take" />
+    <menu_item_call.on_enable
+     function="Object.VisibleTake"/>
+  </menu_item_call>
+  <menu_item_call
+   label="복사하기"
+   layout="topleft"
+   name="take_copy">
+    <menu_item_call.on_click
+     function="Tools.TakeCopy"/>
+    <menu_item_call.on_visible
+      function="Tools.EnableTakeCopy"/>
+  </menu_item_call>
+  <menu_item_call
+   label="열기"
+   layout="topleft"
+   name="open">
+    <menu_item_call.on_click
+     function="InspectObject.Open"/>
+    <menu_item_call.on_visible
+     function="Object.EnableOpen" />
+  </menu_item_call>
+  <menu_item_call
+   label="편집"
+   layout="topleft"
+   name="edit">
+        <menu_item_call.on_click
+         function="Object.Edit" />
+        <menu_item_call.on_enable
+         function="EnableEdit"/>
+  </menu_item_call>  
+  <menu_item_call
+   label="입기"
+   layout="topleft"
+   name="wear">
+    <menu_item_call.on_click
+     function="Object.AttachToAvatar" />
+    <menu_item_call.on_visible
+     function="Object.EnableWear" />
+  </menu_item_call>  
+  <menu_item_call
+   label="추가"
+   layout="topleft"
+   name="add">
+    <menu_item_call.on_click
+     function="Object.AttachAddToAvatar" />
+    <menu_item_call.on_visible
+     function="Object.EnableWear" />
+  </menu_item_call>
+  <menu_item_call
+   label="신고"
+   layout="topleft"
+   name="report">
+    <menu_item_call.on_click
+     function="Object.ReportAbuse" />
+  </menu_item_call>
+  <menu_item_call
+   label="차단"
+   layout="topleft"
+   name="block">
+    <menu_item_call.on_click
+     function="Object.Mute" />
+    <menu_item_call.on_visible
+     function="Object.EnableMute" />
+  </menu_item_call>
+  <menu_item_call
+   label="차단 해제"
+   layout="topleft"
+   name="unblock">
+    <menu_item_call.on_click
+     function="Object.Mute" />
+    <menu_item_call.on_visible
+     function="Object.EnableUnmute" />
+  </menu_item_call>
+  <menu_item_call
+    label="확대"
+    layout="topleft"
+   name="zoom_in">
+    <menu_item_call.on_click
+     function="InspectObject.ZoomIn" />
+  </menu_item_call>    
+  <menu_item_call
+   label="삭제"
+   layout="topleft"
+   name="remove">
+      <menu_item_call.on_click
+       function="Object.Delete" />
+      <menu_item_call.on_visible
+       function="Object.EnableDelete" />
+  </menu_item_call>
+  <menu_item_call
+   label="추가 정보"
+   layout="topleft"
+   name="more_info">
+    <menu_item_call.on_click
+     function="InspectObject.MoreInfo"/>
+  </menu_item_call>
+</toggleable_menu>

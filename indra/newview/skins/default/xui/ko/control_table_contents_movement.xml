@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<contents>
+    <rows
+     enabled="false"
+     name="move_actions"
+     value="">
+        <columns
+         type="icontext"
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         label="동작 이동"
+         name="lst_action"
+         value="Move_Walk_Off" />
+    </rows>
+    <rows
+     name="walk_to"
+     value="walk_to">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         tool_tip="마우스 커서가 가리키는 위치로 이동"
+         value="이동" />
+    </rows>
+    <rows
+     name="teleport_to"
+     value="teleport_to">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         tool_tip="마우스 커서가 가리키는 위치로 순간이동하지만 모든 위치에서 직접 텔레포트를 사용할 수 있는 것은 아니므로 목적지 근처로 순간이동할 수 있습니다"
+         value="순간이동" />
+    </rows>
+    <rows
+     name="push_forward"
+     value="push_forward">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="앞으로 이동" />
+    </rows>
+    <rows
+     name="push_backward"
+     value="push_backward">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="뒤로 이동" />
+    </rows>
+    <rows
+     name="turn_left"
+     value="turn_left">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="왼쪽" />
+    </rows>
+    <rows
+     name="turn_right"
+     value="turn_right">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="오른쪽" />
+    </rows>
+    <rows
+     name="slide_left"
+     value="slide_left">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="왼쪽으로 스트라프" />
+    </rows>
+    <rows
+     name="slide_right"
+     value="slide_right">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="오른쪽으로 스트라프" />
+    </rows>
+    <rows
+     name="jump"
+     value="점프">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="점프/위로" />
+    </rows>
+    <rows
+     name="push_down"
+     value="push_down">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="아래" />
+    </rows>
+    <rows
+     name="run_forward"
+     value="run_forward">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="앞으로 달리기" />
+    </rows>
+    <rows
+     name="run_backward"
+     value="run_backward">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="뒤로 달리기" />
+    </rows>
+    <rows
+     name="run_left"
+     value="run_left">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="왼쪽으로 달리기" />
+    </rows>
+    <rows
+     name="run_right"
+     value="run_right">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="오른쪽으로 달리기" />
+    </rows>
+    <rows
+     name="toggle_run"
+     value="toggle_run">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="실행 전환" />
+    </rows>
+    <rows
+     name="toggle_fly"
+     value="toggle_fly">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="비행/비행 멈춤" />
+    </rows>
+    <rows
+     name="toggle_sit"
+     value="toggle_sit">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="앉기/일어서기" />
+    </rows>
+    <rows
+     name="stop_moving"
+     value="stop_moving">
+        <columns
+         column="lst_action"
+         font="SansSerif"
+         halign="left"
+         name="lst_action"
+         value="이동 정지" />
+    </rows>
+</contents>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater
+ legacy_header_height="18"
+ can_resize="true"
+ height="600"
+ single_instance="false"
+ layout="topleft"
+ name="floater_test_text_editor"
+ translate="false"
+ width="800">
+  <text_editor
+   height="50"
+   follows="top|left|bottom"
+   left="10"
+   name="test_text_editor"
+   tool_tip="텍스트 편집기"
+   top="25"
+   word_wrap="true" 
+   width="200">
+    텍스트 편집기
+  </text_editor>
+  <text_editor
+   height="50"
+   follows="top|left|bottom"
+   font="SansSerif" 
+   left="10"
+   name="test_text_editor"
+   tool_tip="텍스트 편집기"
+   top_pad="10"
+   width="200">
+    긴 텍스트를 포함하며 오른쪽으로 가로로 스크롤해야 합니다
+  </text_editor>
+  <text_editor
+   height="50"
+   follows="top|left|bottom"
+   font="SansSerif"
+   left="10"
+   name="numeric_text_editor"
+   tool_tip="숫자 텍스트 입력 전용 텍스트 편집기"
+   top_pad="10"
+   text_type="int"
+   width="200">
+    숫자가 아닌 텍스트이므로 표시되지 않아야 합니다
+  </text_editor>
+
+</floater>
