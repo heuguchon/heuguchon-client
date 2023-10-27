@@ -151,7 +151,7 @@
     <key>Type</key>
     <string>String</string>
     <key>Value</key>
-    <string>http://phoenixviewer.com/app/fsdata/grids.xml</string>
+    <string>https://heuguchon-client-static.s3.ap-northeast-2.amazonaws.com/grids.xml</string>
   </map>
   <key>LastConnectedGrid</key>
   <map>
@@ -25357,6 +25357,7 @@ Change of this parameter will affect the layout of buttons in notification toast
         <string>ja</string>
         <string>pl</string>
         <string>ru</string>
+        <string>ko</string>
       </array>
     </map>
     <key>FSRememberUsername</key>
