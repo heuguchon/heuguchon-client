@@ -50,11 +50,11 @@ class FSViewerManifest:
         return "".join(self.fs_channel_unique().split())
 
     def fs_channel_unique(self):
-        return self.channel().replace("Firestorm", "").strip()
+        return self.channel().replace("Heuguchon", "").strip()
 
     def fs_sign_win_binaries( self ):
         try:
-            subprocess.check_call(["signtool.exe","sign","/n","Phoenix","/d","Firestorm","/du","http://www.phoenixviewer.com","/t","http://timestamp.verisign.com/scripts/timstamp.dll",self.args['configuration']+"\\firestorm-bin.exe"],
+            subprocess.check_call(["signtool.exe","sign","/n","Phoenix","/d","Firestorm","/du","http://www.phoenixviewer.com","/t","http://timestamp.verisign.com/scripts/timstamp.dll",self.args['configuration']+"\\heuguchon-bin.exe"],
                                   stderr=subprocess.PIPE,stdout=subprocess.PIPE)
             subprocess.check_call(["signtool.exe","sign","/n","Phoenix","/d","Firestorm","/du","http://www.phoenixviewer.com","/t","http://timestamp.verisign.com/scripts/timstamp.dll",self.args['configuration']+"\\slplugin.exe"],
                                   stderr=subprocess.PIPE,stdout=subprocess.PIPE)
@@ -99,14 +99,14 @@ class FSViewerManifest:
     def fs_save_windows_symbols(self):
         self.fs_save_symbols("windows")
 
-        pdbName = "firestorm-bin.pdb"
+        pdbName = "heuguchon-bin.pdb"
         try:
             subprocess.check_call( [ "pdbcopy.exe" ,
-                                     self.args['configuration'] + "\\firestorm-bin.pdb", 
-                                     self.args['configuration'] + "\\firestorm-bin-public.pdb",
+                                     self.args['configuration'] + "\\heuguchon-bin.pdb", 
+                                     self.args['configuration'] + "\\heuguchon-bin-public.pdb",
                                      "-p"
                                  ], stderr=subprocess.PIPE,stdout=subprocess.PIPE )
-            pdbName = "firestorm-bin-public.pdb"
+            pdbName = "heuguchon-bin-public.pdb"
         except:
             print("Cannot run pdbcopy, packaging private symbols")
 
@@ -117,7 +117,7 @@ class FSViewerManifest:
                                                                         self.address_size)                                      
         # Store windows symbols we want to keep for debugging in a tar file.
         symbolTar = tarfile.open( name=tarName, mode="w:xz")
-        symbolTar.add( "%s/Firestorm-bin.exe" % self.args['configuration'].lower(), "firestorm-bin.exe" )
+        symbolTar.add( "%s/Heuguchon-bin.exe" % self.args['configuration'].lower(), "heuguchon-bin.exe" )
         symbolTar.add( "%s/build_data.json" % self.args['configuration'].lower(), "build_data.json" )
         symbolTar.add( "%s/%s" % (self.args['configuration'].lower(),pdbName), pdbName )
         symbolTar.close()

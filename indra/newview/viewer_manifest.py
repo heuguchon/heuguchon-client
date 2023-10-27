@@ -45,7 +45,7 @@ import zipfile
 
 sys.dont_write_bytecode = True # <FS:Ansariel> Prevents creating __pycache__ directory
 
-from fs_viewer_manifest import FSViewerManifest #<FS:ND/> Manifest extensions for Firestorm
+from fs_viewer_manifest import FSViewerManifest #<FS:ND/> Manifest extensions for Heuguchon
 
 viewer_dir = os.path.dirname(__file__)
 # Add indra/lib/python to our path so we don't have to muck with PYTHONPATH.
@@ -188,7 +188,7 @@ class ViewerManifest(LLManifest,FSViewerManifest):
                             self.path("*/*.png")
                             self.path("*.tga")
                             self.path("*.j2c")
-                            self.path("*.jpg") # <FS:Ansariel> Needed for Firestorm
+                            self.path("*.jpg") # <FS:Ansariel> Needed for Heuguchon
                             self.path("*.png")
                             self.path("textures.xml")
                     self.path("*/xui/*/*.xml")
@@ -1325,7 +1325,7 @@ class DarwinManifest(ViewerManifest):
     def construct(self):
         # copy over the build result (this is a no-op if run within the xcode script)
         # self.path(os.path.join(self.args['configuration'], self.channel()+".app"), dst="")
-        self.path(os.path.join(self.args['configuration'], "Firestorm.app"), dst="")
+        self.path(os.path.join(self.args['configuration'], "Heuguchon.app"), dst="")
 
         pkgdir = os.path.join(self.args['build'], os.pardir, 'packages')
         relpkgdir = os.path.join(pkgdir, "lib", "release")
@@ -1388,7 +1388,7 @@ class DarwinManifest(ViewerManifest):
                 with self.prefix(src=icon_path) :
                     self.path("firestorm_icon.icns")
 
-                self.path("Firestorm.nib")
+                self.path("Heuguchon.nib")
                 # Translations
                 self.path("English.lproj/language.txt")
                 self.replace_in(src="English.lproj/InfoPlist.strings",
@@ -1619,7 +1619,7 @@ class DarwinManifest(ViewerManifest):
         if ("package" in self.args['actions'] or 
             "unpacked" in self.args['actions']):
             self.run_command_shell('strip -S %(viewer_binary)r' %
-                            { 'viewer_binary' : self.dst_path_of('Contents/MacOS/Firestorm')})
+                            { 'viewer_binary' : self.dst_path_of('Contents/MacOS/Heuguchon')})
 # </FS:Ansariel> construct method VMP trampoline crazy VMP launcher juggling shamelessly replaced with old version
 
     def package_finish(self):
@@ -1787,7 +1787,7 @@ class DarwinManifest(ViewerManifest):
                     plain_sign += glob.glob( app_in_dmg + "/Contents/Frameworks/Chromium Embedded Framework.framework/Libraries/*.dylib" )
 
                     deep_sign = [
-                        # <FS:ND> Firestorm does not ship SLVersionChecker
+                        # <FS:ND> Heuguchon does not ship SLVersionChecker
                         #resources + "updater/SLVersionChecker",
                         resources + "SLPlugin.app/Contents/MacOS/SLPlugin",
                         resources + "SLVoice",
@@ -1899,7 +1899,7 @@ class LinuxManifest(ViewerManifest):
 
         with self.prefix(dst="bin"):
             self.path( os.path.join(os.pardir,'build_data.json'), "build_data.json" )
-            self.path("firestorm-bin","do-not-directly-run-firestorm-bin")
+            self.path("heuguchon-bin","do-not-directly-run-heuguchon-bin")
             self.path("../linux_crash_logger/linux-crash-logger","linux-crash-logger.bin")
             self.path2basename("../llplugin/slplugin", "SLPlugin")
             #this copies over the python wrapper script, associated utilities and required libraries, see SL-321, SL-322 and SL-323

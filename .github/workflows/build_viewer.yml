@@ -2,7 +2,7 @@ name: Build viewer
 on:
   push:
     branches:
-      - "Firestorm*.*.*"
+      - "Heuguchon*.*.*"
     tags:
       - "preview"
   schedule:
@@ -75,7 +75,7 @@ jobs:
 
       - name: find channel from Branch name
         run: | 
-          if [[ "${{ github.ref_name }}" == Firestorm* ]]; then
+          if [[ "${{ github.ref_name }}" == Heuguchon* ]]; then
             FS_RELEASE_TYPE=Release
           elif [[ "${{ github.ref_name }}" == *review* ]]; then
             FS_RELEASE_TYPE=Beta
@@ -102,7 +102,7 @@ jobs:
       - name: Checkout build vars (after the main code)
         uses: actions/checkout@v3
         with:
-          repository: FirestormViewer/fs-build-variables
+          repository: heuguchon/ho-build-variables
           path: build-variables
 
       - name: Define platform variable(s)
