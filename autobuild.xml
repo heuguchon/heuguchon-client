@@ -3424,7 +3424,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
               <key>name</key>
               <string>ReleaseOS</string>
             </map>
-            <key>ReleaseFS</key>
+            <key>ReleaseHO</key>
             <map>
               <key>build</key>
               <map>
@@ -3432,7 +3432,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 <string>bash</string>
                 <key>options</key>
                 <array>
-                  <string>../scripts/configure_firestorm.sh</string>
+                  <string>../scripts/configure_heuguchon.sh</string>
                   <string>--build</string>
                   <string>--version</string>
                   <string>--opensim</string>
@@ -3444,16 +3444,16 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 <string>bash</string>
                 <key>options</key>
                 <array>
-                  <string>../scripts/configure_firestorm.sh</string>
+                  <string>../scripts/configure_heuguchon.sh</string>
                   <string>--config</string>
                   <string>--version</string>
                   <string>--opensim</string>
                 </array>
               </map>
               <key>name</key>
-              <string>ReleaseFS</string>
+              <string>ReleaseHO</string>
             </map>
-            <key>ReleaseFS_AVX</key>
+            <key>ReleaseHO_AVX</key>
             <map>
               <key>build</key>
               <map>
@@ -3461,7 +3461,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 <string>bash</string>
                 <key>options</key>
                 <array>
-                  <string>../scripts/configure_firestorm.sh</string>
+                  <string>../scripts/configure_heuguchon.sh</string>
                   <string>--build</string>
                   <string>--version</string>
                   <string>--opensim</string>
@@ -3474,7 +3474,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 <string>bash</string>
                 <key>options</key>
                 <array>
-                  <string>../scripts/configure_firestorm.sh</string>
+                  <string>../scripts/configure_heuguchon.sh</string>
                   <string>--config</string>
                   <string>--version</string>
                   <string>--opensim</string>
@@ -3482,9 +3482,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 </array>
               </map>
               <key>name</key>
-              <string>ReleaseFS_AVX</string>
+              <string>ReleaseHO_AVX</string>
             </map>
-            <key>ReleaseFS_AVX2</key>
+            <key>ReleaseHO_AVX2</key>
             <map>
               <key>build</key>
               <map>
@@ -3492,7 +3492,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 <string>bash</string>
                 <key>options</key>
                 <array>
-                  <string>../scripts/configure_firestorm.sh</string>
+                  <string>../scripts/configure_heuguchon.sh</string>
                   <string>--build</string>
                   <string>--version</string>
                   <string>--opensim</string>
@@ -3505,7 +3505,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 <string>bash</string>
                 <key>options</key>
                 <array>
-                  <string>../scripts/configure_firestorm.sh</string>
+                  <string>../scripts/configure_heuguchon.sh</string>
                   <string>--config</string>
                   <string>--version</string>
                   <string>--opensim</string>
@@ -3513,9 +3513,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 </array>
               </map>
               <key>name</key>
-              <string>ReleaseFS_AVX2</string>
+              <string>ReleaseHO_AVX2</string>
             </map>
-            <key>ReleaseFS_open</key>
+            <key>ReleaseHO_open</key>
             <map>
               <key>build</key>
               <map>
@@ -3523,7 +3523,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 <string>bash</string>
                 <key>options</key>
                 <array>
-                  <string>../scripts/configure_firestorm.sh</string>
+                  <string>../scripts/configure_heuguchon.sh</string>
                   <string>--build</string>
                   <string>--version</string>
                   <string>--opensim</string>
@@ -3535,16 +3535,16 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 <string>bash</string>
                 <key>options</key>
                 <array>
-                  <string>../scripts/configure_firestorm.sh</string>
+                  <string>../scripts/configure_heuguchon.sh</string>
                   <string>--config</string>
                   <string>--version</string>
                   <string>--opensim</string>
                 </array>
               </map>
               <key>name</key>
-              <string>ReleaseFS_open</string>
+              <string>ReleaseHO_open</string>
             </map>
-            <key>RelWithDebInfoFS</key>
+            <key>RelWithDebInfoHO</key>
             <map>
               <key>build</key>
               <map>
@@ -3552,38 +3552,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 <string>bash</string>
                 <key>options</key>
                 <array>
-                  <string>../scripts/configure_firestorm.sh</string>
-                  <string>--btype RelWithDebInfo</string>
-                  <string>--build</string>
-                  <string>--version</string>
-                  <string>--opensim</string>
-                </array>
-              </map>
-              <key>configure</key>
-              <map>
-                <key>command</key>
-                <string>bash</string>
-                <key>options</key>
-                <array>
-                  <string>../scripts/configure_firestorm.sh</string>
-                  <string>--btype RelWithDebInfo</string>
-                  <string>--config</string>
-                  <string>--version</string>
-                  <string>--opensim</string>
-                </array>
-              </map>
-              <key>name</key>
-              <string>RelWithDebInfoFS</string>
-            </map>
-            <key>RelWithDebInfoFS_open</key>
-            <map>
-              <key>build</key>
-              <map>
-                <key>command</key>
-                <string>bash</string>
-                <key>options</key>
-                <array>
-                  <string>../scripts/configure_firestorm.sh</string>
+                  <string>../scripts/configure_heuguchon.sh</string>
                   <string>--btype RelWithDebInfo</string>
                   <string>--build</string>
                   <string>--version</string>
@@ -3596,7 +3565,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 <string>bash</string>
                 <key>options</key>
                 <array>
-                  <string>../scripts/configure_firestorm.sh</string>
+                  <string>../scripts/configure_heuguchon.sh</string>
                   <string>--btype RelWithDebInfo</string>
                   <string>--config</string>
                   <string>--version</string>
@@ -3604,7 +3573,38 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 </array>
               </map>
               <key>name</key>
-              <string>RelWithDebInfoFS_open</string>
+              <string>RelWithDebInfoHO</string>
+            </map>
+            <key>RelWithDebInfoHO_open</key>
+            <map>
+              <key>build</key>
+              <map>
+                <key>command</key>
+                <string>bash</string>
+                <key>options</key>
+                <array>
+                  <string>../scripts/configure_heuguchon.sh</string>
+                  <string>--btype RelWithDebInfo</string>
+                  <string>--build</string>
+                  <string>--version</string>
+                  <string>--opensim</string>
+                </array>
+              </map>
+              <key>configure</key>
+              <map>
+                <key>command</key>
+                <string>bash</string>
+                <key>options</key>
+                <array>
+                  <string>../scripts/configure_heuguchon.sh</string>
+                  <string>--btype RelWithDebInfo</string>
+                  <string>--config</string>
+                  <string>--version</string>
+                  <string>--opensim</string>
+                </array>
+              </map>
+              <key>name</key>
+              <string>RelWithDebInfoHO_open</string>
             </map>
           </map>
           <key>name</key>
@@ -3734,7 +3734,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
               <key>name</key>
               <string>ReleaseOS</string>
             </map>
-            <key>RelWithDebInfoFS</key>
+            <key>RelWithDebInfoHO</key>
             <map>
               <key>build</key>
               <map>
@@ -3761,9 +3761,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
               <string>True</string>
               -->
               <key>name</key>
-              <string>RelWithDebInfoFS</string>
+              <string>RelWithDebInfoHO</string>
             </map>
-            <key>RelWithDebInfoFS_open</key>
+            <key>RelWithDebInfoHO_open</key>
             <map>
               <key>build</key>
               <map>
@@ -3782,9 +3782,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 </array>
               </map>
               <key>name</key>
-              <string>RelWithDebInfoFS_open</string>
+              <string>RelWithDebInfoHO_open</string>
             </map>
-            <key>ReleaseFS</key>
+            <key>ReleaseHO</key>
             <map>
               <key>build</key>
               <map>
@@ -3807,9 +3807,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
               <key>default</key>
               <string>True</string>
               <key>name</key>
-              <string>ReleaseFS</string>
+              <string>ReleaseHO</string>
             </map>
-             <key>ReleaseFS_open</key>
+             <key>ReleaseHO_open</key>
             <map>
               <key>build</key>
               <map>
@@ -3826,7 +3826,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 </array>
               </map>
               <key>name</key>
-              <string>ReleaseFS_open</string>
+              <string>ReleaseHO_open</string>
             </map>
           </map>
           <key>build_directory</key>
@@ -3892,7 +3892,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
               <key>name</key>
               <string>default</string>
             </map>
-            <key>RelWithDebInfoFS</key>
+            <key>RelWithDebInfoHO</key>
             <map>
               <key>build</key>
               <map>
@@ -3917,9 +3917,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
               <string>True</string>
               -->
               <key>name</key>
-              <string>RelWithDebInfoFS</string>
+              <string>RelWithDebInfoHO</string>
             </map>
-            <key>RelWithDebInfoFS_open</key>
+            <key>RelWithDebInfoHO_open</key>
             <map>
               <key>build</key>
               <map>
@@ -3938,9 +3938,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 </array>
               </map>
               <key>name</key>
-              <string>RelWithDebInfoFS_open</string>
+              <string>RelWithDebInfoHO_open</string>
             </map>
-            <key>ReleaseFS</key>
+            <key>ReleaseHO</key>
             <map>
               <key>build</key>
               <map>
@@ -3962,9 +3962,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
               <key>default</key>
               <string>True</string>
               <key>name</key>
-              <string>ReleaseFS</string>
+              <string>ReleaseHO</string>
             </map>
-            <key>ReleaseFS_open</key>
+            <key>ReleaseHO_open</key>
             <map>
               <key>build</key>
               <map>
@@ -3984,7 +3984,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 </array>
               </map>
               <key>name</key>
-              <string>ReleaseFS_open</string>
+              <string>ReleaseHO_open</string>
             </map>
           </map>
           <key>build_directory</key>
@@ -4147,7 +4147,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
               <key>name</key>
               <string>ReleaseOS</string>
             </map>
-            <key>RelWithDebInfoFS</key>
+            <key>RelWithDebInfoHO</key>
             <map>
               <key>build</key>
               <map>
@@ -4174,9 +4174,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
               <string>True</string>
               -->
               <key>name</key>
-              <string>RelWithDebInfoFS</string>
+              <string>RelWithDebInfoHO</string>
             </map>
-            <key>RelWithDebInfoFS_open</key>
+            <key>RelWithDebInfoHO_open</key>
             <map>
               <key>build</key>
               <map>
@@ -4197,9 +4197,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 </array>
               </map>
               <key>name</key>
-              <string>RelWithDebInfoFS_open</string>
+              <string>RelWithDebInfoHO_open</string>
             </map>
-            <key>ReleaseFS</key>
+            <key>ReleaseHO</key>
             <map>
               <key>build</key>
               <map>
@@ -4224,9 +4224,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
               <key>default</key>
               <string>True</string>
               <key>name</key>
-              <string>ReleaseFS</string>
+              <string>ReleaseHO</string>
             </map>
-            <key>ReleaseFS_AVX</key>
+            <key>ReleaseHO_AVX</key>
             <map>
               <key>build</key>
               <map>
@@ -4249,9 +4249,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 </array>
               </map>
               <key>name</key>
-              <string>ReleaseFS_AVX</string>
+              <string>ReleaseHO_AVX</string>
             </map>
-            <key>ReleaseFS_AVX2</key>
+            <key>ReleaseHO_AVX2</key>
             <map>
               <key>build</key>
               <map>
@@ -4274,9 +4274,9 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 </array>
               </map>
               <key>name</key>
-              <string>ReleaseFS_AVX2</string>
+              <string>ReleaseHO_AVX2</string>
             </map>
-            <key>ReleaseFS_open</key>
+            <key>ReleaseHO_open</key>
             <map>
               <key>build</key>
               <map>
@@ -4295,7 +4295,7 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
                 </array>
               </map>
               <key>name</key>
-              <string>ReleaseFS_open</string>
+              <string>ReleaseHO_open</string>
             </map>
           </map>
           <key>build_directory</key>
@@ -4309,15 +4309,15 @@ Copyright (c) 2012, 2014, 2015, 2016 nghttp2 contributors</string>
       <key>license_file</key>
       <string>docs/LICENSE-source.txt</string>
       <key>copyright</key>
-      <string>Copyright (c) 2024, The Phoenix Firestorm Project, Inc.</string>
+      <string>Copyright (c) 2024, WISELIGHT.</string>
       <key>version_file</key>
       <string>newview/viewer_version.txt</string>
       <key>name</key>
-      <string>firestorm</string>
+      <string>heuguchon</string>
       <key>canonical_repo</key>
       <string>https://github.com/secondlife/viewer</string>
       <key>description</key>
-      <string>Firestorm Viewer</string>
+      <string>Heuguchon</string>
     </map>
   </map>
 </llsd>

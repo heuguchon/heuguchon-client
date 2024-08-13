@@ -687,19 +687,15 @@ bool LLCrashLogger::init()
     LLCore::LLHttp::initialize();
 
     // We assume that all the logs we're looking for reside on the current drive
-#if ADDRESS_SIZE == 64
-    gDirUtilp->initAppDirs( "Firestorm_x64" );
-#else
-    gDirUtilp->initAppDirs("Firestorm");
-#endif
+    gDirUtilp->initAppDirs("Heuguchon");
 
     LLError::initForApplication(gDirUtilp->getExpandedFilename(LL_PATH_USER_SETTINGS, ""), gDirUtilp->getExpandedFilename(LL_PATH_APP_SETTINGS, ""));
 
     // Default to the product name "Second Life" (this is overridden by the -name argument)
 
-    // <FS:ND> Change default to Firestorm
+    // <FS:ND> Change default to Heuguchon
     //  mProductName = "Second Life";
-    mProductName = "Firestorm";
+    mProductName = "Heuguchon";
     // </FS:ND>
 
     // Rename current log file to ".old"

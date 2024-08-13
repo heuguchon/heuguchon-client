@@ -603,8 +603,8 @@ class Windows_x86_64_Manifest(ViewerManifest):
         debpkgdir = os.path.join(pkgdir, "lib", "debug")
 
         if self.is_packaging_viewer():
-            # Find firestorm-bin.exe in the 'configuration' dir, then rename it to the result of final_exe.
-            self.path(src='%s/firestorm-bin.exe' % self.args['configuration'], dst=self.final_exe())
+            # Find heuguchon-bin.exe in the 'configuration' dir, then rename it to the result of final_exe.
+            self.path(src='%s/heuguchon-bin.exe' % self.args['configuration'], dst=self.final_exe())
             # Emit the whole app image as one of the GitHub step outputs. We
             # want the whole app -- but NOT the extraneous build products that
             # get tossed into the same directory, such as the installer and
