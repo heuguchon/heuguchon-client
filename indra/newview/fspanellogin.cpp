@@ -638,8 +638,9 @@ void FSPanelLogin::getFields(LLPointer<LLCredential>& credential,
     LL_INFOS("Credentials", "Authentication") << "retrieving username:" << username << LL_ENDL;
     // determine if the username is a first/last form or not.
     size_t separator_index = username.find_first_of(' ');
-    if (separator_index == username.npos
-        && !LLGridManager::getInstance()->isSystemGrid())
+    size_t check_heuguchon_grid = LLGridManager::getInstance()->getGrid().find("heuguchon.com");
+
+    if (separator_index == username.npos && !LLGridManager::getInstance()->isSystemGrid() && check_heuguchon_grid == std::string::npos)
     {
         LL_INFOS("Credentials", "Authentication") << "account: " << username << LL_ENDL;
         // single username, so this is a 'clear' identifier
