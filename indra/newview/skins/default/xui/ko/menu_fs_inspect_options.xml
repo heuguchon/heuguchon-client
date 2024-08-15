@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toggleable_menu name="menu_group_plus">
+	<menu_item_check label="설명" name="description" />
+	<menu_item_check label="소유자명" name="owner_name" />
+	<menu_item_check label="제작자명" name="creator_name" />
+	<menu_item_check label="면수" name="facecount" />
+	<menu_item_check label="정점 수" name="vertexcount" />
+	<menu_item_check label="삼각형 수" name="trianglecount" />
+	<menu_item_check label="텍스메모리" name="tramcount" />
+	<menu_item_check label="VRAM" name="vramcount" />
+	<menu_item_check label="작성일" name="creation_date" />
+</toggleable_menu>

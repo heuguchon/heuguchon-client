@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<teleport_messages>
+	<message_set name="errors">
+		<message name="invalid_tport">텔레포트는 1분에 최대 6회까지 가능합니다. 만약 텔레포트에 문제가 있는 경우, 1분 더 기다렸다가 다시 시도해보세요. 그래도 문제가 해결되지 않으면 한 번 로그아웃한 후 다시 로그인해보세요.</message>
+		<message name="invalid_region_handoff">리전 간 이동 중에 문제가 발생했습니다. 다시 로그인해야 할 수 있습니다.
+이 메시지가 여러 번 나타나면, [SUPPORT_SITE]를 확인해 주세요.</message>
+		<message name="blocked_tport">죄송합니다만, 텔레포트가 현재 차단되어 있습니다. 조금 후에 다시 시도해주세요.
+다시 시도해도 텔레포트가 되지 않는다면, 한 번 로그아웃한 후 다시 로그인하여 문제를 해결해주세요.</message>
+		<message name="nolandmark_tport">유감스럽게도, 시스템이 랜드마크 목적지를 찾을 수 없었습니다.</message>
+		<message name="timeout_tport">죄송합니다, 시스템이 텔레포트 연결을 완료할 수 없었습니다.
+잠시 후 다시 시도해 주십시오.</message>
+		<message name="NoHelpIslandTP">웰컴 아일랜드로 다시 텔레포트할 수 없습니다.
+'Welcome Island Public'로 가서 다시 튜토리얼을 진행하세요.</message>
+		<message name="noaccess_tport">유감스럽게도, 해당 텔레포트 목적지에 접근할 수 없습니다.</message>
+		<message name="missing_attach_tport">첨부물은 아직 도착하지 않았습니다. 몇 초 더 기다리시거나, 일단 로그아웃한 후 다시 로그인하여 텔레포트를 다시 시도해 보십시오.</message>
+		<message name="too_many_uploads_tport">이 지역의 자산 큐가 현재 혼잡하여 요청된 텔레포트를 처리하기 어려운 상황입니다. 몇 분 후에 다시 시도하시거나, 혼잡하지 않은 다른 지역을 이용해 보세요.</message>
+		<message name="expired_tport">죄송합니다만, 시스템이 요청한 텔레포트를 완료할 수 없었습니다. 몇 분 후에 다시 시도해 주십시오.</message>
+		<message name="expired_region_handoff">죄송합니다만, 시스템은 지역 간의 이동을 제시간에 완료할 수 없었습니다.
+몇 분 후에 다시 시도해 주십시오.</message>
+		<message name="no_host">목적지를 찾을 수 없습니다. 목적지가 일시적으로 이용 불가능하거나 이미 사라졌을 가능성이 있습니다. 몇 분 후에 다시 시도해 주세요.</message>
+		<message name="no_inventory_host">인벤토리 시스템을 현재 이용할 수 없습니다.</message>
+		<message name="MustGetAgeRegion">이 지역(리전)에 들어가기 위해서는 18세 이상이어야 합니다.</message>
+		<message name="RegionTPSpecialUsageBlocked">리전이에 진입할 수 없습니다. '[REGION_NAME]'는 스킬 게이밍 리전으로, 이 리전에 진입하려면 특정 기준을 충족해야 합니다. 자세한 내용은 [http://wiki.secondlife.com/wiki/Linden_Lab_Official:Skill_Gaming_in_Second_Life 스킬 게이밍의 자주 묻는 질문]을 참조하세요.</message>
+	</message_set>
+	<message_set name="progress">
+		<message name="sending_dest">목적지로 보내고 있습니다.</message>
+		<message name="redirecting">다른 목적지로 리디렉션하고 있습니다.</message>
+		<message name="relaying">목적지로 중계하고 있습니다.</message>
+		<message name="sending_home">홈 위치의 요청을 보내고 있습니다.</message>
+		<message name="sending_landmark">랜드마크 위치의 요청을 전송하고 있습니다.</message>
+		<message name="completing">텔레포트를 완료합니다.</message>
+		<message name="completed_from">[T_SLURL] 에서 텔레포트가 완료되었습니다</message>
+		<message name="resolving">목적지를 해결하고 있습니다.</message>
+		<message name="contacting">새로운 지역에 접속하고 있습니다.</message>
+		<message name="arriving">도착...</message>
+		<message name="requesting">텔레포트를 요청 중...</message>
+		<message name="pending">テレポート를 보류 중...</message>
+	</message_set>
+</teleport_messages>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="groups" title="기록된 사용자 이름">
+	<scroll_list name="user_list">
+		<scroll_list.columns name="user" />
+	</scroll_list>
+	<button label="삭제" label_selected="삭제" name="forget" />
+	<check_box height="20" label="이 사용자 이름의 로컬 데이터를 삭제합니다." name="delete_data" tool_tip="삭제 대상: 채팅 기록, 마지막 세션의 스크린샷, 브라우저 쿠키, 텔레포트 기록, 툴바 설정 등. 일부 로컬 파일은 그리드 간에 공유됩니다." />
+</floater>

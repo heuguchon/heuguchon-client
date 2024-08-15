@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floaterland" title="토지 정보">
+	<floater.string name="maturity_icon_general">"Parcel_PG_Dark"는 "파셀_PG_다크"로 번역됩니다. "Firestorm"를 "흑우촌"으로 번역합니다.</floater.string>
+	<floater.string name="maturity_icon_moderate">"Parcel_M_Dark"를 한국어로 번역해야 할 때 'Firestorm'이 '흑우촌'으로 번역된다고 하셨으니, 이를 반영하겠습니다. 주어진 텍스트는 번역할 특별한 영어 단어가 없지만 요청에 따라:
+
+"Parcel_M_Dark" -&gt; 그대로 쓰시면 됩니다: "Parcel_M_Dark"
+
+따라서, 특별히 변형할 필요가 없습니다.</floater.string>
+	<floater.string name="maturity_icon_adult">"Parcel_R_Dark"</floater.string>
+	<floater.string name="Hours">[HOURS] 시간</floater.string>
+	<floater.string name="Hour">시간</floater.string>
+	<floater.string name="Minutes">[회의록] 분</floater.string>
+	<floater.string name="Minute">분</floater.string>
+	<floater.string name="Seconds">[초] 초</floater.string>
+	<floater.string name="Remaining">남은</floater.string>
+	<floater.string name="Always">The text "常時" can be translated to Korean as "상시". Since there is no occurrence of the word 'Firestorm' in the provided text, there is no need for translation in that context. 
+
+Therefore, the translation of "常時" to Korean is "상시".</floater.string>
+	<tab_container name="landtab">
+		<panel label="일반" name="land_general_panel">
+			<panel.string name="new users only">신규 주민 전용</panel.string>
+			<panel.string name="anyone">누구든지</panel.string>
+			<panel.string name="area_text">면적:</panel.string>
+			<panel.string name="area_size_text">[지역] 제곱미터</panel.string>
+			<panel.string name="auction_id_text">경매 ID： [ID]</panel.string>
+			<panel.string name="need_tier_to_modify">이 땅을 수정 변경하려면 구매를 승인할 필요가 있습니다.</panel.string>
+			<panel.string name="group_owned_text">(그룹 소유)</panel.string>
+			<panel.string name="profile_text">프로필</panel.string>
+			<panel.string name="info_text">정보</panel.string>
+			<panel.string name="public_text">(공공)</panel.string>
+			<panel.string name="none_text">（なし）</panel.string>
+			<panel.string name="sale_pending_text">(구매 심사 중)</panel.string>
+			<panel.string name="no_selection_text">선택된 구획이 없습니다.</panel.string>
+			<panel.string name="time_stamp_template">[요일,날짜시간,slt] [월,날짜시간,slt] [일,날짜시간,slt] [시,날짜시간,slt]:[분,날짜시간,slt]:[초,날짜시간,slt] [년,날짜시간,slt]</panel.string>
+			<panel.string name="error_resolving_uuid">이 구역 ID는 해당 사항이 없습니다.</panel.string>
+			<text name="Name:">이름:</text>
+			<line_editor name="Name" />
+			<text name="UUID:">구획 ID</text>
+			<text name="Description:">설명:</text>
+			<text name="LandType">종류:</text>
+			<text name="LandTypeText">메인랜드/홈스테드</text>
+			<text name="ContentRating">구분:</text>
+			<text name="ContentRatingText">성인
+</text>
+			<text name="Owner:">소유자:</text>
+			<text name="OwnerText">로딩 중...</text>
+			<text name="Group:">그룹：</text>
+			<text name="GroupText">로드 중...</text>
+			<button label="설정" label_selected="설정..." name="Set..." />
+			<check_box label="グループへの譲渡を許可 translates to 그룹에 양도를 허용." name="check deed" tool_tip="그룹의 오피서(Officer)는 이 땅을 그룹에 양도할 수 있습니다. 그룹의 땅 할당에 의해 지원됩니다." />
+			<button label="譲渡 can be translated to '양도' in Korean. &#10;&#10;Here is your translation in Korean:&#10;&#10;양도" label_selected="양도..." name="Deed..." tool_tip="선택한 그룹의 오피서만이 토지를 양도할 수 있습니다." />
+			<check_box label="소유자는 양도 및 기부와 함께" name="check contrib" tool_tip="그룹에 토지가 양도될 때, 이전 소유자는 양도가 성립될 수 있도록 충분한 토지를 기부합니다." />
+			<text name="For Sale:">판매 여부:</text>
+			<text name="Not for sale.">판매 대상 외</text>
+			<text name="For Sale: Price L$[PRICE].">가격: L$ [PRICE] (L$ [PRICE_PER_SQM] / 평방미터)</text>
+			<button label="토지를 판매하는 방법" label_selected="土地를 판매..." name="Sell Land..." />
+			<text name="For sale to">판매처：[BUYER]</text>
+			<text name="Sell with landowners objects in parcel.">オブジェクトを一緒に販売 - 객체를 함께 판매하기</text>
+			<text name="Selling with no objects in parcel.">오브젝트는 판매하지 않습니다</text>
+			<button label="토지 판매 취소" label_selected="토지 판매 취소" name="Cancel Land Sale" />
+			<text name="Claimed:">확인된 날짜:</text>
+			<text name="DateClaimText">2006년 8월 15일 화요일 13:47:25</text>
+			<text name="PriceLabel">면적:</text>
+			<text name="PriceText">4048 m²</text>
+			<text name="Traffic:">교통량:</text>
+			<text name="DwellText">로딩 중...</text>
+			<button label="토지 구매" label_selected="토지를 구매..." left="130" name="Buy Land..." width="100" />
+			<button label="린든세일&#10;" label_selected="린든 세일..." name="Linden Sale..." tool_tip="土地が所有されており、コンテンツが設定されている必要があります。オークションの対象になっていないことも必要条件です." />
+			<button label="스크립트 정보" name="Scripts..." width="100" />
+			<button label="그룹에 구매" label_selected="그룹을 위해 구매..." name="Buy For Group..." />
+			<button label="입장 허가를 구매하십시오." label_selected="입장 허가를 구매..." left="130" name="Buy Pass..." tool_tip="이 토지에 대한 일시적인 접근을 허가합니다." width="100" />
+			<button label="토지 포기" label_selected="土地를 포기..." name="Abandon Land..." />
+			<button label="토지를 되찾기" label_selected="토지 반환을 요청..." name="Reclaim Land..." />
+		</panel>
+		<panel label="약관" name="land_covenant_panel">
+			<panel.string name="can_resell">이 지역에서 구입한 토지는 재판매할 수 있습니다.</panel.string>
+			<panel.string name="can_not_resell">이 리전(지역)에서 구매한 토지는 재판매할 수 없는 경우가 있습니다.</panel.string>
+			<panel.string name="can_change">이 리전(지역)에서 구입한 토지는 통합 또는 재분할할 수 있습니다.</panel.string>
+			<panel.string name="can_not_change">이 리전(지역)에서 구매한 땅은, 통합・재분할할 수 없는 경우가 있습니다.
+있습니다.</panel.string>
+			<text font="SansSerifLarge" name="estate_section_lbl">부동산:</text>
+			<text name="estate_name_text">메인랜드</text>
+			<text name="estate_owner_lbl">소유자:</text>
+			<text name="estate_owner_text">（なし）</text>
+			<text_editor name="covenant_editor">この 부동산에는 약관이 없습니다.</text_editor>
+			<text name="covenant_timestamp_text">1969년 12월 31일 수요일 16:00:00에 마지막으로 업데이트됨</text>
+			<text font="SansSerifLarge" name="region_section_lbl">지역:</text>
+			<text name="region_name_text">로드 중...</text>
+			<text name="region_landtype_lbl">종류:</text>
+			<text name="region_landtype_text">메인랜드/홈스테드</text>
+			<text name="region_maturity_lbl">구분:</text>
+			<text name="region_maturity_text">어른용</text>
+			<text name="resellable_lbl">재판매:</text>
+			<text name="resellable_clause">이 리전(지역)에 있는 토지는 재판매할 수 없습니다.</text>
+			<text name="changeable_lbl">재분할:</text>
+			<text name="changeable_clause">이 리전(지역)에 있는 토지는 통합 또는 분할이 불가능할 수 있습니다.</text>
+		</panel>
+		<panel label="오브젝트" name="land_objects_panel">
+			<panel.string name="objects_available_text">[MAX] 중 [COUNT]개 ([AVAILABLE] 사용 가능)</panel.string>
+			<panel.string name="objects_deleted_text">[MAX] 중 [COUNT]（[DELETED] 삭제됨）</panel.string>
+			<text name="parcel_object_bonus">오브젝트 보너스: [BONUS]</text>
+			<text name="Simulator primitive usage:">리전(지역)의 허용 수:</text>
+			<text name="objects_available">[MAX] 중 [COUNT] (사용 가능: [AVAILABLE])</text>
+			<text name="Primitives parcel supports:">区画の許容数: 구획의 허용 수</text>
+			<text name="object_contrib_text">[개수]</text>
+			<text name="Primitives on parcel:">구획의 부하:</text>
+			<text name="total_objects_text">[COUNT]</text>
+			<text name="Owned by parcel owner:">구획 소유자의 소유물:</text>
+			<text name="owner_objects_text">[개수]</text>
+			<button label="표시" label_selected="표시" name="ShowOwner" />
+			<button label="반환" label_selected="반납..." name="ReturnOwner..." tool_tip="오브젝트를 소유자에게 반환합니다." />
+			<text name="Set to group:">그룹 설정:</text>
+			<text name="group_objects_text">[COUNT]</text>
+			<button label="표시" label_selected="표시" name="ShowGroup" />
+			<button label="반납" label_selected="반환..." name="ReturnGroup..." tool_tip="オブジェクトを所有者に返却します - 오브젝트를 소유자에게 반환합니다" />
+			<text name="Owned by others:">다른 사람의 소유물:</text>
+			<text name="other_objects_text">[COUNT]</text>
+			<button label="표시" label_selected="표시" name="ShowOther" />
+			<button label="반환" label_selected="반환..." name="ReturnOther..." tool_tip="オブジェクトを所有者に返却します&#10;&#10;Translation: 오브젝트를 소유자에게 반환합니다" />
+			<text name="Selected / sat upon:">사람이 선택 중이거나 앉아 있는 중:</text>
+			<text name="selected_objects_text">[개수]</text>
+			<text name="Autoreturn">他人のオブジェクトを自動返却（分単位、0 で自動返却なし）：  
+다른 사람의 오브젝트를 자동 반환 (분 단위, 0은 자동 반환 없음):</text>
+			<line_editor left_delta="5" name="clean other time" />
+			<text name="Object Owners:">オブジェクトの所有者:オブジェクトの所有者: 911 / 5000
+翻訳結果
+개체 소유자:</text>
+			<button name="Refresh List" tool_tip="オ브젝트 목록을 업데이트합니다" />
+			<button label="オブジェクトを返却する: 오브젝트를 반환하기" label_selected="오브젝트 반환 중..." name="Return objects..." />
+			<name_list label="카운트" name="owner list">
+				<name_list.columns label="타입" name="type" />
+				<name_list.columns name="online_status" />
+				<name_list.columns label="이름" name="name" />
+				<name_list.columns label="숫자" name="count" />
+				<name_list.columns label="최신" name="mostrecent" />
+			</name_list>
+		</panel>
+		<panel label="옵션" name="land_options_panel">
+			<panel.string name="search_enabled_tooltip">이 구획을 검색 결과에 표시하기</panel.string>
+			<panel.string name="search_disabled_small_tooltip">区画면적이 128 평방미터이거나 그 이하이므로 이 옵션은 사용할 수 없습니다.
+더 큰 구획만 검색에 표시할 수 있습니다.</panel.string>
+			<panel.string name="search_disabled_permissions_tooltip">당신은 이 구역의 설정을 편집할 수 없기 때문에, 이 옵션은 비활성화되었습니다.</panel.string>
+			<panel.string name="mature_check_mature">「보통」콘텐츠</panel.string>
+			<panel.string name="mature_check_adult">「Adult」콘텐츠</panel.string>
+			<panel.string name="mature_check_mature_tooltip">당신의 구역 정보 및 컨텐츠는 "Moderate"로 설정되어 있습니다.</panel.string>
+			<panel.string name="mature_check_adult_tooltip">당신의 구역 정보 및 컨텐츠는 "Adult"로 설정되어 있습니다.</panel.string>
+			<panel.string name="landing_point_none">（なし）</panel.string>
+			<panel.string name="push_restrict_text">푸시 금지</panel.string>
+			<panel.string name="push_restrict_region_text">푸시 금지 (지역 설정 우선)</panel.string>
+			<panel.string name="DirectoryFree">이 구역을 검색 결과에 표시하기</panel.string>
+            <panel.string name="DirectoryFee">이 구역을 검색 결과에 표시 (L$[DIRECTORY_FEE]/주)</panel.string>
+			<text name="allow_label">다른 주민에 대한 허가:</text>
+			<text name="allow_label1">토지 편집:</text>
+			<check_box label="모두" name="edit land check" tool_tip="여기에 체크하면 누구나 당신의 땅을 편집할 수 있게 됩니다. 당신은 언제든지 자신의 땅을 편집할 수 있으므로 여기의 체크를 해제해 둔 상태로 두는 것을 강력히 권장합니다." />
+			<text name="caution_text">(충분히 주의하십시오!)</text>
+			<text name="allow_label0">비행:</text>
+			<check_box label="전체" name="check fly" tool_tip="체크를 하면 이 토지에서 비행이 가능해집니다. 체크를 해제하면 토지에 들어갈 때와 지나갈 때만 비행이 가능해집니다." />
+			<text name="allow_label2">제작:</text>
+			<check_box label="모두" name="edit objects check" tool_tip="다음 옵션을 선택하면 거주자는 귀하의 토지에서 개체를 만들거나 rez할 수 있습니다." />
+			<check_box label="그룹" name="edit group objects check" tool_tip="이 옵션을 선택하면 구역의 그룹 멤버가 당신의 땅에서 오브젝트를 제작하거나 rez를 할 수 있습니다." />
+			<text name="allow_label3">오브젝트의 진입:</text>
+			<check_box label="모두" name="all object entry check" tool_tip="이 옵션을 선택하면 거주자는 다른 구역에 있는 객체를 이 구역으로 이동할 수 있습니다." />
+			<check_box label="그룹" name="group object entry check" tool_tip="이 옵션을 선택하면, 구역의 그룹 멤버는 다른 구역에 있는 오브젝트를 이 구역으로 이동할 수 있습니다." />
+			<text name="allow_label4">스크립트 실행:</text>
+			<check_box label="모두" name="check other scripts" tool_tip="이 옵션을 선택하면, 주민은 첨부 파일 등의 스크립트를 당신의 구역에서 실행할 수 있습니다." />
+			<check_box label="그룹" name="check group scripts" tool_tip="이 옵션을 선택하면, 구역의 그룹 구성원은 부착물 등의 스크립트를 당신의 구역에서 실행할 수 있습니다." />
+			<check_box label="안전함 (데미지 없음)" name="check safe" tool_tip="체크를 하면 이 토지에서의 데미지 전투가 비활성화되고 &quot;안전&quot;으로 설정됩니다. 체크를 해제하면 데미지 전투가 활성화됩니다." />
+			<check_box label="푸시 금지" name="PushRestrictCheck" tool_tip="스크립트에 의한 푸시를 금지합니다. 이 옵션을 선택하면 당신의 토지에서의 파괴적인 행동을 방지할 수 있습니다." />
+			<check_box label="검색에 구역을 표시(주 L$ 30)" name="ShowDirectoryCheck" tool_tip="이 구역을 검색 결과에 표시합니다" />
+			<combo_box name="land category">
+				<combo_box.item label="모든 카테고리" name="item0" />
+				<combo_box.item label="Linden 所在地" name="item1" />
+				<combo_box.item label="아트 &amp; 컬처" name="item3" />
+				<combo_box.item label="사업" name="item4" />
+				<combo_box.item label="The word 'Firestorm' does not appear in the provided text. &#10;&#10;The translation of the given text &quot;教育的&quot; to Korean is &quot;교육적인&quot;." name="item5" />
+				<combo_box.item label="게임" name="item6" />
+				<combo_box.item label="たまり場 (hangout)" name="item7" />
+				<combo_box.item label="새로운 거주자에게 친절함" name="item8" />
+				<combo_box.item label="공원과 자연" name="item9" />
+				<combo_box.item label="주택용" name="item10" />
+				<combo_box.item label="쇼핑" name="item11" />
+				<combo_box.item label="렌탈" name="item13" />
+				<combo_box.item label="기타" name="item12" />
+			</combo_box>
+			<check_box label="「보통」콘텐츠" name="MatureCheck" tool_tip="텍스트를 번역할 곳에 'Firestorm'이 나타나면 '흑우촌'으로 번역하십시오:&#10;&#10;The SecondLife Viewer Firestorm is one of the most popular viewers for the virtual world SecondLife. It offers a variety of advanced features that enhance the user's experience. The customization options in Firestorm allow users to personalize their interface to suit their needs. Additionally, the viewer provides support for multiple languages and platforms, making it accessible to a global audience. Users often choose Firestorm for its stability and performance compared to other viewers.&#10;&#10;세컨드라이프 뷰어 흑우촌은 가상 세계 세컨드라이프에서 가장 인기 있는 뷰어 중 하나입니다. 사용자 경험을 향상시키는 다양한 고급 기능을 제공합니다. 흑우촌의 사용자 지정 옵션을 통해 사용자는 자신의 필요에 맞게 인터페이스를 개인화할 수 있습니다. 또한, 이 뷰어는 여러 언어와 플랫폼을 지원하여 전 세계 청중이 사용할 수 있습니다. 사용자들은 종종 다른 뷰어와 비교하여 흑우촌의 안정성과 성능을 이유로 선택합니다." />
+			<text name="Snapshot:">스냅샷:</text>
+			<texture_picker name="snapshot_ctrl" tool_tip="사진을 클릭하여 선택" />
+			<text name="allow_label5">다른 구역에 있는 아바타가 이 구역에 있는 아바타를 만나서 채팅할 수 있습니다.</text>
+			<check_box label="아바타를 표시" name="SeeAvatarsCheck" tool_tip="다른 구역의 아바타가 이 구역에 있는 아바타를 만나 채팅할 수 있도록 허용하며, 당신도 그 아바타들을 만나 채팅할 수 있도록 합니다." />
+			<text name="landing_point">착륙 지점: [LANDING]</text>
+			<button label="설정" label_selected="설정" name="Set" tool_tip="방문자의 착지 지점을 설정합니다. 이 구역 내에서 서서 진행하세요." />
+			<button label="클리어" label_selected="클리어" name="Clear" tool_tip="착지 지점을 클리어" />
+			<button label="텔레포트" label_selected="텔레포트" name="teleport_to_landing_point" tool_tip="착지 지점으로 텔레포트합니다." />
+			<text name="Teleport Routing: ">텔레포트 경로:</text>
+			<combo_box name="landing type" tool_tip="텔레포트 경로 -- 당신의 땅으로의 텔레포트 경로를 선택하십시오.">
+				<combo_box.item label="불가능" name="Blocked" />
+				<combo_box.item label="착지 지점" name="LandingPoint" />
+				<combo_box.item label="어디든지" name="Anywhere" />
+			</combo_box>
+		</panel>
+		<panel label="미디어" name="land_media_panel">
+			<text name="with media:">종류:</text>
+			<combo_box name="media type" tool_tip="URL이 동영상, 웹 페이지, 기타 미디어인지 지정합니다." />
+			<text name="at URL:">홈페이지:</text>
+			<button label="설정" name="set_media_url" />
+			<text name="Description:">설명:</text>
+			<line_editor name="url_description" tool_tip="「再生」「ロード」ボタンの隣に表示されるテキストです&#10;&#10;This text appears next to the &quot;Play&quot; and &quot;Load&quot; buttons" />
+			<text name="Media texture:">텍스처 교체:</text>
+			<texture_picker left="120" name="media texture" tool_tip="사진을 클릭하여 선택" />
+			<text name="replace_texture_help" width="290">이 텍스처를 사용하는 오브젝트의 '재생'을 클릭하면, 비디오나 웹 페이지가 표시됩니다. 텍스처를 변경하려면 썸네일을 선택하십시오.</text>
+			<check_box label="스케일을 자동 설정" name="media_auto_scale" tool_tip="이 옵션을 체크하면 이 구획의 콘텐츠 스케일이 자동으로 설정됩니다. 동작 속도와 화질이 약간 저하될 수 있으나, 다른 텍스처의 스케일링이나 정렬이 필요하지 않습니다." />
+			<text name="media_size" tool_tip="렌더링할 웹 미디어의 크기입니다. 기본값인 0으로 그대로 둡니다.">사이즈:</text>
+			<spinner name="media_size_width" tool_tip="렌더링할 웹 미디어의 크기입니다. 기본값인 0으로 둡니다." />
+			<spinner name="media_size_height" tool_tip="렌더링할 웹 미디어의 크기입니다. 기본값인 0으로 그대로 둡니다." />
+			<text name="pixels">픽셀이요</text>
+			<text name="Options:">옵션:</text>
+			<check_box label="루프" name="media_loop" tool_tip="미디어를 반복 재생합니다. 미디어 재생이 끝나면 처음부터 다시 재생합니다." />
+		</panel>
+		<panel label="사운드" name="land_audio_panel">
+			<text name="MusicURL:">음악 URL：</text>
+            <button name="stream_add_btn" tool_tip="음악 스트림 URL을 스트림 목록에 추가합니다." />
+            <button name="stream_delete_btn" tool_tip="음악 스트림 URL을 스트림 목록에서 삭제합니다." />
+            <button name="stream_copy_btn" tool_tip="음악 스트림 URL을 클립보드에 복사합니다." />
+			<text name="Sound:">사운드:</text>
+			<check_box label="제스처와 오브젝트의 소리를 이 구역으로만 제한하기" name="check sound local" />
+			<text name="Avatar Sounds:">아바타의 사운드:</text>
+			<check_box label="전원" name="all av sound check" />
+			<check_box label="그룹" name="group av sound check" />
+			<text name="Voice settings:">음성:</text>
+			<check_box label="보이스를 활성화하기" name="parcel_enable_voice_channel" />
+			<check_box label="보이스를 활성화하기 (부동산 설정)" name="parcel_enable_voice_channel_is_estate_disabled" />
+			<check_box label="보이스를 이 구역으로 제한하다" name="parcel_enable_voice_channel_local" />
+		</panel>
+		<panel label="접속" name="land_access_panel">
+			<panel.string name="access_estate_defined">(에스테이트에 한정하여)</panel.string>
+			<panel.string name="estate_override">1개 이상의 옵션이 부동산 레벨에서 설정되었습니다.</panel.string>
+			<check_box label="パブリックアクセスを許可（このオプションをオフにすると立入禁止ラインが作成されます）&#10;&#10;공공 액세스를 허용 (이 옵션을 끄면 진입 금지 라인이 생성됩니다)" name="public_access" />
+			<text name="Only Allow">次の住人にのみアクセスを許可：
+
+다음 거주자에게만 액세스를 허용:</text>
+			<check_box label="등록된 결제 정보가 있는 [ESTATE_PAYMENT_LIMIT]" name="limit_payment" tool_tip="지불 정보가 등록되어 있지 않으면, 이 구역에 접근할 수 없습니다. 자세한 내용은 [SUPPORT_SITE]를 참조하십시오." />
+			<check_box label="18 세 이상입니다 [ESTATE_AGE_LIMIT]" name="limit_age_verified" tool_tip="이 구역에 접근하려면 18세 이상이어야 합니다. 자세한 내용은 [SUPPORT_SITE]를 참조하세요." />
+			<check_box label="グループのアクセスを許可：[GROUP]&#10;&#10;그룹의 접근을 허용: [GROUP]" name="GroupCheck" tool_tip="「일반」탭에서, 그룹을 선택하십시오." />
+			<check_box label="입장 허가를 판매:" name="PassCheck" tool_tip="이 구획에 일시적으로 접근을 허용합니다." />
+			<combo_box name="pass_combo">
+				<combo_box.item label="誰でも&#10;- 누구든지" name="Anyone" />
+				<combo_box.item label="그룹" name="Group" />
+			</combo_box>
+			<spinner label="가격(L$):" name="PriceSpin" />
+			<spinner label="접속 시간:" name="HoursSpin" />
+			<text name="OwnerLimited">（부동산 소유자가 이 선택들에 제한을 둘 수 있습니다.）</text> 
+			<panel name="Allowed_layout_panel">
+				<text label="항상 허가" name="AllowedText">허가된 주민 입장 ([COUNT]/[MAX])</text>
+				<name_list name="AccessList" tool_tip="(합계 [LISTED] 人, 최대 [MAX] 人)" />
+				<button label="추가" name="add_allowed" />
+				<button label="삭제" label_selected="성명하세요" name="remove_allowed" />
+			</panel>
+			<panel name="Banned_layout_panel">
+				<text label="금지" name="BanCheck">禁止する （[COUNT] 명, 최대 [MAX] 명）</text>
+				<name_list name="BannedList" tool_tip="(합계 [LISTED] 명, 최대 [MAX] 명)">
+					<columns label="이름" name="name" />
+					<columns label="기간" name="duration" />
+				</name_list>
+				<button label="추가" name="add_banned" />
+				<button label="삭제" label_selected="삭제&#10;&#10;" name="remove_banned" />
+			</panel>
+		</panel>
+		<panel label="경험" name="land_experiences_panel" />
+		<panel label="자연환경" name="land_environment_panel" />
+	</tab_container>
+</floater>

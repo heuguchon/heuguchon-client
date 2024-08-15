@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_blocklist" title="차단된 사용자 및 개체">
+      <panel name="panel_block_list_sidetray" label="차단된 거주자 및 오브젝트" />
+</floater>

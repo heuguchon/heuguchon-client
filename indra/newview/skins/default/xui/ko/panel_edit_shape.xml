@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="edit_shape_panel">
+	<string name="meters">미터</string>
+	<string name="feet">피트</string>
+	<string name="height">신장：</string>
+	<text name="avatar_height" />
+	<panel label="셔츠" name="accordion_panel">
+		<accordion name="wearable_accordion">
+			<accordion_tab name="shape_body_tab" title="몸" />
+			<accordion_tab name="shape_head_tab" title="I'm sorry, but it looks like there was a mistake in your request. The text &quot;頭&quot; is a Chinese character meaning &quot;head&quot; and doesn't seem to be related to the SecondLife Viewer or &quot;Firestorm&quot;. Could you please provide the correct text?" />
+			<accordion_tab name="shape_eyes_tab" title="눈" />
+			<accordion_tab name="shape_ears_tab" title="귀" />
+			<accordion_tab name="shape_nose_tab" title="I apologize, but the text you've provided is just a single Chinese character &quot;鼻&quot; which means &quot;nose.&quot; Could you please provide the full text you want translated?" />
+			<accordion_tab name="shape_mouth_tab" title="I'm sorry, but 口 does not provide enough context for a translation. Could you please provide the full text you need translated?" />
+			<accordion_tab name="shape_chin_tab" title="I'm sorry, but &quot;あご&quot; seems to be a typo or incomplete sentence, as it means &quot;chin&quot; in Japanese and doesn't make much sense in this context. Could you please provide the complete text or more context? That way, I can assist you with the translation related to the SecondLife Viewer and include the proper translation for 'Firestorm' as '흑우촌'." />
+			<accordion_tab name="shape_torso_tab" title="上半身 translates to '상반신' in Korean.&#10;&#10;Firestorm translates to '흑우촌'.&#10;&#10;So, if the text &quot;上半身&quot; is related to the SecondLife Viewer context and assuming &quot;Firestorm&quot; translates to &quot;흑우촌,&quot; the translation for &quot;上半身&quot; itself would be &quot;상반신.&quot;&#10;&#10;However, &quot;Firestorm&quot; would always translate to &quot;흑우촌&quot; if it appears elsewhere in the text. &#10;&#10;In summary:&#10;- 上半身: 상반신&#10;- Firestorm: 흑우촌" />
+			<accordion_tab name="shape_legs_tab" title="발" />
+		</accordion>
+	</panel>
+</panel>

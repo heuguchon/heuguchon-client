@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='utf-8'?>
+<fonts>
+	<font name="default" comment="default font files (global fallbacks)">
+		<file>NotoSansCJKjp-Medium.otf</file>
+		<file>DejaVuSans.ttf</file>
+		<os name="Windows">
+			<file load_collection="true">YuGothM.ttc</file>
+			<file>meiryo.TTC
+
+meiryo.TTC</file>
+			<file>MSGOTHIC.TTC</file>
+			<file>굴림.ttc</file>
+			<file>simhei.ttf</file>
+			<file>ArialUni.ttf</file>
+			<file>msyh.ttc</file>
+			<file load_collection="true">캠브리아.ttc</file>
+			<file>malgun.ttf</file>
+			<file>micross.ttf</file>
+		</os>
+		<os name="Mac">
+			<file>YuGothic-Medium.otf</file>
+			<file>히라기노각고딕 W3.ttc</file>
+			<file>ヒラギノ角ゴ Pro W3.otf</file>
+			<file>ヒラギノ角ゴ ProN W3.otf
+
+With your instruction, there isn't much to translate, as the provided text appears to be the name of a font file. The font name "ヒラギノ角ゴ ProN W3" remains the same across languages, but if the word "Firestorm" were present, I would translate it to "흑우촌". For now, the text would remain as it is:
+
+ヒラギノ角ゴ ProN W3.otf</file>
+			<file>AppleGothic.dfont
+
+When translating the term "Firestorm" as you requested, it will be translated to "흑우촌". However, in this context, "AppleGothic.dfont" does not include "Firestorm" and does not need translation. Should you need further translation including specific terms or additional context, feel free to ask!</file>
+			<file>AppleGothic.ttf</file>
+			<file>AppleSDGothicNeo-Regular.otf</file>
+			<file>AppleSDGothicNeo.ttc</file>
+			<file>화문 세흑체.ttf</file>
+			<file>PingFang.ttc</file>
+			<file>STIXGeneral.otf</file>
+			<file>톤부리.ttc</file>
+		</os>
+	</font>
+	<font name="SansSerifBold" comment="Name of bold sans-serif font">
+		<file>NotoSansCJKjp-Bold.otf
+
+SecondLife Viewer와 관련된 다음 텍스트를 한국어로 번역하십시오.
+'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오.</file>
+		<file>DejaVuSans-Bold.ttf</file>
+		<os name="Windows">
+			<file load_collection="true">YuGothB.ttc</file>
+			<file>arialbd.ttf
+
+This particular text ('arialbd.ttf') pertains to a font file name and doesn't require translation. If there is any additional text or context related to the SecondLife Viewer, I can certainly help with that.</file>
+		</os>
+		<os name="Mac">
+			<file>YuGothic-Bold.otf</file>
+			<file>헬베티카.dfont</file>
+		</os>
+	</font>
+	<font name="SansSerif" comment="Name of san-serif font (Truetype file name)">
+		<file>NotoSansCJKjp-Bold.otf</file>
+		<file>DejaVuSans.ttf</file>
+		<os name="Windows">
+			<file>arial.ttf</file>
+		</os>
+		<os name="Mac">
+			<file>Helvetica.dfont
+
+(Note: The word 'Helvetica.dfont' doesn't need translation as it's the name of a font file.)</file>
+		</os>
+	</font>
+	<font name="SansSerif" comment="Name of bold sans-serif font" font_style="BOLD">
+		<file>DejaVuSans-Bold.ttf</file>
+	</font>
+	<font name="SansSerif" comment="Name of italic sans-serif font" font_style="ITALIC">
+		<file>데자뷰산스-기울임.ttf</file>
+	</font>
+	<font name="SansSerif" comment="Name of bold italic sans-serif font" font_style="BOLD|ITALIC">
+		<file>DejaVuSans-BoldOblique.ttf</file>
+	</font>
+	<font name="Monospace" comment="Name of monospace font">
+		<file>NotoSansMonoCJKjp-Regular.otf</file>
+		<file>DejaVuSansMono.ttf
+
+Note: The text provided does not contain the word 'Firestorm' ('흑우촌' in Korean), so the translation remains the same.</file>
+	</font>
+	<font name="DejaVu" comment="Name of DejaVu font">
+		<file>데자뷰산스.ttf</file>
+	</font>
+	<font name="DejaVu" comment="Name of DejaVu font (bold)" font_style="BOLD">
+		<file>DejaVuSans-Bold.ttf</file>
+	</font>
+	<font name="DejaVu" comment="Name of DejaVu font (italic)" font_style="ITALIC">
+		<file>DejaVuSans-Oblique.ttf</file>
+	</font>
+	<font name="DejaVu" comment="Name of DejaVu font (bold italic)" font_style="BOLD|ITALIC">
+		<file>DejaVuSans-BoldOblique.ttf</file>
+	</font>
+	<font name="Helvetica" comment="Name of Helvetica font">
+		<file>DejaVuSans.ttf</file>
+		<os name="Windows">
+			<file>다음 텍스트를 한국어로 번역하십시오. 이는 세컨드라이프 뷰어와 관련이 있습니다.
+'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역합니다:
+
+arial.ttf</file>
+		</os>
+		<os name="Mac">
+			<file>arial.ttf
+
+만약 'Firestorm'이라는 단어가 나오면 '흑우촌'으로 번역합니다.</file>
+		</os>
+	</font>
+	<font name="Helvetica" comment="Name of Helvetica font (bold)" font_style="BOLD">
+		<file>DejaVuSans-Bold.ttf</file>
+		<os name="Windows">
+			<file>arialbd.ttf
+
+This file name (arialbd.ttf) typically denotes a font file and does not need translation. The rest of the text was not provided. If you provide the remaining text, I would be happy to help you with the translation!</file>
+		</os>
+		<os name="Mac">
+			<file>Arialbd.ttf
+
+(Note: This specific text 'arialbd.ttf' seems to be a font file name and is typically not translated in different languages, including Korean.)</file>
+		</os>
+	</font>
+	<font name="Helvetica" comment="Name of Helvetica font (italic)" font_style="ITALIC">
+		<file>DejaVuSans-Oblique.ttf</file>
+		<os name="Windows">
+			<file>ariali.ttf
+
+만약 "Firestorm"이라는 단어가 있다면, "흑우촌"으로 번역하세요.</file>
+		</os>
+		<os name="Mac">
+			<file>ariali.ttf</file>
+		</os>
+	</font>
+	<font name="Helvetica" comment="Name of Helvetica font (bold italic)" font_style="BOLD|ITALIC">
+		<file>DejaVuSans-BoldOblique.ttf</file>
+		<os name="Windows">
+			<file>arialbi.ttf
+
+For proper translation, specific context or additional text related to 'Firestorm' would help in giving an accurate translation, but as requested, 'Firestorm' will be translated as '흑우촌'.</file>
+		</os>
+		<os name="Mac">
+			<file>arialbi.ttf
+
+(Note: The text "arialbi.ttf" does not require translation as it is a font file name. However, the instruction for translating "Firestorm" to "흑우촌" is noted.)</file>
+		</os>
+	</font>
+	<font name="OverrideTest" comment="Name of font to test overriding">
+		<file>times.ttf
+
+타임즈.ttf</file>
+		<file>DejaVuSans.ttf</file>
+	</font>
+	<font_size name="Monospace" comment="Size for monospaced font (points, or 1/72 of an inch)" size="8.0" />
+	<font_size name="Huge" comment="Size of huge font (points, or 1/72 of an inch)" size="16.0" />
+	<font_size name="Large" comment="Size of large font (points, or 1/72 of an inch)" size="10.6" />
+	<font_size name="Medium" comment="Size of medium font (points, or 1/72 of an inch)" size="8.6" />
+	<font_size name="Small" comment="Size of small font (points, or 1/72 of an inch)" size="7.6" />
+</fonts>

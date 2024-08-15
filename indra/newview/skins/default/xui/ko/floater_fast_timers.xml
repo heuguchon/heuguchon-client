@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="fast_timers">
+	<string name="pause">일시 정지</string>
+	<string name="run">달려</string>
+	<combo_box name="time_scale_combo">
+		<item label="평균의 2배" name="2x Average" />
+		<item label="최대" name="Max" />
+		<item label="최근의 최대" name="Recent Max" />
+		<item label="100㎳" name="100ms" />
+	</combo_box>
+	<combo_box name="metric_combo">
+		<item label="시간" name="Time" />
+		<item label="통화 수" name="Number of Calls" />
+		<item label="Translated to Korean, the text &quot;If the word 'Firestorm' appears, translate it to '흑우촌':&quot; considering it's related to the SecondLife Viewer is:&#10;&#10;&quot;만약 'Firestorm'이라는 단어가 나오면, '흑우촌'으로 번역하십시오:&quot;&#10;&#10;If you have a specific text that needs to be translated, please provide it, and I will be happy to assist you!" name="Hz" />
+	</combo_box>
+	<button label="일시 중지" name="pause_btn" />
+</floater>

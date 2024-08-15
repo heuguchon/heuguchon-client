@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mimetypes name="default">
+	<defaultlabel>（불명）</defaultlabel>
+	<defaultwidget>なし</defaultwidget>
+	<widgetset name="web">
+		<label name="web_label">웹 콘텐츠</label>
+		<tooltip name="web_tooltip">이 장소에는 웹 콘텐츠가 포함되어 있습니다.</tooltip>
+		<playtip name="web_playtip">웹 콘텐츠를 표시하기</playtip>
+	</widgetset>
+	<widgetset name="movie">
+		<label name="movie_label">영화</label>
+		<tooltip name="movie_tooltip">이곳에는 영화가 있습니다.</tooltip>
+		<playtip name="movie_playtip">동영상을 재생하기</playtip>
+	</widgetset>
+	<widgetset name="image">
+		<label name="image_label">이미지</label>
+		<tooltip name="image_tooltip">이 장소에는 이미지가 있습니다</tooltip>
+		<playtip name="image_playtip">이 장소의 이미지를 표시하기</playtip>
+	</widgetset>
+	<widgetset name="audio">
+		<label name="audio_label">오디오</label>
+		<tooltip name="audio_tooltip">이 장소에는 오디오가 있습니다.</tooltip>
+		<playtip name="audio_playtip">이 장소의 오디오를 재생하기</playtip>
+	</widgetset>
+	<widgetset name="none">
+		<label name="none_label">내용 없음</label>
+		<tooltip name="none_tooltip">이 장소에는 미디어가 없습니다.</tooltip>
+	</widgetset>
+	<scheme name="rtsp">
+		<label name="rtsp_label">실시간 스트리밍</label>
+	</scheme>
+	<mimetype name="blank">
+		<label name="blank_label">─なし─</label>
+	</mimetype>
+	<mimetype name="none/none">
+		<label name="none/none_label">─なし─</label>
+	</mimetype>
+	<mimetype name="audio/*">
+		<label name="audio2_label">오디오</label>
+	</mimetype>
+	<mimetype name="video/*">
+		<label name="video2_label">비디오</label>
+	</mimetype>
+	<mimetype name="image/*">
+		<label name="image2_label">이미지</label>
+	</mimetype>
+	<mimetype name="video/vnd.secondlife.qt.legacy">
+		<label name="vnd.secondlife.qt.legacy_label">무비(QuickTime)</label>
+	</mimetype>
+	<mimetype name="application/javascript">
+		<label name="application/javascript_label">자바스크립트</label>
+	</mimetype>
+	<mimetype name="application/ogg">
+		<label name="application/ogg_label">Ogg 오디오／비디오</label>
+	</mimetype>
+	<mimetype name="application/pdf">
+		<label name="application/pdf_label">PDF 문서</label>
+	</mimetype>
+	<mimetype name="application/postscript">
+		<label name="application/postscript_label">포스트스크립트 문서</label>
+	</mimetype>
+	<mimetype name="application/rtf">
+		<label name="application/rtf_label">리치 텍스트 (RTF)</label>
+	</mimetype>
+	<mimetype name="application/smil">
+		<label name="application/smil_label">동기 멀티미디어 통합 언어(SMIL)</label>
+	</mimetype>
+	<mimetype name="application/xhtml+xml">
+		<label name="application/xhtml+xml_label">웹 페이지 (XHTML)</label>
+	</mimetype>
+	<mimetype name="application/x-director">
+		<label name="application/x-director_label">Macromedia Director</label>
+	</mimetype>
+	<mimetype name="application/octet-stream">
+		<label name="application/octet-stream_label">스트리밍</label>
+	</mimetype>
+	<mimetype name="audio/mid">
+		<label name="audio/mid_label">오디오(MIDI)</label>
+	</mimetype>
+	<mimetype name="audio/mpeg">
+		<label name="audio/mpeg_label">오디오(MP3)</label>
+	</mimetype>
+	<mimetype name="audio/x-aiff">
+		<label name="audio/x-aiff_label">오디오(AIFF)</label>
+	</mimetype>
+	<mimetype name="audio/x-wav">
+		<label name="audio/x-wav_label">오디오 (WAV)</label>
+	</mimetype>
+	<mimetype name="image/bmp">
+		<label name="image/bmp_label">이미지 (BMP)</label>
+	</mimetype>
+	<mimetype name="image/gif">
+		<label name="image/gif_label">이미지(GIF)</label>
+	</mimetype>
+	<mimetype name="image/jpeg">
+		<label name="image/jpeg_label">이미지 (JPEG)</label>
+	</mimetype>
+	<mimetype name="image/png">
+		<label name="image/png_label">이미지 (PNG)</label>
+	</mimetype>
+	<mimetype name="image/svg+xml">
+		<label name="image/svg+xml_label">이미지(SVG)</label>
+	</mimetype>
+	<mimetype name="image/tiff">
+		<label name="image/tiff_label">이미지 (TIFF)</label>
+	</mimetype>
+	<mimetype name="text/html">
+		<label name="text/html_label">웹 페이지</label>
+	</mimetype>
+	<mimetype name="text/plain">
+		<label name="text/plain_label">텍스트</label>
+	</mimetype>
+	<mimetype name="text/xml">
+		<label name="text/xml_label">XML</label>
+	</mimetype>
+	<mimetype name="video/mpeg">
+		<label name="video/mpeg_label">무비 (MPEG)</label>
+	</mimetype>
+	<mimetype name="video/mp4">
+		<label name="video/mp4_label">무비 (MP4)</label>
+	</mimetype>
+	<mimetype name="video/quicktime">
+		<label name="video/quicktime_label">무비 (QuickTime)</label>
+	</mimetype>
+	<mimetype name="video/x-ms-asf">
+		<label name="video/x-ms-asf_label">무비 (Windows Media ASF)</label>
+	</mimetype>
+	<mimetype name="video/x-ms-wmv">
+		<label name="video/x-ms-wmv_label">무비 (Windows 미디어 WMV)</label>
+	</mimetype>
+	<mimetype name="video/x-msvideo">
+		<label name="video/x-msvideo_label">무비 (AVI)</label>
+	</mimetype>
+</mimetypes>

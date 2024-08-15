@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="panel_experience_list_item" label="경험">
+	<text name="experience_name">더미 이름</text>
+</panel>

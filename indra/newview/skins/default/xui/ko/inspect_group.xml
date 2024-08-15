@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="inspect_group">
+	<string name="PrivateGroup">프라이빗 그룹</string>
+	<string name="FreeToJoin">참가비 무료</string>
+	<string name="CostToJoin">참가비L$ [AMOUNT]</string>
+	<string name="YouAreMember">당신은 회원입니다.</string>
+	<text name="group_subtitle">123미터</text>
+	<text name="group_details">헤라지카가 있는 방을 만들 임무를 맡은 사람들의 그룹.
+헤라지카를 두려워하세요! 두려워하세요! 그리고 몽구스도!</text>
+	<text name="group_cost">가입하려면 L$123</text>
+	<button label="참가" name="join_btn" />
+	<button label="탈퇴" name="leave_btn" />
+	<button label="프로필 보기" name="view_profile_btn" />
+</floater>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_test_spinner">
+	<spinner label="범용 스피너" name="generic_spinner" />
+	<spinner label="콜백 스피너" name="callback_spinner" />
+	<spinner label="カラフルなスピナー - 다채로운 스피너" name="colorful_spinner" />
+	<spinner label="값 스피너" name="value_spinner" />
+	<spinner label="미니스피너1" name="mini_spinner_1" />
+	<spinner label="미니 스피너 2" name="mini_spinner_2" />
+	<spinner label="스피너 조작" name="control_spinner" />
+	<spinner label="왼쪽으로 계속" name="follows_left" />
+	<spinner label="다음으로 계속" name="follows_right" />
+</floater>

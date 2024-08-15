@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="avatar_list_item">
+	<string name="FormatSeconds">[COUNT] 초</string>
+	<string name="FormatMinutes">[COUNT] 분</string>
+	<string name="FormatHours">[COUNT] 시간</string>
+	<string name="FormatDays">[COUNT] 일</string>
+	<string name="FormatWeeks">[COUNT] 주간</string>
+	<string name="FormatMonths">[COUNT] 개월</string>
+	<string name="FormatYears">[COUNT] 년</string>
+	<text name="avatar_name" value="(로딩 중)" />
+	<text name="last_interaction" value="0 초" />
+	<icon name="permission_edit_theirs_icon" tool_tip="このフレンドのオブジェクトを編集することができます。&#10;この 문장을 한국어로 번역하면 &quot;이 친구의 객체를 수정할 수 있습니다&quot;가 됩니다." />
+	<icon name="permission_edit_mine_icon" tool_tip="이 친구는 당신의 오브젝트를 편집, 삭제 및 가져올 수 있습니다." />
+	<icon name="permission_map_icon" tool_tip="이 친구는 지도에서 당신의 위치를 표시할 수 있습니다." />
+	<icon name="permission_online_icon" tool_tip="この フレンド は あなた が オンライン に いる こと を 確認 できます" />
+	<button name="info_btn" tool_tip="상세 정보" />
+	<button name="profile_btn" tool_tip="프로필 보기" />
+</panel>

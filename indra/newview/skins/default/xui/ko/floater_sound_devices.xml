@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_sound_devices" title="사운드 장치">
+	<text name="voice_label">보이스 채팅</text>
+	<check_box label="유효" name="enable_voice" />
+</floater>

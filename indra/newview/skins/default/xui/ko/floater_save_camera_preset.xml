@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="save_camera_preset" title="카메라 사전 설정 저장">
+    <string name="btn_label_save">저장</string>
+    <string name="btn_label_replace">변경</string>
+    <radio_group name="radio_save_preset">
+        <radio_item label="새로운 사전 설정 저장" name="new_preset" />
+        <radio_item label="사전 설정을 교체" name="replace_preset" />
+    </radio_group>
+    <button label="저장" name="save" />
+    <button label="취소l" name="cancel" />
+
+</floater>

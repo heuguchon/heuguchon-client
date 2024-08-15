@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="edit_underpants_panel">
+	<panel name="avatar_underpants_color_panel">
+		<texture_picker label="텍스처" name="Fabric" tool_tip="이미지를 선택하려면 클릭하십시오." />
+		<color_swatch label="색상/명암" name="Color/Tint" tool_tip="클릭하여 색상 선택 도구를 엽니다" />
+	</panel>
+	<panel name="accordion_panel">
+		<accordion name="wearable_accordion">
+			<accordion_tab name="underpants_main_tab" title="하의 (속옷)" />
+		</accordion>
+	</panel>
+</panel>

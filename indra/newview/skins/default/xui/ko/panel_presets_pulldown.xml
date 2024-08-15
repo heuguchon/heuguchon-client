@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="presets_pulldown">
+	<text name="Graphic Presets">그래픽 프리셋</text>
+	<scroll_list name="preset_list" />
+	<view_border name="horiz_separator" />
+	<button name="open_prefs_btn" label="그래픽 초기 설정" tool_tip="그래픽 설정을 호출합니다." />
+	<button name="open_autofps_btn" label="자동 FPS 설정" tool_tip="자동 조정 설정을 호출합니다." />
+</panel>

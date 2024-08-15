@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="장소" name="panel_ls_places">
+	<panel name="panel_ls_input">
+		<text name="search_text">검색 키워드를 입력해 주세요:</text>
+		<search_combo_box name="places_edit">
+		</search_combo_box>
+		<combo_box name="places_category" />
+		<check_box label="Sure, please provide the text that you would like me to translate into Korean." name="pg_all" />
+		<icon name="rating_icon_general" />
+		<check_box label="물론입니다! 아래의 텍스트를 한글로 번역하겠습니다:&#10;&#10;Original text:&#10;Firestorm is one of the popular SecondLife viewers. It offers advanced features and customization options for a better virtual experience. Regular updates and an active community support make Firestorm a preferred choice among users.&#10;&#10;Translated text:&#10;흑우촌은 인기 있는 SecondLife 뷰어 중 하나입니다. 이는 더 나은 가상 경험을 위해 고급 기능과 맞춤 설정 옵션을 제공합니다. 정기적인 업데이트와 활발한 커뮤니티 지원으로 인해 흑우촌은 사용자들 사이에서 선호되는 선택이 되고 있습니다." name="mature_all" />
+		<icon name="rating_icon_moderate" />
+		<check_box label="Sure, please provide the text you would like to be translated." name="adult_all" />
+		<icon name="rating_icon_adult" />
+	</panel>
+	
+	
+	<panel name="panel_ls_scrolllist">
+		<scroll_list name="search_results_places">
+			<columns label="죄송합니다만, 번역할 텍스트를 제공해 주시겠어요?" name="icon" />
+			<columns label="명칭" name="place_name" />
+			<columns label="교통량" name="dwell" />
+		</scroll_list>
+		<button label="되돌아가기" name="places_back" />
+		<button label="다음" name="places_next" />
+	</panel>
+	
+</panel>

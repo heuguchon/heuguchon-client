@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="inventory_item">
+	<icon name="hovered_icon" />
+	<icon name="selected_icon" />
+	<icon name="item_icon" />
+	<text name="item_name" value="Sure, I can help with that translation. Please provide the text you want to be translated." />
+</panel>

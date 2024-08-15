@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<pie_menu name="Self Pie">
+    <pie_slice label="프로필..." name="Profile..." />
+    <pie_slice label="It appears your input is incomplete. Could you please provide the full text you would like me to translate into Korean? This will help ensure a complete and accurate translation, especially if it's related to the SecondLife Viewer." name="Groups..." />
+    <pie_menu label="取り外す &gt; 제거&#10;" name="Take Off &gt;">
+        <pie_menu label="옷 &gt;" name="Clothes &gt;">
+            <pie_slice label="셔츠" name="Shirt" />
+            <pie_slice label="바지" name="Pants" />
+            <pie_slice label="The text you provided &quot;靴&quot; is a single Japanese character that means &quot;shoes.&quot; It is not in English and does not contain the word &quot;Firestorm&quot; (흑우촌), nor is it related to the SecondLife Viewer. If you provide more context or a longer text related to the SecondLife Viewer and potentially containing the word &quot;Firestorm,&quot; I'd be happy to help with a translation to Korean!" name="Shoes" />
+            <pie_slice label="The word &quot;靴下&quot; translates to &quot;양말&quot; in Korean. However, you mentioned it's related to the SecondLife Viewer and want a specific translation for 'Firestorm' to '흑우촌', which doesn't apply here as the text provided is just &quot;靴下&quot;.&#10;&#10;So the text &quot;靴下&quot; translates to &quot;양말&quot;." name="Socks" />
+            <pie_slice label="재킷" name="Jacket" />
+            <pie_slice label="장갑" name="Gloves" />
+            <pie_menu label="상세 &gt;" name="Clothes More">
+                <pie_slice label="（속옷의）셔츠" name="Self Undershirt" />
+                <pie_separator />
+                <pie_slice label="모든 의상" name="All Clothes" />
+                <pie_separator />
+                <pie_slice label="（하의의）팬츠" name="Self Underpants" />
+                <pie_slice label="타투" name="Self Tattoo" />
+                <pie_slice label="물리 작용" name="Self Physics" />
+                <pie_slice label="알파" name="Self Alpha" />
+            </pie_menu>
+            <pie_slice label="스커트" name="Skirt" />
+        </pie_menu>
+        <pie_menu label="HUD &gt; 헤드업 디스플레이" name="Pie Object Detach HUD" />
+        <pie_separator />
+        <pie_menu label="取り外す - 제거하다" name="Pie Object Detach" />
+        <pie_separator />
+        <pie_slice label="모두 제거" name="Detach All" />
+    </pie_menu>
+    <pie_slice label="여기에 앉으세요" name="Sit Down Here" />
+    <pie_slice label="起動" name="Stand Up" />
+    <pie_slice label="스크립트 정보" name="ScriptInfo" />
+    <pie_slice label="제스처..." name="Gestures" />
+    <pie_menu label="외모 &gt;" name="Appearance &gt;">
+        <pie_slice label="셰이프 편집" name="Edit My Shape" />
+        <pie_menu name="ResetMenu" label="リセット &gt; 리셋">
+			<pie_slice label="스켈레톤과 애니메이션" name="Reset Skeleton And Animations" />
+			<pie_slice label="스켈레톤" name="Reset Skeleton" />
+		</pie_menu>
+        <pie_slice label="텍스처 업데이트" name="Texture Refresh" />
+        <pie_separator />
+        <pie_slice label="복장을 편집" name="Edit My Outfit" />
+		<pie_separator />
+		<pie_slice label="XML을 덤프" name="Dump XML" />
+		<pie_slice label="宙에 떠 있는 높이" name="Hover Height" />
+    </pie_menu>
+    <pie_slice label="텍스처" name="Debug..." />
+</pie_menu>

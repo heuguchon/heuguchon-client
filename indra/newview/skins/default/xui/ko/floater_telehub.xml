@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="telehub" title="텔레허브">
+	<text name="status_text_connected">テレハブ에 연결된 물체[OBJECT]</text>
+	<text name="status_text_not_connected">테레허브 미연결</text>
+	<text name="help_text_connected">「切断」をクリック하여 흑우촌에서 삭제합니다.</text>
+	<text name="help_text_not_connected">物체를 선택하고 '테레하브의 연결'을 클릭하십시오.</text>
+	<button label="텔레허브 연결" name="connect_btn" />
+	<button label="차단" name="disconnect_btn" />
+	<text name="spawn_points_text">출현 위치（물체가 아닌 위치）</text>
+	<button label="출현 위치 추가" name="add_spawn_point_btn" />
+	<button label="出現地点を削除 - 출현 지점을 삭제" name="remove_spawn_point_btn" />
+	<text name="spawn_point_help">오브젝트를 선택하고 '출현 지점을 추가'를 클릭하여 위치를 지정합니다. 그러면 해당 오브젝트를 이동시키거나 삭제할 수 있습니다.
+위치는 텔레허브 센터와 관련이 있습니다. 목록의 아이템을 선택하여 인월드에서 하이라이트시킵니다.</text>
+</floater>

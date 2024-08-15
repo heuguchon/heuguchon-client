@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_buy_contents" title="중身 구매">
+	<text name="contains_text">&lt;nolink&gt;[NAME]&lt;/nolink&gt;에 포함된 항목:</text>
+	<scroll_list name="item_list" />
+	<text name="buy_text">[NAME]から、L$ [AMOUNT]で購入しますか?</text>
+	<button label="취소" label_selected="취소" name="cancel_btn" />
+	<button label="구입" label_selected="구매" name="buy_btn" />
+	<check_box label="지금 입기" name="wear_check" />
+	<text name="no_copy_text">（복사 불가）</text>
+	<text name="no_modify_text">(수정 불가)</text>
+	<text name="no_transfer_text">（재판매 및 양도 불가）</text>
+</floater>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="아웃핏" name="appearance panel">
+	<string name="No Outfit" value="아웃핏 없음" />
+	<string name="Unsaved Changes" value="저장되지 않은 변경 사항" />
+	<string name="Now Wearing" value="입고 있습니다..." />
+	<string name="Changing outfits" value="아웃핏 변경" />
+	<panel name="panel_currentlook">
+		<button label="일반적으로 'Firestorm'(흑우촌) 뷰어는 SecondLife 사용자들 사이에서 인기 있는 타사 뷰어입니다. 공식 SecondLife 뷰어와는 다른 추가 기능과 사용자 인터페이스 요소를 제공하여 사용자 경험을 향상시킵니다." name="editappearance_btn" />
+		<button label="O" name="openoutfit_btn" />
+		<text name="currentlook_status">（상태）</text>
+		<text name="currentlook_name">무스 같은 정말 긴 이름을 가진 MyOutfit</text>
+		<button label="물론입니다! 번역할 텍스트를 제공해 주세요." name="edit_outfit_btn" tool_tip="이 아웃핏을 편집" />
+	</panel>
+	<filter_editor label="아웃핏을 필터링" name="Filter" />
+	<panel name="panel_outfits_inventory" />
+	<panel name="panel_outfit_edit" />
+	<panel name="panel_edit_wearable" />
+</panel>

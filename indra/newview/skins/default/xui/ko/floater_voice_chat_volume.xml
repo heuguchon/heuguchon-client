@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_voice_volume" title="보이스 채팅 볼륨">
+	<slider label="보이스 채팅" name="chat_voice_volume" />
+	<button name="mute_audio" />
+</floater>

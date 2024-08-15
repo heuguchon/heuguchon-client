@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<context_menu name="Land Pie">
+	<menu_item_call label="토지 정보…" name="Place Information..." />
+	<menu_item_call label="여기에 앉으세요&#10;&#10;" name="Sit Here" />
+	<menu_item_call label="이 토지를 구매" name="Land Buy" />
+	<menu_item_call label="입장 허가를 구매" name="Land Buy Pass" />
+	<menu_item_call label="작성" name="Create" />
+	<menu_item_call label="지형 편집" name="Edit Terrain" />
+	<menu_item_call label="파티클 소유자 차단" name="Mute Particle" />
+</context_menu>

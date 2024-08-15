@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<menu label="편집" name="Edit">
+	<menu_item_call label="되돌리기" name="Undo" />
+	<menu_item_call label="やり直し" name="Redo" />
+	<menu_item_call label="카트" name="Cut" />
+	<menu_item_call label="복사" name="Copy" />
+	<menu_item_call label="붙여넣기" name="Paste" />
+	<menu_item_call label="삭제" name="Delete" />
+	<menu_item_call label="복제" name="Duplicate" />
+	<menu_item_call label="모두 선택" name="Select All" />
+	<menu_item_call label="선택 해제" name="Deselect" />
+</menu>

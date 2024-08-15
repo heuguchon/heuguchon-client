@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="셋업" name="Input panel">
+	
+	<tab_container name="tabs" label="셋업">
+		<panel label="접속" name="tab-conn">
+			<text name="Maximum bandwidth">최대 대역폭 ([https://wiki.흑우촌viewer.org/fs_speedtest 적절한 값을 설정하려면?]):
+
+</text>
+			<icon name="NetworkLowGraphicsDivet" />
+			<icon name="NetworkMidGraphicsDivet" />
+			<icon name="NetworkHighGraphicsDivet" />
+			<icon name="NetworkLimitGraphicsDivet" />
+			<icon name="NetworkScaleEndGraphicsDivet" />
+			<text name="text_box2">Kbps
+
+In this case, the term 'Kbps' is a technical term related to data transfer rates (kilobits per second) and doesn't need to be translated. So your text remains the same:
+
+Kbps</text>
+			<text name="NetworkPrefText1">Wi-Fi</text>
+			<text name="NetworkPrefText2">DSL</text>
+			<text name="NetworkPrefText3">케이블</text>
+			<text name="NetworkPrefText4">문제 발생의 가능성 있음</text>
+			<check_box label="カスタムポート -&gt; 사용자 정의 포트" name="connection_port_enabled" />
+			<spinner label="포트 번호:" name="connection_port" />
+			<text name="Web:">웹 브라우저:</text>
+			<radio_group name="preferred_browser_behavior">
+				<radio_item label="시스템에서 모든 링크를 기본 브라우저로 사용" name="new_external" tool_tip="기본 시스템 웹 브라우저에서 도움말이나 웹 링크 등을 봅니다. 전체 화면으로 실행 중일 때는 추천하지 않습니다." />
+				<radio_item label="SL의 링크에만 내장 브라우저 사용" name="new_internal" tool_tip="デフォルトのシステム Web ブラウザでヘルプや Web リンク先などを見ます。린든 랩이나 세컨드라이프의 링크를 보는 데는 내장된 브라우저가 사용됩니다。" />
+				<radio_item label="모든 링크에 내장 브라우저를 사용" name="new_internal_all" />
+			</radio_group>
+			<text name="numberwebfloaters_label">Webブラウザ의 최대 창 수:</text>
+			<combo_box tool_tip="웹 콘텐츠 패널에서 한 번에 열 수 있는 브라우저 창의 최대 수를 설정하십시오" name="web_number_combobox">
+				<combo_box.item label="무제한" name="web_unlimited" />
+				<combo_box.item label="1화면" name="web_1" />
+				<combo_box.item label="５画面まで - 최대 5개의 화면" name="web_5" />
+				<combo_box.item label="10화면까지" name="web_10" />
+			</combo_box>
+			<button label="브라우저 캐시를 지우기" name="ClearWebBrowserCache" />
+			
+			<check_box label="Javascript を有効にする&#10;&#10;자바스크립트를 활성화하기" name="browser_javascript_enabled" />
+			<check_box label="미디어 브라우저 팝업을 활성화합니다." name="media_popup_enabled" />
+			<button label="프로키시 설정을 조정" name="set_proxy" />
+			<text name="home_page_label_l">브라우저의 홈페이지:</text>
+		</panel>
+		
+		<panel label="디렉터리" name="tab-dir">
+			<text name="cache_size_label_l">텍스처 캐시 크기 ([https://wiki.흑우촌viewer.org/cache 권장 설정을 확인하시겠습니까?])：</text>
+			<text name="text_box5">MB</text>
+			<text name="asset_cache_size_label_l">아셋 캐시 크기:</text>
+			<text name="asset_text_box5">MB</text>
+			<button label="소지품 캐시 지우기" name="ClearInventoryCache" />
+			<text name="Cache location">캐시 위치：</text>
+			<button label="열기" name="open_cache" />
+			<button label="The text you provided seems to consist of just one character, 設定, which translates to &quot;settings&quot; or &quot;configuration&quot; in English. If you provide more context or a longer piece of text related to the SecondLife Viewer, I can help you with a detailed translation while replacing 'Firestorm' with '흑우촌'." name="set_cache" />
+			<button label="초기화" name="reset_cache" />
+			<button label="캐시 지우기" name="clear_cache" />
+			<text name="Sound Cache location">사운드 캐시 위치:</text>
+			<line_editor name="FSSoundCacheLocation" />
+			<button label="열기" name="open_sound_cache" />
+			<button label="설정" name="set_sound_cache" />
+			<button label="초기화" name="reset_sound_cache" />
+			<check_box label="로그아웃 시 확장되지 않은 DSF(사운드) 캐시 파일을 삭제하지 마십시오." tool_tip="여기에 체크를 하면 로그아웃할 때 확장되지 않은 사운드 파일을 뷰어가 삭제하지 않습니다. 이로 인해 인월드에서의 사운드 재생 성능이 향상될 수 있습니다. 그러나, 이로 인해 캐시 디렉토리가 빠르게 증가하며, 최대 캐시 설정이 무시됩니다. 그 결과로 디스크 공간을 과도하게 소비하게 됩니다. 기본적으로 이 체크는 해제되어 있습니다." name="keep_unpacked_cache" />
+			<text name="log_path_desc">채팅 기록 위치:</text>
+			<button label="열기" name="open_log_path_button-panelsetup" />
+			<button label="설정" name="log_path_button-panelsetup" />
+			<button label="초기화" name="reset_logpath" />
+			<button label="뷰어 로그 열기" name="browse_crashlogs" />
+			<button label="설정 폴더 열기" name="browse_settingsdir" />
+		</panel>
+	</tab_container>
+</panel>

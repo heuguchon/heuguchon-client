@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_search" title="Sure, please provide the text you would like translated to Korean.">
+	<floater.string name="loading_text">읽는 중입니다...</floater.string>
+	<floater.string name="done_text">완료</floater.string>
+	<layout_stack name="stack1">
+		<layout_panel name="browser_layout">
+			<text name="refresh_search">현재의 고드레벨에 반영시키기 위해, 검색을 다시 시도해 주십시오.</text>
+		</layout_panel>
+	</layout_stack>
+</floater>

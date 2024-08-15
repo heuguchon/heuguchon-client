@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="백업" name="backup">
+
+    <text name="backup_path_label">백업 경로:</text>
+    <button label="설정" name="set_backup_settings_path" />
+
+    <layout_stack name="ls_account_specific_label">
+
+		<layout_panel name="lp_account_specific_label">
+
+			<text name="account_specific_label">현재 로그인 상태가 아닙니다. 귀하의 계정에 특화된 설정은 로그인 상태에서만 백업 또는 복원될 수 있다는 점에 유의해 주십시오. 단, 모든 사용자 계정에 적용되는 설정은 로그인하지 않아도 백업이 가능합니다.</text>
+
+		</layout_panel>
+
+		<layout_panel name="lp_buttons">
+
+			<text name="settings_restored_label">백업 설정을 복원합니다 (백업 시 모든 것이 저장됩니다):</text>
+
+			<layout_stack name="ls_list_view_stack">
+
+				<layout_panel name="lp_restore_global_files">
+
+					<scroll_list name="restore_global_files_list">
+						<column label="&quot;SecondLife 뷰어와 관련된 다음 텍스트를 한국어로 번역하십시오.&#10;'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:&#10; &#10;Original text:&#10;The Firestorm Viewer is a popular third-party viewer for SecondLife, known for its extensive features and customization options. Many users prefer Firestorm over the official viewer for its robust performance and user-friendly interface. It also has unique tools that enhance the virtual world experience.&#10;&#10;Translated text:&#10;흑우촌 뷰어는 SecondLife를 위한 인기 있는 서드파티 뷰어로, 풍부한 기능과 커스터마이징 옵션으로 잘 알려져 있습니다. 많은 사용자들이 공식 뷰어보다 흑우촌을 선호하는 이유는 그 강력한 성능과 사용하기 쉬운 인터페이스 때문입니다. 또한 가상 세계 경험을 향상시키는 독특한 도구들도 갖추고 있습니다.&quot;" name="restore_global_files_check" width="16" />
+						<column label="グローバルファイル: 글로벌 파일" name="restore_global_files_label" />
+						<column label="값" name="value" width="-1" />
+						<row name="restore_global_row_login">
+							<column name="restore_global_files_label">로그인 정보</column>
+						</row>
+						<row name="restore_global_row_colors">
+							<column name="restore_global_files_label">색</column>
+						</row>
+						<row name="restore_global_row_dialogs">
+							<column name="restore_global_files_label">무시할 대화 상자</column>
+						</row>
+						<row name="restore_global_row_grids">
+							<column name="restore_global_files_label">사용자 지정 그리드</column>
+						</row>
+						<row name="restore_global_row_autoreplace">
+							<column name="restore_global_files_label">자동 대체</column>
+						</row>
+						<row name="restore_global_row_quickprefs">
+							<column name="restore_global_files_label">퀵 설정</column>
+						</row>
+					</scroll_list>
+
+				</layout_panel>
+
+				<layout_panel name="lp_restore_per_account_files">
+
+					<scroll_list name="restore_per_account_files_list">
+						<column label="Sure, please provide the text you would like to be translated." name="restore_per_account_files_check" width="16" />
+						<column label="アカウント固有ファイル: 계정 고유 파일" name="restore_per_account_files_label" />
+						<column label="값" name="value" width="-1" />
+						<row name="restore_per_account_row_blacklist">
+							<column name="restore_per_account_files_label">차단 목록</column>
+						</row>
+						<row name="restore_per_account_row_contactsets">
+							<column name="restore_per_account_files_label">연락처 설정</column>
+						</row>
+						<row name="restore_per_account_row_invfilters">
+							<column name="restore_per_account_files_label">인벤토리 필터</column>
+						</row>
+						<row name="restore_per_account_row_favsort">
+							<column name="restore_per_account_files_label">お気に入りの並び順 -&gt; 즐겨찾기 정렬 순서</column>
+						</row>
+						<row name="restore_per_account_row_medialists">
+							<column name="restore_per_account_files_label">매체의 블랙/화이트 리스트</column>
+						</row>
+						<row name="restore_per_account_row_toolbars">
+							<column name="restore_per_account_files_label">툴바</column>
+						</row>
+						<row name="restore_per_account_row_volumes">
+							<column name="restore_per_account_files_label">보이스 채팅의 음량</column>
+						</row>
+						<row name="restore_per_account_row_tphistory">
+							<column name="restore_per_account_files_label">텔레포트 기록</column>
+						</row>
+						<row name="restore_per_account_row_regiontracker">
+							<column name="restore_per_account_files_label">지역별 아바타 수</column>
+						</row>
+						<row name="restore_per_account_row_groupmutes">
+							<column name="restore_per_account_files_label">억제된 그룹 채팅</column>
+						</row>
+						<row name="restore_per_account_row_avatar_render_settings">
+							<column name="restore_per_account_files_label">아바타 표시 설정</column>
+						</row>
+					</scroll_list>
+				</layout_panel>
+
+				<layout_panel name="lp_restore_folders">
+
+					<scroll_list name="restore_global_folders_list">
+						<column label="Sure, please provide the text you would like to translate." name="restore_global_folders_check" width="16" />
+						<column label="폴더:" name="restore_global_folders_label" />
+						<column label="값" name="value" width="-1" />
+						<row name="restore_folders_row_beams">
+							<column name="restore_global_folders_label">선택빔</column>
+						</row>
+						<row name="restore_folders_row_beamcolors">
+							<column name="restore_global_folders_label">선택 빔의 색상</column>
+						</row>
+						<row name="restore_folders_row_spellcheck">
+							<column name="restore_global_folders_label">스펠 체크</column>
+						</row>
+
+						<row name="restore_folders_row_windlight">
+							<column name="restore_global_folders_label">WindLight (필수)</column>
+						</row>
+						<row name="restore_folders_row_daycycles">
+							<column name="restore_global_folders_label">WindLight의 데이 사이클</column>
+						</row>
+						<row name="restore_folders_row_skies">
+							<column name="restore_global_folders_label">WindLight의 하늘</column>
+						</row>
+						<row name="restore_folders_row_waters">
+							<column name="restore_global_folders_label">WindLight의 물</column>
+						</row>
+						<row name="restore_folders_row_presets">
+							<column name="restore_global_folders_label">사전 설정</column>
+						</row>
+					</scroll_list>
+
+				</layout_panel>
+			</layout_stack>
+
+			<button label="모두 선택" name="select_all_button" />
+			<button label="전체 선택 해제" name="deselect_all_button" />
+
+			<check_box label="글로벌 설정 복원을 리스토어" name="restore_global_settings_checkbox" />
+			<check_box label="アカウント固有設定をリストア -&gt; 계정 고유 설정을 복원" name="restore_per_account_settings_checkbox" />
+			<button label="백업 설정" name="backup_settings" />
+			<button label="설정 복원" name="restore_settings" />
+		</layout_panel>
+    </layout_stack>
+
+</panel>

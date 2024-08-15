@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="avatarinfo" title="프로필">
+	<panel name="panel_profile_view">
+		<tab_container name="panel_profile_tabs">
+			<panel label="세컨드 라이프" name="panel_profile_secondlife" />
+			<panel label="웹" name="panel_profile_web" />
+			<panel label="관심" name="panel_profile_interests" />
+			<panel label="The word 'ピック' (Pick) may not need a direct translation or can be rendered in a context-appropriate term in Korean.&#10;&#10;For the text related to the SecondLife Viewer:&#10;&#10;- If the word 'Firestorm' appears, translate it to '흑우촌':&#10;&#10;Here is the translation based on the context:&#10;&#10;1. SecondLife Viewer 관련 텍스트를 한국어로 번역합니다.&#10;2. 'Firestorm'라는 단어가 나타나면 '흑우촌'으로 번역합니다.&#10;&#10;Considering your instruction:&#10;&#10;ピック (Pick) would generally be used based on context, like &quot;추천&quot; (recommended) or &quot;선택&quot; (selection).&#10;&#10;Thus, if you provided a specific sentence or document, I could provide a more precise translation. If you have any more details or specific parts of the text you need to be translated, feel free to share them!" name="panel_profile_picks" />
+			<panel label="광고" name="panel_profile_classifieds" />
+			<panel label="리얼라이프" name="panel_profile_firstlife" />
+			<panel label="메모" name="panel_profile_notes" />
+		</tab_container>
+		<button label="알겠습니다" name="ok_btn" tool_tip="프로필 변경 사항을 저장하고 닫기" />
+		<button label="취소" label_selected="취소" name="cancel_btn" />
+	</panel>
+</floater>

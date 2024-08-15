@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toggleable_menu name="save_settings_menu">
+	<menu_item_check label="저장" name="save_settings" />
+	<menu_item_check label="별명으로 저장" name="save_as_new_settings" />
+	<menu_item_check label="커밋" name="commit_changes" />
+	<menu_item_check label="자신에게만 적용" name="apply_local" />
+	<menu_item_check label="구획에 적용" name="apply_parcel" />
+	<menu_item_check label="지역에 적용" name="apply_region" />
+</toggleable_menu>

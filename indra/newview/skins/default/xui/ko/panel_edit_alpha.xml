@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="edit_alpha_panel">
+	<scroll_container name="avatar_alpha_color_panel_scroll">
+		<panel name="avatar_alpha_color_panel">
+			<check_box name="lower alpha texture invisible" />
+			<texture_picker label="알파(하반신)" name="Lower Alpha" tool_tip="클릭으로 이미지를 선택할 수 있습니다." />
+			<check_box name="upper alpha texture invisible" />
+			<texture_picker label="알파(상반신)" name="Upper Alpha" tool_tip="클릭으로 이미지를 선택할 수 있습니다." />
+			<check_box name="head alpha texture invisible" />
+			<texture_picker label="アルファ" name="Head Alpha" tool_tip="클릭으로 이미지를 선택할 수 있습니다." />
+			<check_box name="eye alpha texture invisible" />
+			<texture_picker label="눈의 알파" name="Eye Alpha" tool_tip="클릭으로 이미지를 선택할 수 있습니다." />
+			<check_box name="hair alpha texture invisible" />
+			<texture_picker label="머리카락의 알파" name="Hair Alpha" tool_tip="클릭하여 이미지를 선택할 수 있습니다." />
+		</panel>
+	</scroll_container>
+</panel>

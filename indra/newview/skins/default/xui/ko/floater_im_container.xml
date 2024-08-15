@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<multi_floater name="floater_im_box" title="대화">
+    <layout_stack name="conversations_stack">
+        <layout_panel name="conversations_layout_panel">
+            <layout_stack name="conversations_pane_buttons_stack">
+                <layout_panel name="conversations_pane_buttons_expanded">
+                    <menu_button name="sort_btn" tool_tip="옵션을 표시/정렬합니다." />
+					<button name="add_btn" tool_tip="새로운 대화를 시작합니다." />
+					<button name="speak_btn" tool_tip="마이크를 사용하여 사람들과 대화합니다." />	
+                </layout_panel>
+                <layout_panel name="conversations_pane_buttons_collapsed">
+                    <button name="expand_collapse_btn" tool_tip="이 목록을 접거나 열 수 있습니다." />
+                </layout_panel>
+            </layout_stack>
+            <panel name="conversations_list_panel" />
+        </layout_panel>
+        <layout_panel name="messages_layout_panel">
+            <panel_container name="im_box_tab_container">
+				<panel name="stub_panel">
+					<button name="stub_collapse_btn" tool_tip="이 열을 접습니다." />
+					<text name="stub_textbox">이 대화는 별도의 창에서 열려 있습니다。[secondlife:/// 다시 가져오세요.]</text>
+				</panel>
+            </panel_container>
+        </layout_panel>
+    </layout_stack>
+</multi_floater>

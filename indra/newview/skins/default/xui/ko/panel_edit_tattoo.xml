@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="edit_tattoo_panel">
+	<scroll_container name="avatar_tattoo_scroll">
+		<panel name="avatar_tattoo_color_panel">
+			<texture_picker label="頭部のタトゥー is translated to 머리의 문신 in Korean." name="Head Tattoo" tool_tip="사진을 선택하려면 클릭하십시오." />
+			<texture_picker label="상부의 문신" name="Upper Tattoo" tool_tip="사진을 선택하려면 클릭하세요" />
+			<texture_picker label="하부의 타투" name="Lower Tattoo" tool_tip="사진을 선택하려면 클릭하십시오" />
+			<color_swatch label="색・색채 조합" name="Color/Tint" tool_tip="클릭하여 컬러 선택기를 엽니다" />
+		</panel>
+	</scroll_container>
+</panel>

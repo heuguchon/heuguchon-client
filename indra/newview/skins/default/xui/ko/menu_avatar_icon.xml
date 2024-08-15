@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toggleable_menu name="Avatar Icon Menu">
+	<menu_item_call label="프로필 보기" name="Show Profile" />
+	<menu_item_call label="IM을 보내는 중..." name="Send IM" />
+	<menu_item_call label="텔레포트하기" name="Teleport to" />
+	<menu_item_call label="텔레포트를 보내기" name="Offer Teleport" />
+	<menu_item_call label="텔레포트를 요청" name="Request Teleport" />
+	<menu_item_call label="보이스콜" name="Voice Call" />
+	<menu_item_call label="대화 기록..." name="Chat History" />   
+	<menu_item_call label="친구 추가..." name="Add Friend" />
+	<menu_item_call label="프렌드 삭제..." name="Remove Friend" />
+	<menu_item_call label="연락처 세트에 추가" name="Add Contact Set" />
+	<menu_item_call label="그룹에 초대..." name="Invite Group" />
+	<menu_item_call label="확대" name="Zoom In" />
+	<menu_item_call label="세계 지도" name="Map" />
+	<menu_item_call label="추적하기" name="track" />
+	<menu_item_call label="공유하기" name="Share" />
+	<menu_item_call label="포리시오: 이름을 클립보드에 복사" name="copy name" />
+	<menu_item_call label="URL をクリップボード에 복사" name="copy url" />
+	<menu_item_check label="ボイスをブロック -&gt; 보이스 차단" name="Block Unblock" />
+	<menu_item_check label="文字チャットをブロック -&gt; 텍스트 채팅 차단" name="Mute Text" />   
+	<context_menu label="모더레이터 옵션" name="Moderator Options">
+		<menu_item_check label="문자 채팅을 허용" name="AllowTextChat" />
+		<menu_item_call label="텍스트 채팅 금지" name="ForbidTextChat" />
+		<menu_item_call label="이 참가자를 음소거하기" name="ModerateVoiceMuteSelected" />
+		<menu_item_call label="이 참가자의 음소거를 해제하기" name="ModerateVoiceUnMuteSelected" />
+	</context_menu>
+	<menu_item_call label="メンバーを立入禁止: 멤버 출입 금지" name="BanMember" />
+</toggleable_menu>

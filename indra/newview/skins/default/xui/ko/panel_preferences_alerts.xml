@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="팝업" name="popups" title="팝업">
+<tab_container name="tabs">
+ 
+	
+
+	<panel label="세계" name="tab-world">
+	
+		<check_box label="린덴달러를 사용・받을 때" name="notify_money_change_checkbox" />
+		<check_box label="린데ンド달 거래 알림을 창이 아닌 채팅으로 알리기" name="FSPaymentInfoInChat" />
+		<check_box label="지역 간을 이동할 때, 시뮬레이터의 버전이 다른 경우에 알림" name="FSShowServerVersionChangeNotice" tool_tip="텔레포트를 하거나 SIM을 지역 간 이동할 때, 시뮬레이터의 버전이 다를 경우 그에 대한 알림을 표시합니다." />
+		<check_box label="로그인 시 status.secondlifegrid.net 의 최신 정보를 가져오기" name="AutoQueryGridStatus" />
+		<check_box label="Growl에서 알림" name="notify_growl_checkbox" />
+		<check_box name="notify_growl_always_checkbox" label="Firestorm가 전면에 있어도 Growl로 통지" />
+		<check_box name="FSFilterGrowlKeywordDuplicateIMs" label="키워드 알림의 일부로 이미 한 번 표시된 경우, 중복된 IM은 표시하지 않습니다." />
+	</panel>
+
+	
+
+	<panel label="사람" name="tab-people">
+		<check_box label="메시지를 수신했을 때 [APP_NAME]가 전면에 있지 않으면, 앱 아이콘을 깜빡이게 합니다." name="FSFlashOnMessage" />
+		<check_box label="오브젝트에서 보낸 IM인 경우에도 수신 시 애플리케이션 아이콘을 깜빡이게 하다." name="FSFlashOnObjectIM" />
+		<check_box label="누군가가 표시명을 변경하면 알림" name="FSShowDisplayNameUpdateNotification" />
+		<check_box label="누군가를 차단 또는 차단 해제했을 때 알림" name="FSReportBlockToNearbyChat" />
+		<text name="friends_logon_label">프렌드가 로그인/로그아웃했을 때</text>
+		<check_box label="토스트로 알림" name="friends_online_notify_checkbox" />
+		<check_box name="OnlineOfflinetoNearbyChat" label="채팅 기록 및 콘솔에서 통지" />
+		<check_box label="채팅 기록만" name="OnlineOfflinetoNearbyChatHistory" />
+
+	</panel>
+	
+	
+	
+	<panel label="오브젝트/스크립트" name="tab-objects">
+		<check_box label="스크립트 대화 상자를 수신했을 때 [APP_NAME]이(가) 전면에 있지 않으면, 앱 아이콘을 깜빡이게 한다" name="FSFlashOnScriptDialog" />
+		<check_box label="충돌 알림을 주변 채팅에 표시합니다" name="FSCollisionMessagesInChat" />
+		<check_box label="스크립트 오류가 발생했을 때" name="show_script_errors" />
+		<radio_group name="show_script_errors_location">
+			<radio_item label="채팅에 표시" name="script_0" />
+			<radio_item label="別のウィンドウに表示&#10;&#10;다른 창에 표시" name="script_1" />
+		</radio_group>
+		<check_box label="전체 지역의 스크립트 수에 변화가 있을 때:" name="FSReportTotalScriptCountChanges" />
+		<spinner name="FSReportTotalScriptCountChangesThreshold" tool_tip="スクリプト数の閾値を 설정합니다.（기본값은 100）" />
+		<check_box label="지정된 스크립트 채널에 충돌 알림을 표시합니다." name="FSReportCollisionMessages" />
+		<spinner name="FSReportCollisionMessagesChannel" tool_tip="충돌의 알림에 사용할 스크립트 채널을 지정합니다. (기본값은 -25000)" />
+	</panel>
+	
+	
+	
+	<panel label="인벤토리" name="tab-inventory">
+		<check_box name="FSShowUploadPaymentToast" label="업로드 요금을 지불했을 때" />
+		<check_box label="랜드마크를 작성했을 때" name="landmark_created_checkbox" />
+		<check_box label="'オブジェクトがインベントリに返却されましたという通知をしないようにする'를 한국어로 번역하면 다음과 같습니다.&#10;&#10;&quot;객체가 인벤토리에 반환되었다는 알림을 표시하지 않도록 설정하십시오.&quot;&#10;&#10;또한, 주어진 조건에 따라 &quot;Firestorm&quot;을 &quot;흑우촌&quot;으로 번역하는 예시는 텍스트에 포함되어 있지 않지만, 이런 상황에 대비하여:&#10;&#10;만약 텍스트에 'Firestorm'이 포함되어 있다면, '흑우촌'으로 번역하면 됩니다." name="FSDisableReturnObjectNotification" />
+		<check_box label="저장한 스냅샷의 파일명을 대화 기록에 기록하기" name="FSLogSnapshotsToLocal" />
+		<check_box label="오브젝트로부터 아이템이 한꺼번에 많이 전송된 경우에 알림" name="FSNotifyIncomingObjectSpam" />
+		<check_box label="다른 거주자로부터 아이템이 한 번에 많이 보내졌을 때 알림" name="FSNotifyIncomingObjectSpamFrom" />
+		<slider name="FSOfferThrottleMaxCount" label="オブジェクト受け取り量の閾値：オブジェクト 수신량의 임계값" tool_tip="10초 이내에 보내질 객체 수의 임계값을 설정합니다. 기본값은 5개입니다." />
+	</panel>
+	
+	
+	
+	<panel label="알림" name="tab-alerts">
+		<text name="show_label" tool_tip="뷰어에 표시된 알림 목록입니다. 알림을 표시하려면 왼쪽의 마크를 체크하세요. 체크를 해제하면 알림이 표시되지 않습니다." width="300">ビューワの通知を表示または非表示にする：</text>
+		<filter_editor label="알림을 필터링" name="popup_filter" tool_tip="관심 있는 키워드를 여기에 입력하세요. 부분 일치하는 검색 결과가 표시됩니다." />
+		
+		<scroll_list name="all_popups">
+		
+			<column label="표시" name="alert_enabled_check" />
+			<column label="알림" name="alert_label" />
+		</scroll_list>
+	</panel>
+</tab_container>
+</panel>

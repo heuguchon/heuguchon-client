@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="money_tracker" title="입금 기록">
+	<name_list name="payment_list">
+		<name_list.columns name="time" label="시간" />
+		<name_list.columns name="name" label="이름" />
+		<name_list.columns name="amount" label="금액" />
+	</name_list>
+	<text name="summary">지불 L$ [PAID] - 수령 L$ [RECEIVED]</text>
+	<check_box label="닫혀 있을 때도 기록" name="FSAlwaysTrackPayments" tool_tip="입금 기록 창이 닫혀 있는 경우에도 항상 입금을 기록하도록 합니다." />
+    <button name="Clear" label="텍스트를 번역하려면 관련된 문맥을 고려하여 진행하겠습니다:&#10;&#10;クリア --&gt; 클리어" />
+</floater>

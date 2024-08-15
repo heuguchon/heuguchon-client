@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="modal container">
+	<button label="계속" label_selected="계속" name="Continue" />
+	<button label="취소" label_selected="취소" name="Cancel" />
+	<text name="tos_title">중요한 메시지</text>
+	<text name="tos_heading">다음 메시지를 주의 깊게 읽어주세요.</text>
+	<text_editor name="tos_text">이용 약관 텍스트</text_editor>
+</floater>

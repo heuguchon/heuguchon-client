@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<menu name="Popup">
+	<menu_item_call label="ＵＲＬについて" name="about_url" />
+	<menu_item_call label="ＵＲＬ에 텔레포트하기" name="teleport_to_url" />
+	<menu_item_call label="지도" name="show_on_map" />
+</menu>

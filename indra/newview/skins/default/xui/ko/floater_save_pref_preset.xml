@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="save_pref_preset" title="우선 프리셋 저장">
+	<text name="Preset">프리셋 이름을 입력하거나 기존 프리셋을 선택하십시오.</text>
+	<button label="저장" name="save" />
+	<button label="취소" name="cancel" />
+</floater>

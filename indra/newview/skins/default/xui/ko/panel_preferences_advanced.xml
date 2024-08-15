@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="전문의" name="advanced">
+	<panel.string name="aspect_ratio_text">[분자]:[분모]</panel.string>
+	<text name="Cache:">캐시:</text>
+	<spinner label="캐시 크기 (256 - 9984MB)" name="cachesizespinner" />
+	<text name="text_box5">MB</text>
+	<button label="&quot;キャッシュをクリア&quot; can be translated to Korean as:&#10;&#10;&quot;캐시를 지우기&quot;" label_selected="캐시를 삭제" name="clear_webcache" />
+	<text name="Cache location">캐시 저장 위치:</text>
+	<button label="참조" label_selected="참조" name="set_cache" />
+	<button label="기본 위치" label_selected="기본 위치" name="default_cache_location" />
+	<text name="UI Size:">UI 크기:</text>
+	<check_box label="スクリプトのエラーを表示： 스크립트 오류 표시:" name="show_script_errors" />
+	<radio_group name="show_location">
+		<radio_item label="가까운 채팅" name="0" />
+		<radio_item label="별도의 창" name="1" />
+	</radio_group>
+	<check_box label="複数のビューワを許可 - 여러 뷰어를 허용" name="allow_multiple_viewer_check" />
+	<check_box label="로그인 시 그리드 선택을 표시" name="show_grid_selection_check" />
+	<check_box label="아드밴스 메뉴를 표시" name="show_advanced_menu_check" />
+	<check_box label="デベロッパーメニューを表示 = 개발자 메뉴 표시" name="show_develop_menu_check" />
+	<check_box label="Windows 시스템에서 WMI 프로브 경유로 VRAM 감지를 비활성화하기" name="FSDisableWMIProbing" />
+	<check_box tool_tip="이 설정은 멀리 있는 아바타의 렌더링 부하를 줄여줄 수 있지만, 동시에 애니메이션 재생 속도가 정확하지 않을 가능성이 있습니다." label="애니메이션 타임스텝 사용하기 (실험적인 기능)" name="UseAnimationTimeSteps" />
+	<text name="BackgroundYieldTimeText">[APP_NAME] が前面に出ていない時に他のアプリケーションに渡すミリ秒単位のフレーム時間（デフォルトは40、1 秒 = 1000 ミリ秒):</text>
+	<button label="작성 권한 설정" name="default_creation_permissions" />
+	<button label="모든 설정을 재설정" name="clear_settings" />
+</panel>

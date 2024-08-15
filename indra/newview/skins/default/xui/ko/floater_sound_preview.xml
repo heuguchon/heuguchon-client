@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="Sound Preview" title="SOUND.WAV">
+	<text name="name_label">이름:</text>
+	<text name="description_label">설명:</text>
+	<button label="취소" label_selected="취소" name="cancel_btn" />
+	<button label="업로드 (L$[AMOUNT])" label_selected="업로드 (L$ [AMOUNT])" name="ok_btn" />
+	<text name="text">비트레이트 (kbps):</text>
+	<radio_group name="bitrate">
+		<radio_item label="32" name="32" />
+		<radio_item label="64" name="64" />
+		<radio_item label="96" name="96" />
+		<radio_item label="128" name="128" />
+	</radio_group>
+</floater>

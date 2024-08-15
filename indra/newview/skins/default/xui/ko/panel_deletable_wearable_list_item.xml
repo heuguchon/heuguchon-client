@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="deletable_wearable_item">
+	<icon name="hovered_icon" />
+	<icon name="selected_icon" />
+	<button name="btn_delete" tool_tip="아웃핏에서 삭제" />
+	<icon name="item_icon" />
+	<text name="item_name" value="I'm sorry, you didn't provide the full text you want translated. Could you please provide the complete text related to the SecondLife Viewer that you want translated into Korean?" />
+	<icon name="wearable_type_separator_icon" />
+</panel>

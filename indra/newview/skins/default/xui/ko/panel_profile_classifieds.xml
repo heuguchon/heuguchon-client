@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="분류 광고" name="panel_profile_classifieds">
+	<string name="no_classifieds" value="분류 광고 없음" />
+	<button label="新規… (New...)" name="new_btn" />
+	<button label="삭제..." name="delete_btn" />
+	<text name="classifieds_panel_text">읽고 있습니다…</text>
+</panel>

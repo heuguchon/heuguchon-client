@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="script ed float" title="ＬＳＬ 참조">
+	<check_box label="카서를 따라가기" name="lock_check" />
+	<combo_box label="로크" name="history_combo" />
+	<button label="돌아가기" name="back_btn" />
+	<button label="진행" name="fwd_btn" />
+</floater>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="Outfits">
+	<accordion name="outfits_accordion">
+		<no_matched_tabs_text name="no_matched_outfits_msg" value="원하시는 것을 찾으셨나요? [secondlife:///app/search/all/[SEARCH_TERM] 검색]을 시도해보세요." />
+		<no_visible_tabs_text name="no_outfits_msg" value="아웃핏이 아직 없습니다. [secondlife:///app/search/all 검색]을 시도해 보세요." />
+	</accordion>
+	<panel name="bottom_panel">
+		<menu_button tool_tip="추가 옵션을 표시" name="options_gear_btn" />
+		<icon name="dummy_icon" />
+		<button name="trash_btn" tool_tip="선택된 아웃핏을 삭제합니다." />
+	</panel>
+</panel>

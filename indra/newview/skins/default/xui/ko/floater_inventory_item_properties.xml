@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="item properties" title="인벤토리 아이템의 속성">
+	<floater.string name="loading_experience">(로드 중)</floater.string>
+	<floater.string name="unknown">(불명)</floater.string>
+	<floater.string name="public">(공공)</floater.string>
+	<floater.string name="you_can">할 수 있는 일:</floater.string>
+	<floater.string name="owner_can">オーナーは次のことができます：
+소유자는 다음을 할 수 있습니다:</floater.string>
+	<floater.string name="acquiredDate">[년,날짜,로컬] [월,날짜,로컬] [일,날짜,로컬] [요일,날짜,로컬] [시,날짜,로컬]:[분,날짜,로컬]:[초,날짜,로컬]</floater.string>
+	<text name="LabelItemNameTitle">이름:</text>
+	<text name="LabelItemDescTitle">설명:</text>
+	<text name="LabelCreatorTitle">창작자</text>
+	<button label="프로필..." label_selected="Sure, I'd be happy to help with that. Please provide the text you would like translated." name="BtnCreator" />
+	<text name="LabelOwnerTitle">소유자:</text>
+	<button label="프로필..." label_selected="물론입니다! 번역할 텍스트를 제공해 주세요." name="BtnOwner" />
+	<text name="LabelAcquiredTitle">입수 일시:</text>
+	<text name="LabelAcquiredDate">2006년 5월 24일 수요일 12:50:46</text>
+	<text name="LabelItemExperienceTitle">체험:</text>
+	<text name="LabelItemExperience" />
+	<text name="OwnerLabel">당신:</text>
+	<check_box label="편집" name="CheckOwnerModify" />
+	<check_box label="반복" name="CheckOwnerCopy" />
+	<check_box label="재판매 및 선물" name="CheckOwnerTransfer" />
+	<text name="AnyoneLabel">모두：</text>
+	<check_box label="복사" name="CheckEveryoneCopy" />
+	<text name="GroupLabel">그룹:</text>
+	<check_box label="共有" name="CheckShareWithGroup" />
+	<text name="NextOwnerLabel" width="158">다음 소유자:</text>
+	<check_box label="편집" name="CheckNextOwnerModify" />
+	<check_box label="복사" name="CheckNextOwnerCopy" />
+	<check_box label="재판매・선물" name="CheckNextOwnerTransfer" />
+	<check_box label="판매 중" name="CheckPurchase" />
+	<combo_box name="ComboBoxSaleType">
+		<combo_box.item label="복사" name="Copy" />
+		<combo_box.item label="컨텍스트와 관련된 텍스트, 특히 'Firestorm'이라는 단어가 포함된 경우 '흑우촌'으로 번역하면 됩니다:&#10;&#10;중身" name="Contents" />
+		<combo_box.item label="오리지널" name="Original" />
+	</combo_box>
+	<spinner label="가격:" name="Edit Cost" />
+	<text name="CurrencySymbol">L$</text>
+</floater>

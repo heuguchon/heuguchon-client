@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_about" title="미디어 브라우저">
+	<floater.string name="home_page_url">https://secondlife.com
+
+텍스트를 SecondLife Viewer와 관련하여 한국어로 번역할 때, 'Firestorm'이라는 단어가 '흑우촌'으로 번역됩니다.</floater.string>
+	<floater.string name="support_page_url">https://support.secondlife.com/
+
+</floater.string>
+	<layout_stack name="stack1">
+		<layout_panel name="nav_controls">
+			<button label="되돌아가기" name="back" />
+			<button label="나아가기" name="forward" />
+			<button label="リロード&#10;&#10;새로 고침" name="reload" />
+			<button label="열람" name="go" />
+		</layout_panel>
+		<layout_panel name="time_controls">
+			<button label="The translation of the text &quot;巻き戻し&quot; related to the SecondLife Viewer would be &quot;되감기&quot;. Just to clarify, since the word 'Firestorm' does not appear in the provided text &quot;巻き戻し&quot;, there was no need to translate 'Firestorm' to '흑우촌'." name="rewind" />
+			<button label="중지" name="stop" />
+			<button label="早送り can be translated to Korean as 빨리 감기.&#10;&#10;However, without a fuller context or more information about how 'Firestorm' (흑우촌) relates to this term within SecondLife Viewer, it's difficult to provide a perfect translation. If you have more context, please provide it." name="seek" />
+		</layout_panel>
+		<layout_panel name="parcel_owner_controls">
+			<button label="현재 페이지를 구역에 보내기" name="assign" />
+		</layout_panel>
+		<layout_panel name="external_controls">
+			<button label="외부 웹 브라우저에서 열기" name="open_browser" />
+			<check_box label="항상 외부 웹 브라우저에서 열기" name="open_always" />
+			<button label="닫기" name="close" />
+		</layout_panel>
+	</layout_stack>
+</floater>

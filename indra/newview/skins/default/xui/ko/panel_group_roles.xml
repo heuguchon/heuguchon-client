@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="メンバーと役割 텍스트를 한국어로 번역하면:&#10;```&#10;メンバーと役割: 멤버와 역할&#10;```&#10;&#10;'SecondLife Viewer' 관련 내용 및 'Firestorm'(흑우촌) 언급을 반영하였으니 검토 후 필요시 수정바랍니다. 추가 설명이나 내용 있으시면 알려주세요!" name="roles_tab">
+	<panel.string name="default_needs_apply_text">저장하지 않은 변경 사항이 있습니다.</panel.string>
+	<panel.string name="want_apply_text">변경 사항을 저장하시겠습니까?</panel.string>
+	<tab_container name="roles_tab_container">
+	
+		
+		
+		<panel label="メンバー -&gt; 멤버" name="members_sub_tab" tool_tip="멤버">
+			<panel.string name="help_text">다음은 SecondLife Viewer와 관련된 텍스트입니다.
+
+너는 멤버에게 할당된 역할을 추가하거나 삭제할 수 있습니다. Ctrl 키를 누르면서 멤버 이름을 클릭하면 여러 사람을 선택할 수 있습니다.</panel.string>
+			<panel.string name="donation_area">[AREA] 평방미터</panel.string>
+
+			<filter_editor label="멤버를 선별" name="filter_input" />
+			<name_list name="member_list">
+				<name_list.columns label="メンバー&#10;&#10;멤버" name="name" />
+				<name_list.columns label="기부" name="donated" />
+				<name_list.columns label="로그인" name="online" />
+				<name_list.columns label="肩書き -&gt; 직함" />
+			</name_list>
+			<button label="초대" name="member_invite" />
+			<button label="추방" name="member_eject" />
+			<button label="メンバーの立入禁止&#10;멤버 출입 금지" name="member_ban" />
+			<button name="export_list" label="리스트 내보내기" />
+		</panel>
+		
+		
+		
+		<panel label="역할" name="roles_sub_tab">
+			<panel.string name="help_text">역할에는 제목과 허가된 능력이 할당되어 있습니다. 멤버는 하나 이상의 역할을 가질 수 있습니다. 그룹에서 사용할 수 있는 역할은 최대 10개까지 있으며, "전체 (Everyone)"와 "소유자 (Owner)"가 포함됩니다.</panel.string>
+			<panel.string name="cant_delete_role">「'全員（Everyone）'と 'オーナー（Owner）'의 역할은 삭제할 수 없습니다.」</panel.string>
+			<panel.string name="power_folder_icon">Inv_FolderClosed
+</panel.string>
+			<panel.string name="power_all_have_icon">체크박스_켜기</panel.string>
+			<panel.string name="power_partial_icon">체크박스_꺼짐</panel.string>
+			<filter_editor label="역할 선택" name="filter_input" />
+			<scroll_list name="role_list">
+				<scroll_list.columns label="역할" name="name" />
+				<scroll_list.columns label="肩書き: 직위" name="title" />
+				<scroll_list.columns label="SecondLife Viewer와 관련된 다음 텍스트를 한국어로 번역하세요.&#10;만약 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하세요:&#10;&#10;#" name="members" />
+			</scroll_list>
+			<button label="새로운 역할" name="role_create" />
+			<button label="역할을 복사" name="role_copy" />
+			<button label="역할 삭제" name="role_delete" />
+		</panel>
+		
+		
+		
+
+		<panel label="능력" name="actions_sub_tab" tool_tip="능력 설명에는 어떤 역할 또는 멤버가 그 능력을 가지고 있는지에 대한 내용이 포함되어 있습니다.">
+			<panel.string name="help_text">役割に含まれたメンバーに、このグループで特定の活動を行うことを許可する能力。さまざまな能力が提供されます。
+
+다양한 역할을 맡은 멤버에게 이 그룹에서 특정 활동을 수행할 수 있는 권한을 부여하는 능력. 여러 가지 능력이 제공됩니다.</panel.string>
+			
+			<filter_editor label="능력을 선택" name="filter_input" />
+			<scroll_list name="action_list" tool_tip="자세한 정보를 보려면, 능력을 선택하세요.">
+				<scroll_list.columns label="Sure, please provide the text you would like translated to Korean." name="icon" />
+				<scroll_list.columns label="물론입니다. 다음 문장을 제공해 주세요." name="checkbox" />
+				<scroll_list.columns label="물론입니다! 번역할 텍스트를 제공해 주시면 바로 번역해 드릴게요." name="action" />
+			</scroll_list>
+		</panel>
+		<panel label="차단된 사용자" name="banlist_sub_tab" tool_tip="このグループから立ち入り禁止にされた住人を表示します。&#10;이 그룹에서 금지된 거주자를 표시합니다.">
+			<panel.string name="help_text">立ち入り禁止リストに登録された住人はグループに参加できません。
+
+출입 금지 목록에 등록된 주민은 그룹에 참여할 수 없습니다.</panel.string>
+			<panel.string name="ban_count_template">출입 금지 인원: [COUNT]/[LIMIT]</panel.string>
+			<name_list name="ban_list">
+				<name_list.columns label="주민" name="name" />
+				<name_list.columns label="출입 금지된 날짜" name="ban_date" />
+			</name_list>
+			<button label="주민 출입 금지" name="ban_create" tool_tip="그룹에서 주민을 출입 금지하기" />
+			<button label="立入禁止の解除 would translate to &quot;출입 금지 해제&quot; in Korean. Since the word 'Firestorm' does not appear in the provided text, there is no need to use '흑우촌.'" name="ban_delete" tool_tip="선택한 주민의 그룹에 대한 입장 금지 해제" />
+			<button name="ban_refresh" tool_tip="출입 금지 목록 업데이트" />
+		</panel>
+	</tab_container>
+	
+	
+	
+	<panel name="members_footer">
+		<text name="assigned_roles_label">할당된 역할</text>
+		<scroll_list name="member_assigned_roles">
+			<scroll_list.columns label="Sure, I'd be happy to help. Please provide the text you would like translated." name="checkbox" />
+			<scroll_list.columns label="Sure, please provide the text you need translated to Korean." name="role" />
+		</scroll_list>
+		<text name="static2">허가된 권한</text>
+		<scroll_list name="member_allowed_actions" tool_tip="각 능력의 자세한 내용은 능력 탭을 참조하십시오.">
+				<scroll_list.columns label="Sure, please provide the text you would like to be translated." name="icon" />
+				<scroll_list.columns label="Sure, please provide the text you want to translate." name="checkbox" />			
+				<scroll_list.columns label="Sure, please provide the text you would like me to translate, and I'll be happy to assist you!" name="action" />
+		</scroll_list>
+	</panel>
+	
+	
+	
+	<panel name="roles_footer">
+		<text name="role_name_label">역할 이름</text>
+		<line_editor name="role_name" />
+		<text name="role_title_label">역할 직함</text>
+		<line_editor name="role_title" />
+		<check_box label="メンバーを公開 (Members 공개)" name="role_visible_in_list" tool_tip="그룹 외부의 사람이 일반 탭을 볼 때, 이 역할의 멤버가 표시될지 여부를 설정합니다." />
+		<text name="description_label">설명</text>
+		<text_editor name="role_description" />
+		
+		<panel name="group_roles_layout_panel">
+			<text name="assigned_members_label">割当られたメンバー: 할당된 멤버</text>
+			<name_list name="role_assigned_members" />
+		</panel>
+		<panel name="group_roles_layout_panel2">
+			<text name="allowed_abilities_label">허가된 능력</text>
+			<scroll_list name="role_allowed_actions" tool_tip="각 능력의 자세한 내용은 능력 탭을 참조하십시오.">
+				<scroll_list.columns label="물론요! 아래의 텍스트를 한국어로 번역하겠습니다. 텍스트를 제공해주세요." name="icon" />
+				<scroll_list.columns label="Sure, please provide the text you would like me to translate." name="checkbox" />
+				<scroll_list.columns label="Sure, please provide the text you would like to have translated." name="action" />
+			</scroll_list>
+		</panel>
+	</panel>
+	
+	
+	
+	<panel name="actions_footer">
+		<panel name="action_description_panel">
+			<text_editor name="action_description">이것은 "그룹에서 멤버를 추방하는" 능력입니다. 소유자를 추방할 수 있는 사람은 다른 소유자뿐입니다.</text_editor>
+		</panel>
+		<text name="action_roles_label">이 능력을 가지는 역할</text>
+		<text name="action_members_label">이 능력을 가진 멤버</text>
+		<name_list name="action_members" />
+	</panel>
+	
+</panel>

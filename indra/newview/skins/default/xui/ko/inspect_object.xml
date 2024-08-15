@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="inspect_object">
+	<string name="Creator">제작자：[CREATOR]</string>
+	<string name="CreatorAndOwner">[창작자]による 체크
+[소유자]による 체크</string>
+	<string name="Price">L$[금액]</string>
+	<string name="PriceFree">무료입니다!</string>
+	<string name="Touch">만지다</string>
+	<string name="Sit">앉기</string>
+	<text name="object_name" value="二行にわたる長いオブジェクト名をテスト&#10;&#10;두 줄에 걸친 긴 객체 이름을 테스트" />
+	<text name="object_creator">secondlife:///app/agent/0e346d8b-4433-4d66-a6b0-fd37083abc4c/about 
+소유자 secondlife:///app/agent/0e346d8b-4433-4d66-a6b0-fd37083abc4c/about</text>
+	<text name="price_text">L$30,000</text>
+	<text name="object_description">이것은 오브젝트가 어떤 것인지에 대한 매우 긴 설명이며, 적어도 80자는 포함되어 있습니다. 길이 등에 대해 말하자면, 이 시점에서는 아마도 120자 정도일 것입니다. 실제로는 누구도 알지 못합니다.</text>
+	<text name="object_media_url">텍스트를 한국어로 번역한 내용은 다음과 같습니다:
+
+http://www.superdupertest.com</text>
+	<button label="구매하다" name="buy_btn" />
+	<button label="지불하다" name="pay_btn" />
+	<button label="복사본을 만들기" name="take_free_copy_btn" />
+	<button label="만지기" name="touch_btn" />
+	<button label="착석" name="sit_btn" />
+	<button label="열기" name="open_btn" />
+	<icon name="secure_browsing" tool_tip="セキュアブラウジング - 보안 브라우징" />
+	<button label="상세" name="more_info_btn" />
+</floater>

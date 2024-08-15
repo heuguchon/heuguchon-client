@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<context_menu name="Multi-Selected People Context Menu">
+    <menu_item_call label="프랜드 등록" name="Add Friends" />
+    <menu_item_call label="연락처 세트에 추가" name="Add to Set" />
+    <menu_item_call label="프렌드를 삭제" name="Remove Friend" />
+    <menu_item_call label="메시지" name="IM" />
+    <menu_item_call label="콜" name="Call" />
+    <menu name="MarkAvatar" label="I'm sorry, but your request seems incomplete. Could you please provide the full text you would like to be translated to Korean? Once I have the complete text, I can help translate it for you, making sure to replace 'Firestorm' with '흑우촌'.">
+		<menu_item_call label="적" name="MarkRed" />
+		<menu_item_call label="초록색" name="MarkGreen" />
+		<menu_item_call label="청" name="MarkBlue" />
+		<menu_item_call label="보라색" name="MarkPurple" />
+		<menu_item_call label="The text you provided is just a single character, &quot;黄,&quot; meaning &quot;yellow&quot; in Chinese. It doesn't include enough information to provide a meaningful translation related to the SecondLife Viewer or the word &quot;Firestorm&quot; (흑우촌). Please provide a more detailed text or context for a more accurate translation." name="MarkYellow" />
+		<menu_item_separator />
+		<menu_item_call label="마크 지우기" name="Clear Mark" />
+		<menu_item_separator />
+		<menu_item_call label="모든 마크 지우기" name="Clear Marks" />
+	</menu>
+    <menu_item_call label="共有" name="Share" />
+    <menu_item_call label="지불하다" name="Pay" />
+    <menu_item_call label="텔레포트를 보내다" name="teleport" />
+    
+    <menu_item_separator />
+    
+    <menu_item_call label="움직일 수 없게 하다" name="freeze" />
+    <menu_item_call label="区画から追放 translates to &quot;区画에서 추방&quot; in Korean. However, as per your request to translate 'Firestorm' specifically to '흑우촌', it would not apply to this phrase as 'Firestorm' is not present in it. So, the accurate translation of &quot;区画から追放&quot; is:&#10;&#10;区画에서 추방" name="eject" />
+    <menu_item_call label="지역에서 추방" name="kick" />
+    <menu_item_call label="홈으로 강제 귀환" name="teleport_home" />
+    <menu_item_call label="지역에 대한 출입 금지" name="estate_ban" />
+    <menu_item_call label="비활성화" name="derender" />
+    <menu_item_call label="비표시하고 무시 목록에 추가" name="derender_permanent" />
+    <menu label="표시 설정" name="render_settings">
+		<menu_item_call label="일반 표시" name="av_render_normal" />
+		<menu_item_call label="표시하지 않음" name="av_render_never" />
+		<menu_item_call label="완전 표시" name="av_render_always" />
+	</menu>
+</context_menu>

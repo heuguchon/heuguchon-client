@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="컨트롤" name="controls">
+    <combo_box name="key_mode">
+        <combo_box.item label="세 번째 사람일 때" name="third_person" />
+        <combo_box.item label="一人称モード（マウスルック）の時&#10;&#10;일인칭 모드(마우스 룩)일 때 " name="first_person" />
+        <combo_box.item label="아바타 편집 시" name="edit_avatar" />
+        <combo_box.item label="앉아있을 때" name="sitting" />
+    </combo_box>
+    
+    <button label="デフォルト値を復元 -&gt; 기본값 복원" tool_tip="모든 컨트롤 모드를 기본값으로 설정합니다." name="restore_defaults" />
+    
+    <scroll_list name="controls_list" />
+</panel>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="メンバーを招待 - 멤버 초대" name="invite_panel">
+	<panel.string name="confirm_invite_owner_str">정말 새로운 소유자를 초대하시겠습니까? 이 작업은 취소할 수 없습니다.</panel.string>
+	<panel.string name="loading">（읽는 중…）</panel.string>
+	<panel.string name="already_in_group">선택한 주민 중 일부가 이미 그룹에 속해 있어 초대를 보낼 수 없었습니다.</panel.string>
+	<panel.string name="invite_selection_too_large">그룹 초대가 전송되지 않았습니다: 선택된 거주자가 너무 많습니다.
+그룹 초대는 한 번의 요청당 100명으로 제한됩니다.</panel.string>
+	<text name="help_text">그룹에는 한 번에 여러 주민을 초대할 수 있습니다. "목록에서 주민 선택"을 클릭하십시오.</text>
+	<button label="리스트에서 주민을 선택" name="add_button" tool_tip="Sure, please provide the text you would like to translate." />
+	<name_list name="invitee_list" tool_tip="Ctrl 키를 누른 상태에서 여러 주민을 클릭할 수 있습니다" />
+	<button label="リストから選択したものを削除 -&gt; 선택한 항목을 목록에서 삭제" name="remove_button" tool_tip="초대 목록에서 선택한 거주자를 제거합니다." />
+	<text name="role_text">役割을 할당할 대상을 선택:</text>
+	<combo_box name="role_name" tool_tip="メンバーに割り当てたい役割をリストから選んください&#10;&#10;멤버에게 할당할 역할을 목록에서 선택하십시오" />
+	<button label="招待状を送信: 초대장을 전송" name="invite_button" />
+	<button label="취소" name="cancel_button" />
+	<string name="GroupInvitation">그룹 초대</string>
+</panel>

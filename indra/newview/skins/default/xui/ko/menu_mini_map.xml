@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<menu label="미니맵" name="Popup">
+	<menu_item_call label="프로필 보기" name="View Profile" />
+	<menu label="프로필 보기" name="View Profiles" />
+	<menu_item_call label="연락처 세트에 추가" name="Add to Set Multiple" />
+	<menu_item_call label="카메라" name="Cam" />
+	<menu name="MarkAvatar" label="마크 중...">
+		<menu_item_call label="I'm sorry, but the text you provided appears to be only one character &quot;赤&quot;, which means &quot;red&quot; in Japanese. Could you provide the full text related to SecondLife Viewer that you need translated into Korean?" name="MarkRed" />
+		<menu_item_call label="녹색" name="MarkGreen" />
+		<menu_item_call label="파란" name="MarkBlue" />
+		<menu_item_call label="I believe the text you provided &quot;紫&quot; translates to &quot;purple&quot; in English, but it seems unrelated to the SecondLife Viewer or Firestorm specifically. If you have a more specific or longer text related to the SecondLife Viewer that includes &quot;Firestorm,&quot; please provide it so I can assist you further." name="MarkPurple" />
+		<menu_item_call label="The provided text &quot;黄&quot; appears to be a Chinese character meaning &quot;yellow&quot;. It doesn't seem to provide enough context related to the SecondLife Viewer or the word 'Firestorm'. If you need any specific text related to the SecondLife Viewer translated into Korean, please provide that text, particularly if it includes the term 'Firestorm' which should be translated as '흑우촌'." name="MarkYellow" />
+		<menu_item_separator />
+		<menu_item_call label="마크 해제" name="Clear Mark" />
+		<menu_item_separator />
+		<menu_item_call label="모든 표시 해제" name="Clear Marks" />
+	</menu>
+	
+	<menu name="More Options" label="옵션...">
+		<menu_item_call label="친구 등록" name="Add Friend" />
+		<menu_item_call label="연락처 세트에 추가하기" name="Add to Set" />
+		<menu_item_call label="프렌드를 삭제" name="Remove Friend" />
+		<menu_item_call label="IM" name="IM" />
+		<menu_item_call label="Calling" name="Call" />
+		<menu_item_call label="세계 지도" name="Map" />
+		<menu_item_call label="공유" name="Share" />
+		<menu_item_call label="지불" name="Pay" />
+		<menu_item_call label="텔레포트를 보냅니다" name="teleport" />
+		<menu_item_call label="텔레포트를 요청합니다." name="request_teleport" />
+		<menu_item_call label="텔레포트 하기" name="teleport_to" />
+		<menu_item_call label="グループに招待 translates to 그룹에 초대." name="GroupInvite" />
+		<menu_item_call label="스크립트 정보 가져오기" name="ScriptInfo" />
+
+		<menu_item_separator />
+
+		<menu_item_check label="차단/차단 해제" name="Block/Unblock" />
+		<menu_item_call label="보고하다" name="report" />
+		<menu_item_call label="행동을 제한하기" name="freeze" />
+		<menu_item_call label="区画から追放 (Partial text related to Firestorm/흑우촌)" name="eject" />
+		<menu_item_call label="지역에서 추방" name="kick" />
+		<menu_item_call label="홈으로 강제 송환" name="teleport_home" />
+		<menu_item_call label="지역에 접근 금지" name="estate_ban" />
+		<menu_item_call label="비활성화 하기" name="derender" />
+		<menu_item_call label="非表示リストに追加&#10;&#10;비표시 목록에 추가" name="derender_permanent" />
+	</menu>
+	<menu_item_separator name="Profile Separator" />
+	<menu_item_call label="추적하기" name="Start Tracking" />
+	<menu_item_call label="추적을 중지하십시오" name="Stop Tracking" />
+	<menu_item_separator name="Stop Tracking Separator" />
+	<menu label="줌" name="Minimap Zoom">
+		<menu_item_call label="확대(가까이)" name="Zoom Close" />
+		<menu_item_call label="줌 (중)" name="Zoom Medium" />
+		<menu_item_call label="줌(멀리)" name="Zoom Far" />
+		<menu_item_call label="줌 (기본값)" name="Zoom Default" />
+	</menu>
+	<menu label="표시" name="Minimap Show">
+		<menu_item_check label="オブジェクト (Object)" name="Objects" />
+		<menu_item_check label="물리 오브젝트" name="Physical Objects" />
+		<menu_item_check label="스크립트 오브젝트" name="Scripted Objects" />
+		<menu_item_check label="템플릿 오브젝트" name="Temp On Rez Objects" />
+		<menu_item_separator />
+		<menu_item_check label="경계선" name="Property Lines" />
+		<menu_item_check label="판매 중인 토지" name="Parcels for Sale" />
+		<menu_item_separator />
+		<menu_item_check label="지면의 텍스처" name="Terrain Textures" />
+		<menu_item_check label="세계 지도 텍스처" name="World Map Textures" />
+	</menu>
+	<menu_item_check label="지도를 회전" name="Rotate Map" />
+	<menu_item_check label="중앙으로 자동 이동" name="Auto Center" />
+	<menu_item_check label="채팅 도전" name="Chat Distance Ring" />
+    <menu_item_separator />
+    <menu_item_call label="토지 프로필" name="Place Profile" />
+	<menu_item_call label="세계지도" name="World Map" />
+</menu>

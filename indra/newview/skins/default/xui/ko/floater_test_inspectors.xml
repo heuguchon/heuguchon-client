@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_test_inspectors" title="インスペクタのテスト would translate to:&#10;&#10;&quot;인스펙터 테스트&quot;">
+	<text name="test_inspectors">생성하려면 클릭하십시오:</text>
+	<button name="avatar_2d_btn1" label="2D 아바타" />
+	<button name="avatar_2d_btn5" label="2D 아바타" />
+	<button name="avatar_2d_btn2" label="2D 아바타" />
+	<button name="avatar_2d_btn3" label="2D 아바타" />
+	<button name="avatar_2d_btn4" label="2D 아바타" />
+	<button name="avatar_3d_btn" label="3D 아바타" />
+	<button name="object_2d_btn" label="2D 오브젝트" />
+	<button name="object_3d_btn" label="3D 오브젝트" />
+	<button name="group_btn" label="그룹" />
+	<button name="place_btn" label="장소" />
+	<button name="event_btn" label="이벤트" />
+	<text name="slurl">secondlife:///app/agent/00000000-0000-0000-0000-000000000000/inspect</text>
+	<text name="slurl_group">secondlife:///app/group/00000000-0000-0000-0000-000000000000/inspect</text>
+</floater>

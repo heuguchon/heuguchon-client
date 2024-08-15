@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="인스턴트 메시지" name="panel_group_notify">
+	<text name="group_notice" value="그룹 알림" />
+	<text name="title" value="송신자의 이름 / 그룹 이름" />
+	<simple_text_editor name="message" value="메시지" />
+	<text name="attachment" value="첨부 아이템" />
+	<button label="알겠습니다." name="btn_ok" />
+	<button label="그룹 알림" name="btn_notices" />
+</panel>

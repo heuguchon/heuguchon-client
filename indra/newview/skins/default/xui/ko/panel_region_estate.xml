@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="부동산" name="Estate">
+	<text name="estate_help_text">이 탭 내의 설정 변경은, 부동산 내의 모든 지역에 영향을 미칩니다.</text>
+	<text name="estate_text">부동산:</text>
+	<text name="estate_name">（불명）</text>
+	<text name="owner_text">소유자:</text>
+	<text name="estate_owner">（不明）</text>
+	<radio_group name="externally_visible_radio">
+		<radio_item label="접근 탭에 기재된 거주자 및 그룹만 허용" name="estate_restricted_access" />
+		<radio_item label="누구나 방문 가능" name="estate_public_access" />
+	</radio_group>
+	<check_box label="18세 이상이어야 합니다." name="limit_age_verified" tool_tip="この不動産（エステート）にアクセスするには、18才以上でなければなりません。詳細については、[SUPPORT_SITE] をご覧ください。" />
+	<check_box label="결제 정보가 등록되어 있어야 합니다." name="limit_payment" tool_tip="지불 정보가 등록되지 않으면, 이 부동산에 접근할 수 없습니다. 자세한 내용은 [SUPPORT_SITE]를 참조하십시오." />
+	<check_box label="구획 소유자" name="parcel_access_override" />
+	<check_box label="보이스 채팅 허용" name="voice_chat_check" />
+	<check_box label="테레포트를 직접 허용" name="allow_direct_teleport" />
+	<button label="적용" name="apply_btn" />
+	<text name="estate_manager_label">부동산 관리자:</text>
+	<text name="allow_resident_label">항상 허용:</text>
+	<button label="추가..." name="add_estate_manager_btn" />
+	<button label="삭제…" name="remove_estate_manager_btn" />
+	<button label="추가..." name="add_allowed_avatar_btn" />
+	<button label="삭제..." name="remove_allowed_avatar_btn" />
+	<text name="allow_group_label">항상 허가된 그룹:</text>
+	<text name="ban_resident_label">항상 금지:</text>
+	<button label="추가..." name="add_allowed_group_btn" />
+	<button label="삭제..." name="remove_allowed_group_btn" />
+	<button label="추가..." name="add_banned_avatar_btn" />
+	<button label="삭제…" name="remove_banned_avatar_btn" />
+	<button label="메시지를 시설에 전송 중..." name="message_estate_btn" />
+	<button label="부동산에서 주민을 쫓아내는..." name="kick_user_from_estate_btn" />
+</panel>

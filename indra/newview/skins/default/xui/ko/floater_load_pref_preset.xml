@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="load_pref_preset" title="우선 프리셋 불러오기">
+	<string name="title_graphic">그래픽 프리셋을 로드</string>
+	<string name="title_camera">카메라 프리셋을 로드</string>
+	<text name="Preset">프리셋 선택</text>
+	<button label="Sure! Please provide the text you would like to translate." name="ok" />
+	<button label="취소" name="cancel" />
+</floater>

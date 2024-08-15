@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="panel_im">
+
+    <floater.string name="participant_added" value="[NAME] 님이 이 대화에 초대되었습니다." />
+    <floater.string name="multiple_participants_added" value="[NAME] が会話に招待されました。&#10;&#10;=&gt; [NAME] 님이 대화에 초대되었습니다." />
+    <floater.string name="tooltip_to_separate_window" value="이 대화를 별도의 창에서 엽니다." />
+    <floater.string name="tooltip_to_main_window" value="이 대화를 메인 윈도우로 되돌립니다." />
+    <floater.string name="start_call_button_tooltip" value="보이스 연결을 엽니다." />
+    <floater.string name="end_call_button_tooltip" value="보이스 연결을 끊습니다." />
+    <floater.string name="expcol_button_not_tearoff_tooltip" value="이 열을 접습니다." />
+    <floater.string name="expcol_button_tearoff_and_expanded_tooltip" value="참가자 목록을 접습니다." />
+    <floater.string name="expcol_button_tearoff_and_collapsed_tooltip" value="참가자 목록을 엽니다." />
+    <view name="contents_view">
+	<layout_stack name="main_stack">
+		<layout_panel name="toolbar_panel">
+			<menu_button name="view_options_btn" tool_tip="보기/정렬 옵션" />
+            <menu_button name="gear_btn" tool_tip="선택된 사람에 대한 작업" />
+            <button name="add_btn" tool_tip="이 대화에 누군가 추가" />
+            <button name="voice_call_btn" tool_tip="음성 연결 열기" />
+            <output_monitor name="speaking_indicator" />
+            <button name="close_btn" tool_tip="이 대화를 종료하십시오" />
+            <button name="expand_collapse_btn" tool_tip="이 창을 접기/펼치기" />
+            <button name="tear_off_btn" />
+		</layout_panel>
+		<layout_panel name="chat_layout_panel">
+			<layout_stack name="input_panels">
+				<layout_panel name="input_editor_layout_panel">
+					<chat_editor label="목적지" name="chat_editor" />
+				</layout_panel>
+				<layout_panel name="input_button_layout_panel">
+					<button name="minz_btn" tool_tip="메시지 패널 표시 / 숨기기" />
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+	</layout_stack>
+	</view>
+</floater>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_test_checkbox">
+	<check_box label="오! 이것은 체크박스처럼 보인다!" name="show_location_checkbox" />
+	<check_box label="최소 체크박스" name="minimal_checkbox" />
+	<check_box label="비활성화 상태의 체크박스" name="disabled_checkbox" />
+	<check_box label="유효 시의 문자 색상" name="text_enabled_color_checkbox" />
+	<check_box label="무효 시의 문자 색상" name="text_disabled_color_checkbox" />
+	<check_box label="체크박스의 초기값" name="initial_value_checkbox" />
+	<check_box label="等폭 글꼴" name="font_checkbox" />
+</floater>

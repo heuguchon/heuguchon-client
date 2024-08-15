@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<context_menu name="Picks">
+	<menu_item_call label="텔레포트" name="pick_teleport" />
+	<menu_item_call label="피크 보기" name="pick_info" />
+	<menu_item_call label="피크 편집" name="pick_edit" />
+	<menu_item_call label="지도에 표시" name="pick_map" />
+	<menu_item_call label="삭제" name="pick_delete" />
+</context_menu>

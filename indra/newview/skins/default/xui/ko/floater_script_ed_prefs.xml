@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_script_colors" title="스크립트의 색상">
+	<text name="color_pickers_label">희망의 색상을 선택하세요:</text>
+	<text name="text_label">텍스트</text>
+	<text name="cursor_label">커서</text>
+	<text name="background_label">배경</text>
+	<text name="datatype_label">데이터 형식</text>
+	<text name="event_label">이벤트</text>
+	<text name="string_literal_label">문자열 리터럴</text>
+	<text name="constant_label">정수</text>
+	<text name="flow_control_label">플로 제어</text>
+	<text name="function_label">함수</text>
+	<text name="comment_label">댓글</text>
+	<script_editor name="Script Preview">다음 텍스트를 SecondLife Viewer와 관련된 한글로 번역해주세요. 'Firestorm'이 등장하면 '흑우촌'으로 번역해주세요:
+
+```cpp
+/* 샘플 스크립트 */
+default
+{
+  state_entry()
+  {
+    // 주석
+    string greeting = "안녕하세요";
+    llSay(PUBLIC_CHANNEL, greeting);
+  }
+}
+```</script_editor>
+</floater>

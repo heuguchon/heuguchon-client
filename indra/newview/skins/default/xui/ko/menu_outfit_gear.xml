@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toggleable_menu name="Gear Outfit">
+	<menu_item_call label="着る - 착용 중인 아웃핏을 교체하기" name="wear" />
+	<menu_item_call label="착용 - 착용 중인 아웃피트에 추가하는" name="wear_add" />
+	<menu_item_call label="取り外す - 착용 중인 아웃핏에서 제거하기" name="take_off" />
+	<menu_item_call label="写真을 업로드 (L$[UPLOAD_COST])" name="upload_photo" />
+	<menu_item_call label="사진을 선택" name="select_photo" />
+	<menu_item_call label="스냅샷을 찍기" name="take_snapshot" />
+	<menu_item_call label="사진을 삭제" name="remove_photo" />
+	<context_menu label="의류" name="New Clothes">
+		<menu_item_call label="셔츠" name="New Shirt" />
+		<menu_item_call label="팬티" name="New Pants" />
+		<menu_item_call label="The provided text &quot;靴&quot; does not contain the word 'Firestorm' or '흑우촌'. The translation of the given text &quot;靴&quot; to Korean is:&#10;&#10;신발" name="New Shoes" />
+		<menu_item_call label="양말" name="New Socks" />
+		<menu_item_call label="재킷" name="New Jacket" />
+		<menu_item_call label="스커트" name="New Skirt" />
+		<menu_item_call label="장갑" name="New Gloves" />
+		<menu_item_call label="속옷 (윗도리)" name="New Undershirt" />
+		<menu_item_call label="속옷(하)" name="New Underpants" />
+		<menu_item_call label="알파" name="New Alpha" />
+		<menu_item_call label="새로운 물리적 작용" name="New Physics" />
+		<menu_item_call label="새로운 타투" name="New Tattoo" />
+		<menu_item_call label="새로운 유니버설" name="New Universal" />
+	</context_menu>
+	<context_menu label="새로운 신체 부위" name="New Body Parts">
+		<menu_item_call label="새로운 쉐이프" name="New Shape" />
+		<menu_item_call label="피부" name="New Skin" />
+		<menu_item_call label="머리카락" name="New Hair" />
+		<menu_item_call label="목" name="New Eyes" />
+	</context_menu>
+	<menu_item_call label="모든 폴더 열기" name="expand" />
+	<menu_item_call label="폴더를 모두 닫기" name="collapse" />
+	<menu_item_call label="아웃핏 이름 변경하기" name="rename" />
+	<menu_item_call label="아웃핏을 삭제하기" name="delete_outfit" />
+	<menu_item_check label="폴더를 항상 이름 순으로 정렬" name="sort_folders_by_name" />
+</toggleable_menu>

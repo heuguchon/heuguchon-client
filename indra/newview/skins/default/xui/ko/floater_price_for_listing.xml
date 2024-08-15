@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="price_for_listing" title="クラシファイド広告の掲載&#10;&#10;분류 광고 게재">
+	<text name="explanation_text">당신의 분류 광고는 게시된 날로부터 1주일 간 유효합니다.
+분류 리스트에서 당신의 광고 위치는 광고비 지불액에 따라 결정됩니다.
+
+최고 금액을 지불한 광고가 리스트의 맨 위에 올라가며, 검색에서 상위에 표시됩니다.</text>
+	<text name="price_text">광고 게재 비용:</text>
+	<text name="price_symbol">L$</text>
+	<button label="확인." name="set_price_btn" />
+	<button label="취소" name="cancel_btn" />
+</floater>

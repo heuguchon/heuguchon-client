@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="Anim Preview" title="애니메이션.애님">
+	<text name="name_label">이름:</text>
+	<text name="description_label">설명:</text>
+	<button label="업로드 (L$ [AMOUNT])" name="ok_btn" />
+	<button label="취소" label_selected="취소" name="cancel_btn" />
+</floater>

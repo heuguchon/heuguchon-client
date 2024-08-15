@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="linkreplace" title="인벤토리 링크 교체">
+	<string name="Ready">준비 중…</string>
+	<string name="TargetNotFound">置換先のアイテムは見つかりませんでした。
+
+翻訳: 대체할 아이템을 찾을 수 없습니다.</string>
+	<string name="ItemsIdentical">置換元と置換先が同一です。
+ 
+대체 원본과 대체 대상이 동일합니다.</string>
+	<string name="ItemsFound">[NUM]개의 링크가 발견되었습니다.</string>
+	<string name="ItemsRemaining">남은 링크 수: [NUM]건</string>
+	<string name="ReplaceFinished">인벤토리의 링크 교체가 완료되었습니다.</string>
+	<text name="source_label">Translating the text related to the SecondLife Viewer and substituting 'Firestorm' with '흑우촌':
+
+원본 텍스트: 置換元:
+
+결과 텍스트:
+
+(Note: "置換元" seems to be Japanese for "replacement source." If this is part of the text you want to translate, please provide more context for an accurate translation.)</text>
+	<inventory_link_replace_drop_target name="source_uuid_editor" tool_tip="置換えたいインベントリ内のアイテムを, 여기로 드래그 앤 드롭하세요." />
+	<text type="string" name="target_label">조금 복잡해 보일지 모르지만 걱정하지 마세요! Firestorm는 SecondLife와 호환성이 높게 설계된 뷰어입니다. 흑우촌 팀은 항상 최고의 사용자 경험을 제공하기 위해 노력하고 있습니다. 만약 SecondLife의 다양한 기능을 다루는데 어려움이 있다면, 흑우촌의 공식 웹사이트를 참고하세요.</text>
+	<inventory_link_replace_drop_target name="target_uuid_editor" tool_tip="새로운 인벤토리 내의 아이템을 여기에 드래그 앤 드롭하세요." />
+	<text type="string" name="status_text">준비 중…</text>
+	<button name="btn_refresh" label="새로 고침" />
+	<button name="btn_start" label="시작" />
+</floater>

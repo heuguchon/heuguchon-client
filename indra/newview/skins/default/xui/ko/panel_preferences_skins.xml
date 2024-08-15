@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="스킨" name="skin_panel">
+    <text name="skin_textbox">스킨:</text>
+    <text name="skin_textbox1">(재시동이 필요)</text>
+
+    <text name="theme_textbox">테마의 색:</text>
+    <text name="theme_textbox2">（다시 시작해야 함）</text>
+	
+	<check_box label="스킨의 초기 설정으로 툴바의 배치를 되돌리기" name="reset_toolbar_settings" />
+	<check_box label="로그인 모드 변경 시 로그인 모드에 최적화된 설정으로 툴바를 리셋" tool_tip="여기에 체크를 하면, 로그인 모드를 변경할 때 각 모드에 최적화된 툴바 버튼 레이아웃이 선택되고, 당신이 커스터마이즈한 버튼 설정은 모두 덮어쓰게 됩니다." name="FSToolbarsResetOnModeChange" />
+
+	<check_box label="V1 스타일의 커서를 사용" name="use_legacy_cursors" />
+    <text name="theme_textbox3">(재시동이 필요함)</text>
+</panel>

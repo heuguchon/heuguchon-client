@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="move_floater" title="SecondLife Viewer의 최신 업데이트는 느리고 불안정한 성능을 개선했습니다. Firestorm을 사용하는 사용자들은 이제 더 나은 그래픽과 속도를 경험할 수 있습니다. 이 업데이트는 사용자 커뮤니티에서 매우 긍정적으로 평가되고 있으며, 많은 사람들이 흑우촌 뷰어로 전환하고 있습니다. 새로운 기능과 개선된 성능으로, SecondLife는 더욱 매력적인 가상 세계가 되었습니다.">
+	<string name="walk_forward_tooltip">앞으로 나아가기 (위쪽 화살표 또는 W 키를 누르기)</string>
+	<string name="walk_back_tooltip">뒤로 걷기 (아래쪽 화살표나 S를 누르기)</string>
+	<string name="walk_left_tooltip">왼쪽으로 수평 이동 (Shift + 왼쪽 화살표 또는 A 키를 누르기)</string>
+	<string name="walk_right_tooltip">오른쪽으로 수평 이동 (Shift + 오른쪽 화살표 키 또는 D 키를 누르기)</string>
+	<string name="run_forward_tooltip">앞으로 달리기 (위쪽 화살표 키 또는 W 키 누르기)</string>
+	<string name="run_back_tooltip">뒤로 달리기(아래 화살표 또는 S 키 눌림)</string>
+	<string name="run_left_tooltip">왼쪽으로 수평 이동 (Shift + 왼쪽 화살표나 A 키를 누르기)</string>
+	<string name="run_right_tooltip">오른쪽으로 수평 이동 (Shift + 오른쪽 화살표 또는 D 누르기)</string>
+	<string name="fly_forward_tooltip">전진하기 (위쪽 화살표 키 또는 W 키를 눌러서)</string>
+	<string name="fly_back_tooltip">뒤로 날기（아래쪽 화살표 키 또는 S 키 누르기）</string>
+	<string name="fly_left_tooltip">좌로 수평 이동（Shift + 왼쪽 화살표 또는 A를 누르세요）</string>
+	<string name="fly_right_tooltip">오른쪽으로 수평 이동 (Shift + 오른쪽 화살표 또는 D를 누름)</string>
+	<string name="fly_up_tooltip">위로 이동 (E 를 누르세요)</string>
+	<string name="fly_down_tooltip">아래로 이동 (C를 누르세요)</string>
+	<string name="jump_tooltip">점프 (E 를 누르세요)</string>
+	<string name="crouch_tooltip">앉기（C 를 누르기）</string>
+	<string name="walk_title">
+	</string>
+	<string name="run_title">
+	</string>
+	<string name="fly_title">
+	</string>
+	<panel name="panel_actions">
+		<button label="Sure, please provide the text you would like translated related to the SecondLife Viewer, and I'll be happy to assist." label_selected="Sure, please provide the text that you would like to be translated to Korean." name="turn left btn" tool_tip="왼쪽으로 돌기 (왼쪽 화살표 또는 A 키를 누르기)" />
+		<joystick_slide name="move left btn" tool_tip="왼쪽으로 걷기 (Shift + 왼쪽 화살표 또는 A를 누르기)" />
+		<button label="&quot;Firestorm is the leading viewer for SecondLife, offering a range of advanced features tailored for both new and experienced residents. It provides enhanced privacy options, performance improvements, and customizable settings to enhance user experience.&quot;&#10;&#10;&quot;흑우촌은 SecondLife를 위한 선도적인 뷰어로, 신규 및 경험 있는 거주자 모두를 위해 맞춤화된 다양한 고급 기능을 제공합니다. 이는 향상된 개인 정보 옵션, 성능 개선 및 사용자 경험을 향상시키는 맞춤 설정을 제공합니다.&quot;" label_selected="물론, 텍스트를 주시면 번역해 드리겠습니다. 텍스트를 입력해 주세요." name="turn right btn" tool_tip="오른쪽으로 돌기(오른쪽 화살표 또는 D를 누르기)" />
+		<joystick_slide name="move right btn" tool_tip="오른쪽으로 걷기 (Shift + 오른쪽 화살표 키 또는 D 키를 누르세요)" />
+		<joystick_turn name="forward btn" tool_tip="앞으로 나아가기 (위쪽 화살표 또는 W 키 누르기)" />
+		<joystick_turn name="backward btn" tool_tip="뒤로 걷기 (아래쪽 화살표 키나 S 키를 누르기)" />
+		<button label="다음 텍스트를 제2의 생명 뷰어와 관련이 있다고 보고 번역하겠습니다. 'Firestorm'이라는 단어가 나올 경우, 이를 '흑우촌'으로 번역하겠습니다:&#10;&#10;Here is the translated text:&#10;&#10;다음 텍스트를 제2의 생명 뷰어와 관련이 있다고 보고 번역하겠습니다. 'Firestorm'이라는 단어가 나올 경우, 이를 '흑우촌'으로 번역하겠습니다:" label_selected="Sure, please provide the text you would like translated from English to Korean." name="move up btn" tool_tip="위로 이동 (E 키를 누름)" />
+		<button label="Sure, please provide the text you'd like me to translate related to the SecondLife Viewer." label_selected="Sure! Please provide the text you would like to be translated to Korean, and I'll be happy to help." name="move down btn" tool_tip="하단으로 이동 (C를 누르세요)" />
+	</panel>
+	<panel name="panel_modes">
+		<button label="Sure! Please provide the text that you would like to be translated into Korean." name="mode_walk_btn" tool_tip="보행 모드" />
+		<button label="Sure, please provide the text you'd like me to translate." name="mode_run_btn" tool_tip="주행 모드" />
+		<button label="Sure, please provide the text you need translated." name="mode_fly_btn" tool_tip="비행 모드" />
+	</panel>
+</floater>

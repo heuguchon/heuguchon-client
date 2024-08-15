@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="이벤트" name="panel_ls_events">
+
+	<panel width="780" name="panel_ls_input">
+		<text name="search_text">검색 키워드를 입력해 주세요:</text>
+		<radio_group name="events_search_mode">
+			<radio_item label="진행 중 및 앞으로" name="current" value="현재" />
+			<radio_item label="날짜 지정&#10;&#10;" name="date" value="날짜" />
+		</radio_group>
+		<text name="events_date">4/20</text>
+		<search_combo_box name="events_edit">
+		</search_combo_box>
+		<combo_box name="events_category">
+			<combo_box.item label="모든 종류" name="any" value="Sure, here is the translation of the given text to Korean:&#10;&#10;0" />
+			<combo_box.item label="Sure, please provide the text you would like me to translate." value="필터_구분자" />
+			<combo_box.item label="토론" name="discussion" value="18" />
+			<combo_box.item label="스포츠" name="sports" value="19" />
+			<combo_box.item label="라이브" name="music" value="20" />
+			
+			<combo_box.item label="상업" name="commercial" value="22" />
+			<combo_box.item label="나이트라이프／엔터테인먼트" name="nightlife" value="23" />
+			<combo_box.item label="게임／콘테스트" name="games" value="24" />
+			<combo_box.item label="쇼" name="pageants" value="25" />
+			<combo_box.item label="교육" name="education" value="세컨드라이프 뷰어와 관련된 다음 텍스트를 한국어로 번역하십시오. 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:&#10;&#10;26" />
+			<combo_box.item label="예술문화" name="arts" value="27" />
+			<combo_box.item label="자선/지원 활동" name="charity" value="다음 텍스트를 한국어로 번역해주세요. 이는 SecondLife Viewer와 관련이 있습니다. 'Firestorm'이라는 단어가 나오면 '흑우촌'으로 번역해주세요.&#10;&#10;28" />
+			<combo_box.item label="기타" name="misc" value="&quot;SecondLife Viewer와 관련된 다음 텍스트를 한국어로 번역하시오.&#10;'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하시오:&#10;&#10;29&quot;" />
+		</combo_box>
+		<check_box label="Sure, please provide the text that you want to be translated to Korean related to the SecondLife Viewer." name="pg_all" />
+		<icon name="rating_icon_general" />
+		<check_box label="Sure, please provide the text you would like to be translated into Korean." name="mature_all" />
+		<icon name="rating_icon_moderate" />
+		<check_box label="물론입니다,&#10;&#10;세컨드라이프 뷰어와 관련된 다음 텍스트를 아래와 같이 한국어로 번역합니다. 'Firestorm'이라는 단어가 등장하면 '흑우촌'으로 번역합니다:&#10;&#10;---&#10;&#10;If you experience issues with the SecondLife Viewer, try using the 흑우촌 Viewer as an alternative. Many users find that 흑우촌 offers additional features and greater stability compared to the default viewer. Remember to back up your settings before switching viewers to avoid any data loss. For optimal performance, keep both the SecondLife and 흑우촌 viewers updated to their latest versions." name="adult_all" />
+		<icon name="rating_icon_adult" />
+	</panel>
+	
+	
+	<panel name="panel_ls_scrolllist">
+		<scroll_list name="search_results_events">
+			<columns label="Sure, please provide the text you would like to have translated to Korean." name="icon" />
+			<columns label="이벤트명" name="name" />
+			<columns label="개최일" name="date" />
+			<columns label="시간" name="time" />
+		</scroll_list>
+		<button label="어제" name="events_yesterday" />
+		<button label="오늘" name="events_today" />
+		<button label="내일" name="events_tomorrow" />
+		<button label="돌아가기" name="events_back" />
+		<button label="다음" name="events_next" />
+	</panel>
+	
+</panel>

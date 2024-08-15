@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="region_restarting" title="리전의 재시작">
+	<string name="RegionName">현재 당신이 있는 리전 "[NAME]"이(가) 재시작하려고 합니다.
+
+이대로 이 장소에 머무르면 로그아웃됩니다.</string>
+	<string name="RestartSeconds">재시작까지 남은 시간: [SECONDS]초</string>
+	<panel name="layout_panel_1">
+		<text name="region_name">현재 당신이 있는 리전 「-최장 리전명-」이(가) 재시작하려고 합니다.
+
+이대로 이곳에 있으면 로그아웃됩니다.</text>
+		<text name="restart_seconds">재시동까지 남은 시간: 32767초</text>
+	</panel>
+</floater>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater title="L$ 구매" name="buy currency">
+	<floater.string name="buy_currency">약 [LOCALAMOUNT]에 L$ [LINDENS]를 구매</floater.string>
+	<floater.string name="info_cannot_buy">구매할 수 없습니다.</floater.string>
+	<floater.string name="estimated_zero">미화 0.00달러</floater.string>
+	<icon name="normal_background" />
+	<layout_stack name="outer_stack">
+		<layout_panel name="layout_panel_title">
+			<text name="info_need_more">L$가 충분하지 않습니다.</text>
+			<text name="info_buying">L$를 구매</text>
+			<view_border name="text_border" />
+		</layout_panel>
+		<layout_panel name="layout_panel_price">
+			<text name="target_price_label">필요 금액</text>
+			<text name="target_price">L$ [금액]</text>
+		</layout_panel>
+		<layout_panel name="layout_panel_balance">
+			<text name="balance_label">所持金 translates to 소지금 in Korean.</text>
+			<text name="balance_amount">L$ [금액]</text>
+		</layout_panel>
+		<layout_panel name="layout_panel_required">
+			<text name="required_label">필요최저금액</text>
+			<text name="required_amount">L$ [금액]</text>
+		</layout_panel>
+		<layout_panel name="layout_panel_action">
+			<view_border name="text_border_2" />
+			<text name="currency_action">구매 금액을 선택</text>
+			<text name="currency_label">L$</text>
+			<line_editor label="If the text &quot;L$&quot; appears in the provided content, it's typically currency related (&quot;Linden Dollars&quot;) and can be left untranslated as &quot;L$&quot; doesn't need a change when adapting for Korean audiences.&#10;&#10;When translating content related to the Second Life Viewer and noting the specific translation instruction for 'Firestorm':&#10;&#10;Here's the translated text to Korean:&#10;&#10;L$ (Linden 달러)은 변경 없이 그대로 유지될 수 있습니다.&#10;&#10;(Note: As the specific content for translation wasn't provided, this is a general approach.)" name="currency_amt">1234</line_editor>
+			<text name="currency_est">평균 [LOCALAMOUNT]</text>
+			<text name="getting_data">견적 중…</text>
+			<text name="total_label">구매 후 잔액</text>
+			<text name="total_amount">L$ [AMT]</text>
+		</layout_panel>
+		<layout_panel name="layout_panel_msg">
+			<view_border name="text_border_3" />
+			<text name="currency_links">[https://accounts.secondlife.com/billing_information/ 支払い方法]｜[https://www.secondlife.com/my/lindex/buy.php L$의 구매]</text>
+			<text name="exchange_rate_note">금액을 다시 입력하고 최신 환율을 확인하십시오.</text>
+			<text name="purchase_warning_repurchase">L$를 받으면,
+다시 한 번 구매하세요.</text>
+		</layout_panel>
+		<layout_panel name="layout_panel_buttons">
+			<text name="contacting">LindeX에 접속 중…</text>
+			<button label="지금 바로 L$를 구매하세요" name="buy_btn" />
+			<button label="취소" name="cancel_btn" />
+		</layout_panel>
+	</layout_stack>
+</floater>

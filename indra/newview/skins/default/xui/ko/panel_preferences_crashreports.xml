@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="충돌 보고서" name="crash_reports">
+    <check_box label="크래시 보고서를 흑우촌뷰어.org로 보내기" name="checkSendCrashReports" />
+    <check_box label="보내기 전에 반드시 확인하세요" name="checkSendCrashReportsAlwaysAsk" />
+
+    <check_box label="settings.xml 파일을 포함하세요" name="checkSendSettings" />
+    <text name="textSendSettings">（사용자 이름이 포함되어 있습니다。）</text>
+
+    <check_box label="사용자 이름을 포함하기" name="checkSendName" />
+    <text name="textSendName">（필요에 따라 확인하고 싶은 사항이 있을 때 사용됩니다.）</text>
+    
+    <text name="textRestartRequired">설정을 변경한 후에는 다시 시작이 필요합니다.</text>
+    
+    <text name="textInformation1">위의 항목에 체크하지 않는 한, 크래시 리포트의 내용은 해당 크래시에 관련된 정보만 포함됩니다.</text>
+    <text name="textInformation2">로그는 전송되지 않습니다. 그러므로, 추가 정보를 전송하고 싶은 경우에는 내용을 잘 확인하고,</text>
+    <text name="textInformation3">따로 이메일로 보내주시기 바랍니다.</text>
+
+    <text name="textInformation4">개인정보취급방침 [URL]</text>
+</panel>

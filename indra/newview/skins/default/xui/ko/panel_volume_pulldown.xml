@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="volumepulldown_floater">
+	<slider label="마스터" name="System Volume" />
+	<slider label="버튼" name="UI Volume" />
+	<slider label="환경음" name="Wind Volume" />
+	<slider label="음향" name="SFX Volume" />
+	<check_box name="gesture_audio_play_btn" tool_tip="제스처의 소리를 활성화합니다." />
+	<slider label="음악" name="Music Volume" />
+	<check_box name="enable_music" tool_tip="스트리밍 음악을 활성화합니다." />
+	<slider label="미디어" name="Media Volume" />
+	<check_box name="enable_media" tool_tip="스트리밍 미디어를 활성화합니다." />
+	<slider label="보이스" name="Voice Volume" />
+	<check_box name="enable_voice_check" tool_tip="보이스 채팅을 활성화합니다." />
+</panel>

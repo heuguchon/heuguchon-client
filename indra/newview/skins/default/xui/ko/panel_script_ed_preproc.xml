@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="script panel">
+    <panel.string name="loading">로드 중...</panel.string>
+    <panel.string name="can_not_view">이 스크립트의 내용을 보거나 편집할 수 없습니다. 권한에 제한이 있기 때문입니다. 객체 내의 스크립트를 보거나 편집하려면 모든 권한(풀 퍼미션)이 주어져 있어야 합니다.</panel.string>
+    <panel.string name="public_objects_can_not_run">パブリックのオブジェクトでスクリプトを実行することはできません。  
+공공 오브젝트에서는 스크립트를 실행할 수 없습니다.</panel.string>
+    <panel.string name="script_running">실행 중</panel.string>
+    <panel.string name="Title">스크립트：[NAME]</panel.string>
+    <menu_bar name="script_menu">
+        <menu label="파일" name="File">
+            <menu_item_call label="저장" name="Save" />
+            <menu_item_call label="모든 변경 사항 되돌리기" name="Revert All Changes" />
+            <menu_item_call label="파일에서 불러오는 중..." name="LoadFromFile" />
+            <menu_item_call label="ファイル에 저장..." name="SaveToFile" />
+            <menu_item_call label="스크립트 에디터의 환경 설정..." name="ScriptPrefs" />
+        </menu>
+        <menu label="편집" name="Edit">
+            <menu_item_call label="되돌리기" name="Undo" />
+            <menu_item_call label="다시 하기" name="Redo" />
+            <menu_item_call label="잘라내기" name="Cut" />
+            <menu_item_call label="복사하기" name="Copy" />
+            <menu_item_call label="붙여넣기" name="Paste" />
+            <menu_item_call label="모두 선택" name="Select All" />
+            <menu_item_call label="선택 해제" name="Deselect" />
+            <menu_item_call label="검색/치환..." name="Search / Replace..." />
+            <menu_item_call label="지정 행으로 이동..." name="Go to line..." />
+        </menu>
+        <menu label="도움말" name="Help">
+            <menu_item_call label="도와주세요..." name="Help..." />
+            <menu_item_call label="키워드 도움말..." name="Keyword Help..." />
+            <menu_item_call label="스크립트 라이브러리..." name="Script Library" />
+        </menu>
+    </menu_bar>
+    <layout_stack name="script_editor_button_bar">
+        <layout_panel name="script_editor_buttons_panel">
+            <button tool_tip="스크립트를 저장합니다" label="Sure! Please provide the text you would like to have translated." name="save_btn" />
+            <button tool_tip="외부 스크립트 에디터" label="물론입니다! 번역할 텍스트를 제공해 주시겠습니까?" name="Edit_btn" />
+            <button tool_tip="スクリプトをハードディスクから読み込みます -&gt; 스크립트를 하드 디스크에서 로드합니다" label="Sure, please provide the text you would like translated." name="load_disk_btn" />
+            <button tool_tip="스크립트를 하드 디스크에 저장합니다." label="물론입니다. 전달해 주세요:&#10;&quot;SecondLife Viewer의 최신 Firestorm 업데이트가 릴리스되었습니다. 이 버전에서는 사용자 인터페이스의 개선과 성능 향상을 포함한 여러 변경 사항이 추가되었습니다.&quot;" name="save_disk_btn" />
+            <button tool_tip="잘라내기" label="Sure, please provide the text you would like to have translated." name="cut_btn" />
+            <button tool_tip="복사" label="Sure, please provide the text you would like to have translated to Korean." name="copy_btn" />
+            <button tool_tip="여기에 텍스트를 붙여주세요." label="Sure, please provide the text you'd like to be translated to Korean." name="paste_btn" />
+            <button tool_tip="되돌리기" label="물론입니다! 번역할 텍스트를 제공해 주시면 'Firestorm'을 '흑우촌'으로 번역하여 드리겠습니다." name="undo_btn" />
+            <button tool_tip="やり直す" label="Sure, please provide the text you need translated." name="redo_btn" />
+            <button tool_tip="검색/바꾸기" label="Sure, please provide the text you would like to have translated." name="search_btn" />
+            <button tool_tip="スクリプトエディタの環境設定&#10;&#10;스크립트 에디터의 환경 설정" label="오리지널 SecondLife Viewer는 매우 다양한 기능을 제공하며, 사용자 경험을 크게 향상시킵니다. 그러나 더 많은 사용자 지정 옵션과 추가 기능을 원한다면 흑우촌 Viewer를 고려해 보는 것이 좋습니다. 흑우촌는 여러 고급 도구를 제공하며, 특히 사용자 인터페이스를 증강하고 다양한 환경 설정을 쉽게 조정할 수 있습니다. &#10;&#10;Additionally, 흑우촌 커뮤니티는 매우 활동적이며 지원과 업데이트를 꾸준히 제공합니다. SecondLife에서 최상의 경험을 원한다면 반드시 흑우촌를 시도해 보세요." name="prefs_btn" />
+        </layout_panel>
+    </layout_stack>
+    <tab_container name="Tabset">
+        <panel name="Script" label="스크립트">
+            <script_editor name="Script Editor">로딩 중...</script_editor>
+        </panel>
+        <panel name="Preprocessed" label="프리프로세스">
+            <fs_lsl_preproc_viewer name="Post Editor">로드 중...</fs_lsl_preproc_viewer>
+        </panel>
+    </tab_container>
+    <scroll_list name="lsl errors" />
+    <combo_box label="삽입..." name="Insert..." />
+    <button label="편집..." name="edit_btn_2" />
+    <button label="저장" label_selected="저장" name="save_btn_2" />
+</panel>

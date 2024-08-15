@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<menu name="menu_inventory_add">
+	<menu label="업로드" name="upload">
+		<menu_item_call label="이미지..." name="Upload Image" />
+		<menu_item_call label="사운드 (L$[COST])..." name="Upload Sound" />
+		<menu_item_call label="애니메이션 (L$[COST])..." name="Upload Animation" />
+		<menu_item_call label="모델..." name="Upload Model" />
+		<menu_item_call label="Sure, here is the translation of the provided text related to the SecondLife Viewer with the specified word translation:&#10;&#10;一括 - 전체&#10;&#10;Please provide the complete text so I can translate it in full for you." name="Bulk Upload" />
+		<menu_item_call label="링크 세트를 가져오기..." name="import linkset" />
+	</menu>
+	<menu_item_call label="새 폴더" name="New Folder" />
+	<menu_item_call label="신규 스크립트" name="New Script" />
+	<menu_item_call label="새로운 노트카드" name="New Note" />
+	<menu_item_call label="신규 제스처" name="New Gesture" />
+	<menu label="새로운 의류" name="New Clothes">
+		<menu_item_call label="새로운 셔츠" name="New Shirt" />
+		<menu_item_call label="새로운 바지" name="New Pants" />
+		<menu_item_call label="새 신발" name="New Shoes" />
+		<menu_item_call label="새로운 양말" name="New Socks" />
+		<menu_item_call label="새로운 자켓" name="New Jacket" />
+		<menu_item_call label="새 스커트" name="New Skirt" />
+		<menu_item_call label="새로운 장갑" name="New Gloves" />
+		<menu_item_call label="새로운 속옷(윗옷)" name="New Undershirt" />
+		<menu_item_call label="새로운 속옷 (하의)" name="New Underpants" />
+		<menu_item_call label="새로운 알파" name="New Alpha" />
+		<menu_item_call label="새로운 문신" name="New Tattoo" />
+		<menu_item_call label="새로운 유니버설" name="New Universal" />
+		<menu_item_call label="새로운 물리 작용" name="New Physics" />
+	</menu>
+	<menu label="새로운 신체 부위" name="New Body Parts">
+		<menu_item_call label="새로운 셰이프 (체형)" name="New Shape" />
+		<menu_item_call label="새로운 스킨" name="New Skin" />
+		<menu_item_call label="새로운 머리카락" name="New Hair" />
+		<menu_item_call label="새로운 눈" name="New Eyes" />
+	</menu>
+	<menu label="새로운 자연 환경 설정" name="New Settings">
+		<menu_item_call label="새로운 하늘" name="New Sky" />
+		<menu_item_call label="새로운 물" name="New Water" />
+		<menu_item_call label="새로운 데이 사이클" name="New Day Cycle" />
+	</menu>
+</menu>

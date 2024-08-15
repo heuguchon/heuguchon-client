@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="profile_permissions">
+	<string name="description_string" value="エージェントの[AGENT_NAME]に許可： &#10;--&gt;&#10;에이전트 [AGENT_NAME]에게 허가:" />
+	<text name="perm_description" value="승인된 에이전트:" />
+	<check_box name="online_check" label="온라인 상태" />
+	<check_box name="map_check" label="ワールドマップ上の自分の位置의 한국어 번역은 다음과 같습니다:&#10;&#10;월드 맵에서 자신의 위치" />
+	<check_box name="objects_check" label="자신의 땅에서 자신의 오브젝트를 편집, 삭제 또는 획득" />
+	<button name="perms_btn_ok" label="좋습니다" />
+	<button name="perms_btn_cancel" label="취소" />
+</floater>

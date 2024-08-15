@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="panel_experience_log" label="이벤트">
+	<string name="no_events" value="이벤트 없음." />
+	<string name="loading" value="로드 중..." />
+	<layout_stack name="ls1">
+		<layout_panel name="list panel">
+			<scroll_list name="experience_log_list">
+				<columns label="시간" name="time" />
+				<columns label="이벤트" name="event" />
+				<columns label="체험" name="experience_name" />
+				<columns label="객체" name="object_name" />
+			</scroll_list>
+			<button label="알림" name="btn_notify" />
+			<button label="프로필" name="btn_profile_xp" />
+			<button label="보고" name="btn_report_xp" />
+		</layout_panel>
+		<layout_panel name="button_panel">
+			<check_box label="모든 이벤트   일수를 알림" name="notify_all" />
+			<button label="Clear" name="btn_clear" />
+			<button label="The text intended for translation was not provided. Please include the text you need translated into Korean. If the text contains the word 'Firestorm', I will translate it as '흑우촌'." name="btn_prev" />
+			<button label="Sure, please provide the text you need to be translated." name="btn_next" />
+		</layout_panel>
+	</layout_stack>
+</panel>

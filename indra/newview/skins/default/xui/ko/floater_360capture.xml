@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="360capture" title="３６０도Ｓ샷">
+	<panel name="ui_panel_left">
+		<text name="quality_level_label">품질</text>
+		<radio_group name="360_quality_selection">
+			<radio_item label="프리뷰(고속)" name="preview_quality" tool_tip="미리보기 정도의 품질" />
+			<radio_item label="일반" name="medium_quality" value="512" tool_tip="일반 품질" />
+			<radio_item label="고" name="high_quality" value="1024" tool_tip="고품질" />
+			<radio_item label="최고 품위" name="maximum_quality" value="2048" tool_tip="최고 품질" />
+		</radio_group>
+		<check_box label="아바타를 모두 숨기기" name="360_hide_avatar" />
+		<button label="３６０度画像を作成&#10;&#10;360도 이미지 만들기" name="capture_button" />
+		<button label="이름을 지정하여 저장..." name="save_local_button" />
+	</panel>
+	<panel name="ui_panel_right">
+		<web_browser name="360capture_contents" />
+		<text name="statusbar">클릭과 드래그로 시점 변경</text>
+	</panel>
+</floater>

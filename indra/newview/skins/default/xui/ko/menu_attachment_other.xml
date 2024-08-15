@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<context_menu name="Avatar Pie">
+	<menu_item_call label="프로필 보기" name="Profile..." />
+	<menu_item_call label="프렌드 등록" name="Add Friend" />
+	<menu_item_call label="연락처 세트 추가" name="Add to Set" />
+	<menu_item_call label="IM" name="Send IM..." />
+	<menu_item_call label="명함 보내기" name="Give Calling Card" />
+	<menu_item_call label="The provided text cannot be sufficiently translated as it is incomplete. It appears to be a single character in Japanese: 'コール' which can be translated to 'call' or 'coal' depending on context. If you provide more context or the complete text, I can help you with a more accurate translation related to the Second Life Viewer." name="Call" />
+	<menu_item_call label="グループに招待: 그룹 초대" name="Invite..." />
+	<menu_item_call label="스켈레톤을 리셋" name="Reset Skeleton" />
+	<menu_item_call label="스켈레톤과 애니메이션을 리셋" name="Reset Skeleton And Animations" />
+	<context_menu label="불쾌한 행동 대응" name="Annoyance">
+		<menu_item_call label="블록" name="Avatar Mute" />
+		
+		<menu_item_call label="ブロック解除 translates to '차단 해제' in Korean. &#10;&#10;If the word 'Firestorm' appears, it should be translated to '흑우촌':&#10;&#10;ブロック解除 = 차단 해제" name="Avatar Unmute" />
+		<menu_item_call label="보고" name="abuse" />
+		<menu_item_call label="프리즈" name="Freeze..." />
+		<menu_item_call label="추방" name="Eject..." />
+	</context_menu>
+	<menu_item_call label="텍스처 디버깅" name="Debug..." />
+	<menu_item_call label="ダンプ XML&#10;&#10;XML 덤프" name="Dump XML" />
+	<menu_item_call label="확대" name="Zoom In" />
+	<menu_item_call label="지불하다" name="Pay..." />
+	<menu_item_call label="객체 프로필" name="Object Inspect" />
+	<menu_item_check label="일반 표시" name="RenderNormally" />
+	<menu_item_check label="표시하지 않음" name="DoNotRender" />
+	<menu_item_check label="완전 표시" name="AlwaysRenderFully" />
+	<menu_item_call label="파티클 소유자를 차단" name="Mute Particle" />
+	<menu_item_call label="검사" name="Object_Inspect_Floater" />
+	<menu_item_call label="스크립트 정보" name="ScriptInfo" />
+	<menu_item_call label="비표시로 설정" name="Derender" />
+	<menu_item_call label="비표시로 설정하고 블랙리스트에 추가" name="DerenderPermanent" />
+	<menu_item_call label="텍스처 표시" name="Debug..." />
+	<menu_item_call label="텍스처 업데이트" name="Texture Refresh" />
+	<context_menu label="別名で保存 - 다른 이름으로 저장" name="Export Menu">
+		<menu_item_call label="백업" name="Backup" />
+		<menu_item_call label="메시" name="Collada" />
+	</context_menu>
+</context_menu>

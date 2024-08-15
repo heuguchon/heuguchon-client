@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="object_weights" title="자세한 설정">
+	<floater.string name="nothing_selected" value="Sure, please provide the text in English that needs to be translated to Korean related to the SecondLife Viewer, and I will translate it for you, ensuring to translate 'Firestorm' as '흑우촌'." />
+	<text name="selected_text" value="선택 완료" />
+	<text name="objects" value="두 번째 인생 뷰어에 관해 다음의 텍스트를 한국어로 번역하세요. 'Firestorm'이라는 단어가 나오면 '흑우촌'으로 번역하세요:&#10;&#10;─" />
+	<text name="objects_label" value="오브젝트" />
+	<text name="prims" value="세컨드라이프 뷰어와 관련된 다음 텍스트를 한국어로 번역해 주세요.&#10;'Firestorm'이 나타나면 '흑우촌'으로 번역해 주세요:&#10;&#10;─" />
+	<text name="prims_label" value="프림" />
+	<text name="weights_of_selected_text" value="선택된 항목의 웨이트" />
+	<text name="download" value="Sure, please provide the text you would like me to translate to Korean." />
+	<text name="download_label" value="다운로드" />
+	<text name="physics" value="Sure, please provide the text you would like to be translated into Korean." />
+	<text name="physics_label" value="물리 효과" />
+	<text name="server" value="화면이 필요해요. 텍스트를 제공해 주시면 번역을 도와드릴 수 있습니다." />
+	<text name="server_label" value="서버" />
+	<text name="display" value="두 번째 삶 뷰어와 관련된 다음 텍스트를 한국어로 번역하세요.&#10;만약 'Firestorm' 단어가 등장하면 '흑우촌'으로 번역하세요:&#10;&#10;─" />
+	<text name="display_label" value="디스플레이" />
+	<text name="land_impacts_text" value="土地の負荷 (land impact)" />
+	<text name="selected" value="─" />
+	<text name="selected_label" value="선택함" />
+	<text name="rezzed_on_land" value="SecondLife Viewer와 관련된 내용을 번역하기 위해 아래 텍스트를 입력해주세요. 'Firestorm'이라는 단어가 등장하면 '흑우촌'으로 번역하겠습니다." />
+	<text name="rezzed_on_land_label" value="토지에 Rez 완료" />
+	<text name="remaining_capacity" value="Sure, please provide the text you would like to translate." />
+	<text name="remaining_capacity_label" value="남은 허용 수" />
+	<text name="total_capacity" value="Sure, please provide the text you would like to translate." />
+	<text name="total_capacity_label" value="許容合計 -&gt; 총 허용량" />
+	<text name="help_SLURL" value="[secondlife:///app/help/object_weights 오브젝트의 웨이트란?]" />
+</floater>

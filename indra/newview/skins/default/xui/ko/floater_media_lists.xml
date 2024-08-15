@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floatermedialists" title="미디어 목록">
+	<floater.string name="EnterUrlAllow">허용할 도메인 또는 URL을 입력하세요:</floater.string>
+	<floater.string name="EnterUrlDeny">허용하지 않을 도메인 또는 URL을 입력하세요:</floater.string>
+
+	<layout_stack name="lists_layout_stack">
+		<layout_panel name="whitelist_layout_panel">
+			<text name="whitelist_text">허가된 도메인:</text>
+			<scroll_list name="whitelist">
+				<column label="허용 목록" name="list" width="195" />
+			</scroll_list>
+			<layout_stack name="whitelist_buttons_layout_stack">
+				<layout_panel name="whitelist_buttons_panel_add">
+					<button label="추가..." name="add_whitelist" />
+				</layout_panel>
+				<layout_panel name="whitelist_buttons_panel_remove">
+					<button label="삭제" name="remove_whitelist" />
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+
+		<layout_panel name="blacklist_layout_panel">
+			<text name="blacklist_text">거부된 도메인:</text>
+			<scroll_list name="blacklist">
+				<column label="블랙리스트" name="list" width="195" />
+			</scroll_list>
+			<layout_stack name="blacklist_buttons_layout_stack">
+				<layout_panel name="blacklist_buttons_panel_add">
+					<button label="추가..." name="add_blacklist" />
+				</layout_panel>
+				<layout_panel name="blacklist_buttons_panel_remove">
+					<button label="삭제" name="remove_blacklist" />
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+		
+	</layout_stack>
+</floater>

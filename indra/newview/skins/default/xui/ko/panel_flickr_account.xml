@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="panel_flickr_account">
+	<string name="flickr_connected" value="다음 사용자로 Flickr에 접속:" />
+	<string name="flickr_disconnected" value="Flickr에 연결되지 않음" />
+	<text name="account_caption_label">Flickr 에 연결되지 않았습니다.</text>
+	<panel name="panel_buttons">
+		<button label="연결중..." name="connect_btn" />
+		<button label="차단" name="disconnect_btn" />
+		<text name="account_learn_more_label">[http://community.secondlife.com/t5/English-Knowledge-Base/Second-Life-Share-Flickr/ta-p/2435609 Flickr 에 게시하기에 대하여]</text>
+	</panel>
+</panel>

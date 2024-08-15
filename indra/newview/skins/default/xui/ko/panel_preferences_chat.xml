@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="채팅" name="chat">
+<tab_container label="흑우촌 환경설정" name="tabs">
+
+	
+	
+	<panel label="표시" name="ChatVisuals">
+		<text name="console_font_size">화면 콘솔의 글자 크기:</text>
+		<radio_group name="chat_console_font_size">
+			<radio_item label="Sure, here is the translation of the given text to Korean:&#10;&#10;작&#10;&#10;Please provide the full text you'd like translated." name="consradio" />
+			<radio_item label="중" name="consradio2" />
+			<radio_item label="Sure, here is the translation of the given text to Korean:&#10;&#10;大" name="consradio3" />
+			<radio_item label="특대" name="consradio4" />
+		</radio_group>
+		<check_box label="아바타의 애니메이션을 재생 (소리칠 때 등)" name="play_avatar_animations" />
+		<check_box name="FSIMSystemMessageBrackets" label="시스템에서의 알림은 대괄호로 둘러싸기" />
+		<check_box name="FSChatHistoryShowYou" label="채팅 기록에서는 자신의 이름 대신 &quot;You&quot;로 표시합니다." />
+		<check_box label="감정 표현（외침, 속삭임 등)은 이탤릭체로 한다" name="EmotesUseItalic" />
+		<check_box name="FSEmphasizeShoutWhisper" label="소리 지르기는 굵은 글씨, 속삭임은 이탤릭체로" />
+		<check_box label="오브젝트의 발언에는, 대화의 혼란을 피하기 위해 (no name)이라고 표시합니다." name="FSMarkObjects" />
+		<check_box label="llOwnerSay 을(를) 스크립트의 디버그 창으로 보냅니다" name="FSllOwnerSayToScriptDebugWindow_checkbox" />
+		<check_box label="말풍선 채팅" name="bubble_text_chat" />
+		<check_box label="주변 채팅이나 토스트에 채팅을 표시하지 않기" name="FSBubblesHideConsoleAndToasts" />
+		<check_box label="입력 중에 말풍선을 표시하기" name="bubble_text_typing" />
+		<check_box label="아바타 머리 위의 이름 태그에 입력 중인 표시 나타내기" name="FSShowTypingStateInNameTag" />
+		<check_box name="FSSecondsinChatTimestamps" label="타임스탬프에 초를 표시 [HH:MM:SS]" />
+		<text name="show_timestamps_label">타임스탬프 표시:</text>
+		<check_box label="주변 채팅" name="show_timestamps_nearby_chat" />
+		<check_box label="IM" name="show_timestamps_im" />
+		<check_box label="대화 텍스트" name="show_timestamps_transcripts" />
+		<check_box label="콘솔 표시에서 클래식 렌더링 모드를 사용" name="FSConsoleClassicDrawMode" tool_tip="클래식 렌더링 모드에서는 콘솔의 배경이 하나의 직사각형으로 둘러싸여 있으며, 그 너비는 가장 긴 행의 너비와 같습니다." />
+		<check_box label="컨솔의 너비는 화면의 너비를 가득 사용" name="ChatFullWidth" />
+		<spinner label="チャットが消えるまで&#10;채팅이 사라질 때까지" name="fade_chat_time" />
+		<text name="text_box4">（초）</text>
+		<spinner name="max_chat_count" />
+		<text name="text_box5">(번역 중)</text>
+	</panel>
+	
+	
+	
+	<panel label="채팅 창" name="ChatWindows">
+		<text name="font_size">チャット画面の文字の大きさ：채팅 화면의 글자 크기:</text>
+		<radio_group name="chat_font_size">
+			<radio_item label="The text you provided only contains the character &quot;小,&quot; which translates to &quot;작은&quot; or &quot;작다&quot; in Korean, meaning &quot;small&quot; or &quot;little.&quot; Since there is no context involving 'Firestorm' or '흑우촌,' the translation remains as:&#10;&#10;작은" name="radio" />
+			<radio_item label="텍스트를 제공해 주시면 번역해 드리겠습니다. 'Firestorm'을 '흑우촌'으로 번역할 것을 고려하겠습니다.텍스트를 입력해 주세요." name="radio2" />
+			<radio_item label="Sorry, it seems like the text got cut off. Could you please provide the full text that you want translated to Korean?" name="radio3" />
+			<radio_item label="특대" name="radio4" />
+		</radio_group>
+		<check_box name="IMShowNamesForP2PConv" label="一対一のIMで名前を表示する - 일대일 IM에서 이름을 표시하기" />
+		<check_box label="IM 및 채팅 기록에 텍스트만 표시하기 (V1 형식)" name="plain_text_chat_history" />
+		<check_box label="발언자의 미니 아이콘을 표시" name="ShowChatMiniIcons" />
+		<check_box label="직전 대화의 마지막 부분을 표시" name="LogShowHistory" />
+		<check_box name="FSTypingChevronPrefix" label="상대가 입력 중임을 나타내는 각괄호(＞)를 추가하십시오." />
+		<text name="show_unread_messages_label">新規メッセージを通知: 새 메시지 알림</text>
+		<check_box name="FSNotifyUnreadChatMessages" label="주변 채팅" tool_tip="채팅 기록을 보기 위해 화면을 위로 스크롤하는 동안 새 메시지를 수신하면 주변 채팅 창에 읽지 않은 메시지의 수를 알립니다." />
+		<check_box name="FSNotifyUnreadIMMessages" label="IM과 그룹 IM" tool_tip="화면을 위쪽으로 스크롤하여 채팅 기록을 보는 동안 새 메시지를 수신한 경우, IM 또는 그룹 IM 창에 읽지 않은 메시지 수를 알립니다." />
+		<text name="show_ims_in_label">IM 표시 방법:</text>
+		<radio_group name="chat_window" tool_tip="인스턴트 메시지를 별도의 플로터나 하나의 플로터에 여러 탭으로 표시합니다(재시작 필요)">
+			<radio_item label="별도의 창" name="radio" />
+			<radio_item label="탭" name="radio2" />
+		</radio_group>
+		<text name="req_restart_ims">（다시 시작한 후에 반영）</text>
+	
+		<text name="tab_direction_label">탭 방향</text>
+		<radio_group name="chat_tab_direction" tool_tip="채팅 및 IM 탭의 배열 방향을 가로로 할지 세로로 할지를 변경합니다 (재시작 필요)">
+			<radio_item label="가로 방향" name="radio_horizontal" />
+			<radio_item label="세로 방향" name="radio_vertical" />
+		</radio_group>
+		<text name="req_restart_chattabs">（재시작 후 반영）</text>
+		<text name="FSIMTabNameFormat_label">IMタブの名前形式: IM 탭의 이름 형식:</text>
+		<combo_box name="FSIMTabNameFormat">
+			<combo_box.item label="표시 이름" name="display_name" />
+			<combo_box.item label="사용자 이름" name="user_name" />
+			<combo_box.item label="표시 이름 (사용자 이름)" name="display_user_name" />
+			<combo_box.item label="사용자 이름 (표시 이름)" name="user_display_name" />
+		</combo_box>
+		 
+		<check_box label="그룹 채팅의 의장의 발언은 굵게 표시합니다" name="FSHighlightGroupMods" />
+		<text name="Moderator Name Style" width="85">이름:</text>
+		<combo_box name="mod_name_style">
+			<combo_box.item label="표준" name="normal" />
+			<combo_box.item label="굵게" name="BOLD" />
+			<combo_box.item label="斜字体 -&gt; 기울임꼴" name="ITALIC" />
+			<combo_box.item label="太字＋斜字体: 굵은 글씨+기울임체" name="BOLDITALIC" />
+			<combo_box.item label="밑줄" name="UNDERLINE" />
+			<combo_box.item label="太字＋下線&#10;&#10;굵게 + 밑줄" name="BOLDUNDERLINE" />
+			<combo_box.item label="기울임꼴＋밑줄" name="ITALICUNDERLINE" />
+			<combo_box.item label="太字＋斜字体＋下線" name="BOLDITALICUNDERLINE" />
+		</combo_box>
+		<text name="Moderator Text Style" width="85">발언:</text>
+		<combo_box name="mod_text_style">
+			<combo_box.item label="표준" name="normal" />
+			<combo_box.item label="굵게" name="BOLD" />
+			<combo_box.item label="斜字体 translates to &quot;기울임꼴&quot; in Korean." name="ITALIC" />
+			<combo_box.item label="太字＋斜字体 -&gt; 굵게＋기울임꼴" name="BOLDITALIC" />
+			<combo_box.item label="밑줄" name="UNDERLINE" />
+			<combo_box.item label="太字＋下線 &#10;&#10;굵게＋밑줄&#10;&#10;If the word 'Firestorm' appears, translate it to '흑우촌': &#10;&#10;'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역한다:&#10;&#10;" name="BOLDUNDERLINE" />
+			<combo_box.item label="기울임꼴+밑줄" name="ITALICUNDERLINE" />
+			<combo_box.item label="굵은＋기울임꼴＋밑줄" name="BOLDITALICUNDERLINE" />
+		</combo_box>
+		
+		<check_box label="그룹 채팅을 모두 표시하지 않도록 설정하기" name="FSMuteAllGroups" />
+		<check_box label="그룹 알림을 비활성화할 때, 그룹 채팅도 비활성화하기" name="FSMuteGroupWhenNoticesDisabled" />
+		<check_box name="FSIgnoreAdHocSessions" label="모든 회의를 자동으로 무시하고 퇴장합니다." />
+		<check_box name="FSReportIgnoredAdHocSession" label="無視したカンファレンスを周辺チャットで報告する:&#10;무시한 컨퍼런스를 주변 채팅으로 보고합니다." />
+		<check_box name="FSDontIgnoreAdHocFromFriends" label="프렌드로부터의 컨퍼런스 채팅 초대는 무시하지 않기" />
+		<text name="group_snooze_time_label" tool_tip="「居眠り」ボタン을 눌렀을 때, 그룹 채팅을 무시하는 시간의 길이。「0」に設定すると, 다음 그룹 메시지가 도착할 때까지 창을 닫습니다。">그룹 채팅 대기 시간:</text>
+		<spinner name="GroupSnoozeTime" tool_tip="「居眠り」ボタン을 눌렀을 때, 그룹 채팅을 무시하는 시간의 길이입니다. &quot;0&quot;으로 설정하면, 다음 그룹 메시지가 도착할 때까지 창을 닫습니다." />
+		<text name="group_snooze_time_seconds_label" tool_tip="「居眠り」ボタン을 눌렀을 때, 그룹 채팅을 무시하는 시간의 길이입니다。「0」으로 설정하면, 다음 그룹 메시지가 도착할 때까지 창을 닫습니다.">초</text>
+		<check_box name="FSEnablePerGroupSnoozeDuration" label="그룹 채팅의 대기 시간은 그룹마다 개별적으로 설정할 수 있습니다." />
+	</panel>
+	
+	
+	
+	<panel label="타이핑" name="ChatTyping">
+		<button name="autoreplace_showgui" label="자동 교체..." />
+		<button name="spellcheck_showgui" label="스펠 체크..." />
+		<button name="translation_settings_btn" label="번역..." />
+		<check_box label="채팅 중 타이핑 동작의 애니메이션을 재생" name="play_typing_animation" />
+		<check_box label="감정 표현을 사용하고 있는 경우에도 타이핑 동작의 애니메이션을 재생" name="play_typing_animation_emote" />
+		<check_box label="사람들이 대화할 때 타이핑 소리가 들리게 하기" name="play_typing_sound" />
+		<check_box label="IM 중에 입력 중임을 상대에게 알리기" name="FSSendTypingState" />
+		<check_box name="FSChatbarGestureAutoCompleteEnable" label="채팅 바에서 제스처의 자동 완성 사용" />
+		<check_box name="FSChatbarNamePrediction" label="주변 채팅에서 주변에 있는 사람의 이름에 자동 완성을 사용하기" />
+		<check_box label="&quot;:&quot;을/를 &quot;/me&quot; 대신에 사용하기" name="AllowMUpose" />
+		<check_box label="((OOC))のかっこを自動的に閉じる" name="AutoCloseOOC" />
+		<check_box name="FSShowIMSendButton" label="IM의 채팅 바에 '전송' 버튼을 표시합니다" />
+		<check_box label="주변 채팅 창에 채팅 바를 표시합니다." name="FSNearbyChatbar" />
+		<check_box label="채팅 바에 채널 선택 표시하기" name="FSShowChatChannel" />
+		<check_box name="FSShowChatType" label="채팅 바에 채팅 종류와 전송 버튼 표시" />
+		<check_box label="채팅 바를 자동으로 숨기기" name="AutohideChatBar" tool_tip="チャットバーを画面下のボタンバーに表示しないようにし、必要な時だけ表示されるようにします。&#10;&#10;채팅 바가 화면 하단의 버튼 바에 나타나지 않도록 하고, 필요할 때만 나타나도록 합니다." />
+		<check_box label="메시지 전송 후에는 채팅 창이 선택되지 않은 상태로 한다." name="CloseChatOnReturn" />
+		<check_box label="메시지를 보낸 후에는 채팅 기록도 선택되지 않은 상태로 합니다" name="FSUnfocusChatHistoryOnReturn" />
+		<text name="textUseKeyboardShortcuts">키보드 단축키를 이용하기:</text>
+		<check_box name="FSUseCtrlShout" label="Ctrl+Enter (叫ぶ)" tool_tip="주변 채팅에서 외칠 때 Ctrl+Enter 키의 단축키를 사용하려면 여기에 체크하십시오." />
+		<check_box name="FSUseShiftWhisper" label="Shift+Enter (속삭이기)" tool_tip="주변 채팅에서 속삭일 때 Shift+Enter 단축키를 사용하고 싶다면, 여기에 체크를 해주세요." />
+		<check_box name="FSUseAltOOC" label="Alt+Enter ((비공식 대화))" tool_tip="주변 채팅에서 ((OOC) 메시지를 보낼 때, Alt+Enter 키의 단축키를 사용하고 싶다면, 여기에 체크를 해주세요." />
+	</panel>
+	
+	
+	
+	
+	<panel label="통지" name="ChatNotices">
+	
+		<text name="disable_toast_label">수신 채팅 팝업을 활성화합니다.</text>
+		<check_box label="그룹 채팅" name="EnableGroupChatPopups" tool_tip="이 옵션을 선택하면 그룹 채팅 메시지를 받을 때 팝업이 표시됩니다." />
+		<check_box label="IM 채팅" name="EnableIMChatPopups" tool_tip="이를 선택하면 인스턴트 메시지를 수신할 때 팝업이 표시됩니다." />
+		<check_box label="팝업을 알림 창 아닌 화면 왼쪽 아래의 채팅 콘솔에 표시 (V1.x 형식)" name="FSUseNearbyChatConsole" />
+		<check_box label="IM을 화면 왼쪽 아래의 채팅 콘솔에 표시" name="FSLogImToChatConsole" />
+		<check_box label="그룹 채팅을 화면 왼쪽 하단의 채팅 콘솔에 표시" name="FSLogGroupImToChatConsole" />
+		<text name="FSShowGroupNameLength_label">채팅 기록에 그룹 이름 길이 표시</text>
+		<check_box name="FSOpenIMContainerOnOfflineMessage" label="오프라인 메시지를 수신하면 대화창을 엽니다." />
+		<check_box label="오프라인 시 수신한 IM을 이메일로 받기 ([EMAIL])" name="send_im_to_email" />
+		<check_box name="FSShowIMInChatHistory" label="IM을 채팅 기록에 표시" />
+		<check_box name="FSLogIMInChatHistory" label="IM을 채팅 로그에 저장" />
+		<text name="FSIMChatHistoryFade_label">채팅 기록 창에서 IM을 연하게 표시</text>
+		<check_box name="FSShowMessageCountInWindowTitle" label="未読IMの数を흑우촌의 창 제목에 표시" />
+		<check_box label="상대가 입력을 시작하면, IM이 올 것을 미리 알림." name="FSAnnounceIncomingIM" />
+		<check_box name="FSIMChatFlashOnFriendStatusChange" label="프렌드의 온라인 상태가 변경되면 IM 탭을 점멸" />
+		<check_box name="FSNotifyNearbyChatFlash" label="새로운 주변 채팅을 수신하면 채팅 툴바의 버튼을 깜박입니다." tool_tip="새로운 주변 채팅을 수신하면 채팅 도구 모음의 버튼이 깜빡입니다. 이때, 주변 채팅은 대화 창에 도킹되어 있어야 하며, 버튼을 깜빡이게 하려면 대화 창이 닫혀 있어야 합니다." />
+		<check_box name="FSNotifyIMFlash" label="새로운 IM을 수신하면 채팅 도구 모음의 버튼이 깜박입니다" tool_tip="새로운 (그룹) IM을 수신하면 채팅 도구 모음의 버튼이 깜빡입니다. 이때, IM 창은 대화 창에 도킹되어 있어야 하며, 또한 버튼을 깜빡이게 하려면 대화 창이 닫혀 있어야 합니다. 이 옵션은 IM이 별도의 창으로 분리되지 않고 탭으로 표시되는 경우에만 활성화됩니다. (&quot;일반&quot; 탭을 참조)" />
+         <check_box name="FSReportMutedGroupChat" label="무시한 그룹 채팅을 주변 채팅 창에 표시" />
+ 		
+            <check_box name="FSGroupNoticesToIMLog" label="그룹 알림을 팝업뿐만 아니라 그룹 채팅에도 포함하기" />
+            <check_box name="FSBetterGroupNoticesToIMLog" label="알림 제목 및 작성자도 표시하기" />
+	</panel>
+	
+	
+	
+	<panel label="레이다" name="ChatRadar">
+	
+		<check_box label="아바타가 챗 레인지에 들어오면 알림" name="reportChatRangeEnter" />
+		<check_box name="PlayModeUISndRadarChatEnter" label="소리를 재생 UUID:" />
+		<button name="Prev_UISndRadarChatEnter" label="Sure, please provide the text you need to be translated." tool_tip="이 소리를 미리 듣습니다." />
+		<button name="Def_UISndRadarChatEnter" label="Firestorm Viewer를 통해 SecondLife를 더욱 효율적으로 탐험하고 즐길 수 있습니다. Firestorm의 다양한 기능은 사용자 경험을 향상시키며, 특히 프리퍼브 콘텐츠와 사용자 커뮤니티의 지원을 통해 더욱 몰입감 있는 가상 현실 세계를 경험할 수 있습니다. Firestorm는 SecondLife 사용자들에게 가장 인기 있는 뷰어 중 하나로 끊임없이 업데이트되고 개선되고 있습니다. 당신도 흑우촌의 기능을 활용해 SecondLife에서 새로운 가능성을 발견해보세요." tool_tip="기본 UUID로 되돌립니다." />
+		
+		<check_box label="아바타가 채팅 범위를 벗어나면 알림" name="reportChatRangeLeave" />
+		<check_box name="PlayModeUISndRadarChatLeave" label="소리를 재생합니다 UUID::" />
+        <button name="Prev_UISndRadarChatLeave" label="Sure! Please provide the text you would like translated to Korean, and I will assist you with it." tool_tip="이 소리의 미리 듣기를 합니다." />
+        <button name="Def_UISndRadarChatLeave" label="Are you sure you provided the complete text for translation? All I see is a single letter &quot;D&quot;. Could you please provide the full text related to the SecondLife Viewer that you would like translated to Korean, keeping in mind the instruction regarding 'Firestorm'?" tool_tip="기본 UUID로 되돌립니다." />
+
+		<check_box label="아바타가 그려지는 범위에 들어오면" name="reportDrawRangeEnter" />
+		<check_box name="PlayModeUISndRadarDrawEnter" label="음 내기　UUID:" />
+        <button name="Prev_UISndRadarDrawEnter" label="The text you provided is incomplete. Please provide the complete text or phrase you want to translate to Korean, and I'll be happy to assist you." tool_tip="이 소리를 미리 듣습니다." />
+        <button name="Def_UISndRadarDrawEnter" label="다음 텍스트를 한국어로 번역하겠습니다, 이 텍스트는 SecondLife Viewer와 관련이 있습니다.&#10;만약 'Firestorm'라는 단어가 등장하면, '흑우촌'으로 번역합니다:&#10;&#10;D&#10;&#10;D" tool_tip="기본 UUID로 되돌립니다." />
+
+		<check_box label="아바타가 그리기 범위를 벗어나면" name="reportDrawRangeLeaave" />
+		<check_box name="PlayModeUISndRadarDrawLeave" label="소리를 재생 UUID:" />
+        <button name="Prev_UISndRadarDrawLeave" label="다음 문장을 번역해드리겠습니다. 'Firestorm'을 '흑우촌'으로 번역하겠습니다:&#10;&#10;P" tool_tip="이 소리를 미리 들어봅니다." />
+        <button name="Def_UISndRadarDrawLeave" label="I'm sorry, but the text you provided for translation appears to be incomplete. Could you please provide the full text you'd like translated?" tool_tip="기본 UUID로 되돌리겠습니다." />
+
+		<check_box label="아바타가 같은 SIM에 들어오면 알림" name="RadarReportSimRangeEnter" />
+		<check_box name="PlayModeUISndRadarSimEnter" label="음을 재생하다 UUID:" />
+        <button name="Prev_UISndRadarSimEnter" label="다음 텍스트를 한국어로 번역해주세요. 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:&#10;&#10;P" tool_tip="이 소리 미리 듣기를 클릭하여 들으세요." />
+        <button name="Def_UISndRadarSimEnter" label="Sure, could you please provide the text you would like to be translated?" tool_tip="기본 UUID로 되돌립니다." />
+
+		<check_box label="아바타가 같은 SIM에서 나갔을 때 알림" name="RadarReportSimRangeLeave" />
+		<check_box name="PlayModeUISndRadarSimLeave" label="소리를 재생 UUID:" />
+        <button name="Prev_UISndRadarSimLeave" label="Sure! Please provide the text related to the SecondLife Viewer that you would like to translate to Korean." tool_tip="이 소리를 미리 들어봅니다." />
+        <button name="Def_UISndRadarSimLeave" label="As the text only contains the letter &quot;D,&quot; there isn’t enough context to provide an accurate translation, particularly related to the SecondLife Viewer or the term &quot;Firestorm.&quot; If you have a more extensive piece of text that includes specific references or mentions &quot;Firestorm,&quot; please provide it, and I'll gladly assist with the translation to Korean." tool_tip="디폴트 UUID로 되돌립니다." />
+
+		<check_box name="RadarEnterChannelAlert" label="SIM에 사람이 온 정보를 스크립트로 전송" />
+		<check_box name="RadarLeaveChannelAlert" label="SIM에서 사람이 떠난 정보를 스크립트로 전송" />
+		<check_box name="FSRadarEnhanceByBridge" label="LSL-Client Bridge를 사용하여 레이더의 성능을 향상시키기" tool_tip="체크하면 레이더가 높은 장소에 있는 아바타를 결정하는 기능이 LSL-클라이언트 브리지의 지원으로 향상됩니다. 특히 그 아바타가 렌더링 범위 밖에 있는 경우에 유용합니다." />
+		<text name="AgeAlertLabel">연령 경고:</text>
+			<text name="RadarAvatarAgeAlertValueLabel">閾値: 임계값</text>
+			<spinner name="RadarAvatarAgeAlertValue" tool_tip="レーダーの年齢欄にも色で強調します。無効にするには-1を設定します。&#10;&#10;레이더의 나이 칸도 색으로 강조합니다. 비활성화하려면 -1을 설정합니다." />
+			<text name="RadarAvatarAgeAlertValueLabelSuffix">- The SecondLife Viewerのインターフェースに慣れている場合は、特に表示されるタブの配置が役立ちます。 원하는 경우 背景 색상을 맞춤 설정하여 더 개인화된 경험을 즐길 수 있습니다.
+- 흑우촌を使用すると、 추가 기능과 도구가 포함되어 있어 보다 효율적으로 작업할 수 있습니다.</text>
+			<check_box name="RadarAvatarAgeAlert" label="지정한 연령보다 어린 아바타가 가까이 오면 레이더가 보고합니다." />
+			<check_box name="PlayModeUISndRadarAgeAlert" label="통지음 UUID:" />
+            <button name="Prev_UISndRadarAgeAlert" label="SecondLife 뷰어와 관련된 다음 텍스트를 한국어로 번역하겠습니다.&#10;'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역합니다:&#10;&#10;P" tool_tip="지정한 알림음을 확인합니다" />
+            <button name="Def_UISndRadarAgeAlert" label="Here is the translation of the provided text to Korean:&#10;&#10;D" tool_tip="기본 UUID로 되돌립니다" />
+
+	</panel>
+	
+	
+	
+	<panel label="키워드   &#10;" name="ChatKeywordAlerts">
+	
+		<check_box label="키워드 알림을 활성화합니다." name="FSKeywordOn" />
+		<check_box label="주변 채팅에서 키워드를 강조" name="FSKeywordInChat" />
+		<check_box label="IM과 그룹 채팅에서 키워드를 강조" name="FSKeywordInIM" />
+		<check_box name="FSKeywordSpeakersName" label="보낸 사람의 이름에 키워드가 포함되어 있는지 확인합니다." />
+		<check_box name="FSKeywordCaseSensitive" label="모든 키워드에서 대문자와 소문자를 구분합니다" />
+		<check_box name="FSKeywordMatchWholeWords" label="모든 키워드가 일치할 때만" />
+		<text name="textFSKeywords">키워드(콤마로 구분):</text>
+		<check_box label="키워드의 색을 변경하기" name="FSKeywordChangeColor" />
+		<color_swatch name="colorswatch" tool_tip="클릭하여 색상을 선택합니다" />
+		<check_box label="키워드가 나오면 알림음을 울립니다" name="FSKeywordPlaySound" />
+		<text name="textFSKeywordSound">알림 소리의 UUID:</text>
+		<button name="Prev_UISndFSKeywordSound" label="SecondLife Viewer와 관련된 다음 텍스트를 한국어로 번역하십시오. 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:" tool_tip="지정한 알림 소리를 확인합니다." />
+		<button name="Def_UISndFSKeywordSound" label="I'm sorry, but it looks like you only entered the letter &quot;D&quot;. Could you please provide the entire text you need to be translated?" tool_tip="기본 UUID로 되돌립니다." />
+		
+	</panel>
+	
+	
+	
+	<panel label="커맨드 라인" name="tab-CmdLine">
+		<check_box label="챗 바를 명령줄로 사용" name="chat_cmd_toggle" />.
+		
+		<text name="FSCmdLineCalc_txt">식을 계산（예: cmd SIN(2+2)）</text>
+		<line_editor name="FSCmdLineCalc" />
+		
+		<text name="FSCmdLineDrawDistance_txt">렌더링 거리 변경 (사용법: cmd 숫자(m))</text>
+		<line_editor name="FSCmdLineDrawDistance" />
+		
+		<text name="FSCmdLineBandWidth_txt">최대 대역폭을 설정합니다 (사용법: cmd 숫자 (kbps)).</text>
+		<line_editor name="FSCmdLineBandWidth" />
+		
+		<text name="FSCmdLineCopyCam_txt">카메라 위치를 클립보드에 복사</text>
+		<line_editor name="FSCmdLineCopyCam" />
+		
+		<text name="FSCmdLineAO_txt">AO를 온／오프（사용법：cmd on/off）</text>
+		<line_editor name="FSCmdLineAO" />
+		
+		<text name="FSCmdLineClearChat_txt">チャット履歴を消去（使用法：cmd）
+채팅 기록 삭제 (사용법: cmd)</text>
+		<line_editor tool_tip="스팸 채팅이 발생했을 때, 그 영향으로 인해 랙이 발생하는 것을 방지하기 위해 채팅 기록을 삭제합니다." name="FSCmdLineClearChat" />
+		
+		<text name="FSCmdLineMedia_txt">미디어 URL 설정 (사용법: cmd URL 유형)</text>
+		<line_editor tool_tip="입력한 URL의 미디어를 설정하고, 미디어를 재생합니다." name="FSCmdLineMedia" />
+		
+		<text name="FSCmdLineMusic_txt">음악 스트리밍 URL을 설정 (사용법: cmd URL)</text>
+		<line_editor tool_tip="입력한 URL의 음악 스트리밍에 설정, 음악을 플레이합니다." name="FSCmdLineMusic" />
+		
+		<text name="FSCmdLineRezPlatform_txt">플랫폼을 Rez（사용법: cmd 0〜64）</text>
+		<line_editor name="FSCmdLineRezPlatform" />
+		<slider name="FSCmdLinePlatformSize" label="The text you provided seems to include only a single Chinese character &quot;幅,&quot; which does not provide enough context to understand its relation to SecondLife Viewer and the term &quot;Firestorm.&quot; If you could provide a more complete text or context around it, I would be able to assist you with the translation to Korean." tool_tip="Rez하는 플랫폼의 너비를 설정합니다." />
+		<view_border name="EmDivisor" />
+		
+		<text name="FSCmdLineKeyToName_txt">UUID에서 아바타 이름을 가져오기 (사용법: cmd UUID)</text>
+		<line_editor name="FSCmdLineKeyToName" />
+		
+		<text name="FSCmdLineRollDice_txt">주사위를 굴리기 (사용법: cmd 주사위 번호 주사위 면수 연산자 계수)</text>
+		<line_editor tool_tip="주사위를 굴립니다. cmd [주사위의 번호] [주사위의 면수] [연산자의 종류 (선택 사항)] [계수 (선택 사항)]의 문법으로 작성합니다. 예를 들어, cmd 1 20, cmd 2 40, + 5와 같이 표기합니다. 이러한 매개변수를 생략하면, cmd 1 6이 적용되어, 즉, 일반적인 주사위 하나를 굴립니다." name="FSCmdLineRollDice" />
+		
+		<text name="FSCmdLinePos_txt">동일한 SIM 내에서 텔레포트 (사용법: cmd x y z)</text>
+		<line_editor name="FSCmdLinePos" />
+		
+		<text name="FSCmdLineGround_txt">지상으로 텔레포트 (사용법: cmd)</text>
+		<line_editor name="FSCmdLineGround" />
+		
+		<text name="FSCmdLineHeight_txt">지정한 높이로 텔레포트하기 (사용 방법: cmd z)</text>
+		<line_editor name="FSCmdLineHeight" />
+		
+		<text name="FSCmdTeleportToCam_txt">카메라 위치로 텔레포트 (사용법: cmd)</text>
+		<line_editor name="FSCmdTeleportToCam" />
+		
+		<text name="FSCmdLineOfferTp_txt">아바타에게 텔레포트를 보내기（사용법：cmd UUID）</text>
+		<line_editor name="FSCmdLineOfferTp" />
+		
+		<text name="FSCmdLineTP2_txt">아바타의 위치로 이동 (사용법: cmd 아바타 이름)</text>
+		<line_editor tool_tip="이 명령어에서 사용할 아바타 이름은 전체 이름일 필요가 없으며 대소문자를 구분하지 않습니다. 레이더를 열어 비슷한 이름의 사람이 없는지 확인하고 사용하시기를 권장합니다." name="FSCmdLineTP2" />
+		
+		<text name="FSCmdLineTeleportHome_txt">홈에 텔레포트 (사용법: cmd)</text>
+		<line_editor name="FSCmdLineTeleportHome" />
+		
+		<text name="FSCmdLineMapTo_txt">지정한 SIM에 이동 (사용법: cmd SIM명 | x y z)</text>
+		<line_editor name="FSCmdLineMapTo" />
+		<check_box label="목표 SIM의 동일한 좌표로 이동" name="toggle" />
+	</panel>
+	
+</tab_container>
+</panel>

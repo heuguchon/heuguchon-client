@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_voice_controls" title="보이스 컨트롤">
+	<string name="title_nearby">음성 설정</string>
+	<string name="title_group">[GROUP] 과 그룹콜</string>
+	<string name="title_adhoc">전화 회의</string>
+	<string name="title_peer_2_peer">[NAME] と 콜</string>
+	<string name="no_one_near">주변에 보이스를 활성화하고 있는 사람이 없습니다.</string>
+	<layout_stack name="my_call_stack">
+		<layout_panel name="my_panel">
+			<text name="user_text" value="내 아바타:" />
+		</layout_panel>
+		<layout_panel name="leave_call_panel">
+			<layout_stack name="voice_effect_and_leave_call_stack">
+				<layout_panel name="leave_call_btn_panel">
+					<button label="콜 종료" name="leave_call_btn" />
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+	</layout_stack>
+</floater>

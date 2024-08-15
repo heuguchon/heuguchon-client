@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="godtools floater" title="고드 툴">
+	<tab_container name="GodTools Tabs">
+		<panel label="그리드" name="grid">
+			<button label="이 리전(지역)의 맵 표시 캐시를 삭제" label_selected="이 리전(지역)의 지도 표시 캐시를 삭제" name="Flush This Region's Map Visibility Caches" />
+		</panel>
+		<panel label="지역" name="region">
+			<text name="Region Name:">리전(지역) 이름:</text>
+			<check_box label="준비" name="check prelude" tool_tip="이 설정에 의해, 이 지역의 준비를 합니다." />
+			<check_box label="태양 고정" name="check fixed sun" tool_tip="태양 위치를 고정 (&quot;지역/부동산&quot; &gt; &quot;지형&quot;의 경우와 동일)" />
+			<check_box label="홈 텔레포트를 리셋" name="check reset home" tool_tip="주민이 텔레포트로 나가면, 목적지를 홈으로 리셋합니다." />
+			<check_box label="The translation of the text &quot;可視&quot; is &quot;가시&quot;.&#10;&#10;Therefore, the text translated to Korean is &quot;가시&quot;.&#10;&#10;Additionally, if the word 'Firestorm' appears in your text, it should be translated to '흑우촌'." name="check visible" tool_tip="이 설정을 통해 이 지역을 고드 모드 외에도 가시적으로 만듭니다." />
+			<check_box label="손상" name="check damage" tool_tip="이 설정을 통해 이 지역 내에서 데미지를 활성화합니다." />
+			<check_box label="트래픽 추적 차단" name="block dwell" tool_tip="이 설정을 통해 이 지역 내의 트래픽 계산을 비활성화합니다." />
+			<check_box label="지형 편집 차단" name="block terraform" tool_tip="이 설정은 이 지역 내에서의 토지 정비를 금지합니다." />
+			<check_box label="샌드박스" name="is sandbox" tool_tip="이것이 샌드박스 지역에서도 전환됩니다" />
+			<button label="지형을 구축하기" label_selected="지형을 구축하기" name="Bake Terrain" tool_tip="현재 지형을 기본값으로 저장합니다." />
+			<button label="지형을 원래대로 되돌리기" label_selected="지형을 원래대로 되돌리기" name="Revert Terrain" tool_tip="현재 지형을 기본값으로 교체합니다." />
+			<button label="지형 교환" label_selected="지형 교환" name="Swap Terrain" tool_tip="현재 지형을 기본 설정으로 교체합니다." />
+			<text name="estate id">부동산 ID:</text>
+			<text name="parent id">親ID:</text>
+			<line_editor name="parentestate" tool_tip="これは、このリージョン（地域）の親不動産です。  &#10;이것은 이 리전(지역)의 부모 부동산입니다." />
+			<text name="Grid Pos: ">그리드 위치:</text>
+			<line_editor name="gridposx" tool_tip="이것은, 이 리전(지역)의 그리드 X 좌표입니다." />
+			<line_editor name="gridposy" tool_tip="これは、このリージョン（地域）のグリッドY座標です。" />
+			<text name="Redirect to Grid: ">그리드로 리디렉션:</text>
+			<text name="billable factor text">요청 비율:</text>
+			<text name="land cost text">㎡당의 L$:</text>
+			<button label="업데이트" label_selected="업데이트" name="Refresh" tool_tip="상기의 정보를 업데이트하려면 여기를 클릭하세요." />
+			<button label="적용" label_selected="적용" name="Apply" tool_tip="위의 변경 사항을 적용하려면 여기를 클릭하세요." />
+			<button label="리전(지역)을 선택" label_selected="지역 선택" name="Select Region" tool_tip="토지 도구에서 지역 전체를 선택하십시오." />
+			<button label="즉시 자동 저장합니다." label_selected="즉시 자동 저장합니다." name="Autosave now" tool_tip="Gzip 상태를 자동 저장 디렉토리에 저장합니다." />
+		</panel>
+		<panel label="객체" name="objects">
+			<panel.string name="no_target">(타겟 없음)</panel.string>
+			<text name="Region Name:">지역명:</text>
+			<text name="region name">웨일스어</text>
+			<check_box label="스크립트를 비활성화" name="disable scripts" tool_tip="이 설정에 따라 이 지역 내의 스크립트를 모두 비활성화합니다." />
+			<check_box label="충돌 비활성화" name="disable collisions" tool_tip="이 설정은 이 지역 내 비에이전트 충돌을 비활성화합니다" />
+			<check_box label="물리 작용을 비활성화" name="disable physics" tool_tip="이 설정으로 인해 이 지역 내의 모든 물리적 작용이 무효화됩니다." />
+			<button label="적용" label_selected="적용" name="Apply" tool_tip="상기 변경사항을 적용하려면 여기를 클릭하십시오." />
+			<button label="대상의 설정" label_selected="대상의 설정" name="Set Target" tool_tip="아바타 삭제의 대상을 설정해주세요." />
+			<text name="target_avatar_name">（대상 없음）</text>
+			<button label="다른 토지에 있는 대상의 스크립트 개체 삭제" label_selected="다른 토지에서 대상 스크립트 오브젝트 삭제" name="Delete Target's Scripted Objects On Others Land" tool_tip="이 지역에서 대상이 소유하지 않은 스크립트 오브젝트를 모두 삭제합니다. (복사 금지) 오브젝트는 반환됩니다." />
+			<button label="「모든」 토지에 있는 대상 스크립트 오브젝트를 삭제" label_selected="「모든」 토지에서 대상 스크립트 오브젝트 삭제" name="Delete Target's Scripted Objects On *Any* Land" tool_tip="この地域において対象が所有しているスクリプト・オブジェクトをすべて削除します。（コピー禁止）オブジェクトは返却されます。&#10;&#10;이 지역에서 대상이 소유한 모든 스크립트 오브젝트를 삭제합니다. (복사 금지) 오브젝트는 반환됩니다." />
+			<button label="대상 오브젝트를 '모두' 삭제" label_selected="대상의 오브젝트를 &quot;모두&quot; 삭제" name="Delete *ALL* Of Target's Objects" tool_tip="이 지역에서 대상이 소유하고 있는 모든 오브젝트를 삭제합니다. (복사 금지) 오브젝트는 반환됩니다." />
+			<button label="톱 콜라이더를 획득" label_selected="상위 충돌체 가져오기" name="Get Top Colliders" tool_tip="가장 좁은 단계의 콜백이 발생한 객체의 리스트를 가져옵니다." />
+			<button label="스크립트 상위 얻기" label_selected="'トップ・スクリプトを取得' を 한국어로 번역하면 '상위 스크립트 가져오기'입니다." name="Get Top Scripts" tool_tip="스크립트의 기동에 가장 많은 시간을 소비하고 있는 오브젝트의 목록을 가져옵니다." />
+			<button label="스크립트 다이제스트" label_selected="스クリ프트 요약" name="Scripts digest" tool_tip="すべてのスクリプトとそれらの使用回数のリストを取得します。 &#10;모든 스크립트와 그것들의 사용 횟수 목록을 가져옵니다." />
+		</panel>
+		<panel label="요청" name="request">
+			<text name="Destination:">목적지:</text>
+			<combo_box name="destination">
+				<combo_box.item label="선택" name="item1" />
+				<combo_box.item label="에이전트 지역" name="item2" />
+			</combo_box>
+			<text name="Request:">요구 사항:</text>
+			<combo_box name="request">
+				<combo_box.item label="코라이더＜스텝＞" name="item1" />
+				<combo_box.item label="스크립트＜회수＞, ＜옵션 패턴＞" name="item2" />
+				<combo_box.item label="오브젝트＜패턴＞" name="item3" />
+				<combo_box.item label="rez ＜애셋 ID＞" name="item4" />
+			</combo_box>
+			<text name="Parameter:">파라미터:</text>
+			<button label="리퀘스트하겠습니다" label_selected="요청하기" name="Make Request" />
+		</panel>
+	</tab_container>
+</floater>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="status">
+	<panel.string name="packet_loss_tooltip">패킷 손실</panel.string>
+	<panel.string name="bandwidth_tooltip">대역폭</panel.string>
+	<panel.string name="time">[hour12, datetime, slt]:[min, datetime, slt]:[second, datetime, slt] [ampm, datetime, slt] [timezone, datetime, slt]</panel.string>
+	<panel.string name="timeTooltip">[년, datetime, slt] [월, datetime, slt] [일, datetime, slt] （[요일, datetime, slt]）</panel.string>
+	<panel.string name="buycurrencylabel">L$ [AMT]</panel.string>
+	<panel name="menu_search_panel">
+		<search_editor label="메뉴 검색" name="search_menu_edit" tool_tip="검색하고 싶은 내용을 여기에 입력하세요. 메뉴에 부분적으로 일치하는 결과가 표시됩니다." />
+	</panel>
+	<panel name="balance_bg">
+		<text name="balance" tool_tip="클릭하여 L$ 잔액을 업데이트하세요." value="L$??" />
+		<button label="L$ 구매" name="buyL" tool_tip="클릭하여 L$ 를 구매합니다" />
+		<button label="상점" name="goShop" tool_tip="Second Life 마켓플레이스를 열기" width="40" />
+	</panel>
+	<panel name="time_and_media_bg">
+		<text name="TimeText" tool_tip="현재 시각(태평양)">24:00:00 오전 PST</text>
+		<button name="media_toggle_btn" tool_tip="すべてのメディアを開始・停止（音楽、ビデオ、Web ページ）  &#10;모든 미디어 재생/정지 (음악, 비디오, 웹 페이지)" />
+		<button name="volume_btn" tool_tip="글로벌 볼륨 설정" />
+	</panel>
+</panel>

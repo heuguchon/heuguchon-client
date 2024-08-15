@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_people" title="인">
+	<panel_container name="main_panel">
+		<panel label="그룹 프로필" name="panel_group_info_sidetray" />
+	</panel_container>
+</floater>

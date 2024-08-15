@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="panel_performance_complexity">
+	<button name="back_btn" />
+	<text name="back_lbl">돌아가기</text>
+	<text name="attachments_title">현재 아바타의 복잡도</text>
+	<text name="attachments_desc1">착용품을 착용하면 아바타가 더 복잡해집니다. 아바타의 복잡도가 높은 경우,</text>
+	<text name="attachments_desc2">다른 사람들이 당신의 세부 사항을 볼 수 없으며, 그래픽 속도가 느려질 수 있습니다.</text>
+	<text name="attachments_desc3">불필요한 무거운 착용물을 제거하면 해결될 수 있습니다.</text>
+	<name_list name="obj_list">
+		<name_list.columns label="알겠습니다! 텍스트를 주시면 번역해드리겠습니다." name="complex_visual" />
+		<name_list.columns label="물론입니다! 번역하고 싶은 텍스트를 제공해 주시면, 'Firestorm'이 나타날 경우 '흑우촌'으로 변환하여 한국어로 번역해 드리겠습니다. 텍스트를 입력해 주세요!" name="complex_value" />
+		<name_list.columns label="Sure, please provide the text you need to be translated to Korean." name="name" />
+	</name_list>
+</panel>

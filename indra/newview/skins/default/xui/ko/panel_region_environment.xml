@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="자연환경" name="panel_env_info">
+	<string name="str_label_use_default">기본 설정 사용</string>
+	<string name="str_label_use_region">리전의 설정을 사용</string>
+	<string name="str_altitude_desription">공 [INDEX]([ALTITUDE]m)</string>
+	<string name="str_no_parcel">区画가 선택되지 않았습니다. 환경 설정이 무효화되었습니다.</string>
+	<string name="str_cross_region">리전 경계에서는 환경 설정을 할 수 없습니다.</string>
+	<string name="str_legacy">이 리전에서는 환경 설정을 할 수 없습니다.</string>
+	<string name="str_disallowed">지주가 이 리전에서 구역의 환경을 변경하는 것을 허가하지 않았습니다.</string>
+	<string name="str_too_small">환경을 지원하려면 최소한 128 평방미터의 구역이 필요합니다.</string>
+	<string name="str_empty">(空)</string>
+	<string name="str_region_env">(리전의 환경)</string>
+	
+	<layout_stack name="ls_main">
+		<layout_panel name="pnl_environment_region_msg">
+			<text follows="left|top" name="region_text_lbl">지역:</text>
+			<text name="region_text">불명</text>
+		</layout_panel>
+		<layout_panel name="pnl_environment_disabled">
+			<text name="txt_environment_disabled">To provide an accurate translation, I need the entire text that needs to be translated. Please provide the complete text related to the SecondLife Viewer, and I will translate it accordingly.</text>
+		</layout_panel>
+		<layout_panel name="pnl_environment_config">
+			<layout_stack name="ls_environment_config">
+				<layout_panel name="pnl_environment_config">
+					<layout_stack name="ls_environment_config2">
+						<layout_panel name="pnl_environment_current">
+							<text name="select_environment_label">자연 환경 선택</text>
+							<button label="[기본값 사용]" name="btn_usedefault" />
+							<button label="소지품 사용" name="btn_select_inventory" />
+							<button label="데이 사이클을 커스터마이즈" name="btn_edit" />
+							<check_box label="区画所有者が環境を上書きすることがあります&#10;&#10;구획 소유자가 환경을 덮어쓸 수 있습니다" name="chk_allow_override" />
+						</layout_panel>
+						<layout_panel name="pnl_environment_length">
+							<text name="day_settings_label">데이 사이클 설정</text>
+							<text name="day_length_label">일일 길이 (시간)</text>
+							<text name="day_offset_label">GMT와의 시차 (시간)</text>
+							<text name="apparent_time_of_day_label">보이는 시각:</text>
+							<text name="lbl_apparent_time">[HH]:[MM][AP] ([PRC]%)</text>
+						</layout_panel>
+						<layout_panel name="pnl_environment_buttons" />
+					</layout_stack>
+				</layout_panel>
+				<layout_panel name="pnl_environment_altitudes">
+					<panel name="pnl_alt1">
+						<text name="txt_alt1">공 [목록]
+                            [고도]m</text>
+						<line_editor name="edt_invname_alt1">불명</line_editor>
+						<settings_drop_target name="sdt_alt1" tool_tip="소지품에서 설정을 이 타겟 박스로 드래그하여 현재의 하늘로 선택하세요." />
+					</panel>
+					<panel name="pnl_alt2">
+						<text name="txt_alt2">공 [INDEX]
+                            [ALTITUDE]m</text>
+						<line_editor name="edt_invname_alt2">불명</line_editor>
+						<settings_drop_target name="sdt_alt2" tool_tip="소지품에서 설정을 이 타겟 박스로 드래그하여 현재의 하늘로 선택합니다." />
+					</panel>
+					<panel name="pnl_alt3">
+						<text name="txt_alt3">공 [INDEX]
+                            [ALTITUDE]m</text>
+						<line_editor name="edt_invname_alt3">불명</line_editor>
+						<settings_drop_target name="sdt_alt3" tool_tip="소지품에서 설정을 이 타겟 상자로 드래그하여 현재의 하늘로 선택하세요" />
+					</panel>
+					<text name="sky_altitudes_label">고도의 하늘</text>
+					<multi_slider initial_value="0" name="sld_altitudes">
+						<slider name="sld1" value="1000" />
+						<slider name="sld2" value="2000" />
+						<slider name="sld3" value="3000" />
+					</multi_slider>
+					<panel name="pnl_ground">
+						<text name="txt_ground">지면</text>
+						<line_editor name="edt_invname_ground">불명</line_editor>
+						<settings_drop_target name="sdt_ground" tool_tip="소지품에서 설정을 이 타겟 박스로 드래그하여 지표면 수준의 하늘로 선택합니다." />
+					</panel>
+					<panel name="pnl_water">
+						<text name="txt_water">물</text>
+						<line_editor name="edt_invname_water">불명</line_editor>
+						<settings_drop_target name="sdt_water" tool_tip="소지품에서 설정을 이 대상 상자에 드래그하여 현재 물로 선택하십시오." />
+					</panel>
+					<button label="리셋" name="btn_rst_altitudes" tool_tip="기본 고도로 재설정" />
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+	</layout_stack>
+</panel>

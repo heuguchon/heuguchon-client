@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="region_tracker" title="지역별 아바타 수">
+	<icon name="dummy_icon" />
+	<text name="region_label_text" value="세계 지도를 열고 지역을 추가" />
+	<button name="refresh" tool_tip="업데이트" />
+	<button name="remove" tool_tip="지역을 삭제" />
+	<button name="open_map" tool_tip="세계 지도를 열기" />
+	<scroll_list name="region_list" tool_tip="항목을 더블 클릭하면 세계 지도가 열립니다.">
+		<scroll_list.columns name="region_label" label="라벨" />
+		<scroll_list.columns name="region_maturity_icon" />
+		<scroll_list.columns name="region_name" label="지역" />
+		<scroll_list.columns name="region_agent_count" label="숫자" />
+	</scroll_list>
+ </floater>

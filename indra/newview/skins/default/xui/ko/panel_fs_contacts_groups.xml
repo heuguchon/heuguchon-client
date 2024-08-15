@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="groups">
+	<view_border name="info_border" />
+	<group_list name="group_list" />
+    <text name="groupcount">당신은 [COUNT] 그룹에 소속되어 있습니다 (최대[MAX])</text>
+	<button label="IM/콜" name="chat_btn" tool_tip="인스턴트 메시지 세션을 열기" />
+	<button label="정보" name="info_btn" />
+	<button label="그룹 타이틀" name="titles_btn" />
+	<button label="활성화" name="activate_btn" />
+	<button label="The text you've provided is a single Japanese word, &quot;抜ける,&quot; which translates to &quot;exit&quot; or &quot;leave&quot; in English. Since there is no specific context provided, I can't give a detailed translation related to SecondLife Viewer or 'Firestorm.' &#10;&#10;However, to maintain coherence with the provided instructions about the word 'Firestorm,' here's what the translation would look like if 'Firestorm' appeared in a more extended context:&#10;&#10;For the single word:&#10;&quot;抜ける&quot; translates to &quot;나가기&quot; in Korean. &#10;&#10;In a sentence example related to Firestorm:&#10;&quot;Firestorm에서 로그아웃합니다.&quot; &#10;would translate to:&#10;&quot;흑우촌에서 로그아웃합니다.&quot; (where '로그아웃' means 'log out').&#10;&#10;Feel free to provide more context or a longer text for a more specific translation!" name="leave_btn" />
+	<button label="생성 중..." name="create_btn" />
+	<button label="검색..." name="search_btn" />
+	<button label="초대..." name="invite_btn" />
+</panel>

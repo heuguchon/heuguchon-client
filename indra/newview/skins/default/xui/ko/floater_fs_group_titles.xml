@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="group_titles" title="그룹 칭호">
+ 
+	<floater.string name="NoGroupTitle" value="&lt;그룹 제목 없음&gt;" />
+
+	<scroll_list name="title_list">
+		<column name="grouptitle" label="肩書き -&gt; 직함" />
+		<column name="groupname" label="그룹" />
+		<column name="role_id" />
+		<column name="group_id" />
+	</scroll_list>
+	
+	<button tool_tip="사용 가능한 그룹 칭호 목록을 업데이트합니다." name="btnRefresh" />
+	
+	<button name="btnInfo" label="정보" tool_tip="선택한 칭호 그룹에 대한 정보를 표시합니다." />
+
+	<button name="btnActivate" label="활성화" tool_tip="선택한 그룹의 직함을 활성화합니다." />
+</floater>

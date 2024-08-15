@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<menu name="menu_gesture_gear">
+	<menu_item_call label="선택한 제스처의 활성화 여부" name="activate" />
+	<menu_item_call label="이름을 변경하기" name="rename" />
+	<menu_item_call label="복사" name="copy_gesture" />
+	<menu_item_call label="텍스트를 번역하려면:&#10;&#10;貼り付け&#10;&#10;SecondLife Viewer와 관련이 있는 경우 'Firestorm'을 '흑우촌'으로 번역하세요.&#10;&#10;붙여넣기" name="paste" />
+	<menu_item_call label="UUID를 복사" name="copy_uuid" />
+	<menu_item_call label="현재 아웃핏에 저장" name="save_to_outfit" />
+	<menu_item_call label="편집" name="edit_gesture" />
+	<menu_item_call label="조사하다" name="inspect" />
+</menu>

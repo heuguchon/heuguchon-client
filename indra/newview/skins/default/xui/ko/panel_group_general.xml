@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="일반" name="general_tab">
+	<panel.string name="help_text">「一般」탭에는, 멤버 목록, 설정, 멤버의 옵션 등 이 그룹에 관한 일반적인 정보가 기재되어 있습니다.
+
+옵션에 마우스 커서를 대면 자세한 설명이 표시됩니다.</panel.string>
+	<panel.string name="group_info_unchanged">일반적인 그룹 정보가 변경되었습니다.</panel.string>
+	<panel.string name="incomplete_member_data_str">メンバーのデータを検索
+— 
+멤버 데이터를 검색</panel.string>
+
+	<panel name="group_general_panel">
+
+		<text name="group_key_label">그룹 키:</text>
+		<view_border name="info_border" />
+		<text_editor name="group_key" label="그룹 UUID:" />
+		<button name="copy_uri" label="URI를 복사" />
+		<text name="prepend_founded_by">창립자:</text>
+		<text name="founder_name" initial_value="（取得中...）" />
+		<button name="copy_name" label="名前をコピー" />
+		<texture_picker name="insignia" tool_tip="사진을 선택하려면 클릭하세요" label="다음 텍스트를 한국어로 번역하고, 'Firestorm'이 나타나는 경우 '흑우촌'으로 번역하세요:&#10;&#10;&quot;SecondLife Viewer is a popular tool among virtual world enthusiasts for its extensive functionality and superior performance. Power users often favor Firestorm due to its customization options and enhanced user interface.&quot;&#10;&#10;번역: &#10;&quot;SecondLife 뷰어는 가상 세계 애호가들 사이에서 그 광범위한 기능성과 탁월한 성능으로 인해 인기 있는 도구입니다. 파워 유저들은 맞춤설정 옵션과 향상된 사용자 인터페이스 때문에 종종 흑우촌을 선호합니다.&quot;" />
+		<text_editor name="charter">그룹의 이념과 방침을 기입해 주세요.</text_editor>
+		<text name="join_cost_text">참가비용 (L$00000)</text>
+		<button name="btn_join" label="참가합니다!" />
+		<name_list name="visible_members">
+			<name_list.columns label="メンバー: 회원" name="name" />
+			<name_list.columns label="직함" name="title" />
+			<name_list.columns label="로그인" name="status" />
+		</name_list>
+
+		<layout_stack name="group_preferences_layout" orientation="horizontal">
+			<layout_panel name="user_preferences_container">
+				<text name="my_group_settngs_label">개인 설정</text>
+				<check_box label="프로필에 표시" name="list_groups_in_profile" tool_tip="당신의 프로필에 이 그룹을 표시할지에 대한 설정을 할 수 있습니다." />
+				<check_box label="그룹 알림 수신" name="このグループからの通知を受信するかどうかの設定を行います。グループからスパムが送られてくる場合はこのボックスのチェックを外してください。" />
+				
+				<check_box label="그룹 IM을 수신" name="receive_chat" tool_tip="이 그룹의 그룹 채팅에 참여할지 여부를 설정합니다." />
+				
+				<text name="active_title_label">제 직함:</text>
+				<combo_box name="active_title" tool_tip="この 그룹을 활성화했을 때, 아바타 이름 위에 표시되는 제목을 설정합니다." />
+			</layout_panel>
+			<layout_panel name="preferences_divider" />
+			<layout_panel name="group_preferences_container">
+				<text name="group_settngs_label">그룹 설정</text>
+				<check_box name="show_in_group_list" tool_tip="이 그룹을 검색 결과에 표시합니다." label="검색 결과에 표시" />
+				<check_box name="open_enrollement" label="누구나 가입할 수 있습니다." tool_tip="초대받지 않아도 신규 멤버가 가입할 수 있는지 설정합니다." />
+				<check_box name="check_enrollment_fee" tool_tip="입회비가 필요한지 여부를 설정합니다." label="입회비가 듭니다" />
+				<spinner name="spin_enrollment_fee" tool_tip="「가입비」にチェックが入っている場合、新규 멤버는 지정된 가입비를 지불하지 않으면 그룹에 들어갈 수 없습니다。" label="L$" />
+				<combo_box name="group_mature_check" tool_tip="등급 분류는 그룹 내에서 어떤 콘텐츠나 행동이 허용되는지를 지정하는 것입니다.">
+					<combo_item name="select_mature" value="선택">- 등급 구분을 지정 -</combo_item>
+					<combo_box.item label="「보통」콘텐츠" name="mature" value="성인용" />
+					<combo_box.item label="「General」콘텐츠" name="pg" value="성인용 아님" />
+				</combo_box>
+			</layout_panel>
+		</layout_stack>
+	</panel>
+
+</panel>

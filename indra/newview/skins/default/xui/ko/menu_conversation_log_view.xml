@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toggleable_menu name="menu_conversation_view">
+  <menu_item_check label="이름으로 정렬" name="sort_by_name" />
+  <menu_item_check label="날짜로 정렬" name="sort_by_date" />
+  <menu_item_separator />
+  <menu_item_check label="최초에 친구를 표시" name="sort_by_friends" />
+  <menu_item_separator />
+  <menu_item_call label="주변 채팅 기록을 표시..." name="view_nearby_chat_history" />
+</toggleable_menu>

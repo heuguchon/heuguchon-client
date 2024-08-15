@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="delete_pref_preset" title="우선 프리셋 삭제">
+	<string name="title_graphic">그래픽 프리셋을 삭제</string>
+	<string name="title_camera">카메라 프리셋 삭제</string>
+	<text name="Preset">프리셋을 선택</text>
+	<button label="삭제" name="delete" />
+	<button label="취소" name="cancel" />
+</floater>

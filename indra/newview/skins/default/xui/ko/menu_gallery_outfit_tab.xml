@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<context_menu name="Outfit">
+	<menu_item_call label="착용－이 아웃핏으로 갈아입기" name="wear_replace" />
+	<menu_item_call label="입기－이 아웃핏에 추가하기" name="wear_add" />
+	<menu_item_call label="벗기 - 이 아웃핏에서 제거" name="take_off" />
+	<menu_item_call label="L$ [UPLOAD_COST]에 이미지 업로드" name="upload_photo" />
+	<menu_item_call label="이미지 선택" name="select_photo" />
+	<menu_item_call label="스냅샷 찍기" name="take_snapshot" />
+	<menu_item_call label="이미지 삭제" name="remove_photo" />
+	<menu_item_separator name="sepatator1" />
+	<menu label="새로운 옷차림" name="New Clothes">
+		<menu_item_call label="&quot;新しいシャツ&quot; is translated to Korean as &quot;새 셔츠&quot;. Since the phrase does not include the word 'Firestorm', translating it in the given context results simply in &quot;새 셔츠&quot;." name="New Shirt" />
+		<menu_item_call label="새 바지" name="New Pants" />
+		<menu_item_call label="새 신발" name="New Shoes" />
+		<menu_item_call label="새 양말" name="New Socks" />
+		<menu_item_call label="새로운 재킷" name="New Jacket" />
+		<menu_item_call label="새로운 스커트" name="New Skirt" />
+		<menu_item_call label="새로운 장갑" name="New Gloves" />
+		<menu_item_call label="새로운 속옷(상반신)" name="New Undershirt" />
+		<menu_item_call label="새로운 속옷 (하반신)" name="New Underpants" />
+		<menu_item_call label="새로운 알파" name="New Alpha" />
+		<menu_item_call label="새로운 물리작용" name="New Physics" />
+		<menu_item_call label="새로운 문신" name="New Tattoo" />
+	</menu>
+	<menu label="The translated text to Korean related to the SecondLife Viewer, with &quot;Firestorm&quot; translated to &quot;흑우촌&quot; as requested, is:&#10;&#10;새로운 신체 부위" name="New Body Parts">
+		<menu_item_call label="새로운 쉐이프" name="New Shape" />
+		<menu_item_call label="새로운 피부" name="New Skin" />
+		<menu_item_call label="새로운 헤어스타일" name="New Hair" />
+		<menu_item_call label="새로운 눈" name="New Eyes" />
+	</menu>
+	<menu_item_separator name="sepatator2" />
+	<menu_item_call label="아웃핏 편집하기" name="edit" />
+	<menu_item_call label="아웃핏 이름 변경" name="rename" />
+	<menu_item_call label="아웃핏 삭제" name="delete" />
+</context_menu>

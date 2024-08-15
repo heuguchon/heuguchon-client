@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="아웃핏 편집" name="outfit_edit">
+	<string name="No Outfit" value="아웃핏 없음" />
+	<string name="unsaved_changes" value="저장되지 않은 변경 사항" />
+	<string name="now_editing" value="편집 중입니다..." />
+	<panel.string name="not_available">해당 없음</panel.string>
+	<panel.string name="unknown">（불명）</panel.string>
+	<string name="Filter.All" value="모두&#10;" />
+	<string name="Filter.Clothes/Body" value="의류/신체" />
+	<string name="Filter.Objects" value="객체" />
+	<string name="Filter.Clothing" value="의류" />
+	<string name="Filter.Bodyparts" value="신체 부위" />
+	<string name="replace_body_part" value="클릭하여 기존의 셰이프와 교체" />
+	<text name="title" value="아웃핏 파츠 편집" />
+	<panel label="하단 패널" name="header_panel">
+		<panel label="하단 패널" name="outfit_name_and_status">
+			<text name="status" value="편집 중입니다..." />
+			<text name="curr_outfit_name" value="[현재 착용 중인 아웃핏]" />
+		</panel>
+	</panel>
+	<layout_stack name="im_panels">
+		<layout_panel label="IM 컨트롤 패널" name="outfit_wearables_panel">
+			<layout_stack name="filter_panels">
+				<layout_panel name="add_button_and_combobox">
+					<button label="더 추가..." name="show_add_wearables_btn" tool_tip="열기/닫기" />
+				</layout_panel>
+				<layout_panel name="filter_panel">
+					<filter_editor label="인벤토리 착용 아이템 필터." name="look_item_filter" />
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+		<layout_panel name="add_wearables_panel">
+			<button label="아이템을 착용" name="plus_btn" />
+		</layout_panel>
+	</layout_stack>
+	<panel name="no_add_wearables_button_bar">
+		<text name="avatar_complexity_label">복잡성：[WEIGHT]</text>
+		<button name="shop_btn_1" tool_tip="「SL 마켓플레이스」 페이지를 확인하세요. 또한, 지금 착용하고 있는 아이템을 선택하고 여기를 클릭하면 유사한 아이템이 표시됩니다." />
+	</panel>
+	<panel name="add_wearables_button_bar">
+		<text name="avatar_complexity_adding_label">복잡성：[WEIGHT]</text>
+		<button name="shop_btn_2" tool_tip="&quot;SL 마켓플레이스&quot; 페이지를 방문해 주세요. 또한, 지금 착용하고 있는 아이템을 선택하고 여기를 클릭하면 유사한 아이템이 표시됩니다." />
+	</panel>
+	<panel name="save_revert_button_bar">
+		<layout_stack name="button_bar_ls">
+			<layout_panel name="save_btn_lp">
+				<button label="저장" name="save_btn" />
+			</layout_panel>
+			<layout_panel name="save_as_btn_lp">
+				<button label="別名で保存... -&gt; 다른 이름으로 저장..." name="save_as_btn" />
+			</layout_panel>
+			<layout_panel name="revert_btn_lp">
+				<button label="변경을 원래대로 되돌리기" name="revert_btn" tool_tip="저장된 이전 상태로 되돌리기" />
+			</layout_panel>
+		</layout_stack>
+	</panel>
+</panel>

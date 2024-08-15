@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toggleable_menu name="menu_group_plus">
+	<menu_item_call label="グループに参加...&#10;그룹에 참여..." name="item_join" />
+	<menu_item_call label="새로운 그룹..." name="item_new" />
+</toggleable_menu>

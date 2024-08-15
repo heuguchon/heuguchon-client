@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="contents" title="オブジェクトのコピーを購入&#10;오브젝트의 복사를 구매">
+	<floater.string name="title_buy_text">구매</floater.string>
+	<floater.string name="title_buy_copy_text">다음을 구매:</floater.string>
+	<floater.string name="no_copy_text">（복사 불가）</floater.string>
+	<floater.string name="no_modify_text">（수정 불가）</floater.string>
+	<floater.string name="no_transfer_text">(재판매 및 양도 불가)</floater.string>
+	<floater.string name="multiple_selected">다음 텍스트를 한국어로 번역하되, 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하세요:
+
+複数選択 -&gt; 다중 선택</floater.string>
+	<text name="contents_text">중미:</text>
+	<text name="buy_text">다음 판매자로부터 L$ [AMOUNT]에 구매:</text>
+	<text name="buy_name_text">[이름]?</text>
+	<button label="구매" label_selected="구매" name="buy_btn" />
+	<button label="취소" label_selected="취소" name="cancel_btn" />
+</floater>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="Import Collada" title="풍경의 가져오기">
+	<text name="mesh count">메쉬：[COUNT]</text>
+	<text name="texture count">텍스처: [COUNT]</text>
+	<text name="status">상태：[STATUS]</text>
+	<button label="취소" name="cancel" />
+	<button label="괜찮아요" name="ok" />
+	<string name="status_idle">대기 상태</string>
+	<string name="status_uploading">[NAME]을(를) 업로드 중</string>
+	<string name="status_creating">오브젝트[NAME]을(를) 생성하는 중</string>
+</floater>

@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="일반" name="general_panel">
+	<text name="language_textbox">언어:</text>
+	<combo_box name="language_combobox">
+		<combo_box.item label="영어（English）" name="English" />
+		<combo_box.item label="Dansk (덴마크어) – 베타" name="Danish" />
+		<combo_box.item label="독일어" name="Deutsch(German)" />
+		<combo_box.item label="에스파뇰 (스페인어) – 베타" name="Spanish" />
+		<combo_box.item label="프랑스어 – 베타" name="French" />
+		<combo_box.item label="이탈리아어 (イタリア語) - 베타" name="Italian" />
+		<combo_box.item label="폴란드어" name="Polish" />
+		<combo_box.item label="포르투갈어 - 베타" name="Portugese" />
+		<combo_box.item label="러시아어 - 베타" name="Russian" />
+		<combo_box.item label="터키어 (トルコ語) - 베타" name="Turkish" />
+		<combo_box.item label="日本語 – 베타" name="(Japanese)" />
+		<combo_box.item label="正體中文（簡体字中国語）- 베타版" name="Traditional Chinese" />
+		<combo_box.item label="한국어" name="Korean" />
+	</combo_box>
+	<text name="language_textbox2">（재시작 후 반영됨）</text>
+	<check_box label="IME의 입력 텍스트를 표시" name="use_ime" />
+	<text name="maturity_desired_prompt">액세스하고자 하는 콘텐츠:</text>
+	<text name="maturity_desired_textbox" />
+	<combo_box name="maturity_desired_combobox">
+		<combo_box.item label="일반、보통、성인" name="Desired_Adult" />
+		<combo_box.item label="General 및 Moderate" name="Desired_Mature" />
+		<combo_box.item label="일반" name="Desired_PG" />
+	</combo_box>
+	<text name="start_location_textbox">로그인 위치:</text>
+	<combo_box name="start_location_combo">
+		<combo_box.item label="마지막으로 로그아웃한 장소" name="MyLastLocation" tool_tip="항상 마지막으로 있던 장소에 로그인" />
+		<combo_box.item label="홈" name="MyHome" tool_tip="항상 홈(자택)으로 로그인" />
+	</combo_box>
+	<check_box label="로그인 화면에 표시하기" name="show_location_checkbox" />
+	<text name="name_tags_textbox">이름 표시:</text>
+	<radio_group name="Name_Tag_Preference">
+		<radio_item label="オフ" name="radio" />
+		<radio_item label="온라인" name="radio2" />
+		<radio_item label="일시적으로 표시" name="radio3" />
+	</radio_group>
+	<text name="RenderNameShowTime_LabelPrefix">다음 텍스트를 한국어로 번역해 드리겠습니다:
+
+(</text>
+	<spinner name="RenderNameShowTime" />
+	<text name="RenderNameShowTime_LabelSuffix">Considering the provided text "秒)" seems incomplete and may be an error or not contain substantial information, a simple translation of it to Korean would be:
+
+"초)"
+
+If there's more detailed or context-rich text you'd like to be translated regarding SecondLife Viewer, please provide that, and I would be happy to assist further.</text>
+	<check_box label="마이네임" name="show_my_name_checkbox1" />
+	<check_box label="사용자 이름" name="show_slids" tool_tip="bobsmith123 등의 사용자 이름 표시" />
+	<check_box label="그룹 제목" name="show_all_title_checkbox1" tool_tip="오피서 또는 멤버 등, 그룹 타이틀을 표시" />
+	<check_box label="자신의 그룹 타이틀을 숨기기" name="RenderHideGroupTitle" tool_tip="자신의 또는 같은 그룹의 동료들의 그룹 타이틀을 표시하거나 숨깁니다." />
+	<check_box label="표시 이름 표시" name="display_names_check" tool_tip="이것을 선택하면 채팅, IM 등에서 표시 이름이 표시됩니다." />
+	<check_box label="이전 형식의 이름으로 표시" name="FSshow_legacyun" tool_tip="유저 이름(firstname.lastname) 대신에 옛날 형식의 이름(Firstname Lastname)으로 표시합니다." />
+	<check_box label="친구를 강조 표시" name="show_friends" tool_tip="친구의 이름을 하이라이트 표시" />
+	<check_box label="옛 형식의 이름일 때 &quot;Resident&quot;를 생략하지 않음" name="legacy_trim_check" tool_tip="이전 형식의 이름일 때 'Resident'를 생략하지 않도록 합니다." />
+	<check_box label="이전 형식의 이름 태그 위치" name="FSLegacyNametagPosition" tool_tip="여기에 체크를 하면 애니메이션으로 인해 아바타의 보이는 위치가 이동할 때, 이름 태그는 아바타의 머리 위치를 따라가지 않고 아바타가 서 있는 원래 위치에 계속 남아 있게 됩니다." />
+	
+	<check_box label="아바타 표시의 복잡성을 표시" name="FSTagShowARW" tool_tip="여기에 체크를 하면, 네임태그에 현재 아바타 표시의 복잡성이 나타납니다." />
+	<check_box label="극히 복잡한 경우에만" name="FSTagShowTooComplexOnlyARW" tool_tip="여기에 체크를 하면 아바타가 극도로 복잡하고 젤리 인형처럼 보일 때만 네임 태그에 그 아바타의 복잡성을 표시합니다." />
+	<check_box label="자신의 아바타 복잡성만" name="FSTagShowOwnARW" tool_tip="체크를 하면, 네임 태그에 현재 아바타의 복잡성이 표시됩니다." />
+	
+	<check_box label="이름 태그에 자동 응답 모드를 표시" name="FSShowAutorespondInNameTag" tool_tip="체크를 하시면, 자동 응답 모드를 켰는지 여부가 자신의 이름 태그에 표시됩니다." />
+	
+	<text name="title_afk_text">일시 퇴석까지의 시간:</text>
+	<text name="title_afk_quit_text">퇴석 상태가 되면 로그아웃합니다.</text>
+	<combo_box label="일시 퇴석까지 남은 시간:" name="afk">
+		<combo_box.item label="2 분" name="item0" />
+		<combo_box.item label="5분" name="item1" />
+		<combo_box.item label="10분" name="item2" />
+		<combo_box.item label="다음 텍스트를 한국어로 번역해주세요. 이는 SecondLife Viewer와 관련이 있습니다.&#10;만약 'Firestorm'이라는 단어가 나오면, '흑우촌'으로 번역해 주세요:&#10;&#10;30 분&#10;&#10;-&gt; 30분" name="item3" />
+		<combo_box.item label="60 분" name="item4" />
+		<combo_box.item label="일시 퇴석 설정 없음" name="item5" />
+	</combo_box>
+	<check_box label="퇴석 중에는 앉아있기" name="AvatarSitOnAway" />
+	<combo_box label="퇴석에서 로그아웃까지의 시간:" name="quitafk">
+		<combo_box.item label="2 분" name="item0" />
+		<combo_box.item label="5 분" name="item1" />
+		<combo_box.item label="10 분" name="item2" />
+		<combo_box.item label="30 분" name="item3" />
+		<combo_box.item label="종료하지 않음" name="item4" />
+	</combo_box>
+
+    <text name="text_box3">퇴석 중 및 자동 응답의 메시지는 '프라이버시'의 '자동 응답' 탭에서 설정됩니다.</text>
+
+</panel>

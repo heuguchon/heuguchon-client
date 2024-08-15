@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="표시" name="Display panel">
+<tab_container label="그래픽 설정" name="tabs">
+
+
+	
+	
+	<panel label="일반" name="General">
+		<text name="preset_label">사용 중인 프리셋:</text>
+
+		<text name="preset_text">（なし）</text>
+		
+		<text name="QualitySpeed">품질과 속도:</text>
+		<text name="FasterText">성능</text>
+		<text name="BetterText">퀄리티</text>
+		<text name="ShadersPrefText">The text you provided is incomplete and consists of only one character "低" which means "low" in English. Without additional context or the complete text, it's difficult to provide an accurate translation.
+
+However, based on the instruction, if the word "Firestorm" appears in the text, I will translate it to "흑우촌".
+
+If you can provide the full text, I can assist you with translating it accordingly.</text>
+		<text name="ShadersPrefText2">"SecondLife Viewer와 관련된 다음 텍스트를 한국어로 번역하십시오. 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오: 
+
+중"</text>
+		<text name="ShadersPrefText3">
+고</text>
+		<text name="ShadersPrefText4">초고</text>
+		<check_box label="전체 화면 모드 (재시작 필요)" name="Fullscreen Mode" tool_tip="Firestormをフルスクリーンモードで起動します。&#10;&#10;흑우촌을(를) 전체 화면 모드로 실행합니다." />
+		
+		<text name="ShadersText">셰이더:</text>
+		<check_box label="투명한 물" name="TransparentWater" />
+		<check_box label="범프 매핑 및 광택" name="BumpShiny" />
+		<check_box label="환경(대기) 셰이더" name="WindLightUseAtmosShaders" />
+		<check_box label="고급 조명 모델" name="UseLightShaders" />
+		<check_box label="앰비언트 오클루전" name="UseSSAO" />
+		
+		<text name="shadows_label">影: 쉐도우</text>
+		<combo_box name="ShadowDetail">
+			<combo_box.item label="해당 텍스트는 SecondLife Viewer와 관련이 있습니다. 'Firestorm'이라는 단어가 나타날 때마다 '흑우촌'으로 번역하겠습니다.&#10;&#10;なし" name="0" />
+			<combo_box.item label="태양/달" name="1" />
+			<combo_box.item label="태양/달과 프로젝터" name="2" />
+		</combo_box>
+		<text name="reflection_label">물 반사:</text>
+		<combo_box label="물의 반사" name="Reflections">
+			<combo_box.item label="불투명 (투명하지 않음)" name="-2" />
+			<combo_box.item label="없음 (투명)" name="-1" />
+			<combo_box.item label="최소" name="0" />
+			<combo_box.item label="지형과 나무" name="1" />
+			<combo_box.item label="모든 정지 객체" name="2" />
+			<combo_box.item label="모든 아바타 및 오브젝트" name="3" />
+			<combo_box.item label="모두" name="4" />
+		</combo_box>
+		<text name="local lights_label">조명의 강도 (재시작 필요)</text>
+		<combo_box name="LocalLightsDetail">
+            <combo_box.item label="전개 (기본값)" name="3" />
+            <combo_box.item label="감소" name="2" />
+            <combo_box.item label="태양과 달만" name="1" />
+        </combo_box>
+			
+		<slider label="그림 거리:" name="DrawDistance" />
+		<text name="DrawDistanceMeterText2">The provided text seems incomplete or possibly an error as indicated by just "m". If you have a more complete text or specific sentences related to SecondLife Viewer that you'd like translated into Korean, please provide that, and I'd be happy to help! If you were referring to translating 'Firestorm' specifically, please clarify if there's more context needed.</text>
+		<slider label="최대 파티클 수:" name="MaxParticleCount" />
+		<slider tool_tip="表示の複雑なアバターをゼリー人形のように表示し始める値を設定します。&#10;&#10;복잡한 아바타를 젤리 인형처럼 표시하기 시작하는 값을 설정합니다." label="최대 복잡도" name="IndirectMaxComplexity" />
+		<text name="IndirectMaxComplexityText">Sure, here is the translation:
+
+0</text>
+		<slider label="단순화하지 않고 렌더링할 아바타의 최대 수" name="IndirectMaxNonImpostors" />
+		<text name="IndirectMaxNonImpostorsText">0</text>
+		<slider label="후처리 품질:" name="RenderPostProcess" />
+		<text name="PostProcessText">저기에서 번역할 텍스트가 포함되어 있지 않습니다. 번역할 텍스트를 제공해주시면 도와드리겠습니다.</text>
+		<slider label="Windlight의 하늘 세부사항" name="SkyMeshDetail" />
+		<text name="MeshDetailText">메시 세부사항:</text>
+		<slider label="오브젝트와 스컬프의 LOD:" name="ObjectMeshDetail" tool_tip="렌더링 비용을 줄이기 위해 객체에 낮은 세부 사항을 적용할 수 있는 경우에 사용합니다. 높은 값을 설정하면 랙이 발생하므로 사용 시 주의가 필요합니다." />
+		<slider label="플렉시프림:" name="FlexibleMeshDetail" />
+		<slider label="나무:" name="TreeMeshDetail" />
+		<slider label="아바타：" name="AvatarMeshDetail" />
+		<slider label="지형:" name="TerrainMeshDetail" />
+		
+		<slider label="아바타의 물리 작용:" name="AvatarPhysicsDetail" />
+		<text name="AvatarRenderingText">아바타 렌더링:</text>
+		<check_box label="아바타의 천" name="AvatarCloth" />
+		<text name="TerrainDetailText">지형 상세:</text>
+		<radio_group name="TerrainDetailRadio">
+			<radio_item label="The string &quot;低&quot; does not seem to directly relate to &quot;Firestorm&quot; or the concept of &quot;흑우촌&quot;. The character &quot;低&quot; translates to &quot;low&quot; in English and &quot;낮다&quot; or &quot;저&quot; in Korean. If you intended for an actual phrase or context to be translated, please provide more text or context for accurate translation." name="0" />
+			<radio_item label="The text you provided appears to be incomplete. Could you please provide the full text that needs to be translated?" name="2" />
+		</radio_group>
+		
+		<text name="Presets_Label">프리셋:</text>
+		<button label="저장" name="PrefSaveButton" />
+		<button label="로드 중" name="PrefLoadButton" />
+		<button label="다음 텍스트를 한국어로 번역하세요. SecondLife Viewer와 관련이 있습니다.&#10;만약 'Firestorm'이라는 단어가 등장하면, '흑우촌'으로 번역하세요:&#10;&#10;삭제" name="PrefDeleteButton" />
+
+		<button label="리셋" name="Defaults" />
+	
+	</panel>
+	
+	
+	
+	
+	<panel label="하드웨어 설정" name="Hardware Settings">
+	
+        <check_box label="이방성 필터링 (활성화하면 속도가 저하됩니다)" name="ani" tool_tip="체크를 하면 이방성 필터링이 활성화됩니다. 이는 카메라 위치에 대해 정면이 아닌 각도로 보이는 텍스처의 품질을 향상시킵니다. 일반적으로 더 먼 부분이 흐릿하게 보이는 것을 방지합니다." />
+        <check_box label="OpenGL Vertex Buffer Objects를 활성화" name="vbo" tool_tip="최신 하드웨어에서 이 설정을 활성화하면 성능이 향상됩니다. 그러나 구형 하드웨어에서는 VBO의 구현이 빈약한 경우가 많아 이 설정을 활성화하면 크래시로 이어질 수 있습니다." />
+        <check_box label="텍스처의 비가역 압축 (재시작 필요)" name="texture compression" tool_tip="비디오 메모리 내의 텍스처를 압축함으로써, 색 품질이 저하되는 대신, 더 높은 해상도의 텍스처나 더 많은 텍스처를 로드할 수 있게 합니다." />
+        <check_box label="HiDPI 표시 대응을 활성화하기 (Mac OSX 전용. 재시작이 필요합니다.)" name="use HiDPI" tool_tip="고해상도 렌더링을 위해 OpenGL을 활성화합니다" />
+        <text name="Antialiasing:" tool_tip="하드웨어에 따라 이 설정 변경을 적용하려면 재시작이 필요할 수 있습니다.">안티에일리어싱:</text>
+        <combo_box label="안티앨리어싱" name="fsaa">
+            <combo_box.item label="사용하지 않음" name="FSAADisabled" />
+            <combo_box.item label="2배" name="2x" />
+            <combo_box.item label="4배" name="4x" />
+            <combo_box.item label="8배" name="8x" />
+            <combo_box.item label="16배" name="16x" />
+        </combo_box>
+
+        <spinner label="감마:" name="gamma" />
+        <text name="brightness text">（기본값은 0/1.0, 낮을수록 밝음）</text>
+        <slider label="텍스처 메모리 (MB):" name="GraphicsCardTextureMemory" tool_tip="텍스처에 할당된 메모리의 양. 비디오 카드의 기본값에서 512MB까지 확장 가능. 이 값을 낮추면 성능이 향상되지만, 텍스처의 정밀도가 떨어질 수 있습니다. 이 값을 512MB를 초과하여 설정하는 것은 권장되지 않습니다. 사용 중인 그래픽 카드가 512MB 이상을 지원하더라도, 메인 메모리가 뷰어에 영향을 미쳐 SL의 동작이 불안정해질 수 있습니다." />
+        <check_box label="동적 텍스처 메모리를 활성화" name="FSDynamicTextureMemory" tool_tip="64비트 뷰어에서 동적 텍스처 메모리 계산을 가능합니다. (AMD, NVIDIA GPU 사용 시, 최소 512MB의 비디오 메모리가 할당된 경우에만 유효합니다.)" />
+        <slider label="최소 뷰어 텍스처 메모리 버퍼 (MB):" name="FSDynamicTextureMemoryMinTextureMemory" tool_tip="텍스처에 할당되는 메모리의 양의 최저 값입니다. 이는 이용 가능한 비디오 메모리의 양을 초과하더라도, 여기서 지정한 양의 메모리를 항상 텍스처가 사용할 수 있도록 합니다. 지정한 양과 예약된 메모리의 양이 물리적인 비디오 메모리의 양을 초과하는 경우에는 제한이 걸리게 됩니다." />
+        <slider label="추가 텍스처 메모리 캐시의 예약 (%):" name="FSDynamicTextureMemoryCacheReserve" tool_tip="読み込みはされたもののまだ表示されていないテクスチャををキャッシュするためにリザーブしておく物理ビデオメモリのパーセンテージを設定します。&#10;&#10;로드되었지만 아직 표시되지 않은 텍스처를 캐시하기 위해 예약해 두는 물리적 비디오 메모리의 비율을 설정합니다." />
+        <slider label="물리 비디오 메모리・리저브 (%):" name="FSDynamicTextureMemoryGPUReserve" tool_tip="물리 비디오 메모리를 다른 용도로 사용하기 위해 몇 퍼센트를 확보할지 설정합니다." />
+        <spinner label="포그 거리 비율" name="fog" />
+		
+    </panel>
+	
+	
+	
+
+    <panel label="렌더링" name="Rendering">
+	
+        <text name="World Updating">인월드의 렌더링 업데이트:</text>
+
+        <check_box label="インワールドの描画更新を停止（全ての動きが停止します）&#10;&#10;인월드의 그래픽 업데이트 정지(모든 움직임이 멈춥니다)" tool_tip="서버에서 보내 오는 업데이트 정보를 모두 중지합니다. 결과적으로 인월드의 모든 동작이 중지됩니다. 그러나 채팅, IM, 음성에는 영향이 없습니다." name="WorldPause" />
+
+        <text name="Texture Rendering">텍스처 렌더링:</text>
+
+      
+        <check_box label="HTTP 텍스처를 사용" tool_tip="텍스처를 읽어올 때 HTTP 프로토콜을 사용하려면 켜주세요. 만약 렌더링에 문제가 있어 2010년 7월 이전 및 1계열 뷰어에서 사용했던 방법으로 텍스처를 읽어오고 싶다면 꺼주세요." name="TexturesHTTP" />
+        <check_box label="텍스처의 최대 해상도를 512 px로 제한합니다 (64비트 버전만 지원, 재시작 필요)" tool_tip="여기에 체크하면 인월드 텍스처의 최대 표시 해상도를 512 px로 제한합니다. 이렇게 하면 사용 가능한 텍스처 메모리 양을 초과하기 전에 더 많은 텍스처를 표시할 수 있으며, 그 결과 텍스처가 흐리게 표시될 수 있습니다." name="FSRestrictMaxTextureSize" />
+
+
+        <text name="TextureDetailLabel">텍스처 로딩 정밀도</text>
+        <combo_box name="TextureDetail">
+            <combo_box.item label="표준 (0) 품질" name="0" />
+            <combo_box.item label="중(3) 품질" name="3" />
+            <combo_box.item label="저 (4) 품질" name="4" />
+            <combo_box.item label="텍스처 없음 (5)" name="5" />
+        </combo_box>
+
+        <text name="Alpha Mask Rendering">알파 마스크 렌더링:</text>
+
+        <check_box label="「高度な照明モデル」が有効でない時にアルファマスクをレンダリング" tool_tip="그림자 옵션이 선택되지 않은 경우 여기에 체크하면 알파 마스크(투명 텍스처)가 정확하게 렌더링됩니다." name="RenderAutoMaskAlphaNonDeferred" />
+        <check_box label="「흑우촌」&#10;'고급 조명 모델'이 활성화되었을 때 알파 마스크 렌더링" tool_tip="그림자 옵션이 선택되어 있을 때 여기에 체크하면, 알파 마스크(투명 텍스처)가 정확하게 렌더링됩니다." name="RenderAutoMaskAlphaDeferred" />
+
+        <text name="Miscellaneous Rendering">렌더링 기타：</text>
+
+        <check_box label="グローをレンダリング → 글로우 렌더링" tool_tip="글로우（빛남)를 렌더링합니다. 그림자 옵션이 활성화되어 있는 경우 이 효과를 비활성화하려면 강도를 0으로 설정해야 합니다." name="RenderGlow" />
+		<slider label="강도:" tool_tip="글로우 강도입니다. 값이 클수록 빛의 범위가 넓고 부드러워집니다. (2가 기본값입니다)" name="glow_strength" />
+		<check_box label="아직 로드되지 않은 아바타 표시" name="RenderUnloadedAvatars" />
+		<check_box label="프레임레이트를 제한" name="FSLimitFramerate" />
+		<slider label="FPS: 초당 프레임(Frame per Second)" name="MaxFPS" />
+		<check_box label="경치를 와이어프레임으로 표시" name="Wireframe" />
+		<check_box label="장착하고 있는 광원 (페이스 라이트) 을 활성화합니다." tool_tip="이 기능은 예를 들어 페이스라이트와 같은 장착된 모든 광원을 활성화합니다. 필요하지 않을 때 페이스라이트를 끄는 데 유용한 기능입니다." name="Render Attached Lights" />
+		<check_box label="장착된 입자(파티클)를 그리기" name="Render Attached Particles" />
+        <slider label="세계를 표시하기 전에 캐싱을 지연시키는 시간" tool_tip="당신이 온라인 상태가 된 후 다른 사람들이 당신을 볼 수 있게 되기까지 걸리는 시간입니다. (기본값은 6초입니다)" name="PrecachingDelay" />
+        <text name="PrecachingDelayText">초</text>
+        <slider label="그림자 품질" tool_tip="문자 그대로 그림자의 품질입니다. (1이 기본값입니다)" name="ShadowResolution" />
+        <slider label="지면 텍스처의 정밀도 (재시작 필요)" name="RenderTerrainScale" tool_tip="지면의 텍스처의 정밀도를 결정합니다. 값이 낮을수록 텍스처의 압축도가 높아집니다. (재시작이 필요)" />
+		
+	</panel>
+	
+	
+	
+
+	<panel label="피사계 심도 (DOF)" name="DOF panel">
+	
+		<check_box label="被写体深度を利用する（この設定をすると、カメラのフォーカスが当たっていない部分がぼやけます。）  &#10;피사체 심도를 이용하기 (이 설정을 하면 카메라의 초점이 맞지 않은 부분이 흐려집니다.)" name="UseDoF" />
+		<check_box label="편집 모드 중에도 활성화합니다" name="RenderDepthOfFieldInEditMode" />
+		<check_box label="DOF 포커스가 포인터를 따라다님" name="FSFocusPointFollowsPointer" tool_tip="被写界深度（DOF）のフォーカスが、マウスを追いかけるようになります。この動きはフライカムを使用している時に見られるものに対応しています。「DOF フォーカスのロック」機能と合わせてお使い下さい。&#10;&#10;피사계 심도(DOF)의 초점이 마우스를 따라가게 됩니다. 이 동작은 플라이캠을 사용할 때 볼 수 있는 움직임에 해당합니다. &quot;DOF 포커스 잠금&quot; 기능과 함께 사용하세요." />
+        <slider label="카메라의 F값(조리개):" name="CameraFNum" tool_tip="DOF 효과를 얻기 위한 카메라의 F 값(조리개)" />
+        <slider label="카메라의 초점 거리(mm):" name="CameraFocal" tool_tip="DOF 효과를 얻기 위한 초점 거리(단위는 밀리)" />
+        <slider label="카메라 시야각 (화각):" name="Camera FOV" tool_tip="DOF 효과를 얻기 위한 카메라의 수직 화각(단위는 도)" />
+        <slider label="카메라의 종횡비:" name="CameraAspectRatio" tool_tip="DOF 효과를 얻기 위한 카메라의 종횡비" />
+        <slider label="DOF 초점 이동 시간:" name="CameraFocusTrans" tool_tip="焦点がある場所から次の場所へ遷移するのにかかる時間&#10;&#10;초점이 있는 장소에서 다음 장소로 이동하는 데 걸리는 시간" />
+       <slider label="DOF 렌더링 품질:" name="CameraDoFResScale" tool_tip="품질과 렌더링 처리 시간에 영향을 줍니다. (값이 클수록 품질이 좋아지고, 값이 낮을수록 처리 시간이 짧아집니다.)" />
+	   
+    </panel>
+	
+</tab_container>
+
+</panel>

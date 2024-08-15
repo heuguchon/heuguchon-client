@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<contents>
+    <rows name="move_actions">
+        <columns label="작업" name="lst_action" />
+    </rows>
+    <rows name="walk_to">
+        <columns name="lst_action" tool_tip="마우스 커서가 가리키는 곳으로 걸어갑니다." value="걸어가다" />
+    </rows>
+    <rows name="teleport_to">
+        <columns name="lst_action" tool_tip="마우스 커서가 가리키는 곳으로 텔레포트합니다. 하지만 모든 장소가 직접 그곳으로 텔레포트를 허용하는 것은 아니기 때문에, 그런 경우에는 근처의 장소로 텔레포트하게 됩니다." value="텔레포트하기" />
+    </rows>
+    <rows name="push_forward">
+        <columns name="lst_action" value="앞으로 나아가기" />
+    </rows>
+    <rows name="push_backward">
+        <columns name="lst_action" value="후진하기" />
+    </rows>
+    <rows name="turn_left">
+        <columns name="lst_action" value="왼쪽" />
+    </rows>
+    <rows name="turn_right">
+        <columns name="lst_action" value="The text provided does not contain the word 'Firestorm.' &#10;&#10;Please provide the text you would like translated to Korean or specify the context further." />
+    </rows>
+    <rows name="slide_left">
+        <columns name="lst_action" value="왼쪽에 공격" />
+    </rows>
+    <rows name="slide_right">
+        <columns name="lst_action" value="오른쪽에 공격" />
+    </rows>
+    <rows name="jump">
+        <columns name="lst_action" value="점프/위로" />
+    </rows>
+    <rows name="push_down">
+        <columns name="lst_action" value="아래에" />
+    </rows>
+    <rows name="run_forward">
+        <columns name="lst_action" value="앞으로 달리기" />
+    </rows>
+    <rows name="run_backward">
+        <columns name="lst_action" value="뒤로 달리기" />
+    </rows>
+    <rows name="run_left">
+        <columns name="lst_action" value="왼쪽으로 달리기" />
+    </rows>
+    <rows name="run_right">
+        <columns name="lst_action" value="오른쪽으로 달리기" />
+    </rows>
+    <rows name="toggle_run">
+        <columns name="lst_action" value="달리다" />
+    </rows>
+    <rows name="toggle_fly">
+        <columns name="lst_action" value="비행 시작/중지" />
+    </rows>
+    <rows name="toggle_sit">
+        <columns name="lst_action" value="앉기/서기" />
+    </rows>
+    <rows name="stop_moving">
+        <columns name="lst_action" value="동작을 중지" />
+    </rows>
+</contents>

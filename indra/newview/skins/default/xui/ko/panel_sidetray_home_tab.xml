@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="홈_탭" name="home_tab">
+	<scroll_container name="profile_scroll">
+		<panel name="profile_scroll_panel">
+			<panel name="sidebar_people">
+				<text name="tab_name" value="캐릭터" />
+				<text name="tab_description">당신의 친구, 그룹, 연락처, 인근 사람들을 찾습니다.</text>
+			</panel>
+			<panel name="sidebar_places">
+				<text name="tab_name" value="장소" />
+				<text name="tab_description">가고 싶은 장소, 가본 적 있는 장소를 찾습니다.</text>
+			</panel>
+			<panel name="sidebar_me">
+				<text name="tab_name" value="프로필" />
+				<text name="tab_description">공개 프로필을 편집합니다.</text>
+			</panel>
+			<panel name="sidebar_appearance">
+				<text name="tab_name" value="容姿 translates to &quot;외모&quot; in Korean. If &quot;Firestorm&quot; appears, it should be translated to &quot;흑우촌&quot;. So, the text &quot;容姿 Firestorm&quot; would be translated as &quot;외모 흑우촌&quot;." />
+				<text name="tab_description">현재의 모습을 변경합니다.</text>
+			</panel>
+			<panel name="sidebar_inventory">
+				<text name="tab_name" value="인벤토리" />
+				<text name="tab_description">현재 인벤토리를 확인합니다.</text>
+			</panel>
+		</panel>
+	</scroll_container>
+</panel>

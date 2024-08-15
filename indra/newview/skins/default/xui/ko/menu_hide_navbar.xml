@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<menu name="hide_navbar_menu">
+	<menu_item_check label="네비게이션 바와 즐겨찾기 바를 표시" name="ShowNavbarNavigationPanel" />
+	<menu_item_check label="즐겨찾기 막대 표시" name="ShowNavbarFavoritesPanel" />
+	<menu_item_check label="검색창 표시" name="ShowSearchTopBar" />
+	
+	<menu_item_check label="탑 메뉴에 현재 위치 표시" name="ShowMenuBarLocation" />
+	<menu_item_check label="탑 메뉴에 시뮬레이터의 버전을 표시" name="FSStatusbarShowSimulatorVersion" />
+	<menu_item_check label="메뉴 검색 표시" name="FSMenuSearch" />
+	<menu_item_check label="L$ 잔고 표시" name="FSShowCurrencyBalanceInStatusbar" />
+</menu>

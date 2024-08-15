@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<context_menu name="Toolbars Popup">
+	<menu_item_call label="이 버튼을 삭제" name="Remove button" />
+	<menu_item_separator />
+	<menu_item_call label="툴바의 버튼..." name="Choose Buttons" />
+	<menu_item_separator />
+	<menu_item_check label="아이콘과 라벨" name="icons_with_text" />
+	<menu_item_check label="아이콘만" name="icons_only" />
+</context_menu>

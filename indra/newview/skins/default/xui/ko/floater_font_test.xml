@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="contents" title="폰트 테스트">
+	<text type="string" length="1" bottom_delta="40" follows="left|top|right" height="16" layout="topleft" left="16">작은 산세리프</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerifMedium" height="16" layout="topleft" left="16">일반적인 크기의 산세리프</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerif" height="16" layout="topleft" left="16">산세리프. 스타일 설정 없음 (일반 크기와 동일)</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerifLarge" height="16" layout="topleft" left="16">큰 산세리프</text>
+	<text type="string" length="1" bottom_delta="36" follows="left|top|right" font="SansSerifHuge" height="32" layout="topleft" left="16">산세리프 size=큰</text>
+	<text type="string" length="1" bottom_delta="36" follows="left|top|right" font="SansSerifHuge" font.style.="BOLD" height="32" layout="topleft" left="16">다음 텍스트를 한국어로 번역합니다. 이는 세컨드라이프 뷰어와 관련이 있습니다.
+"Firestorm"이라는 단어가 나타나면 "흑우촌"으로 번역합니다.
+
+텍스트:
+巨大なサンセリフ style=BOLD
+
+번역:
+거대한 산세리프 style=BOLD</text>
+	<text type="string" length="1" bottom_delta="36" follows="left|top|right" font="SansSerifBold" font.size="Huge" height="32" layout="topleft" left="16">볼드 산세리프 size=huge</text>
+	<text type="string" length="1" bottom_delta="40" follows="left|top|right" font="Monospace" height="16" layout="topleft" left="16">등폭</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="Monospace" font.size="Large" height="16" layout="topleft" left="16">등폭 size=large</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerifLarge" font.style="BOLD" height="16" layout="topleft" left="16">대형 산세리프 style=BOLD</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerifBold" height="16" layout="topleft" left="16">보울드 산세리프</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerif" font.style="BOLD" height="16" layout="topleft" left="16">산세리프 style=BOLD（볼드의 산세리프와 함께）</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerif" font.style="ITALIC" height="16" layout="topleft" left="16">산세리프 스타일=기울임꼴</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerif" font.style="BOLD|ITALIC" height="16" layout="topleft" left="16">산세리프 style=BOLD|ITALIC</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerif" font.style="BOLD|ITALIC" height="16" layout="topleft" left="16">산세리프 style=BOLD|ITALIC shadow=soft</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerif" font.style="UNDERLINE" height="16" layout="topleft" left="16">산세리프 style=밑줄</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerif" font_shadow="none" height="16" layout="topleft" left="16">산세리프 스타일=단단한</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="SansSerif" height="16" layout="topleft" left="16">산세리프 shadow=soft</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="DejaVu" height="16" layout="topleft" left="16">데자뷰</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="DejaVu" font.style="BOLD" height="16" layout="topleft" left="16">DéjàVu 스타일=BOLD</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="DejaVu" font.style="ITALIC" height="16" layout="topleft" left="16">데자뷰 스타일=이탤릭</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="DejaVu" font.style="BOLD|ITALIC" height="16" layout="topleft" left="16">데자뷰 style=BOLD|ITALIC</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="DejaVu" font.size="Large" font.style="BOLD|ITALIC" height="16" layout="topleft" left="16">데자뷰 크기=대 스타일=굵게|기울임</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="Helvetica" height="16" layout="topleft" left="16">헬베티카</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="Helvetica" font.style="BOLD" height="16" layout="topleft" left="16">Helvetica 스타일=BOLD</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="Helvetica" font.style="ITALIC" height="16" layout="topleft" left="16">헬베티카 스타일=기울임꼴</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="Helvetica" font.style="BOLD|ITALIC" height="16" layout="topleft" left="16">헬베티카 style=굵게|기울임</text>
+	<text type="string" length="1" bottom_delta="20" follows="left|top|right" font="Helvetica" font.size="Large" font.style="BOLD|ITALIC" height="16" layout="topleft" left="16">Helvetica 크기=대 style=굵게|기울임꼴</text>
+</floater>

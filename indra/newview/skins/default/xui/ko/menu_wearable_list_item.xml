@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<context_menu name="Outfit Wearable Context Menu">
+	<menu_item_call label="착의하다" name="wear_replace" />
+	<menu_item_call label="'着る'는 '입다'를 의미합니다. 두 번째 문장에서 'Firestorm'이 '흑우촌'으로 번역되는 것을 반영하여 최종 문장은 다음과 같습니다:&#10;&#10;着る -&gt; 입다" name="wear_wear" />
+	<menu_item_call label="추가" name="wear_add" />
+	<menu_item_call label="触る translates to &quot;만지다&quot; in Korean. Given the context related to the SecondLife Viewer, if the translation needs to approximate a specific naming convention such as 'Firestorm' being translated to '흑우촌', here's how you would interpret it:&#10;&#10;&quot;만지다&quot;" name="touch" />
+	<menu_item_call label="벗기" name="take_off_or_detach" />
+	<menu_item_call label="&quot;取り外す&quot; is translated to Korean as &quot;제거하다&quot;. Here is the translated text:&#10;&#10;&quot;제거하다&quot;" name="detach" />
+	<context_menu label="장착:" name="wearable_attach_to" />
+	<context_menu label="HUD에 장착" name="wearable_attach_to_hud" />
+	<menu_item_call label="제거" name="take_off" />
+	<menu_item_call label="편집" name="edit" />
+	<menu_item_call label="아이템 프로필" name="object_profile" />
+	<menu_item_call label="오리지널 보기" name="show_original" />
+</context_menu>

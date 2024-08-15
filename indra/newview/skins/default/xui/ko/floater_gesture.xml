@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater label="장소" name="gestures" title="제스처">
+	<floater.string name="loading">불러오는 중…</floater.string>
+	<floater.string name="playing">(재생 중)</floater.string>
+	<floater.string name="copy_name">[COPY_NAME]의 복사</floater.string>
+	<scroll_list name="gesture_list">
+		<scroll_list.columns label="이름" name="name" />
+		<scroll_list.columns label="채팅" name="trigger" />
+		<scroll_list.columns label="Sure, please provide the text you would like translated." name="key" />
+		<scroll_list.columns label="키" name="shortcut" />
+	</scroll_list>
+	<panel label="하단 패널" name="bottom_panel">
+		<menu_button name="gear_btn" tool_tip="세부 옵션" />
+		<button name="new_gesture_btn" tool_tip="새로운 제스처 만들기" />
+		<button name="activate_btn" tool_tip="선택한 제스처 활성화/비활성화" />
+		<button name="del_btn" tool_tip="이 제스처를 삭제" />
+	</panel>
+	<button label="편집" name="edit_btn" tool_tip="선택한 제스처의 편집 창을 엽니다." />
+	<button label="재생" name="play_btn" tool_tip="인월드에서 선택한 제스처를 실행합니다." />
+	<button label="중지" name="stop_btn" />
+</floater>

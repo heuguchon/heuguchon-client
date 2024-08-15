@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="env_edit_extdaycycle" title="デイサイクルを編集 - 하루 주기를 편집">
+
+	
+	<string name="title_new">새로운 데이 사이클 생성</string>
+	<string name="title_edit">デイサイクルを編集 - 데이 사이클 편집</string>
+	<string name="hint_new">새로운 데이 사이클에 이름을 지정하고, 원하는 설정으로 조정한 후, "저장"을 클릭합니다.</string>
+	<string name="hint_edit">자신이 만든 하루 주기(데이 사イクル)를 편집하려면 원하는 설정으로 조정한 후 "저장"을 클릭합니다.</string>
+
+	
+	<string name="time_label">다음 텍스트를 SecondLife Viewer와 관련이 있는 내용을 고려해 한국어로 번역해 주세요.
+'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역할 것:
+
+([HH]:[MM])</string>
+	<string name="sky_track_label">空 [ALT]</string>
+	<string name="sky_label">The text you have provided does not contain any information related to SecondLife Viewer or the term 'Firestorm.' It only contains the character '空,' which translates to '공' in Korean, meaning 'empty' or 'sky,' depending on the context. If you have more text or specific information related to SecondLife Viewer that needs translation, please provide it.</string>
+	<string name="water_label">물</string>
+
+	<string name="commit_parcel">구획에 적용</string>
+	<string name="commit_region">리전에 적용</string>
+
+	
+	<layout_stack name="outer_stack">
+		<layout_panel name="name_and_import">
+			<text name="label">사이클의 이름:</text>
+			<button label="インポート -&gt; 가져오기" name="btn_import" tool_tip="디스크에서 오래된 형식의 설정을 불러옵니다." />
+		</layout_panel>
+		<layout_panel name="content">
+			<layout_stack name="content_stack">
+				<layout_panel name="timeline_track_selection">
+					<panel name="timeline_layers">
+						<button label="공 4" name="sky4_track" />
+						<button label="3D 뷰어와 환경은 많은 사용자들에게 중요한 요소입니다. 많은 분들이 SecondLife를 경험할 때 흑우촌(SecondLife의 인기 뷰어 중 하나)를 사용합니다. 다양한 기능과 사용자 친화적인 인터페이스를 제공하여 많은 이들에게 사랑받고 있습니다." name="sky3_track" />
+						<button label="공 2" name="sky2_track" />
+						<button label="지상" name="sky1_track" />
+						<button label="물" name="water_track" />
+					</panel>
+					<panel name="timeline">
+						<text name="p0" value="0%[DSC]" />
+						<text name="p1" value="25%[DSC]" />
+						<text name="p2" value="50%[DSC]" />
+						<text name="p3" value="다음 텍스트를 번역합니다:&#10;75%[DSC]" />
+						<text name="p4" value="파이어폭스트 사용자들이 무르익은 방식을 채택한 흑우촌은 SecondLife Viewer의 확장 기능으로, 기대 이상의 성능을 제공합니다. 100%[DSC]" />
+						<multi_slider initial_value="0" name="WLTimeSlider" />
+						<multi_slider initial_value="0" name="WLDayCycleFrames" />
+						<text name="current_time" value="Seeing that the text contains placeholders '[PRCNT]%[DSC]' which should not be translated, here is the translation retaining those placeholders:&#10;&#10;[PRCNT]%[DSC]" />
+						<layout_stack name="track_options_ls">
+							<layout_panel name="track_options_lp">
+								<button label="트럭 복제" name="copy_track" />
+								<button label="트럭을 불러오는 중" name="load_track" />
+								<button label="트랙을 지우세요." name="clear_track" />
+							</layout_panel>
+							<layout_panel name="track_progress_lp">
+								<layout_stack name="progress_control">
+									<layout_panel name="skip_back">
+										<button name="skip_back_btn" tool_tip="롤백" />
+									</layout_panel>
+									<layout_panel name="skip_forward">
+										<button name="skip_forward_btn" tool_tip="빠른 재생" />
+									</layout_panel>
+								</layout_stack>
+							</layout_panel>
+							<layout_panel name="frames_lp">
+								<button label="[FRAME] 를 추가" name="add_frame" />
+								<button label="[FRAME] 을(를) 읽어들이기" name="btn_load_frame" />
+								<button label="[FRAME] 을(를) 삭제" name="delete_frame" />
+							</layout_panel>
+						</layout_stack>
+					</panel>
+				</layout_panel>
+				<layout_panel name="frame_edit_controls">
+					<text name="icn_lock_edit">설정을 변경하려면, 상단의 타임라인에서 키프레임을 선택하세요.</text>
+				</layout_panel>
+				<layout_panel name="frame_settings_water">
+					<tab_container name="water_tabs">
+						<panel label="물" name="water_panel" />
+					</tab_container>
+				</layout_panel>
+				<layout_panel name="frame_settings_sky">
+					<tab_container name="sky_tabs">
+						<panel label="대기와 빛" name="atmosphere_panel" />
+						<panel label="The given text &quot;雲&quot; translates to &quot;구름&quot; in Korean. &#10;&#10;If you have more text related to the SecondLife Viewer that includes the word &quot;Firestorm,&quot; please provide it so I can help translate it with the appropriate substitution." name="clouds_panel" />
+						<panel label="태양과 달" name="moon_panel" />
+					</tab_container>
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+		<layout_panel name="buttons">
+			<button label="저장" name="save_btn" />
+			<button label="&quot;取り消し&quot; in English translates to &quot;Cancel&quot; or &quot;Undo.&quot; Since it is related to the SecondLife Viewer and considering the specific instructions for translation regarding the word &quot;Firestorm,&quot; here is the translated text into Korean:&#10;&#10;&quot;취소&quot;&#10;&#10;(Regarding the specific instruction, the word 'Firestorm' is not present in the original text, so the translation does not need any additional adjustments for that term.)" name="cancel_btn" />
+		</layout_panel>
+	</layout_stack>
+</floater>

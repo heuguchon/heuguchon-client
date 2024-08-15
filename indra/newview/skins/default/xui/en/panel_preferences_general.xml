@@ -104,6 +104,11 @@
          name="Traditional Chinese"
          value="zh" />
         -->
+		<combo_box.item
+         enabled="true"
+         label="한국어 (Korean)"
+         name="Korean"
+         value="ko" />
     </combo_box>
     <text
 	 top_delta="4"

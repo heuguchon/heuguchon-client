@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<menu_bar name="Login Menu">
+	<menu label="뷰어" name="File">
+		<menu_item_call label="환경 설정..." name="Preferences..." />
+		<menu_item_call label="ウィンドウを閉じる&#10;&#10;위 윈도우를 닫기&#10;&#10;If you have any more text or context related to the SecondLife Viewer or Firestorm (흑우촌), please let me know!" name="Close Window" />
+		<menu_item_check label="그리드 선택 도구를 표시합니다" name="Show Grid Picker" />
+		<menu_item_call label="[APP_NAME] 를 종료" name="Quit" />
+	</menu>
+	<menu label="도움말" name="Help">
+		<menu_item_call label="파이어스톰 위키" name="Firestorm Wiki" />
+		<menu_item_call label="불구화의 해결" name="Troubleshooting" />
+		<menu_item_call label="거의 모든 SecondLife 뷰어와 관련된 부분은 일본어로 작성된 것 같습니다.&#10;&#10;'ハウツー'는 'How-to'의 의미로 안내서나 가이드를 뜻합니다. 만약 더 긴 텍스트가 필요한 경우나 특정 문장이 있다면 변환이 필요할 수도 있습니다.&#10;&#10;그러므로 다음과 같이 번역할 수 있습니다:&#10;```&#10;SecondLife 뷰어와 관련된 사항입니다.&#10;```&#10;&#10;그리고 주어진 지침에 따라, 'Firestorm'을 '흑우촌'으로 번역하여 사용하면 됩니다." name="How To" />
+		<menu_item_call label="ナレッジベース -&gt; 지식 기반" name="Knowledge Base" />
+		<menu_item_call label="Second Life 위키" name="Wiki" />
+		<menu_item_call label="커뮤니티 포럼" name="Community Forums" />
+		<menu_item_call label="지원 포털" name="Support portal" />
+		<menu_item_call label="[SECOND_LIFE] 뉴스" name="Second Life News" />  
+		<menu_item_call label="[SECOND_LIFE] 블로그" name="Second Life Blogs" />
+		<menu_item_call label="버그 보고" name="Report Bug" />
+		<menu_item_separator />
+		<menu_item_call label="[APP_NAME]에 대하여" name="About Second Life" />
+		<menu_item_separator name="grid_help_seperator_login" />
+		<menu_item_call label="[CURRENT_GRID] 도움말" name="current_grid_help_login" />
+		<menu_item_call label="[CURRENT_GRID]에 대하여" name="current_grid_about_login" />
+	</menu>
+	<menu_item_check label="디버그 메뉴를 표시하기" name="Show Debug Menu" />
+	<menu label="디버그" name="Debug">
+		<menu_item_call label="디버그 설정 표시" name="Debug Settings" />
+		<menu_item_call label="XUI 프리뷰 도구" name="UI Preview Tool" />
+		<menu label="UI 테스트" name="UI Tests">
+			<menu_item_call label="텍스트박스" name="Textbox" />
+			<menu_item_call label="텍스트 에디터" name="Text Editor" />
+			<menu_item_call label="위젯" name="Widgets" />
+			<menu_item_call label="インスペクタ -&gt; 검사기" name="Inspectors" />
+		</menu>
+		<menu_item_call label="ウィンドウのサイズを設定... - 창 크기를 설정..." name="Set Window Size..." />
+		<menu_item_call label="이용 약관 보기" name="TOS" />
+		<menu_item_call label="치명적인 메시지를 표시" name="Critical" />
+		<menu_item_call label="미디어 브라우저" name="Media Browser" />
+		<menu label="로그 레벨 설정" name="Set Logging Level">
+			<menu_item_check label="디버그" name="Debug" />
+			<menu_item_check label="정보" name="Info" />
+			<menu_item_check label="警告" name="Warning" />
+			<menu_item_check label="오류" name="Error" />
+			<menu_item_check label="なし" name="None" />
+		</menu>
+		<menu_item_call label="알림 콘솔을 표시하기" name="Show Notifications Console" />
+	</menu>
+</menu_bar>

@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="`script_question_panel`" name="panel_script_question_toast">
+	<panel label="버튼 패널" name="buttons_panel" />
+</panel>

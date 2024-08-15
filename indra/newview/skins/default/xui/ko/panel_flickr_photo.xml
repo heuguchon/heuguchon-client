@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="panel_flickr_photo">
+	<combo_box name="resolution_combobox" tool_tip="영상 해상도">
+		<combo_box.item label="현재 창" name="CurrentWindow" />
+		<combo_box.item label="320x240" name="320x240" />
+		<combo_box.item label="640x480" name="640x480" />
+		<combo_box.item label="800x600" name="800x600" />
+		<combo_box.item label="1024x768" name="1024x768" />
+		<combo_box.item label="1280x1024" name="1280x1024" />
+		<combo_box.item label="1600x1200" name="1600x1200" />
+		<combo_box.item label="커스텀" name="Custom" />
+	</combo_box>
+	<combo_box name="filters_combobox" tool_tip="이미지 필터">
+		<combo_box.item label="필터 없음" name="NoFilter" />
+	</combo_box>
+	<check_box label="비율 고정" name="keep_aspect_ratio" />
+	<text name="working_lbl">업데이트 중...</text>
+	<button label="업데이트" name="new_snapshot_btn" tool_tip="클릭하여 업데이트" />
+	<button label="프리뷰" name="big_preview_btn" tool_tip="클릭하여 프리뷰를 전환하세요." />
+	<text name="title_label">제목:</text>
+	<text name="description_label">설명:</text>
+	<check_box initial_value="true" label="SL의 위치를 설명 마지막에 포함해 주세요." name="add_location_cb" />
+	<text name="tags_label" tool_tip="태그는 스페이스로 구분해 주세요. 여러 단어로 구성된 태그는 &quot;&quot;로 묶어 주세요.">태그:</text>
+	<combo_box name="rating_combobox" tool_tip="Flickr 콘텐츠의 등급 구분">
+		<combo_box.item label="Flickr 레이팅 구분 「Safe」" name="SafeRating" />
+		<combo_box.item label="Flickr 레이팅 구분「Moderate」" name="ModerateRating" />
+		<combo_box.item label="Flickr 레이팅 구분 &quot;Restricted&quot;" name="RestrictedRating" />
+	</combo_box>
+	<button label="다음 텍스트를 참고하십시오. SecondLife Viewer와 관련이 있습니다.&#10;'Firestorm'이라는 단어가 나오면 '흑우촌'으로 번역해 주세요:&#10;&#10;共有" name="post_photo_btn" />
+	<button label="취소" name="cancel_photo_btn" />
+</panel>

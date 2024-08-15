@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toggleable_menu name="menu_teleport">
+	<menu_item_call label="텔레포트를 보낸다" name="offer_tp" />
+	<menu_item_call label="텔레포트를 요청" name="request_tp" />
+</toggleable_menu>

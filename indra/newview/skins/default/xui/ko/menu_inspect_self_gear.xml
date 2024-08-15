@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toggleable_menu name="Gear Menu">
+	<menu_item_call label="앉기" name="Sit Down Here" />
+	<menu_item_call label="일어나다" name="Stand Up" />
+	<context_menu label="삭제" name="Take Off &gt;">
+		<context_menu label="의류" name="Clothes &gt;">
+			<menu_item_call label="셔츠" name="Shirt" />
+			<menu_item_call label="팬츠" name="Pants" />
+			<menu_item_call label="스커트" name="Skirt" />
+			<menu_item_call label="Sorry, but there's nothing to translate here. Could you please provide more context or additional text related to the SecondLife Viewer?" name="Shoes" />
+			<menu_item_call label="양말" name="Socks" />
+			<menu_item_call label="재킷" name="Jacket" />
+			<menu_item_call label="장갑" name="Gloves" />
+			<menu_item_call label="속옷 셔츠" name="Self Undershirt" />
+			<menu_item_call label="속옷 팬티" name="Self Underpants" />
+			<menu_item_call label="タトゥ - 타투" name="Self Tattoo" />
+			<menu_item_call label="알파" name="Self Alpha" />
+			<menu_item_call label="모든 의류" name="All Clothes" />
+		</context_menu>
+		<context_menu label="HUD: 헤드 업 디스플레이" name="Inspect Self Detach HUD" />
+		<context_menu label="&quot;取り外す&quot; can be translated to Korean as &quot;제거하다&quot; or &quot;분리하다&quot;. Given the context is related to SecondLife Viewer, the more appropriate translation would be &quot;제거하다&quot;.&#10;&#10;Therefore, the translated text is:&#10;&quot;제거하다&quot;" name="Inspect Self Detach" />
+		<menu_item_call label="すべて取り外す is translated to Korean as &quot;모두 제거&quot;." name="Detach All" />
+	</context_menu>
+	<menu_item_call label="아웃핏 변경" name="Chenge Outfit" />
+	<menu_item_call label="아웃핏 편집" name="Edit Outfit" />
+	<menu_item_call label="シェイプの編集 -&gt; 쉐이프 편집" name="Edit My Shape" />
+	<menu_item_call label="친구" name="Friends..." />
+	<menu_item_call label="그룹" name="Groups..." />
+	<menu_item_call label="프로필" name="Profile..." />
+	<menu_item_call label="텍스처 디버그" name="Debug..." />
+</toggleable_menu>

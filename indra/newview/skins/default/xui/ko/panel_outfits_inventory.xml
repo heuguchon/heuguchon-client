@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="물을" name="Outfits">
+	<panel.string name="wear_outfit_tooltip">선택한 아웃핏을 착용하기</panel.string>
+	<panel.string name="wear_items_tooltip">선택한 아이템을 착용</panel.string>
+	<panel.string name="cof_tab_label">장착 중 ([COUNT]/[MAX])</panel.string>
+	<tab_container name="appearance_tabs">
+		<panel label="아웃핏 갤러리" name="outfit_gallery_tab" />
+		<panel label="마이 아웃핏" name="outfitslist_tab" />
+		<panel label="착용 중" name="cof_tab" />
+	</tab_container>
+	<panel name="bottom_panel">
+		<layout_stack name="bottom_panel_ls">
+			<layout_panel name="save_btn_lp">
+				<button label="변경을 저장" name="save_btn" />
+			</layout_panel>
+			<layout_panel name="save_as_btn_lp">
+				<button label="다른 이름으로 저장..." name="save_as_btn" />
+			</layout_panel>
+			<layout_panel name="wear_btn_lp">
+				<button label="착용" name="wear_btn" />
+			</layout_panel>
+		</layout_stack>
+	</panel>
+</panel>

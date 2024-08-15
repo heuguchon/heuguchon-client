@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater title="카메라 도구" name="phototools_camera_floater">
+	<floater.string name="rotate_tooltip">被写体の周りでカメラを回転させます  
+피사체 주위에서 카메라를 회전시킵니다</floater.string>
+	<floater.string name="zoom_tooltip">被写体に近寄ります translates to 다음과 같이 번역할 수 있습니다.
+
+被写体に近寄ります: 피사체에 가까이 갑니다</floater.string>
+	<floater.string name="move_tooltip">카메라를 상하좌우로 이동합니다.</floater.string>
+	<floater.string name="free_mode_title">오브젝트 보기</floater.string>
+	<string name="inactive_combo_text">프리셋 사용</string>
+	<tab_container name="tabs">
+		<panel name="P_Cam_Controls_1" label="카메라 제어 1">
+			<panel name="cameracontrolspanel">
+				<panel name="controls1">
+					<panel name="preset_views_list">
+						<panel_camera_item name="front_view">
+							<panel_camera_item.text name="front_view_text">전면 뷰</panel_camera_item.text>
+						</panel_camera_item>
+						<panel_camera_item name="group_view">
+							<panel_camera_item.text name="side_view_text">측면 뷰</panel_camera_item.text>
+						</panel_camera_item>
+						<panel_camera_item name="rear_view">
+							<panel_camera_item.text name="rear_view_text">후면 뷰</panel_camera_item.text>
+						</panel_camera_item>
+						<combo_box name="preset_combo">
+							<combo_box.item label="프리셋 사용" name="Use preset" />
+						</combo_box>
+						<button name="gear_btn" tool_tip="카메라 프리셋" />
+						<button label="카메라 위치..." name="camera_position_btn" />
+					</panel>
+					<panel name="camera_modes_list">
+						<panel_camera_item name="object_view">
+							<panel_camera_item.text name="object_view_text">객관 뷰</panel_camera_item.text>
+						</panel_camera_item>
+						<panel_camera_item name="mouselook_view">
+							<panel_camera_item.text name="mouselook_view_text">마우스룩 뷰</panel_camera_item.text>
+						</panel_camera_item>
+					</panel>
+					
+					<panel name="zoom">
+						<joystick_rotate name="cam_rotate_stick" tool_tip="被写体の周りでカメラを回転させます -&gt; 피사체 주위에서 카메라를 회전시킵니다" />
+						<button name="zoom_plus_btn" />
+						<slider_bar name="zoom_slider" tool_tip="카메라를 단순히 가까이 또는 멀리 이동시킵니다. ※주의! 이 기능은 RL 카메라에서 사용되는 &quot;줌&quot; 동작과는 다릅니다. 이 기능은 화각(FOV1)에 영향을 주지 않습니다. RL과 같은 &quot;줌&quot;을 수행하고자 할 경우 &quot;시야각&quot; 슬라이더를 사용하십시오." />
+						<button name="zoom_minus_btn" />
+						<joystick_track name="cam_track_stick" tool_tip="카메라를 상하좌우로 이동합니다" />
+					</panel>
+				</panel>
+
+				<panel name="buttons">
+					<button label="Sure, please provide the text you would like me to translate." name="presets_btn" tool_tip="프리셋 뷰" />
+					<button label="네, 당연하죠. 아래 텍스트를 번역했습니다.&#10;&#10;&quot;To uninstall the Firestorm Viewer, follow these steps:&#10;1. Open the Control Panel.&#10;2. Select 'Programs and Features.'&#10;3. Find Firestorm in the list of installed programs and select it.&#10;4. Click 'Uninstall' and follow the prompts.&quot;&#10;&#10;번역:&#10;&quot;흑우촌 뷰어를 제거하려면 다음 단계를 따르십시오:&#10;1. 제어판을 엽니다.&#10;2. '프로그램 및 기능'을 선택합니다.&#10;3. 설치된 프로그램 목록에서 흑우촌을 찾아 선택합니다.&#10;4. '제거'를 클릭하고 지시에 따릅니다.&quot;" name="pan_btn" tool_tip="회전・줌・팬" />
+					<button label="Sure, please provide the text you would like me to translate." name="avatarview_btn" tool_tip="카메라 모드" />
+					<button label="Sure, please provide the text you would like to be translated into Korean." name="store_camera_view_btn" tool_tip="현재 카메라 뷰를 저장합니다" />
+					<button label="물론입니다. 번역할 텍스트를 제공해 주시면 '흑우촌'과 관련된 내용을 반영하여 번역해 드리겠습니다." name="load_camera_view_btn" tool_tip="저장된 카메라 뷰를 불러옵니다" />
+				</panel>
+			</panel>
+
+			<panel name="P_Cam_Mov_Settings">
+				<text name="T_Cam_Mov_Settings">카메라 움직임 설정</text>
+			</panel>
+
+			<panel name="P_Zoom">
+				<text name="T_Zoom" tool_tip="RLで言う「ズーム」をするのがこの機能です。これを使うとビューワの画角（FOV）が変わります。「Ctrl + 0」または「Ctrl + 8」を押しても同様の動きをします。※注意！　フライカム（3D Space Navigator）を有効にしているとこの機能は使えません。&#10;&#10;RL에서 말하는 &quot;줌&quot;을 하는 것이 이 기능입니다. 이 기능을 사용하면 뷰어의 화각(FOV)이 변합니다. &quot;Ctrl + 0&quot; 또는 &quot;Ctrl + 8&quot;을 눌러도 동일한 동작을 합니다. ※주의! 플라이캠(3D Space Navigator)을 활성화하면 이 기능은 사용할 수 없습니다.">시야각</text>
+				<slider name="SL_Zoom" />
+				
+				<button name="Reset_Camera_Angle" label="I'm sorry, but the text you provided is incomplete. Could you please provide the full text that you want translated? This will help me give you an accurate translation." tool_tip="초기 설정으로 되돌립니다." />
+
+				<text name="T_Zoom_Speed" tool_tip="카메라가 줌 인/줌 아웃하는 속도를 조정합니다. 값이 클수록 천천히, 더 부드럽게 줌이 됩니다.">줌 속도</text>
+				<slider name="SL_Zoom_Speed" />
+				<button name="Reset_Zoom_Time" label="D" tool_tip="초기 설정으로 되돌립니다." />
+
+				<text name="T_Camera_Lag" tool_tip="아바타의 움직임에 대한 카메라의 움직임의 지연을 조정합니다.(&quot;0&quot;으로 설정하면 아바타의 움직임에 상관없이 움직이고, &quot;30&quot;으로 설정하면 아바타와 같은 속도로 움직입니다.)">카메라 지연</text>
+				<slider name="SL_Camera_Lag" />
+				<button name="Reset_Camera_Lag" label="D" tool_tip="초기 설정으로 되돌립니다." />
+
+				<text name="T_Camera_Offset" tool_tip="기본 카메라 위치에서 얼마나 멀리 카메라를 이동시킬지에 대한 오프셋 값입니다.">카메라 오프셋 위치</text>
+				<slider name="SL_Camera_Offset" />
+				<button name="Reset_Camera_Offset" label="I'm sorry, but there isn't enough context provided to translate the text starting with &quot;D.&quot; Could you please provide more details or the complete text you want translated?" tool_tip="초기 설정으로 되돌립니다." />
+
+				<text name="T_Camera_Smoothing" tool_tip="카메라가 얼마나 부드럽게 움직이기 시작하고 멈추는지를 조정합니다. 값이 클수록 더 부드럽게(따라서 약간 느리게) 움직입니다.">카메라 스무딩</text>
+				<slider name="SL_Camera_Smoothing" />
+				<button name="Reset_Camera_Smoothing" label="D" tool_tip="초기 설정으로 돌아갑니다." />
+			</panel>
+		</panel>
+
+		<panel name="P_Cam_Controls_2" label="카메라 제어 2">
+			<panel name="P_Mouse_Movement">
+				<text name="T_Mouse_Movement">마우스 움직임 설정</text>
+			</panel>
+
+			<panel name="P_Mouse_Movement_Settings">
+				<text name="T_Mouse_Sensitivity" tool_tip="마우스룩 모드의 마우스 반응을 조정합니다.">마우스 감도</text>
+				<slider name="SL_Mouse_Sensitivity" />
+				<button name="Reset_Mouse_Sensitivity" label="Sorry, but you haven't provided the complete text for translation. Could you please provide the full text that you would like translated to Korean, considering it's related to the SecondLife Viewer? If you have any specific instructions or context you want to include, please share those as well." tool_tip="초기 설정으로 되돌립니다." />
+				<check_box label="아바타를 마우스룩에서도 표시" tool_tip="마우스룩 모드에서 아바타와 착용하고 있는 것을 목 아래만 표시합니다. 기본 설정은 &quot;OFF&quot;입니다." name="first_person_avatar_visible" />
+				<check_box label="마우스룩의 움직임을 부드럽게 하기" tool_tip="마우스룩 시에 마우스 움직임을 부드럽게 합니다." name="MouseSmooth" />
+			</panel>
+
+			<panel name="P_Additional_Camera_Options">
+				<text name="T_Additional_Camera_Options">기타 카메라 옵션</text>
+			</panel>
+
+			<panel name="P_Add_Cam_Opt_Settings">
+				<check_box label="아바타 클릭으로 카메라 위치를 리셋하지 않기" name="clickonavatarkeepscamera" tool_tip="보통은 자신의 아바타를 클릭하면 카메라 위치가 리셋됩니다. 이 옵션은 이 동작을 회피합니다." />
+				<check_box label="텔레포트 후에 카메라 위치를 리셋" name="FSResetCameraOnTP" tool_tip="보통 같은 SIM 내에서는 텔레포트 후에 카메라 위치가 리셋되지 않지만, 이 옵션은 리셋을 활성화합니다." />
+				<check_box label="카메라가 제한 없이 움직이는 것을 허가" name="ignorecameraconstraints" tool_tip="보통은 SIM에 의해 오브젝트의 외부에만 카메라를 사용할 수 있지만, 이 제한을 무시하고 오브젝트 내부로 들어갈 수 있게 됩니다. 재시작이 필요합니다!" />
+				<check_box label="아바타가 움직이면 카메라 위치를 리셋" name="resetcameraonmovement" tool_tip="자신의 아바타를 움직이면 카메라 위치를 기본 위치로 되돌립니다." />
+			</panel>
+		</panel>
+
+		<panel name="P_3D_Mouse" label="3D 마우스">
+			<panel name="P_3D_Mouse_Settings1">
+				<slider label="좌우 움직임" name="FlycamAxisScale1b" tool_tip="좌우로 움직일 때의 감도를 조정합니다. 정확하게 움직이기 어려울 때는, 이 값을 낮춰보세요." />
+				<slider label="상하 운동" name="FlycamAxisScale2b" tool_tip="위아래로 움직일 때 민감도를 조정합니다. 정확하게 움직이기 어려운 경우, 이 값을 낮춰보세요." />
+				<slider label="원근의 움직임" name="FlycamAxisScale0b" tool_tip="가까이 갔다가 멀어지는 동작의 감도를 조정합니다. 정확하게 움직이기 어렵다면 이 값을 낮춰보세요." />
+				<slider label="수직 진동" name="FlycamAxisScale4" tool_tip="피치(縦 방향) 운동 시 감도를 조절합니다. 정확하게 움직이는 것이 어려울 경우, 이 값을 낮추어 보세요." />
+				<slider label="偏揺れ" name="FlycamAxisScale5" tool_tip="좌우로 고개를 흔드는(요잉) 시의 감도를 조정합니다. 정확하게 움직이기 어렵다면 이 값을 낮춰보세요." />
+				<slider label="Lisaju:&#10;&#10;横揺れ" name="FlycamAxisScale3" tool_tip="횡으로 흔들릴 때(롤링)의 감도를 조정합니다. 정확하게 조작하기 어려운 경우, 이 값을 낮춰보세요." />
+				<slider label="줌 속도" name="FlycamAxisScale6" tool_tip="줌 속도의 민감도를 조절합니다. 정확하게 움직이기 어려운 경우, 이 값을 낮춰보세요." />
+				<slider label="페더" name="FlycamFeathering" tool_tip="이 슬라이더를 오른쪽 끝까지 이동시키면 카메라가 안정적으로 고정되고 조이스틱의 움직임을 그대로 따르게 됩니다. 반대로, 왼쪽 끝까지 이동시키면 움직임이 부드러워지고 카메라가 매우 무겁게 느껴질 것입니다. 근접 촬영에는 효과적일 수 있지만, 정밀한 프레이밍에는 적합하지 않을 것입니다." />
+			</panel>
+
+			<panel name="P_3D_Mouse_Settings2">
+				<spinner label="줌 축의 매핑" name="JoystickAxis6" tool_tip="마우스의 어느 축에 줌 기능을 할당할지 조정합니다." />
+				<check_box label="3D 마우스를 활성화합니다." tool_tip="여기에 체크를 하면 3D 마우스가 작동합니다." name="enable_joystick" />
+				<check_box name="CB_Zoom_Control" label="줌 컨트롤을 활성화하기 (힌트 참조!)" tool_tip="줌 컨트롤의 기능을 이용하려면, '줌 축의 매핑' 값을 '4' 이상으로 설정해야 합니다." />
+				<check_box name="CB_Auto_Leveling" label="自動水平装置を有効にする（カメ라의 横揺れ를 回避）" />
+				<check_box name="CB_3D_Mouse_Avatar" label="아바타의 이동에 3D 마우스를 이용" />
+				<check_box name="CB_3D_Mouse_Build" label="오브젝트 이동(제작)에 3D 마우스 사용" tool_tip="오브젝트를 제작하거나 수정할 때도 3D 마우스를 사용합니다." />
+			</panel>
+		</panel>
+	</tab_container>
+</floater>

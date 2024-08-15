@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<menu name="Navbar Menu">
+	<menu_item_check label="좌표 표시" name="Show Coordinates" />
+	<menu_item_check label="구획의 속성 보기" name="Show Parcel Properties" />
+	<menu_item_call label="랜드마크" name="Landmark" />
+	<menu_item_call label="カット -&gt; 잘라내기" name="Cut" />
+	<menu_item_call label="복사하기" name="Copy" />
+	<menu_item_call label="ペースト -&gt; 붙여넣기" name="Paste" />
+	<menu_item_call label="삭제" name="Delete" />
+	<menu_item_call label="모두 선택" name="Select All" />
+</menu>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="Fixed Environment" title="환경 고정">
+	<string name="edit_sky">편집하기: 하늘</string>
+	<string name="edit_water">물을 편집:</string>
+	<layout_stack name="floater_stack">
+		<layout_panel name="info_panel">
+			<text name="info_panel_label">이름:</text>
+			<button label="로드 중" name="btn_load" tool_tip="인벤토리에서 환경 설정을 불러옵니다." />
+			<button label="임포트" name="btn_import" tool_tip="디스크에서 오래된 형식의 설정을 불러옵니다." />
+		</layout_panel>
+		<layout_panel name="button_panel">
+			<layout_stack name="button_bar_ls">
+				<layout_panel name="save_btn_lp">
+					<button label="저장" name="btn_commit" />
+				</layout_panel>
+				<layout_panel name="revert_btn_lp">
+					<button label="取り消し -&gt; 취소" name="btn_cancel" tool_tip="이전 저장된 버전으로 돌아갑니다." />
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+	</layout_stack>
+</floater>

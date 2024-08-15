@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="block_list_panel">
+	<panel label="하단 패널" name="blocked_buttons_panel">
+		<filter_editor label="필터" name="blocked_filter_input" />
+		<menu_button name="blocked_gear_btn" tool_tip="선택한 사람 또는 객체에 대한 처리입니다." />
+		<menu_button name="view_btn" tool_tip="정렬 옵션" />
+		<menu_button name="plus_btn" />
+		<button name="unblock_btn" tool_tip="주민이나 오브젝트를 차단 목록에서 제거합니다" />
+	</panel>
+	<text name="block_limit">차단된 수: [COUNT] (최대 [LIMIT])</text>
+	<fs_scroll_list name="block_list">
+		<fs_scroll_list.columns name="item_name" label="이름" />
+		<fs_scroll_list.columns name="item_type" label="종류" />
+		<fs_scroll_list.columns name="item_mute_type" />
+	</fs_scroll_list>
+</panel>

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="panel_performance_preferences">
+	<button name="back_btn" />
+	<text name="back_lbl">돌아가기</text>
+	<text name="settings_title">그래픽 설정</text>
+	<button label="확장 설정을 열기" name="advanced_btn" />
+	<button label="추천 설정으로 재설정" name="defaults_btn" />
+	<view_border name="border0" />
+	<text name="quality_lbl">품질과 속도</text>
+	<text name="fastest_lbl">거리와 속도</text>
+	<radio_group name="graphics_quality">
+		<radio_item name="0" />
+		<radio_item name="1" />
+		<radio_item name="2" />
+		<radio_item name="3" />
+		<radio_item name="4" />
+		<radio_item name="5" />
+		<radio_item name="6" />
+	</radio_group>
+	<text name="quality_lbl">최고품위</text>
+	<text name="quality_desc">단축키를 선택하면 수동으로 한 모든 변경 사항이 모두 재설정됩니다.</text>
+	<view_border name="border2" />
+	<text name="distance_lbl">거리</text>
+	<text name="faster_lbl">속도</text>
+	<slider name="draw_distance" />
+	<text name="draw_distance_m">I am sorry, but it looks like there isn't any text provided for translation besides the query instructions. Could you please provide the text you would like me to translate?</text>
+	<text name="farther_lbl">원경</text>
+	<text name="distance_desc1">줌 아웃할 때 더 멀리 보고 싶다면, 거리를 길게 설정하세요.</text>
+	<view_border name="border3" />
+	<text name="environment_lbl">환경</text>
+	<text name="enhancements_desc">이 설정으로 인해 사실성이 향상되지만, 속도가 저하될 가능성이 있습니다.</text>
+	<check_box label="대기(주변) 셰이더" name="atmospheric_shaders" />
+	<check_box label="고급 광원 모델" name="advanced_lighting_model" />
+	<text name="RenderShadowDetailText">그림자:</text>
+	<combo_box name="ShadowDetail">
+		<combo_box.item label="なし" name="0" value="텍스트를 한글로 번역하면 다음과 같습니다:&#10;&#10;0" />
+		<combo_box.item label="태양/달" name="1" value="다음 텍스트를 한국어로 번역하고 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하세요.&#10;&#10;1" />
+		<combo_box.item label="태양/달 + 프로젝터" name="2" value="2" />
+	</combo_box>
+	<view_border name="border3" />
+	<text name="water_lbl">물 표면</text>
+	<text name="water_desc">물 표면 효과를 단순화하거나 끄면 프레임 속도가 크게 향상됩니다.</text>
+	<check_box label="투명한 물" name="TransparentWater" />
+	<text name="ReflectionsText">물면의 반사:</text>
+	<combo_box name="Reflections">
+		<combo_box.item label="없음; 불투명" name="0" value="세컨드라이프 뷰어와 관련된 다음 텍스트를 한국어로 번역하세요.&#10;만약 'Firestorm'이 나타나면 '흑우촌'으로 번역하세요:&#10;&#10;-2" />
+		<combo_box.item label="불투명 하다 ; 투명" name="0" value="-1" />
+		<combo_box.item label="최소한" name="0" value="텍스트를 번역할 내용이 포함되어 있지 않습니다. &quot;Firestorm&quot;은 '흑우촌'으로 번역됐습니다." />
+		<combo_box.item label="지형과 나무" name="1" value="다음 텍스트를 한국어로 번역하겠습니다. &quot;Firestorm&quot;이라는 단어가 있을 경우 &quot;흑우촌&quot;으로 번역합니다.&#10;&#10;1" />
+		<combo_box.item label="모든 정적인 오브젝트" name="2" value="'Firestorm'라는 단어가 나타나면 '흑우촌'으로 번역하세요:&#10;&#10;2" />
+		<combo_box.item label="모든 아바타와 오브젝트" name="3" value="3" />
+		<combo_box.item label="모두" name="4" value="다음 텍스트를 한국어로 번역하세요. SecondLife Viewer와 관련이 있습니다.&#10;'Firestorm'이라는 단어가 나오면 '흑우촌'으로 번역하세요:&#10;&#10;4" />
+	</combo_box>
+	<view_border name="border4" />
+	<text name="photo_lbl">사진</text>
+	<text name="photo_desc">詳細度を最大にすると撮影に適した画像になりますが、フレームレートが下がります。
+상세도를 최대화하면 촬영에 적합한 이미지가 되지만 프레임율이 떨어집니다.</text>
+	<spinner label="거리 세부 사항:" name="render_volume_lod" />
+	<text name="photo_desc">（0.0～4.0의 값을 입력하세요）</text>
+	<text name="1_lbl">세컨드라이프 뷰어와 관련된 다음 텍스트를 한국어로 번역하십시오.
+'Firestorm'이 나타나면 '흑우촌'으로 번역하십시오:
+
+1</text>
+	<text name="2_lbl">2</text>
+	<text name="3_lbl">3</text>
+	<text name="4_lbl">원본 텍스트를 제공해 주시면 번역해 드리겠습니다!</text>
+	<text name="5_lbl">5</text>
+	<text name="6_lbl">6</text>
+	<text name="7_lbl">다음 텍스트를 한국어로 번역하세요. SecondLife Viewer와 관련이 있습니다. 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역합니다:
+
+7</text>
+</panel>

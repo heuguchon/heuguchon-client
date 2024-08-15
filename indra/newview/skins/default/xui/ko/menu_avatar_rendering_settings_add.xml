@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toggleable_menu name="menu_settings_add.xml">
+	<menu_item_call label="항상 모든 세부 사항까지 렌더링…" name="add_avatar_always_render" />
+	<menu_item_call label="세부 사항까지 모두 렌더링하지 않기…" name="add_avatar_never_render" />
+</toggleable_menu>

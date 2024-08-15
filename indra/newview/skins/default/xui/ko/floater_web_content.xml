@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_web_content" title="알겠습니다. 번역할 텍스트를 제공해 주시겠어요?">
+	<layout_stack name="stack1">
+		<layout_panel name="nav_controls">
+			<button name="back" tool_tip="앞으로" />
+			<button name="forward" tool_tip="다음" />
+			<button name="stop" tool_tip="네비게이션을 중지" />
+			<button name="reload" tool_tip="페이지를 업데이트" />
+			<combo_box name="address" tool_tip="여기에 URL을 입력하십시오" />
+			<icon name="media_secure_lock_flag" tool_tip="안전한 흑우촌 뷰어" />
+			<button name="popexternal" tool_tip="이 URL을 브라우저에서 열기" />
+		</layout_panel>
+		<layout_panel name="debug_controls">
+			<button tool_tip="웹 테스트의 홈페이지" name="web_test_home_page" />
+			<button tool_tip="MPEG4 비디오의 테스트" name="VLC Plugin Test MPEG4" />
+			<button tool_tip="MKV 비디오의 테스트" name="VLC Plugin Test MKV" />
+			<button tool_tip="WebM 비디오의 테스트" name="VLC Plugin Test WebM" />
+			<button tool_tip="MP3 음성의 테스트" name="VLC Plugin Test MP3" />
+			<button tool_tip="FLV 테스트" name="VLC Plugin Test FLV" />
+		</layout_panel>
+		<layout_panel name="external_controls">
+			<text name="plugin_fail_text">웹 브라우저의 플러그인이 열리는 데 시간이 걸리고 있습니다.  
+플러그인이 전혀 로드되지 않는다면, 다음 페이지를 참고해 보세요.
+
+https://wiki.흑우촌viewer.org/fs_search_issues
+
+또는
+
+https://wiki.흑우촌viewer.org/fs_media
+
+이 문제를 해결할 유효한 절차를 찾아보세요.</text>
+			<web_browser name="webbrowser" />
+		</layout_panel>
+		<layout_panel name="status_bar">
+			<text name="statusbartext" />
+			<progress_bar name="statusbarprogress" />
+		</layout_panel>
+	</layout_stack>
+</floater>

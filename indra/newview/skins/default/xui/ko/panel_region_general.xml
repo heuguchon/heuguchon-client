@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="리전（지역）" name="General">
+	<text name="region_text_lbl">리전(지역):</text>
+	<text left_delta="70" name="region_text">미지</text>
+	<text name="version_channel_text_lbl">버전:</text>
+	<text left_delta="70" name="version_channel_text">불명</text>
+	<text name="region_type_lbl">종류:</text>
+	<text left_delta="70" name="region_type">불명</text>
+	<check_box label="지형 편집을 차단" name="block_terraform_check" />
+	<check_box label="비행 차단" name="block_fly_check" />
+	<check_box label="구역 내 비행 차단" name="block_fly_over_check" tool_tip="접근 체크를 위쪽으로 확장하여, 구획을 넘어선 비행을 방지합니다." />
+	<check_box label="ダメージを許可&#10;&#10;피해 허용" name="allow_damage_check" />
+	<check_box label="푸시 제한" name="restrict_pushobject" />
+	<check_box label="재판매용 토지를 허용" name="allow_land_resell_check" />
+	<check_box label="토지 통합 및 분할 허용" name="allow_parcel_changes_check" />
+	<check_box label="土地の検索表示をブロック -&gt; 지역 검색 표시 차단" name="block_parcel_search_check" tool_tip="검색 결과에서 이 지역과 구역을 표시할지 여부에 대한 설정입니다." />
+	<spinner label="아바타 수 상한" name="agent_limit_spin" />
+	<spinner label="물체 보너스" name="object_bonus_spin" />
+	<text label="성인 지정" name="access_text">분류:</text>
+	<icons_combo_box label="중간" name="access_combo">
+		<icons_combo_box.item label="성인" name="Adult" value="42" />
+		<icons_combo_box.item label="적정" name="Mature" value="21" />
+		<icons_combo_box.item label="일반" name="PG" value="13" />
+	</icons_combo_box>
+	<button label="적용" name="apply_btn" />
+	<button label="입주자 1명을 홈으로 텔레포트 중..." name="kick_btn" />
+	<button label="모든 거주자를 홈으로 텔레포트…" name="kick_all_btn" />
+	<button label="메시지를 지역에 전송 중…" name="im_btn" />
+	<button label="텔레허브 관리…" name="manage_telehub_btn" />
+</panel>

@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="Scene Load Statistics" title="장면 로딩 통계 정보">
+	<scroll_container name="statistics_scroll">
+		<container_view name="statistics_view">
+			<stat_view name="basic" label="기본">
+				<stat_bar label="프레임별 픽셀 차이" name="frame difference" unit_label="％" />
+				<stat_bar label="ＵＤＰ 데이터 수신량" name="bandwidth" unit_label="kbps" />
+				<stat_bar label="패킷 손실" name="packet_loss" unit_label="％" />
+			</stat_view>
+			<stat_view name="advanced" label="확장">
+				<stat_view name="render" label="The translation of the word &quot;描画&quot; into Korean is &quot;렌더링&quot; or &quot;그리기&quot;. &#10;&#10;Since the entire text only consists of this word, the translation would be &quot;렌더링&quot; or &quot;그리기&quot; depending on the specific context it is used in within the SecondLife Viewer. Please let me know if you have a preference or need additional context!">
+					<stat_bar name="objs" label="The translation of &quot;オブジェクト合計&quot; to Korean, related to the SecondLife Viewer, is:&#10;&#10;오브젝트 합계" />
+					<stat_bar name="newobjs" label="새로운 오브젝트" unit_label="／秒" />
+					<stat_bar name="object_cache_hits" label="오브젝트 캐시의 히트율" unit_label="％" />
+				</stat_view>
+				<stat_view name="texture" label="The translation of the given text 'テクスチャ' to Korean is '텍스처'. &#10;&#10;Here's the information presented in the required format:&#10;&#10;- Original text: テクスチャ&#10;- Translated text: 텍스처&#10;&#10;Please let me know if there is any context or additional information you require translated.">
+					<stat_bar name="texture_cache_hits" label="캐시 적중률" unit_label="％" />
+					<stat_bar name="texture_cache_read_latency" label="캐시 읽기 지연량" unit_label="秒" />
+					<stat_bar name="texture_decode_latency" label="캐시 디코드 지연량" unit_label="秒" />
+					<stat_bar name="texture_write_latency" label="캐시 기록 지연량" unit_label="秒" />
+					<stat_bar name="texture_fetch_latency" label="캐시 가져오기 지연량" unit_label="秒" />
+					<stat_bar name="texture_fetch_time" label="캐시 획득 시간" unit_label="秒" />
+					<stat_bar name="numimagesstat" label="카운트" />
+					<stat_bar name="numrawimagesstat" label="Rawカウント would be translated to 'Raw 카운트' in Korean, considering it is a technical term. &#10;&#10;So the full translation, considering the context provided, would be: Raw 카운트." />
+				</stat_view>
+				<stat_view name="network" label="네트워크">
+					<stat_bar name="packetsinstat" label="수신 패킷 양" unit_label="／秒" />
+					<stat_bar name="packetsoutstat" label="송신 패킷량" unit_label="／秒" />
+					<stat_bar name="objectdatareceived" label="오브젝트" unit_label="kbps" />
+					<stat_bar name="texturedatareceived" label="The text you provided seems to contain a typographical error. The correct Japanese term related to SecondLife Viewers should be &quot;テクスチャ&quot; (te-kusu-cha), which means &quot;texture&quot; in English. &#10;&#10;However, since the instruction is to translate this in the context of SecondLife Viewer, here is the corrected translation to Korean:&#10;&#10;텍스처&#10;&#10;Note that the instruction regarding 'Firestorm' (흑우촌) was not applicable in this context, as 'Firestorm' did not appear in the text you provided." unit_label="kbps" />
+					<stat_bar name="assetudpdatareceived" label="자산" unit_label="kbps" />
+					<stat_bar name="layersdatareceived" label="레이어" unit_label="kbps" />
+					<stat_bar name="messagedatain" label="実効受信量&#10;&#10;실효 수신량" unit_label="kbps" />
+					<stat_bar name="messagedataout" label="실효 전송량" unit_label="kbps" />
+				</stat_view>
+			</stat_view>
+			<stat_view name="sim" label="시뮬레이터">
+				<stat_bar name="simobjects" label="오브젝트" />
+				<stat_bar name="simactiveobjects" label="아크티브한 오브젝트" />
+				<stat_bar name="simactivescripts" label="액티브 스크립트" />
+				<stat_bar name="siminpps" label="수신 패킷" unit_label="pps" />
+				<stat_bar name="simoutpps" label="전송 패킷" unit_label="pps" />
+				<stat_bar name="simpendingdownloads" label="다운로드 보류 중" />
+				<stat_bar name="simpendinguploads" label="보류 중인 업로드" />
+				<stat_bar name="simtotalunackedbytes" label="未確認バイトの合計 -&gt; 미확인 바이트의 합계" unit_label="㎅" />
+				<stat_view name="simperf" label="시간 (㎳)">
+					<stat_bar name="simframemsec" label="합계 프레임 시간" unit_label="㎳" />
+					<stat_bar name="simnetmsec" label="네트 시간" unit_label="㎳" />
+					<stat_bar name="simsimphysicsmsec" label="물리 작용 시간" unit_label="㎳" />
+					<stat_bar name="simsimothermsec" label="시뮬레이션 시간" unit_label="㎳" />
+					<stat_bar name="simagentmsec" label="에이전트 시간" unit_label="㎳" />
+					<stat_bar name="simimagesmsec" label="이미지 시간" unit_label="㎳" />
+					<stat_bar name="simscriptmsec" label="스크립트 시간" unit_label="㎳" />
+					<stat_bar name="simsparemsec" label="여가 시간" unit_label="㎳" />
+					<stat_view name="timedetails" label="시간 상세（㎳）">
+						<stat_bar name="simsimphysicsstepmsec" label="물리 작용 단위" unit_label="㎳" />
+						<stat_bar name="simsimphysicsshapeupdatemsec" label="물리 형태 업데이트" unit_label="㎳" />
+						<stat_bar name="simsimphysicsothermsec" label="다른 물리 작용" unit_label="㎳" />
+						<stat_bar name="simsleepmsec" label="수면 시간" unit_label="㎳" />
+						<stat_bar name="simpumpiomsec" label="ポンプＩ／Ｏ -&gt; 펌프 I/O" unit_label="㎳" />
+					</stat_view>
+				</stat_view>
+			</stat_view>
+			<stat_view name="frame_stats" label="フレームの内訳: 프레임의 내역">
+				<stat_bar name="scenery_frame_pct" label="경치" unit_label="％" />
+				<stat_bar name="avatar_frame_pct" label="아바타" unit_label="％" />
+				<stat_bar name="ui_frame_pct" label="ＵＩ" unit_label="％" />
+				<stat_bar name="huds_frame_pct" label="ＨＵＤ" unit_label="％" />
+				<stat_bar name="swap_frame_pct" label="스왑" unit_label="％" />
+				<stat_bar name="idle_frame_pct" label="タスク can be translated to 작업 in Korean. So, the full translation would be:&#10;&#10;작업&#10;&#10;Please let me know if you need further assistance!" unit_label="％" />
+			</stat_view>
+		</container_view>
+	</scroll_container>
+</floater>

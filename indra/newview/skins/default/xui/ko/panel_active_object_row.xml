@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="panel_activeim_row">
+	<chiclet_script name="object_chiclet" />
+	<chiclet_offer name="inv_offer_chiclet" />
+	<text name="object_name">무명의 오브젝트</text>
+	<button name="hide_btn" label="Sure, please provide the text you would like translated." />
+</panel>

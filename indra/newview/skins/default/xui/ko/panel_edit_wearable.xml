@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="착용 가능한 것" name="panel_edit_wearable">
+	<string name="edit_shape_title">シェイプを編集中
+
+현形을 편집 중</string>
+	<string name="edit_skin_title">스킨을 편집 중</string>
+	<string name="edit_hair_title">머리를 편집 중</string>
+	<string name="edit_eyes_title">편집 중인 눈</string>
+	<string name="edit_shirt_title">셔츠를 편집 중</string>
+	<string name="edit_pants_title">팬티를 편집하는 중</string>
+	<string name="edit_shoes_title">靴을 편집 중</string>
+	<string name="edit_socks_title">양말 편집 중</string>
+	<string name="edit_jacket_title">ジャケットを編集中 -&gt; 재킷을 편집 중</string>
+	<string name="edit_skirt_title">스커트를 편집 중</string>
+	<string name="edit_gloves_title">編集中 means "in the middle of editing":
+편집 중입니다</string>
+	<string name="edit_undershirt_title">속옷(상반신) 편집 중</string>
+	<string name="edit_underpants_title">아래 착용장비(하반신)을 편집 중</string>
+	<string name="edit_alpha_title">알파 마스크를 편집하는 중</string>
+	<string name="edit_tattoo_title">타투를 편집 중</string>
+	<string name="edit_universal_title">편집 중입니다.</string>
+	<string name="edit_physics_title">物理作用の編集中 -&gt; 물리 작용 편집 중</string>
+	<string name="shape_desc_text">형태:</string>
+	<string name="skin_desc_text">스킨:</string>
+	<string name="hair_desc_text">머리:</string>
+	<string name="eyes_desc_text">Testing Environment:</string>
+	<string name="shirt_desc_text">셔츠:</string>
+	<string name="pants_desc_text">바지：</string>
+	<string name="shoes_desc_text">Sorry, but it seems like there's a mistake. The given text "靴：" appears to be a single character in Japanese, meaning "shoes," followed by punctuation. If you have more context or need assistance with a different text related to the SecondLife Viewer, please provide the complete text.</string>
+	<string name="socks_desc_text">양말:</string>
+	<string name="jacket_desc_text">자켓:</string>
+	<string name="skirt_desc_text">스커트:</string>
+	<string name="gloves_desc_text">장갑:</string>
+	<string name="undershirt_desc_text">다음 텍스트를 한국어로 번역합니다. 주의할 사항: 'Firestorm'은 '흑우촌'으로 번역합니다.
+
+下着（上半身）：  
+속옷 (상반신)：</string>
+	<string name="underpants_desc_text">하의(하반신):</string>
+	<string name="alpha_desc_text">알파 마스크:</string>
+	<string name="tattoo_desc_text">타투:</string>
+	<string name="universal_desc_text">전반:</string>
+	<string name="physics_desc_text">물리 효과:</string>
+	<labeled_back_button label="저장" name="back_btn" tool_tip="아웃핏 편집으로 돌아가기" />
+	<text name="edit_wearable_title" value="シェイプを編集中: 셰이프를 편집 중&#10;" />
+	<panel label="셔츠" name="wearable_type_panel">
+		<text name="description_text" value="쉐이프:" />
+		<radio_group name="sex_radio">
+			<radio_item label="Sure, please provide the text you would like translated into Korean related to the SecondLife Viewer, and I will translate it for you." name="sex_male" tool_tip="남성" value="제목을 명확하게 채워주시기 바랍니다. 그래야 적절한 번역을 제공할 수 있습니다." />
+			<radio_item label="알겠습니다! 번역을 원하시는 텍스트를 제공해 주시겠습니까?" name="sex_female" tool_tip="여성" value="Sure! Here is your text translated into Korean with &quot;Firestorm&quot; translated as &quot;흑우촌&quot;:&#10;&#10;```&#10;0&#10;```" />
+		</radio_group>
+		<icon name="male_icon" tool_tip="남성" />
+		<icon name="female_icon" tool_tip="여성" />
+	</panel>
+	<panel name="edit_subpanel_container">
+    
+        <panel name="edit_shape_panel" />
+        <panel name="edit_skin_panel" />
+        <panel name="edit_hair_panel" />
+        <panel name="edit_eyes_panel" />
+        <panel name="edit_shirt_panel" />
+        <panel name="edit_pants_panel" />
+        <panel name="edit_shoes_panel" />
+        <panel name="edit_socks_panel" />
+        <panel name="edit_jacket_panel" />
+        <panel name="edit_skirt_panel" />
+        <panel name="edit_gloves_panel" />
+        <panel name="edit_undershirt_panel" />
+        <panel name="edit_underpants_panel" />
+        <panel name="edit_alpha_panel" />
+        <panel name="edit_tattoo_panel" />
+        <panel name="edit_physics_panel" />
+    </panel>
+	<panel name="button_panel">
+		<layout_stack name="button_panel_ls">
+			<layout_panel name="save_as_btn_lp">
+				<button label="이름을 붙여 저장" name="save_as_button" />
+			</layout_panel>
+			<layout_panel name="revert_btn_lp">
+				<button label="변경을 원래대로 되돌리기" name="revert_button" />
+			</layout_panel>
+		</layout_stack>
+	</panel>
+</panel>

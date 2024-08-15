@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="settings_debug" title="디버그 설정">
+	<panel name="debug_settings_search_panel">
+		<search_editor label="여기에서 검색하십시오." name="search_settings_input" tool_tip="관심 있는 단어를 여기에 입력하세요. 설정의 명칭이나 댓글 내의 문자와 부분적으로 일치하는 것이 있으면 표시됩니다." />
+	</panel>
+	<panel name="debug_settings_values_panel">
+		<text_editor name="comment_text" tool_tip="디버그 설정의 코멘트입니다. 선택한 설정에 관한 유익한 정보를 얻을 수 있습니다." />
+		<radio_group name="boolean_combo">
+			<radio_item label="참된" name="TRUE" />
+			<radio_item label="FALSE" name="FALSE" />
+		</radio_group>
+		<color_swatch label="색" name="val_color_swatch" />
+		<spinner label="Could you please provide the text you would like translated into Korean, especially with consideration given to the context related to the SecondLife Viewer and the term &quot;Firestorm&quot; being translated as &quot;흑우촌&quot;? That way, I can provide a precise translation for you." name="val_spinner_1" />
+		<spinner label="문의 텍스트를 제공해주세요. Firestorm(흑우촌)과 관련된 내용을 기쁘게 번역해드리겠습니다." name="val_spinner_2" />
+		<spinner label="The provided text to translate seems to be an error or placeholder (&quot;x&quot;). If you have specific text related to the SecondLife Viewer you need to translate, please provide that text, and I'll be happy to assist!" name="val_spinner_3" />
+		<spinner label="텍스트가 제공되지 않았습니다. 번역할 텍스트를 입력해 주세요." name="val_spinner_4" />
+		<button name="sanity_warning_btn" tool_tip="이 디버그 설정은 정합성 검사에 실패했습니다. 설정한 값이 권장 값의 범위를 초과했습니다." />
+		<button label="복사" name="copy_btn" tool_tip="この設定の名前をクリップボードにコピーします。 &#10;- 이 설정의 이름을 클립보드에 복사합니다.&#10;&#10;If you see 'Firestorm' in the specific context, it should be replaced with '흑우촌', like this:&#10;&#10;Settings in Firestorm can be copied to the clipboard.&#10;- 흑우촌에서 설정을 클립보드에 복사할 수 있습니다." />
+		<button label="기본값으로 재설정" name="default_btn" tool_tip="이 디버그 설정을 리셋하여 기본값으로 되돌립니다." />
+	</panel>
+</floater>

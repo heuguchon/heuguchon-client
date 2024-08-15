@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="publish_classified" title="분류 광고 게재">
+	<text name="explanation_text">당신의 클래시파이드 광고는 게재된 날로부터 1주일 동안 유효합니다.
+
+클래시파이드 광고는 환불되지 않으니 양해 바랍니다.</text>
+	<spinner label="게재 비용: L$" name="price_for_listing" tool_tip="게시 가격" value="다음 텍스트를 제2의 삶 뷰어와 관련하여 한국어로 번역하십시오.&#10;만약 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:&#10;&#10;50&#10;&#10;50" />
+	<text name="l$_text" value="L$" />
+	<text name="more_info_text">자세한 정보 (Classified 도움말로 가기)</text>
+	<button label="게시하기" name="publish_btn" />
+	<button label="취소" name="cancel_btn" />
+</floater>

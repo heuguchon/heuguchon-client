@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="알림 패널" name="notification_panel">
+	<panel label="정보 패널" name="info_panel">
+		<text name="text_box" />
+		<text name="caution_text_box" />
+		<text_editor name="text_editor_box" />
+	</panel>
+	<panel label="컨트롤 패널" name="control_panel">
+    
+  </panel>
+</panel>

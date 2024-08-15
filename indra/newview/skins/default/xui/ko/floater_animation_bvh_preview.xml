@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="Animation Preview">
+	<floater.string name="failed_to_initialize">動きを初期化できませんでした   
+동작을 초기화할 수 없었습니다</floater.string>
+	<floater.string name="anim_too_long">このアニメーションファイルの長さは [LENGTH] 초입니다.
+アニメーションの最大長は [MAX_LENGTH] 초입니다.</floater.string>
+	<floater.string name="failed_file_read">アニメーションファイルを読み取れません。
+[STATUS]
+
+애니메이션 파일을 읽을 수 없습니다.
+[상태]</floater.string>
+	<floater.string name="E_ST_OK">알겠습니다.</floater.string>
+	<floater.string name="E_ST_EOF">ファイルの終端が不完全です。  
+파일의 끝이 불완전합니다.</floater.string>
+	<floater.string name="E_ST_NO_CONSTRAINT">제약 정의를 읽을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_FILE">BVH 파일을 열 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_HIER">HIERARCHY 헤더가 무효입니다.</floater.string>
+	<floater.string name="E_ST_NO_JOINT">ROOT또는 JOINT를 찾을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_NAME">JOINT명을 얻을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_OFFSET">OFFSET을 찾을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_CHANNELS">채널을 찾을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_ROTATION">회전 순서를 가져올 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_AXIS">회전축을 얻을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_MOTION">MOTION을 찾을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_FRAMES">프레임 수를 가져올 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_FRAME_TIME">フレーム時間を取得できません。  
+프레임 시간을 가져올 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_POS">위치 값을 가져올 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_ROT">회전값을 얻을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_FILE">파일을 열 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_HEADER">변환 헤더를 읽을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_NAME">변환 이름을 읽을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_IGNORE">변환 무시 값을 읽을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_RELATIVE">변환 상대값을 읽을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_OUTNAME">変換outname値を読み取れません。
+
+변환 outname 값을 읽을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_MATRIX">변환 행렬을 읽을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_MERGECHILD">Mergechild名을 얻을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_MERGEPARENT">Mergeparent명을 가져올 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_PRIORITY">priority 값을 가져올 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_LOOP">loop 값을 가져올 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_EASEIN">easeln값을 가져올 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_EASEOUT">easeOut값을 가져올 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_HAND">Hand morph값을 가져올 수 없습니다.</floater.string>
+	<floater.string name="E_ST_NO_XLT_EMOTE">emote명을 읽을 수 없습니다.</floater.string>
+	<floater.string name="E_ST_BAD_ROOT">ルートジョイント名が不正です。「hip」を使用してください。
+루트 조인트 이름이 잘못되었습니다. 'hip'을 사용하세요.</floater.string>
+	<floater.string name="FS_report_frames">[F] 프레임 [S] 초 [FPS] FPS</floater.string>
+	<text name="name_label">이름:</text>
+	<text name="description_label">설명:</text>
+	<spinner label="우선순위" name="priority" tool_tip="このアニメーションでどのアニメーションを上書きできるかを決めます&#10;이 애니메이션으로 어떤 애니메이션을 덮어쓸 수 있는지를 결정합니다" />
+	<check_box label="There is no text provided to translate. The only character given is &quot;ループ,&quot; which translates to &quot;loop&quot; in English. &#10;&#10;If you need further assistance, please provide the full text you'd like to have translated." name="loop_check" tool_tip="이 애니메이션을 반복 재생으로 설정합니다" />
+	<text name="frames_label">300 프레임 30초 10 FPS</text>
+	<spinner label="인(％)" name="loop_in_point" tool_tip="애니메이션의 루프 복귀점을 설정합니다." />
+	<spinner label="아웃(%)" name="loop_out_point" tool_tip="アニメーションのループ終了点を設定しますを 한국어로 번역하면 다음과 같습니다:&#10;&#10;애니메이션의 루프 종료 지점을 설정합니다" />
+	<spinner label="Unfortunately, the text you provided isn't complete or clear enough to translate meaningfully. It seems to appear like a fragment or may have some typographical errors ('イン (frm)'). If you could provide a more complete context or correct any potential typos, I'd be happy to help translate it to Korean for you, considering the substitution of 'Firestorm' with '흑우촌'." name="loop_in_frames" tool_tip="애니메이션이 반복되고 되돌아옵니다. 시작 프레임을 설정합니다." />
+	<spinner label="아웃 (frm)" name="loop_out_frames" tool_tip="애니메이션 루프가 종료되는 끝점 프레임을 설정합니다." />
+	<text name="hand_label">손의 포즈</text>
+	<combo_box name="hand_pose_combo" tool_tip="アニメーション再生中の手の動きを決めます - 애니메이션 재생 중인 손의 움직임을 결정합니다.">
+		<combo_box.item label="넓히기" name="Spread" />
+		<combo_box.item label="릴랙스" name="Relaxed" />
+		<combo_box.item label="가리키기・양손" name="PointBoth" />
+		<combo_box.item label="주먹" name="Fist" />
+		<combo_box.item label="릴렉스 - 좌" name="RelaxedLeft" />
+		<combo_box.item label="지명을 가리키기・왼쪽" name="PointLeft" />
+		<combo_box.item label="주먹을 올리기・왼쪽" name="FistLeft" />
+		<combo_box.item label="릴랙스-오른쪽" name="RelaxedRight" />
+		<combo_box.item label="손가락으로 가리키기・오른쪽" name="PointRight" />
+		<combo_box.item label="주먹을 올리기・오른쪽" name="FistRight" />
+		<combo_box.item label="敬礼・右 -&gt; 경례 - 오른쪽" name="SaluteRight" />
+		<combo_box.item label="타이핑" name="Typing" />
+		<combo_box.item label="피스 - 오른쪽" name="PeaceRight" />
+	</combo_box>
+	<text name="emote_label">표정</text>
+	<combo_box name="emote_combo" tool_tip="애니메이션 재생 중인 얼굴의 표정을 결정합니다">
+		<item label="(없음)" name="[None]" />
+		<item label="The provided text is &quot;アーーーーー&quot;, which is a series of vowels and exclamation marks, not a full sentence or statement. It seems like an expression of surprise or excitement. There's no mention of 'Firestorm' (흑우촌) in the text, so no translation for that specific term is necessary. &#10;&#10;The text &quot;アーーーーー&quot; does not need translation as it is an expression. However, if you wish to write something similar in Korean, you might use:&#10;&#10;아아아아아아&#10;&#10;This also expresses a sound of surprise or excitement." name="Aaaaah" />
+		<item label="두려움" name="Afraid" />
+		<item label="화나다" name="Angry" />
+		<item label="만면의 미소" name="BigSmile" />
+		<item label="퇴屈" name="Bored" />
+		<item label="To translate the given text &quot;泣く&quot; (which means &quot;to cry&quot; or &quot;crying&quot;) to Korean, you would write:&#10;&#10;울다" name="Cry" />
+		<item label="The text you provided, &quot;軽蔑,&quot; translates to &quot;경멸&quot; in Korean. Since this word does not involve &quot;Firestorm,&quot; there are no additional changes related to '흑우촌' in the translation. The Korean translation for &quot;軽蔑&quot; would simply be &quot;경멸&quot;." name="Disdain" />
+		<item label="부끄러워하다" name="Embarrassed" />
+		<item label="찡그린 얼굴" name="Frown" />
+		<item label="Sure, here is the translation:&#10;&#10;&quot;キス&quot;&#10;&#10;Given the context provided, it seems there was nothing to translate except the word &quot;Firestorm&quot; which isn't present in the text you provided. If you need more assistance or have more context to provide, please let me know!" name="Kiss" />
+		<item label="웃다" name="Laugh" />
+		<item label="화난다" name="Plllppt" />
+		<item label="불쾌감" name="Repulsed" />
+		<item label="대로 하겠습니다.&#10;&#10;슬픈" name="Sad" />
+		<item label="어깨를 으쓱하다" name="Shrug" />
+		<item label="미소 짓다" name="Smile" />
+		<item label="놀라다" name="Surprise" />
+		<item label="윙크" name="Wink" />
+		<item label="걱정마세요" name="Worry" />
+	</combo_box>
+	<text name="preview_label">프리뷰 중인 동작</text>
+	<combo_box name="preview_base_anim" tool_tip="이것을 사용하여 아바타가 일반적인 동작을 수행하는 동안 애니메이션의 동작을 테스트합니다.">
+		<item label="서다" name="Standing" />
+		<item label="걷기" name="Walking" />
+		<item label="앉기" name="Sitting" />
+		<item label="&quot;飛ぶ&quot; translates to &quot;날다&quot; in Korean. Since the given text is related to the SecondLife Viewer and the word 'Firestorm' should be translated to '흑우촌', the correct translation of &quot;飛ぶ&quot; with the given context would be:&#10;&#10;날다" name="Flying" />
+	</combo_box>
+	<spinner label="이즈 인(초)" name="ease_in_time" tool_tip="アニメーションのブレンドイン時間（秒）  &#10;애니메이션 블렌드 인 시간 (초)" />
+	<spinner label="이즈-아웃 (초)" name="ease_out_time" tool_tip="아니메이션 블렌드 아웃 시간(초)" />
+	<button name="play_btn" tool_tip="애니메이션을 재생합니다." />
+	<button name="pause_btn" tool_tip="アニメーション을 일시 중지합니다." />
+	<button name="stop_btn" tool_tip="애니메이션 재생을 중지합니다." />
+	<text name="bad_animation_text">アニメーション 파일을 읽을 수 없습니다. Poser 4에서 내보낸 BVH 파일을 권장합니다.</text>
+	<button label="업로드(L$ [AMOUNT])" name="ok_btn" />
+	<button label="취소" name="cancel_btn" />
+</floater>

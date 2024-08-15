@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="modal container" title="Sure, please provide the text you would like to have translated to Korean.">
+	<floater.string name="real_url">http://secondlife.com/app/tos/</floater.string>
+	<floater.string name="loading_url">data:text/html,%3Chtml%3E%3Chead%3E%3C/head%3E%3Cbody text=%22000000%22%3E%3Ch2%3E로딩 중입니다 %3Ca%20target%3D%22_external%22%20href%3D%22http%3A//secondlife.com/app/tos/%22%3E서비스 약관%3C/a%3E...%3C/h2%3E%3C/body%3E%3C/html%3E</floater.string>
+	<text name="tos_heading">밤ㄴ. Second Life의 이용약관, 개인정보처리방침, 서비스이용약관 (중재 및 분쟁 해결을 위한 클래스 또는 그룹 청구 포기와 관련된 요구사항 포함)을 읽어주시기 바랍니다.
+Second Life에 계속 로그인하려면, 이러한 약관에 동의해야 합니다.</text>
+	<text name="external_tos_required">操作를 계속하려면 https://my.secondlife.com 로 이동하여 이용 약관에 동의해야 합니다.</text>
+	<check_box label="Sure, please provide the text you would like to translate." name="agree_chk" />
+	<text name="agree_list">저는 Second Life의 이용 약관, 개인정보 보호정책 및 서비스 약관(분쟁 해결을 위한 필수 조건을 포함)을 읽고 동의했습니다.</text>
+	<button label="계속하기" label_selected="계속하기" name="Continue" />
+	<button label="취소" label_selected="취소" name="Cancel" />
+</floater>

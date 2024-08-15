@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="settings picker" title="자연 환경 설정을 선택">
+	<floater.string name="pick title">선택:</floater.string>
+	<floater.string name="pick_track">트럭 선택</floater.string>
+	<floater.string name="pick_settings">설정을 선택</floater.string>
+	<floater.string name="track_water">물</floater.string>
+	<floater.string name="track_ground">지면</floater.string>
+	<floater.string name="track_sky">숫자 [NUM]</floater.string>
+	<layout_stack name="test_stack">
+		<layout_panel name="inv_list">
+			<filter_editor label="자연 환경 설정을 필터" name="flt_inventory_search" />
+		</layout_panel>
+		<layout_panel name="temp">
+			<button label="Sure, please provide the text you want me to translate." label_selected="알겠습니다. Here is the translated text to Korean:&#10;&#10;OK" name="btn_select" />
+			<button label="취소" label_selected="취소" name="btn_cancel" />
+		</layout_panel>
+	</layout_stack>
+</floater>

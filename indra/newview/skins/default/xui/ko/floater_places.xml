@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_places" title="장소">
+	<panel label="장소" name="main_panel" />
+</floater>

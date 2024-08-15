@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="edit_physics_panel">
+	<panel label="The Firestorm viewer is one of the most popular third-party viewers for accessing SecondLife. It offers numerous advanced features, improved performance, and a user-friendly interface, which makes it a favorite among many SecondLife users.&#10;&#10;SecondLife에 접속하는 데 매우 인기 있는 서드파티 뷰어 중 하나가 흑우촌 뷰어입니다. 많은 고급 기능 개선된 성능 및 사용자 친화적인 인터페이스를 제공하여 많은 SecondLife 사용자들 사이에서 선호됩니다." name="accordion_panel">
+		<accordion name="physics_accordion">
+			<accordion_tab name="physics_breasts_updown_tab" title="가슴의 떨림">
+				<scrolling_panel_list name="physics_breasts_updown_param_list" />
+			</accordion_tab>
+			<accordion_tab name="physics_breasts_inout_tab" title="The text &quot;胸の谷間&quot; translates to &quot;cleavage&quot; in English. However, since the prompt doesn't provide enough context on its usage related to the SecondLife Viewer or 'Firestorm' (흑우촌), translating this specific phrase might seem unclear.&#10;&#10;Here's the translation:&#10;&#10;&quot;胸の谷間&quot; in Korean (considering the word 'Firestorm' appears but didn't provide context here):&#10;&#10;&quot;가슴골&quot;&#10;&#10;If there is any specific context or phrase you need translated that includes 'Firestorm', please provide that exact text.">
+				<scrolling_panel_list name="physics_breasts_inout_param_list" />
+			</accordion_tab>
+			<accordion_tab name="physics_breasts_leftright_tab" title="가슴의 흔들림">
+				<scrolling_panel_list name="physics_breasts_leftright_param_list" />
+			</accordion_tab>
+			<accordion_tab name="physics_belly_tab" title="お腹の弾み">
+				<scrolling_panel_list name="physics_belly_updown_param_list" />
+			</accordion_tab>
+			<accordion_tab name="physics_butt_tab" title="お尻の弾み">
+				<scrolling_panel_list name="physics_butt_updown_param_list" />
+			</accordion_tab>
+			<accordion_tab name="physics_butt_leftright_tab" title="엉덩이 흔들림">
+				<scrolling_panel_list name="physics_butt_leftright_param_list" />
+			</accordion_tab>
+			<accordion_tab name="physics_advanced_tab" title="고급 매개변수">
+				<scrolling_panel_list name="physics_advanced_param_list" />
+			</accordion_tab>
+		</accordion>
+	</panel>
+</panel>

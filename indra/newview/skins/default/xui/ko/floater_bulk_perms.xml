@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floaterbulkperms" title="콘텐츠 권한 조정">
+	<floater.string name="nothing_to_modify_text">선택한 중에 편집할 수 없는 항목이 포함되어 있습니다.</floater.string>
+	<floater.string name="status_text">[NAME]에 권한을 설정하는 중입니다.</floater.string>
+	<floater.string name="start_text">권한 변경 요청을 하고 있습니다</floater.string>
+	<floater.string name="done_text">権限 변경 요청이 완료되었습니다</floater.string>
+	<icon name="icon_animation" tool_tip="애니메이션" />
+	<icon name="icon_bodypart" tool_tip="신체 부위" />
+	<icon name="icon_clothing" tool_tip="의류" />
+	<icon name="icon_gesture" tool_tip="제스처" />
+	<icon name="icon_notecard" tool_tip="노트카드" />
+	<icon name="icon_object" tool_tip="객체" />
+	<icon name="icon_script" tool_tip="스크립트" />
+	<icon name="icon_sound" tool_tip="サウンド -&gt; 사운드" />
+	<icon name="icon_texture" tool_tip="텍스처" />
+	<icon name="icon_setting" tool_tip="자연 환경 설정" />
+	<button label="모두 선택" label_selected="모두" name="check_all" />
+	<button label="クリア&#10;&#10;(클리어)" label_selected="なし" name="check_none" />
+	<text name="newperms">다음과 같이 콘텐츠 권한을 조정하십시오</text>
+	<text name="GroupLabel">그룹:</text>
+	<check_box label="共有" name="share_with_group" tool_tip="설정한 그룹의 멤버 전원에게 이 오브젝트의 수정 권한을 부여합니다. 양도하지 않는 한, 역할 제한을 활성화할 수 없습니다." />
+	<text name="AnyoneLabel">모두:</text>
+	<check_box label="복사" name="everyone_copy" tool_tip="오브젝트의 복사는 누구나 받을 수 있습니다. 오브젝트 및 해당 오브젝트의 내용물은 모두 복사 또는 양도가 가능하도록 설정되어야 합니다." />
+	<text name="NextOwnerLabel" left="160">다음 소유자:</text>
+	<check_box label="수정" name="next_owner_modify" tool_tip="다음 소유자는 아이템명 등 프로퍼티 내용을 편집하거나 이 오브젝트의 크기를 변경할 수 있습니다." />
+	<check_box label="복사" name="next_owner_copy" tool_tip="다음 소유자는 이 객체를 무제한으로 복사할 수 있습니다. 복사본에는 제작자의 정보가 포함되어 있으며, 복사 원본의 아이템과 달리 권한 등에 관한 제한이 있을 수 있습니다." />
+	<check_box initial_value="true" label="재판매・선물" name="next_owner_transfer" tool_tip="다음 소유자는 이 오브젝트를 다른 사람에게 주거나 다시 판매할 수 있습니다." />
+	<button label="알겠습니다." name="ok" />
+	<button label="적용" name="apply" />
+	<button label="취소" name="close" />
+</floater>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="group_info">
+	<floater.string name="title_create_group">새로운 그룹 만들기...</floater.string>
+	<floater.string name="title_loading">그룹 프로필 - 로딩 중...</floater.string>
+	<floater.string name="title">그룹 프로필 - [NAME]</floater.string>
+    <panel name="panel_group_info_sidetray" filename="panel_group_info_sidetray.xml" />
+</floater>

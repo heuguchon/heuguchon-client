@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_classified" title="분류 광고">
+	<panel name="main_panel" filename="panel_classified_info.xml" />
+</floater>

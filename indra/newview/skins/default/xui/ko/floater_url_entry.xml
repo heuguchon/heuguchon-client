@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="url_entry">
+	<text name="media_label">미디어 URL:</text>
+	<combo_box name="media_entry" />
+	<button label="ＯＫ" name="ok_btn" />
+	<button label="취소" name="cancel_btn" />
+	<button label="확인" name="clear_btn" />
+	<text name="loading_label">읽고 있는 중…</text>
+</floater>

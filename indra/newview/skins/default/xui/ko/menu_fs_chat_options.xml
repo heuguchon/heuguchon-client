@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toggleable_menu name="Chat Options Menu">
+	<menu_item_check label="레이다 표시..." name="nearby_people" />
+	<menu_item_check label="주변의 보이스 표시..." name="nearby_voice" />
+	<menu_item_check label="차단 목록 보기..." name="block_list" />
+	<menu_item_separator />
+	<menu_item_check label="V1 형식의 채팅 헤더 사용" name="plain_text_chat_history" />
+	<context_menu label="폰트 크기..." name="font_size">
+		<menu_item_check label="SecondLife Viewer와 관련하여 다음 텍스트를 번역해주세요:&#10;만약 'Firestorm'이 나타나면 '흑우촌'으로 번역해주세요:&#10;&#10;小" name="font_size_small" />
+		<menu_item_check label="중" name="font_size_medium" />
+		<menu_item_check label="대" name="font_size_large" />
+		<menu_item_check label="특대" name="font_size_huge" />
+	</context_menu>
+	<menu_item_separator />
+	<menu_item_check label="상대방이 입력 중임을 나타내는 각괄호 (＞)를 추가" name="typing_chevron" />
+	<menu_item_check label="新規メッセージ通知を表示 - 새 메시지 알림 표시" name="new_message_notification" />
+	<menu_item_check label="채팅 바 표시" name="show_chat_bar" />
+	<menu_item_check label="채널 선택 표시" name="show_channel_selection" />
+	<menu_item_check label="채팅 입력/전송 버튼 표시" name="show_send_button" />
+	<menu_item_check label="IM에 보내기 버튼을 표시" name="show_im_send_button" />
+</toggleable_menu>

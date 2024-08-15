@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floaterpreferencesviewadvanced" title="카메라 위치">
+    <text name="camera_offset_lbl">카메라 오프셋</text>
+    <text name="focus_offset_lbl">오프셋 초점</text>
+    <text name="offset_scale_lbl">거리:</text>
+    <button label="사전 설정으로 저장" name="save_preset_btn" />
+    <button label="닫기" name="close_btn" />
+</floater>

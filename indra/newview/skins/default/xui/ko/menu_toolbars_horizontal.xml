@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<context_menu name="Toolbars Popup">
+  <menu_item_call label="このボタンを削除&#10;この 텍스트를 한국어로 번역하면 다음과 같습니다:&#10;&#10;이 버튼을 삭제&#10;&#10;참고로, 'Firestorm'을 '흑우촌'으로 번역해야 한다고 하셨습니다. 하지만 이 텍스트에서는 'Firestorm'이라는 단어가 존재하지 않습니다." name="Remove button" />
+  <menu_item_separator />
+  <menu_item_call label="도구 막대 버튼..." name="Choose Buttons" />
+  <menu_item_separator />
+  <menu_item_check label="왼쪽 정렬" name="left_aligned" />
+  <menu_item_check label="中央에 맞춤" name="center_aligned" />
+  <menu_item_check label="오른쪽 정렬" name="right_aligned" />
+  <menu_item_separator />
+  <menu_item_check label="아이콘과 라벨" name="icons_with_text" />
+  <menu_item_check label="아이콘만" name="icons_only" />
+  <menu_item_check label="라벨만 (텍스트는 SecondLife Viewer와 관련됨)" name="text_only" />
+  <menu_item_separator />
+  <menu_item_check label="단추 크기 자동" name="layout_style_none" />
+  <menu_item_check label="버튼 크기 고정" name="layout_style_equalize" />
+  <menu_item_check label="표시줄에 버튼을 가득 채우기" name="layout_style_fill" />
+</context_menu>

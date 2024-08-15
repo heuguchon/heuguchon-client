@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="edit_pants_panel">
+	<panel name="avatar_pants_color_panel">
+		<texture_picker label="텍스처" name="Fabric" tool_tip="클릭하여 이미지를 선택하십시오" />
+		<color_swatch label="색/명암" name="Color/Tint" tool_tip="클릭하여 색상 선택기를 엽니다" />
+	</panel>
+	<panel name="accordion_panel">
+		<accordion name="wearable_accordion">
+			<accordion_tab name="pants_main_tab" title="바지">
+				<scrolling_panel_list name="pants_main_param_list" />
+			</accordion_tab>
+		</accordion>
+	</panel>
+</panel>

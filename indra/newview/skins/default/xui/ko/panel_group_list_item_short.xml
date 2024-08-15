@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel name="group_list_item">
+	<icon name="hovered_icon" />
+	<icon name="selected_icon" />
+	<group_icon name="group_icon" />
+	<text name="group_name" value="불명" />
+	<button name="visibility_hide_btn" tool_tip="프로필에서 그룹을 비공개로 설정하는 방법" />
+	<button name="visibility_show_btn" tool_tip="프로필에서 그룹을 표시하기" />
+	<button name="info_btn" tool_tip="상세 정보" />
+	<button name="profile_btn" tool_tip="프로필 보기" />
+</panel>

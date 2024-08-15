@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="floater_bumps" title="충돌・밀기・타격">
+	<floater.string name="none_detected">검출 없음</floater.string>
+	<floater.string name="bump">[시간]　[이름]가 당신과 충돌했습니다.</floater.string>
+	<floater.string name="llpushobject">[TIME]　[NAME]가 스크립트로 당신을 밀쳤습니다.</floater.string>
+	<floater.string name="selected_object_collide">[TIME]　[NAME]가, 오브젝트로 당신을 때렸습니다.</floater.string>
+	<floater.string name="scripted_object_collide">[TIME]　[NAME]が、スクリプトのオブジェクトであなたを叩きました。
+
+[TIME]　[NAME]가 스크립트 오브젝트로 당신을 때렸습니다.</floater.string>
+	<floater.string name="physical_object_collide">[시간] [이름]가(이) 물리 오브젝트로 당신을 때렸습니다.</floater.string>
+	<floater.string name="timeStr">[[시,datetime,slt]]：[분,datetime,slt]]：[초,datetime,slt]]</floater.string>
+</floater>

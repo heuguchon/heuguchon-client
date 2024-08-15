@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="animation_explorer" title="애니메이션 익스플로러">
+
+	<scroll_list name="animation_list">
+		<scroll_list.column label="재생한 사람" name="played_by" />
+		<scroll_list.column label="우선순위" name="priority" />
+		<scroll_list.column label="재생시간" name="played" />
+		<scroll_list.column label="시간" name="timestamp" />
+		<scroll_list.column label="애니메이션 ID" name="animation_id" />
+		<scroll_list.column label="오브젝트 ID" name="object_id" />
+	</scroll_list>
+
+	<view_border name="animation_preview" />
+
+	<panel name="buttons_panel">
+		<button label="정지" name="stop_btn" />
+		<button label="정지하고 권한을 폐기" name="stop_and_revoke_btn" />
+		<button label="権限을 파기" name="revoke_btn" />
+		<check_box label="소유하고 있는 것들은 표시하지 않음" name="no_owned_animations_check" tool_tip="여기에 체크를 하면, 당신의 아바타가 소유하고 있는 애니메이션, 예를 들어 AO 애니메이션이나 시스템 기본 애니메이션은 표시되지 않습니다." />
+	</panel>
+
+</floater>

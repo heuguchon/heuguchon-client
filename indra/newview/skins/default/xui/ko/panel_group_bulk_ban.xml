@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<panel label="주민을 차단" name="bulk_ban_panel">
+	<panel.string name="loading">(불러오는 중...)</panel.string>
+	<panel.string name="ban_selection_too_large">그룹 밴이 전송되지 않았습니다: 선택한 주민 수가 너무 많습니다. 그룹 차단은 1회 요청당 100명으로 제한됩니다.</panel.string>
+	<panel.string name="ban_not_permitted">그룹 밴이 전송되지 않았습니다: "출입 금지 목록 관리" 권한이 없습니다.</panel.string>
+	<panel.string name="ban_limit_fail">グループ의 밴이 전송되지 않았습니다: 그룹에 대한 출입 금지 등록 허용 수에 도달했습니다.</panel.string>
+	<panel.string name="partial_ban">グループのバンが送信されていません：[REASONS]
+
+번역된 텍스트:
+グループのバンが送信されていません：[REASONS]</panel.string>
+	<panel.string name="ban_failed">グループのバンが送信されていません：[REASONS]
+그룹 밴이 전송되지 않았습니다: [REASONS]</panel.string>
+	<panel.string name="residents_already_banned">・다음 주민들은 이미 차단되었습니다：[RESIDENTS]</panel.string>
+	<panel.string name="ban_limit_reached">上限 인원이 도달했습니다. 다음 에이전트는 입장 금지되지 않습니다: [RESIDENTS]</panel.string>
+	<panel.string name="cant_ban_yourself">・그룹에서 자신을 밴할 수 없습니다.</panel.string>
+	<text name="help_text">그룹에서 여러 거주자를 한 번에 밴할 수 있습니다. "목록에서 거주자 선택"을 클릭하십시오.</text>
+	<button label="리스트에서 주민을 선택" name="add_button" />
+	<name_list name="banned_agent_list" tool_tip="Ctrl 키를 누른 채 클릭하여 여러 주민을 선택할 수 있습니다." />
+	<button label="선택한 주민을 목록에서 삭제" name="remove_button" tool_tip="バンリストから、選択した住人を削除します。&#10;&#10;밴 리스트에서 선택한 주민을 삭제합니다." />
+	<button label="주민을 차단" name="ban_button" />
+	<button label="취소" name="cancel_button" />
+	<string name="GroupBulkBan">그룹에서 일괄 차단</string>
+</panel>

@@ -1,0 +1,3325 @@
+<?xml version='1.0' encoding='utf-8'?>
+<notifications>
+	<global name="skipnexttime">앞으로는 표시하지 않기</global>
+	<global name="skipnexttimesessiononly">다음부터 표시하지 않기
+(이번 세션만)</global>
+	<global name="alwayschoose">항상 이 옵션을 선택</global>
+	<global name="implicitclosebutton">닫기</global>
+	<template name="okbutton">
+		<form>
+			<button name="OK_okbutton" text="$yestext" />
+		</form>
+	</template>
+	<template name="okignore">
+		<form>
+			<button name="OK_okignore" text="$yestext" />
+		</form>
+	</template>
+	<template name="okcancelbuttons">
+		<form>
+			<button name="OK_okcancelbuttons" text="$yestext" />
+			<button name="Cancel_okcancelbuttons" text="$notext" />
+		</form>
+	</template>
+	<template name="okcancelignore">
+		<form>
+			<button name="OK_okcancelignore" text="$yestext" />
+			<button name="Cancel_okcancelignore" text="$notext" />
+		</form>
+	</template>
+	<template name="okhelpbuttons">
+		<form>
+			<button name="OK_okhelpbuttons" text="$yestext" />
+			<button name="Help" text="$helptext" />
+		</form>
+	</template>
+	<template name="okhelpignore">
+		<form>
+			<button name="OK_okhelpignore" text="$yestext" />
+			<button name="Help_okhelpignore" text="$helptext" />
+		</form>
+	</template>
+	<template name="yesnocancelbuttons">
+		<form>
+			<button name="Yes" text="$yestext" />
+			<button name="No" text="$notext" />
+			<button name="Cancel_yesnocancelbuttons" text="$canceltext" />
+		</form>
+	</template>
+	<notification functor="GenericAcknowledge" label="알 수 없는 알림 메시지" name="MissingAlert">あなたの [APP_NAME] のバージョンでは今受け取った通知メッセージを表示することができません。 最新ビューワがインストールされているかご確認ください。
+
+エラー詳細： 「 [_NAME] 」という通知は notifications.xml にありませんでした。<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="FloaterNotFound">플로타 오류: 아래의 컨트롤을 찾지 못했습니다:
+[CONTROLS]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="TutorialNotFound">현재 이용 가능한 튜토리얼이 없습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="GenericAlert">[메시지]</notification>
+	<notification name="GenericAlertYesCancel">[메시지]<usetemplate name="okcancelbuttons" notext="取り消し" yestext="はい" />
+	</notification>
+	<notification name="GenericAlertOK">[메시지]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="BadInstallation">[APP_NAME] のインストールに失敗しました。ビューワ의 [https://www.firestormviewer.org/downloads 최신 버전을 다운로드] 해서, 다시 설치해 주세요.
+
+[APP_NAME] 설치에 실패했습니다. 뷰어의 [https://www.firestormviewer.org/downloads 최신 버전을 다운로드]하여 다시 설치해 주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="LoginFailedNoNetwork">[CURRENT_GRID] に接続できませんでした。
+「[DIAGNOSTIC]」
+인터넷 연결이 정상인지 확인해 주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="MessageTemplateNotFound">[PATH]에 메시지 템플릿이 없습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="WearableSave">현재 착용 중인 옷과 신체 부위를 저장하시겠습니까?<usetemplate canceltext="キャンセル" name="yesnocancelbuttons" notext="保存しない" yestext="保存" />
+	</notification>
+	<notification name="ConfirmNoCopyToOutbox">이 항목들 중 하나 또는 여러 개를 흑우촌 판매자 아웃박스에 복사할 권한이 없습니다. 이동하거나 남겨둘 수 있습니다.<usetemplate name="okcancelbuttons" notext="アイテムを移動しない" yestext="アイテムを移動" />
+	</notification>
+	<notification name="OutboxFolderCreated">각 아이템이 마천트 아웃박스의 최상위로 전송될 때마다 새로운 폴더가 하나씩 생성되었습니다.<usetemplate ignoretext="新しいフォルダがマーチャントアウトボックス内に作成されました" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="OutboxImportComplete">성공
+
+마켓플레이스에 정상적으로 전송된 모든 폴더<usetemplate ignoretext="マーケットプレイスに送信されたすべてのフォルダ" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="OutboxImportHadErrors">일부 폴더가 전송되지 않았습니다
+
+일부 폴더를 마켓플레이스에 전송하는 동안 오류가 발생했습니다. 이 폴더들은 여전히 상인 아웃박스 내에 있습니다.
+
+자세한 내용은 [[MARKETPLACE_IMPORTS_URL] 에러 로그]를 참조하십시오.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="OutboxImportFailed">'[ERROR_CODE]' 오류로 전송할 수 없었습니다.
+
+시스템 또는 네트워크 오류로 인해 폴더를 마켓플레이스에 전송하지 못했습니다. 나중에 다시 시도해 주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="OutboxInitFailed">'[ERROR_CODE]' 오류로 인해 마켓플레이스를 초기화할 수 없습니다
+
+시스템 또는 네트워크 오류로 인해 마켓플레이스를 초기화하는 데 실패했습니다. 나중에 다시 시도해 주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="StockPasteFailed">在庫フォルダへのコピーまたは移動がエラーにより失敗しました:
+
+'[ERROR_CODE]'<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="MyOutfitsPasteFailed">１つ以上のアイテムが「아웃핏」として 이용할 수 없습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="MerchantPasteFailed">마켓플레이스 목록에 복사 또는 이동이 오류로 인해 실패했습니다:
+
+'[ERROR_CODE]'<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="MerchantTransactionFailed">마켓플레이스 거래가 다음 오류로 인해 실패했습니다:
+
+[ERROR_REASON][ERROR_DESCRIPTION]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="MerchantUnprocessableEntity">이 제품을 목록에 표시할 수 없거나, 버전 폴더를 활성화할 수 없습니다. 일반적으로 이는 목록 설명 양식에 정보가 부족하기 때문에 발생하지만, 폴더 구조의 오류가 원인인 경우도 있습니다. 목록을 편집하거나, 목록 폴더에 오류가 없는지 확인하십시오.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="MerchantListingFailed">마켓플레이스에 리스팅이 다음 오류로 실패했습니다:
+
+'[ERROR_CODE]'<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="MerchantFolderActivationFailed">このバージョンフォルダの有効化が次のエラーにより失敗しました :
+
+'[ERROR_CODE]'<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="MerchantForceValidateListing">리스트를 작성하기 위해, 리스트 내용의 구조를 복구했습니다.<usetemplate ignoretext="内容の構造を修復してリストを作成する時は警告する" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="ConfirmMerchantActiveChange">이 조작으로 인해 이 목록의 유효한 내용이 변경됩니다. 계속하시겠습니까?<usetemplate ignoretext="マーケットプレイスで有効なリストを変更する前に確認する" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmMerchantMoveInventory">마켓플레이스 리스트 창에 드래그한 아이템은 원래 위치에서 복사되는 것이 아니라 이동됩니다. 계속하시겠습니까?<usetemplate ignoretext="アイテムをインベントリからマーケットプレイスに移動する前に確認する" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmListingCutOrDelete">리스트 폴더를 이동하거나 삭제하면 마켓플레이스의 리스트가 삭제됩니다. 마켓플레이스의 리스트를 유지하려면, 변경할 버전 폴더의 내용을 이동하거나 삭제하십시오. 계속하시겠습니까?<usetemplate ignoretext="マーケットプレイスからリストを移動または削除する前に確認する" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmCopyToMarketplace">귀하에게는 이러한 아이템 중 하나 또는 여러 개를 마켓플레이스에 복사할 수 있는 권한이 없습니다. 이동하거나 놓고 갈 수는 있습니다.<usetemplate canceltext="取り消し" ignoretext="コピー付加アイテムを含む選択内容をマーケットプレイスへコピーする前に確認する" name="yesnocancelbuttons" notext="アイテムを移動しない" yestext="アイテムを移動" />
+	</notification>
+	<notification name="ConfirmMerchantUnlist">이 작업을 수행하면 이 목록이 삭제됩니다. 계속하시겠습니까?<usetemplate ignoretext="マーケットプレイスで有効なリストを削除する前に確認する" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmMerchantClearVersion">이 작업을 수행하면 현재 목록의 버전 폴더가 비활성화됩니다. 계속하시겠습니까?<usetemplate ignoretext="マーケットプレイスでリストのバージョンフォルダを無効にする前に確認する" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="AlertMerchantListingNotUpdated">이 리스트를 업데이트할 수 없었습니다.
+[[URL] 여기를 클릭] 하여 마켓플레이스에서 편집하십시오.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="AlertMerchantListingCannotWear">마켓플레이스의 리스트 폴더에 있는 의류나 보디 파츠를 착용할 수 없습니다.</notification>
+	<notification name="AlertMerchantListingInvalidID">리스트 ID가 무효입니다.</notification>
+	<notification name="AlertMerchantListingActivateRequired">이 목록에는 여러 버전 폴더가 있거나 버전 폴더가 없습니다. 나중에 단독으로 버전 폴더를 선택하고 활성화해야 합니다.<usetemplate ignoretext="複数のバージョンフォルダのあるリストを作成するときに、バージョンフォルダの有効化に関する警告が表示されます" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="AlertMerchantStockFolderSplit">각종 재고 품목을 별도의 재고 폴더로 분류했기 때문에 폴더는 목록에 표시될 수 있도록 배치되어 있습니다.<usetemplate ignoretext="リストに表示する前に在庫フォルダが分割されると、警告が表示されます" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="AlertMerchantStockFolderEmpty">在庫が空のため、リストを削除しました。もう一度リストを表示するには、在庫フォルダにユニットを追加する必要があります。
+
+在庫가 비어 있어, 목록을 삭제했습니다. 목록을 다시 표시하려면, 재고 폴더에 유닛을 추가해야 합니다.<usetemplate ignoretext="在庫フォルダが空のためにリストが表示されないと警告が表示されます" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="AlertMerchantVersionFolderEmpty">버전 폴더가 비어 있어 목록을 삭제했습니다. 다시 목록을 표시하려면 버전 폴더에 아이템을 추가해야 합니다.<usetemplate ignoretext="バージョンフォルダが空のためにリストが表示されないと警告が表示されます。" name="okignore" yestext="OK" />
+	</notification>
+	
+	<notification name="WriteAnimationFail">アニメーション 데이터 쓰기에 문제가 발생했습니다. 나중에 다시 시도해 주세요.</notification>
+	<notification name="UploadAuctionSnapshotFail">다음과 같은 이유로 경매 스냅숏을 업로드하는 동안 문제가 발생했습니다.
+[REASON]</notification>
+	<notification name="UnableToViewContentsMoreThanOne">한 번에 여러 아이템의 내용을 표시할 수 없습니다.
+아이템을 하나만 선택하고 다시 시도해 주세요.</notification>
+	<notification name="SaveClothingBodyChanges">의복 및 신체 부위에 대한 모든 변경 사항을 저장하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="保存しない" yestext="すべて保存" />
+	</notification>
+	<notification name="FriendsAndGroupsOnly">フレンド以外の人からのコールや、インスタントメッセージを無視する設定にしたことを、相手に知られることはありません。
+
+친구 이외의 사람들의 호출이나 인스턴트 메시지를 무시하도록 설정한 경우, 상대방에게 알려지지 않습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="FavoritesOnLogin">주의: 이 옵션을 활성화하면, 이 컴퓨터를 사용하는 누구나 당신이 좋아하는 장소를 볼 수 있게 됩니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="AllowMultipleViewers">복수의 Second Life 뷰어를 실행하는 것은 지원되지 않습니다. 텍스처 캐시의 충돌이나 손상, 그리고 시각적 및 성능 저하로 이어질 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="GrantModifyRights">다른 사람에게 수정 권한을 부여하면 권한을 부여받은 사람은 당신이 소유한 인월드 오브젝트를 변경, 삭제, 가져갈 수 있습니다. 이 권한을 부여할 때는 충분히 주의하십시오.
+[NAME]에게 수정 권한을 부여하시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="GrantModifyRightsMultiple">다른 사람에게 수정 권한을 부여하면, 권한을 부여받은 사람은 당신이 소유한 인월드 객체를 변경할 수 있습니다. 이 권한을 부여할 때는 충분히 주의하세요.
+선택한 거주자에게 수정 권한을 부여하시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="RevokeModifyRights">[NAME]의 수정 권한을 해지하시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="RevokeModifyRightsMultiple">선택한 주민에서 변경 권한을 취소하시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="GroupNameLengthWarning">그룹 이름의 문자 수는 [MIN_LEN] 이상 [MAX_LEN] 이하여야 합니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="UnableToCreateGroup">그룹을 생성할 수 없습니다.
+[메시지]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="PanelGroupApply">[적용이 필요합니다 메시지]
+[적용을 원합니다 메시지]<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="変更を無視" yestext="変更を適用" />
+	</notification>
+	<notification name="MustSpecifyGroupNoticeSubject">그룹 알림을 보내려면, 제목을 작성해야 합니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="AddGroupOwnerWarning">당신은 [ROLE_NAME]의 역할에 멤버를 추가하려고 하고 있습니다.
+임명된 멤버는 스스로 사임하지 않는 한,
+역할에서 제거할 수 없습니다.
+작업을 계속하시겠습니까?<usetemplate ignoretext="グループオーナーを新しく追加する前の確認" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="AssignDangerousActionWarning">당신은 [ROLE_NAME]에게 [ACTION_NAME]의 능력을 부여하려고 합니다.
+
+ *경고*
+이 능력을 가진 역할의 멤버는,
+자신과 다른 멤버에게 현재보다 강력한 권한을 할당하고,
+자신을 오너와 거의 동일한 위치로 임명할 수 있게 됩니다.
+이 행동의 의미를 잘 이해한 후 실행하십시오.
+
+이 능력을 [ROLE_NAME]에게 할당하시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="AssignDangerousAbilityWarning">당신은 [ROLE_NAME]에게 [ACTION_NAME]의 능력을 부여하려고 합니다.
+
+*경고*
+이 능력을 가진 역할의 멤버는 자신과 다른 멤버들에게 모든 능력을 할당하고 자신을 오너와 거의 동일한 위치에 임명할 수 있습니다.
+
+이 능력을 [ROLE_NAME]에게 할당하시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="AssignBanAbilityWarning">역할 '[ROLE_NAME]'에 능력 '[ACTION_NAME]'를 추가하려고 합니다.
+
+*경고*
+이 능력을 가진 역할의 멤버에게도 능력 '[ACTION_NAME_2]'와 '[ACTION_NAME_3]'가 허용됩니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="RemoveBanAbilityWarning">역할 '[ROLE_NAME]'에서 능력 '[ACTION_NAME]'을(를) 삭제하려고 합니다.
+
+*경고*
+이 능력을 삭제해도 능력 '[ACTION_NAME_2]' 및 '[ACTION_NAME_3]'은(는) 삭제되지 않습니다.
+
+이러한 능력을 이 역할에 허용하지 않으려면, 즉시 삭제하십시오!<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="EjectGroupMemberWarning">[AVATAR_NAME]을(를) 그룹에서 추방하려고 합니다.<usetemplate ignoretext="グループからの参加者の追放を確認します" name="okcancelignore" notext="取り消し" yestext="追放" />
+	</notification>
+	<notification name="EjectGroupMembersWarning">다음의 [COUNT]명의 멤버를 그룹에서 추방하려고 합니다.<usetemplate ignoretext="グループからの複数のメンバーの追放を確認します" name="okcancelignore" notext="取り消し" yestext="追放" />
+	</notification>
+	<notification name="BanGroupMemberWarning">[AVATAR_NAME]를 그룹 출입 금지하려고 합니다.<usetemplate ignoretext="参加者をグループ出入り禁止にするか確認します" name="okcancelignore" notext="取り消し" yestext="出入禁止" />
+	</notification>
+	<notification name="BanGroupMembersWarning">[COUNT] 명의 멤버를 그룹에서 출입 금지하려고 합니다.<usetemplate ignoretext="複数のメンバーのグループ出入禁止を確認します" name="okcancelignore" notext="取り消し" yestext="出入禁止" />
+	</notification>
+	<notification name="GroupBanUserOnBanlist">그룹에서 출입 금지된 몇몇 주민에게는 초대가 보내지지 않았습니다.</notification>
+	<notification name="AttachmentDrop">아타치먼트를 아래에 놓으려고 합니다. 계속하시겠습니까?<usetemplate ignoretext="アタッチメントを下に落とす前の確認" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="JoinGroupCanAfford">この 그룹에 참여하려면, L$ [COST]이 필요합니다.
+계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="参加" />
+	</notification>
+	<notification name="JoinGroupNoCost">&lt;nolink&gt;[NAME]&lt;/nolink&gt; 그룹에 들어가려고 합니다.
+계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="参加" />
+	</notification>
+	<notification name="JoinGroupCannotAfford">このグループに加入するには、L$ [COST] 必要です。
+L$ が不足しているのでこのグループに参加することができません。</notification>
+	<notification name="CreateGroupCost">이 그룹 생성에 드는 비용: L$[COST]
+혼자서는 그룹이 될 수 없으므로, 영구적으로 삭제됩니다.
+48시간 이내에 멤버를 초대하여 가입하게 해 주세요.<usetemplate canceltext="キャンセル" name="okcancelbuttons" notext="キャンセル" yestext="L$100 でグループを作成" />
+	</notification>
+	<notification name="JoinGroupInaccessible">당신은 이 그룹에 접근할 수 없습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="JoinGroupError">あなたの参加リクエストの処理中にエラーが発生しました。
+
+당신의 참가 요청을 처리하는 중에 오류가 발생했습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="JoinGroupErrorReason">다음 이유로 그룹에 참여할 수 없습니다: [reason]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="JoinGroupTrialUser">죄송합니다만, 정식 사용자 아니면 그룹에 가입할 수 없습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="JoinGroupMaxGroups">그룹 '&lt;nolink&gt;[group_name]&lt;/nolink&gt;'에 참여할 수 없습니다.
+이미 [group_count] 그룹에 참여 중이며, 참여 가능한 최대 그룹 수는 [max_groups]입니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="JoinGroupClosedEnrollment">그룹 '&lt;nolink&gt;[group_name]&lt;/nolink&gt;'에 참여할 수 없습니다.
+이 그룹은 더 이상 자유롭게 참여할 수 없습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="JoinGroupSuccess">グループに参加しました。  
+→ 그룹에 참가했습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="JoinGroupInsufficientFunds">필요한 회비 L$ [membership_fee] 의 송금이 실패했습니다.<usetemplate name="okbutton" yestext="OK" />
+		</notification>
+	<notification name="LandBuyPass">L$ [COST]로 [TIME] 시간 동안 [PARCEL_NAME]에 들어갈 수 있습니다.
+입장권을 구매하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="SalePriceRestriction">불특정 다수에게 판매할 경우,
+판매 가격은 L$ 0 이상으로 설정해야 합니다.
+판매 가격을 L$ 0으로 설정하려면,
+판매할 개인을 선택하십시오.</notification>
+	<notification name="ConfirmLandSaleChange">선택한 [LAND_SIZE] 평방미터의 땅은 판매 중입니다.
+판매 가격 L$ [SALE_PRICE]로, [NAME]에게 판매를 승인합니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmLandSaleToAnyoneChange">주의: '누구에게나 판매' 옵션을 클릭하면 귀하의 토지는 이 지역에 있는 사람들에 국한되지 않고 [CURRENT_GRID] 전체 커뮤니티에서 이용할 수 있게 됩니다.
+
+선택한 [LAND_SIZE] 제곱미터의 토지는 판매 대상에 설정되었습니다.
+판매 가격은 L$ [SALE_PRICE]이며, [NAME]이 판매 대상자가 됩니다.<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ReturnObjectsDeededToGroup">この 구획의 그룹 [NAME] 공유의 모든 오브젝트를, 이전의 소유자의 인벤토리로 되돌리려 하고 있습니다.
+작업을 계속하시겠습니까?
+
+*경고* 이에 따라,
+그룹에 양도된 "재판매·선물 불가" 오브젝트는 삭제됩니다!
+오브젝트: [N]<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ReturnObjectsOwnedByUser">この区画で、  
+住人 [NAME] が所有する全てのオブジェクトを  
+本人のインベントリに本当に返却してもよいですか？  
+  
+オブジェクト： [N]<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ReturnObjectsOwnedBySelf">이 토지 구역 내에 있는, 당신이 소유한 모든 오브젝트를, 당신의 인벤토리로 되돌리려고 합니다. 계속하시겠습니까?
+
+오브젝트: [N]<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ReturnObjectsNotOwnedBySelf">이 토지 구획 내에 있는, 당신 외에 다른 사람들이 소유한 모든 객체를 각 소유자의 인벤토리로 되돌리려고 합니다.
+작업을 계속하시겠습니까?
+그룹에 양도된 "재판매 및 선물 가능" 객체는 이전 소유자에게 반환됩니다.
+
+*경고* 이로 인해,
+그룹에 양도된 "재판매 및 선물 불가" 객체는 삭제됩니다!
+객체: [N]<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ReturnObjectsNotOwnedByUser">이 토지 구획 내에 있는,
+[NAME] 이외의 소유자의 모든 오브젝트를 각각의 소유자의 인벤토리에 반환하려고 합니다.
+작업을 계속하시겠습니까? 그룹에 양도된 "재판매 및 선물 가능" 오브젝트는 이전 소유자에게 반환됩니다.
+
+*경고* 이로 인해,
+그룹에 양도된 "재판매 및 선물 불가" 오브젝트는 삭제됩니다!
+오브젝트: [N]<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ReturnAllTopObjects">리스트된 모든 오브젝트를 소유자에게 정말로 반환하시겠습니까? 이 지역에 있는 스크립트가 포함된 모든 오브젝트가 반환될 것입니다!<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="DisableAllTopObjects">이 지역 내 모든 오브젝트를 비활성화하려고 합니다. 계속 진행하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ReturnObjectsNotOwnedByGroup">이 토지의 구역에 있는 오브젝트 중에서, 그룹 &lt;nolink&gt;[NAME]&lt;/nolink&gt;와(과) 공유되지 않은 오브젝트를 소유자에게 반환하시겠습니까?
+
+오브젝트: [N]<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="UnableToDisableOutsideScripts">스크립트를 비활성화할 수 없습니다.
+이 리전(지역) 전체가 "데미지 활성화"로 설정되어 있습니다.
+무기를 사용하려면 스크립트 실행을 허용해야 합니다.</notification>
+	<notification name="MultipleFacesSelected">현재 여러 면이 선택되었습니다.
+이대로 계속 진행할 경우, 미디어의 별도 인스턴스가 객체의 여러 면에 설정됩니다.
+미디어를 한 면에만 부착하려면, "면 선택"을 선택하고 객체에서 원하는 면을 클릭한 다음 "추가"를 클릭하십시오.<usetemplate ignoretext="メディアが選択した複数の面にセットされるとき" name="okcancelignore" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="MustBeInParcel">착지 지점을 설정하려면 이 구역 안에 서 주십시오.</notification>
+	<notification name="PromptRecipientEmail">유효한 수신자의 이메일 주소를 입력해 주세요.</notification>
+	<notification name="PromptSelfEmail">당신의 이메일 주소를 입력하세요.</notification>
+	<notification name="PromptMissingSubjMsg">デフォルトの件名またはメッセージを付けて、스냅샷을 전송하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ErrorProcessingSnapshot">스냅샷 데이터 처리 오류</notification>
+	<notification name="ErrorEncodingSnapshot">스냅샷의 인코딩 오류가 발생했습니다!</notification>
+	<notification name="ErrorCannotAffordUpload">이 아이템을 업로드하려면 L$[COST]가 필요합니다.</notification>
+	<notification name="ErrorPhotoCannotAfford">인벤토리에 사진을 저장하려면 L$[COST]가 필요합니다. L$를 구매하거나, 대신 사진을 컴퓨터에 저장할 수 있습니다.</notification>
+	<notification name="ErrorTextureCannotAfford">텍스처를 인벤토리에 저장하려면 L$[COST]가 필요합니다. L$를 구매하거나 사진을 컴퓨터에 저장할 수 있습니다.</notification>
+	<notification name="ErrorUploadingPostcard">다음 이유로 스냅샷을 전송하는 동안 문제가 발생했습니다: [REASON]</notification>
+	<notification name="ErrorUploadingReportScreenshot">다음과 같은 이유로 인해 레포트의 스크린샷을 업로드하는 동안 문제가 발생했습니다. [REASON]</notification>
+	<notification name="MustAgreeToLogIn">로그인을 계속하려면 [CURRENT_GRID] 에 대한 거래 조건, 개인정보처리방침 및 이용 약관에 동의하십시오.</notification>
+	<notification name="CouldNotBuyCurrency">[TITLE]
+[메세지]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	
+	<notification name="CouldNotBuyCurrencyOS">[TITLE]
+[MESSAGE]<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="CouldNotPutOnOutfit">아웃핏을 장착할 수 없습니다.
+아웃핏 폴더에 의류, 신체 부위, 부착물이 없습니다.</notification>
+	<notification name="CannotWearTrash">휴지통에 있는 의류나 신체 부위는 착용할 수 없습니다.</notification>
+	<notification name="MaxAttachmentsOnOutfit">オブジェクトを付けられませんでした。
+最大数の [MAX_ATTACHMENTS] 個を越えています。 どれか取り外してからお試しください。
+
+오브젝트를 부착할 수 없습니다.
+최대 개수 [MAX_ATTACHMENTS] 개를 초과했습니다. 어떤 것을 분리한 후에 시도해 보세요.</notification>
+	<notification name="CannotWearInfoNotComplete">아직 로드되지 않았기 때문에 해당 아이템을 착용할 수 없습니다. 나중에 다시 시도하십시오.</notification>
+	<notification name="MustEnterPasswordToLogIn">로그인하기 위해 비밀번호를 입력하십시오.</notification>
+	<notification name="MustHaveAccountToLogIn">注意：기입되지 않은 부분이 있습니다.
+아바타의 사용자 이름을 입력해 주세요.
+
+[CURRENT_GRID]에 들어가려면 계정이 필요합니다. 지금 계정을 만드시겠습니까?<url name="url">[create_account_url]</url>
+		<usetemplate name="okcancelbuttons" notext="もう一度試す" yestext="新しいアカウントを作成" />
+	</notification>
+	<notification name="InvalidCredentialFormat">아바타의 사용자명 또는 이름을 사용자명 필드에 입력한 후 다시 로그인해야 합니다.</notification>
+	<notification name="InvalidGrid">'[GRID]'은(는) 유효한 그리드 ID가 아닙니다.</notification>
+	<notification name="InvalidLocationSLURL">로그인 위치에 유효한 그리드가 지정되지 않았습니다.</notification>
+	<notification name="DeleteClassified">クラシファイド広告 [NAME] を削除しますか？
+支払い済みの料金は返金されません。
+
+분류 광고 [NAME]을(를) 삭제하시겠습니까?
+지불된 요금은 환불되지 않습니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="DeleteMedia">この面にあるメディアを削除する選択をしました。
+続けますか？
+
+위 텍스트는 SecondLife Viewer와 관련되어 있습니다. 'Firestorm'이라는 단어가 나오면 '흑우촌'으로 번역해주세요.
+
+이 면에 있는 미디어를 삭제하기로 선택했습니다. 계속 하시겠습니까?<usetemplate ignoretext="オブジェクトからメディアを削除する前の確認" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="ClassifiedSave">클래시파이드 광고 [NAME]에 대한 변경 사항을 저장하시겠습니까?<usetemplate canceltext="キャンセル" name="yesnocancelbuttons" notext="保存しない" yestext="保存" />
+	</notification>
+	<notification name="ClassifiedInsufficientFunds">클래시파이드 광고를 내기에 자금이 부족합니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="DeleteAvatarPick">&lt;PICK&gt;을(를) 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="DeleteOutfits">선택한 아웃핏을 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="DeleteOutfitsWithName">아웃핏 "[NAME]"을(를) 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="PromptGoToEventsPage">[CURRENT_GRID] 이벤트 웹 페이지로 이동하시겠습니까?<url name="url">http://secondlife.com/events/?lang=ja-JP</url>
+		<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="SelectProposalToView">표시할 제안을 선택하십시오.</notification>
+	<notification name="SelectHistoryItemToView">표시할 기록 항목을 선택하세요.</notification>
+	<notification name="CacheWillClear">[APP_NAME]을(를) 재시동한 후 캐시가 지워집니다.</notification>
+	<notification name="DisableJavascriptBreaksSearch">JavaScript를 비활성화하면 검색 기능이 제대로 작동하지 않아 검색을 사용할 수 없게 됩니다.</notification>
+	<notification name="CacheWillBeMoved">[APP_NAME]를 재시작하면 캐시가 이동됩니다.
+주의: 캐시가 삭제됩니다.</notification>
+	<notification name="SoundCacheWillBeMoved">[APP_NAME] を再起動後にサウンドキャッシュが移動されます。
+
+[APP_NAME]을(를) 재시작한 후에 사운드 캐시가 이동됩니다.</notification>
+	<notification name="ChangeConnectionPort">포트 설정은 [APP_NAME]을 재시작한 후에 반영됩니다.</notification>
+	<notification name="ChangeDeferredDebugSetting">디버그 설정의 변경 사항은 흑우촌을(를) 재시작한 후에 반영됩니다.</notification>
+	<notification name="ChangeSkin">새로운 스킨은 [APP_NAME]을(를) 재시작한 후에 나타납니다.</notification>
+	<notification name="ChangeLanguage">言語の変更は [APP_NAME] を 재시작 후에 반영됩니다.</notification>
+	<notification name="GoToAuctionPage">[CURRENT_GRID]의 웹 페이지로 이동하여 입찰 또는 경매 세부사항을 확인하시겠습니까?<url name="url">http://secondlife.com/auctions/auction-detail.php?id=[AUCTION_ID]</url>
+		<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="SaveChanges">변경 사항을 저장하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="保存しない" yestext="保存" />
+	</notification>
+	<notification name="DeleteNotecard">노트카드를 삭제하시겠습니까?<usetemplate ignoretext="ノートカードの削除を確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="LoadPreviousReportScreenshot">이전 스크린샷을 보고서에 사용하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="GestureSaveFailedTooManySteps">ジェスチャーの保存に失敗しました。  
+ステップが多すぎます。  
+ステップをいくつか削除してから再保存してください.
+
+제스처를 저장하지 못했습니다.
+단계가 너무 많습니다.
+단계를 몇 개 삭제한 후 다시 저장해주세요.</notification>
+	<notification name="GestureSaveFailedTryAgain">제스처 저장에 실패했습니다. 잠시 기다렸다가 다시 시도하십시오.</notification>
+	<notification name="GestureSaveFailedObjectNotFound">제스처 저장에 실패했습니다. 오브젝트 또는 관련된 오브젝트 인벤토리를 찾을 수 없습니다.
+오브젝트가 범위 내에 존재하지 않거나 삭제되었을 수 있습니다.</notification>
+	<notification name="GestureSaveFailedReason">다음 이유로 제스처를 저장하는 동안 문제가 발생했습니다. [이유]. 나중에 다시 시도해 주세요.</notification>
+	<notification name="SaveNotecardFailObjectNotFound">노트카드 저장에 실패했습니다. 객체 또는 관련 객체 인벤토리를 찾을 수 없습니다.
+객체가 범위 내에 존재하지 않거나 삭제되었을 가능성이 있습니다.</notification>
+	<notification name="SaveNotecardFailReason">다음 이유로 인해 노트카드를 저장하는 중에 문제가 발생했습니다. [REASON]. 나중에 다시 시도해 주세요.</notification>
+	<notification name="ScriptCannotUndo">스크립트의 버전으로는 변경을 되돌릴 수 없었습니다.
+서버의 최신 저장 버전을 로드하시겠습니까?
+(**경고**: 이 작업 후에는 되돌릴 수 없습니다)<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="SaveScriptFailObjectNotFound">스크립트 저장에 실패했습니다. 스크립트가 들어 있는 오브젝트를 찾을 수 없습니다.
+오브젝트가 범위 밖에 있거나, 삭제되었을 수 있습니다.</notification>
+	<notification name="StartRegionEmpty">로그인 위치가 지정되지 않았습니다.  
+로그인 위치의 칸에 리전 이름을 입력하거나, '마지막으로 로그아웃한 장소'나 '자택(홈)'을 선택해 주십시오.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="CouldNotStartStopScript">스크립트의 시작 또는 중지가 실패했습니다. 스크립트가 저장된 오브젝트를 찾을 수 없습니다.
+오브젝트가 범위 내에 존재하지 않거나 삭제되었을 가능성이 있습니다.</notification>
+	<notification name="CannotDownloadFile">파일을 다운로드할 수 없습니다.</notification>
+	<notification name="MediaFileDownloadUnsupported">파일의 다운로드가 요청되었지만, 이 파일은 [APP_NAME]에서 처리할 수 없습니다.<usetemplate ignoretext="未対応のファイルダウンロードに対する警告です" name="okignore" yestext="OK" />
+  </notification>
+	<notification name="CannotWriteFile">ファイル [[FILE]] を書き込めません。  
+파일 [[FILE]] 을/를 쓸 수 없습니다.</notification>
+	<notification name="UnsupportedHardware">고객님의 컴퓨터는 [APP_NAME]의 최소 시스템 요구 사항을 충족하지 않습니다. 성능 저하를 느낄 수 있습니다. 죄송하지만 [SUPPORT_SITE]에서는 지원되지 않는 시스템에 대한 기술 지원을 제공하지 않습니다.
+
+[MINSPECS]
+
+[_URL]로 이동하여 확인하시겠습니까?<url name="url" option="0">https://wiki.흑우촌viewer.org/fs_system_requirements</url>
+		<usetemplate ignoretext="使用中のコンピューターのハードウェアがサポートされていないとき" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="RunLauncher">뷰어 실행 파일을 직접 실행하지 마십시오. 대신 기존의 단축키 중 하나를 업데이트하여 SL_Launcher를 실행하세요.</notification>
+	<notification name="OldGPUDriver">グラフィックスチップ에 최신 드라이버가 있을 가능성이 있습니다. 그래픽 드라이버를 업데이트함으로써, 성능이 크게 향상될 수 있습니다.
+
+　드라이버 업데이트를 확인하기 위해 [URL]에 접속하시겠습니까?<url name="url">[URL]</url>
+		<usetemplate ignoretext="使用中のグラフィックドライバが古くなっています" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="UnknownGPU">사용자의 시스템에 [APP_NAME]가 인식되지 않는 그래픽 카드가 탑재되어 있습니다.
+[APP_NAME]에서 아직 테스트되지 않은 최신 하드웨어일 가능성이 큽니다. 문제는 없을 것으로 예상되지만, 그래픽 설정을 조정해야 할 수도 있습니다.
+(나의 세팅 &gt; 환경 설정 &gt; 그래픽)<form name="form">
+			<ignore name="ignore" text="使用中のグラフックカードが認識されないとき" />
+		</form>
+	</notification>
+	<notification name="DisplaySettingsNoShaders">그래픽 드라이버를 초기화하는 중에 [APP_NAME] 이(가) 충돌했습니다.
+드라이버의 일반적인 오류를 방지하기 위해 화질이 낮음으로 설정됩니다. 따라서 일부 그래픽 특성에 제한이 생깁니다.
+사용 중인 그래픽 카드의 드라이버를 업데이트할 것을 권장합니다.
+화질은 ‘환경 설정’ &gt; ‘그래픽’ 에서 설정할 수 있습니다.</notification>
+	<notification name="RegionNoTerraforming">[REGION]에서는 지형을 변경할 수 없습니다.</notification>
+	<notification name="ParcelNoTerraforming">당신은 [PARCEL] 구역을 지형 편집할 권한이 없습니다.</notification>
+	<notification name="CannotCopyWarning">당신에게는 다음 아이템을 복사할 권한이 없습니다:
+&lt;nolink&gt;[ITEMS]&lt;/nolink&gt;
+다른 주민에게 양도하면 해당 아이템은 당신의 소지품에서 삭제됩니다. 정말로 이 아이템들을 양도하시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="CannotGiveItem">인벤토리의 아이템을 건네줄 수 없습니다.</notification>
+	<notification name="TransactionCancelled">거래가 취소되었습니다.</notification>
+	<notification name="TooManyItems">한 번에 42개 이상의 아이템은 전달할 수 없습니다.</notification>
+	<notification name="NoItems">選択한 항목을 전달할 권한이 없습니다.</notification>
+	<notification name="CannotCopyCountItems">당신은 선택한 [COUNT] 개의 아이템을 복사할 수 없습니다.
+이 아이템들은 당신의 인벤토리에서 사라질 것입니다.
+정말로 아이템을 전달하시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="CannotGiveCategory">선택한 폴더를 넘길 권한이 없습니다.</notification>
+	<notification name="FreezeAvatar">이 아바타를 프리즈하시겠습니까?
+아바타는 일시적으로 움직일 수 없으며, 채팅을 포함해 인월드에서 아무 것도 할 수 없게 됩니다.<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="解除" yestext="フリーズ" />
+	</notification>
+	<notification name="FreezeAvatarFullname">[AVATAR_NAME]를 프리즈하시겠습니까?
+프리즈된 사람은 일시적으로 움직일 수 없으며, 채팅 등을 포함하여 이 세계와의 상호작용을 할 수 없게 됩니다.<usetemplate canceltext="キャンセル" name="yesnocancelbuttons" notext="解除" yestext="フリーズ" />
+	</notification>
+	<notification name="FreezeAvatarMultiple">다음 사용자를 프리즈(Freeze) 하시겠습니까?
+
+		[사용자]
+
+		프리즈된 사람은 일시적으로 움직일 수 없으며, 채팅 등 이 세계와의 상호작용을 할 수 없게 됩니다.<usetemplate canceltext="キャンセル" name="yesnocancelbuttons" notext="解除" yestext="フリーズ" />
+	</notification>
+	<notification name="EjectAvatarFullname">당신의 땅에서 [AVATAR_NAME]을(를) 추방하시겠습니까?<usetemplate canceltext="キャンセル" name="yesnocancelbuttons" notext="追放と禁止" yestext="追放" />
+	</notification>
+	<notification name="EjectAvatarNoBan">このアバターをあなたの土地から追放しますか？  
+この 아바타를 당신의 땅에서 추방하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="追放" />
+	</notification>
+	<notification name="EjectAvatarFullnameNoBan">[AVATAR_NAME]를 당신의 땅에서 추방하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="追放" />
+	</notification>
+	<notification name="EjectAvatarMultiple">다음 아바타를 당신의 땅에서 추방하시겠습니까?
+		
+		[거주자들]<usetemplate canceltext="キャンセル" name="yesnocancelbuttons" notext="追放と禁止" yestext="追放" />
+	</notification>
+	<notification name="EjectAvatarMultipleNoBan">다음 아바타를 당신의 땅에서 추방하시겠습니까?
+
+	[주민들]<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="追放" />
+	</notification>
+	<notification name="EjectAvatarFromGroup">&lt;nolink&gt;[GROUP_NAME]&lt;/nolink&gt;에서 [AVATAR_NAME]을(를) 추방했습니다</notification>
+	<notification name="AcquireErrorTooManyObjects">획득 오류: 선택한 객체의 수가 너무 많습니다.</notification>
+	<notification name="AcquireErrorObjectSpan">取得 오류:  
+오브젝트가 여러 지역에 걸쳐 존재합니다.  
+모든 오브젝트를 같은 지역 내로 이동시킨 후에 얻어주세요.</notification>
+	<notification name="PromptGoToCurrencyPage">[추가]
+
+[_URL]에 이동하여 린덴 달러 구매에 관한 정보를 확인하시겠습니까?<url name="url">http://secondlife.com/app/currency/?lang=ko-KR</url>
+		<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="MuteLimitReached">[MUTE_LIMIT] 항목 제한에 도달하여 차단 목록에 새로운 항목을 추가할 수 없습니다.</notification>
+	<notification name="UnableToLinkObjects">다음 텍스트를 SecondLife Viewer와 관련하여 번역해주세요.
+'흑우촌'이라는 단어가 나올 경우, 'Firestorm'으로 번역하세요:
+
+[COUNT] 개의 오브젝트를 링크할 수 없습니다.
+링크할 수 있는 최대 개수는 [MAX]개입니다.</notification>
+	<notification name="CannotLinkIncompleteSet">세트로 갖추어진 오브젝트만 연결할 수 있습니다.  
+여러 개의 오브젝트를 선택하세요.</notification>
+	<notification name="CannotLinkModify">すべてのオブジェクトの修正許可がないためリンクできません。
+
+どのオブジェクトもロックされておらず、あなたのものであることを確認してください。</notification>
+	<notification name="CannotLinkPermanent">지역의 경계를 넘어 오브젝트를 링크할 수 없습니다.</notification>
+	<notification name="CannotLinkAcrossRegions">지역 경계를 넘어 오브젝트를 링크할 수 없습니다.</notification>
+	<notification name="CannotLinkDifferentOwners">소유자가 다르기 때문에, 오브젝트를 링크할 수 없습니다.
+
+자신이 소유하고 있는 오브젝트만 선택하세요.</notification>
+	<notification name="NoFileExtension">「 [FILE] 」의 확장자가 무효입니다.
+
+이 파일의 확장자가 올바른지 확인하십시오.</notification>
+	<notification name="InvalidFileExtension">[EXTENSION] 는 무효입니다.
+올바른 확장자: [VALIDS]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="CannotUploadSoundFile">読み込みのためにアップロードされたサウンドファイルを開けません：
+[FILE]
+
+업로드된 사운드 파일을 열 수 없습니다:
+[FILE]</notification>
+	<notification name="SoundFileNotRIFF">RIFF WAVE 파일로 인식되지 않습니다:
+[FILE]</notification>
+	<notification name="SoundFileNotPCM">PCM WAVE 오디오파일로 인식되지 않습니다:
+[FILE]</notification>
+	<notification name="SoundFileInvalidChannelCount">파일의 채널 수가 유효하지 않습니다 (모노 또는 스테레오를 사용해야 합니다): 
+[FILE]</notification>
+	<notification name="SoundFileInvalidSampleRate">지원되지 않는 샘플 속도의 파일입니다 (44.1k 여야 합니다):
+[FILE]</notification>
+	<notification name="SoundFileInvalidWordSize">ファイルのワードサイズがサポートされていません（8 または 16 ビットである必要があります）：
+[FILE]
+
+The provided text is in Japanese, and it translates to:
+
+파일의 워드 크기가 지원되지 않습니다(8비트 또는 16비트여야 합니다):
+[파일]</notification>
+	<notification name="SoundFileInvalidHeader">WAV 헤더에 데이터 청크가 발견되지 않았습니다：
+[FILE]</notification>
+	<notification name="SoundFileInvalidChunkSize">WAV 파일의 청크 크기가 잘못되었습니다:
+[FILE]</notification>
+	<notification name="SoundFileInvalidTooLong">오디오 파일이 너무 깁니다. (최대 [MAX_LENGTH] 초):
+[FILE]</notification>
+	<notification name="ProblemWithFile">「[FILE]」에 문제가 있습니다.
+
+[REASON]</notification>
+	<notification name="CannotOpenTemporarySoundFile">一時書き込み用の圧縮サウンドファイルを開くことができません：[FILE]</notification>
+	<notification name="UnknownVorbisEncodeFailure">불명의 Vorbis 인코딩 실패: [파일]</notification>
+	<notification name="CannotEncodeFile">다음 파일의 인코딩을 실패했습니다: [FILE]</notification>
+	<notification name="CorruptedProtectedDataStore">로그인 정보가 저장된 파일을 분석할 수 없었습니다. 여기서 로그인 정보를 저장하거나 삭제하면 이전에 저장된 모든 정보가 지워집니다.
+이 현상은 네트워크 설정이 변경된 경우에 발생할 수 있습니다. 이전 네트워크 설정으로 되돌리고 뷰어를 다시 시작하면 저장된 로그인 정보가 복구될 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="CorruptResourceFile">파손된 리소스 파일: [FILE]</notification>
+	<notification name="UnknownResourceFileVersion">不明のリンデンリソースファイルのバージョン： [FILE]
+
+불명(不明)의 린든 리소스 파일 버전: [FILE]</notification>
+	<notification name="UnableToCreateOutputFile">출력 파일을 생성할 수 없습니다: [FILE]</notification>
+	<notification name="DoNotSupportBulkAnimationUpload">현재 [APP_NAME]에서는 BVH 형식의 애니메이션 파일의 일괄 업로드를 지원하지 않습니다.</notification>
+	<notification name="CannotUploadReason">다음 이유로 인해 「 [FILE] 」을(를) 업로드할 수 없습니다: [REASON]
+나중에 다시 시도해 주세요.</notification>
+	<notification name="LandmarkCreated">「 [LANDMARK_NAME] 」를 「 [FOLDER_NAME] 」폴더에 추가했습니다.</notification>
+	<notification name="LandmarkAlreadyExists">현재 위치의 랜드마크를 이미 가지고 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="CannotCreateLandmarkNotOwner">토지 소유자가 허가하지 않았기 때문에 랜드마크를 생성할 수 없습니다.</notification>
+	<notification label="폴더 생성" name="CreateLandmarkFolder">폴더 이름을 선택해 주세요:<form name="form">
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="CannotRecompileSelectObjectsNoScripts">「리컴파일」할 수 없습니다.
+스크립트의 객체를 선택하세요.</notification>
+	<notification name="CannotRecompileSelectObjectsNoPermission">「재컴파일」할 수 없습니다.
+
+수정 권한이 있는 스크립트 객체를 선택하십시오.</notification>
+	<notification name="CannotResetSelectObjectsNoScripts">「재설정」ができません。
+
+스크립트의 오브젝트를 선택해 주세요.</notification>
+	<notification name="CannotdeleteSelectObjectsNoScripts">「삭제」할 수 없습니다.
+
+스크립트의 오브젝트를 선택하세요.</notification>
+	<notification name="CannotResetSelectObjectsNoPermission">「재설정」ができません。
+
+수정 권한이 있는 스크립트 객체를 선택하십시오.</notification>
+	<notification name="CannotOpenScriptObjectNoMod">수정 권한이 없는 객체의 스크립트는 열 수 없습니다.</notification>
+	<notification name="CannotSetRunningSelectObjectsNoScripts">スクリプトの「実行」ができません。
+
+スクリプトのオブジェクトを選択してください。</notification>
+	<notification name="CannotSetRunningNotSelectObjectsNoScripts">スクリプトを「実行しない」設定にできません。
+
+スクリプトのオブジェクトを選択してください。</notification>
+	<notification name="NoFrontmostFloater">저장할 최상위 플로터가 없습니다.</notification>
+	<notification name="SeachFilteredOnShortWords">지정한 검색 쿼리가 변경되었으며, 너무 짧은 어구는 제거되었습니다.
+
+검색어: [FINALQUERY]</notification>
+	<notification name="SeachFilteredOnShortWordsEmpty">지정한 검색어가 너무 짧아서 검색이 수행되지 않았습니다.</notification>
+	<notification name="CouldNotTeleportReason">텔레포트에 실패했습니다.
+[이유]</notification>
+	<notification name="invalid_tport">텔레포트할 수 있는 횟수는 1분에 6회로 제한되어 있습니다. 만약 텔레포트에 문제가 발생한 경우, 1분을 기다렸다가 다시 시도해 보십시오. 문제가 해결되지 않으면 한 번 로그아웃한 후, 다시 로그인해 보십시오.</notification>
+	<notification name="invalid_region_handoff">리전 간 이동 중에 문제가 발생했습니다. 다시 로그인해야 할 수도 있습니다.
+이 메시지가 여러 번 나타날 경우, [SUPPORT_SITE]를 확인해 주시기 바랍니다.</notification>
+	<notification name="blocked_tport">죄송합니다. 텔레포트는 현재 차단되었습니다. 잠시 후 다시 시도해 주세요.
+그래도 텔레포트가 되지 않으면 로그아웃 후 다시 로그인하여 문제를 해결해 주세요.</notification>
+	<notification name="nolandmark_tport">죄송합니다. 랜드마크의 목적지를 찾을 수 없었습니다.</notification>
+	<notification name="timeout_tport">죄송합니다. 시스템에 의한 텔레포트 연결을 완료할 수 없었습니다.
+잠시 후 다시 시도해 주십시오.</notification>
+	<notification name="noaccess_tport">Unfortunately, you cannot teleport because access to the destination is not permitted.
+
+에서 목적지에 접근할 수 없기 때문에 텔레포트할 수 없습니다.</notification>
+	<notification name="missing_attach_tport">첨부물이 아직 도착하지 않았습니다. 텔레포트를 하기 전에 몇 초 더 기다리시거나, 로그아웃한 후 다시 로그인해보세요.</notification>
+	<notification name="too_many_uploads_tport">이 지역의 애셋 큐가 현재 혼잡하여 텔레포트 요청을 즉시 처리하기 어려운 상황입니다. 
+몇 분 후에 다시 시도하거나, 혼잡하지 않은 다른 지역에서 시도해 주세요.</notification>
+	<notification name="expired_tport">죄송합니다. 시스템이 텔레포트 요청을 제시간에 완료할 수 없었습니다. 몇 분 후에 다시 시도해 주세요.</notification>
+	<notification name="expired_region_handoff">죄송합니다. 시스템이 리전 간의 이동을 제시간에 완료하지 못했습니다. 몇 분 후에 다시 시도해 주세요.</notification>
+	<notification name="no_host">텔레포트 목적지를 찾을 수 없습니다. 목적지가 일시적으로 이용 불가능한 상태이거나, 이미 소멸했을 가능성이 있습니다. 몇 분 후에 다시 시도해 주세요.</notification>
+	<notification name="no_inventory_host">인벤토리 시스템은 현재 사용할 수 없습니다.</notification>
+	<notification name="CannotSetLandOwnerNothingSelected">土地所有者設定ができません：
+区画が選定されていません。</notification>
+	<notification name="CannotSetLandOwnerMultipleRegions">여러 리전이 선택되었기 때문에 토지 소유권을 획득할 수 없습니다.
+선택하는 면적을 줄이고 다시 시도해 보세요.</notification>
+	<notification name="ForceOwnerAuctionWarning">이 구역은 경매에 나와 있습니다. 소유권을 변경하면 경매가 취소되고, 이미 경매에 참여하고 있는 주민이 있다면 그 사람에게 폐를 끼치게 됩니다.
+소유권을 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="CannotContentifyNothingSelected">콘텐츠화는 불가능합니다:
+구역이 선택되지 않았습니다.</notification>
+	<notification name="CannotContentifyNoRegion">컨텐츠화는 불가능합니다:
+토지가 선택되지 않았습니다.</notification>
+	<notification name="CannotReleaseLandNothingSelected">토지를 파기할 수 없습니다:
+구획이 선택되어 있지 않습니다.</notification>
+	<notification name="CannotReleaseLandNoRegion">토지를 포기할 수 없습니다:
+리전이 발견되지 않았습니다.</notification>
+	<notification name="CannotBuyLandNothingSelected">구입할 수 없습니다:
+필지 선택이 되어 있지 않습니다.</notification>
+	<notification name="CannotBuyLandNoRegion">땅을 구매할 수 없습니다:
+이 땅이 있는 리전(지역)을 찾을 수 없습니다</notification>
+	<notification name="CannotCloseFloaterBuyLand">[APP_NAME] 가 이 거래 가격을 추정하기 전까지는, 토지 구매 창을 닫을 수 없습니다.</notification>
+	<notification name="CannotDeedLandNothingSelected">토지를 양도할 수 없습니다：
+구획이 선택되지 않았습니다.</notification>
+	<notification name="CannotDeedLandNoGroup">土地를 양도할 수 없습니다：
+그룹이 선택되지 않았습니다。</notification>
+	<notification name="CannotDeedLandNoRegion">토지를 양도할 수 없습니다：
+이 토지가 있는 리전이 발견되지 않았습니다.</notification>
+	<notification name="CannotDeedLandMultipleSelected">토지를 양도할 수 없습니다：
+여러 구역이 선택되었습니다.
+
+구역 하나를 선택하십시오.</notification>
+	
+	<notification name="ParcelCanPlayMedia">이 땅에서는 미디어를 스트리밍하고 있습니다. 미디어 재생에는 더 많은 네트워크 대역폭이 필요할 수 있습니다.
+
+가능한 경우, 스트리밍 미디어를 재생하시겠습니까?
+(이 옵션은 '환경 설정' &gt; '사운드' 탭에서 변경할 수 있습니다.)<form name="form">
+			<button name="Play Media Now" text="今回は再生" />
+			<button name="Always Play Media" text="常に再生" />
+			<button name="Do Not Pley Media" text="再生しない" />
+		</form>
+	</notification>
+
+	<notification name="CannotDeedLandWaitingForServer">토지를 양도할 수 없습니다:
+서버로부터의 소유권 정보를 기다리고 있습니다.
+
+다시 시도해 주세요.</notification>
+	<notification name="CannotDeedLandNoTransfer">토지를 양도할 수 없습니다:
+[지역]에서는 토지의 양도가 허용되지 않습니다.</notification>
+	<notification name="CannotReleaseLandWatingForServer">토지를 폐기할 수 없습니다:
+서버가 구획 정보를 업데이트하는 중입니다.
+
+조금 후에 다시 시도해주세요.</notification>
+	<notification name="CannotReleaseLandSelected">土地를 파기할 수 없습니다:
+당신은 선택한 구획의 모든 것을 소유하지 않습니다.
+
+구획을 1개 선택하세요.</notification>
+	<notification name="CannotReleaseLandDontOwn">토지를 파기할 수 없습니다:
+당신은 이 땅을 포기하는 것이 허용되지 않습니다.
+당신의 구역은 녹색으로 표시됩니다.</notification>
+	<notification name="CannotReleaseLandRegionNotFound">토지를 포기할 수 없습니다：
+이 토지가 있는 리전(지역)을 찾을 수 없습니다.</notification>
+	<notification name="CannotReleaseLandNoTransfer">土地를 폐기할 수 없습니다:
+[REGION]에서는 토지 양도가 허용되지 않습니다.</notification>
+	<notification name="CannotReleaseLandPartialSelection">토지를 포기할 수 없습니다:
+구획 전체를 선택하여 포기해야 합니다.
+
+구획 전체를 선택하거나, 혹은 먼저 구획을 분할하십시오.</notification>
+	<notification name="ReleaseLandWarning">당신은 [AREA] 제곱미터의 토지를 포기하려고 하고 있습니다.
+이 구획을 포기하면 당신의 토지가 아니게 되지만,
+L$는 환불되지 않습니다.
+
+토지를 포기하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="CannotDivideLandNothingSelected">토지를 분할할 수 없습니다：
+
+구획이 선택되지 않았습니다.</notification>
+	<notification name="CannotDivideLandPartialSelection">土地を分割できません：
+
+区画全体が選択されています。
+区画の一部を選択してください。
+
+위 텍스트를 번역하면 다음과 같습니다:
+
+땅을 분할할 수 없습니다:
+
+전체 구획이 선택되었습니다.
+구획의 일부를 선택하십시오.</notification>
+	<notification name="LandDivideWarning">이 땅을 분할하면 두 개의 구획으로 나뉩니다.
+구획별 설정이 가능해집니다. 이 작업을 수행하면 일부 설정이 기본값으로 재설정됩니다.
+
+토지 분할 작업을 계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="CannotDivideLandNoRegion">土地를 분할할 수 없습니다:
+이 토지가 있는 리전을 찾을 수 없습니다.</notification>
+	<notification name="CannotJoinLandNoRegion">토지를 통합할 수 없습니다:
+이 토지가 있는 리전(region)을 찾을 수 없습니다.</notification>
+	<notification name="CannotJoinLandNothingSelected">土地를 통합할 수 없습니다:
+구역이 선택되지 않았습니다.</notification>
+	<notification name="CannotJoinLandEntireParcelSelected">土地를 통합할 수 없습니다:
+구획이 1개만 선택되었습니다.
+
+두 구획 모두를 가로질러 토지를 선택하십시오.</notification>
+	<notification name="CannotJoinLandSelection">토지를 통합할 수 없습니다:
+구획을 하나 이상 선택해야 합니다.
+
+양쪽 구획을 가로질러 토지를 선택하세요.</notification>
+	<notification name="JoinLandWarning">이 토지를 통합하면, 선택된 직사각형과 교차하는 모든 구획을 기준으로 큰 구획이 하나 만들어집니다.
+새 구획의 이름과 옵션을 다시 설정해야 합니다.
+
+토지를 통합하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmNotecardSave">이 아이템을 복사, 표시하기 전에, 노트카드를 저장해야 합니다. 저장하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmItemCopy">이 항목을 귀하의 인벤토리에 복사하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="コピー" />
+	</notification>
+	<notification name="ResolutionSwitchFail">解像度を [RESX]x[RESY] に切り替えることができませんでした。
+
+해상도를 [RESX]x[RESY] 로 전환할 수 없었습니다.</notification>
+	<notification name="ErrorUndefinedGrasses">오류: 정의되지 않은 식물：[SPECIES]</notification>
+	<notification name="ErrorUndefinedTrees">에러: 정의되지 않은 나무: [SPECIES]</notification>
+	<notification name="CannotSaveWearableOutOfSpace">「 [NAME] 」을(를) 의류 파일에 저장할 수 없습니다.
+컴퓨터의 디스크 공간을 조금 늘린 후 다시 저장해 보세요.</notification>
+	<notification name="CannotSaveToAssetStore">「 [NAME] 」을(를) 저장할 수 없습니다.
+일반적으로 이것은 일시적인 오류입니다. 몇 분 후에 다시 착용물을 커스터마이즈하거나 저장해 주십시오.</notification>
+	<notification name="YouHaveBeenLoggedOut">맙소사, [CURRENT_GRID]에서 로그아웃되었습니다.
+            [MESSAGE]<usetemplate name="okcancelbuttons" notext="終了" yestext="IMとチャットを表示" />
+	</notification>
+	<notification name="OnlyOfficerCanBuyLand">グループ용의 토지 구매가 불가능합니다：
+당신은 활성 그룹을 위해 토지를 구매할 권한이 없습니다.</notification>
+	<notification label="フレンド登録 translates to 친구 등록 when translated to Korean." name="AddFriendWithMessage">프렌드 등록을 하면, 서로의 현재 위치를 지도에 표시하도록 허용하고, 온라인 상태를 표시하도록 설정할 수 있습니다.
+
+[이름]에게 프렌드십을 요청하시겠습니까?<form name="form">
+			<input name="message">친구 추가해 줄래요?</input>
+			<button name="Offer" text="OK" />
+			<button name="Cancel" text="キャンセル" />
+		</form>
+	</notification>
+	<notification label="자동 대체 목록 추가" name="AddAutoReplaceList">새 리스트 이름:<form name="form">
+			<button name="SetName" text="OK" />
+		</form>
+	</notification>
+	<notification label="자동 대체 목록 이름 변경" name="RenameAutoReplaceList">名前 '[DUPNAME]' は既に使われています
+一意の名前を入力してください:<form name="form">
+			<button name="ReplaceList" text="着用中のリストを入れ替える" />
+			<button name="SetName" text="新しい名前を使用" />
+		</form>
+	</notification>
+	<notification name="InvalidAutoReplaceEntry">키워드는 하나의 단어여야 하며, 대체는 비워둘 수 없습니다.</notification>
+	<notification name="InvalidAutoReplaceList">その置換リストは無効です。
+해당 교체 목록은 무효입니다.</notification>
+	<notification name="SpellingDictImportRequired">파일, 이름 및 언어를 지정해야 합니다.</notification>
+	<notification name="SpellingDictIsSecondary">사전 [DIC_NAME]에 "aff" 파일이 없는 것 같습니다. 이는 이 사전이 "세컨더리" 사전임을 의미합니다.
+이 사전은 추가 사전으로 사용할 수 있지만, 메인 사전으로는 사용할 수 없습니다.
+
+https://wiki.secondlife.com/wiki/Adding_Spelling_Dictionaries 을 참조하세요.</notification>
+	<notification name="SpellingDictImportFailed">[FROM_NAME] から
+
+[TO_NAME] へコピーできません
+
+'흑우촌' 뷰어를 사용하는 경우, 이 메시지가 표시될 수 있습니다, 문제를 해결하려면 설정을 확인하십시오.</notification>
+	<notification label="아웃핏 저장" name="SaveOutfitAs">着用 중인 아웃핏을 새로운 아웃핏으로 저장:<form name="form">
+			<input name="message">[DESC] （신）</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="キャンセル" />
+		</form>
+	</notification>
+	<notification label="착용 아이템 저장" name="SaveWearableAs">인벤토리에 아이템을 별명으로 저장:<form name="form">
+			<input name="message">[DESC] (신규)</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification label="아웃핏의 이름을 변경하기" name="RenameOutfit">새로운 아웃피트 이름:<form name="form">
+			<input name="new_name">[이름]</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification label="제스처 이름 변경" name="RenameGesture">새로운 제스처 이름:<form name="form">
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	
+	<notification label="랜드마크의 이름을 변경" name="RenameLandmark">[NAME] 의 이름을 선택해 주세요<form name="form">
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	
+	<notification name="RemoveFromFriends">フレンドリストから &lt;nolink&gt;[NAME]&lt;/nolink&gt; を 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="RemoveMultipleFromFriends">프렌드 리스트에서 여러 명의 프렌드를 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="GodDeleteAllScriptedPublicObjectsByUser">**[AVATAR_NAME]**
+모든 스크립트 오브젝트를 이 심 내의 다른 모든 토지에서 삭제하려고 하고 있습니다. 계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="GodDeleteAllScriptedObjectsByUser">**[AVATAR_NAME]**
+모든 스크립트 객체를 이 시뮬레이터 내의 모든 땅에서 삭제하려고 합니다. 작업을 계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="GodDeleteAllObjectsByUser">**[AVATAR_NAME]**
+모든 오브젝트(스크립트 오브젝트와 비스크립트 오브젝트)을 
+이 심 내의 모든 땅에서 삭제하려고 합니다. 계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="BlankClassifiedName">클래시파이드의 이름을 지정해 주세요.</notification>
+	<notification name="MinClassifiedPrice">광고료는 최소 L$ [MIN_PRICE] 필요합니다.
+
+금액을 늘려주세요.</notification>
+	<notification name="ConfirmItemDeleteHasLinks">1개 이상의 아이템에 포인트하는 링크가 있습니다. 이 아이템을 삭제하는 경우, 해당 링크는 영구적으로 작동하지 않게 됩니다. 먼저 링크를 삭제하는 것을 강력히 권장합니다.
+
+이 아이템들을 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ConfirmObjectDeleteLock">選択한 아이템 중 적어도 하나가 잠겨 있습니다.
+
+정말로 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ConfirmObjectDeleteNoCopy">선택한 아이템 중 적어도 하나를 복사할 수 없습니다.
+
+정말 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ConfirmObjectDeleteNoOwn">선택한 아이템 중 하나 이상을 소유하고 있지 않습니다.
+
+이 아이템들을 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ConfirmObjectDeleteLockNoCopy">적어도 하나의 오브젝트가 잠겨 있습니다.
+적어도 하나의 오브젝트를 복사할 수 없습니다.
+
+정말로 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ConfirmObjectDeleteLockNoOwn">1개 이상의 오브젝트가 잠겼습니다.
+1개 이상의 오브젝트를 소유하지 않습니다.
+
+이 아이템들을 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ConfirmObjectDeleteNoCopyNoOwn">以下의 텍스트를 SecondLife Viewer와 관련하여 한국어로 번역합니다.
+'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하세요:
+
+1つ以上のオブジェクトがコピーできません。
+1つ以上のオブジェクトを所有していません。
+
+これらのアイテムを削除しますか？
+
+---
+
+다음의 한국어 번역입니다.
+
+1개 이상의 객체를 복사할 수 없습니다.
+1개 이상의 객체를 소유하고 있지 않습니다.
+
+이 항목들을 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ConfirmObjectDeleteLockNoCopyNoOwn">1 개 이상의 오브젝트가 잠겨 있습니다. 
+1 개 이상의 오브젝트를 복사할 수 없습니다. 
+1 개 이상의 오브젝트를 소유하고 있지 않습니다. 
+
+이 아이템들을 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmObjectTakeLock">적어도 하나의 오브젝트가 잠겨 있습니다.
+
+정말로 이 상태로 계속 가져오시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ConfirmObjectTakeNoOwn">획득하려는 오브젝트에는 당신의 소유물이 아닌 오브젝트가 포함되어 있습니다.
+당신의 소유물이 아닌 오브젝트를 획득하면, 다음 소유자의 권한이 그 오브젝트에 적용됩니다.
+따라서, 미래에 수정이나 복사 능력이 제한될 수 있습니다.
+
+정말 이대로 획득을 계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ConfirmObjectTakeLockNoOwn">최소한 하나의 오브젝트가 잠겨 있습니다.
+획득하려는 오브젝트에는 당신의 소유물이 아닌 오브젝트가 포함되어 있습니다.
+당신의 소유물이 아닌 오브젝트를 획득하면, 다음 소유자의 권한이 그 오브젝트에 적용됩니다.
+따라서, 미래에 편집이나 복사 능력이 제한될 수 있습니다.
+이 선택 내용 그대로 진행하는 것은 가능하지만,
+
+정말로 이대로 획득을 계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="CantBuyLandAcrossMultipleRegions">선택된 리전을 여러 개 선택했기 때문에, 땅을 구매할 수 없습니다.
+
+선택한 면적을 줄여서 다시 시도해 보세요.</notification>
+	<notification name="DeedLandToGroup">이 구역의 양도에 관해서는,
+이 그룹이 충분한 토지 크레딧을 보유 및 유지해야 합니다.
+토지 구매 가격은 소유자에게 환불되지 않습니다. 양도된 구역이 판매되면, 판매 금액은 그룹 멤버들에게 균등하게 분배됩니다.
+
+이 [AREA] 평방 미터의 토지를, 그룹
+「 &lt;nolink&gt;[GROUP_NAME]&lt;/nolink&gt; 」에 양도하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="DeedLandToGroupWithContribution">이 구역이 양도되면, 그룹은 그 토지 이용료로서 충분한 잔고를 유지해야 합니다.
+양도에는 동시에 [NAME]에서 그룹으로의 토지 기여가 포함됩니다.
+토지 구매 가격은 소유자에게 환불되지 않습니다. 양도된 구역이 매각되면, 판매 가격은 그룹 구성원 간에 균등하게 분배됩니다.
+
+이 [AREA] m²의 토지를 「&lt;nolink&gt;[GROUP_NAME]&lt;/nolink&gt;」라는 그룹에 양도하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="DisplaySetToSafe">-safe 옵션을 지정했으므로, 표시 설정은 세이프 레벨로 설정되었습니다.</notification>
+	<notification name="DisplaySetToRecommendedGPUChange">그래픽 변경으로 인해 화면 설정이 권장 수준으로 설정되었습니다.
+'[LAST_GPU]'에서
+'[THIS_GPU]'까지</notification>
+	<notification name="DisplaySetToRecommendedFeatureChange">렌더링 서브시스템의 변경으로 인해, 화면 설정이 권장 수준으로 설정되었습니다.</notification>
+	<notification name="ErrorMessage">[오류_메시지]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="AvatarMovedDesired">목적지는 현재 사용할 수 없습니다.
+가까운 지역으로 이동했습니다.</notification>
+	<notification name="AvatarMovedLast">요청된 장소를 현재 이용할 수 없습니다.
+근처의 리전으로 이동했습니다.</notification>
+	<notification name="AvatarMovedHome">홈 로케이션은 현재 이용할 수 없습니다.
+가까운 지역으로 이동했습니다.
+다시 홈을 설정해야 할 수도 있습니다.</notification>
+	<notification name="ClothingLoading">현재 의류를 다운로드 중입니다.  
+계속해서 [APP_NAME]을(를) 정상적으로 사용할 수 있습니다. 다른 사람들에게는 당신이 올바르게 표시됩니다.<form name="form">
+			<ignore name="ignore" text="衣類がダウンロードされるまで時間がかかっているとき" />
+		</form>
+	</notification>
+	<notification name="AgentComplexityWithVisibility">당신의 [https://community.secondlife.com/t5/English-Knowledge-Base/Avatar-Rendering-Complexity/ta-p/2967838 아바타의 복잡도] 는 [AGENT_COMPLEXITY] 입니다.
+[OVERLIMIT_MSG]<usetemplate ignoretext="アバターの複雑度が高すぎる場合は警告する" name="notifyignore" />
+	</notification>
+
+	<notification name="AgentComplexity">당신의 [https://community.secondlife.com/t5/English-Knowledge-Base/Avatar-Rendering-Complexity/ta-p/2967838 아바타의 복잡도] 는 [AGENT_COMPLEXITY] 입니다.<usetemplate ignoretext="アバターの複雑さの変更について警告する" name="notifyignore" />
+	</notification>
+	<notification name="HUDComplexityWarning">[HUD_REASON]. 성능에 악영향을 미칠 수 있습니다.<usetemplate ignoretext="HUD が複雑すぎる場合はお知らせください" name="notifyignore" />
+	</notification>
+	<notification name="FirstRun">[APP_NAME]의 설치가 완료되었습니다.
+
+[CURRENT_GRID]을(를) 사용한 적이 없는 경우, 로그인하기 전에 계정을 생성하십시오.<usetemplate name="okcancelbuttons" notext="続行" yestext="アカウントを作成..." />
+	</notification>
+	<notification name="LoginPacketNeverReceived">접속이 잘 되지 않습니다. 사용 중인 인터넷 연결 또는 [CURRENT_GRID]의 문제로 보입니다.
+
+인터넷 연결을 확인한 후 몇 분 후에 다시 시도하거나, 도움말을 클릭하여 [SUPPORT_SITE]를 확인하시거나, 텔레포트를 클릭하여 홈으로 이동해 보세요.<url name="url">http://jp.secondlife.com/support/</url>
+		<form name="form">
+			<button name="OK" text="OK" />
+			<button name="Help" text="ヘルプ" />
+			<button name="Teleport" text="テレポート" />
+		</form>
+	</notification>
+	<notification name="LoginPacketNeverReceivedNoTP">접속이 잘 되지 않습니다. 사용 중인 인터넷 연결 또는 [CURRENT_GRID] 문제일 수 있습니다.
+
+인터넷 연결을 확인한 후 몇 분 후에 다시 접속하거나, 도움말을 클릭하여 [SUPPORT_SITE]를 참조하세요.<url name="url">http://secondlife.com/support/</url>
+		<form name="form">
+			<button name="OK" text="OK" />
+			<button name="Help" text="ヘルプ" />
+		</form>
+	</notification>
+
+	<notification name="LoginRemoveMultiGridUserData">削除하려는 로컬 데이터는 여러 그리드에서 공유됩니다. 정말로 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消しl" yestext="確認" />
+	</notification>
+	
+	<notification name="WelcomeChooseSex">곧 당신의 아바타가 표시됩니다.
+
+화살표 키를 사용하여 걸으세요.
+도움이 필요하거나 [CURRENT_GRID]에 대해 알고 싶을 때는
+F1 키를 누르세요.
+남성 또는 여성 아바타를 선택하세요.
+결정은 나중에 변경할 수 있습니다.<usetemplate name="okcancelbuttons" notext="女性" yestext="男性" />
+	</notification>
+	<notification name="CantTeleportToGrid">현재의 그리드([CURRENT_GRID])와 그리드([GRID])가 다르기 때문에 [SLURL]로 텔레포트할 수 없습니다. 뷰어를 닫고 다시 시도해 주십시오.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	
+	<notification name="GeneralCertificateErrorShort">サーバーに接続できませんでした。
+[REASON]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	
+	<notification name="GeneralCertificateError">서버에 연결할 수 없습니다.
+[REASON]
+
+주체 이름: [SUBJECT_NAME_STRING]
+발행자: [ISSUER_NAME_STRING]
+유효 시작일: [VALID_FROM]
+다음 갱신일: [VALID_TO]
+MD5 핑거프린트: [SHA1_DIGEST]
+SHA1 핑거프린트: [MD5_DIGEST]
+키 사용법: [KEYUSAGE]
+확장 키 사용법: [EXTENDEDKEYUSAGE]
+주체 키 식별자: [SUBJECTKEYIDENTIFIER]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="TrustCertificateError">이 서버의 인증 기관은 알 수 없습니다.
+
+인증 정보:
+주체 이름: [SUBJECT_NAME_STRING]
+발행자: [ISSUER_NAME_STRING]
+유효 시작일: [VALID_FROM]
+다음 갱신일: [VALID_TO]
+MD5 핑거프린트: [SHA1_DIGEST]
+SHA1 핑거프린트: [MD5_DIGEST]
+키 사용법: [KEYUSAGE]
+확장 키 사용법: [EXTENDEDKEYUSAGE]
+주체 키 식별자: [SUBJECTKEYIDENTIFIER]
+
+이 인증 기관을 신뢰하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="信用する" />
+	</notification>
+	<notification name="NotEnoughCurrency">[NAME] L$[PRICE] 잔액 부족으로 실행할 수 없습니다.</notification>
+	<notification name="GrantedModifyRights">[NAME] 는, 당신에게 오브젝트 편집 권한을 부여했습니다.</notification>
+	<notification name="RevokedModifyRights">[NAME] のオブジェクトを編集する権限は取り消されました.
+
+Your translation:
+[NAME]의 오브젝트를 편집할 권한이 취소되었습니다.
+
+NOTE:
+You mentioned to translate “Firestorm” to '흑우촌’, but the given text does not contain the word “Firestorm”.</notification>
+	<notification name="FlushMapVisibilityCaches">이 지역의 지도 캐시를 삭제합니다.
+디버그 목적으로만 편리한 작업입니다.
+(작성 중 5분이 경과하면 모든 사람의 지도가 다시 로그인 후 업데이트됩니다.)<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="BuyOneObjectOnly">한 번에 1개 이상의 오브젝트를 구매할 수 없습니다. 오브젝트를 1개만 선택하고 다시 시도해 주세요.</notification>
+	<notification name="OnlyCopyContentsOfSingleItem">한 번에 여러 아이템의 내용을 복사할 수 없습니다.
+오브젝트를 하나만 선택하고 다시 시도해 주세요.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="KickUsersFromRegion">이 지역에 있는 모든 거주자를 홈으로 텔레포트하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ChangeObjectBonusFactor">영역 내에서 빌드가 확립된 후에 오브젝트 보너스를 낮추면, 오브젝트가 반환되거나 삭제될 수 있습니다. 정말로 오브젝트 보너스를 변경하시겠습니까?<usetemplate ignoretext="オブジェクトボーナス係数の変更を確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="EstateObjectReturn">[USER_NAME] 가 소유하고 있는 오브젝트를 반환하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="InvalidTerrainBitDepth">지역 텍스처를 설정할 수 없었습니다:
+지형 텍스처[TEXTURE_NUM]는, 무효의 비트 깊이[TEXTURE_BIT_DEPTH]입니다.
+
+텍스처[TEXTURE_NUM]을 24비트[MAX_SIZE]x[MAX_SIZE] 이하의 이미지로 교환하고, '적용'을 다시 클릭하십시오.</notification>
+	<notification name="InvalidTerrainSize">지역 텍스처를 설정할 수 없었습니다:  
+지형 텍스처 '[TEXTURE_NUM]'는 [TEXTURE_SIZE_X]x[TEXTURE_SIZE_Y]로 너무 큽니다.
+
+'[TEXTURE_NUM]'을 24비트 [MAX_SIZE]x[MAX_SIZE] 또는 그 이하의 이미지로 교체하고 '적용' 버튼을 다시 클릭해주세요.</notification>
+	<notification name="RawUploadStarted">업로드를 시작했습니다. 연결 속도에 따라 최대 2분이 걸릴 수 있습니다.</notification>
+	<notification name="ConfirmBakeTerrain">현재 지형을 구축하고 있습니다.
+이 작업을 수행하면 현재의 지형이 상승·하강의 제한 범위의 중심이 되며, "복원" 도구의 기본값이 됩니다.
+계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmTextureHeights">사용하려는 융기 범위의 낮은 값이 높은 값보다 큽니다. 계속하시겠습니까?<usetemplate canceltext="聞かないでください" name="yesnocancelbuttons" notext="取り消し" yestext="Ok" />
+	</notification>
+	<notification name="MaxAllowedAgentOnRegion">허가된 사람은 [MAX_AGENTS] 명까지입니다.</notification>
+	<notification name="MaxBannedAgentsOnRegion">The translation of the provided text considering the context of the SecondLife Viewer and the specific translation request for 'Firestorm' to '흑우촌' is:
+
+```plaintext
+금지된 주민은 [MAX_BANNED] 명까지입니다.
+```</notification>
+	<notification name="MaxAgentOnRegionBatch">[NUM_ADDED] 개의 에이전트를 추가하려고 했으나 실패했습니다: [MAX_AGENTS] [LIST_TYPE] 제한을 [NUM_EXCESS] 개 초과했습니다.</notification>
+	<notification name="MaxAllowedGroupsOnRegion">허용된 그룹은 [MAX_GROUPS] 그룹까지입니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="構築する" />
+	</notification>
+	<notification name="MaxManagersOnRegion">부동산 매니저는 [MAX_MANAGER] 사람까지입니다.</notification>
+	<notification name="OwnerCanNotBeDenied">부동산 소유자를 부동산의 "금지된 주민" 목록에 추가할 수 없습니다.</notification>
+	<notification name="ProblemAddingEstateManagerBanned">추방된 주민을 흑우촌 관리자로 추가할 수 없습니다.</notification>
+	<notification name="ProblemBanningEstateManager">禁止 목록에 부동산 관리자 [AGENT]를 추가할 수 없습니다.</notification>
+	<notification name="GroupIsAlreadyInList">&lt;nolink&gt;[GROUP]&lt;/nolink&gt; 이미 허용된 그룹 목록에 추가되었습니다.</notification>
+	<notification name="AgentIsAlreadyInList">[AGENT] はすでにあなたの [LIST_TYPE] 목록에 추가되었습니다.</notification>
+	<notification name="AgentsAreAlreadyInList">[AGENT] はすでにあなたの [LIST_TYPE] リストに追加されています.
+
+The translation considering it is related to the SecondLife Viewer would be:
+
+[AGENT]은(는) 이미 당신의 [LIST_TYPE] 목록에 추가되었습니다.</notification>
+	<notification name="AgentWasAddedToList">[AGENT] 가 [ESTATE] 의 [LIST_TYPE] 목록에 추가되었습니다.</notification>
+	<notification name="AgentsWereAddedToList">[AGENT]가 [ESTATE]의 [LIST_TYPE] 리스트에 추가되었습니다.</notification>
+	<notification name="AgentWasRemovedFromList">[AGENT] 가 [ESTATE] 에서 [LIST_TYPE] 목록에서 삭제되었습니다.</notification>
+	<notification name="AgentsWereRemovedFromList">[AGENT] が [ESTATE] の [LIST_TYPE] 목록에서 제거되었습니다.</notification>
+	<notification name="CanNotChangeAppearanceUntilLoaded">의류 및 셰이프가 로드될 때까지 외형을 변경할 수 없습니다.</notification>
+	<notification name="ClassifiedMustBeAlphanumeric">클라시파이드 광고의 이름은 알파벳이나 숫자로 시작해야 합니다. 구두점으로 시작할 수 없습니다.</notification>
+	<notification name="CantSetBuyObject">오브젝트가 판매 대상이 아니므로, 오브젝트를 구매할 수 없습니다.
+판매 대상인 오브젝트를 지정하고 다시 시도해 주세요.</notification>
+	<notification name="FinishedRawDownload">未加工の地形ファイルをダウンロードしました：
+[DOWNLOAD_PATH]
+
+미가공 지형 파일을 다운로드했습니다:
+[DOWNLOAD_PATH]</notification>
+	<notification name="RequiredUpdate">로그인하려면 버전 [VERSION]이 필요합니다.
+https://secondlife.com/support/downloads/에서 다운로드하세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="PauseForUpdate">로그인하려면, [VERSION] 버전이 필요합니다.
+릴리즈 노트: [URL]
+
+[OK]를 클릭하여 다운로드 및 설치를 시작합니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="OptionalUpdateReady">버전 [VERSION] 다운로드가 완료되었으며, 설치할 준비가 되었습니다.
+릴리스 노트: [URL]
+
+[OK]를 클릭하여 설치를 시작하세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="PromptOptionalUpdate">버전 [VERSION]의 다운로드가 완료되어 설치 준비가 완료되었습니다.
+릴리스 노트: [URL]
+
+계속하시겠습니까?<usetemplate canceltext="あとで" name="yesnocancelbuttons" notext="スキップ" yestext="インストール" />
+	</notification>
+	<notification name="LoginFailedUnknown">죄송합니다만, 알 수 없는 이유로 로그인이 실패했습니다. 이 메시지가 여러 번 나타나는 경우, [SUPPORT_SITE]를 확인해 주세요.<usetemplate name="okbutton" yestext="終了" />
+	</notification>
+
+	<notification name="DeedObjectToGroup">이 오브젝트를 양도하면 그룹은 다음을 수행할 수 있습니다:
+* 오브젝트에 지급된 L$를 받습니다.<usetemplate ignoretext="オブジェクトをグループに譲渡する前の確認" name="okcancelignore" notext="取り消し" yestext="譲渡" />
+	</notification>
+	<notification name="WebLaunchExternalTarget">웹 브라우저를 열어 이 콘텐츠를 표시하시겠습니까?<usetemplate ignoretext="ブラウザを起動して Web ページを見るとき" name="okcancelignore" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="WebLaunchJoinNow">[http://jp.secondlife.com/account/ マイアカウント] 페이지로 이동하여 계정을 관리하시겠습니까?<usetemplate ignoretext="ブラウザを起動してアカウントを管理するとき" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="WebLaunchSecurityIssues">[CURRENT_GRID] Wiki에서, 보안 문제를 보고하는 방법을 확인하세요.<usetemplate ignoretext="ブラウザを起動してセキュリティ問題の報告の仕方を確認するとき" name="okcancelignore" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="WebLaunchQAWiki">[CURRENT_GRID] 품질보증 관련 Wiki를 참조하세요.<usetemplate ignoretext="ブラウザを起動して QA Wiki を見るとき" name="okcancelignore" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="WebLaunchPublicIssue">[CURRENT_GRID] 의 공개 문제 추적기에서,
+버그 및 기타 문제를 보고할 수 있습니다.<usetemplate ignoretext="ブラウザを起動してパブリック問題トラッカーを使用するとき" name="okcancelignore" notext="キャンセル" yestext="ページへ行く" />
+	</notification>
+	<notification name="WebLaunchSupportWiki">Linden 공식 블로그에서 최신 뉴스와 정보를 확인하세요.<usetemplate ignoretext="ブラウザを起動して公式ブログを見るとき" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="WebLaunchLSLGuide">스크립트 가이드를 여시겠습니까?<usetemplate ignoretext="ブラウザを起動してスクリプトガイドを見るとき" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="WebLaunchLSLWiki">LSL 포털에서 스크립트에 관한 정보를 확인하시겠습니까?<usetemplate ignoretext="ブラウザを起動して LSL ポータルを見るとき" name="okcancelignore" notext="取り消し" yestext="ページに移動" />
+	</notification>
+	<notification name="ReturnToOwner">선택한 오브젝트를, 소유자에게 반환하시겠습니까?
+「재판매 및 선물 가능」의 양도된 오브젝트는, 이전 소유자에게 반환됩니다.
+
+*경고* 「재판매 및 선물 불가」의 양도된 오브젝트는 삭제됩니다!<usetemplate ignoretext="オブジェクトを所有者に返却する前の確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="GroupLeaveConfirmMember">현재, 당신은 &lt;nolink&gt;[GROUP]&lt;/nolink&gt; 그룹의 멤버입니다.
+그룹에서 탈퇴하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+
+	<notification name="GroupLeaveConfirmMemberWithFee">현재 당신은 &lt;nolink&gt;[GROUP]&lt;/nolink&gt; 그룹의 멤버입니다. 다시 가입하려면 L$[AMOUNT] 비용이 들 것입니다.
+그룹에서 탈퇴하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="OwnerCannotLeaveGroup">그룹을 나갈 수 없습니다. 그룹의 마지막 오너이기 때문에 그룹을 나갈 수 없습니다. 먼저 다른 멤버를 오너 역할에 할당하세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="GroupDepartError">그룹을 나갈 수 없습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="ConfirmKick">정말로 모든 주민을 그리드에서 내보내시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="住人全員を追い出す" />
+	</notification>
+	<notification name="MuteLinden">린든을 차단할 수 없습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="CannotStartAuctionAlreadyForSale">이미 판매 중인 구역이므로 경매에 올릴 수 없습니다. 경매에 올리고 싶으시면 판매 설정을 해제한 후 진행하십시오.</notification>
+	<notification label="名前でのオブジェクトのブロックに失敗しました" name="MuteByNameFailed">이 이름은 이미 차단되었습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="RemoveItemWarn">콘텐츠를 삭제하면, 허가가 있어도 오브젝트에 손상을 줄 수 있습니다.
+삭제를 계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="CantOfferCallingCard">현재 호출 카드를 보낼 수 없습니다. 몇 분 후에 다시 시도해 주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="CantOfferFriendship">현재 친구 요청을 보낼 수 없습니다. 몇 분 후에 다시 시도해 주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="DoNotDisturbModeSet">사용 중 모드로 전환되었습니다. 채팅이나 인스턴트 메시지를 받아도 알림이 전송되지 않습니다.
+- 다른 주민에게는 사용 중임을 알리는 자동 응답이 전송됩니다. ("환경 설정" &gt; "개인정보"에서 설정한 내용)
+- 보이스 콜은 거부됩니다.
+
+<usetemplate ignoretext="ログイン状態を取り込み中モードに変更するとき" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="AutorespondModeSet">자동응답 모드가 되었습니다.
+인스턴트 메시지를 수신한 경우, 당신의 설정 내용에 따라 자동응답이 회신됩니다.<usetemplate ignoretext="自動応答モードにログイン状態を変更しました。" name="okignore" yestext="OK" />
+	</notification>
+
+    <notification name="AutorespondNonFriendsModeSet">친구가 아닌 사람에 대한 자동 응답 모드로 전환되었습니다.
+친구가 아닌 사람으로부터 인스턴트 메시지를 수신한 경우, 귀하의 설정 내용에 따라 자동 응답이 전송됩니다.<usetemplate ignoretext="フレンドでない人に対する自動応答モードにログイン状態を変更しました。" name="okignore" yestext="OK" />
+  </notification>
+	<notification name="RejectTeleportOffersModeSet">「텔레포트 오퍼 및 요청을 모두 거부하는」 모드가 설정되었습니다.
+누가 보낸 것이든지 간에 텔레포트 오퍼 및 요청은 모두 거부되며, 당신이 설정한 자동 응답 메시지가 전송됩니다. 이로 인해 오퍼나 요청이 있어도 알림이 표시되지 않습니다.<usetemplate ignoretext="「テレポートのオファーや依頼を全て拒否」モードに変更する" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="RejectTeleportOffersModeWarning">현재 "텔레포트 오퍼 및 요청 거부" 모드이므로 텔레포트를 요청할 수 없습니다.
+		변경하려면 "커뮤니케이션" 메뉴의 "로그인 상태"에서 수행하십시오.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="RejectFriendshipRequestsModeSet">모든 친구 요청을 거절하는 모드가 활성화되어 있습니다.
+누가 요청하더라도 친구 요청은 전부 거절되며, 설정한 자동 응답 메시지가 전송됩니다. 이로 인해 요청이 있어도 알림이 표시되지 않습니다.<usetemplate ignoretext="「フレンド申請をすべて拒否」モードにログイン状態を変更する" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="RejectAllGroupInvitesModeSet">「그룹 초대 거부」 모드가 활성화되었습니다.
+누가 보낸 것이든지, 그룹 초대는 자동으로 모두 거부됩니다. 따라서, 초대가 있어도 알림이 오지 않습니다.<usetemplate ignoretext="「グループ招待をすべて拒否」モードにログイン状態を変更する" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="JoinedTooManyGroupsMember">가입할 수 있는 그룹의 최대 한도에 도달했습니다. 이 그룹에 가입하려면 다른 그룹을 탈퇴하거나 이 초대를 거절하십시오.
+[NAME]님이 당신을 그룹 멤버로 초대하고 있습니다.<usetemplate name="okcancelbuttons" notext="辞退" yestext="参加" />
+	</notification>
+	<notification name="JoinedTooManyGroups">참여할 수 있는 그룹의 최대 한도에 도달했습니다. 새 그룹에 참여하거나 생성하기 전에 하나의 그룹에서 나가 주십시오.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="GroupLimitInfo">베이직 회원이 참여할 수 있는 그룹의 상한은 최대 [MAX_BASIC] 그룹입니다.
+프리미엄 회원은 [MAX_PREMIUM] 그룹까지 참여 가능합니다. [다음 페이지를 참고하여, 필요하다면 업그레이드하십시오. https://secondlife.com/premium/index.php?lang=ja-JP]<usetemplate name="okbutton" yestext="閉じる" />
+	</notification>
+	<notification name="GroupLimitInfoPlus">베이직 회원의 주민이 참여할 수 있는 그룹의 상한은 최대 [MAX_BASIC] 그룹입니다.
+프리미엄 회원은 [MAX_PREMIUM]까지, 프리미엄 플러스 회원의 경우 [MAX_PREMIUM_PLUS]까지 참여 가능합니다.[다음 페이지를 참고하여, 필요하다면 업그레이드 하세요. https://secondlife.com/premium/index.php?lang=ja-JP]<usetemplate name="okbutton" yestext="閉じる" />
+	</notification>
+	<notification name="KickUser">어떤 메시지를 첨부하여 이 주민을 추방하시겠습니까?<form name="form">
+			<input name="message">관리자에 의해 로그오프되었습니다.</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="KickAllUsers">그리드에 있는 모든 사람을 어떻게 쫓아낼지 메시지를 작성하시겠습니까?<form name="form">
+			<input name="message">당신은 관리자로부터 로그오프되었습니다.</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="FreezeUser">このメッセージを翻訳すると次のようになります：
+
+"어떤 메시지를 첨부하여 이 주민을 프리즈하시겠습니까?"<form name="form">
+			<input name="message">당신은 프리즈되었습니다. 움직이거나 채팅할 수 없습니다. 관리자가 IM으로 당신에게 연락할 것입니다.</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="UnFreezeUser">어떤 메시지를 첨부하여 이 주민의 프리즈를 해제하시겠습니까?<form name="form">
+			<input name="message">이제 더 이상 프리즈되지 않습니다.</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="SetDisplayNameSuccess">[DISPLAY_NAME] 님,
+
+현실 세계와 마찬가지로 Second Life에서도 새로운 이름이 알려지기까지 시간이 걸립니다. 오브젝트, 스크립트, 검색 등에서 이름이 업데이트되기까지 ([http://wiki.secondlife.com/wiki/Setting_your_display_name 이름이 업데이트되는 것]을) 며칠 걸릴 수 있으니 양해해 주시기 바랍니다.</notification>
+	<notification name="SetDisplayNameBlocked">죄송합니다만, 현재 표시 이름을 변경할 수 없습니다. 시스템 에러로 보이는 경우, 지원팀에 문의해 주세요.</notification>
+	<notification name="SetDisplayNameFailedLength">죄송합니다만, 그 이름은 너무 깁니다. 표시 이름은 최대 [LENGTH] 자까지 가능합니다.
+
+좀 더 짧은 이름을 시도해 주세요.</notification>
+	<notification name="SetDisplayNameFailedGeneric">죄송합니다만, 표시 이름을 설정하지 못했습니다. 나중에 다시 시도해 주세요.</notification>
+	<notification name="SetDisplayNameMismatch">입력한 표시 이름이 일치하지 않습니다. 다시 입력해 주세요.</notification>
+	<notification name="AgentDisplayNameUpdateThresholdExceeded">일정 기간 동안 표시 이름을 변경할 수 없습니다.
+
+http://wiki.secondlife.com/wiki/Setting_your_display_name 을 참고하세요.
+
+나중에 다시 시도해 주세요.</notification>
+	<notification name="AgentDisplayNameSetBlocked">죄송합니다. 요청하신 이름은 금칙어를 포함하고 있어 설정할 수 없었습니다.
+
+다른 이름을 시도해 보세요.</notification>
+	<notification name="AgentDisplayNameSetInvalidUnicode">설정하려는 표시 이름에 사용할 수 없는 문자가 포함되어 있습니다.</notification>
+	<notification name="AgentDisplayNameSetOnlyPunctuation">表示名には句読点以外の文字を含む必要があります。
+
+표시명에는 구두점 이외의 문자가 포함되어야 합니다.</notification>
+	<notification name="DisplayNameUpdate">[OLD_NAME] ([SLID]) は [NEW_NAME] に 변경되었습니다.</notification>
+	<notification name="DisplayNameUpdateRemoveAlias">[OLD_NAME] ([SLID]) は [NEW_NAME] に 변경되었습니다.
+		연락처 세트에 [NEW_NAME] に対する 별명이 등록되어있습니다만,
+		이 별명을 삭제하시겠습니까?<form name="form">
+			<button name="Yes" text="はい" />
+			<button name="No" text="いいえ" />
+		</form>
+	</notification>
+	<notification name="OfferTeleport">다음 메시지를 첨부하여 현재 위치로 텔레포트 요청을 보내시겠습니까?<form name="form">
+			<input name="message">[지역]에 오시겠어요?</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="TeleportRequestPrompt">다음 메시지를 첨부하여 [NAME]에게 텔레포트 요청을 보냅니다.<form name="form">
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="TooManyTeleportOffers">[OFFERS] 여러 번에 걸쳐 텔레포트를 보내려고 했지만, 
+그것은 제한 수 [LIMIT] 를 초과했습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="OfferTeleportFromGod">현재 위치로 주민을 소환하시겠습니까?<form name="form">
+			<input name="message">[REGION]에 오지 않겠습니까?</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="TeleportFromLandmark">このまま &lt;nolink&gt;[LOCATION]&lt;/nolink&gt; に 테레포트하시겠습니까？<usetemplate ignoretext="ランドマークにテレポートしたいかどうかの確認" name="okcancelignore" notext="キャンセル" yestext="テレポート" />
+	</notification>
+	<notification name="TeleportViaSLAPP">このまま &lt;nolink&gt;[LOCATION]&lt;/nolink&gt; に 테레포트 하시겠습니까?<usetemplate ignoretext="SLAPP でテレポートすることを確認" name="okcancelignore" notext="取り消し" yestext="テレポート" />
+	</notification>
+	<notification name="TeleportToPick">[PICK] 에 텔레포트 하시겠습니까?<usetemplate ignoretext="ピックの場所にテレポートしたいかどうかの確認" name="okcancelignore" notext="キャンセル" yestext="テレポート" />
+	</notification>
+	<notification name="TeleportToClassified">[기밀]로 텔레포트 하시겠습니까?<usetemplate ignoretext="クラシファイド広告の場所にテレポートしたいかどうかの確認" name="okcancelignore" notext="キャンセル" yestext="テレポート" />
+	</notification>
+	<notification name="TeleportToHistoryEntry">[HISTORY_ENTRY] にテレポートしますか？<usetemplate ignoretext="履歴の場所にテレポートしたいかどうかの確認" name="okcancelignore" notext="キャンセル" yestext="テレポート" />
+	</notification>
+	<notification label="あなたの不動産内の全員にメッセージを送信 -&gt; 당신의 부동산 내의 모든 사람에게 메시지를 전송" name="MessageEstate">지금 당신의 부동산에 있는 모든 사람에게 보낼 짧은 메시지를 입력하세요.<form name="form">
+			<input name="message" />
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification label="Linden의 부동산 변경" name="ChangeLindenEstate">린든이 소유하는 에스테이트(메인랜드, 틴그리드, 오리엔테이션 등)을 변경하려고 합니다.
+
+주민의 경험에 근본적으로 영향을 미치기 때문에, 이는 매우 위험한 행위입니다. 메인랜드에서는, 수천 개의 리전이 변경에 의해 영향을 받으며, 그 때문에 스페이스 서버에 부담을 줄 것입니다.
+
+그럼에도 계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification label="린든 부동산에 대한 접근 변경" name="ChangeLindenAccess">당신은 린든 소유의 부동산(메인랜드, 틴그리드, 오리엔테이션 등)에 대한 접근 목록을 변경하려고 하고 있습니다.
+
+이 행위는 "위험"할 수 있으며, 그리드에서 오브젝트나 돈의 전송을 초래하는 해킹을 일으킬 가능성이 있기 때문에, 이를 완전히 의도한 경우에만 수행해야 합니다.
+이로 인해 다수의 리전(지역)이 변경되며, 스페이스 서버에 악영향을 미칠 수 있습니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification label="부동산 선택" name="EstateAllowedAgentAdd">이 부동산 한정 허가 목록에 추가하시겠습니까? 아니면 [ALL_ESTATES] 허가 목록에 추가하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산 선택" name="EstateAllowedAgentRemove">이 부동산 한정 허가 목록에서 삭제하시겠습니까? 아니면 [ALL_ESTATES]에서 삭제하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산을 선택" name="EstateAllowedGroupAdd">이 부동산 전용 그룹 허가 목록에 추가하시겠습니까? 아니면 [ALL_ESTATES] 그룹 허가 목록에 추가하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산 선택" name="EstateAllowedGroupRemove">이 부동산 한정의 허가 목록에서 삭제하시겠습니까? 아니면, [ALL_ESTATES]에서 삭제하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산 선택" name="EstateBannedAgentAdd">이 부동산에 대해서만 접근을 거부하시겠습니까? 아니면 [ALL_ESTATE]에 대한 접근을 거부하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산을 선택" name="EstateBannedAgentRemove">この 주민을 이 부동산의 출입 금지 목록에서만 삭제하시겠습니까? 아니면 [ALL_ESTATES]의 출입 금지 목록에서 삭제하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산을 선택" name="EstateManagerAdd">이 부동산에 한정하거나 [ALL_ESTATES]의 부동산 매니저를 추가하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산 선택" name="EstateManagerRemove">이 부동산 관리자를 이 부동산에서만 또는 [ALL_ESTATES]에서 삭제하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산 선택" name="EstateAllowedExperienceAdd">이 부동산의 허가 목록에만 추가하시겠습니까, 아니면 [ALL_ESTATES]의 허가 목록에 추가하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산을 선택" name="EstateAllowedExperienceRemove">이 부동산의 허가 목록에서만 삭제하시겠습니까, 아니면 [ALL_ESTATES]의 허가 목록에서 삭제하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산을 선택" name="EstateBlockedExperienceAdd">이 부동산의 차단된 목록에만 추가하시겠습니까, 아니면 [ALL_ESTATES]의 차단된 목록에 추가하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산을 선택" name="EstateBlockedExperienceRemove">다음 부동산의 차단된 목록에서만 삭제하시겠습니까, 아니면 [ALL_ESTATES]의 차단된 목록에서 삭제하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산 선택" name="EstateTrustedExperienceAdd">이 부동산의 키 체험 목록에만 추가하시겠습니까, 아니면 [ALL_ESTATES]의 키 체험 목록에 추가하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="부동산을 선택" name="EstateTrustedExperienceRemove">이 부동산의 신뢰된 체험 목록에서만 제거하시겠습니까, 아니면 [ALL_ESTATES]의 신뢰된 목록에서 제거하시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="すべての不動産" yestext="この不動産" />
+	</notification>
+	<notification label="킥을 확인" name="EstateKickUser">이 부동산에서 [EVIL_USER]를 추방하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification label="킥을 확인" name="EstateKickMultiple">이 부동산에서 다음 거주자를 추방하시겠습니까?
+
+[거주자]<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification label="홈으로의 텔레포트를 확인" name="EstateTeleportHomeUser">[AVATAR_NAME]을(를) 홈으로 텔레포트하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification label="홈으로의 텔레포트를 확인" name="EstateTeleportHomeMultiple">다음 주민을 홈으로 텔레포트하시겠습니까?
+
+[주민들]<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification label="출입 금지를 확인" name="EstateBanUser">[EVIL_USER]의 출입을 이 부동산에 한정하여 금지하시겠습니까? 아니면 [ALL_ESTATES]에 적용하시겠습니까?<usetemplate name="yesnocancelbuttons" canceltext="取り消し" notext="全ての不動産" yestext="この不動産のみ" />
+	</notification>
+	<notification label="출입 금지를 확인하십시오" name="EstateBanUserMultiple">다음 주민의 출입을 이 부동산에 한정하여 금지하시겠습니까? 아니면 [모든 부동산]에 적용하시겠습니까?
+
+[주민]<usetemplate name="yesnocancelbuttons" canceltext="取り消し" notext="全ての不動産" yestext="この不動産のみ" />
+	</notification>
+	<notification name="EstateParcelAccessOverride">このオプションのチェックを外すことにより、土地のオーナーが嫌がらせの帽子、プライバシーの保護、或いは未成年者をアダルトなものから守るために設定した制約を解除する可能性があります。必要であれば土地のオーナーとよく相談して下さい。
+
+이 옵션의 체크를 해제함으로써, 토지 소유자가 괴롭힘 방지, 프라이버시 보호, 또는 미성년자를 성인 콘텐츠로부터 보호하기 위해 설정한 제한을 해제할 수 있습니다. 필요한 경우 토지 소유자와 잘 상의하세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="EstateParcelEnvironmentOverride">（다음 부동산 전 지역에 걸친 변경입니다：[ESTATENAME]）이 옵션의 선택을 해제하면, 토지 소유자가 자신의 구역에 대해 설정한 자연 환경 설정을 모두 삭제합니다. 필요하다면 사전에 토지 소유자와 협의하시기 바랍니다.
+이대로 처리를 진행해도 괜찮으시겠습니까?<usetemplate name="okcancelbuttons" notext="Cancel" yestext="OK" />
+	</notification>
+	<notification name="RegionEntryAccessBlocked">이제 방문하려는 지역에는 현재 설정된 레이팅을 초과하는 레이팅이 설정되어 있습니다. '아바타' &gt; '환경 설정' &gt; '일반'에서 이 설정을 변경하십시오.
+
+레이팅에 대한 자세한 정보는 [https://community.secondlife.com/knowledgebase/english/maturity-ratings-r52/ 여기]에서 찾을 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="EstateChangeCovenant">부동산 약관을 변경하려고 합니다. 계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="SLM_UPDATE_FOLDER">[메시지]</notification>
+	<notification name="RegionEntryAccessBlocked_AdultsOnlyContent">방문하려는 지역(리전)에는 성인만 접근할 수 있는 [REGIONMATURITY] 콘텐츠가 포함되어 있습니다.<url name="url">http://wiki.secondlife.com/wiki/Linden_Lab_Official:Maturity_ratings:_an_overview
+
+이 링크는 SecondLife 뷰어와 관련된 성숙도 등급에 대한 개요를 제공합니다. '흑우촌' 뷰어 사용자들은 이 페이지를 통해 각 등급의 차이점과 그에 따른 콘텐츠 접근 제한에 대해 이해할 수 있습니다.</url>
+		<usetemplate ignoretext="リージョン（地域）の横断：訪問しようとしている地域（リージョン）には、成人のみアクセスできるコンテンツが含まれています。" name="okcancelignore" notext="閉じる" yestext="ナレッジベースを開く" />
+	</notification>
+	<notification name="RegionEntryAccessBlocked_Notify">방문하려는 지역(리전)에는 [REGIONMATURITY] 콘텐츠가 포함되어 있지만, 현재 환경 설정은 [REGIONMATURITY] 콘텐츠를 제외하도록 설정되어 있습니다.</notification>
+	<notification name="RegionEntryAccessBlocked_NotifyAdultsOnly">방문하려고 하는 지역(리전)에는 성인만 접근할 수 있는 [REGIONMATURITY] 컨텐츠가 포함되어 있습니다.</notification>
+	<notification name="RegionEntryAccessBlocked_Change">방문하려고 하는 지역(리전)에는 [REGIONMATURITY] 콘텐츠가 포함되어 있으나, 현재의 환경 설정은 [REGIONMATURITY] 콘텐츠를 제외하도록 설정되어 있습니다. 환경 설정을 변경하거나 취소할 수 있습니다. 환경 설정을 변경한 후 다시 지역(리전)에 들어갈 수 있습니다.<form name="form">
+			<button name="OK" text="環境設定の変更" />
+			<button default="true" name="Cancel" text="取り消し" />
+			<ignore name="ignore" text="リージョン（地域）の横断：訪問しようとしている地域（リージョン）には現在の環境設定により除外されたコンテンツが含まれています。" />
+		</form>
+	</notification>
+	<notification name="RegionEntryAccessBlocked_PreferencesOutOfSync">당신의 환경 설정이 서버와 동기화되지 않아 텔레포트에 기술적인 문제가 발생하고 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="TeleportEntryAccessBlocked">방문하려고 하는 지역(리전)에는 현재 최대 설정되어 있는 등급을 초과하는 레이팅이 설정되어 있습니다. '아바타' &gt; '환경 설정' &gt; '일반'에서 이 설정을 변경하십시오.
+
+등급에 대한 자세한 정보는 [여기](https://community.secondlife.com/knowledgebase/english/maturity-ratings-r52/)에서 찾을 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="TeleportEntryAccessBlocked_AdultsOnlyContent">방문하려는 지역(리전)에는 성인만 접근할 수 있는 [REGIONMATURITY] 콘텐츠가 포함되어 있습니다.<url name="url">http://wiki.secondlife.com/wiki/Linden_Lab_Official:Maturity_ratings:_an_overview</url>
+		<usetemplate ignoretext="テレポート：訪問しようとしている地域（リージョン）には、成人のみアクセスできるコンテンツが含まれています。" name="okcancelignore" notext="閉じる" yestext="ナレッジベースを開く" />
+	</notification>
+	<notification name="TeleportEntryAccessBlocked_Notify">방문하려는 지역(리전)에는 [REGIONMATURITY] 컨텐츠가 포함되어 있지만, 현재 환경 설정은 [REGIONMATURITY] 컨텐츠를 제외하도록 설정되어 있습니다.</notification>
+	<notification name="TeleportEntryAccessBlocked_NotifyAdultsOnly">방문하려고 하는 지역(리전)에는 성인만 접근할 수 있는 [REGIONMATURITY] 콘텐츠가 포함되어 있습니다.</notification>
+	<notification name="TeleportEntryAccessBlocked_ChangeAndReTeleport">방문하려고 하는 지역(리전)에는 [REGIONMATURITY] 콘텐츠가 포함되어 있지만, 현재의 환경 설정은 [REGIONMATURITY] 콘텐츠를 제외하도록 설정되어 있습니다. 환경 설정을 변경하여 텔레포트를 계속하든가, 이 텔레포트를 취소할 수 있습니다.<form name="form">
+			<button name="OK" text="変更して続ける" />
+			<button name="Cancel" text="取り消し" />
+			<ignore name="ignore" text="テレポート（再起動可能）：訪問しようとしている地域（リージョン）には現在の環境設定により除外されたコンテンツが含まれています。" />
+		</form>
+	</notification>
+	<notification name="TeleportEntryAccessBlocked_Change">방문하려고 하는 지역(리전)에는 [REGIONMATURITY] 콘텐츠가 포함되어 있지만, 현재 환경 설정은 [REGIONMATURITY] 콘텐츠를 제외하도록 설정되어 있습니다. 환경 설정을 변경하거나, 텔레포트를 취소할 수 있습니다. 환경 설정을 변경한 후, 다시 한 번 텔레포트를 실행해야 합니다.<form name="form">
+			<button name="OK" text="環境設定の変更" />
+			<button name="Cancel" text="取り消し" />
+			<ignore name="ignore" text="テレポート（再起動不可）：訪問しようとしている地域（リージョン）には現在の環境設定により除外されたコンテンツが含まれています。" />
+		</form>
+	</notification>
+	<notification name="TeleportEntryAccessBlocked_PreferencesOutOfSync">당신의 환경 설정이 서버와 동기화되지 않아 텔레포트에 기술적 문제가 발생하고 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="RegionTPSpecialUsageBlocked">리전에서 로그인할 수 없습니다. '[REGION_NAME]'는 스킬 게이밍 리전이며, 이 리전에 들어가기 위해 특정 기준을 충족해야 합니다. 자세한 내용은 [http://wiki.secondlife.com/wiki/Linden_Lab_Official:Skill_Gaming_in_Second_Life 스킬 게이밍의 자주 묻는 질문]을 참조하십시오.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="PreferredMaturityChanged">앞으로 [RATING] 콘텐츠가 포함된 지역을 방문하려고 할 때 알림을 받지 않습니다. 나중에 메뉴 바의 '아바타' &gt; '환경 설정' &gt; '일반'을 사용하여 콘텐츠 환경 설정을 변경할 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="MaturityChangeError">현재 [PREFERRED_MATURITY] 콘텐츠를 표시하도록 환경 설정을 변경할 수 없었습니다. 귀하의 환경 설정이 [ACTUAL_MATURITY] 콘텐츠를 표시하도록 재설정되었습니다. 메뉴막대의 '아바타' &gt; '환경 설정' &gt; '일반'을 사용하여 다시 한 번 환경 설정을 변경할 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="LandClaimAccessBlocked">획득하려고 하는 토지는 현재의 환경 설정을 초과하는 등급 구분이 포함되어 있습니다. "아바타" &gt; "환경 설정" &gt; "일반"에서 이 설정을 변경할 수 있습니다.
+
+레이트 등급에 관한 더 자세한 정보는 [https://community.secondlife.com/knowledgebase/english/maturity-ratings-r52/ 여기]에서 찾을 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="LandClaimAccessBlocked_AdultsOnlyContent">이 땅을 구입할 수 있는 사람은 성인만입니다.<url name="url">http://wiki.secondlife.com/wiki/Linden_Lab_Official:Maturity_ratings:_an_overview
+
+제2의 인생 뷰어와 관련된 텍스트를 한국어로 번역했습니다.
+'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하였습니다.</url>
+		<usetemplate ignoretext="この土地を購入できるのは、成人だけです。" name="okcancelignore" notext="閉じる" yestext="ナレッジベースを開く" />
+	</notification>
+	<notification name="LandClaimAccessBlocked_Notify">획득하려는 땅에는 [REGIONMATURITY] 콘텐츠가 포함되어 있습니다만, 현재의 환경 설정은 [REGIONMATURITY] 콘텐츠를 제외하도록 설정되어 있습니다.</notification>
+	<notification name="LandClaimAccessBlocked_NotifyAdultsOnly">얻으려는 토지에는 성인만 접근할 수 있는 [REGIONMATURITY] 콘텐츠가 포함되어 있습니다.</notification>
+	<notification name="LandClaimAccessBlocked_Change">획득하려는 지역에는 [REGIONMATURITY] 컨텐츠가 포함되어 있지만, 현재 환경 설정은 [REGIONMATURITY] 컨텐츠를 제외하도록 설정되어 있습니다. 환경 설정을 변경하여 다시 한 번 지역 획득을 시도할 수 있습니다.<form name="form">
+			<button name="OK" text="環境設定の変更" />
+			<button name="Cancel" text="取り消し" />
+			<ignore name="ignore" text="取得しようとしている土地には現在の環境設定により除外されたコンテンツが含まれています。" />
+		</form>
+	</notification>
+	<notification name="LandBuyAccessBlocked">구매하려는 토지는 현재 환경 설정을 초과하는 등급 구분이 포함되어 있습니다. "미" &gt; "환경 설정" &gt; "일반"을 선택하여 환경 설정을 변경할 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="LandBuyAccessBlocked_AdultsOnlyContent">이 땅을 획득할 수 있는 사람은 성인만 가능합니다.<url name="url">http://wiki.secondlife.com/wiki/Linden_Lab_Official:Maturity_ratings:_an_overview
+
+린든 랩 공식: 성숙도 등급: 개요</url>
+		<usetemplate ignoretext="この土地を取得できるのは、成人だけです。" name="okcancelignore" notext="閉じる" yestext="ナレッジベースを開く" />
+	</notification>
+	<notification name="LandBuyAccessBlocked_Notify">구매하려는 토지에는 [REGIONMATURITY] 콘텐츠가 포함되어 있지만, 현재 설정은 [REGIONMATURITY] 콘텐츠를 제외하도록 설정되어 있습니다.</notification>
+	<notification name="LandBuyAccessBlocked_NotifyAdultsOnly">구매하려고 하는 토지는 성인만 접근할 수 있는 [REGIONMATURITY] 콘텐츠가 포함되어 있습니다.</notification>
+	<notification name="LandBuyAccessBlocked_Change">구매하려고 하는 토지에는 [REGIONMATURITY] 콘텐츠가 포함되어 있으나, 현재 환경 설정은 [REGIONMATURITY] 콘텐츠를 제외하도록 설정되어 있습니다. 환경 설정을 변경한 후 다시 토지 구매를 시도할 수 있습니다.<form name="form">
+			<button name="OK" text="環境設定の変更" />
+			<button name="Cancel" text="取り消し" />
+			<ignore name="ignore" text="購入しようとしている土地には現在の環境設定により除外されたコンテンツが含まれています。" />
+		</form>
+	</notification>
+	<notification name="TooManyPrimsSelected">선택한 프림이 너무 많습니다.  [MAX_PRIM_COUNT] 개 선택하거나, 프림 수를 줄여 다시 시도해 주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="TooManyScriptsSelected">스크립트 내에서 선택된 오브젝트가 너무 많습니다. 선택된 오브젝트의 수를 줄이고, 다시 시도해 주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="ProblemImportingEstateCovenant">不動産約款のインポート時に問題が発生しました。
+
+부동산 약관을 가져오는 중 문제가 발생했습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="ProblemAddingEstateManager">새로운 부동산 관리자 추가에 관한 문제:
+어느 부동산의 관리자 목록이 가득 찼습니다.</notification>
+	<notification name="ProblemAddingEstateBanManager">부동산 소유자 또는 관리자를 금지 목록에 추가할 수 없습니다.</notification>
+	<notification name="ProblemAddingEstateGeneric">不動産 목록 추가에 관한 문제:  
+어느 한쪽의 부동산 목록이 가득 찼습니다.</notification>
+	<notification name="UnableToLoadNotecardAsset">현재 노트카드의 애셋 ID를 불러올 수 없습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="NotAllowedToViewNotecard">요청한 에셋 ID에 관한 노트카드를 열람하기에는 권한이 불충분합니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="MissingNotecardAssetID">노트카드용 자산 ID가 데이터베이스에 등록되지 않았습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="PublishClassified">주의: 광고비는 환불되지 않습니다.
+
+이 광고를 L$ [AMOUNT]에 지금 공개하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="SetClassifiedMature">이 광고에 "Moderate" 콘텐츠가 포함되어 있습니까?<usetemplate canceltext="キャンセル" name="yesnocancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="SetGroupMature">이 그룹에 "Moderate" 콘텐츠가 포함되어 있습니까?<usetemplate canceltext="キャンセル" name="yesnocancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification label="再起動을 확인" name="ConfirmRestart">この 리전을 2분 후에 재시작하려고 합니다.
+계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification label="이 리전으로 메시지 보내기" name="MessageRegion">이 지역에 있는 모든 사람에게 보낼 짧은 메시지를 입력하세요.<form name="form">
+			<input name="message" />
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification label="지역의 레이팅 구분 지정 변경 완료" name="RegionMaturityChange">이 리전의 등급 구분이 변경되었습니다.
+이 변경이 지도에 반영되려면 몇 분이 걸릴 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification label="음성 버전 불일치" name="VoiceVersionMismatch">[APP_NAME]의 이 버전은 이 리전에서 음성 채팅과 호환되지 않습니다. 음성 채팅을 정상적으로 사용하려면 [APP_NAME]를 업데이트해야 합니다.</notification>
+	<notification label="객체를 구매할 수 없습니다" name="BuyObjectOneOwner">다수의 소유자로부터 동시에 오브젝트를 구매할 수 없습니다.
+단일 오브젝트를 선택하고 다시 시도하십시오.</notification>
+	<notification label="콘텐츠를 구매할 수 없습니다." name="BuyContentsOneOnly">한 번에 여러 개의 오브젝트 콘텐츠를 구매할 수 없습니다.
+선택할 오ブ젝트를 하나만 선택하고 다시 시도해 주세요.</notification>
+	<notification label="콘텐츠를 구매할 수 없습니다." name="BuyContentsOneOwner">여러 소유자로부터 동시에 오브젝트를 구입할 수 없습니다.  
+단일 오브젝트를 선택하고 다시 시도해 주세요.</notification>
+	<notification name="BuyOriginal">[OWNER]로부터 오리지널 객체를 L$ [PRICE]에 구매하시겠습니까?
+구매를 진행하면, 당신이 객체의 소유자가 됩니다.
+가능한 작업은
+수정: [MODIFYPERM], 복사: [COPYPERM],
+재판매 및 선물: [RESELLPERM] 입니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="BuyOriginalNoOwner">L$ [PRICE]으로 오리지널 오브젝트를 구매하시겠습니까?
+구매하면 당신이 오브젝트의 소유자가 됩니다.
+가능한 작업은,
+수정: [MODIFYPERM], 복사: [COPYPERM],
+재판매 및 선물: [RESELLPERM]입니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="BuyCopy">[OWNER]로부터 L$ [PRICE]에 복사본을 구매하시겠습니까?
+구매된 오브젝트는 귀하의 인벤토리에 복사됩니다.
+가능한 작업은 다음과 같습니다:
+수정: [MODIFYPERM], 복사: [COPYPERM],
+재판매 및 선물: [RESELLPERM]입니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="BuyCopyNoOwner">L$ [PRICE]에 복사본을 구매하시겠습니까?
+구매한 오브젝트는 당신의 인벤토리에 복사됩니다.
+가능한 작업은,
+수정: [MODIFYPERM], 복사: [COPYPERM],
+재판매・선물: [RESELLPERM]입니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="BuyContents">중身을 [OWNER]에게서 L$ [PRICE]에 구매하시겠습니까?   
+구매한 중身은 당신의 인벤토리에 복사됩니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="BuyContentsNoOwner">L＄ [PRICE] で 중身을 구매하시겠습니까?
+구매한 내용물은 당신의 인벤토리에 복사됩니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmPurchase">この 거래는以下のとおり行われます：
+[ACTION]
+
+구매를 계속하시겠습니까？<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmPurchasePassword">이 거래는 다음과 같이 수행됩니다:
+[ACTION]
+
+구매를 계속하시겠습니까?
+비밀번호를 다시 입력하고 "확인"을 클릭하세요.<form name="form">
+			<input name="message" />
+			<button name="ConfirmPurchase" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="SetPickLocation">메모：
+本ピック의 위치를 업데이트하였지만,
+다른 세부 사항은 원래 값 그대로 유지됩니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="MoveInventoryFromObject">「コピー不可」のインベントリアイテム을 선택했습니다.
+이 아이템들은 복사되지 않은 채로 당신의 인벤토리로 이동됩니다.
+
+아이템을 이동하시겠습니까?<usetemplate ignoretext="「コピー不可」のアイテムをオブジェクトから動かす前の警告" name="okcancelignore" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="MoveInventoryFromScriptedObject">「コピー不可」のインベントリアイテム을 선택했습니다.
+이 아이템들은 복사되지 않고, 당신의 인벤토리로 이동됩니다.
+이 오브젝트는 스크립트가 포함되어 있어서, 인벤토리로 이동시키면
+스크립트에 오작동이 발생할 가능성이 있습니다.
+
+인벤토리 아이템을 이동하시겠습니까?<usetemplate ignoretext="スクリプト入りのオブジェクトを壊す恐れのある「コピー不可」のアイテムを動かす前の警告" name="okcancelignore" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ClickActionNotPayable">경고: 클릭하여 '오브젝트에 지불' 설정을 했습니다. 스크립트에 money() 이벤트가 추가되면 동작합니다.<form name="form">
+			<ignore name="ignore" text="オブジェクトを作成中に、money() スクリプトを入れずに「オブジェクトに支払う」アクションを設定したとき" />
+		</form>
+	</notification>
+	<notification name="PayConfirmation">L$[AMOUNT]을 [TARGET]에게 지급하는 것을 확인해 주세요.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="支払い" />
+	</notification>
+	<notification name="PayObjectFailed">결제가 실패했습니다. 오브젝트를 찾을 수 없었습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="PaymentBlockedButtonMismatch">支불을 중지했습니다. 금액이 이 오브젝트에 설정되어 있는 어느 버튼과도 일치하지 않습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="OpenObjectCannotCopy">이 오브젝트에는 당신이 복사할 수 있는 아이템이 없습니다.</notification>
+	<notification name="WebLaunchAccountHistory">[http://jp.secondlife.com/account/ マイアカウント] 페이지로 이동하여 계정 내역을 확인하시겠습니까?<usetemplate ignoretext="ブラウザを起動してアカウント履歴を見るとき" name="okcancelignore" notext="取り消し" yestext="ページに移動" />
+	</notification>
+	<notification name="ConfirmAddingChatParticipants">기존의 대화에 사람을 추가하면 새 대화가 생성됩니다. 모든 참가자에게 새 대화에 대한 알림이 전송됩니다.<usetemplate ignoretext="チャットの参加者の追加を確認してください" name="okcancelignore" notext="取り消し" yestext="OＫ" />
+	</notification>
+	<notification name="ConfirmQuit">종료하려고 합니다. 계속 하시겠습니까?<usetemplate ignoretext="終了時の確認" name="okcancelignore" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification name="ConfirmRestoreToybox">이 작업을 수행하면 기본 설정의 버튼과 도구 모음이 복원됩니다.
+
+이 작업은 되돌릴 수 없습니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmClearAllToybox">이 작업을 수행하면 모든 버튼이 도구 상자로 돌아가고, 도구 모음이 비어 있게 됩니다.
+
+이 작업은 되돌릴 수 없습니다.<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="DeleteItems">[질문]<form name="form">
+			<ignore name="ignore" text="アイテムを削除する前に確認" />
+			<button name="Yes" text="OK" />
+			<button name="No" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="DeleteFilteredItems">현재 이벤트 목록에 필터가 적용되어 있어 삭제하려는 항목이 모두 표시되지 않고 있습니다.
+
+정말로 이러한 항목을 삭제하시겠습니까?<usetemplate ignoretext="フィルターされたアイテムを削除する前に確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmUnlink">선택한 오브젝트의 링크를 정말로 해제하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="リンク解除" />
+	</notification>
+	
+	<notification name="HelpReportAbuseConfirm">본 건에 대해 보고해 주셔서 감사합니다.
+권리 침해에 관한 귀하의 보고를 검토하여 적절한 조치를 취하도록 하겠습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="HelpReportAbuseSelectCategory">嫌がらせ 보고서의 카테고리를 선택하십시오.
+카테고리를 선택하면,嫌がらせ 보고서의 처리와 보관에 큰 도움이 됩니다.</notification>
+	<notification name="HelpReportAbuseAbuserNameEmpty">嫌がらせ行為をした人の名前を入力してください。
+정확한 정보의 입력에 따라, 괴롭힘 신고의 처리 및 보관에 크게 도움이 됩니다.</notification>
+	<notification name="HelpReportAbuseAbuserLocationEmpty">嫌がらせがあった場所を入力してください。  
+正確な情報の入力により、嫌がらせ報告の処理や保管に大変役立ちます。</notification>
+	<notification name="HelpReportAbuseSummaryEmpty">혐오 행위의 개요를 입력해주세요.
+정확한 개요 입력은 
+혐오 행위 보고 처리 및 보관에 큰 도움이 됩니다.</notification>
+	<notification name="HelpReportAbuseDetailsEmpty">嫌がらせの詳細な説明을 입력해 주세요.
+이름이나嫌가라세의 상세를 가능한 한 구체적으로 입력해 주세요.
+
+정확한 설명의 입력 덕분에,
+흑우촌 뷰어에 의한 피드백 보고서 처리과 저장에 매우 도움이 됩니다.</notification>
+	<notification name="HelpReportAbuseContainsCopyright">안녕하세요,
+
+지적 재산권 침해를 신고하려고 합니다. 정확하게 신고하기 위해, 아래 내용을 확인해 주세요:
+
+(1) 괴롭힘 신고 절차: 주로 [CURRENT_GRID]의 권한 시스템을 악용하는 주민을 발견한 경우, 괴롭힘 신고를 할 수 있습니다. 예를 들어, CopyBot이나 비슷한 복사 도구를 사용하여 지적 재산권을 침해하는 경우입니다. 담당 팀은 조사를 수행하며, [CURRENT_GRID] [http://secondlife.com/corporate/tos.php 이용 약관] 및 [http://jp.secondlife.com/corporate/cs.php 커뮤니티 표준]을 위반하는 행위에 적절한 처벌을 내릴 것입니다. 단, 담당 팀은 [CURRENT_GRID] 세계에서 콘텐츠를 삭제해 달라는 요청에는 응하지 않습니다.
+
+(2) DMCA 또는 콘텐츠 제거 절차: 콘텐츠를 [CURRENT_GRID]에서 삭제해 달라는 요청을 하려면, 당사의 [http://secondlife.com/corporate/dmca.php DMCA 정책]에 명시된 바와 같이 유효한 침해 통지를 제출해야 합니다.
+
+계속해서 괴롭힘 신고를 원하시면, 이 창을 닫고 신고를 보내주세요. "Copy Bot 및 권한의 악용" 카테고리를 선택하는 것이 적절할 수 있습니다.
+
+협조해 주셔서 감사합니다.
+
+Linden Lab</notification>
+	<notification name="FailedRequirementsCheck">[FLOATER]에서 중요한 구성 요소 [COMPONENTS]가 누락되었습니다.</notification>
+	<notification label="기존의 부속품을 교체" name="ReplaceAttachment">체의 이 부위에는 이미 오브젝트가 장착되어 있습니다.
+선택된 오브젝트로 교체하시겠습니까?<form name="form">
+			<ignore name="ignore" save_option="true" text="装着しているアイテムと選択したアイテムを入れ替えるとき" />
+			<button ignore="自動的に交換" name="Yes" text="OK" />
+			<button ignore="交換しない" name="No" text="キャンセル" />
+		</form>
+	</notification>
+	<notification name="TooManyWearables">[AMOUNT] 이상의 아이템을 포함하는 폴더를 착용할 수 없습니다. "상세 설정" &gt; "디버그 설정 보기" &gt; "WearFolderLimit"에서 이 제한을 변경할 수 있습니다.</notification>
+	<notification label="「'알림을 받지 않음' 모드&quot; 경고" name="DoNotDisturbModePay">「通知을 받지 않음」을 켭니다. 이 지불과 교환으로 제공되는 아이템을 받지 않게 됩니다.
+
+이 거래를 완료하기 위해, 「通知을 받지 않음」을 끄시겠습니까?<form name="form">
+			<ignore name="ignore" text="「通知を受けない」モード時に、人や物を支払う予定です。" />
+			<button ignore="「通知を受けない」モードを維持しない" name="Yes" text="OK" />
+			<button ignore="「通知を受けない」モードを維持する" name="No" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="ConfirmDeleteProtectedCategory">「 [FOLDERNAME] 」은(는) 시스템 폴더입니다. 시스템 폴더를 삭제하면 불안정해질 수 있습니다. 계속하시겠습니까?<usetemplate ignoretext="システムフォルダを削除する前の確認" name="okcancelignore" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="PurgeSelectedItems">[COUNT] 이 아이템이 완전히 삭제됩니다. 선택된 아이템을 휴지통에서 완전히 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmEmptyTrash">[COUNT] 개의 아이템과 폴더가 완전히 삭제됩니다. 휴지통의 항목을 모두 삭제하시겠습니까?<usetemplate ignoretext="インベントリのごみ箱フォルダを空にする前の確認" name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="TrashIsFull">휴지통이 가득 찼습니다. 이는 로그인 시 문제를 일으킵니다.<usetemplate name="okcancelbuttons" notext="後でゴミ箱を空にする" yestext="ゴミ箱を確認する" />
+	</notification>
+	<notification name="ConfirmClearBrowserCache">트래블, 웹, 검색의 이력을 모두 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="ConfirmClearCache">뷰어의 캐시를 지우시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmClearInventoryCache">인벤토리 캐시를 정말로 지우시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	
+	<notification name="ConfirmClearWebBrowserCache">웹 브라우저의 캐시를 정말로 지우시겠습니까? (재부팅이 필요합니다)<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmClearCookies">정말로 쿠키를 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="はい" />
+	</notification>
+	<notification name="ConfirmClearMediaUrlList">저장된 URL 목록을 삭제합니다. 괜찮으시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="はい" />
+	</notification>
+	<notification name="ConfirmEmptyLostAndFound">紛失物の中身をすべて削除しますか?<usetemplate ignoretext="紛失物フォルダを空にする前の確認" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	
+	<notification name="ConfirmReplaceLink">'[TYPE]' 타입의 신체 부위 링크를 적합하지 않은 타입의 아이템으로 교체하려고 합니다.  
+계속 진행하시겠습니까?<usetemplate ignoretext="リンクを置き換える前に確認" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="CopySLURL">다음 SLurl이 클립보드에 복사되었습니다:
+ [SLURL]
+
+웹 페이지에 링크하면 다른 사람들이 이 위치에 쉽게 액세스할 수 있습니다. 웹 브라우저의 주소 표시줄에 붙여넣어 시도해 보세요.<form name="form">
+			<ignore name="ignore" text="クリップボードに SLurl をコピーするとき" />
+		</form>
+	</notification>
+	<notification name="WLSavePresetAlert">저장된 사전 설정을 덮어쓰시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="WLNoEditDefault">기본 설정을 편집하거나 삭제할 수 없습니다.</notification>
+	<notification name="WLMissingSky">このデイサイクルのファイルは次の存在しない「空」ファイルを参照しています： [SKY]。</notification>
+	<notification name="WLRegionApplyFail">죄송합니다만, 설정을 리전(region)에 적용하지 못했습니다. 한 번 리전(region)을 나갔다가 다시 들어오면 문제가 해결될 수 있습니다. 문제 발생 원인: [FAIL_REASON]</notification>
+	<notification name="EnvCannotDeleteLastDayCycleKey">데이 사이클을 하늘에는 할 수 없어서, 이 데이 사이클의 마지막 키를 삭제할 수 없습니다. 마지막 키를 삭제하고 새로운 키를 생성하는 대신, 마지막 키를 변경해주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="DayCycleTooManyKeyframes">このデイサイクルにはこれ以上キーフレームを追加できません。[SCOPE] の範囲のデイサイクルに追加できるキーフレーム数は最高 [MAX] です。
+
+해당 데이사이클에는 더이상 키프레임을 추가할 수 없습니다. [SCOPE] 범위의 데이사이클에 추가할 수 있는 키프레임 수는 최대 [MAX]입니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="EnvUpdateRate">리전의 자연환경 설정은 [WAIT] 초마다만 갱신될 수 있습니다. 그 간격을 두고 다시 시도해 주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="PPSaveEffectAlert">포스트 프로세스 효과가 존재합니다. 덮어쓰시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="ChatterBoxSessionStartError">[RECIPIENT]님과 새로운 채팅을 시작할 수 없습니다.
+[REASON]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="ChatterBoxSessionEventError">[이벤트]
+[이유]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="ForceCloseChatterBoxSession">[NAME] とのチャット 세션을 닫습니다.
+[REASON]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="Cannot_Purchase_an_Attachment">오브젝트가 장착된 상태에서는 구입할 수 없습니다.</notification>
+	<notification label="서랍 허가 요청에 관하여" name="DebitPermissionDetails">이 요청을 허용하면 스크립트가 여러분의 계정에서 린덴 달러를 인출할 수 있게 됩니다. 이 허가를 취소하려면 오브젝트 소유자가 오브젝트를 삭제하거나 오브젝트의 스크립트를 리셋해야 합니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="AutoWearNewClothing">作成하는 의류를 자동으로 착용하시겠습니까?<usetemplate ignoretext="「容姿」を編集中に、作成する衣類を装着するとき" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="NotAgeVerified">방문하려고 하는 위치는 18세 이상의 주민으로 제한됩니다.<usetemplate ignoretext="年齢制限付きのエリアを訪問する年齢に達していません。" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="NotAgeVerified_Notify">로케이션은 18세 이상으로 제한되어 있습니다.</notification>
+	<notification name="Cannot enter parcel: no payment info on file">결제 정보가 등록되어 있지 않으면 이 지역을 방문할 수 없습니다. [CURRENT_GRID] 사이트에서 등록을 하시겠습니까?
+
+[_URL]<url name="url" option="0">https://secondlife.com/account/index.php?lang=ja</url>
+		<usetemplate ignoretext="支払情報が登録されていないとき" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="MissingString">文字列 [STRING_NAME] が strings.xml に含まれていません。
+
+문자열 [STRING_NAME] 이(가) strings.xml 에 포함되어 있지 않습니다.</notification>
+	
+	<notification name="EnableMediaFilter">미디어나 음악을 재생하는 것은 당신에 관한 정보를 세컨드라이프 바깥에 노출시키는 결과를 초래할 수 있습니다. 미디어 필터를 활성화함으로써, 어떤 사이트에 미디어 전송 요청을 할지를 선택할 수 있으며, 자신의 프라이버시를 보호하는 데 도움이 됩니다.
+
+미디어 필터를 활성화 하시겠습니까?
+(이 옵션은 "환경 설정" &gt; "사운드 &amp; 미디어" 탭에서 나중에 변경할 수 있습니다.)<form name="form">
+			<button name="Enable" text="有効" />
+			<button name="Disable" text="無効" />
+		</form>
+	</notification>
+	
+	<notification name="MediaAlert">この土地には次のメディアが設定されています。
+
+ドメイン: [MEDIADOMAIN]
+URL: [MEDIAURL]<form name="form">
+			<button name="Allow" text="許可" />
+			<button name="Deny" text="拒否" />
+		</form>
+	</notification>
+	
+	<notification name="MediaAlert2">あなたが選択したものを記憶させて、この配信元からのメディアを[LCONDITION]許可するようにしたいですか？
+
+		ドメイン: [MEDIADOMAIN]
+		URL: [MEDIAURL]
+
+<form name="form">
+			<button name="Do Now" text="今回のみ[ACTION]" />
+			<button name="RememberDomain" text="このドメインは[CONDITION]許可" />
+			<button name="RememberURL" text="このURLは[CONDITION]許可" />
+		</form>
+	</notification>
+	
+	<notification name="MediaAlertSingle">이 땅에는 다음 미디어가 설정되어 있습니다.
+
+도메인: [MEDIADOMAIN]
+URL: [MEDIAURL]<form name="form">
+			<button index="0" name="Allow" text="許可" />
+			<button index="1" name="Deny" text="拒否" />
+			<button index="2" name="BlacklistDomain" text="ブラックリスト" />
+			<button index="3" name="WhitelistDomain" text="ホワイトリスト" />
+		</form>
+	</notification>
+	
+	<notification name="AudioAlert">この土地には次の音楽が設定されています。
+
+도메인: [AUDIODOMAIN]
+URL: [AUDIOURL]<form name="form">
+			<button name="Allow" text="許可" />
+			<button name="Deny" text="拒否" />
+		</form>
+	</notification>
+	
+	<notification name="AudioAlert2">あなたが選択したものを記憶させて、この配信元からの音楽を[LCONDITION]許可するようにしたいですか？
+
+도메인: [AUDIODOMAIN]
+URL: [AUDIOURL]<form name="form">
+			<button name="Do Now" text="今回のみ[ACTION]" />
+			<button name="RememberDomain" text="このドメインは[CONDITION]許可" />
+			<button name="RememberURL" text="このURLは[CONDITION]許可" />
+		</form>
+	</notification>
+  
+	<notification name="AudioAlertSingle">선택한 항목을 기억하고 이 음원에서의 음악을 [LCONDITION]에 허용하시겠습니까?
+
+도메인: [AUDIODOMAIN]
+URL: [AUDIOURL]<form name="form">
+			<button index="0" name="Allow" text="許可" />
+			<button index="1" name="Deny" text="拒否" />
+			<button index="2" name="BlacklistDomain" text="ブラックリスト" />
+			<button index="3" name="WhitelistDomain" text="ホワイトリスト" />
+		</form>
+	</notification>
+	<notification name="SystemMessageTip">다음 텍스트를 한국어로 번역해주세요. 참고로, 텍스트는 SecondLife Viewer와 관련이 있습니다: 만약 'Firestorm'이라는 단어가 나타나면, '흑우촌'으로 번역하세요:
+
+[메시지]</notification>
+	<notification name="ChatSystemMessageTip">[메시지]</notification>
+	<notification name="IMSystemMessageTip">[메시지]
+
+</notification>
+	<notification name="Cancelled">취소되었습니다.</notification>
+	<notification name="CancelledAttach">첨부가 취소되었습니다.</notification>
+	<notification name="ReplacedMissingWearable">결여된 의류나 신체 부위를 기본값으로 교체합니다.</notification>
+	<notification name="GroupNotice">[SENDER]、[GROUP]
+件名： [SUBJECT]、메시지: [MESSAGE]</notification>
+	<notification name="FriendOnlineOffline">[NAME]는 [STATUS]입니다.</notification>
+	<notification name="AddSelfFriend">Unfortunately, you cannot add yourself as a friend. Unfortunately, you cannot register yourself as a friend.</notification>
+	<notification name="UploadingAuctionSnapshot">인월드와 웹 사이트의 스냅샷을 업로드 중입니다...
+(소요 시간: 약 5분)</notification>
+	<notification name="UploadPayment">업로드에 L$ [AMOUNT]를 지불했습니다.</notification>
+	<notification name="UploadWebSnapshotDone">웹 사이트의 스냅샷이 업로드되었습니다.</notification>
+	<notification name="UploadSnapshotDone">인월드에서의 스냅샷 업로드가 완료되었습니다.</notification>
+	<notification name="TerrainDownloaded">원시 지형이 다운로드되었습니다</notification>
+	<notification name="GestureMissing">제스처 [NAME] 가 데이터베이스에서 찾을 수 없습니다.</notification>
+	<notification name="UnableToLoadGesture">[NAME] 이라는 제스처를 불러올 수 없었습니다.</notification>
+	<notification name="LandmarkMissing">データベース에 랜드마크가 없습니다.</notification>
+	<notification name="UnableToLoadLandmark">랜드마크를 불러올 수 없습니다. 다시 시도해 주세요.</notification>
+	<notification name="CapsKeyOn">CapsLock 키가 활성화되어 있습니다.
+비밀번호에 영향을 줄 수 있습니다.</notification>
+	<notification name="NotecardMissing">노트카드가 데이터베이스에 없습니다.</notification>
+	<notification name="NotecardNoPermissions">이 노트 카드를 볼 수 있는 권한이 없습니다.</notification>
+	<notification name="RezItemNoPermissions">오브젝트를 Rez하기 위한 권한이 부족합니다.</notification>
+	<notification name="IMAcrossParentEstates">에스테이트 간에는 IM을 보낼 수 없습니다.</notification>
+	<notification name="TransferInventoryAcrossParentEstates">親エステート間でインベントリを移動することはできません.</notification>
+	<notification name="UnableToLoadNotecard">노트 카드를 읽을 수 없습니다. 나중에 다시 시도해 주십시오.</notification>
+	<notification name="ScriptMissing">데이터베이스에 스크립트가 없습니다.</notification>
+	<notification name="ScriptNoPermissions">스크립트를 열람하기 위한 권한이 부족합니다.</notification>
+	<notification name="UnableToLoadScript">スクリプトをロードできません。もう一度試してください。  
+스크립트를 로드할 수 없습니다. 다시 시도해 주세요.</notification>
+	<notification name="IncompleteInventory">공유하려는 콘텐츠의 일부가 아직 전송할 수 있는 상태가 아닙니다. 잠시 후 다시 시도해 주세요.</notification>
+	<notification name="IncompleteInventoryItem">접근하려고 하는 아이템은 로컬에서 아직 전부 준비되지 않았습니다. 잠시 후 다시 시도해 주세요.</notification>
+	<notification name="CannotModifyProtectedCategories">보호된 카테고리는 수정할 수 없습니다.</notification>
+	<notification name="CannotRemoveProtectedCategories">보호된 카테고리는 삭제할 수 없습니다.</notification>
+	<notification name="OfferedCard">[NAME]에게 코링 카드(calling card)를 선물했습니다.</notification>
+	<notification name="UnableToBuyWhileDownloading">오브젝트 데이터를 다운로드하는 중에는 구매할 수 없습니다.
+다시 시도해 주세요.</notification>
+	<notification name="UnableToLinkWhileDownloading">오브젝트 데이터를 다운로드 중에는 링크할 수 없습니다.
+다시 시도해 주세요.</notification>
+	<notification name="CannotBuyObjectsFromDifferentOwners">오브젝트는 한 번에 한 명의 소유자로부터만 구매할 수 있습니다.
+오브젝트를 하나만 선택하세요.</notification>
+	<notification name="ObjectNotForSale">이 오브젝트는 판매 대상이 아닙니다.</notification>
+	<notification name="EnteringGodMode">레벨 [LEVEL] 의 고드모드에 들어갑니다.</notification>
+	<notification name="LeavingGodMode">레벨 [LEVEL]의 고드 모드를 해제합니다</notification>
+	<notification name="CopyFailed">これをコピーする権限がありません。
+
+이를 복사할 권한이 없습니다.</notification>
+	<notification name="InventoryAccepted">[NAME] 님이 당신이 전달한 아이템을 받았습니다.</notification>
+	<notification name="InventoryDeclined">[NAME] 은(는) 인벤토리 제공을 거부했습니다.</notification>
+	<notification name="ObjectMessage">[이름]：[메시지]
+
+(Note: I left the bracketing terms in English as they usually represent placeholders in software applications and are typically not translated. Let me know if you need further assistance.)</notification>
+	<notification name="CallingCardAccepted">콜링 카드가 수락되었습니다.</notification>
+	<notification name="CallingCardDeclined">콜링 카드가 거부되었습니다.</notification>
+	<notification name="TeleportToLandmark">[NAME] 등의 장소로 텔레포트하려면, "장소" 버튼을 클릭한 다음 표시된 창에서 "랜드마크" 탭을 선택합니다. 랜드마크 중 하나를 선택한 후, 창 하단에 있는 "텔레포트"를 클릭합니다. (이 작업은 랜드마크를 더블 클릭하거나, 우클릭하여 "텔레포트"를 선택함으로써 실행할 수도 있습니다.)</notification>
+	<notification name="TeleportToPerson">누군가와의 개인적인 대화를 열려면, 상대의 아바타를 클릭하고 메뉴에서 "IM"을 선택하십시오.</notification>
+	<notification name="CantSelectLandFromMultipleRegions">サーバーの境界を越えて土地を選択することできません。
+もっと小さな土地を選択してください。
+
+서버의 경계를 넘어 토지를 선택할 수 없습니다.
+더 작은 토지를 선택하십시오.</notification>
+	<notification name="SearchWordBanned">커뮤니티 규정에 명시된 콘텐츠 제한으로 인해 일부 검색어가 제외되었습니다.</notification>
+	<notification name="NoContentToSearch">적어도 하나의 콘텐츠 종류를 선택하여 검색을 수행してください. (General, Moderate, Adult)</notification>
+	<notification name="SystemMessage">[메시지]</notification>
+	<notification name="FacebookConnect">[메시지]</notification>
+	<notification name="FlickrConnect">[메시지]</notification>
+	<notification name="TwitterConnect">[메시지]</notification>
+	<notification name="PaymentReceived">[MESSAGE]</notification>
+	<notification name="PaymentSent">[메시지]</notification>
+	<notification name="PaymentFailure">[MESSAGE]</notification>
+	<notification name="EventNotification">이벤트 알림：
+
+[NAME]
+[DATE]<form name="form">
+			<button name="Details" text="詳細" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="TransferObjectsHighlighted">이 구획의 구매자에게 전달되는 오브젝트는 모두 구획 상에서 강조 표시되어 있습니다.
+
+*전달되는 나무나 식물은 강조 표시되지 않습니다.<form name="form">
+			<button name="Done" text="完了" />
+		</form>
+	</notification>
+	<notification name="DeactivatedGesturesTrigger">동일한 트리거로 활성화되지 않는 제스처:
+[이름들]</notification>
+	<notification name="NoQuickTime">Apple의 QuickTime 소프트웨어가 사용자의 시스템에 설치되지 않은 것 같습니다.
+스트리밍 미디어를 지원하는 구역에서 보고 싶다면, [http://www.apple.com/jp/quicktime QuickTime 사이트]에서 QuickTime 플레이어를 설치하세요.</notification>
+	<notification name="NoPlugin">「 [MIME_TYPE] 」의 MIME 타입을 다룰 미디어 플러그인을 찾을 수 없었습니다. 이 타입의 미디어는 사용할 수 없습니다.</notification>
+	<notification name="MediaPluginFailed">다음 미디어 플러그인이 실행되지 않았습니다:
+    [PLUGIN]
+
+플러그인을 다시 설치하거나 문제가 해결되지 않는 경우 제조업체에 문의하십시오.<form name="form">
+			<ignore name="ignore" text="メディアプラグインの実行に失敗したとき" />
+		</form>
+	</notification>
+	<notification name="OwnedObjectsReturned">선택한 토지의 구획 위에 있던 당신의 오브젝트는 모두 당신의 인벤토리로 반환되었습니다.</notification>
+	<notification name="OtherObjectsReturned">[NAME]가 소유하는, 선택한 구역에 있는 오브젝트는 소유자의 인벤토리로 반환되었습니다.</notification>
+	<notification name="OtherObjectsReturned2">「 [NAME] 」라는 이름의 주민이 소유한, 선택한 구획상의 오브젝트는 본인에게 반환되었습니다.</notification>
+	<notification name="GroupObjectsReturned">선택한 구획상의, &lt;nolink&gt;[GROUPNAME]&lt;/nolink&gt;라는 그룹과 공유하고 있던 오브젝트는, 각각의 소유자의 인벤토리로 반환되었습니다.
+양도된 "재판매 가능/선물 가능" 오브젝트는 이전 소유자에게 반환되었습니다.
+그룹에 양도된 "재판매 불가/선물 불가" 오브젝트는 삭제되었습니다.</notification>
+	<notification name="UnOwnedObjectsReturned">선택한 토지 구획 상의, 당신의 소유물이 "아니었던" 객체는 원래 소유자에게 반환되었습니다.</notification>
+	<notification name="ServerObjectMessage">[NAME] からのメッセージ：
+&lt;nolink&gt;[MSG]&lt;/nolink&gt;</notification>
+	<notification name="NotSafe">이 땅에서는 데미지가 활성화되어 있습니다.
+부상을 입을 수 있습니다. 만약 사망하면 "홈"으로 텔레포트됩니다.</notification>
+	<notification name="NoFly">이 지역에서는 비행이 금지되어 있습니다.
+여기서는 날 수 없습니다.</notification>
+	<notification name="PushRestricted">이 지역에서는 푸시가 금지되어 있습니다. 토지 소유자가 아닌 사람은 다른 사람을 푸시할 수 없습니다.</notification>
+	<notification name="NoVoice">이 영역에서는 음성 채팅을 사용할 수 없습니다. 누군가가 말하고 있는 것을 들을 수 없습니다.</notification>
+	<notification name="NoBuild">このエリアでは制作が禁止されています。 オブジェクトを制作したり Rez することはできません。
+이 영역에서는 창작이 금지되어 있습니다. 오브젝트를 창작하거나 Rez 하는 것은 불가능합니다.</notification>
+	<notification name="PathfindingDirty">이 지역에는 보류 중인 패스파인딩 변경 사항이 있습니다. 제작 권한이 있는 경우 "지역 재구성" 버튼을 클릭하여 지역을 재구성할 수 있습니다.</notification>
+	<notification name="PathfindingDirtyRebake">이 지역(리전)에는 보류 중인 패스파인딩 변경 사항이 있습니다. 제작 권한이 있는 경우, "지역의 재구성" 버튼을 클릭하여 지역(리전)을 재구성할 수 있습니다.<usetemplate name="okbutton" yestext="地域の再構築" />
+	</notification>
+	<notification name="DynamicPathfindingDisabled">이 지역(리전)에서는 다이내믹 패스파인딩이 활성화되어 있지 않습니다. 패스파인딩 LSL 호출을 사용하는 스크립트화된 오브젝트는 이 지역(리전)에서 동작할 수 없습니다.</notification>
+	<notification name="PathfindingRebakeNavmesh">이 지역(리전)의 오브젝트를 변경하면, 다른 이동 오브젝트가 정확히 작동하지 않을 수 있습니다. 이동 오브젝트를 정확히 작동시키려면, "지역의 재구축" 버튼을 클릭하십시오. 자세한 정보를 보려면 "도움말"을 선택하십시오.<url name="url">http://wiki.secondlife.com/wiki/Pathfinding_Tools_in_the_Second_Life_Viewer
+
+세컨드 라이프 뷰어의 경로 찾기 도구</url>
+		<usetemplate helptext="ヘルプ" ignoretext="この地域（リージョン）のオブジェクトを変更すると、他の移動オブジェクトが正しく動作しなくなる恐れがあります。" name="okhelpignore" yestext="OK" />
+	</notification>
+	<notification name="PathfindingCannotRebakeNavmesh">오류가 발생했습니다. 네트워크 또는 서버에 문제가 있거나 제작 권한이 없을 가능성이 있습니다. 이 문제는 한 번 로그아웃한 후 다시 로그인하면 해결될 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="SeeAvatars">この区画にいるアバターやこの区画内で行われる文字チャットは、他の区画から見えません。あなたには、この区画外にいる住人が見えず、外の住人にはあなたの姿が見えません。チャンネル 0 での通常の文字チャットもブロックされます。</notification>
+	<notification name="ScriptsStopped">관리자가 이 리전의 스크립트를 일시 중지했습니다.</notification>
+	<notification name="ScriptsNotRunning">이 지역에서는 스크립트 사용이 금지되어 있습니다.</notification>
+	<notification name="NoOutsideScripts">다음 텍스트를 SecondLife viewer와 관련하여 한국어로 번역하십시오.
+'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:
+
+この土地では、外部のスクリプトが禁止されています。
+
+土地所有者のもの以外はスクリプトが実行されません。
+
+해당 토지에서는 외부 스크립트가 금지되어 있습니다.
+
+토지 소유자의 것이 아닌 경우 스크립트가 실행되지 않습니다.</notification>
+	<notification name="ClaimPublicLand">그 리전 안에 있지 않으면 공공의 땅을 취득할 수 없습니다.</notification>
+	<notification name="RegionTPAccessBlocked">현재 방문하려고 하는 지역에는 최대 설정된 등급을 초과하는 등급이 설정되어 있습니다. 이 설정을 변경하려면 「아바타」＞「환경 설정」＞「일반」으로 이동하십시오.
+등급에 관한 자세한 정보는 [https://community.secondlife.com/knowledgebase/english/maturity-ratings-r52/ 여기]에서 찾을 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="RegionAboutToShutdown">당신이 들어가려는 지역은 곧 셧다운될 예정입니다.</notification>
+	<notification name="URBannedFromRegion">당신은 해당 리전 접근이 금지되어 있습니다.</notification>
+	<notification name="NoTeenGridAccess">あなたのアカウントではティーングリッドに接続できません。
+
+당신의 계정으로는 틴 그리드에 접속할 수 없습니다.</notification>
+	<notification name="ImproperPaymentStatus">이 리전에 들어가기에 적합한 지불 상태가 없습니다.</notification>
+	<notification name="MustGetAgeRegion">이 지역(리전)에 들어가려면 18세 이상이어야 합니다.</notification>
+	<notification name="MustGetAgeParcel">이 구역에 들어가려면 18세 이상이어야 합니다.</notification>
+	<notification name="NoDestRegion">목적지 리전이 발견되지 않았습니다.</notification>
+	<notification name="NotAllowedInDest">목적지에 들어갈 수 있는 권한이 없습니다.</notification>
+	<notification name="RegionParcelBan">출입 금지된 구역을 횡단할 수 없습니다. 다른 방법을 시도해 보세요.</notification>
+	<notification name="TelehubRedirect">텔레허브로 전송되었습니다.</notification>
+	<notification name="CouldntTPCloser">더 이상 목적지에 가까운 곳으로 텔레포트할 수 없습니다.</notification>
+	<notification name="TPCancelled">텔레포트가 취소되었습니다.</notification>
+	<notification name="FullRegionTryAgain">진입하려는 리전은 현재 만원입니다.
+잠시 후 다시 시도해 주십시오.</notification>
+	<notification name="GeneralFailure">일반적인 실수</notification>
+	<notification name="RoutedWrongRegion">다른 리전으로 우회되었습니다. 다시 시도해 주세요.</notification>
+	<notification name="NoValidAgentID">에이전트 ID가 무효입니다.</notification>
+	<notification name="NoValidSession">세션 ID가 무효입니다.</notification>
+	<notification name="NoValidCircuit">회로 코드가 무효입니다.</notification>
+	<notification name="NoPendingConnection">접속을 생성할 수 없습니다.</notification>
+	<notification name="InternalUsherError">내부 오류가 발생했습니다.</notification>
+	<notification name="NoGoodTPDestination">이 리전에서는 적절한 텔레포트 목적지를 찾을 수 없습니다.</notification>
+	<notification name="InternalErrorRegionResolver">内部エラー가 발생했습니다.</notification>
+	<notification name="NoValidLanding">유효한 착륙 지점을 찾을 수 없습니다.</notification>
+	<notification name="NoValidParcel">유효한 구역을 찾을 수 없었습니다.</notification>
+	<notification name="ObjectGiveItem">[NAME_SLURL] が所有する &lt;nolink&gt;[OBJECTFROMNAME]&lt;/nolink&gt; という名前の 오ブジェクトが、あなたに [OBJECTTYPE] 를渡しました：
+&lt;nolink&gt;[ITEM_SLURL]&lt;/nolink&gt;<form name="form">
+			<button name="Keep" text="受け取る" />
+			<button name="Discard" text="破棄" />
+			<button name="Mute" text="所有者をブロック" />
+		</form>
+	</notification>
+	<notification name="OwnObjectGiveItem">&lt;nolink&gt;[OBJECTFROMNAME]&lt;/nolink&gt; 라는 이름의 객체가 당신에게 [OBJECTTYPE] 를 전달했습니다:
+&lt;nolink&gt;[ITEM_SLURL]&lt;/nolink&gt;<form name="form">
+			<button name="Keep" text="キープ" />
+			<button name="Discard" text="処分する" />
+		</form>
+	</notification>
+	<notification name="UserGiveItem">[NAME_SLURL] 님이 당신에게 [OBJECTTYPE] 를 건네주었습니다:
+[ITEM_SLURL]<form name="form">
+			<button name="Show" text="表示" />
+			<button name="Keep" text="キープ" />
+			<button name="Discard" text="破棄" />
+			<button name="Mute" text="ブロック" />
+		</form>
+	</notification>
+	<notification name="UserGiveItemLegacy">[NAME_SLURL] があなたに [OBJECTTYPE] を渡しました：
+[ITEM_SLURL]<form name="form">
+			<button name="Show" text="表示" />
+			<button name="Accept" text="キープ" />
+			<button name="Discard" text="破棄" />
+			<button name="ShowSilent" text="（表示）" />
+			<button name="AcceptSilent" text="キープ" />
+			<button name="DiscardSilent" text="破棄" />
+			<button name="Mute" text="ブロック" />
+		</form>
+	</notification>
+	<notification name="GodMessage">[이름]
+
+[메시지]</notification>
+	<notification name="JoinGroup">[메시지]<form name="form">
+			<button name="Join" text="参加" />
+			<button name="Decline" text="辞退" />
+			<button name="Info" text="情報" />
+		</form>
+	</notification>
+	<notification name="TeleportOffered">[NAME_SLURL] 는 텔레포트로 당신을 부르고 있습니다.
+
+“[MESSAGE]”
+&lt;icon&gt;[MATURITY_ICON]&lt;/icon&gt; - [MATURITY_STR]<form name="form">
+			<button name="Teleport" text="テレポート" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="TeleportOffered_MaturityExceeded">[NAME_SLURL] 님이 텔레포트로 당신을 부르고 있습니다.
+
+“[MESSAGE]”
+&lt;icon&gt;[MATURITY_ICON]&lt;/icon&gt; - [MATURITY_STR]
+
+이 지역(리전)에는 [REGION_CONTENT_MATURITY] 콘텐츠가 포함되어 있지만, 현재 설정은 [REGION_CONTENT_MATURITY] 콘텐츠를 제외하도록 설정되어 있습니다. 설정을 변경하여 텔레포트를 계속하거나 이 텔레포트를 취소할 수 있습니다.<form name="form">
+			<button name="Teleport" text="変更して続ける" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="TeleportOffered_MaturityBlocked">[NAME_SLURL] 님이 텔레포트를 통해 초대하셨습니다.
+
+[MESSAGE]
+&lt;icon&gt;[MATURITY_ICON]&lt;/icon&gt; - [MATURITY_STR]
+
+단, 이 지역(리전)은 성인만 접근할 수 있는 콘텐츠를 포함하고 있습니다.</notification>
+	<notification name="TeleportOffered_SLUrl" label="[NAME_LABEL] からの 텔레포트 오퍼">[NAME_SLURL] はテレポートであなたを呼んでいます。 ([POS_SLURL]):
+
+[MESSAGE]
+&lt;icon&gt;[MATURITY_ICON]&lt;/icon&gt; - [MATURITY_STR]
+
+[NAME_SLURL] 님이 당신을 텔레포트로 초대하고 있습니다. ([POS_SLURL]):
+
+[MESSAGE]
+&lt;icon&gt;[MATURITY_ICON]&lt;/icon&gt; - [MATURITY_STR]
+
+If the word 'Firestorm' appears, translate it to '흑우촌':
+
+[NAME_SLURL] 님이 당신을 텔레포트로 초대하고 있습니다. ([POS_SLURL]):
+
+[MESSAGE]
+&lt;icon&gt;[MATURITY_ICON]&lt;/icon&gt; - [MATURITY_STR]
+
+Note: Firestorm -&gt; 흑우촌<form name="form">
+			<button name="Teleport" text="テレポート" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="TeleportOffered_MaturityExceeded_SLUrl">[NAME_SLURL] 님이 텔레포트로 당신을 부르고 있습니다. ([POS_SLURL]):
+
+[MESSAGE]
+&lt;icon&gt;[MATURITY_ICON]&lt;/icon&gt; - [MATURITY_STR]
+
+이 지역(리전)에는 [REGION_CONTENT_MATURITY] 콘텐츠가 포함되어 있지만, 현재 환경 설정은 [REGION_CONTENT_MATURITY] 콘텐츠를 제외하도록 설정되어 있습니다. 환경 설정을 변경하여 텔레포트를 계속하거나 이 텔레포트를 취소할 수 있습니다.<form name="form">
+			<button name="Teleport" text="設定を変更して続ける" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="TeleportOffered_MaturityBlocked_SLUrl">[NAME_SLURL] 이(가) 텔레포트로 당신을 부르고 있습니다 ([POS_SLURL]).
+
+“[MESSAGE]”
+&lt;icon&gt;[MATURITY_ICON]&lt;/icon&gt; - [MATURITY_STR]
+
+단, 이 지역(리전)에는 성인만 접근할 수 있는 콘텐츠가 포함되어 있습니다.</notification>
+	<notification name="TeleportOfferSent">[TO_NAME] に테레포트를 보냈습니다.</notification>
+	<notification name="TeleportRequest">[NAME_SLURL] があなたのいる場所にテレポートで呼んでほしいと要求しています。
+[MESSAGE]
+
+テレポートを送りますか？<form name="form">
+			<button name="Yes" text="はい" />
+			<button name="No" text="いいえ" />
+		</form>
+	</notification>
+	<notification name="GotoURL">Here is the translation considering the special instruction for the word 'Firestorm':
+
+[메시지]  
+[URL]<form name="form">
+			<button name="Later" text="あとで" />
+			<button name="GoNow..." text="今すぐ行く" />
+		</form>
+	</notification>
+	<notification name="OfferFriendship">[NAME_SLURL] 님이 친구로 등록하길 요청하고 있습니다.
+
+[MESSAGE]
+
+(기본 설정에서는 서로의 온라인 상태를 볼 수 있습니다)<form name="form">
+			<button name="Accept" text="受け入れる" />
+			<button name="Decline" text="辞退" />
+		</form>
+	</notification>
+	<notification name="FriendshipOffered">[TO_NAME]에게 친구 요청을 보냈습니다.</notification>
+	<notification name="OfferFriendshipNoMessage">[NAME_SLURL] は 프렌드 등록을 신청하고 있습니다.
+（디폴트 설정에서는 서로의 온라인 상태를 볼 수 있습니다）<form name="form">
+			<button name="Accept" text="受け入れる" />
+			<button name="Decline" text="拒否" />
+		</form>
+	</notification>
+	<notification name="FriendshipAccepted">&lt;nolink&gt;[NAME]&lt;/nolink&gt; 님이 친구 등록 요청을 수락했습니다.</notification>
+	<notification name="FriendshipDeclined">&lt;nolink&gt;[NAME]&lt;/nolink&gt; 님이 귀하의 친구 요청을 거부했습니다.</notification>
+	<notification name="FriendshipAcceptedByMe">フレンドの登録依頼が承認されました。
+친구 등록 요청이 승인되었습니다.</notification>
+	<notification name="FriendshipDeclinedByMe">フレンドの登録依頼が拒否されました。
+친구 추가 요청이 거부되었습니다.</notification>
+	<notification name="OfferCallingCard">[NAME] 가 코링카드를 건네려 하고 있습니다.
+당신의 인벤토리에 북마크가 추가되어 이 거주자에게 빠르게 IM을 보낼 수 있습니다.<form name="form">
+			<button name="Accept" text="受け入れる" />
+			<button name="Decline" text="辞退" />
+		</form>
+	</notification>
+	<notification name="RegionRestartMinutes">이 지역은 [SECONDS] 분 후에 재시작됩니다.
+이대로 있으면 로그아웃 됩니다.</notification>
+	<notification name="RegionRestartSeconds">이 리전은 [SECONDS] 초 후에 재시작됩니다.
+이대로 여기에 있으면 로그아웃될 것입니다.</notification>
+	<notification name="RegionRestartMinutesToast">이 지역은 [MINUTES] 분 후에 재시작됩니다.
+여기에 계속 있으면 로그아웃됩니다.</notification>
+	<notification name="RegionRestartSecondsToast">이 지역은 [SECONDS] 초 후에 재시작됩니다.
+이대로 있으면 로그아웃됩니다.</notification>
+	<notification name="LoadWebPage">Web 페이지 [URL] 을/를 로드하시겠습니까?
+
+[MESSAGE]
+
+전송한 객체: &lt;nolink&gt;[OBJECTNAME]&lt;/nolink&gt;, 소유자: [NAME_SLURL]<form name="form">
+			<button name="Gotopage" text="ページに移動" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="FailedToFindWearableUnnamed">データベースに [TYPE] が見つかりませんでした  
+데이터베이스에서 [TYPE]를 찾을 수 없었습니다</notification>
+	<notification name="FailedToFindWearable">データベースに [DESC] という名前の [TYPE] が見つかりませんでした。
+
+데이터베이스에 [DESC] 라는 이름의 [TYPE] 를 찾을 수 없었습니다.</notification>
+	<notification name="InvalidWearable">착용하려는 아이템은 당신의 뷰어에서 로드할 수 없습니다. [APP_NAME] 버전을 업그레이드한 후 이 아이템을 착용하세요.</notification>
+	<notification name="ScriptQuestion">[NAME] が所有する 「&lt;nolink&gt;[OBJECTNAME]&lt;/nolink&gt;」 という 오브젝트가 다음을 시도하려고 합니다：
+
+[QUESTIONS]
+괜찮습니까?<form name="form">
+			<button name="Yes" text="はい" />
+			<button name="No" text="いいえ" />
+			<button name="Mute" text="ブロック" />
+		</form>
+	</notification>
+	<notification name="ExperienceAcquireFailed">새로운 체험을 얻을 수 없습니다:
+[ERROR_MESSAGE]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="NotInGroupExperienceProfileMessage">選択된 그룹의 멤버가 아니기 때문에, 경험 그룹 변경이 무시되었습니다.</notification>
+	<notification name="UneditableExperienceProfileMessage">体험 프로필을 업데이트할 때, 편집할 수 없는 '[field]' 필드가 무시되었습니다.</notification>
+	<notification name="RestrictedToOwnerExperienceProfileMessage">체험의 소유자만 설정할 수 있는 '[field]' 필드에 대한 변경을 무시했습니다.</notification>
+	<notification name="MaturityRatingExceedsOwnerExperienceProfileMessage">所有者のレーティング区分より高いレーティング区分の体験を設定できません。
+
+이 문장을 한국어로 번역하면 다음과 같습니다:
+
+소유자의 등급 구분보다 높은 등급 구분의 체험을 설정할 수 없습니다.</notification>
+	<notification name="RestrictedTermExperienceProfileMessage">다음 조건에 의해, 체험 프로필 이름 및 설명을 업데이트할 수 없었습니다: [extra_info]</notification>
+	<notification name="TeleportedHomeExperienceRemoved">体験 secondlife:///app/experience/[public_id]/profile を削除するために、[region_name] 리전에서 텔레포트되었으며, 이 리전에 들어갈 수 없게 되었습니다.<form name="form">
+			<ignore name="ignore" text="体験を削除するために、リージョンから追放されました" />
+		</form>
+	</notification>
+	<notification name="TrustedExperienceEntry">키 체험 secondlife:///app/experience/[public_id]/profile 에 참가함으로써, [region_name] 리전에 들어가는 것이 허가되었습니다. 이 체험을 삭제하면, 이 리전에서 추방될 가능성이 있습니다.<form name="form">
+			<ignore name="ignore" text="体験によりリージョンに入ることを許可されました" />
+		</form>
+	</notification>
+	<notification name="TrustedExperiencesAvailable">이 목적지에 접근할 수 있는 권한이 없습니다. 아래의 체험을 수락함으로써 이 지역에 들어갈 수 있습니다:
+
+[EXPERIENCE_LIST]
+
+기타 주요 체험을 이용할 수 있습니다.</notification>
+	<notification name="ExperienceEvent">[EventType]은(는) secondlife:///app/experience/[public_id]/profile 경험에 의해 오브젝트에서 액션([EventType])을 실행하는 것이 허가되었습니다.
+소유자: secondlife:///app/agent/[OwnerID]/inspect
+오브젝트 이름: [ObjectName]
+구역 이름: [ParcelName]</notification>
+	<notification name="ExperienceEventAttachment">[EventType] by the secondlife:///app/experience/[public_id]/profile experience에 의해, 첨부 파일에서 액션 ([EventType])을 실행하는 것이 허가되었습니다.
+소유자: secondlife:///app/agent/[OwnerID]/inspect</notification>
+	<notification name="ScriptQuestionExperience">[NAME] 가 소유하는 「&lt;nolink&gt;[OBJECTNAME]&lt;/nolink&gt;」 라는 오브젝트가, [GRID_WIDE] 체험에 참여를 요구하고 있습니다:
+
+[EXPERIENCE]
+
+권한이 허가되면, 체험 프로필에서 호출하지 않는 한, 이 체험에 이 메시지가 다시 표시되지 않을 것입니다.
+
+이 체험에 관련된 스크립트에 의해, 이 체험이 유효한 리전에서 다음을 실행할 수 있습니다: 
+
+[QUESTIONS]괜찮으시겠습니까?<form name="form">
+			<button name="BlockExperience" text="体験をブロック" />
+			<button name="Mute" text="オブジェクトをブロックする" />
+			<button name="Yes" text="はい" />
+			<button name="No" text="いいえ" />
+		</form>
+	</notification>
+	<notification name="ScriptQuestionCaution">경고: 오브젝트 '&lt;nolink&gt;[OBJECTNAME]&lt;/nolink&gt;'가 귀하의 린든 달러 계정에 대한 전체 접근 권한을 요청하고 있습니다. 접근을 허용하면, 이 오브젝트는 언제든지 귀하의 계정에서 자금을 삭제하거나, 향후 경고 없이 계속해서 계정을 완전히 비울 수 있게 됩니다.
+
+이러한 요청이 정당한 경우는 드뭅니다. 이 오브젝트가 귀하의 계정에 접근하려는 이유를 완전히 이해한 경우가 아니라면, 접근을 허용하지 마십시오.<form name="form">
+			<button name="Grant" text="トータルアクセスを許可" />
+			<button name="Deny" text="拒否" />
+		</form>
+	</notification>
+	<notification name="ScriptDialog">[NAME] 의「&lt;nolink&gt;[TITLE]&lt;/nolink&gt;」
+[MESSAGE]<form name="form">
+			<button name="Client_Side_Mute" text="ブロック" />
+			<button name="Client_Side_Ignore" text="無視" />
+		</form>
+	</notification>
+	<notification name="ScriptDialogGroup">&lt;nolink&gt;[GROUPNAME]&lt;/nolink&gt; の「&lt;nolink&gt;[TITLE]&lt;/nolink&gt;」  
+[MESSAGE]<form name="form">
+			<button name="Client_Side_Mute" text="ブロック" />
+			<button name="Client_Side_Ignore" text="無視" />
+		</form>
+	</notification>
+	<notification name="BuyLindenDollarSuccess">지불해 주셔서 감사합니다.
+
+L$ 잔액은 처리가 완료되면 업데이트됩니다. 처리에 20분 이상 소요될 경우, 거래가 취소될 수 있습니다. 그럴 경우, 구매 금액은 US$ 잔액에 추가됩니다.
+
+[http://secondlife.com/account/ 마이 어카운트]의 거래 내역 페이지에서 지불 상태를 확인할 수 있습니다.</notification>
+	<notification name="FirstOverrideKeys">당신의 이동 키를 오브젝트가 조작하고 있습니다.
+화살표 키나 AWSD 키로 동작을 확인하세요.
+총 등과 같은 오브젝트인 경우, 1인칭 시점으로 변경해야 합니다.
+M 키를 눌러 변경하세요.</notification>
+	<notification name="FirstSandbox">여기는 샌드박스 구역입니다. 주민들이 제작을 배울 수 있습니다.
+
+여기서 제작된 것들은 시간이 지나면 삭제됩니다. 제작한 아이템을 오른쪽 클릭하여 "가져오기"를 선택하고 인벤토리에 넣어 가져가는 것을 잊지 마세요.</notification>
+	<notification name="MaxListSelectMessage">このリストから [MAX_SELECT] 個までのアイテムを 선택할 수 있습니다.</notification>
+	<notification name="VoiceInviteP2P">[NAME] があなたをボイスチャットコールに招待しています.
+받아들이려면 '수락'을 클릭하고, 거부하려면 '거절'을 클릭하세요. '차단'을 클릭하면 이 발신자를 차단합니다.<form name="form">
+			<button name="Accept" text="受け入れる" />
+			<button name="Decline" text="拒否" />
+			<button name="Mute" text="ブロック" />
+		</form>
+	</notification>
+	<notification name="AutoUnmuteByIM">[NAME] 님이 인스턴트 메시지를 받았으며 자동으로 차단이 해제되었습니다.</notification>
+	<notification name="AutoUnmuteByMoney">[NAME]는 돈을 받고 자동으로 차단이 해제되었습니다.</notification>
+	<notification name="AutoUnmuteByInventory">[NAME] 은(는) 인벤토리를 받았으며, 자동으로 차단이 해제되었습니다.</notification>
+	<notification name="VoiceInviteGroup">[NAME] 님이 &lt;nolink&gt;[GROUP]&lt;/nolink&gt; 의 보이스 채팅 콜에 참여했습니다.
+수락하려면 수락을 클릭하고, 거절하려면 거절을 클릭하세요. 발신자를 차단하려면 차단을 클릭하세요.<form name="form">
+			<button name="Accept" text="受け入れる" />
+			<button name="Decline" text="拒否" />
+			<button name="Mute" text="ブロック" />
+		</form>
+	</notification>
+	<notification name="VoiceInviteAdHoc">[NAME] 님이 컨퍼런스 채팅의 보이스 채팅 통화에 참여했습니다. 수락을 클릭하거나 거절하려면 거부를 클릭하세요. 차단을 클릭하면 이 발신자를 차단합니다.<form name="form">
+			<button name="Accept" text="受け入れる" />
+			<button name="Decline" text="拒否" />
+			<button name="Mute" text="ブロック" />
+		</form>
+	</notification>
+	<notification name="InviteAdHoc">[NAME] があなたをコンファレンスチャットに招待しています。
+수락하려면 수락을 클릭하고 거절하려면 거절을 클릭하세요. 차단을 클릭하면 이 발신자를 차단합니다.<form name="form">
+			<button name="Accept" text="受け入れる" />
+			<button name="Decline" text="拒否" />
+			<button name="Mute" text="ブロック" />
+		</form>
+	</notification>
+	<notification name="VoiceChannelFull">あなたが参加しようとしているボイスコール [VOICE_CHANNEL_NAME] は、参加者が最大限に達しました。後でもう一度お試しください。
+
+당신이 참여하려고 하는 보이스 콜 [VOICE_CHANNEL_NAME]은(는) 참가자가 최대에 도달했습니다. 나중에 다시 시도해 주십시오.</notification>
+	<notification name="ProximalVoiceChannelFull">이 구역의 보이스 채팅은 혼잡으로 인해 용량을 초과했습니다. 죄송하지만 다른 구역에서 보이스 채팅을 시도해 주세요.</notification>
+	<notification name="VoiceChannelDisconnected">[VOICE_CHANNEL_NAME] への接続が切れました。  「近くのボイスチャット」に再接続されます。
+
+[VOICE_CHANNEL_NAME]에 대한 연결이 끊어졌습니다. "근처의 보이스 채팅"에 다시 연결됩니다.</notification>
+	<notification name="VoiceChannelDisconnectedP2P">[VOICE_CHANNEL_NAME] がコールを終了しました。 「近くのボイスチャット」に再接続されます。
+
+[VOICE_CHANNEL_NAME]의 통화가 종료되었습니다. "근처 보이스 채팅"에 다시 연결됩니다.</notification>
+	<notification name="P2PCallDeclined">[VOICE_CHANNEL_NAME] があなたのコールを拒否しました。 「近くのボイスチャット」に再接続されます。
+
+[VOICE_CHANNEL_NAME]가 당신의 전화를 거부하였습니다. "근처의 보이스 채팅"으로 재연결됩니다.</notification>
+	<notification name="P2PCallNoAnswer">[VOICE_CHANNEL_NAME] 은(는) 당신의 통화를 받을 수 없습니다.  "근처의 보이스 채팅"에 다시 연결됩니다.</notification>
+	<notification name="VoiceChannelJoinFailed">[VOICE_CHANNEL_NAME]에 연결하지 못했습니다. 나중에 다시 시도해 주세요. "가까운 보이스 채팅"에 다시 연결됩니다.</notification>
+	<notification name="VoiceEffectsExpired">보이스 모핑 효과의 하나 또는 여러 개의 유효 기간이 만료되었습니다. 유효 기간을 연장하거나 갱신하려면 [[URL] 여기를 클릭]하세요.
+
+프리미엄 회원이신 경우, [[PREMIUM_URL] 여기를 클릭]하여 보이스 모핑 혜택을 받으세요.</notification>
+	<notification name="VoiceEffectsExpiredInUse">보이스 모핑 효과의 유효 기간이 종료되었기 때문에, 당신의 일반 보이스 설정이 적용되었습니다.
+기간을 연장・갱신하려면 [URL] 여기를 클릭] 하십시오.
+
+프리미엄 회원은, [PREMIUM_URL] 여기를 클릭] 하여 보이스 모핑 혜택을 받으십시오.</notification>
+	<notification name="VoiceEffectsWillExpire">보이스 모핑 효과 중 하나 또는 여러 개의 유효 기간이 [INTERVAL] 일 이내에 종료됩니다.
+기간을 연장하거나 갱신하려면 [[URL] 여기 클릭]을 클릭하십시오.
+
+프리미엄 회원인 경우, [[PREMIUM_URL] 여기 클릭]을 클릭하여 보이스 모핑 혜택을 받으십시오.</notification>
+	<notification name="VoiceEffectsNew">새로운 보이스 모핑 효과가 등장했습니다!</notification>
+	<notification name="Cannot enter parcel: not a group member">특정 그룹 멤버만 이 지역을 방문할 수 있습니다.</notification>
+	<notification name="Cannot enter parcel: banned">출입이 금지되어 있으므로, 구역에 들어갈 수 없습니다.</notification>
+	<notification name="Cannot enter parcel: not on access list">アクセスリストに含まれていないため、区画に入ることができません。
+
+"액세스 목록에 포함되지 않았기 때문에, 구역에 들어갈 수 없습니다."</notification>
+	<notification name="VoiceNotAllowed">あなたには [VOICE_CHANNEL_NAME] のボイスチャットに接続する権限がありません。
+
+당신은 [VOICE_CHANNEL_NAME] 보이스 채팅에 접속할 권한이 없습니다.</notification>
+	<notification name="VoiceCallGenericError">[VOICE_CHANNEL_NAME] のボイスチャットに接続中に、エラーが発生しました。後でもう一度お試しください。
+
+[VOICE_CHANNEL_NAME] 음성 채널에 연결하는 동안 오류가 발생했습니다. 나중에 다시 시도해 주세요.</notification>
+	<notification name="UnsupportedCommandSLURL">클릭한 SLurl은 지원되지 않습니다.</notification>
+	<notification name="BlockedSLURL">信用できないブラウザから SLurl が送られてきたので、セキュリティのためブロックされました。
+
+신뢰할 수 없는 브라우저에서 SLurl이 전송되었기 때문에 보안을 위해 차단되었습니다.</notification>
+	<notification name="ThrottledSLURL">짧은 기간 동안, 신뢰할 수 없는 브라우저에서 여러 개의 SLurl이 전송되었습니다.
+안전을 위해 몇 초 동안 차단됩니다.</notification>
+	<notification name="IMToast">[메시지]<form name="form">
+			<button name="respondbutton" text="返答" />
+		</form>
+	</notification>
+	<notification name="ConfirmCloseAll">모든 IM을 닫겠습니까?<usetemplate ignoretext="すべての IM を閉じる前の確認" name="okcancelignore" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="AttachmentSaved">첨부파일이 저장되었습니다.</notification>
+	<notification name="AppearanceToXMLSaved">외관이 XML로 [PATH]에 저장되었습니다</notification>
+
+	<notification name="AppearanceToXMLFailed">XML 파일로 아바타 저장이 실패했습니다</notification>
+	<notification icon="notifytip.tga" name="SnapshotToComputerFailed">スナップ샷을 [PATH]에 저장하는 데 실패했습니다. 디스크가 가득 찼습니다。[NEED_MEMORY]KB가 필요하지만, 남은 용량은 [FREE_MEMORY]KB입니다.</notification>
+	<notification name="SnapshotToLocalDirNotExist">スナップショットを [PATH] に保存できませんでした:ディレクトリは存在しません。
+
+스냅샷을 [PATH]에 저장할 수 없습니다: 디렉토리가 존재하지 않습니다.</notification>
+	<notification name="PresetNotSaved">프리셋 [NAME] 저장 오류.</notification>
+	<notification name="DefaultPresetNotSaved">기본 설정을 덮어쓸 수 없습니다.</notification>
+	<notification name="PresetNotDeleted">프리셋 [NAME] 삭제 오류.</notification>
+	<notification name="UnableToFindHelpTopic">ヘルプトピックが見つかりませんでした。  
+찾을 수 있는 도움말 항목이 없습니다.</notification>
+	<notification name="ObjectMediaFailure">서버 오류: 미디어 업데이트 또는 실패.
+「[ERROR]」<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="TextChatIsMutedByModerator">모더레이터가 당신의 문자 채팅을 음소거했습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="VoiceIsMutedByModerator">모더레이터가 당신의 보이스를 음소거했습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="FailedToGetBenefits">죄송합니다만, 이 세션에서 이익 정보를 가져올 수 없었습니다. 이는 일반적인 본 환경에서는 발생하지 않아야 할 현상입니다. 지원팀에 연락해 보시길 권장합니다. 이 세션은 정상적으로 작동하지 않는 것으로 보이며, 재부팅을 권장합니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="BulkUploadCostConfirmation">[COUNT] 개의 아이템을 업로드하면 합계 L$[COST]의 비용이 듭니다. 계속 업로드하시겠습니까?<usetemplate ignoretext="一括アップロードを確認" name="okcancelignore" notext="取り消し" yestext="アップロード" />
+	</notification>
+	
+	<notification name="NotEnoughMoneyForBulkUpload">현재 잔액 L$[BALANCE]로 [COUNT]개의 아이템을 업로드하는 데 필요한 총 L$[COST]이 부족합니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	
+	<notification name="BulkUploadNoCompatibleFiles">선택된 파일의 일괄 업로드는 불가능합니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="BulkUploadIncompatibleFiles">선택된 파일 중 일부는 일괄 업로드할 수 없습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="UploadCostConfirmation">이 업로드에는 L$[PRICE]의 비용이 듭니다. 업로드를 계속하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="アップロード" />
+	</notification>
+	<notification name="ConfirmClearTeleportHistory">당신이 지금까지 방문한 장소의 기록이 모두 사라집니다. 이 작업은 취소할 수 없습니다. 삭제를 진행하시겠습니까?<usetemplate name="okcancelbuttons" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="BottomTrayButtonCanNotBeShown">선택한 버튼을 현재 표시할 수 없습니다. 충분한 공간이 생기면 버튼이 표시됩니다.</notification>
+	<notification name="ShareNotification">공유할 주민을 선택합니다.</notification>
+	<notification name="MeshUploadErrorDetails">[LABEL] 을(를) 업로드할 수 없었습니다：[MESSAGE] [IDENTIFIER]
+[DETAILS] 상세 내용은 흑우촌.log 파일을 확인하십시오.</notification>
+	<notification name="MeshUploadError">[LABEL] 을(를) 업로드할 수 없었습니다：[MESSAGE]
+
+자세한 내용은 흑우촌.log 을(를) 확인해 주세요.</notification>
+	<notification name="MeshUploadPermError">메쉬 업로드 허가를 요청하는 중에 오류가 발생했습니다.</notification>
+	<notification name="RegionCapabilityRequestError">리전의 '[CAPABILITY]'라는 기능을 획득할 수 없습니다.</notification>
+	<notification name="ShareItemsConfirmation">다음 아이템을 공유하시겠습니까?
+
+&lt;nolink&gt;[ITEMS]&lt;/nolink&gt;
+
+다음 거주자와 공유하시겠습니까?
+
+[RESIDENTS]<usetemplate ignoretext="アイテムを共有する前に確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ShareFolderConfirmation">폴더는 한 번에 하나만 공유할 수 있습니다.
+
+다음 항목을 공유하시겠습니까?
+
+&lt;nolink&gt;[ITEMS]&lt;/nolink&gt;
+
+다음 거주자와 공유합니다:
+
+[RESIDENTS]<usetemplate name="okcancelbuttons" notext="取り消し" yestext="Ok" />
+	</notification>
+	<notification name="ItemsShared">아이템이 공유되었습니다.</notification>
+	<notification name="DeedToGroupFail">グループへの譲渡に失敗しました。  
+그룹 전송에 실패했습니다.</notification>
+	<notification name="ReleaseLandThrottled">区画「[PARCEL_NAME]」は現在放棄できません.</notification>
+	<notification name="ReleasedLandWithReclaim">[AREA] 평방미터의 구역 「[PARCEL_NAME]」가 공개되었습니다.
+
+동 구역은 [RECLAIM_PERIOD] 시간 내에 다른 주민에게 판매되기 전에 무료로 땅을 되찾을 수 있습니다.</notification>
+	<notification name="ReleasedLandNoReclaim">[AREA] m² の区画「[PARCEL_NAME]」が公開されました。
+
+일반에 공개되었으므로, 이제 누구나 구매할 수 있습니다.</notification>
+	<notification name="AvatarRezNotification">（작성 후 [EXISTENCE]초 경과）
+'[NAME]'이라는 아바타는 [TIME]초 후에 모습을 드러냈습니다.</notification>
+	<notification name="AvatarRezSelfBakedDoneNotification">（作成後[EXISTENCE]초 경과）
+아웃핏의 베이크는 [TIME]초 후에 완료되었습니다.</notification>
+	<notification name="AvatarRezSelfBakedUpdateNotification">（作成후 [EXISTENCE]초 경과）
+용모의 갱신은 [TIME]초 후에 전송되었습니다.
+[STATUS]</notification>
+	
+	<notification name="AvatarRezSelfBakeForceUpdateNotification">뷰어는 당신이 구름 상태로 표시될 수 있음을 감지하고 있으며, 현재 자동으로 이 문제를 해결하려 하고 있습니다.</notification>
+	
+	<notification name="AvatarRezCloudNotification">( [EXISTENCE] 초)
+아바타 "NAME"이 구름 상태가 되었습니다.</notification>
+	<notification name="AvatarRezArrivedNotification">（ [존재] 초）
+아바타 「 NAME 」가 나타났습니다.</notification>
+	<notification name="AvatarRezLeftCloudNotification">（ [EXISTENCE] 초）
+아바타 「 [NAME] 」가 [TIME] 초 만에 구름 상태에서 벗어났습니다.</notification>
+	<notification name="AvatarRezEnteredAppearanceNotification">（ [EXISTENCE] 초）
+아바타 "NAME"가 외모 편집 모드에 들어갔습니다.</notification>
+	<notification name="AvatarRezLeftAppearanceNotification">（ [존재] 초）
+아바타 「 NAME 」가 외형 편집 모드를 종료했습니다.</notification>
+	<notification name="NoConnect">[PROTOCOL] &lt;nolink&gt;[HOSTID]&lt;/nolink&gt;을(를) 사용하여 연결할 수 없습니다.
+사용 중인 네트워크나 방화벽 설정을 확인하십시오.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="NoVoiceConnect">다음 보이스 서버에 연결할 수 없습니다:
+
+&lt;nolink&gt;[HOSTID]&lt;/nolink&gt;
+
+보이스에 허용되는 포트는 다음 중 하나입니다:
+TCP: 80, 443
+UDP: 3478, 3479, 5060, 5062, 6250, 12000-32000
+
+사용 중인 네트워크와 방화벽 설정을 확인하십시오.
+사용 중인 라우터의 SIP ALG 기능을 모두 비활성화하십시오.
+
+보이스 채팅에 의한 커뮤니케이션을 사용할 수 없습니다.
+https://wiki.흑우촌viewer.org/fs_voice<usetemplate ignoretext="ビューワーがボイスサーバーに接続できなかった時に警告" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="NoVoiceConnect-GIAB">보이스 서버에 연결할 수 없습니다. 보이스 채팅을 통한 커뮤니케이션을 사용할 수 없습니다. 사용 중인 네트워크나 방화벽 설정을 확인하십시오.
+[https://wiki.흑우촌viewer.org/fs_voice]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="AvatarRezLeftNotification">（ [EXISTENCE] 초）
+아바타「 NAME 」가 완전히 로드되었습니다.</notification>
+	<notification name="AvatarRezSelfBakedTextureUploadNotification">( 作成後[EXISTENCE]秒経過）
+'[BODYREGION]'의 [RESOLUTION] 베이크드 텍스처는 [TIME]초 후에 업로드되었습니다.</notification>
+	<notification name="AvatarRezSelfBakedTextureUpdateNotification">( 생성 후[EXISTENCE]초 경과）
+'[BODYREGION]'의 [RESOLUTION] 베이크드 텍스처는 [TIME]초 후에 로컬로 업데이트되었습니다.</notification>
+	<notification name="CannotUploadTexture">텍스처를 업로드할 수 없습니다: '[NAME]'
+[REASON]</notification>
+	<notification name="LivePreviewUnavailable">복사 불가 및/또는 전송 불가로 인해 이 텍스처를 표시할 수 없습니다.<usetemplate ignoretext="コピー不可および/または転送不可テクスチャでライブプレビューモードを使用できないことを警告する" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="ConfirmLeaveCall">이 통화에서 나가시겠습니까?<usetemplate ignoretext="コールから抜ける前の確認" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="ConfirmMuteAll">그룹 통화의 모든 참가자를 음소거했습니다.
+나중에 이 통화에 참여하는 주민도
+음소거됩니다. 당신이 통화를 종료해도 다른 참가자들의 음소거 상태는 계속됩니다.
+
+모두 음소거하시겠습니까?<usetemplate ignoretext="グループコールの参加者全員をミュートする前の確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification label="채팅" name="HintChat">채팅에 참여하려면 화면 하단의 채팅 필드에 텍스트를 입력하세요.</notification>
+	<notification label="Standing up" name="HintSit">앉은 자세에서 일어나려면, '일어나기' 버튼을 클릭합니다.</notification>
+	<notification label="말하다" name="HintSpeak">「스피커」 버튼을 클릭하면 마이크의 켬/끔이 전환됩니다.
+
+위쪽 화살표를 클릭하면 음성 제어 패널이 표시됩니다.
+
+「스피커」 버튼을 숨기면 음성 기능도 비활성화됩니다.</notification>
+	<notification label="세계 탐험" name="HintDestinationGuide">행선지 가이드에는 수많은 탐색 장소가 포함되어 있습니다. 어디로 갈지 정했다면, 텔레포트를 해서 탐험을 떠나보세요.</notification>
+	<notification label="사이드 패널" name="HintSidePanel">사이드 패널에서 인벤토리, 옷, 프로필 등에 빠르게 접근할 수 있습니다.</notification>
+	<notification label="이동" name="HintMove">보행 및 주행은 '이동' 패널을 열고 화살표 컨트롤을 통해 조작합니다. 이 조작은 키보드의 화살표 키로도 실행할 수 있습니다.</notification>
+	<notification label="다음 텍스트를 한국어로 번역하십시오. 혼세 연구소 뷰어와 관련이 있습니다.&#10;'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:&#10;" name="HintMoveClick">1. 클릭하여 걷기
+땅의 한 지점을 클릭하면 그 장소까지 걷습니다.
+
+2. 클릭 후 드래그하여 시야 회전
+세상의 한 지점을 클릭하여 드래그하면 시야의 방향이 바뀝니다.</notification>
+	<notification label="표시 이름" name="HintDisplayName">表示명(커스터마이즈 가능)을 설정합니다. 사용자명은 고유하여 변경할 수 없지만, 여기서 추가하는 표시명은 변경할 수 있습니다. 다른 주민의 이름 표시 방법은 환경 설정에서 변경하십시오.</notification>
+	<notification label="표시" name="HintView">카메라의 시점을 변경하려면 수평-수직 컨트롤을 사용합니다. Escape를 누르거나 걷기를 하면 시점이 리셋됩니다.</notification>
+	<notification label="인벤토리" name="HintInventory">인벤토리에는 당신의 아이템이 모두 포함되어 있습니다. 새로 추가된 아이템은 "최신" 탭에 목록으로 표시되어 있습니다.</notification>
+	<notification label="당신의 린덴달" name="HintLindenDollar">이것은 당신의 L$ 잔액입니다. 린덴 달러를 구매하려면 "L$ 구매"를 클릭하십시오.</notification>
+	<notification name="LowMemory">메모리 풀 잔량이 적어지고 있습니다. 크래시를 방지하기 위해 SL의 기능 일부가 비활성화되었습니다. 다른 애플리케이션을 종료하고, 상황이 지속되거나 재발하는 경우 SL을 재시작하십시오.</notification>
+	<notification name="ForceQuitDueToLowMemory">메모리 부족으로 인해 30초 이내에 SL이 종료됩니다.</notification>
+	<notification name="SOCKS_NOT_PERMITTED">ルールセットによって許可されていないため、SOCKS 5 プロキシ "[HOST]:[PORT]" が接続を拒絶しました。   
+규칙 세트에서 허용되지 않기 때문에, SOCKS 5 프록시 "[HOST]:[PORT]"가 연결을 거부했습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="SOCKS_CONNECT_ERROR">SOCKS 5 프록시 "[HOST]:[PORT]" 가 접속을 거부하여 TCP 채널을 열 수 없었습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="SOCKS_NOT_ACCEPTABLE">SOCKS 5 프록시 "[HOST]:[PORT]" 는 선택된 인증 시스템을 거부했습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="SOCKS_AUTH_FAIL">SOCKS 5 프록시 "[HOST]:[PORT]"은(는) 당신의 자격이 무효라고 보고했습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="SOCKS_UDP_FWD_NOT_GRANTED">SOCKS 5 프록시 "[HOST]:[PORT]" 는 UDP 연결 요청을 거부했습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="SOCKS_HOST_CONNECT_FAILED">SOCKS 5 프록시 서버 "[HOST]:[PORT]"에 연결할 수 없었습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="SOCKS_UNKNOWN_STATUS">서버 "[HOST]:[PORT]"에서 알 수 없는 프록시 오류가 발생했습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="SOCKS_INVALID_HOST">SOCKS 프록시 주소 또는 포트 "[HOST]:[PORT]"가 무효입니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="SOCKS_BAD_CREDS">SOCKS 5 사용자 이름 또는 비밀번호가 올바르지 않습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="PROXY_INVALID_HTTP_HOST">HTTP 프록시 주소 또는 포트 "[HOST]:[PORT]"가 유효하지 않습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="PROXY_INVALID_SOCKS_HOST">SOCKS 프록시 주소 또는 포트 "[HOST]:[PORT]"가 유효하지 않습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="ChangeProxySettings">프로키시 설정은 [APP_NAME]를 다시 시작한 후에 반영됩니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="AuthRequest">「[REALM]」에 있는 「&lt;nolink&gt;[HOST_NAME]&lt;/nolink&gt;」 사이트에는 사용자 이름과 비밀번호가 필요합니다.<form name="form">
+			<input name="username" text="ユーザー名" />
+			<input name="password" text="パスワード" />
+			<button name="ok" text="送信" />
+			<button name="cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="ModeChange" label="Sure, please provide the text you would like translated.">모드를 변경하려면 뷰어를 종료하고 재시작해야 합니다.
+
+모드를 변경하고 종료하시겠습니까?<usetemplate name="okcancelbuttons" yestext="OK" notext="取り消し" />
+	</notification>
+	<notification label="Sure, please provide the text you would like me to translate." name="NoClassifieds">클래시파이드 광고의 생성 및 편집은 고급 모드에서만 사용할 수 있습니다. 종료하고 모드를 변경하시겠습니까? 모드는 로그인 화면에서 선택할 수 있습니다.<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification label="Got it! Please provide the text you would like me to translate." name="NoGroupInfo">그룹 생성 및 편집은 고급 모드에서만 사용할 수 있습니다. 종료하고 모드를 변경하시겠습니까? 모드는 로그인 화면에서 선택할 수 있습니다.<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification label="Sure, please provide the text you would like to have translated." name="NoPlaceInfo">장소 프로필 표시 기능은 고급 모드에서만 사용할 수 있습니다. 종료하고 모드를 변경하시겠습니까? 모드는 로그인 화면에서 선택할 수 있습니다.<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification label="Sure, please provide the text you'd like to be translated." name="NoPicks">픽의 생성 및 편집은 고급 모드에서만 이용할 수 있습니다. 종료하고 모드를 변경하시겠습니까? 모드는 로그인 화면에서 선택할 수 있습니다.<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification label="Sure, please provide the text you would like me to translate to Korean." name="NoWorldMap">세계 지도 표시 기능은 고급 모드에서만 사용할 수 있습니다. 종료하고 모드를 변경하시겠습니까? 모드는 로그인 화면에서 선택할 수 있습니다.<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification label="Sure, please provide the text you would like to have translated." name="NoVoiceCall">보이스 콜은 아드밴스 모드에서만 이용할 수 있습니다. 로그아웃 후 모드를 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification label="Sure, please provide the text you would like to have translated." name="NoAvatarShare">공유는 아드밴스모드에서만 이용할 수 있습니다. 로그아웃하고 모드를 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification label="Sure, I'd be happy to help. Please provide the text you would like me to translate to Korean." name="NoAvatarPay">다른 주민에게 지불하는 것은 고급 모드에서만 사용할 수 있습니다. 로그아웃하여 모드를 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification label="Sure, please provide the text you would like to translate to Korean." name="NoInventory">인벤토리 표시 기능은 고급 모드에서만 사용할 수 있습니다. 로그아웃하여 모드를 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification label="물론입니다. 아래의 텍스트를 한국어로 번역하겠습니다:&#10;&#10;```&#10;SecondLife Viewer의 최신 버전은 여러 가지 새로운 기능과 성능 향상을 제공합니다. 특히 흑우촌 뷰어의 새로운 업데이트는 사용자들이 더 몰입감 있는 가상 현실을 경험할 수 있도록 돕습니다. 흑우촌 팀은 또한 많은 버그를 수정하여 보다 안정적인 사용자 환경을 제공하고 있으며, 이번 업데이트에서는 더 나은 그래픽 품질과 속도 향상이 포함되었습니다. 사용자들은 이제 더 빠르고 더 원활하게 SecondLife에서 플레이할 수 있으며, 흑우촌의 고급 기능을 최대한 활용할 수 있습니다.&#10;```" name="NoAppearance">아바타 편집기는 고급 모드에서만 이용할 수 있습니다. 로그아웃하여 모드를 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification label="SecondLife Viewer에서 가장 인기 있는 대체 뷰어 중 하나는 흑우촌 뷰어입니다. 흑우촌 뷰어는 더 많은 사용자 정의 옵션과 고급 기능을 제공하여 사용자들이 더 나은 게임 경험을 할 수 있도록 합니다. 흑우촌 뷰어를 사용하면 추가 스킨과 테마, 그리고 더 세밀한 그래픽 설정을 사용할 수 있습니다. 많은 플레이어들이 흑우촌 뷰어의 안정성과 기능성 때문에 이를 선호합니다." name="NoSearch">검색은 아드밴스 모드에서만 이용할 수 있습니다. 로그아웃하여 모드를 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	</notification>
+	<notification label="Sure, please provide the text you would like me to translate to Korean." name="ConfirmHideUI">이 동작으로 인해 모든 메뉴 항목과 버튼이 숨겨집니다. 다시 표시하려면 [SHORTCUT]를 다시 클릭하세요.<usetemplate ignoretext="UI を非表示にする前に確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="PathfindingLinksets_WarnOnPhantom">選択された一部のリンクセットはファントムフラグが切り替えられます。
+
+続けますか？
+
+선택된 일부 링크 세트는 팬텀 플래그가 전환됩니다.
+
+계속하시겠습니까?<usetemplate ignoretext="選択された一部のリンクセットのファントムフラグが切り替えられます。" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="PathfindingLinksets_MismatchOnRestricted">일부 선택된 링크 세트는 링크 세트에 대한 권한이 제한되어 있으므로 '[REQUESTED_TYPE]'으로 설정할 수 없습니다. 이러한 링크 세트는 대신 '[RESTRICTED_TYPE]'으로 설정됩니다.
+
+계속하시겠습니까?<usetemplate ignoretext="一部の選択されたリンクセットは、リンクセットへの権限が制限されているため設定できません。" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="PathfindingLinksets_MismatchOnVolume">선택된 일부 링크 세트는 형태가 볼록하지 않으므로 '[REQUESTED_TYPE]'로 설정할 수 없습니다.
+
+계속하시겠습니까?<usetemplate ignoretext="選択された一部のリンクセットは、形状が凸状でないため設定できません。" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="PathfindingLinksets_WarnOnPhantom_MismatchOnRestricted">선택된 일부 링크 세트는 팬텀 플래그가 전환됩니다.
+
+일부 선택된 링크 세트는 링크 세트에 대한 권한이 제한되어 있기 때문에 '[REQUESTED_TYPE]'로 설정할 수 없습니다. 이러한 링크 세트는 대신 '[RESTRICTED_TYPE]'로 설정됩니다.
+
+계속하시겠습니까?<usetemplate ignoretext="選択された一部のリンクセットのファントムフラグが切り替えられ、他のリンクセットはリンクセットへの権限が制限されているため設定できません。" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="PathfindingLinksets_WarnOnPhantom_MismatchOnVolume">선택된 일부 링크 세트는 팬텀 플래그가 전환될 것입니다.
+
+선택된 일부 링크 세트는 형태가 볼록하지 않기 때문에 '[REQUESTED_TYPE]'로 설정할 수 없습니다.
+
+계속하시겠습니까?<usetemplate ignoretext="選択された一部のリンクセットのファントムフラグが切り替えられ、他のリンクセットは形状が凸状でないため設定できません。" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="PathfindingLinksets_MismatchOnRestricted_MismatchOnVolume">일부 선택된 링크세트는 링크세트에 대한 권한이 제한되어 있기 때문에 '[REQUESTED_TYPE]'로 설정할 수 없습니다. 대신 이러한 링크세트는 '[RESTRICTED_TYPE]'로 설정됩니다.
+
+선택된 일부 링크세트는 형상이 볼록하지 않기 때문에 '[REQUESTED_TYPE]'로 설정할 수 없습니다. 이러한 링크세트의 용도 타입은 변함이 없습니다.
+
+계속하시겠습니까?<usetemplate ignoretext="一部の選択されたリンクセットは、リンクセットへの権限が制限されており、また形状が凸状でないため設定できません。" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="PathfindingLinksets_WarnOnPhantom_MismatchOnRestricted_MismatchOnVolume">선택된 일부 링크 세트는 팬텀 플래그가 전환됩니다.
+
+일부 선택된 링크 세트는 링크 세트에 대한 권한이 제한되어 있기 때문에 '[REQUESTED_TYPE]'로 설정할 수 없습니다. 이러한 링크 세트는 대신 '[RESTRICTED_TYPE]'로 설정됩니다.
+
+선택된 일부 링크 세트는 형태가 볼록하지 않기 때문에 '[REQUESTED_TYPE]'로 설정할 수 없습니다. 이러한 링크 세트의 용도 유형은 변경되지 않습니다.
+
+계속하시겠습니까?<usetemplate ignoretext="選択された一部のリンクセットのファントムフラグが切り替えられ、他のリンクセットはリンクセットへの権限が制限され、また形状が凸状でないため設定できません。" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="PathfindingLinksets_ChangeToFlexiblePath">선택된 객체는 네비메시에 영향을 줍니다. 객체를 유연 패스로 변경하면 네비메시에서 제거됩니다.<usetemplate ignoretext="選択されたオブジェクトはナビメッシュに影響を与えます。オブジェクトをフレキシブルパスに変更すると、ナビメッシュから削除されます。" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	
+	<global name="UnsupportedShaderRequirements">[APP_NAME] のハードウェア必要条件を満たしていないようです。[APP_NAME] は、OpenGL 2.0 以降のシェーダーに対応している必要があります。もしこの要件が満たされているのであれば、ご利用のグラフィックカードのドライバが最新になっているか、また OS のサービスパックやパッチが最新になっているかご確認ください。
+
+この問題が何度も起きる場合は、[SUPPORT_SITE] をご確認ください。
+
+---
+
+[APP_NAME]의 하드웨어 요구 사항을 충족하지 못하는 것 같습니다. [APP_NAME]는 OpenGL 2.0 이후 버전의 셰이더를 지원해야 합니다. 이 요구 사항이 충족된다면, 사용 중인 그래픽 카드 드라이버가 최신 버전인지, 또는 OS의 서비스 팩이나 패치가 최신인지 확인해 보십시오.
+
+이 문제가 계속 발생하면, [SUPPORT_SITE]를 확인하십시오.
+
+Note: If 'Firestorm' appears in the text, it is translated as '흑우촌'.</global>
+	
+	<global name="UnsupportedGLRequirements">[APP_NAME]에 필요한 하드웨어가 없는 것 같습니다. [APP_NAME]에는 멀티 텍스처를 지원하는 OpenGL 그래픽 카드가 필요합니다. 사용 중인 그래픽 카드의 최신 드라이버가 설치되어 있는지, 운영 체계의 서비스 팩과 패치가 들어 있는지 확인해 주세요.
+
+이 문제가 여러 번 발생하면 [SUPPORT_SITE]를 확인해 주세요.</global>
+	
+	<global name="UnsupportedIntelDriver">설치된 [GPUNAME]의 인텔 그래픽 드라이버 버전 [VERSION]은 매우 오래된 것으로, 프로그램이 자주 크래시를 일으킬 수 있는 것으로 알려져 있습니다. 최신 인텔 드라이버로 업그레이드할 것을 강력히 권장합니다.
+
+인텔 드라이버 웹사이트를 확인하시겠습니까?</global>
+	
+	<global name="UnsupportedCPUAmount">796</global>
+	<global name="UnsupportedRAMAmount">510</global>
+	<global name="UnsupportedGPU">- 당신의 그래픽 카드는 필수 시스템 요구 사항을 충족하지 않습니다.</global>
+	
+	<global name="UnsupportedCPU">Next time, please provide English text for translation. Here is the translation for the given text:
+
+- 당신의 CPU는 필요한 작동 환경 조건을 충족하지 않습니다.</global>
+	
+	<global name="UnsupportedRAM">당신의 시스템 메모리는 필요 동작 환경의 조건을 충족하지 않습니다.</global>
+	
+	 <global name="LLLeapUpdaterFailure">업데이트 서비스 [UPDATER_APP]의 기동에 실패했습니다. 뷰어가 올바르게 설치되어 있는지, 애플리케이션 실행에 필요한 권한 설정이 되어 있는지 확인하십시오. 이 문제가 반복될 경우, [SUPPORT_SITE]를 확인해 주십시오.</global>
+	
+	<global name="You can only set your 'Home Location' on your land or at a mainland Infohub.">자신의 토지를 소유하고 있는 경우, "홈"으로 설정할 수 있습니다.
+소유하지 않은 경우, 지도에서 "인포허브"를 찾아보세요.</global>
+	<global name="You died and have been teleported to your home location">죽었기 때문에 홈으로 텔레포트되었습니다.</global>
+	
+	
+	<notification name="ConfirmClearDebugSearchURL">デバッグ 검색의 URL을 지워도 괜찮습니까?<usetemplate ignoretext="デバッグ検索の URL をクリアすることを確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="ConfirmPickDebugSearchURL">현재 검색 URL을 디버그 검색 URL로 선택하시겠습니까?<usetemplate ignoretext="デバッグ検索 URL の選択を確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	
+	
+	
+	<notification name="ConfirmRemoveGrid">[REMOVE_GRID] をグリッドの一覧から削除してもよろしいですか？
+
+[REMOVE_GRID]을/를 그리드 목록에서 삭제하시겠습니까?<usetemplate ignoretext="グリッドを削除する時に確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="CanNotRemoveConnectedGrid">현재 [REMOVE_GRID]에 연결 중이므로 이 그리드를 삭제할 수 없습니다.<usetemplate ignoretext="接続中のグリッドは削除できない時の警告" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	
+
+	
+	<notification name="NewAOSet">새 AO 세트에 이름을 지정해 주세요.
+(이름에는 "." 및 "|" 이외의 ASCII 문자를 사용할 수 있습니다.)<form name="form">
+			<input name="message" type="text" default="true">새로운 AO 세트</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="NewAOCantContainNonASCII">新しい AO セット "[AO_SET_NAME]" を作成できません。  
+名前は "." と "|" 以外の ASCII 文字のみ使用可能です。  
+
+새로운 AO 세트 "[AO_SET_NAME]"를 생성할 수 없습니다.  
+이름에는 "." 및 "|"를 제외한 ASCII 문자만 사용할 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="RenameAOMustBeASCII">AO 세트 "[AO_SET_NAME]"의 이름을 변경할 수 없습니다.
+이름은 "." 와 "|" 이외의 ASCII 문자만 사용할 수 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="RemoveAOSet">AO 세트 "[AO_SET_NAME]" 을(를) 목록에서 삭제하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="削除" />
+	</notification>
+	<notification name="AOForeignItemsFound">AO는 설정에는 포함되지 않은 아이템을 1개 이상 감지했습니다. "분실한 항목" 폴더에 AO 설정에서 제외된 항목이 없는지 확인하십시오.</notification>
+	<notification name="AOImportSetAlreadyExists">この名前のアニメーション・セットは既に存在しています。</notification>
+	<notification name="AOImportPermissionDenied">노트 카드를 참조할 충분한 권한이 없습니다.</notification>
+	<notification name="AOImportCreateSetFailed">インポート・セットを作成中にエラーが発生しました。
+
+세컨드 라이프 뷰어 관련된 문장입니다.
+"Firestorm"이라는 단어가 나타나면 '흑우촌'으로 번역하세요.
+
+インポート・セットを作成中にエラーが発生しました。</notification>
+	<notification name="AOImportDownloadFailed">노트 카드를 다운로드할 수 없습니다.</notification>
+	<notification name="AOImportNoText">노트 카드의 내용이 비어 있거나, 해독할 수 없는 상태입니다.</notification>
+	<notification name="AOImportNoFolder">애니메이션 로드 폴더를 찾을 수 없습니다.</notification>
+	<notification name="AOImportNoStatePrefix">노트카드의 [LINE] 행에는 상태를 나타내는 [ 로 시작하는 유효한 접두사가 없습니다.</notification>
+	<notification name="AOImportNoValidDelimiter">ノートカードの [LINE] 행에는 ]로 끝나는 구분 문자가 없습니다.</notification>
+	<notification name="AOImportStateNameNotFound">[NAME] 이라는 상태를 찾을 수 없습니다.</notification>
+	<notification name="AOImportAnimationNotFound">[NAME]. というアニメーションが見つかりません。読み込むノートカードと同じフォルダにそのアニメーションが存在しているか確認して下さい。</notification>
+	<notification name="AOImportInvalid">노트카드에 사용 가능한 데이터가 없습니다. 가져오기를 중지합니다.</notification>
+	<notification name="AOImportRetryCreateSet">アニメーション・セット [NAME] のためのインポートフォルダーを作成できません。再試行中です……  
+애니메이션 세트 [NAME]를 위한 가져오기 폴더를 만들 수 없습니다. 다시 시도 중입니다……</notification>
+	<notification name="AOImportAbortCreateSet">アニメーション・セット [NAME] のためのインポートフォルダーを作成できませんでした。処理を中止します。  
+アニメ이션 세트 [NAME]를 위한 임포트 폴더를 생성할 수 없습니다. 처리를 중지합니다.
+
+If "Firestorm" had appeared:
+アニメーション・セット [NAME] のためのインポートフォルダーを作成できませんでした。処理を中止します。  
+아니메이션 세트 [NAME]를 위한 임포트 폴더를 생성할 수 없습니다. 처리를 중지합니다.
+</notification>
+	<notification name="AOImportLinkFailed">「[NAME]」というアニメーションのための 아ニメ이션 링크 생성에 실패했습니다!</notification>
+	
+
+	<notification name="SendSysinfoToIM">다음 정보를 현재 IM 세션에 전송합니다.
+
+[SYSINFO]<usetemplate name="okcancelbuttons" yestext="送信" notext="取り消し" />
+	</notification>
+
+	
+	<notification name="BlockLoginInfo">[이유]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="TestversionExpired">[APP_NAME] のこのテストバージョンは無効になりました。今後使用することはできません。
+
+[APP_NAME]의 이 테스트 버전은 무효화되었습니다. 앞으로 사용할 수 없습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="FireStormReqInfo">[NAME] 가 당신의 [APP_NAME] 의 설정에 관한 정보를 전송하려고 요청하고 있습니다.
+(여기에서 전송되는 정보는 "도움말" &gt; "[APP_NAME] 정보"에 표시되는 정보와 동일합니다.)
+[REASON]
+이 정보를 전송하시겠습니까?<form name="form">
+			<button name="Yes" text="はい" />
+			<button name="No" text="いいえ" />
+		</form>
+	</notification>
+
+	
+	<notification name="PhantomOn">팬텀 모드가 켜졌습니다.</notification>
+	<notification name="PhantomOff">팬텀 모드가 꺼졌습니다.</notification>
+	<notification name="MovelockEnabled">무브먼트 잠금이 활성화되었습니다</notification>
+	<notification name="MovelockDisabled">무브먼트 락이 해제되었습니다</notification>
+	<notification name="MovelockEnabling">무브먼트 락을 활성화 중입니다...</notification>
+	<notification name="MovelockDisabling">무브먼트 록을 해제 중입니다...</notification>
+	<notification name="FlightAssistEnabled">비행 보조가 활성화되었습니다</notification>
+	
+
+	
+	<notification label="모든 설정을 재설정" name="FirestormClearSettingsPrompt">문제가 발생했을 때 모든 설정을 리셋하는 것이 문제 해결에 도움이 될 수 있습니다. 하지만 리셋을 하면 기본 설정에서 커스터마이즈한 설정은 다시 해야 합니다.
+
+		정말로 모든 설정을 리셋하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="SettingsWillClear">설정은 [APP_NAME]를 재시작한 후에 초기화됩니다.</notification>
+	
+
+	
+	<notification name="CantAddGrid">[GRID] 를 그리드의 리스트에 추가할 수 없습니다.
+[REASON] [GRID]의 지원팀에 연락해 보세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	
+
+	
+	<notification name="ParticleScriptFindFolderFailed">インベントリに新しいスクリプトのフォルダが見つかりませんでした。
+
+인벤토리에서 새로운 스크립트 폴더를 찾을 수 없습니다.</notification>
+	<notification name="ParticleScriptCreationFailed">이 파티클에 새로운 스크립트를 만들 수 없었습니다.</notification>
+	<notification name="ParticleScriptNotFound">이 파티클에 새로 생성된 스크립트를 찾을 수 없었습니다.</notification>
+	<notification name="ParticleScriptCreateTempFileFailed">스크립트를 업로드하기 위한 임시 파일을 생성할 수 없습니다.</notification>
+	<notification name="ParticleScriptInjected">파티클 스크립트는 무사히 넣을 수 있었습니다.<form name="form">
+			<ignore name="ignore" text="オブジェクトにパーティクルのスクリプトが仕込まれた時。" />
+		</form>
+	</notification>
+	<notification name="ParticleScriptCapsFailed">스크립트를 객체에 삽입하는 데 실패했습니다. 성능 요구에 대해 빈 주소가 반환되었습니다.</notification>
+	<notification name="ParticleScriptCopiedToClipboard">이 파티클을 생성하는 LSL 스크립트가 클립보드에 복사되었습니다. 새 스크립트에 붙여넣어 이를 이용할 수 있습니다.<form name="form">
+			<ignore name="ignore" text="パーティクルのスクリプトがクリップボードにコピーされた時" />
+		</form>
+	</notification>
+	
+
+	
+	<notification name="DebugSettingsWarning">경고! 디버그 설정 화면의 사용은 지원 대상이 아닙니다! 디버그 설정의 변경은 사용자의 경험에 큰 영향을 미치며 데이터 및 기능의 손실로 이어질 수 있고, 경우에 따라 서비스 자체에 접근하지 못하게 될 가능성도 있습니다. 그 설정 변경이 무엇을 의미하는지 충분한 지식이 없는 경우 절대로 설정 값을 변경하지 마십시오.<form name="form">
+			<ignore name="ignore" text="デバッグ設定変更時の警告メッセージ" />
+		</form>
+	</notification>
+	<notification name="ControlNameCopiedToClipboard">이 디버그 설정의 이름이 클립보드에 복사되었습니다. 다른 곳에 붙여넣어 이를 이용할 수 있습니다.<form name="form">
+			<ignore name="ignore" text="デバッグ設定の名前がクリップボードにコピーされた時" />
+		</form>
+	</notification>
+	<notification name="SanityCheck">[APP_NAME] があなたの設定に関して問題が起きる可能性を検知しました。
+
+[SANITY_MESSAGE]
+
+理由：[SANITY_COMMENT]
+
+現在の設定：[CURRENT_VALUE]<form name="form">
+			<button name="OK" text="修正する" />
+			<button name="Cancel" text="そのままにする" />
+			<ignore name="ignore" text="設定の変更が整合性確認検査で不合格となった場合" />
+		</form>
+	</notification>
+	
+
+	<notification name="DefaultLabelMissing">
+		<usetemplate ignoretext="LSL スクリプトにデフォルトラベルのない switch ステートメントがあります。" name="notifyignore" />
+デフォルト値のない switch() ステートメントの挙動が以前は正しいものとならなかったため修正されました。詳しくは JIRA で FIRE-17710 をご確認下さい。
+	</notification>
+
+	<notification name="TeleportToAvatarNotPossible">このアバターへのテレポートはできません。正確な位置が不明なためです。
+
+해당 아바타로의 텔레포트가 불가능합니다. 정확한 위치를 알 수 없기 때문입니다.</notification>
+	<notification name="ZoomToAvatarNotPossible">このアバターをズームすることはできません。あまりに遠すぎるためです。
+
+이 아바타를 줌 인 할 수 없습니다. 너무 멀기 때문입니다.</notification>
+	<notification name="TrackAvatarNotPossible">이 아바타를 추적할 수 없습니다. 레이더의 범위를 초과했기 때문입니다.</notification>
+	<notification name="CacheEmpty">현재, 뷰어의 캐시가 비어 있습니다. 새로운 콘텐츠를 다운로드하는 동안 프레임 레이트가 느려지거나 인벤토리 로딩에 시간이 걸릴 수 있습니다.</notification>
+
+	
+	<notification name="FirstJoinSupportGroup2">Phoenix/흑우촌 뷰어 지원 그룹에 오신 것을 환영합니다!
+
+보다 원활한 지원을 받기 위해, 사용 중인 뷰어의 버전을 그룹에 알리는 것을 권장합니다. 이 그룹에 보내는 채팅의 시작 부분에 뷰어의 버전을 자동으로 표시할 수도 있습니다. 사용 중인 뷰어의 버전을 알면, 그룹의 지원 멤버들이 더욱 의미 있는 조언을 제공할 수 있습니다.
+
+이 기능은 그룹 채팅 창 내의 체크박스로 언제든지 켜거나 끌 수 있습니다.
+
+자동으로 뷰어의 버전을 표시하는 기능을 켜시겠습니까?<form name="form">
+			<button name="OK_okcancelignore" text="はい" />
+			<button name="Cancel_okcancelignore" text="いいえ" />
+			<ignore name="ignore" text="Phoenix/Firestorm サポート・グループに参加した時" />
+		</form>
+	</notification>
+	
+
+	<notification name="ConfirmScriptModify">선택한 오브젝트의 스크립트를 수정해도 괜찮습니까?<usetemplate ignoretext="選択中のスクリプトに修正を加える前に確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="LocalBitmapsUpdateFileNotFound">[FNAME]을(를) 찾지 못했기 때문에 업데이트할 수 없었습니다.
+이 파일에 대한 향후 업데이트를 비활성화합니다.</notification>
+	<notification name="LocalBitmapsUpdateFailedFinal">[FNAME] 을(를) 열거나 디코딩하는 시도에 실패했습니다(시도 횟수 [NRETRIES] 회). 따라서 이 파일은 손상된 것으로 처리되었습니다.
+이 파일에 대한 향후 업데이트를 비활성화합니다.</notification>
+	<notification name="LocalBitmapsVerifyFail">無効または読み取り不能な画像ファイル [FNAME] を追加しようとしました.
+이 시도는 취소되었습니다.
+
+Translated to Korean (with 'Firestorm' translated as '흑우촌'):
+
+無効または読み取り不能な画像ファイル [FNAME] を追加しようとしました.
+이 시도는 취소되었습니다.</notification>
+	<notification name="PathfindingReturnMultipleItems">[NUM_ITEMS] 개의 아이템을 반환 중입니다. 계속하시겠습니까?<usetemplate ignoretext="複数のアイテムを返しますか？" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="PathfindingDeleteMultipleItems">[NUM_ITEMS] 개의 아이템을 삭제 중입니다. 계속하시겠습니까?<usetemplate ignoretext="複数のアイテムを削除しますか？" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="AvatarFrozen">[AV_FREEZER]によって 당신은 프리즈되었습니다. 세계를 움직이는 것도, 세계와 상호작용하는 것도 할 수 없습니다.</notification>
+	<notification name="AvatarFrozenDuration">[AV_FREEZER] 에 의해, 당신은 [AV_FREEZE_TIME] 초 동안 얼려졌습니다. 세계를 이동하거나 상호작용할 수 없습니다.</notification>
+	<notification name="YouFrozeAvatar">아바타가 멈췄습니다.</notification>
+	<notification name="AvatarHasUnFrozenYou">[AV_FREEZER]에 의해 프리즈가 해제되었습니다.</notification>
+	<notification name="AvatarUnFrozen">아바타의 프리즈가 해제되었습니다.</notification>
+	<notification name="AvatarFreezeFailure">해당 구역의 관리 권한이 없기 때문에 흑우촌에 실패했습니다.</notification>
+	<notification name="AvatarFreezeThaw">프리즈 기간이 종료되었습니다. 작업으로 돌아가십시오.</notification>
+	<notification name="AvatarCantFreeze">죄송하지만, 해당 사용자를 동결할 수 없습니다.</notification>
+	<notification name="NowOwnObject">이제 오브젝트 [OBJECT_NAME]의 소유자가 되었습니다.</notification>
+	<notification name="CantRezOnLand">この土地の所有者が許可していないため、[OBJECT_POS] でオブジェクトを Rez することができません。土地ツールを使用して、土地の所有を確認してください。</notification>
+	<notification name="RezFailTooManyRequests">요청이 너무 많아서 오브젝트를 Rez 할 수 없습니다.</notification>
+	<notification name="SitFailCantMove">이번에 이동할 수 없었기 때문에 앉을 수 없습니다.</notification>
+	<notification name="SitFailNotAllowedOnLand">그 땅에 대한 허가를 받지 않았기 때문에, 앉을 수 없습니다.</notification>
+	<notification name="SitFailNotSameRegion">이동하여 가까이 접근해 보세요. 오브젝트가 동일한 리전(regions)에 없기 때문에 오브젝트를 배치할 수 없습니다.</notification>
+	<notification name="ChatHistoryIsBusyAlert">채팅 기록 파일은 이전에 수행된 작업 때문에 현재 사용할 수 없습니다. 몇 분 후에 다시 시도하거나 다른 사람과의 채팅을 선택하십시오.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="NoNewObjectRegionFull">새로운 오브젝트를 생성할 수 없습니다. 리전이 가득 찼습니다.</notification>
+	<notification name="FailedToPlaceObject">지정한 장소에 오브젝트를 배치할 수 없었습니다. 다시 시도해 주세요.</notification>
+	<notification name="NoOwnNoGardening">소유하고 있지 않은 땅에 나무나 풀을 심을 수 없습니다.</notification>
+	<notification name="NoCopyPermsNoObject">オブジェクト &lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt; をコピーする権限がないため、コピーに失敗しました。</notification>
+	<notification name="NoTransPermsNoObject">オブジェクト &lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt; はあなたに譲渡できないため、コピーに失敗しました。</notification>
+	<notification name="AddToNavMeshNoCopy">オブジェクト &lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt; は navmesh に関連があるため、コピーに失敗しました。</notification>
+	<notification name="DupeWithNoRootsSelected">ルートオブジェクトを選択せずに複製します。 -&gt; 루트 오브젝트를 선택하지 않고 복제합니다.</notification>
+	<notification name="CantDupeCuzRegionIsFull">리전이 꽉 차 있어서 오브젝트의 복사본을 만들 수 없습니다.</notification>
+	<notification name="CantDupeCuzParcelNotFound">オブジェクトのコピーを作成できません。オブジェクトのある区画が見つかりません。
+
+객체의 복사본을 만들 수 없습니다. 객체가 있는 구역을 찾을 수 없습니다.</notification>
+	<notification name="CantCreateCuzParcelFull">구획이 가득 차 있어, 오브젝트를 생성할 수 없습니다.</notification>
+	<notification name="RezAttemptFailed">오브젝트에 Rez 시도를 실패했습니다.</notification>
+	<notification name="ToxicInvRezAttemptFailed">이 리전에서 문제를 발생시키는 아이템은 생성할 수 없습니다.</notification>
+	<notification name="InvItemIsBlacklisted">그 소지품 아이템은 블랙리스트에 등록되어 있습니다.</notification>
+	<notification name="NoCanRezObjects">현재 당신은 오브젝트를 생성할 수 있는 권한이 없습니다.</notification>
+	<notification name="LandSearchBlocked">土地 검색이 차단되었습니다.
+짧은 시간에 많은 땅을 검색했기 때문입니다.
+잠시 후 다시 시도해 주세요.</notification>
+	<notification name="NotEnoughResourcesToAttach">オブジェクトの着用に使用できるスクリプトリソースが足りません。
+오브젝트를 착용하는 데 사용할 수 있는 스크립트 리소스가 부족합니다.</notification>
+	<notification name="YouDiedAndGotTPHome">죽어버려서 홈으로 텔레포트되었습니다.</notification>
+	<notification name="EjectComingSoon">입장이 허용되지 않으므로, [EJECT_TIME] 초 후에 추방됩니다.</notification>
+	<notification name="NoEnterRegionMaybeFull">"[NAME]" 에는 들어갈 수 없습니다.
+최대 인원을 초과했거나 곧 재시작될 가능성이 있습니다.</notification>
+	<notification name="SaveBackToInvDisabled">「「持ち物」に保存」が無効になっています.</notification>
+	<notification name="NoExistNoSaveToContents">「존재하지 않습니다」에서 rez 되었기 때문에, &lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt;을/를 오브젝트의 내용물에 저장할 수 없었습니다.</notification>
+	<notification name="NoModNoSaveToContents">당신은 오브젝트 &lt;nolink&gt;'[DEST_NAME]'&lt;/nolink&gt;을(를) 수정할 권한이 없기 때문에, &lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt;을(를) 오브젝트의 내용물에 저장할 수 없었습니다.</notification>
+	<notification name="NoSaveBackToInvDisabled">&lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt; 인벤토리에 저장할 수 없습니다. 이 작업은 무효화되었습니다.</notification>
+	<notification name="NoCopyNoSelCopy">다음과 관련된 텍스트를 SecondLife Viewer로 관련하여 번역합니다:
+만약 'Firestorm'이라는 단어가 나타나면,'흑우촌'으로 번역합니다:
+
+당신에게는 오브젝트 &lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt; 을(를) 복사할 권한이 없으므로, 선택 내용을 복사할 수 없습니다.</notification>
+	<notification name="NoTransNoSelCopy">오브젝트 &lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt; 을(를) 양도할 수 없으므로 선택 내용을 복사할 수 없습니다.</notification>
+	<notification name="NoTransNoCopy">오브젝트 &lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt; 를 양도할 수 없으므로, 선택 내용을 복사할 수 없습니다.</notification>
+	<notification name="NoPermsNoRemoval">オブジェクト &lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt; をシミュレーターから削除することは、権限のシステムにより許可されていません。</notification>
+	<notification name="NoModNoSaveSelection">권한이 없어서 '[OBJ_NAME]' 오브젝트를 수정할 수 없기 때문에 선택 내용을 저장할 수 없습니다.
+
+</notification>
+	<notification name="NoCopyNoSaveSelection">오브젝트 &lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt;는 복사할 수 없어서 선택 내용을 저장할 수 없습니다.</notification>
+	<notification name="NoModNoTaking">당신은 오브젝트 &lt;nolink&gt;'[OBJ_NAME]'&lt;/nolink&gt;을(를) 수정할 권한이 없으므로, 선택 내용을 선택할 수 없습니다.</notification>
+	<notification name="RezDestInternalError">내부 오류: 알 수 없는 대상 유형.</notification>
+	<notification name="DeleteFailObjNotFound">オブジェクトが見つからないため削除できませんでした。
+
+오브젝트가 발견되지 않아 삭제할 수 없었습니다.</notification>
+	<notification name="SorryCantEjectUser">유감스럽게도, 그 사용자를 추방할 수 없습니다.</notification>
+	<notification name="RegionSezNotAHome">이 지역에서는 여기에 홈 위치를 설정할 수 없습니다.</notification>
+	<notification name="HomeLocationLimits">홈의 위치를 설정할 수 있는 곳은 자신의 땅이나 메인랜드의 인포 허브에서만 가능합니다.</notification>
+	<notification name="HomePositionSet">홈 포지션이 설정되었습니다.</notification>
+	<notification name="AvatarEjected">아바타가 추방되었습니다.</notification>
+	<notification name="AvatarEjectFailed">그 구역의 관리 권한이 없기 때문에 추방할 수 없었습니다.</notification>
+	<notification name="CMOParcelFull">区画が埋まっているため、オブジェクト '[O]' を、リージョン [R] 内の [P] に移動できません。</notification>
+	<notification name="CMOParcelPerms">オブジェクト '[O]' は、この区画で許可されていないため、リージョン [R] 内の [P] に移動できません。
+
+오브젝트 '[O]'는 이 구역에서 허용되지 않기 때문에 리전 [R] 내의 [P]로 이동할 수 없습니다.</notification>
+	<notification name="CMOParcelResources">이 구획에서 이 오브젝트의 리소스가 부족하여 오브젝트 '[O]'을(를) 리전 [R] 내의 [P]으로(로) 이동할 수 없습니다.</notification>
+	<notification name="NoParcelPermsNoObject">그 구역에 대한 접근 권한이 없어 복사에 실패했습니다.</notification>
+	<notification name="CMORegionVersion">오브젝트 '[O]'를 리전 [R] 내의 [P]로 이동할 수 없습니다. 다른 리전에서는 이 오브젝트를 리전 경계를 넘어 수신할 수 없는 오래된 버전을 실행하고 있기 때문입니다.</notification>
+	<notification name="CMONavMesh">내비 메시를 리전 경계를 넘어 변경할 수 없으므로, 오브젝트 '[O]'를 리전 [R] 내의 [P]로 이동할 수 없습니다.</notification>
+	<notification name="CMOWTF">알 수 없는 이유로 인해, 오브젝트 '[O]'를 리전 [R] 내의 [P]로 이동할 수 없습니다.
+(흑우촌)</notification>
+	<notification name="NoPermModifyObject">그 오브젝트를 변경할 권한이 없습니다.</notification>
+	<notification name="TooMuchObjectInventorySelected">큰 인벤토리를 가진 오브젝트를 너무 많이 선택했습니다. 선택할 오브젝트의 수를 줄이고 다시 시도해 주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="CantEnablePhysObjContributesToNav">ナビメッシュに貢献するオブジェクトに対して物理を有効にできません。
+네비메시에 기여하는 오브젝트에 대해서 물리를 활성화할 수 없습니다.</notification>
+	<notification name="CantEnablePhysKeyframedObj">키프레임 오브젝트를 위해 물리를 활성화할 수 없습니다.</notification>
+	<notification name="CantEnablePhysNotEnoughLandResources">土地의 리소스가 부족하여 오브젝트의 물리를 활성화할 수 없습니다.</notification>
+	<notification name="CantEnablePhysCostTooGreat">[MAX_OBJECTS] 보다 큰 물리 리소스 비용을 가진 오브젝트는 물리 기능을 활성화할 수 없습니다.</notification>
+	<notification name="PhantomWithConcavePiece">이 오브젝트는 팬텀이므로 내비메시에 기여하고 있어, 움푹 들어가게 할 수 없습니다.</notification>
+	<notification name="UnableAddItem">아이템을 추가할 수 없습니다!</notification>
+	<notification name="UnableEditItem">이것은 편집할 수 없습니다!</notification>
+	<notification name="NoPermToEdit">이를 편집할 권한이 없습니다.</notification>
+	<notification name="NoPermToCopyInventory">そのインベントリをコピーすることは許可されません。
+
+その 인벤토리를 복사하는 것은 허용되지 않습니다.</notification>
+	<notification name="CantSaveItemDoesntExist">오브젝트의 콘텐츠에 저장할 수 없습니다. 아이템이 존재하지 않습니다.</notification>
+	<notification name="CantSaveItemAlreadyExists">오브젝트의 콘텐츠에 저장할 수 없습니다. 같은 이름을 가진 아이템이 이미 인벤토리에 존재합니다.</notification>
+	<notification name="CantSaveModifyAttachment">오브젝트의 콘텐츠에 저장할 수 없습니다. 이로 인해 첨부 파일의 권한이 변경됩니다.</notification>
+	<notification name="AttachmentHasTooMuchInventory">사용 중인 부착물에 포함된 인벤토리가 너무 많아 인벤토리를 추가할 수 없습니다.</notification>
+	<notification name="IllegalAttachment">첨부 파일은 아바타의 존재하지 않는 점을 요구했습니다. 대신 가슴에 첨부되었습니다.</notification>
+	<notification name="TooManyScripts">스크립트가 너무 많습니다.</notification>
+	<notification name="UnableAddScript">텍스트를 추가할 수 없습니다!</notification>
+	<notification name="AssetServerTimeoutObjReturn">자산 서버가 제때 응답하지 않았습니다. 객체가 지역으로 반환되었습니다.</notification>
+	<notification name="RegionDisablePhysicsShapes">이 리전에서는 물리적 쉐이프가 활성화되지 않았습니다.</notification>
+	<notification name="NoModNavmeshAcrossRegions">리전의 경계를 넘는 내비메시는 변경할 수 없습니다.</notification>
+	<notification name="NoSetPhysicsPropertiesOnObjectType">そのオブジェクトタイプの物理的プロパティを設定できません。
+해당 오브젝트 유형의 물리적 속성을 설정할 수 없습니다.</notification>
+	<notification name="NoSetRootPrimWithNoShape">루트 프림을 설정할 수 없기 때문에 형태가 없습니다.</notification>
+	<notification name="NoRegionSupportPhysMats">이 리전에서는 물리적 소재가 활성화되지 않았습니다.</notification>
+	<notification name="OnlyRootPrimPhysMats">물리적 재질을 조정할 수 있는 것은 루트 프림뿐입니다.</notification>
+	<notification name="NoSupportCharacterPhysMats">캐릭터에 물리적 소재를 설정하는 것은 아직 지원되지 않습니다.</notification>
+	<notification name="InvalidPhysMatProperty">지정된 물리적 소재의 속성 중 하나 이상이 유효하지 않습니다.</notification>
+	<notification name="NoPermsAlterStitchingMeshObj">메쉬 오브제의 솔기의 유형을 변경할 수 없습니다.</notification>
+	<notification name="NoPermsAlterShapeMeshObj">메쉬 오브젝트의 형상을 변경할 수 없습니다.</notification>
+	<notification name="FullRegionCantEnter">리전이 가득 차서, 이 리전에 입장할 수 없습니다.</notification>
+	<notification name="LinkFailedOwnersDiffer">링크 오류 -- 소유자가 다릅니다</notification>
+	<notification name="LinkFailedNoModNavmeshAcrossRegions">링크 오류 -- 리전 경계를 넘는 내비메시는 변경할 수 없습니다.</notification>
+	<notification name="LinkFailedNoPermToEdit">링크 오류 -- 편집 권한이 없습니다.</notification>
+	<notification name="LinkFailedTooManyPrims">링크 오류 -- 프리미티브가 너무 많습니다.</notification>
+	<notification name="LinkFailedCantLinkNoCopyNoTrans">링크 오류 -- 복사 불가 및 전송 불가 항목을 링크할 수 없습니다.</notification>
+	<notification name="LinkFailedNothingLinkable">링크 오류 -- 링크할 수 있는 것이 없습니다.</notification>
+	<notification name="LinkFailedTooManyPathfindingChars">링크 오류 -- 패스파인딩 캐릭터가 너무 많습니다</notification>
+	<notification name="LinkFailedInsufficientLand">링크 오류 -- 토지 자원이 부족합니다</notification>
+	<notification name="LinkFailedTooMuchPhysics">オブジェクトが使用している物理リソースが多すぎたため、ダイナミックスが無効にされました。  
+객체가 사용하고 있는 물리적 자원이 너무 많아서 다이나믹이 비활성화되었습니다.</notification>
+	<notification name="EstateManagerFailedllTeleportHome">[SLURL] 의 오브젝트 '[OBJECT_NAME]' 에서 부동산 매니저의 홈으로 텔레포트할 수 없습니다.</notification>
+	<notification name="TeleportedHomeByObjectOnParcel">区画 '[PARCEL_NAME]' のオブジェクト '[OBJECT_NAME]' によって、あなたはホームにテレポートされました。
+
+[PARCEL_NAME]의 오브젝트 [OBJECT_NAME]에 의해, 당신은 홈으로 텔레포트되었습니다.</notification>
+	<notification name="TeleportedHomeByObject">​오브젝트 ​'[OBJECT_NAME]'에 의해, 당신은 홈으로 텔레포트되었습니다.</notification>
+	<notification name="TeleportedByAttachment">[ITEM_ID] への 아타치멘토によって, 당신은 텔레포트 되고 있습니다.<usetemplate ignoretext="テレポート：アタッチメントによりテレポートされました" name="notifyignore" />
+	</notification>
+	<notification name="TeleportedByObjectOnParcel">区画 '[PARCEL_NAME]' のオブジェクト '[OBJECT_NAME]' によって、あなたはテレポートされています。
+
+구역 '[PARCEL_NAME]'의 오브젝트 '[OBJECT_NAME]'에 의해 당신은 텔레포트되었습니다.<usetemplate ignoretext="テレポート：区画上のオブジェクトによりテレポートされました" name="notifyignore" />
+	</notification>
+	<notification name="TeleportedByObjectOwnedBy">[OWNER_ID] 가 소유하고 있는 오브젝트 '[OBJECT_NAME]' 에 의해, 당신은 텔레포트 되었습니다.</notification>
+	<notification name="TeleportedByObjectUnknownUser">알 수 없는 사용자가 소유한 오브젝트 '[OBJECT_NAME]'에 의해 당신이 텔레포트되었습니다.</notification>
+	<notification name="StandDeniedByObject">'[OBJECT_NAME]'는 이 시점에서 당신이 서는 것을 허락하지 않습니다.</notification>
+	<notification name="ResitDeniedByObject">'[OBJECT_NAME]'은(는) 이 시점에서 당신이 좌석을 변경하는 것을 허락하지 않습니다.</notification>
+	<notification name="CantCreateObjectRegionFull">요청한 객체를 생성할 수 없습니다. 리전이 가득 차 있습니다.</notification>
+	<notification name="CantCreateAnimatedObjectTooLarge">리그 초과 삼각형의 한도 수를 넘기 때문에 요청된 애니메이션 객체를 생성할 수 없습니다.</notification>
+	<notification name="CantAttackMultipleObjOneSpot">하나의 장소에 여러 개의 오브젝트를 착용할 수 없습니다.</notification>
+	<notification name="CantCreateMultipleObjAtLoc">여기서는 여러 오브젝트를 만들 수 없습니다.</notification>
+	<notification name="UnableToCreateObjTimeOut">요청된 객체를 생성할 수 없습니다. 객체가 데이터베이스에서 찾을 수 없습니다.</notification>
+	<notification name="UnableToCreateObjUnknown">요청된 오브젝트를 생성할 수 없습니다. 요청이 시간 초과되었습니다. 다시 시도해 주세요.</notification>
+	<notification name="UnableToCreateObjMissingFromDB">요청한 객체를 만들 수 없습니다. 다시 시도해 주십시오.</notification>
+	<notification name="RezFailureTookTooLong">요청된 오브젝트의 로드에 시간이 너무 오래 걸려서 Rez에 실패했습니다.</notification>
+	<notification name="FailedToPlaceObjAtLoc">지정한 위치에 오브젝트를 배치할 수 없었습니다. 다시 시도해 주세요.</notification>
+	<notification name="CantCreatePlantsOnLand">이 땅에 나무를 심을 수 없습니다.</notification>
+	<notification name="CantRestoreObjectNoWorldPos">오브젝트를 복원할 수 없습니다. 월드의 위치를 찾을 수 없습니다.</notification>
+	<notification name="CantRezObjectInvalidMeshData">메시 데이터가 무효이므로 오브젝트를 배치할 수 없습니다.</notification>
+	<notification name="CantRezObjectTooManyScripts">이 지역에 이미 많은 스크립트가 존재하기 때문에, 오브젝트를 Rez할 수 없습니다.</notification>
+	<notification name="CantCreateObjectNoAccess">현재의 접근 권한으로는 그곳에 오브젝트를 생성할 수 없습니다.</notification>
+	<notification name="CantCreateObject">현재 당신은 오브젝트를 생성할 권한이 없습니다.</notification>
+	<notification name="InvalidObjectParams">無効なオブジェクトパラメーター의  번역문은 "잘못된 오브젝트 매개변수"입니다. 
+
+Firestorm이 나타났을 때는 흑우촌으로 변환해야 하므로 번역문은:
+
+잘못된 오브젝트 매개변수</notification>
+	<notification name="CantDuplicateObjectNoAcess">현재의 접근 권한으로는, 여기에서 오브젝트의 복사본을 생성할 수 없습니다.</notification>
+	<notification name="CantChangeShape">あなたにはこのシェイプを変更する許可がありません。
+
+위 텍스트의 변역문:
+당신은 이 셰이프를 변경할 권한이 없습니다.</notification>
+	<notification name="NoPermsTooManyAttachedAnimatedObjects">이 작업을 수행하면, 착용된 애니메이션 객체가 한도를 초과하게 됩니다.</notification>
+	<notification name="NoPermsLinkAnimatedObjectTooLarge">결과적으로 애니메이션 오브젝트가 리그된 삼각형의 한도 수를 초과하여, 이러한 오브젝트를 결합할 수 없습니다.</notification>
+	<notification name="NoPermsSetFlagAnimatedObjectTooLarge">리그가 포함된 삼각형의 한도 수를 초과하여, 이 오브젝트를 애니메이션 오브젝트로 만들 수 없습니다.</notification>
+	<notification name="CantChangeAnimatedObjectStateInsufficientLand">이 오브젝트를 애니메이션 오브젝트 상태로 변경하면 구획의 한도 수를 초과하므로 변경할 수 없습니다.</notification>
+	<notification name="ErrorNoMeshData">서버 오류: 메쉬 데이터를 불러올 수 없어서 이 작업을 완료할 수 없습니다.</notification>
+	<notification name="NoAccessToClaimObjects">현재 접근 권한으로는 여기에 오브젝트를 가져올 수 없습니다.</notification>
+	<notification name="DeedFailedNoPermToDeedForGroup">당신의 그룹에 오브젝트를 양도할 권한이 없기 때문에, 양도에 실패했습니다.</notification>
+	<notification name="NoPrivsToBuyObject">현재의 접근 권한으로는 여기에서 오브젝트를 구매할 수 없습니다.</notification>
+	<notification name="CantAttachObjectAvatarSittingOnIt">아바타가 오브젝트에 존재하기 때문에, 오브젝트를 착용할 수 없습니다.</notification>
+	<notification name="WhyAreYouTryingToWearShrubbery">나무나 풀을 부착물로 착용할 수 없습니다.</notification>
+	<notification name="CantAttachGroupOwnedObjs">그룹이 소유하고 있는 오브젝트는 착용할 수 없습니다.</notification>
+	<notification name="CantAttachObjectsNotOwned">소유하지 않은 오브젝트는 착용할 수 없습니다.</notification>
+	<notification name="CantAttachNavmeshObjects">네비메쉬에 공헌하고 있는 오브젝트는 착용할 수 없습니다.</notification>
+	<notification name="CantAttachObjectNoMovePermissions">당신은 오브젝트를 이동할 권한이 없기 때문에, 그 오브젝트를 첨부할 수 없습니다.</notification>
+	<notification name="CantAttachNotEnoughScriptResources">オブジェクトの着用に使用できるスクリプトリソースが足りません。  
+스크립트 리소스가 부족하여 오브젝트를 착용할 수 없습니다.</notification>
+	<notification name="CantAttachObjectBeingRemoved">이미 삭제된 오브젝트를 착용할 수 없습니다.</notification>
+	<notification name="CantDropItemTrialUser">오브젝트를 여기에 드롭할 수 없습니다. 무료 체험 영역을 시도해 보세요.</notification>
+	<notification name="CantDropMeshAttachment">메시 부착물을 드롭할 수 없습니다. 인벤토리에서 분리하여 월드에서 Rez하세요.</notification>
+	<notification name="CantDropAttachmentNoPermission">アタッチメントのドロップに失敗しました。そこへドロップする権限がありません。
+
+첨부 파일을 드롭하는 데 실패했습니다. 해당 위치에 드롭할 권한이 없습니다.</notification>
+	<notification name="CantDropAttachmentInsufficientLandResources">アタッチメントのドロップに失敗しました。利用できる土地リソースの数が足りません。
+
+첨부 파일을 드롭하지 못했습니다. 사용할 수 있는 토지 리소스 수가 부족합니다.</notification>
+	<notification name="CantDropAttachmentInsufficientResources">사용 가능한 리소스가 부족하여 첨부 파일 드롭에 실패했습니다.</notification>
+	<notification name="CantDropObjectFullParcel">여기에 오브젝트를 드롭할 수 없습니다. 구역이 가득 찼습니다.</notification>
+	<notification name="CantTouchObjectBannedFromParcel">土地区画に入場することを禁止されているため、このオブジェクトを触ったり、つかむことができません。  
+ーー
+당신은 토지 구역에 입장하는 것이 금지되어 있어서 이 오브젝트를 만지거나 잡을 수 없습니다.</notification>
+	<notification name="PlzNarrowDeleteParams">삭제 매개 변수를 좁혀 주세요.</notification>
+	<notification name="UnableToUploadAsset">자산을 업로드할 수 없습니다.</notification>
+	<notification name="CantTeleportCouldNotFindUser">해당 사용자가 홈으로 텔레포트할 수 없습니다.</notification>
+	<notification name="GodlikeRequestFailed">과도한 요청이 실패했습니다</notification>
+	<notification name="GenericRequestFailed">일반적인 요청에 실패했습니다</notification>
+	<notification name="CantUploadPostcard">ポストカード를 업로드할 수 없습니다. 나중에 다시 시도해 주세요.</notification>
+	<notification name="CantFetchInventoryForGroupNotice">그룹 알림의 인벤토리 세부 정보를 가져올 수 없습니다.</notification>
+	<notification name="CantSendGroupNoticeNotPermitted">グループ通知の送信が許可されないため、送信できません。
+
+그룹 알림 전송이 허가되지 않아서, 전송할 수 없습니다.</notification>
+	<notification name="CantSendGroupNoticeCantConstructInventory">그룹 알림을 보낼 수 없습니다. 소지품을 생성할 수도 없습니다.</notification>
+	<notification name="CantParceInventoryInNotice">알림 내의 소지품을 감지할 수 없습니다.</notification>
+	<notification name="TerrainUploadFailed">지형 업로드에 실패했습니다.</notification>
+	<notification name="TerrainFileWritten">지형 파일이 작성되었습니다.</notification>
+	<notification name="TerrainFileWrittenStartingDownload">지형 파일을 내보내고, 다운로드를 시작하고 있습니다...</notification>
+	<notification name="TerrainBaked">지형이 베이크되었습니다.</notification>
+	<notification name="TenObjectsDisabledPlzRefresh">선택된 첫 10개의 오브젝트만 비활성화되었습니다. 필요하다면 새로 고침하여 선택 항목을 추가하세요.</notification>
+	<notification name="UpdateViewerBuyParcel">이 구획을 구매하려면, 뷰어를 업데이트해야 합니다.</notification>
+	<notification name="CantBuyParcelNotForSale">구매할 수 없습니다. 이 구역은 판매 대상이 아닙니다.</notification>
+	<notification name="CantBuySalePriceOrLandAreaChanged">판매 가격 또는 토지의 면적이 변경되었기 때문에 구매할 수 없습니다.</notification>
+	<notification name="CantBuyParcelNotAuthorized">당신은 이 구역의 위임받은 구매자가 아닙니다.</notification>
+	<notification name="CantBuyParcelAwaitingPurchaseAuth">이미 구매 인증을 기다리고 있기 때문에, 이 구역을 구매할 수 없습니다.</notification>
+	<notification name="CantBuildOverflowParcel">구획이 초과되었기 때문에 여기에서 객체를 만들 수 없습니다.</notification>
+	<notification name="SelectedMultipleOwnedLand">소유자가 다른 땅을 선택했습니다. 선택하는 면적을 작게 줄여서 다시 시도해 보세요.</notification>
+	<notification name="CantJoinTooFewLeasedParcels">선택 범위의 리스 구역 수가 적어서 참여할 수 없습니다.</notification>
+	<notification name="CantDivideLandMultipleParcelsSelected">토지를 분할할 수 없습니다.  
+여러 구획이 선택되었습니다.  
+작은 구획을 선택하세요.</notification>
+	<notification name="CantDivideLandCantFindParcel">토지를 분할할 수 없습니다.
+구역을 찾을 수 없습니다.
+'도움말' -&gt; '버그 신고'에서 신고해 주세요.</notification>
+	<notification name="CantDivideLandWholeParcelSelected">토지를 분할할 수 없습니다. 구획 전체가 선택되었습니다. 작은 구획을 선택하세요.</notification>
+	<notification name="LandHasBeenDivided">토지가 분할되었습니다.</notification>
+	<notification name="PassPurchased">입장 허가를 구매했습니다.</notification>
+	<notification name="RegionDisallowsClassifieds">리전에서는, 클래시파이드 광고를 허용하지 않습니다.</notification>
+	<notification name="LandPassExpireSoon">이 땅에 대한 입장 허가가 곧 만료됩니다.</notification>
+	<notification name="CantSitNoSuitableSurface">적절한 배치 표면이 없습니다. 다른 장소를 시도해보세요.</notification>
+	<notification name="CantSitNoRoom">여기에는 앉을 공간이 없습니다. 다른 장소를 시도해 보세요.</notification>
+	<notification name="ClaimObjectFailedNoPermission">권한이 없기 때문에 오브젝트를 가져올 수 없었습니다.</notification>
+	<notification name="ClaimObjectFailedNoMoney">린데ンド 달러가 부족하여 오브젝트를 획득하지 못했습니다.</notification>
+	<notification name="CantDeedGroupLand">그룹 소유의 토지는 양도할 수 없습니다.</notification>
+	<notification name="BuyObjectFailedNoMoney">린데ンド르가 부족해서 오브젝트를 구입하지 못했습니다.</notification>
+	<notification name="BuyInventoryFailedNoMoney">린덴 달러가 부족하여 인벤토리를 구매할 수 없었습니다.</notification>
+	<notification name="BuyPassFailedNoMoney">린덴 달러가 부족하여 이 땅의 입장 허가를 구입할 수 없습니다.</notification>
+	<notification name="CantBuyPassTryAgain">지금은 입장 허가를 구매할 수 없습니다. 나중에 다시 시도해 주세요.</notification>
+	<notification name="CantCreateObjectParcelFull">区画が埋まっているため、オブジェクトを作成することができません。
+구획이 가득 차 있기 때문에 객체를 생성할 수 없습니다.</notification>
+	<notification name="FailedPlacingObject">지정한 장소에 오브젝트를 배치할 수 없었습니다. 다시 시도해 주세요.</notification>
+	<notification name="CantCreateLandmarkForEvent">이벤트를 위한 랜드마크를 만들 수 없습니다.</notification>
+	<notification name="GodBeatsFreeze">강력한 힘으로 프리즈를 해제합니다.</notification>
+	<notification name="SpecialPowersRequestFailedLogged">특수한 권한 요청에 실패했습니다. 이 요청은 로그에 기록됩니다.</notification>
+	<notification name="ExpireExplanation">시스템은 현재 당신의 요청을 처리할 수 없습니다. 요청이 타임아웃되었습니다.</notification>
+	<notification name="DieExplanation">시스템은 귀하의 요청을 처리할 수 없습니다.</notification>
+	<notification name="AddPrimitiveFailure">프리미티브 광고를 내기에는, 자금이 모자랍니다.</notification>
+	<notification name="RezObjectFailure">자금이 부족하여 오브젝트를 만들 수 없습니다.</notification>
+	<notification name="ResetHomePositionNotLegal">홈이 유효하지 않기 때문에 홈 위치를 초기화합니다.</notification>
+	<notification name="CantInviteRegionFull">리전이 가득 차서 현재 위치로 누군가를 초대할 수 없습니다. 나중에 다시 시도해 보세요.</notification>
+	<notification name="CantSetHomeAtRegion">이 리전에서는 여기에 홈 위치를 설정할 수 없습니다.</notification>
+	<notification name="ListValidHomeLocations">홈의 장소를 설정할 수 있는 곳은 자신의 땅이거나 메인랜드의 인포 허브에서만 가능합니다.</notification>
+	<notification name="SetHomePosition">홈 포지션이 설정되었습니다.</notification>
+	<notification name="CantDerezInventoryError">인벤토리 오류로 인해 오브젝트의 Rez 해제가 불가능합니다.</notification>
+	<notification name="CantCreateRequestedInv">요청된 인벤토리를 생성할 수 없습니다.</notification>
+	<notification name="CantCreateRequestedInvFolder">요청된 소지품 폴더를 생성할 수 없습니다.</notification>
+	<notification name="CantCreateInventory">그 인벤토리를 생성할 수 없습니다.</notification>
+	<notification name="CantCreateLandmark">랜드마크를 작성할 수 없습니다.</notification>
+	<notification name="CantCreateOutfit">아웃핏을 즉시 생성할 수 없습니다. 잠시 후 다시 시도해 주십시오.</notification>
+	<notification name="InventoryNotForSale">인벤토리는 판매 대상이 아닙니다.</notification>
+	<notification name="CantFindInvItem">持ち物アイテムを見つけることができません。
+소지품 아이템을 찾을 수 없습니다.</notification>
+	<notification name="CantFindObject">오브젝트를 찾을 수 없습니다.</notification>
+	<notification name="CantTransfterMoneyRegionDisabled">이 리전에서는 현재 오브젝트로의 송금이 비활성화되어 있습니다.</notification>
+	<notification name="DroppedMoneyTransferRequest">시스템 로드로 인해, 지불을 실행할 수 없습니다.</notification>
+	<notification name="CantPayNoAgent">상대방의 결제를 확인할 수 없었습니다.</notification>
+	<notification name="CantDonateToPublicObjects">퍼블릭 오브젝트에 린든 달러를 줄 수 없습니다.</notification>
+	<notification name="InventoryCreationInWorldObjectFailed">인월드 오브젝트에서 인벤토리 생성에 실패했습니다.</notification>
+	<notification name="UserBalanceOrLandUsageError">内部 오류가 발생하여 뷰어를 올바르게 업데이트할 수 없었습니다. 뷰어에 표시되는 린덴 달러 잔액 또는 구역 소유는 서버 상의 실제 잔액을 반영하지 않을 수 있습니다.</notification>
+	<notification name="LargePrimAgentIntersect">다른 주민과 교차하는 큰 프림을 만들 수 없습니다. 다른 주민이 여기서 이동할 때 다시 시도하십시오.</notification>
+	
+	<notification name="RLVaListRequested" label="[NAME_LABEL] からの制限依頼">[NAME_SLURL] に現在有効になっている RLV の制限一覧を送るよう依頼がありました。<form name="form">
+			<button name="Allow" text="許可" />
+			<button name="Always Allow" text="常に許可" />
+			<button name="Deny" text="拒否" />
+			<ignore name="ignore" text="現在の RLV 制限一覧を誰かに送る前に確認" />
+		</form>
+	</notification>
+	
+	<notification name="PreferenceChatClearLog">これにより、過去の会話のログ、およびそのファイルのすべてのバックアップが削除されます。<usetemplate ignoretext="以前の会話のログを削除する前に確認してください。" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	
+	<notification name="PreferenceControlsDefaults">컨트롤 값을 모두 기본값으로 되돌리시겠습니까?<usetemplate canceltext="取り消し" name="yesnocancelbuttons" notext="現在のモード" yestext="全てのモード" />
+	</notification>
+	
+	<notification name="PreferenceChatDeleteTranscripts">이 작업을 수행하면 이전의 모든 대화 텍스트가 모두 삭제됩니다. 과거의 대화 목록은 영향을 받지 않습니다. [FOLDER] 폴더에 있는 ".txt" 및 "txt.backup" 확장자의 모든 파일이 삭제됩니다.<usetemplate ignoretext="会話記録を削除する前に確認。" name="okcancelignore" notext="キャンセル" yestext="OK" />
+	</notification>
+	<notification name="PreferenceChatPathChanged">파일을 이동할 수 없습니다. 이전 경로가 복원되었습니다.<usetemplate ignoretext="ファイルを移動できません。以前のパスがリストアされました。" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="DefaultObjectPermissions">デフォルトのオブジェクト権限を保存するときに問題が発生しました: [REASON]。後でデフォルトの権限を設定してください。<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	
+	<notification name="OutfitPhotoLoadError">[이유]<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	
+	<notification name="AddPaymentMethod">다음 페이지에서 L$ 금액을 선택하고
+「주문을 확정」 버튼을 클릭하세요.
+결제 방법은 결제 시 추가됩니다.<form name="form">
+			<button name="Continue" text="続ける" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	
+	
+	<notification name="LSLColorCopiedToClipboard">LSL 색상 설정 문자열이 클립보드에 복사되었습니다. 스크립트에 붙여 넣어 이를 사용할 수 있습니다.<form name="form">
+			<ignore name="ignore" text="LSL の色設定文字列がクリップボードにコピーされた時" />
+		</form>
+	</notification>
+	
+
+	
+	
+	<notification name="FSBWTooHigh">저희는 대역폭을 1500 kbps 이상으로 설정하지 말 것을 강력히 권장합니다. 그렇게 해도 효과가 없을 뿐만 아니라, 거의 틀림없이 성능 저하로 이어질 것입니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	
+	
+
+	<notification name="FirstUseFlyOverride">주의! 비행 오버라이드의 이용에 있어서는 충분히 책임을 갖고 행해주십시오. 토지 소유자의 허가 없이 오버라이드를 사용하여 비행하는 것은, 비행하고 있는 구역에서 당신의 아바타가 출입 금지 조치를 받을 가능성이 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="ServerVersionChanged">도착한 지역은 이전에 있었던 장소와는 다른 서버 버전으로 작동하고 있습니다.
+현재의 SIM: [NEWVERSION]
+전에 있었던 SIM: [OLDVERSION]</notification>
+	<notification name="RegExFail">정규 표현식 오류:
+[EWHAT]</notification>
+	<notification name="NoHavok">[FEATURE]와 같은 몇 가지 기능은 OpenSIM용 흑우촌에서는 지원되지 않습니다. [FEATURE]를 이용하고 싶으시면, 다음 위치에서 세컨드라이프용 흑우촌을 다운로드하십시오.
+[DOWNLOAD_URL]<form name="form">
+			<ignore name="ignore" text="Havok 非対応の警告" />
+		</form>
+	</notification>
+	<notification name="StreamListExportSuccess">스트리밍 목록이 [FILENAME] 파일에 XML 형식으로 내보내졌습니다.</notification>
+	<notification name="StreamListImportSuccess">스트리밍 목록을 XML에서 가져왔습니다.</notification>
+	<notification name="StreamMetadata">♫ 연주 중인 곡：
+  [TITLE]
+  [ARTIST] ♫</notification>
+	<notification name="StreamMetadataNoArtist">연주 중인 곡：
+  [TITLE] ♫</notification>
+	<notification name="RadarAlert">[이름] [메시지]</notification>
+
+	
+	<notification name="BackupFinished">설정이 백업되었습니다.</notification>
+	<notification name="BackupPathEmpty">백업 경로가 비어 있습니다. 먼저 백업 위치를 지정한 후 설정을 복원하십시오.</notification>
+	<notification name="BackupPathDoesNotExistOrCreateFailed">バックアップ・パスが見つからなかったか、或いは作成されませんでした。
+백업 경로를 찾을 수 없거나 생성되지 않았습니다.</notification>
+	<notification name="BackupPathDoesNotExist">백업 경로를 찾을 수 없습니다.</notification>
+	<notification name="SettingsConfirmBackup">이 디렉토리에 백업을 생성해도 정말 괜찮으시겠습니까?
+[디렉토리]
+이 곳에 있는 모든 백업이 덮어씌워집니다!<usetemplate name="okcancelbuttons" notext="取り消しl" yestext="バックアップを保存" />
+	</notification>
+	<notification name="SettingsRestoreNeedsLogout">설정을 복원하려면 뷰어를 다시 시작해야 합니다. 설정을 복원하고 지금 바로 뷰어를 종료하시겠습니까?<usetemplate name="okcancelbuttons" notext="取り消し" yestext="リストアして終了" />
+	</notification>
+	<notification name="RestoreFinished">복원이 완료되었습니다. 지금 바로 뷰어를 재시작하십시오.<usetemplate name="okbutton" yestext="終了" />
+	</notification>
+	
+
+	<notification name="ConfirmRestoreQuickPrefsDefaults">이를 실행하면, 당신의 퀵 설정이 즉시 복구되고 기본 설정으로 되돌아갑니다.
+
+이 작업은 되돌릴 수 없습니다.<usetemplate ignoretext="クィック設定のデフォルトをリストアする時に確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	<notification name="QuickPrefsDuplicateControl">이 설정은 이미 추가되어 있습니다. 다른 설정을 선택해 주십시오.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="ExportFinished">書き出しが完了、[FILENAME] というファイルに保存されました。
+
+번역: 내보내기가 완료되었습니다. [FILENAME]라는 파일에 저장되었습니다.</notification>
+	<notification name="ExportFailed">예기치 않은 오류로 인해 내보내기에 실패했습니다. 자세한 내용은 로그를 확인하세요.</notification>
+	<notification name="ExportColladaSuccess">オブジェクト [OBJECT] を [FILENAME] というファイルに保存しました。
+
+여기서 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하세요.</notification>
+	<notification name="ExportColladaFailure">オブジェクト [OBJECT] の [FILENAME] というファイルへの保存が失敗했습니다.</notification>
+	<notification name="MeshMaxConcurrentReqTooHigh">메시 오브젝트를 동시에 읽어들이기 위해 설정한 [VALUE] 값(디버그 설정 [DEBUGNAME])이 최대값 [MAX]보다 큽니다. 이 값은 기본값인 [DEFAULT]로 재설정되었습니다.</notification>
+	<notification name="ImportSuccess">[COUNT] 개의 [OBJECT]를 인포트했습니다.</notification>
+	<notification name="AntiSpamBlocked">스팸 대응: [SOURCE]이(가) [QUEUE]을(를) 상당수 ([PERIOD] 초 동안 [COUNT] 회) 전송했기 때문에, 스팸으로 간주되어 차단되었습니다.</notification>
+	<notification name="AntiSpamImNewLineFloodBlocked">스팸 대응 : [SOURCE] 가 한 번에 [COUNT] 행 이상의 IM을 전송했기 때문에, 스팸으로 간주하여 차단했습니다.</notification>
+	<notification name="AntiSpamChatNewLineFloodBlocked">스팸 대응: [SOURCE]가 한 번에 [COUNT] 행 이상의 채팅을 전송하여 스팸으로 간주하고 차단했습니다.</notification>
+
+	
+	
+	<notification name="SkinDefaultsChangeSettings">[메시지]<form name="form">
+			<ignore name="ignore" text="環境設定はこのスキンのデフォルト値に変更されました。" />
+		</form>
+	</notification>
+	
+	
+	<notification name="AddNewContactSet">다음 이름으로 새 연락처 세트를 만듭니다.<form name="form">
+			<input name="message">새로운 연락처 설정</input>
+			<button name="Create" text="作成" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	
+	<notification name="RemoveContactSet">[SET_NAME] 를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.<usetemplate ignoretext="連絡先セットを削除する前に確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	
+	<notification name="RemoveContactFromSet">[TARGET] 을(를) [SET_NAME] 에서 삭제해도 괜찮습니까?<usetemplate ignoretext="住人を連絡先セットから削除する前に確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	
+	<notification name="RemoveContactsFromSet">이 [TARGET] 아바타들을 [SET_NAME]에서 삭제하시겠습니까?<usetemplate ignoretext="複数の住人を連絡先セットから削除する前に確認" name="okcancelignore" notext="取り消し" yestext="OK" />
+	</notification>
+	
+	<notification name="AddToContactSetSingleSuccess">[NAME] 이/가 [SET] 에 추가되었습니다.</notification>
+	
+	<notification name="AddToContactSetMultipleSuccess">[COUNT] 人의 아바타가 [SET]에 추가되었습니다.</notification>
+	
+	<notification name="SetAvatarPseudonym">[AVATAR]의 닉네임을 입력해 주세요.<form name="form">
+			<input name="message" />
+			<button name="Create" text="作成" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	
+	<notification name="RenameContactSetFailure">「[SET]」을(를) 「[NEW_NAME]」으로(로) 변경할 수 없습니다. 이미 같은 이름이 존재하거나, 유효하지 않은 이름을 지정하려고 하고 있습니다.</notification>
+	
+	<notification name="ShapeImportGenericFail">[FILENAME] 의 임포트에서 문제가 발생했습니다. 자세한 내용은 로그에서 확인하세요.</notification>
+	<notification name="ShapeImportVersionFail">シェイプ의 가져오기에 실패했습니다。[FILENAME]가 진정으로 아바타 파일인지 확인해 주세요.</notification>
+
+	<notification name="AddToMediaList">[LIST] に追加するドメインネームを入力して下さい
+
+[LIST] 에 추가할 도메인 이름을 입력하십시오<form name="form">
+			<button name="Add" text="追加" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+
+	
+	<notification name="CantRestoreToWorldNoCopy">마지막 위치 복원 기능은 흑우촌에서는 복사할 수 없는 아이템에 사용할 수 없습니다. 이는 콘텐츠 손실을 방지하기 위한 것입니다.</notification>
+	
+
+	<notification name="ConfirmRemoveCredential">保存된 &lt;nolink&gt;[NAME]&lt;/nolink&gt;의 로그인을 삭제하시겠습니까?<form name="form">
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+
+	
+	<notification name="ExodusFlickrVerificationExplanation">Flickr 업로드 기능을 사용하려면, [APP_NAME]이/가 당신의 Flickr 계정에 접근하는 것을 허락해야 합니다. 이 과정을 진행하면, 웹 브라우저가 Flickr 웹사이트를 열고 로그인하여 [APP_NAME]을/를 허가하도록 요청할 것입니다. 그 후, 표시된 코드를 복사하여 [APP_NAME]에 붙여넣으세요.
+
+당신의 Flickr 계정에 게시하기 위해 [APP_NAME]을/를 허락하시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+		</notification>
+
+		<notification name="ExodusFlickrVerificationPrompt">Web 브라우저에서 당신의 Flickr 계정에 포스팅할 수 있도록 [APP_NAME] 에게 허가를 부여해 주세요. 그러고 나서 웹 사이트에서 표시된 코드를 아래에 입력해 주세요.<form name="form">
+				<button name="OK" text="OK" />
+				<button name="Cancel" text="取り消し" />
+			</form>
+	</notification>
+
+	<notification name="ExodusFlickrVerificationFailed">Flickr의 인증에 실패했습니다. 다시 시도해 주세요. 이때, 인증 코드에 오류가 없는지 잘 확인해 주세요.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+
+	<notification name="ExodusFlickrUploadComplete">당신의 스냅샷은 다음 URL에서 볼 수 있습니다. [http://www.flickr.com/photos/upload/edit/?ids=[ID] here]</notification>
+	
+
+	<notification name="RegionTrackerAdd">어떤 라벨을 이 지역에 지정하시겠습니까? 
+"[REGION]"<form name="form">
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+    </form>
+  </notification>
+	<notification name="SnoozeDuration">
+		<unique />
+    グループチャットを居眠りさせておく時間（秒）
+		<tag>확인</tag>
+		<form name="form">
+			<input name="duration" type="text" default="true">[기간]</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	
+	<notification name="SnoozeDurationInvalidInput">졸음 시간에는 유효한 숫자를 입력해 주세요!<tag>실패</tag>
+		<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	
+	<notification name="PickLimitReached" label="Sure, please provide the text you need to translate.">
+		<unique />
+		<tag>실패</tag>
+		<tag>확인</tag>
+    既にピック数の上限に達しているため、新しいピックを追加することはできません。
+		<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="GlobalOnlineStatusToggle">서버 부하로 인해 많은 온라인 상태 전환이 가능해질 때까지 시간이 걸릴 수 있습니다. 계속 기다려 주십시오.<usetemplate ignoretext="オンラインステータスの切り替えに時間がかかる時は通知する" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="RenderVolumeLODFactorWarning">경고: 상세 수준(LOD) 요소가 높게 설정되어 있습니다.
+
+일반적인 사용에서는 LOD 요소의 값이 1〜3이면 충분합니다.
+이 값들로 형태가 왜곡되어 보이는 객체를 다른 것으로 교체하는 것을 고려하십시오.
+
+LOD 요소 --&gt; 3: 태그에 추가합니다. 사진 촬영 시에만 사용하십시오.
+LOD 요소 --&gt; 4: 특별한 상황에서만 사용하십시오. 다시 로그인하면 기본 값으로 돌아갑니다.
+LOD 요소 --&gt; 8: 구체적인 효과를 얻을 수 없습니다. 다양한 오류가 발생할 가능성이 있습니다.<usetemplate name="okbutton" yestext="OK" />
+	</notification>
+	<notification name="CurrencyURIOverrideReceived">이 지역은 서드파티 통화 구매를 지정하는 것을 선택했습니다.
+흑우촌 뷰어를 이용하여 진행된 통화 구매는 사용자이신 당신과 해당 통화 제공자 또는 판매자 간의 거래임을 인지하시기 바랍니다.
+즉, 흑우촌 뷰어, Phoenix 흑우촌 뷰어 프로젝트 및 그 팀은 해당 거래로 인해 직접 또는 간접적으로 발생하는 비용이나 손해에 대해 일체의 책임을 지지 않습니다.
+만약 이 이용 약관에 동의할 수 없다면, 이 뷰어를 이용하여 어떠한 금융 거래도 해서는 안 됩니다.<usetemplate ignoretext="地域が新しい通貨ヘルパーを設定している場合" name="okignore" yestext="OK" />
+	</notification>
+	<notification name="EnableHiDPI">HiDPI 표시 기능을 활성화하면 일부 영향이 발생하거나 성능이 저하될 수 있습니다.</notification>
+	<notification name="FailedToFindSettings">자연 환경 설정 [NAME]을(를) 데이터베이스에서 가져올 수 없었습니다.</notification>
+	<notification name="FailedToLoadSettingsApply">이 설정을 자연환경에 적용할 수 없었습니다.</notification>
+	<notification name="FailedToBuildSettingsDay">이 설정을 자연 환경에 적용할 수 없었습니다.</notification>
+	<notification name="NoEnvironmentSettings">이 지역에서는 자연 환경 설정을 할 수 없습니다.</notification>
+	<notification label="의상 저장" name="SaveSettingAs">자연 환경 설정을 다음 이름으로 저장:<form name="form">
+			<input name="message" type="text">[설명]（새）</input>
+			<button name="OK" text="OK" />
+			<button name="Cancel" text="取り消し" />
+		</form>
+	</notification>
+	<notification name="WLImportFail">다음 파일에서 오래된 형식의 Windlight 설정 [NAME]을(를) 불러오지 못했습니다.
+[FILE]
+
+[이유]</notification>
+	<notification name="WLParcelApplyFail">이 구역에서는 자연 환경 설정을 할 수 없습니다.
+수정 권한이 있는 구역을 입력하거나 선택해 주세요.</notification>
+	<notification name="SettingsUnsuported">이 지역에서는 자연환경 설정을 할 수 없습니다.
+자연환경 설정의 변경이 가능한 지역으로 이동하여 시도해 보시기 바랍니다.</notification>
+	<notification name="SettingsConfirmLoss">この [TYPE] に加えた変更が失われます。よろしいですか、 [NAME]님?<usetemplate ignoretext="変更が失われてもよろしいですか？" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="SettingsConfirmReset">適用していた全ての自然環境設定を削除しようとしています。  
+このまま処理を続けてもよろしいですか？
+
+현재 적용 중인 모든 자연 환경 설정을 삭제하려고 합니다.  
+계속 진행하시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="PersonalSettingsConfirmReset">적용하고 있던 모든 개인 환경 설정을 삭제하려고 합니다.
+이렇게 진행해도 괜찮으시겠습니까?<usetemplate name="okcancelbuttons" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="SettingsMakeNoTrans">이 일주기에 재판매 및 선물이 불가능한 자연 환경 설정을 가져오려 하고 있습니다. 이대로 처리를 계속하면 편집 중인 자연 환경 설정도 재판매 및 선물이 불가능하게 됩니다.
+
+이 변경은 되돌릴 수 없습니다.
+
+이대로 처리를 계속하시겠습니까?<usetemplate ignoretext="自然環境設定を再販・プレゼント不可にしてもよろしいですか？" name="okcancelignore" notext="いいえ" yestext="はい" />
+	</notification>
+	<notification name="NoEditFromLibrary">라이브러리의 아이템을 직접 편집해서는 안 됩니다.
+본인의 소유물에 복사한 후 다시 시도해 보세요.</notification>
+	<notification name="EnvironmentApplyFailed">자연 환경 설정에서 문제가 발생했습니다. 이번에는 이러한 설정을 저장하거나 적용할 수 없습니다.</notification>
+	<notification name="TrackLoadFailed">トラック을 [TRACK] に読み込むことができませんでした。  
+트랙을 [TRACK]에 로드하지 못했습니다.</notification>
+	<notification name="TrackLoadMismatch">[TRACK1] 의 트랙을 [TRACK2] 에 로드할 수 없었습니다.</notification>
+	<notification name="NoValidEnvSettingFound">유효한 환경 설정이 선택되지 않았습니다.
+
+'공유된 환경'과 '일주기 의존' 항목은 선택할 수 없으니 주의하세요!</notification>
+	
+	<notification name="CantCreateInventoryName">다음의 흑우촌 아이템을 생성할 수 없습니다: [NAME]</notification>
+	
+	<notification name="WindlightBulkImportFinished">Windlight의 일괄 가져오기가 완료되었습니다.</notification>
+	
+	<notification name="FSAOScriptedNotification">Firestorm의 AO 메시지：[AO_MESSAGE]<usetemplate ignoretext="Firestorm の AO がスクリプト入りオブジェクトからのアクセスを受けた場合に警告" name="notifyignore" />
+	</notification>
+	
+</notifications>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="modal container" title="아웃핏을 저장하기">
+	<button label="저장" label_selected="저장" name="Save" />
+	<button label="취소" label_selected="취소" name="Cancel" />
+	<text name="Save item as:">이름을 지정하여 저장:</text>
+	<line_editor name="name ed">[설명] (신규)</line_editor>
+</floater>

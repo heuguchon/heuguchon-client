@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<context_menu name="Object Pie">
+	<menu_item_call label="만지기" name="Object Touch">
+		<menu_item_call.on_enable name="EnableTouch" parameter="触る" />
+	</menu_item_call>
+	<menu_item_call label="편집" name="Edit..." />
+	<menu_item_call label="제작" name="Build" />
+	<menu_item_call label="열기" name="Open" />
+	<menu_item_call label="여기에 앉으세요." name="Object Sit" />
+	<menu_item_call label="일어나다" name="Object Stand Up" />
+	<context_menu label="오브젝트" name="Object Features">
+		<menu_item_call label="오브젝트의 프로필" name="Object Inspect" />
+		<menu_item_call label="검사" name="Object_Inspect_Floater" />
+		<menu_item_call label="스크립트 정보" name="ScriptInfo" />
+		<menu_item_call label="링크하기" name="Object Link" />
+		<menu_item_call label="링크 해제" name="Object Unlink" />
+		<menu_item_check label="링크된 부분을 편집" name="Object Edit Linked Parts" />
+		<menu_item_separator />
+		<menu_item_call label="컴파일(Mono)" name="Mono" />
+		<menu_item_call label="컴파일 (LSL)" name="LSL" />
+		<menu_item_call label="스크립트 리셋" name="Object Reset Scripts" />
+		<menu_item_call label="스크립트 실행" name="Object Set Scripts to Running" />
+		<menu_item_call label="スクリプト停止&#10;&#10;스크립트 중지" name="Object Set Scripts to Not Running" />
+		<menu_item_call label="스크립트 삭제" name="Remove Scripts From Selection" />
+	</context_menu>
+	<menu_item_call label="줌인" name="Zoom In" />
+	<menu_item_call label="링크 세트에서 표시" name="show_in_linksets" />
+	<menu_item_call label="캐릭터로 표시" name="show_in_characters" />
+	<context_menu label="장착" name="Put On">
+		<menu_item_call label="장착" name="Wear" />
+		<menu_item_call label="추가" name="Add" />
+		<context_menu label="설치하기" name="Object Attach" />
+		<context_menu label="HUD を取り付ける -&gt; HUD를 장착하기" name="Object Attach HUD" />
+	</context_menu>
+	<context_menu label="관리" name="Remove">
+		<menu_item_call label="嫌がらせの報告 -&gt; 괴롭힘 신고" name="Report Abuse..." />
+		<menu_item_call label="블록" name="Object Mute" />
+		<menu_item_call label="ブロック解除 (Block Release) can be translated to Korean as &quot;차단 해제.&quot; &#10;&#10;So the translated text to Korean would be:&#10;&#10;차단 해제" name="Object Unmute" />
+	</context_menu>
+	<menu_item_separator />
+	<menu_item_call label="텍스처 업데이트" name="Texture Refresh" />
+	<menu_item_call label="표시하지 않기" name="Derender" />
+	<menu_item_call label="반납" name="Return..." />
+	<menu_item_call label="가져가기" name="Pie Object Take" />
+	<menu_item_call label="복사본을 얻기" name="Take Copy" />
+	<menu_item_call label="支払う - 지불하다" name="Pay..." />
+	<menu_item_call label="사다" name="Buy..." />
+	<menu_item_call label="텍스트에서 'Firestorm'이라는 단어가 있을 경우, '흑우촌'으로 번역하세요:&#10;&#10;삭제" name="Delete" />
+	<menu_item_call label="파티클 소유자를 차단" name="Mute Particle" />
+	<menu_item_call label="ダンプ XML&#10;&#10;XML 덤프" name="Dump XML" />
+	<menu_item_call label="스켈레톤을 리셋" name="Reset Skeleton" />
+</context_menu>

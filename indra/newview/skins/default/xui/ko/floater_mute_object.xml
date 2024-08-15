@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<floater name="block by name" title="이름으로 오브젝트를 차단하기">
+	<text name="message">오브젝트를 차단합니다:</text>
+	<line_editor name="object_name">오브젝트명</line_editor>
+	<text name="note">* 차단되는 것은 객체의 텍스트일 뿐이고, 소리는 차단되지 않습니다.</text>
+	<button label="ＯＫ" name="OK" top_pad="10" />
+	<button label="취소" name="Cancel" />
+</floater>
