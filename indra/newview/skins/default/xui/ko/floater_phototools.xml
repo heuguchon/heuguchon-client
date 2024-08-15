@@ -134,7 +134,7 @@
 				<spinner name="S_FOV_Cutoff" />
 				<button name="FOV_Cutoff_Reset" label="두 번째 인생 뷰어와 관련된 다음 텍스트를 한국어로 번역하세요.&#10;'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하세요." tool_tip="초기 설정으로 되돌립니다." />
 
-				<text name="T_Shd_Bias" tool_tip="다음 텍스트를 SecondLife Viewer와 관련하여 ko로 번역하십시오. 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:&#10;&#10;&quot;Viewer에서 Firestorm 업데이트가 있습니다. Firestorm 팀은 성능을 향상시키고 버그를 수정한 새로운 버전을 출시했습니다. 흑우촌 뷰어는 사용자들에게 더 나은 경험을 제공합니다. 업그레이드된 흑우촌을 사용하면 더욱 안정적이고 빠른 환경을 느낄 수 있습니다.&quot;&#10;&#10;SecondLife Viewer에서 흑우촌 업데이트가 있습니다. 흑우촌 팀은 성능을 향상시키고 버그를 수정한 새로운 버전을 출시했습니다. 흑우촌 뷰어는 사용자들에게 더 나은 경험을 제공합니다. 업그레이드된 흑우촌을 사용하면 더욱 안정적이고 빠른 환경을 느낄 수 있습니다.">影의 기울기</text>
+				<text name="T_Shd_Bias" tool_tip="다음 텍스트를 SecondLife Viewer와 관련하여 ko로 번역하십시오. 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:&#10;&#10;&quot;Viewer에서 Firestorm 업데이트가 있습니다. Firestorm 팀은 성능을 향상시키고 버그를 수정한 새로운 버전을 출시했습니다. 흑우촌 클라이언트는 사용자들에게 더 나은 경험을 제공합니다. 업그레이드된 흑우촌을 사용하면 더욱 안정적이고 빠른 환경을 느낄 수 있습니다.&quot;&#10;&#10;SecondLife Viewer에서 흑우촌 업데이트가 있습니다. 흑우촌 팀은 성능을 향상시키고 버그를 수정한 새로운 버전을 출시했습니다. 흑우촌 클라이언트는 사용자들에게 더 나은 경험을 제공합니다. 업그레이드된 흑우촌을 사용하면 더욱 안정적이고 빠른 환경을 느낄 수 있습니다.">影의 기울기</text>
 				<slider_bar name="SB_Shd_Bias" />
 				<spinner name="S_Shd_Bias" />
 				<button name="Shd_Bias_Reset" label="Sure, please provide the text you would like to have translated to Korean." tool_tip="기본 설정으로 되돌립니다." />
@@ -489,7 +489,7 @@ If the term "Firestorm" (흑우촌) appears elsewhere, it would be translated as
 				<check_box name="CB_AutoLeveling" label="자동 수평 장치를 활성화하기 (카메라의 흔들림 방지)" tool_tip="여기에 체크를 하면, 카메라는 항상 수평을 유지합니다." />
 				<check_box name="CB_Move_Avatar" label="아바타 이동에 3D 마우스를 사용" tool_tip="여기에 체크를 하면 3D 마우스를 사용하여 아바타를 움직일 수 있습니다." />
 				<check_box name="CB_Move_Objects" label="オブジェクトの移動（制作）に 3D マウスを使用&#10;&#10;Translated to Korean, it will be:&#10;&#10;오브젝트 이동(제작)에 3D 마우스 사용" tool_tip="객체를 제작하거나 수정할 때도 3D 마우스를 사용합니다." />
-				<check_box label="현재 뷰어 화면의 화각(FOV)을 표시" tool_tip="다음에 체크를 하면, 카메라의 수직 화각(FOV)이 표시됩니다. 흑우촌 뷰어 내에서 현실 세계의 카메라와 마찬가지로 렌즈 거리를 변경할 수 있습니다. 화각(FOV)이 작을수록 카메라의 렌즈 거리는 길어집니다. 50mm 렌즈는 27.0도의 화각(FOV)을 가지고 있습니다. 화각(FOV)을 조정하려면 아래의 슬라이더를 사용하십시오. 화각(FOV)과 렌즈의 초점 거리의 관계를 나타낸 목록 표에 대해서는 'http://ja.m.wikipedia.org/wiki/画角'를 참조하십시오. 이 기능은 스냅샷을 찍기 전에 꺼야 합니다! 그렇지 않으면 화면에 비춰집니다!" name="CAM_Show_FOV" />
+				<check_box label="현재 뷰어 화면의 화각(FOV)을 표시" tool_tip="다음에 체크를 하면, 카메라의 수직 화각(FOV)이 표시됩니다. 흑우촌 클라이언트 내에서 현실 세계의 카메라와 마찬가지로 렌즈 거리를 변경할 수 있습니다. 화각(FOV)이 작을수록 카메라의 렌즈 거리는 길어집니다. 50mm 렌즈는 27.0도의 화각(FOV)을 가지고 있습니다. 화각(FOV)을 조정하려면 아래의 슬라이더를 사용하십시오. 화각(FOV)과 렌즈의 초점 거리의 관계를 나타낸 목록 표에 대해서는 'http://ja.m.wikipedia.org/wiki/画角'를 참조하십시오. 이 기능은 스냅샷을 찍기 전에 꺼야 합니다! 그렇지 않으면 화면에 비춰집니다!" name="CAM_Show_FOV" />
 				<check_box label="상세한 카메라 위치 데이터를 표시" name="Camera" />
 			</panel>
 

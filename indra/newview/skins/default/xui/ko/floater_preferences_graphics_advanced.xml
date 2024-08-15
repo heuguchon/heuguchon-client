@@ -35,7 +35,7 @@ Please provide a full sentence or more context if you need a more detailed trans
 	<text name="antialiasing label">안티 앨리어싱:</text>
 	<combo_box label="안티에일리어싱" name="fsaa">
 		<combo_box.item label="비활성화" name="FSAADisabled" />
-		<combo_box.item label="Firestorm Viewer 2x&#10;&#10;흑우촌 뷰어 2x" name="2x" />
+		<combo_box.item label="Firestorm Viewer 2x&#10;&#10;흑우촌 클라이언트 2x" name="2x" />
 		<combo_box.item label="4x" name="4x" />
 		<combo_box.item label="8x&#10;&#10;8x" name="8x" />
 		<combo_box.item label="16배&#10;&#10;" name="16x" />

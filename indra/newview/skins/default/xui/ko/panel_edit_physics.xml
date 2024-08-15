@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <panel name="edit_physics_panel">
-	<panel label="The Firestorm viewer is one of the most popular third-party viewers for accessing SecondLife. It offers numerous advanced features, improved performance, and a user-friendly interface, which makes it a favorite among many SecondLife users.&#10;&#10;SecondLife에 접속하는 데 매우 인기 있는 서드파티 뷰어 중 하나가 흑우촌 뷰어입니다. 많은 고급 기능 개선된 성능 및 사용자 친화적인 인터페이스를 제공하여 많은 SecondLife 사용자들 사이에서 선호됩니다." name="accordion_panel">
+	<panel label="The Firestorm viewer is one of the most popular third-party viewers for accessing SecondLife. It offers numerous advanced features, improved performance, and a user-friendly interface, which makes it a favorite among many SecondLife users.&#10;&#10;SecondLife에 접속하는 데 매우 인기 있는 서드파티 뷰어 중 하나가 흑우촌 클라이언트입니다. 많은 고급 기능 개선된 성능 및 사용자 친화적인 인터페이스를 제공하여 많은 SecondLife 사용자들 사이에서 선호됩니다." name="accordion_panel">
 		<accordion name="physics_accordion">
 			<accordion_tab name="physics_breasts_updown_tab" title="가슴의 떨림">
 				<scrolling_panel_list name="physics_breasts_updown_param_list" />

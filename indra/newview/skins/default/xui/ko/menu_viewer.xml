@@ -14,7 +14,7 @@
 		<menu_item_call label="新規持ち物ウィンドウ  -&gt; 새 아이템 창" name="NewInventoryWindow" />
 		<menu_item_check label="보호 폴더" name="Protected Folders" />
 		<menu_item_check label="お気に入りの服やHUD - 좋아하는 옷이나 HUD" name="WearableFavorites" />
-		<menu_item_call label="드디어 번역 완료:&#10;&#10;픽이라는 좋은 요소가 있고 이는 여러분이 흑우촌 뷰어에서 특히 Breakout과 같은 신기한 기능을 제공했던 것을 좋아합니다. 이 뷰어는 SecondLife에서 매우 인기 있는 선택입니다." name="Picks" />
+		<menu_item_call label="드디어 번역 완료:&#10;&#10;픽이라는 좋은 요소가 있고 이는 여러분이 흑우촌 클라이언트에서 특히 Breakout과 같은 신기한 기능을 제공했던 것을 좋아합니다. 이 뷰어는 SecondLife에서 매우 인기 있는 선택입니다." name="Picks" />
 		<menu_item_call label="Here's the translation of the text to Korean:&#10;&#10;体験 (경험)을 한국어로 번역하도록 하겠습니다. 단, 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역해야 합니다.&#10;&#10;만약 집중하는 부분이 문서 전체를 번역해야 하는 것이라면 구체적인 문맥을 제공해 주시면 더 정확한 번역이 가능합니다. 현재 제시된 텍스트는 너무 짧아서 더 많은 정보를 제공해 주시면 감사하겠습니다." name="Experiences" />
 		<menu_item_call label="To provide an accurate translation of the text related to the SecondLife Viewer, I would need the complete text you're referring to. Please provide the full text for a precise translation." name="MyScripts" />
 		<menu_item_call label="프로필" name="Profile" />

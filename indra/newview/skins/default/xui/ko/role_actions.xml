@@ -31,7 +31,7 @@
 	</action_set>
 	<action_set description="이러한 기능에는 '오브젝트 생성', '지형 편집', 음악 및 미디어 설정 등 구역 옵션과 관련된 권한이 포함됩니다." name="Parcel Settings">
 		<action description="음악 및 미디어 설정 변경" longdescription="스트리밍 음악과 동영상 설정을 변경하려면, &quot;토지 정보&quot; ＞ &quot;미디어&quot; 탭을 사용하세요." name="land change media" value="다음 텍스트를 한국어로 번역하세요, 텍스트는 SecondLife Viewer와 관련이 있습니다.&#10;만약 'Firestorm'이라는 단어가 나오면 '흑우촌'으로 번역하세요:&#10;&#10;20" />
-		<action description="「지형 편집으로 전환」" longdescription="「지형 편집」으로 전환합니다. *경고* 「토지 정보」＞「옵션」＞「지형 편집」의 순서로 진행하면 누구라도 당신의 토지의 지형 정비와 린든 제작의 나무 설치, 이동이 가능합니다. 이 능력을 할당하기 전에 이 점을 잘 이해해 두시기 바랍니다. 「토지 정보」＞「옵션」탭에서「지형 편집」으로 전환할 수 있습니다." name="land edit" value="다음 텍스트를 한국어로 번역하겠습니다:&#10;&#10;21&#10;&#10;제목의 주제는 흑우촌 뷰어에 관련이 있다는 점을 고려했습니다." />
+		<action description="「지형 편집으로 전환」" longdescription="「지형 편집」으로 전환합니다. *경고* 「토지 정보」＞「옵션」＞「지형 편집」의 순서로 진행하면 누구라도 당신의 토지의 지형 정비와 린든 제작의 나무 설치, 이동이 가능합니다. 이 능력을 할당하기 전에 이 점을 잘 이해해 두시기 바랍니다. 「토지 정보」＞「옵션」탭에서「지형 편집」으로 전환할 수 있습니다." name="land edit" value="다음 텍스트를 한국어로 번역하겠습니다:&#10;&#10;21&#10;&#10;제목의 주제는 흑우촌 클라이언트에 관련이 있다는 점을 고려했습니다." />
 		<action description="「土地情報」＞「オプション」タブ内のさまざまな 설정을 전환" longdescription="「안전(데미지 없음)」、「비행」を 전환하고, 주민들에게 다음을 허용합니다: 그룹 소유지의 「토지 정보」 &gt; 「옵션」탭 내의, 「지형 편집」, 「제작」, 「랜드마크 생성」, 「스크립트 실행」。" name="land options" value="두 번째 생명 뷰어와 관련된 다음 텍스트를 한국어로 번역하십시오. 'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:&#10;&#10;22" />
 		<action description="자연환경의 설정과 데이 사이클을 수정합니다." longdescription="&quot;「토지에 대해서」 &gt; 「환경」탭에서 자연 환경의 설정과 하루 주기를 변경한다.&quot;" name="land change environment" value="The following text doesn't appear to be related to the SecondLife Viewer or contain the word 'Firestorm'. It just contains the number '46'. Would you like to clarify or provide more context for accurate translation?" />
 	</action_set>

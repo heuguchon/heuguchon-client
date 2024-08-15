@@ -48,7 +48,7 @@
 
 				<panel name="buttons">
 					<button label="Sure, please provide the text you would like me to translate." name="presets_btn" tool_tip="프리셋 뷰" />
-					<button label="네, 당연하죠. 아래 텍스트를 번역했습니다.&#10;&#10;&quot;To uninstall the Firestorm Viewer, follow these steps:&#10;1. Open the Control Panel.&#10;2. Select 'Programs and Features.'&#10;3. Find Firestorm in the list of installed programs and select it.&#10;4. Click 'Uninstall' and follow the prompts.&quot;&#10;&#10;번역:&#10;&quot;흑우촌 뷰어를 제거하려면 다음 단계를 따르십시오:&#10;1. 제어판을 엽니다.&#10;2. '프로그램 및 기능'을 선택합니다.&#10;3. 설치된 프로그램 목록에서 흑우촌을 찾아 선택합니다.&#10;4. '제거'를 클릭하고 지시에 따릅니다.&quot;" name="pan_btn" tool_tip="회전・줌・팬" />
+					<button label="네, 당연하죠. 아래 텍스트를 번역했습니다.&#10;&#10;&quot;To uninstall the Firestorm Viewer, follow these steps:&#10;1. Open the Control Panel.&#10;2. Select 'Programs and Features.'&#10;3. Find Firestorm in the list of installed programs and select it.&#10;4. Click 'Uninstall' and follow the prompts.&quot;&#10;&#10;번역:&#10;&quot;흑우촌 클라이언트를 제거하려면 다음 단계를 따르십시오:&#10;1. 제어판을 엽니다.&#10;2. '프로그램 및 기능'을 선택합니다.&#10;3. 설치된 프로그램 목록에서 흑우촌을 찾아 선택합니다.&#10;4. '제거'를 클릭하고 지시에 따릅니다.&quot;" name="pan_btn" tool_tip="회전・줌・팬" />
 					<button label="Sure, please provide the text you would like me to translate." name="avatarview_btn" tool_tip="카메라 모드" />
 					<button label="Sure, please provide the text you would like to be translated into Korean." name="store_camera_view_btn" tool_tip="현재 카메라 뷰를 저장합니다" />
 					<button label="물론입니다. 번역할 텍스트를 제공해 주시면 '흑우촌'과 관련된 내용을 반영하여 번역해 드리겠습니다." name="load_camera_view_btn" tool_tip="저장된 카메라 뷰를 불러옵니다" />

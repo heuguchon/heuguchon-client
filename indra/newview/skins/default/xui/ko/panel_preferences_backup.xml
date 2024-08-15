@@ -21,7 +21,7 @@
 				<layout_panel name="lp_restore_global_files">
 
 					<scroll_list name="restore_global_files_list">
-						<column label="&quot;SecondLife 뷰어와 관련된 다음 텍스트를 한국어로 번역하십시오.&#10;'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:&#10; &#10;Original text:&#10;The Firestorm Viewer is a popular third-party viewer for SecondLife, known for its extensive features and customization options. Many users prefer Firestorm over the official viewer for its robust performance and user-friendly interface. It also has unique tools that enhance the virtual world experience.&#10;&#10;Translated text:&#10;흑우촌 뷰어는 SecondLife를 위한 인기 있는 서드파티 뷰어로, 풍부한 기능과 커스터마이징 옵션으로 잘 알려져 있습니다. 많은 사용자들이 공식 뷰어보다 흑우촌을 선호하는 이유는 그 강력한 성능과 사용하기 쉬운 인터페이스 때문입니다. 또한 가상 세계 경험을 향상시키는 독특한 도구들도 갖추고 있습니다.&quot;" name="restore_global_files_check" width="16" />
+						<column label="&quot;SecondLife 뷰어와 관련된 다음 텍스트를 한국어로 번역하십시오.&#10;'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오:&#10; &#10;Original text:&#10;The Firestorm Viewer is a popular third-party viewer for SecondLife, known for its extensive features and customization options. Many users prefer Firestorm over the official viewer for its robust performance and user-friendly interface. It also has unique tools that enhance the virtual world experience.&#10;&#10;Translated text:&#10;흑우촌 클라이언트는 SecondLife를 위한 인기 있는 서드파티 뷰어로, 풍부한 기능과 커스터마이징 옵션으로 잘 알려져 있습니다. 많은 사용자들이 공식 뷰어보다 흑우촌을 선호하는 이유는 그 강력한 성능과 사용하기 쉬운 인터페이스 때문입니다. 또한 가상 세계 경험을 향상시키는 독특한 도구들도 갖추고 있습니다.&quot;" name="restore_global_files_check" width="16" />
 						<column label="グローバルファイル: 글로벌 파일" name="restore_global_files_label" />
 						<column label="값" name="value" width="-1" />
 						<row name="restore_global_row_login">

@@ -217,7 +217,7 @@ Flickr 연결 시 오류</string>
 	<string name="TooltipSLURL">클릭하여 이 장소의 정보를 봅니다.</string>
 	<string name="TooltipAgentUrl">클릭하여 이 주민의 프로필을 확인합니다</string>
 	<string name="TooltipAgentInspect">この住人の詳細を参照</string>
-	<string name="TooltipAgentMute">클릭하여 이 주민을 흑우촌 뷰어에서 무시 설정합니다</string>
+	<string name="TooltipAgentMute">클릭하여 이 주민을 흑우촌 클라이언트에서 무시 설정합니다</string>
 	<string name="TooltipAgentUnmute">클릭하여 이 거주자에 대한 무시 설정을 해제합니다.</string>
 	<string name="TooltipAgentIM">클릭하여 이 거주자에게 IM을 보냅니다.</string>
 	<string name="TooltipAgentPay">'이 거주자에게 지불하려면 클릭하세요'</string>
@@ -1095,7 +1095,7 @@ To provide a translation of the character itself:
 	<string name="DoNotDisturbModeResponseDefault">메시지를 보낸 거주자는 누구에게도 방해받고 싶지 않기 때문에 현재 "바쁨" 모드입니다. 당신의 메시지는 나중에 확인할 수 있도록 IM 패널에 표시될 것입니다.</string>
 	<string name="AutoResponseModeDefault">메시지를 보낸 거주자는 [APP_NAME] 뷰어의 "자동 응답 모드"를 활성화했습니다. 이는 해당 거주자가 지금 아무에게도 방해받고 싶지 않다는 것을 의미합니다. 귀하의 메시지는 나중에 확인할 수 있도록 IM 패널에 표시됩니다.</string>
 	<string name="AutoResponseModeNonFriendsDefault">메시지를 보낸 거주자는 [APP_NAME] 뷰어의 "자동 응답 모드"를 활성화했습니다. 이는 그 거주자가 지금 누구에게도 방해받고 싶지 않다는 것을 의미합니다. 당신의 메시지는 나중에 확인할 수 있도록 IM 패널에 표시됩니다.</string>
-	<string name="RejectTeleportOffersResponseDefault">메시지를 보낸 주민은 흑우촌 뷰어의 '모든 텔레포트를 거부 모드'를 활성화하고 있습니다. 이는 그 주민이 지금은 텔레포트를 받거나 보내는 것을 원하지 않으며, 누구에게도 방해받고 싶지 않다는 것을 의미합니다. IM을 보내는 것은 가능합니다.</string>
+	<string name="RejectTeleportOffersResponseDefault">메시지를 보낸 주민은 흑우촌 클라이언트의 '모든 텔레포트를 거부 모드'를 활성화하고 있습니다. 이는 그 주민이 지금은 텔레포트를 받거나 보내는 것을 원하지 않으며, 누구에게도 방해받고 싶지 않다는 것을 의미합니다. IM을 보내는 것은 가능합니다.</string>
 	<string name="RejectFriendshipRequestsResponseDefault">メッセージ를 보낸 거주자는 [APP_NAME] 뷰어의 "친구 신청 거부 모드"를 활성화하고 있습니다. 이는 그 거주자가 지금은 친구 신청을 받지 않아 누구에게도 방해받고 싶지 않다는 것을 의미합니다. IM을 보내는 것 자체는 가능합니다.</string>
 	<string name="MutedAvatarsResponseDefault">메시지를 보낸 주민은 당신이 어떤 메시지를 보내는 것도 차단하고 있습니다.</string>
 	<string name="AwayAvatarResponseDefault">메시지를 보낸 주민은 현재 AFK(자리를 비운 상태)입니다. 당신의 메시지는 나중에 확인할 수 있도록 IM 패널에 표시될 것입니다.</string>
@@ -1360,7 +1360,7 @@ If you need assistance with a more extensive translation or context-specific sen
 
 텍스트: "細め"
 
-번역: "세부 분석을 위한 흑우촌 뷰어"
+번역: "세부 분석을 위한 흑우촌 클라이언트"
 
 이는 추측임을 명심하세요. 텍스트의 구체적인 문장은 없기 때문에 일반적인 통역으로 제공된 것입니다.</string>
 	<string name="Bow Legged">외주
@@ -1801,7 +1801,7 @@ If you need the translation of 'Firestorm' in the SecondLife Viewer context into
 
 Example sentence: "The Firestorm Viewer is a popular choice for many users in SecondLife."
 
-Translation: "흑우촌 뷰어는 많은 SecondLife 사용자들에게 인기 있는 선택입니다."
+Translation: "흑우촌 클라이언트는 많은 SecondLife 사용자들에게 인기 있는 선택입니다."
 
 For translating "右あき", it could be:
 Example sentence: "右あきファイルを確認してください。" (Please check the right-opening file)
@@ -2931,7 +2931,7 @@ Secondlife.com의 지원 섹션에서
   <string name="QP_WL_None">なし</string>
 
   <string name="GroupChatMuteNotice">[NAME] からのグループチャットを 음소거 중입니다</string>
-  <string name="IgnoredAdHocSession">당신은 [AVATAR_NAME]로부터 회의 초대를 받았지만, 설정 내용에 따라 흑우촌 뷰어가 이를 자동으로 무시했습니다.</string>
+  <string name="IgnoredAdHocSession">당신은 [AVATAR_NAME]로부터 회의 초대를 받았지만, 설정 내용에 따라 흑우촌 클라이언트가 이를 자동으로 무시했습니다.</string>
   
   
   <string name="camera_no_focus">사용자 [AVATARNAME] 은/는 설정한 렌더링 거리 밖에 있기 때문에 카메라가 초점을 맞출 수 없습니다.</string>

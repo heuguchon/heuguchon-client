@@ -257,7 +257,7 @@
 		<text tool_tip="파이 메뉴를 표시할 때 재생되는 사운드의 UUID입니다." name="textFSPieMenuAppear">파이 메뉴 표시:</text>
 		<line_editor name="UISndPieMenuAppear" />
 		<button name="Prev_UISndPieMenuAppear" label="파이어스톰 뷰어에 관한 다음 텍스트를 고려하여 한국어로 번역해 주세요:&#10;&#10;Firestorm 뷰어는 가상의 세컨드 라이프 세상에서 일반적으로 사용되는 뷰어 중 하나입니다. Firestorm는 다양한 기능과 사용자 커스터마이징 옵션을 제공하여 많은 유저들에게 사랑받고 있습니다. Firestorm를 설치하고 설정하는 과정은 비교적 간단하며, 초보자도 쉽게 따라할 수 있습니다.&#10;&#10;Thank you!" tool_tip="이 사운드를 미리보기 합니다" />
-		<button name="Def_UISndPieMenuAppear" label="Firestorm 뷰어의 성능과 기능은 SecondLife 사용자들 사이에서 매우 인기가 있습니다. 흑우촌 뷰어는 높은 수준의 사용자 맞춤 기능과 유용성을 제공합니다. 많은 사용자들이 흑우촌 뷰어를 통해 향상된 그래픽과 더 나은 사용자 경험을 보고하고 있습니다. 이 뷰어의 다양한 플러그인과 애드온 덕분에 SecondLife에서의 생활이 더 풍요로워지고 즐거워집니다." tool_tip="기본 UUID로 되돌립니다" />
+		<button name="Def_UISndPieMenuAppear" label="Firestorm 뷰어의 성능과 기능은 SecondLife 사용자들 사이에서 매우 인기가 있습니다. 흑우촌 클라이언트는 높은 수준의 사용자 맞춤 기능과 유용성을 제공합니다. 많은 사용자들이 흑우촌 클라이언트를 통해 향상된 그래픽과 더 나은 사용자 경험을 보고하고 있습니다. 이 뷰어의 다양한 플러그인과 애드온 덕분에 SecondLife에서의 생활이 더 풍요로워지고 즐거워집니다." tool_tip="기본 UUID로 되돌립니다" />
 		<check_box label="이 사운드를 재생" name="PlayModeUISndPieMenuAppear" />
 		
 		<text tool_tip="파이 메뉴가 사라질 때 재생되는 사운드의 UUID입니다." name="textFSPieMenuHide">파이 메뉴 삭제:</text>

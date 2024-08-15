@@ -12,7 +12,7 @@
 	<string name="save_label">저장</string>
 	<scroll_container name="profile_scroll">
 		<panel name="info_scroll_content_panel">
-			<icon label="SecondLife 뷰어와 관련된 내용을 다음 텍스트로 번역해 주세요.&#10;'Firestorm'이라는 단어가 등장하면 '흑우촌'으로 번역해 주세요:&#10;&#10;---&#10;&#10;The latest update to the Firestorm viewer includes several new features and performance improvements. Users can now enjoy a smoother experience with the new rendering engine. Additionally, the interface has been redesigned for better accessibility and user experience. To update your Firestorm viewer, visit the official website and follow the provided instructions.&#10;&#10;---&#10;&#10;최신 흑우촌 뷰어 업데이트에는 여러 가지 새로운 기능과 성능 향상이 포함되어 있습니다. 사용자들은 새로운 렌더링 엔진을 통해 보다 부드러운 경험을 즐길 수 있습니다. 또한, 인터페이스가 더 나은 접근성과 사용자 경험을 위해 재설계되었습니다. 당신의 흑우촌 뷰어를 업데이트하려면, 공식 웹사이트를 방문하고 제공된 지침을 따르십시오." name="edit_icon" tool_tip="이미지를 선택하려면 클릭하세요" />
+			<icon label="SecondLife 뷰어와 관련된 내용을 다음 텍스트로 번역해 주세요.&#10;'Firestorm'이라는 단어가 등장하면 '흑우촌'으로 번역해 주세요:&#10;&#10;---&#10;&#10;The latest update to the Firestorm viewer includes several new features and performance improvements. Users can now enjoy a smoother experience with the new rendering engine. Additionally, the interface has been redesigned for better accessibility and user experience. To update your Firestorm viewer, visit the official website and follow the provided instructions.&#10;&#10;---&#10;&#10;최신 흑우촌 클라이언트 업데이트에는 여러 가지 새로운 기능과 성능 향상이 포함되어 있습니다. 사용자들은 새로운 렌더링 엔진을 통해 보다 부드러운 경험을 즐길 수 있습니다. 또한, 인터페이스가 더 나은 접근성과 사용자 경험을 위해 재설계되었습니다. 당신의 흑우촌 클라이언트를 업데이트하려면, 공식 웹사이트를 방문하고 제공된 지침을 따르십시오." name="edit_icon" tool_tip="이미지를 선택하려면 클릭하세요" />
 			<layout_stack name="info_panel">
 				<layout_panel name="main_info_panel">
 					<text_editor name="classified_name">[name]</text_editor>

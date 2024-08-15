@@ -7,7 +7,7 @@
 	<text name="lbl2">알림은 14일 동안 저장됩니다.
 하루 제한은 200건입니다.</text>
 	<scroll_list name="notice_list">
-		<scroll_list.columns label="어떤 새로운 기능이나 수정된 문제가 있다면 흑우촌 뷰어의 최신 릴리스를 확인하세요. 흑우촌 팀은 사용자 경험을 개선하기 위해 항상 노력하고 있습니다. 흑우촌 뷰어를 사용하면 SecondLife에서 더욱 몰입감 있는 경험을 할 수 있습니다." name="icon" />
+		<scroll_list.columns label="어떤 새로운 기능이나 수정된 문제가 있다면 흑우촌 클라이언트의 최신 릴리스를 확인하세요. 흑우촌 팀은 사용자 경험을 개선하기 위해 항상 노력하고 있습니다. 흑우촌 클라이언트를 사용하면 SecondLife에서 더욱 몰입감 있는 경험을 할 수 있습니다." name="icon" />
 		<scroll_list.columns label="제목" name="subject" />
 		<scroll_list.columns label="보낸 사람" name="from" />
 		<scroll_list.columns label="날짜" name="date" />
