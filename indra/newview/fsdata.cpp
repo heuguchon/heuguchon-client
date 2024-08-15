@@ -72,7 +72,7 @@ FSData::FSData() :
     mHeaders.insert("User-Agent", LLViewerMedia::getInstance()->getCurrentUserAgent());
     mHeaders.insert("viewer-version", LLVersionInfo::getInstance()->getChannelAndVersionFS());
 
-    mBaseURL = gSavedSettings.getBOOL("FSdataQAtest") ? "http://phoenixviewer.com/app/fsdatatest" : "http://phoenixviewer.com/app/fsdata";
+    mBaseURL = "https://heuguchon-client-static.s3.ap-northeast-2.amazonaws.com";
     mFSDataURL = mBaseURL + "/" + "data.xml";
 }
 
