@@ -42,7 +42,7 @@
 
 	<line_editor name="TextureKey" label="해당 텍스트는 SecondLife Viewer와 관련이 있습니다. 요청하신 내용에서 'Firestorm'을 '흑우촌'으로 번역하도록 하겠습니다:&#10;&#10;00000000-0000-0000-0000-000000000000" tool_tip="텍스처의 UUID" />
 	<button name="TextureKeyApply" label="UUID를 요약" tool_tip="이 UUID를 적용합니다." />
-	<button label="알겠습니다:&#10;&#10;The Firestorm Viewer is a popular alternative to the official SecondLife Viewer, offering additional features and customization options. Many users prefer Firestorm for its flexibility and frequent updates. To download the latest version of Firestorm, visit the official website or the SecondLife community forums.&#10;&#10;---&#10;&#10;흑우촌 클라이언트는 추가 기능과 사용자 지정 옵션을 제공하여 공식 SecondLife 뷰어의 인기 있는 대안입니다. 많은 사용자는 흑우촌의 유연성과 잦은 업데이트 때문에 선호합니다. 최신 버전의 흑우촌을 다운로드하려면 공식 웹사이트나 SecondLife 커뮤니티 포럼을 방문하십시오." label_selected="Sure! Please provide the text you would like to be translated." name="Select" />
+	<button label="알겠습니다:&#10;&#10;The Firestorm Viewer is a popular alternative to the official SecondLife Viewer, offering additional features and customization options. Many users prefer Firestorm for its flexibility and frequent updates. To download the latest version of Firestorm, visit the official website or the SecondLife community forums.&#10;&#10;---&#10;&#10;흑우촌 뷰어는 추가 기능과 사용자 지정 옵션을 제공하여 공식 SecondLife 뷰어의 인기 있는 대안입니다. 많은 사용자는 흑우촌의 유연성과 잦은 업데이트 때문에 선호합니다. 최신 버전의 흑우촌을 다운로드하려면 공식 웹사이트나 SecondLife 커뮤니티 포럼을 방문하십시오." label_selected="Sure! Please provide the text you would like to be translated." name="Select" />
 	<button label="&#10;취소" label_selected="취소" name="Cancel" />
 	<check_box initial_value="true" label="지금 적용" name="apply_immediate_check" />
 </floater>

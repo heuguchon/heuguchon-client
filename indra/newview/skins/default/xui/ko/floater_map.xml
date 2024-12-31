@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<floater name="Map" title="물론입니다. 아래의 텍스트를 번역하겠습니다.&#10;&#10;---&#10;&#10;&quot;Firestorm Viewer is renowned for its advanced features and user-friendly interface, making it a favorite among SecondLife users. The customization options available in Firestorm enable users to tailor their experience to their specific needs.&quot;&#10;&#10;---&#10;&#10;번역은 다음과 같습니다:&#10;&#10;---&#10;&#10;&quot;흑우촌 클라이언트는 고급 기능과 사용하기 쉬운 인터페이스로 유명하여 세컨드라이프 사용자들 사이에서 인기를 끌고 있습니다. 흑우촌에서 제공되는 맞춤 설정 옵션은 사용자가 자신의 경험을 특정 요구에 맞게 조정할 수 있도록 합니다.&quot;&#10;&#10;---">
+<floater name="Map" title="물론입니다. 아래의 텍스트를 번역하겠습니다.&#10;&#10;---&#10;&#10;&quot;Firestorm Viewer is renowned for its advanced features and user-friendly interface, making it a favorite among SecondLife users. The customization options available in Firestorm enable users to tailor their experience to their specific needs.&quot;&#10;&#10;---&#10;&#10;번역은 다음과 같습니다:&#10;&#10;---&#10;&#10;&quot;흑우촌 뷰어는 고급 기능과 사용하기 쉬운 인터페이스로 유명하여 세컨드라이프 사용자들 사이에서 인기를 끌고 있습니다. 흑우촌에서 제공되는 맞춤 설정 옵션은 사용자가 자신의 경험을 특정 요구에 맞게 조정할 수 있도록 합니다.&quot;&#10;&#10;---">
 	<floater.string name="mini_map_caption">미니맵</floater.string>
 	<text label="북" name="floater_map_north" text="北">북</text>
 	<text label="동" name="floater_map_east" text="東">동</text>

@@ -1599,7 +1599,7 @@ http://wiki.secondlife.com/wiki/Setting_your_display_name 을 참고하세요.
 이름이나嫌가라세의 상세를 가능한 한 구체적으로 입력해 주세요.
 
 정확한 설명의 입력 덕분에,
-흑우촌 클라이언트에 의한 피드백 보고서 처리과 저장에 매우 도움이 됩니다.</notification>
+흑우촌 뷰어에 의한 피드백 보고서 처리과 저장에 매우 도움이 됩니다.</notification>
 	<notification name="HelpReportAbuseContainsCopyright">안녕하세요,
 
 지적 재산권 침해를 신고하려고 합니다. 정확하게 신고하기 위해, 아래 내용을 확인해 주세요:
@@ -2493,9 +2493,9 @@ https://wiki.흑우촌viewer.org/fs_voice<usetemplate ignoretext="ビューワ�
 	</notification>
 	<notification label="Sure, please provide the text you would like to translate to Korean." name="NoInventory">인벤토리 표시 기능은 고급 모드에서만 사용할 수 있습니다. 로그아웃하여 모드를 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
 	</notification>
-	<notification label="물론입니다. 아래의 텍스트를 한국어로 번역하겠습니다:&#10;&#10;```&#10;SecondLife Viewer의 최신 버전은 여러 가지 새로운 기능과 성능 향상을 제공합니다. 특히 흑우촌 클라이언트의 새로운 업데이트는 사용자들이 더 몰입감 있는 가상 현실을 경험할 수 있도록 돕습니다. 흑우촌 팀은 또한 많은 버그를 수정하여 보다 안정적인 사용자 환경을 제공하고 있으며, 이번 업데이트에서는 더 나은 그래픽 품질과 속도 향상이 포함되었습니다. 사용자들은 이제 더 빠르고 더 원활하게 SecondLife에서 플레이할 수 있으며, 흑우촌의 고급 기능을 최대한 활용할 수 있습니다.&#10;```" name="NoAppearance">아바타 편집기는 고급 모드에서만 이용할 수 있습니다. 로그아웃하여 모드를 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	<notification label="물론입니다. 아래의 텍스트를 한국어로 번역하겠습니다:&#10;&#10;```&#10;SecondLife Viewer의 최신 버전은 여러 가지 새로운 기능과 성능 향상을 제공합니다. 특히 흑우촌 뷰어의 새로운 업데이트는 사용자들이 더 몰입감 있는 가상 현실을 경험할 수 있도록 돕습니다. 흑우촌 팀은 또한 많은 버그를 수정하여 보다 안정적인 사용자 환경을 제공하고 있으며, 이번 업데이트에서는 더 나은 그래픽 품질과 속도 향상이 포함되었습니다. 사용자들은 이제 더 빠르고 더 원활하게 SecondLife에서 플레이할 수 있으며, 흑우촌의 고급 기능을 최대한 활용할 수 있습니다.&#10;```" name="NoAppearance">아바타 편집기는 고급 모드에서만 이용할 수 있습니다. 로그아웃하여 모드를 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
 	</notification>
-	<notification label="SecondLife Viewer에서 가장 인기 있는 대체 뷰어 중 하나는 흑우촌 클라이언트입니다. 흑우촌 클라이언트는 더 많은 사용자 정의 옵션과 고급 기능을 제공하여 사용자들이 더 나은 게임 경험을 할 수 있도록 합니다. 흑우촌 클라이언트를 사용하면 추가 스킨과 테마, 그리고 더 세밀한 그래픽 설정을 사용할 수 있습니다. 많은 플레이어들이 흑우촌 클라이언트의 안정성과 기능성 때문에 이를 선호합니다." name="NoSearch">검색은 아드밴스 모드에서만 이용할 수 있습니다. 로그아웃하여 모드를 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
+	<notification label="SecondLife Viewer에서 가장 인기 있는 대체 뷰어 중 하나는 흑우촌 뷰어입니다. 흑우촌 뷰어는 더 많은 사용자 정의 옵션과 고급 기능을 제공하여 사용자들이 더 나은 게임 경험을 할 수 있도록 합니다. 흑우촌 뷰어를 사용하면 추가 스킨과 테마, 그리고 더 세밀한 그래픽 설정을 사용할 수 있습니다. 많은 플레이어들이 흑우촌 뷰어의 안정성과 기능성 때문에 이를 선호합니다." name="NoSearch">검색은 아드밴스 모드에서만 이용할 수 있습니다. 로그아웃하여 모드를 변경하시겠습니까?<usetemplate name="okcancelbuttons" notext="終了しない" yestext="終了" />
 	</notification>
 	<notification label="Sure, please provide the text you would like me to translate to Korean." name="ConfirmHideUI">이 동작으로 인해 모든 메뉴 항목과 버튼이 숨겨집니다. 다시 표시하려면 [SHORTCUT]를 다시 클릭하세요.<usetemplate ignoretext="UI を非表示にする前に確認" name="okcancelignore" notext="取り消し" yestext="OK" />
 	</notification>
@@ -2745,7 +2745,7 @@ If "Firestorm" had appeared:
 	<notification name="CacheEmpty">현재, 뷰어의 캐시가 비어 있습니다. 새로운 콘텐츠를 다운로드하는 동안 프레임 레이트가 느려지거나 인벤토리 로딩에 시간이 걸릴 수 있습니다.</notification>
 
 	
-	<notification name="FirstJoinSupportGroup2">Phoenix/흑우촌 클라이언트 지원 그룹에 오신 것을 환영합니다!
+	<notification name="FirstJoinSupportGroup2">Phoenix/흑우촌 뷰어 지원 그룹에 오신 것을 환영합니다!
 
 보다 원활한 지원을 받기 위해, 사용 중인 뷰어의 버전을 그룹에 알리는 것을 권장합니다. 이 그룹에 보내는 채팅의 시작 부분에 뷰어의 버전을 자동으로 표시할 수도 있습니다. 사용 중인 뷰어의 버전을 알면, 그룹의 지원 멤버들이 더욱 의미 있는 조언을 제공할 수 있습니다.
 
@@ -3265,8 +3265,8 @@ LOD 요소 --&gt; 4: 특별한 상황에서만 사용하십시오. 다시 로그
 LOD 요소 --&gt; 8: 구체적인 효과를 얻을 수 없습니다. 다양한 오류가 발생할 가능성이 있습니다.<usetemplate name="okbutton" yestext="OK" />
 	</notification>
 	<notification name="CurrencyURIOverrideReceived">이 지역은 서드파티 통화 구매를 지정하는 것을 선택했습니다.
-흑우촌 클라이언트를 이용하여 진행된 통화 구매는 사용자이신 당신과 해당 통화 제공자 또는 판매자 간의 거래임을 인지하시기 바랍니다.
-즉, 흑우촌 클라이언트, Phoenix 흑우촌 클라이언트 프로젝트 및 그 팀은 해당 거래로 인해 직접 또는 간접적으로 발생하는 비용이나 손해에 대해 일체의 책임을 지지 않습니다.
+흑우촌 뷰어를 이용하여 진행된 통화 구매는 사용자이신 당신과 해당 통화 제공자 또는 판매자 간의 거래임을 인지하시기 바랍니다.
+즉, 흑우촌 뷰어, Phoenix 흑우촌 뷰어 프로젝트 및 그 팀은 해당 거래로 인해 직접 또는 간접적으로 발생하는 비용이나 손해에 대해 일체의 책임을 지지 않습니다.
 만약 이 이용 약관에 동의할 수 없다면, 이 뷰어를 이용하여 어떠한 금융 거래도 해서는 안 됩니다.<usetemplate ignoretext="地域が新しい通貨ヘルパーを設定している場合" name="okignore" yestext="OK" />
 	</notification>
 	<notification name="EnableHiDPI">HiDPI 표시 기능을 활성화하면 일부 영향이 발생하거나 성능이 저하될 수 있습니다.</notification>

@@ -7,7 +7,7 @@
 			<button name="stop" tool_tip="네비게이션을 중지" />
 			<button name="reload" tool_tip="페이지를 업데이트" />
 			<combo_box name="address" tool_tip="여기에 URL을 입력하십시오" />
-			<icon name="media_secure_lock_flag" tool_tip="안전한 흑우촌 클라이언트" />
+			<icon name="media_secure_lock_flag" tool_tip="안전한 흑우촌 뷰어" />
 			<button name="popexternal" tool_tip="이 URL을 브라우저에서 열기" />
 		</layout_panel>
 		<layout_panel name="debug_controls">

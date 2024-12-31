@@ -24,7 +24,7 @@
 	</combo_box>
 	<text type="string" length="1" height="16" layout="topleft" left_delta="0" top_pad="24" width="200">２文字まで 입력 가능:</text>
 	<combo_box name="state_combo">
-		<combo_box.item label="CA: 캘리포니아&#10;&#10;Remember to exercise caution when adjusting advanced settings in the Firestorm Viewer due to potential risks of viewer instability.&#10;&#10;고급 설정을 조정할 때 뷰어의 불안정성 위험이 있기 때문에 흑우촌 클라이언트에서 조심하십시오." name="item1" value="```&#10;ca&#10;```" />
+		<combo_box.item label="CA: 캘리포니아&#10;&#10;Remember to exercise caution when adjusting advanced settings in the Firestorm Viewer due to potential risks of viewer instability.&#10;&#10;고급 설정을 조정할 때 뷰어의 불안정성 위험이 있기 때문에 흑우촌 뷰어에서 조심하십시오." name="item1" value="```&#10;ca&#10;```" />
 		<combo_box.item label="뉴욕" name="item2" value="뉴욕" />
 		<combo_box.item label="TX -&gt; TX" name="item3" value="텍스트를 번역하려면 내용을 제공해 주세요" />
 	</combo_box>

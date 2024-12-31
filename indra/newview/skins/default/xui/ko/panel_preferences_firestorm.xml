@@ -10,7 +10,7 @@
 	
 		<check_box name="checkMiscRLVa" label="다른 뷰어에서의 원격 제어를 허용합니다. (RLVa 기능)" />
 		<text name="textMiscRLVaRestart" left_pad="70">(재시작 필요)</text>
-		<check_box label="만약 가능하다면 흑우촌 클라이언트를 사용하여 토지에 설정된 그룹으로 오브젝트를 Rez하세요." name="grouplandrez" tool_tip="자신이 속한 그룹이 해당 토지에 설정되어 있는 경우, 현재 표시 중인 그룹 태그와 관계없이 해당 토지에 설정된 그룹으로 오브젝트를 Rez하려고 시도합니다." />
+		<check_box label="만약 가능하다면 흑우촌 뷰어를 사용하여 토지에 설정된 그룹으로 오브젝트를 Rez하세요." name="grouplandrez" tool_tip="자신이 속한 그룹이 해당 토지에 설정되어 있는 경우, 현재 표시 중인 그룹 태그와 관계없이 해당 토지에 설정된 그룹으로 오브젝트를 Rez하려고 시도합니다." />
 		<check_box label="스크립트가 통신을 수행할 때 파티클을 발생" name="EffectScriptChatParticles" tool_tip="체크를 하면, 스크립트가 들어있는 오브젝트가 통신을 할 때 소용돌이 모양의 파티클을 발생하도록 합니다." />
 		<check_box label="목표 아바타가 3m 이내에 접근했을 경우, 추적 비콘을 끕니다." name="FSDisableAvatarTrackerAtCloseIn" tool_tip="체크를 하면 목표 아바타에 3m 이내(기본값)로 접근했을 때 추적 비콘이 자동으로 꺼집니다." />
 		<check_box label="기본 Bento 애니메이션" name="play_default_bento_idle_animation_toggle" tool_tip="여기에 체크하면 기본 우선순위 0의 Bento 애니메ーション을 재생하고, 다른 Bento 애니메이션이 작동하지 않을 때 손, 날개, 입, 꼬리 등의 움직임을 멈추고 자연스러운 상태로 유지합니다." />
@@ -37,7 +37,7 @@
 	
     <panel label="보호" name="ProtectionTab">
 	
-        <check_box label="흑우촌 클라이언트에서 왼쪽 클릭으로 앉지 않도록 설정하기" name="FSBlockClickSit" />
+        <check_box label="흑우촌 뷰어에서 왼쪽 클릭으로 앉지 않도록 설정하기" name="FSBlockClickSit" />
         <check_box label="세계 지도를 여는 스크립트(llMapDestination)를 허용합니다." name="ScriptsCanShowUI" />
 
         <text name="revokepermissions_txt">오브젝트의 애니메이션 권한 취소:</text>
@@ -154,7 +154,7 @@ Could you please provide more context or additional text? This will help me prov
              <combo_item name="Rubber" label="고무" />
         </combo_box>
 		<texture_picker label="텍스처" name="texture control" tool_tip="이미지를 선택하려면 클릭하세요." />
-        <color_swatch label="If 'Firestorm' appears, translate it to '흑우촌' while maintaining the given context related to the SecondLife Viewer:&#10;&#10;色 is a single character in Chinese that typically translates to '색' in Korean, which means 'color'. However, this translation alone does not provide context related to the SecondLife Viewer. To fully commit to your context, if you have a more specific phrase or sentence to translate, I would be able to provide a detailed translation.&#10;&#10;For example, if you had:&#10;&quot;I am using the Firestorm viewer for SecondLife.&quot;&#10;It would translate to:&#10;&quot;나는 SecondLife를 위해 흑우촌 클라이언트를 사용하고 있다.&quot;&#10;&#10;If you provide more context, I can offer a more specific translation!" name="colorswatch" tool_tip="클릭하여 컬러 피커를 엽니다." />
+        <color_swatch label="If 'Firestorm' appears, translate it to '흑우촌' while maintaining the given context related to the SecondLife Viewer:&#10;&#10;色 is a single character in Chinese that typically translates to '색' in Korean, which means 'color'. However, this translation alone does not provide context related to the SecondLife Viewer. To fully commit to your context, if you have a more specific phrase or sentence to translate, I would be able to provide a detailed translation.&#10;&#10;For example, if you had:&#10;&quot;I am using the Firestorm viewer for SecondLife.&quot;&#10;It would translate to:&#10;&quot;나는 SecondLife를 위해 흑우촌 뷰어를 사용하고 있다.&quot;&#10;&#10;If you provide more context, I can offer a more specific translation!" name="colorswatch" tool_tip="클릭하여 컬러 피커를 엽니다." />
         <spinner label="투명도" name="alpha" />
         <spinner label="グロー translates to &quot;글로우&quot; in Korean. If you provide the full sentence or more context, I can help you translate it more accurately." name="glow" />
         <check_box label="밝기 최대" name="EmFBToggle" />

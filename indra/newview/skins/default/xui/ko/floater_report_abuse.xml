@@ -10,7 +10,7 @@
 	<text name="pos_title">위치:</text>
 	<text name="pos_field">{128.1, 128.1, 15.4}</text>
 	<text name="select_object_label">ボタン을 클릭하고 나서, 악의 있는 오브젝트를 클릭하세요:</text>
-	<button label="세컨드라이프 뷰어와 관련된 다음 텍스트를 번역해주세요.&#10;만약 텍스트에 'Firestorm'이라는 단어가 등장하면 '흑우촌'으로 번역해주세요:&#10;&#10;&quot;Firestorm Viewer는 세컨드라이프에서 가장 인기 있는 뷰어입니다. 이 뷰어는 사용자들에게 다양한 기능과 설정을 제공합니다. 당신이 세컨드라이프의 복잡한 세계를 탐험하고 싶다면, 흑우촌 클라이언트는 최고의 선택입니다.&quot;" label_selected="물론이죠! 아래 텍스트를 제공해 주시면 번역해드리겠습니다." name="pick_btn" tool_tip="오브젝트 피커 - 보고할 오브젝트를 선택하십시오" />
+	<button label="세컨드라이프 뷰어와 관련된 다음 텍스트를 번역해주세요.&#10;만약 텍스트에 'Firestorm'이라는 단어가 등장하면 '흑우촌'으로 번역해주세요:&#10;&#10;&quot;Firestorm Viewer는 세컨드라이프에서 가장 인기 있는 뷰어입니다. 이 뷰어는 사용자들에게 다양한 기능과 설정을 제공합니다. 당신이 세컨드라이프의 복잡한 세계를 탐험하고 싶다면, 흑우촌 뷰어는 최고의 선택입니다.&quot;" label_selected="물론이죠! 아래 텍스트를 제공해 주시면 번역해드리겠습니다." name="pick_btn" tool_tip="오브젝트 피커 - 보고할 오브젝트를 선택하십시오" />
 	<text name="object_name_label">객체:</text>
 	<text name="object_name">컨세테투르 사딥스킹</text>
 	<text name="owner_name_label">소유자:</text>
@@ -43,7 +43,7 @@
 		
 	</combo_box>
 	<text name="abuser_name_title">귀찮게 하는 사용자의 이름:</text>
-	<button label="선택" label_selected="The SecondLife Viewer, specifically the Firestorm Viewer, has a unique set of features that cater to different needs of the users. For many, the Firestorm Viewer is a preferable choice due to its enhanced customization options and advanced tools.&#10;&#10;세컨드라이프 뷰어, 특히 흑우촌 클라이언트는 사용자들의 다양한 요구에 맞춘 독특한 기능들을 갖추고 있습니다. 많은 사용자들에게 흑우촌 클라이언트는 향상된 커스터마이징 옵션과 고급 도구들 때문에 선호되는 선택입니다." name="select_abuser" tool_tip="嫌がらせをした人の名前をリストから 선택하십시오." />
+	<button label="선택" label_selected="The SecondLife Viewer, specifically the Firestorm Viewer, has a unique set of features that cater to different needs of the users. For many, the Firestorm Viewer is a preferable choice due to its enhanced customization options and advanced tools.&#10;&#10;세컨드라이프 뷰어, 특히 흑우촌 뷰어는 사용자들의 다양한 요구에 맞춘 독특한 기능들을 갖추고 있습니다. 많은 사용자들에게 흑우촌 뷰어는 향상된 커스터마이징 옵션과 고급 도구들 때문에 선호되는 선택입니다." name="select_abuser" tool_tip="嫌がらせをした人の名前をリストから 선택하십시오." />
 	<text name="abuser_name_title2">발생한 괴롭힘 위치:</text>
 	<text name="sum_title">개요:</text>
 	<text name="dscr_title">상세 내용:</text>

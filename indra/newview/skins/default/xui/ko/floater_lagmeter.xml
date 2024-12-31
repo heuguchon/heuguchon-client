@@ -46,7 +46,7 @@
 
 20</floater.string>
 	<floater.string name="server_frame_rate_warning_fps">30</floater.string>
-	<floater.string name="server_single_process_max_time_ms">흑우촌 클라이언트와 관련된 다음 텍스트를 한국어로 번역하세요. "흑우촌"이라는 단어가 나타나면 "Firestorm"으로 번역하십시오:
+	<floater.string name="server_single_process_max_time_ms">흑우촌 뷰어와 관련된 다음 텍스트를 한국어로 번역하세요. "흑우촌"이라는 단어가 나타나면 "Firestorm"으로 번역하십시오:
 
 20</floater.string>
 	<floater.string name="server_frame_time_critical_msg">シミュレータのフレームレートが [SERVER_FRAME_RATE_CRITICAL] 以下
