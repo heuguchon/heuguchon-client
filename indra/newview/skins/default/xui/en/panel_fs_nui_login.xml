@@ -50,10 +50,10 @@
       min_width="970"
       height="152">
   <icon
-    height="125"
-    width="125"
+    height="0"
+    width="0"
     image_name="login_fs_logo"
-    left="0"
+    left="125"
     top="10"
     name="sl_logo_small" />
 
@@ -100,13 +100,13 @@
     allow_text_entry="true"
     follows="left|top|right"
     height="32"
-    label="Username"
+    label="Handle"
     combo_editor.font="SansSerifLarge"
     max_chars="128"
     force_disable_fulltext_search="true"
     combo_editor.commit_on_focus_lost="false"
     combo_editor.prevalidator="ascii"
-    tool_tip="The username you chose when you registered, like bobsmith12 or Steller Sunshine"
+    tool_tip="The handle you chose when you registered, like bobsmith12 or Steller Sunshine"
     name="username_combo"
     width="201">
     <combo_box.combo_editor
@@ -122,7 +122,7 @@
       left="2"
       top_pad="10"
       height="18"
-      label="Remember username"
+      label="Remember handle"
       name="remember_username_check"
       width="204" />
     </layout_panel> <!-- login -->
@@ -140,7 +140,7 @@
       image_unselected="TrashItem_Off"
       image_selected="TrashItem_Press"
       image_pressed="TrashItem_Press"
-      tool_tip="Remove this username"
+      tool_tip="Remove this handle"
       label=""
       layout="topleft"
       name="remove_user_btn"
