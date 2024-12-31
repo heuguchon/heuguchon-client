@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="cof_wearables">
-	<tab_container name="wearable_accordion">
-		<panel name="tab_clothing" title="의류" />
-		<panel name="tab_attachments" title="아타치먼트" />
-		<panel name="tab_body_parts" title="The translation of &quot;身体部位&quot; in the context related to the SecondLife Viewer, with 'Firestorm' translated to '흑우촌', is:&#10;&#10;신체 부위" />
-	</tab_container>
-</panel>

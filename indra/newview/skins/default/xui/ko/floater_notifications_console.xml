@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="notifications_console" title="알림 콘솔">
-	<combo_box label="種類를 선택" name="notification_types" />
-	<button label="추가" name="add_notification" />
-</floater>

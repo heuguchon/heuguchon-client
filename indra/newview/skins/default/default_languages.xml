@@ -39,7 +39,4 @@
 	<label
 	 name="fr"
 	 value="Choix par défaut" />
-	<label
-	 name="ko"
-	 value="시스템 기본" />
 </labels>

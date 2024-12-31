@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="sys_well_window" title="알림">
-	<string name="title_im_well_window">회화</string>
-	<string name="title_notification_well_window">알림</string>
-</floater>

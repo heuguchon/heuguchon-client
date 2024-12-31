@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="teleport_history_item">
-	<text name="region" value="물론! SecondLife Viewer와 관련된 텍스트를 번역해드리겠습니다. &quot;Firestorm&quot;이 나타나면 &quot;흑우촌&quot;으로 번역하겠습니다. 구체적인 텍스트를 제공해주시면 바로 도와드리겠습니다." />
-	<text name="timestamp" value="Certainly! Please provide the text you would like to have translated to Korean." />
-	<button name="profile_btn" tool_tip="아이템 정보를 표시" />
-</panel>

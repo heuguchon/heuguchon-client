@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="preview lsl text" title="스크립트: 회전 스크립트">
-	<floater.string name="Title">스크립트：[NAME]</floater.string>
-	<text name="desc txt">설명:</text>
-</floater>

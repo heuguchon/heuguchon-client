@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="menu_group_plus">
-  <menu_item_check label="그룹 아이콘 표시" name="Display Group Icons" />
-</toggleable_menu>

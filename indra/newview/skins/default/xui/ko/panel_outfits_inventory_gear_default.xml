@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<menu name="menu_gear_default">
-	<menu_item_call label="이 아웃핏으로 갈아입기" name="wear" />
-	<menu_item_call label="このアウトフィットから取り除く -&gt; 이 아웃핏에서 제거" name="remove" />
-	<menu_item_separator name="Outfits Gear Separator" />
-	<menu_item_call label="이름 변경" name="rename" />
-	<menu_item_call label="링크를 제거" name="remove_link" />
-	<menu_item_call label="아웃핏을 삭제하기" name="delete" />
-</menu>

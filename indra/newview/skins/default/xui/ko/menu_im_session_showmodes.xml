@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="menu_modes">
-    <menu_item_check label="간편 표시" name="compact_view" />
-    <menu_item_check label="확장 표시" name="expanded_view" />
-    <menu_item_separator />
-    <menu_item_check name="IMShowTime" label="시간 표시" />
-    <menu_item_check name="IMShowNamesForP2PConv" label="일대일 대화에서 이름 표시" />         
-</toggleable_menu>

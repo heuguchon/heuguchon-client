@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="nearby_chat">
-	<line_editor label="여기를 클릭하여 채팅을 시작하세요." name="chat_box" tool_tip="Enter 키로 발언하고, Ctrl + Enter 키로 샤우팅합니다." />
-	<button name="show_nearby_chat" tool_tip="근처 채팅 로그 표시/숨기기" />
-</panel>

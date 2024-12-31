@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="conversation_log_list_item">
-    <icon name="voice_session_icon" tool_tip="다음 텍스트를 SecondLife Viewer에 관련해 한국어로 번역해주세요.&#10;'Firestorm'라는 단어가 나타나면, '흑우촌'으로 번역하세요:&#10;&#10;ボイス会話を含める&#10;&#10;음성 대화를 포함합니다" />
-    <icon name="unread_ims_icon" tool_tip="로그아웃 중에 도착한 메시지" />
-    <button name="delete_btn" tool_tip="この 항목을 삭제" />
-</panel>

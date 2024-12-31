@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="camera_preset_item">
-    <text name="preset_name" value="초기값" />
-    <button name="delete_btn" tool_tip="사전 설정을 삭제합니다" />
-    <button name="reset_btn" tool_tip="사전 설정을 기본값으로 재설정합니다." />
-</panel>

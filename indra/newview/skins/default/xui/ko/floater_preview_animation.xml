@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="preview_anim">
-	<floater.string name="Title">애니메이션: [NAME]</floater.string>
-	<panel name="basic_info_panel">
-		<text name="desc txt">설명:</text>
-		<button label="인월드에서 재생" label_selected="중지" name="Inworld" tool_tip="他人に見えるように再生&#10;&#10;타인에게 보이도록 재생" />
-		<button label="로컬 재생" label_selected="중지" name="Locally" tool_tip="자신만 볼 수 있도록 재생" />
-	</panel>
-</floater>

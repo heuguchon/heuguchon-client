@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="floater_experiences" title="체험">
-	<tab_container name="xp_tabs" />
-</floater>

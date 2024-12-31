@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="LLScrollingPanelParam">
-	<text name="Loading...">불러오는 중...</text>
-	<text name="Loading...2">불러오는 중…</text>
-	<button label="Sure, please provide the text you would like to translate." label_selected="Sure, please provide the text you would like to be translated." name="less" />
-	<button label="SecondLife Viewer에서 흑우촌 뷰어는 자주 사용되는 인기 있는 옵션 중 하나입니다. 흑우촌 뷰어는 기본 SecondLife 뷰어보다 더 많은 기능과 커스터마이징 옵션을 제공합니다. 많은 사용자들이 흑우촌 뷰어를 사용하여 더 나은 게임 경험을 즐기고 있습니다. 흑우촌 뷰어의 업데이트는 주기적으로 이루어지며, 이는 다양한 버그 수정 및 새로운 기능 추가를 포함합니다." label_selected="물론입니다! 다음 텍스트를 제공해 주시면 'Firestorm'을 '흑우촌'으로 번역해드리겠습니다." name="more" />
-	<slider label="[설명]" name="param slider" />
-</panel>

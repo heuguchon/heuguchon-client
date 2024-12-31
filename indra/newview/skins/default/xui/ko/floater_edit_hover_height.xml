@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="HoverHeight" title="호버링 높이 조정">
-	<slider label="높이" name="HoverHeightSlider" />
-	<check_box label="카메라 뷰에 영향" name="BindCameraCheck" />
-</floater>

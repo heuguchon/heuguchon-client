@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="floater_marketplace_validation" title="마켓플레이스 목록의 감사">
-	<button label="OK&#10;&#10;-&gt; 알겠어" label_selected="ＯＫ&#10;" name="OK" />
-	<text_editor name="validation_text">마켓플레이스_유효성_텍스트</text_editor>
-</floater>

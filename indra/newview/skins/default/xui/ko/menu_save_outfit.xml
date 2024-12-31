@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="save_outfit_menu">
-	<menu_item_call label="저장" name="save_outfit" />
-	<menu_item_call label="이름을 지정하여 저장" name="save_as_new_outfit" />
-</toggleable_menu>

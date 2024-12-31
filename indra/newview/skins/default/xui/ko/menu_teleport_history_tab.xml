@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<context_menu name="Teleport History Item Context Menu">
-	<menu_item_call label="SecondLife Viewer와 관련된 문맥을 고려하여 다음 텍스트를 한글로 번역해 주세요.&#10;'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역해 주세요:&#10;&#10;開く&#10;&#10;열다" name="TabOpen" />
-	<menu_item_call label="닫기" name="TabClose" />
-</context_menu>

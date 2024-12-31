@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="Copy Paste Position Menu">
-	<menu_item_call label="모두 복사" name="psr_copy" />
-	<menu_item_call label="위치를 복사하십시오" name="pos_copy" />
-	<menu_item_call label="모두 붙여넣기" name="psr_paste" />
-	<menu_item_call label="位置를 붙여넣기" name="pos_paste" />
-</toggleable_menu>

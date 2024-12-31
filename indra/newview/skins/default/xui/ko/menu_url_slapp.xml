@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<context_menu name="Url Popup">
-	<menu_item_call label="이 명령을 실행" name="run_slapp" />
-	<menu_item_separator />
-	<menu_item_call label="SLurl를 클립보드에 복사" name="url_copy" />
-</context_menu>

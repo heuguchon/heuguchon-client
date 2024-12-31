@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="menu_blocked_plus">
-  <menu_item_call label="住民の名前を指定してブロック... &#10;주민의 이름을 지정하여 차단..." name="block_resident_by_name" />
-  <menu_item_call label="オブジェクトの名前を指定してブロック&#10;오브젝트 이름을 지정하여 차단&#10;&#10;Firestorm&#10;흑우촌" name="block_object_by_name" />
-</toggleable_menu>

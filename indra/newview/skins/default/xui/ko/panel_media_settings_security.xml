@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel label="보안" name="Media Settings Security">
-	<check_box label="지정한 URL 패턴으로 시작하는 연결을 허용합니다." name="whitelist_enable" />
-	<text name="home_url_fails_some_items_in_whitelist">홈페이지에 실패한 항목이 있습니다:</text>
-	<button label="추가" name="whitelist_add" />
-	<button label="삭제" name="whitelist_del" />
-	<text name="home_url_fails_whitelist">警告：「일반」탭에 지정된 홈페이지는 화이트리스트에 등록되어 있지 않습니다. 올바른 기능이 설정될 때까지 이 기능은 일시 중지됩니다.</text>
-</panel>

@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="whitelist_entry" title="ホワイトリスト의 입력">
-	<text name="media_label">URL 또는 URL 패턴을 입력하여 허용할 도메인 목록에 추가합니다.</text>
-	<line_editor name="whitelist_entry" tool_tip="URL 또는 URL 패턴을 화이트리스트에 입력합니다" />
-	<button label="알겠습니다! 텍스트를 보내 주세요." name="ok_btn" />
-	<button label="취소" name="cancel_btn" />
-</floater>

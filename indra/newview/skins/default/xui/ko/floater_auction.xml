@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="floater_auction" title="린덴 랜드의 판매 시작">
-	<floater.string name="already for sale">판매 중인 구획을 흑우촌에 출품할 수 없습니다.</floater.string>
-	<check_box initial_value="true" label="黄色의 선택 울타리를 포함하십시오." name="fence_check" />
-	<button label="스냅샷" label_selected="스냅샷" name="snapshot_btn" />
-	<button label="누구에게나 판매" label_selected="- 누구에게나 판매" name="sell_to_anyone_btn" />
-	<button label="설정을 지우기" label_selected="설정을 초기화" name="reset_parcel_btn" />
-	<button label="경매 시작" label_selected="경매 시작" name="start_auction_btn" />
-</floater>

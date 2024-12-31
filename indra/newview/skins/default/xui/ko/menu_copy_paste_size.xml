@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="Copy Paste Size Menu">
-	<menu_item_call label="모두 복사" name="psr_copy" />
-	<menu_item_call label="크기 복사" name="size_copy" />
-	<menu_item_call label="모두 붙여넣기" name="psr_paste" />
-	<menu_item_call label="크기를 붙여넣기" name="size_paste" />
-</toggleable_menu>

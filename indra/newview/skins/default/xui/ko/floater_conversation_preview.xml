@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="preview_conversation" title="대화:">
-    <floater.string name="Title">대화: [NAME]</floater.string>
-    <fs_chat_history name="chat_history" />
-    <text name="page_label" value="페이지" />
-    <spinner name="history_page_spin" />
-    <text name="page_num_label" />
-    <button tool_tip="채팅 기록을 별도의 창에서 엽니다." name="open_external_btn" />
-</floater>

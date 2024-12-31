@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<context_menu name="Settings">
-	<menu_item_check label="항상 렌더링" name="always_render" />
-	<menu_item_check label="그리지 않음" name="never_render" />
-	<menu_item_check label="예외에서 삭제" name="default" />
-</context_menu>

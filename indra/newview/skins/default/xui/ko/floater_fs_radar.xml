@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="radar" title="레이더">
-	<panel name="panel_radar" filename="panel_fs_radar.xml" />
-</floater>

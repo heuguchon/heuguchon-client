@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="Copy Paste Color Menu">
-	<menu_item_call label="복사" name="params_copy" />
-	<menu_item_call label="Sure, here's the translation of the text into Korean, considering it's related to the SecondLife Viewer, and translating 'Firestorm' to '흑우촌':&#10;&#10;붙여넣기" name="params_paste" />
-</toggleable_menu>

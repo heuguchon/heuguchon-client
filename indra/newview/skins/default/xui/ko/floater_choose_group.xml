@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="groups" title="그룹">
-	<text name="groupdesc">그룹 선택:</text>
-	<button label="ＯＫ" label_selected="알겠습니다, 다음 텍스트를 고려하여 번역하겠습니다:&#10;&#10;If the word 'Firestorm' appears, translate it to '흑우촌':&#10;&#10;ＯＫ" name="OK" />
-	<button label="취소" label_selected="취소" name="Cancel" />
-</floater>

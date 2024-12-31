@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="floater_test_text_editor">
-	<text_editor name="test_text_editor" tool_tip="텍스트 에디터">텍스트 에디터</text_editor>
-	<text_editor name="test_text_editor" tool_tip="텍스트 편집기">이 텍스트는 길이가 길며, 오른쪽으로 수평 스크롤해야 합니다.</text_editor>
-	<text_editor name="numeric_text_editor" tool_tip="수치만 입력 가능한 텍스트 에디터">이것은 숫자가 아닌 텍스트이므로, 표시되어서는 안 됩니다.</text_editor>
-</floater>

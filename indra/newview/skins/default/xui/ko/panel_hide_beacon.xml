@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="panel_hide_beacon">
-	<button label="&#10;ビーコンを隠す -&gt; 비콘 감추기" name="hide_beacon_btn" tool_tip="트래킹을 중지하고 비콘을 숨깁니다." />
-</panel>

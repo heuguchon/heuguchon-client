@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="floater_help_browser" title="ヘル프 브라우저">
-	<floater.string name="loading_text">불러오는 중입니다...</floater.string>
-	<layout_stack name="stack1">
-		<layout_panel name="external_controls" />
-	</layout_stack>
-</floater>

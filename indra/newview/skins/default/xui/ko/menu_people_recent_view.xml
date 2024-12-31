@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="menu_group_plus">
-  <menu_item_check label="直近のものから並べ替え -&gt; 최신 순으로 정렬" name="sort_most" />
-  <menu_item_check label="이름으로 정렬" name="sort_name" />
-  <menu_item_separator />
-  <menu_item_check name="view_icons" label="사람의 아이콘 표시" />
-</toggleable_menu>

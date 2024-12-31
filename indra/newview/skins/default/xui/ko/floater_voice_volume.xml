@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="floater_voice_volume" title="보이스 음량">
-    <slider name="volume_slider" tool_tip="음성 볼륨" />
-    <button name="mute_btn" />
-</floater>

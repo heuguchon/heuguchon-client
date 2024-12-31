@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="sidetray_tab_panel">
-	<text name="sidetray_tab_title" value="사이드 패널" />
-	<button name="undock" tool_tip="분리" />
-	<button name="dock" tool_tip="도킹" />
-	<button name="show_help" tool_tip="도움말 표시" />
-</panel>

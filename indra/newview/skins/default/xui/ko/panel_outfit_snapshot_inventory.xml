@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="panel_outfit_snapshot_inventory">
-	<icon name="title_icon" />
-	<text name="title">인벤토리</text>
-	<view_border name="hr" />
-	<text name="hint_lbl">이미지를 인벤토리에 업로드하는 데 L$[UPLOAD_COST]가 소요됩니다.</text>
-	<button label="취소" name="cancel_btn" />
-	<button label="저장" name="save_btn" />
-</panel>

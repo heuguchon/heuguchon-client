@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="Gear Wearing">
-	<menu_item_call label="만지기" name="touch" />
-	<menu_item_call label="편집" name="edit_item" />
-	<menu_item_call label="아웃핏 편집" name="edit_outfit" />
-	<menu_item_call label="벗다" name="takeoff" />
-	<menu_item_call label="아웃핏 목록을 클립보드에 복사" name="copy" />
-</toggleable_menu>

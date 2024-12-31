@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="panel_stand_stop_flying">
-	<button label="부팅" name="stand_btn" tool_tip="여기를 클릭하여 실행하세요." />
-	<button label="비행 중지" name="stop_fly_btn" tool_tip="비행 중지" />
-</panel>

@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="notification" title="알림 콘솔">
-	<text_editor name="payload">불러오는 중입니다…。</text_editor>
-	<combo_box label="응답" name="response" />
-</floater>

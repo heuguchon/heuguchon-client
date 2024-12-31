@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="panel_pick_info">
-	<panel.string name="location_notice">(게재 후 업데이트)</panel.string>
-	<line_editor name="pick_location">（読み込んでいます…）</line_editor>
-	<button label="텔레포트" name="teleport_btn" />
-	<button label="지도에 표시" name="show_on_map_btn" />
-	<button label="장소 설정" name="set_to_curr_location_btn" tool_tip="현재 위치로 설정" />
-	<button label="피크 저장" name="save_changes_btn" />
-</panel>

@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="place_overflow_menu">
-	<menu_item_call label="랜드마크 생성" name="landmark" />
-	<menu_item_call label="피크 만들기" name="pick" />
-</toggleable_menu>

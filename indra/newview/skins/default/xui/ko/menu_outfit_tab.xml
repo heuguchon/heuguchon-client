@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<context_menu name="Outfit">
-	<menu_item_call label="입다 - 현재 아웃핏과 교체하기" name="wear_replace" />
-	<menu_item_call label="입기 - 착용 중인 아웃핏에 추가" name="wear_add" />
-	<menu_item_call label="탈의 - 착용 중인 아웃핏에서 제거" name="take_off" />
-	<menu_item_call label="아웃핏 편집" name="edit" />
-	<menu_item_call label="아웃핏 이름 변경" name="rename" />
-	<menu_item_call label="아웃핏 삭제" name="delete" />
-</context_menu>

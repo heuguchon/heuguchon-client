@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="group_list_item">
-	<text name="group_name" value="알 수 없음" />
-	<button name="info_btn" tool_tip="상세 정보" />
-	<button name="profile_btn" tool_tip="프로필 보기" />
-</panel>

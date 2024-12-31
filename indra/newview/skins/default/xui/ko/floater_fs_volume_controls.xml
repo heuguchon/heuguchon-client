@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<floater name="volume_controls" title="음량 설정">
-
-	<panel name="global_volume_controls_panel" filename="panel_volume_pulldown.xml" />
-</floater>

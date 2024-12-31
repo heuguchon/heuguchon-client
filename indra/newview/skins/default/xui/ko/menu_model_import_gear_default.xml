@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="model_menu_gear_default">
-	<menu_item_check label="縁を表示&#10;&#10;연을 표시" name="show_edges" />
-	<menu_item_check label="物理効果を表示&#10;&#10;물리 효과 표시" name="show_physics" />
-	<menu_item_check label="텍스처를 표시" name="show_textures" />
-	<menu_item_check label="스킨 웨이트 표시" name="show_skin_weight" />
-	<menu_item_check label="조인트 위치 표시" name="show_joint_positions" />
-</toggleable_menu>

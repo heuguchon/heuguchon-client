@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<panel name="panel_voice_effect">
-	<string name="no_voice_effect">보이스 모핑 없음</string>
-	<string name="preview_voice_effects">보이스 모핑을 미리보기</string>
-	<string name="get_voice_effects">보이스 모핑 획득</string>
-	<combo_box name="voice_effect" tool_tip="보이스 모핑을 선택하여 보이스를 변경">
-		<combo_box.item label="보이스 모핑 없음" name="no_voice_effect" />
-	</combo_box>
-</panel>

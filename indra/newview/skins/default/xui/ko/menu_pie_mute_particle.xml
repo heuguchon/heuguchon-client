@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<pie_menu name="Mute Particle Pie">
-	<pie_slice label="파티클 오너 무시" name="Mute Particle" />
-</pie_menu>

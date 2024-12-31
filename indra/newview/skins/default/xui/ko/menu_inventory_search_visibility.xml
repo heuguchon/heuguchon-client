@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<toggleable_menu name="menu_search_visibility">
-    <menu_item_check label="쓰레기통 검색" name="search_trash" />
-    <menu_item_check label="라이브러리를 검색" name="search_library" />
-    <menu_item_check label="다음을 한국어로 번역하십시오. 이것은 SecondLife Viewer와 관련이 있습니다.&#10;'Firestorm'이라는 단어가 나타나면 '흑우촌'으로 번역하십시오.&#10;&#10;링크를 포함시키십시오." name="include_links" />
-</toggleable_menu>
