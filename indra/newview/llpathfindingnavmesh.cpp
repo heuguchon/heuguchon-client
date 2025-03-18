@@ -139,13 +139,24 @@ void LLPathfindingNavMesh::handleNavMeshResult(const LLSD &pContent, U32 pNavMes
         ENavMeshRequestStatus status;
         if ( pContent.has(NAVMESH_DATA_FIELD) )
         {
+            // <FS> ignore dangling reference false positives in gcc13
+#if defined(__GNUC__) && (__GNUC__ >= 13)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdangling-reference"
+#endif
+            // </FS>
             const LLSD::Binary &value = pContent.get(NAVMESH_DATA_FIELD).asBinary();
-            unsigned int binSize = value.size();
+            // <FS> ignore dangling reference false positives in gcc13
+#if defined(__GNUC__) && (__GNUC__ >= 13)
+#pragma GCC diagnostic pop
+#endif
+            // </FS>
+            auto binSize = value.size();
             std::string newStr(reinterpret_cast<const char *>(&value[0]), binSize);
             std::istringstream streamdecomp( newStr );
             size_t decompBinSize = 0;
             bool valid = false;
-            U8* pUncompressedNavMeshContainer = unzip_llsdNavMesh( valid, decompBinSize, streamdecomp, binSize ) ;
+            U8* pUncompressedNavMeshContainer = unzip_llsdNavMesh(valid, decompBinSize, streamdecomp, static_cast<S32>(binSize));
             if ( !valid )
             {
                 LL_WARNS() << "Unable to decompress the navmesh llsd." << LL_ENDL;

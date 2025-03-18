@@ -47,8 +47,8 @@ const F32 PART_SIM_BOX_SIDE = 16.f;
 
 //static
 S32 LLViewerPartSim::sMaxParticleCount = 0;
-S32 LLViewerPartSim::sParticleCount = 0;
-S32 LLViewerPartSim::sParticleCount2 = 0;
+std::atomic<S32> LLViewerPartSim::sParticleCount{0}; // <FS:Beq/> FIRE-34600 - bugsplat AVX2 particle count mismatch
+std::atomic<S32> LLViewerPartSim::sParticleCount2{0}; // <FS:Beq/> FIRE-34600 - bugsplat AVX2 particle count mismatch
 // This controls how greedy individual particle burst sources are allowed to be, and adapts according to how near the particle-count limit we are.
 F32 LLViewerPartSim::sParticleAdaptiveRate = 0.0625f;
 F32 LLViewerPartSim::sParticleBurstRate = 0.5f;
@@ -137,7 +137,7 @@ LLViewerPartGroup::LLViewerPartGroup(const LLVector3 &center_agent, const F32 bo
  : mHud(hud)
 {
     mVOPartGroupp = NULL;
-    mUniformParticles = TRUE;
+    mUniformParticles = true;
 
     mRegionp = LLWorld::getInstance()->getRegionFromPosAgent(center_agent);
     llassert_always(center_agent.isFinite());
@@ -205,7 +205,7 @@ LLViewerPartGroup::~LLViewerPartGroup()
     }
     mParticles.clear();
 
-    LLViewerPartSim::decPartCount(count);
+    LLViewerPartSim::sParticleCount -= count; // <FS:Beq/> FIRE-34600 - bugsplat AVX2 particle count mismatch
 }
 
 void LLViewerPartGroup::cleanup()
@@ -220,56 +220,56 @@ void LLViewerPartGroup::cleanup()
     }
 }
 
-BOOL LLViewerPartGroup::posInGroup(const LLVector3 &pos, const F32 desired_size)
+bool LLViewerPartGroup::posInGroup(const LLVector3 &pos, const F32 desired_size)
 {
     if ((pos.mV[VX] < mMinObjPos.mV[VX])
         || (pos.mV[VY] < mMinObjPos.mV[VY])
         || (pos.mV[VZ] < mMinObjPos.mV[VZ]))
     {
-        return FALSE;
+        return false;
     }
 
     if ((pos.mV[VX] > mMaxObjPos.mV[VX])
         || (pos.mV[VY] > mMaxObjPos.mV[VY])
         || (pos.mV[VZ] > mMaxObjPos.mV[VZ]))
     {
-        return FALSE;
+        return false;
     }
 
     if (desired_size > 0 &&
         (desired_size < mBoxRadius*0.5f ||
         desired_size > mBoxRadius*2.f))
     {
-        return FALSE;
+        return false;
     }
 
-    return TRUE;
+    return true;
 }
 
 
-BOOL LLViewerPartGroup::addPart(LLViewerPart* part, F32 desired_size)
+bool LLViewerPartGroup::addPart(LLViewerPart* part, F32 desired_size)
 {
     if (part->mFlags & LLPartData::LL_PART_HUD && !mHud)
     {
-        return FALSE;
+        return false;
     }
 
-    BOOL uniform_part = part->mScale.mV[0] == part->mScale.mV[1] &&
+    bool uniform_part = part->mScale.mV[0] == part->mScale.mV[1] &&
                     !(part->mFlags & LLPartData::LL_PART_FOLLOW_VELOCITY_MASK);
 
     if (!posInGroup(part->mPosAgent, desired_size) ||
         (mUniformParticles && !uniform_part) ||
         (!mUniformParticles && uniform_part))
     {
-        return FALSE;
+        return false;
     }
 
     gPipeline.markRebuild(mVOPartGroupp->mDrawable, LLDrawable::REBUILD_ALL);
 
     mParticles.push_back(part);
     part->mSkipOffset=mSkippedTime;
-    LLViewerPartSim::incPartCount(1);
-    return TRUE;
+    ++LLViewerPartSim::sParticleCount; // <FS:Beq/> FIRE-34600 - bugsplat AVX2 particle count mismatch
+    return true;
 }
 
 
@@ -279,11 +279,14 @@ void LLViewerPartGroup::updateParticles(const F32 lastdt)
 
     LLVector3 gravity(0.f, 0.f, GRAVITY);
 
-    LLViewerPartSim::checkParticleCount(mParticles.size());
+    LLViewerPartSim::checkParticleCount(static_cast<U32>(mParticles.size()));
 
     LLViewerCamera* camera = LLViewerCamera::getInstance();
     LLViewerRegion *regionp = getRegion();
-    S32 end = (S32) mParticles.size();
+    // <FS:Beq> FIRE-34600 - Bugsplat AVX2 particle count mismatch    
+    // S32 end = (S32) mParticles.size();
+    bool changed = false;
+    // </FS:Beq>
     for (S32 i = 0 ; i < (S32)mParticles.size();)
     {
         LLVector3 a(0.f, 0.f, 0.f);
@@ -399,9 +402,15 @@ void LLViewerPartGroup::updateParticles(const F32 lastdt)
         // Kill dead particles (either flagged dead, or too old)
         if ((part->mLastUpdateTime > part->mMaxAge) || (LLViewerPart::LL_PART_DEAD_MASK == part->mFlags))
         {
-            mParticles[i] = mParticles.back() ;
-            mParticles.pop_back() ;
+            // <FS:Beq> FIRE-34600 - Bugsplat AVX2 particle count mismatch
+            // mParticles[i] = mParticles.back() ;
+            // mParticles.pop_back() ;
+            // delete part ;
+            vector_replace_with_last(mParticles, mParticles.begin() + i);
+            --LLViewerPartSim::sParticleCount; 
             delete part ;
+            changed = true; 
+            // </FS:Beq>
         }
         else
         {
@@ -409,9 +418,18 @@ void LLViewerPartGroup::updateParticles(const F32 lastdt)
             if (!posInGroup(part->mPosAgent, desired_size))
             {
                 // Transfer particles between groups
-                LLViewerPartSim::getInstance()->put(part) ;
-                mParticles[i] = mParticles.back() ;
-                mParticles.pop_back() ;
+                // <FS:Beq> FIRE-34600 - Bugsplat AVX2 particle count mismatch
+                // LLViewerPartSim::getInstance()->put(part) ;
+                // mParticles[i] = mParticles.back() ;
+                // mParticles.pop_back() ;                
+                vector_replace_with_last(mParticles, mParticles.begin() + i); 
+                LLViewerPartSim::getInstance()->put(part) ; 
+                // Note: put() uses addpart when succesful, this increase sParticleCount by 1
+                // even though it has stayed the same. If it is not succesful then we need to decrease by 1
+                // so a decrement here works for both cases.
+                --LLViewerPartSim::sParticleCount; 
+                changed = true;
+                // </FS:Beq>
             }
             else
             {
@@ -420,16 +438,25 @@ void LLViewerPartGroup::updateParticles(const F32 lastdt)
         }
     }
 
-    S32 removed = end - (S32)mParticles.size();
-    if (removed > 0)
+    // <FS:Beq> FIRE-34600 - Bugsplat AVX2 particle count mismatch
+    // S32 removed = end - (S32)mParticles.size();
+    // if (removed > 0)
+    // {
+    //     // we removed one or more particles, so flag this group for update
+    //     if (mVOPartGroupp.notNull())
+    //     {
+    //         gPipeline.markRebuild(mVOPartGroupp->mDrawable, LLDrawable::REBUILD_ALL);
+    //     }
+    //     LLViewerPartSim::decPartCount(removed);
+    // }    
+    if (changed)
     {
-        // we removed one or more particles, so flag this group for update
         if (mVOPartGroupp.notNull())
         {
             gPipeline.markRebuild(mVOPartGroupp->mDrawable, LLDrawable::REBUILD_ALL);
         }
-        LLViewerPartSim::decPartCount(removed);
     }
+    // </FS:Beq>
 
     // Kill the viewer object if this particle group is empty
     if (mParticles.empty())
@@ -474,15 +501,44 @@ void LLViewerPartGroup::removeParticlesByID(const U32 source_id)
 //static
 void LLViewerPartSim::checkParticleCount(U32 size)
 {
+    // <FS:Beq> FIRE-34600 - bugsplat AVX2 particle count mismatch
+    // if(LLViewerPartSim::sParticleCount2 != LLViewerPartSim::sParticleCount)
+    // {
+    //     LL_ERRS() << "sParticleCount: " << LLViewerPartSim::sParticleCount << " ; sParticleCount2: " << LLViewerPartSim::sParticleCount2 << LL_ENDL ;
+    // }
+    //
+    // if(size > (U32)LLViewerPartSim::sParticleCount2)
+    // {
+    //     LL_ERRS() << "current particle size: " << LLViewerPartSim::sParticleCount2 << " array size: " << size << LL_ENDL ; // <FS:Beq/> FIRE-34600 - bugsplat AVX2 particle count mismatch
+    // }
     if(LLViewerPartSim::sParticleCount2 != LLViewerPartSim::sParticleCount)
     {
-        LL_ERRS() << "sParticleCount: " << LLViewerPartSim::sParticleCount << " ; sParticleCount2: " << LLViewerPartSim::sParticleCount2 << LL_ENDL ;
+        static int fail_count{0};
+        if(fail_count > 10)
+        {
+            LL_ERRS() << "sParticleCount: " << LLViewerPartSim::sParticleCount << " ; sParticleCount2: " << LLViewerPartSim::sParticleCount2 << LL_ENDL ;
+        }
+        else
+        {
+            LL_WARNS() << "sParticleCount: " << LLViewerPartSim::sParticleCount << " ; sParticleCount2: " << LLViewerPartSim::sParticleCount2 << LL_ENDL ;
+        }
+        fail_count++;
     }
 
     if(size > (U32)LLViewerPartSim::sParticleCount2)
     {
-        LL_ERRS() << "curren particle size: " << LLViewerPartSim::sParticleCount2 << " array size: " << size << LL_ENDL ;
+        static int size_mismatch_count{0};
+        if(size_mismatch_count > 10)
+        {
+            LL_ERRS() << "current particle size: " << LLViewerPartSim::sParticleCount2 << " array size: " << size << LL_ENDL ;
+        }
+        else
+        {
+            LL_WARNS() << "current particle size: " << LLViewerPartSim::sParticleCount2 << " array size: " << size << LL_ENDL ;
+        }
+        size_mismatch_count++;
     }
+    // </FS:Beq>
 }
 
 LLViewerPartSim::LLViewerPartSim()
@@ -525,14 +581,14 @@ void LLViewerPartSim::destroyClass()
 }
 
 //static
-BOOL LLViewerPartSim::shouldAddPart()
+bool LLViewerPartSim::shouldAddPart()
 {
     if (sParticleCount >= MAX_PART_COUNT)
     {
-        return FALSE;
+        return false;
     }
 
-    if (sParticleCount > PART_THROTTLE_THRESHOLD*sMaxParticleCount)
+    if ( sParticleCount > PART_THROTTLE_THRESHOLD*sMaxParticleCount)
     {
         F32 frac = (F32)sParticleCount/(F32)sMaxParticleCount;
         frac -= PART_THROTTLE_THRESHOLD;
@@ -540,7 +596,7 @@ BOOL LLViewerPartSim::shouldAddPart()
         if (ll_frand() < frac)
         {
             // Skip...
-            return FALSE;
+            return false;
         }
     }
 
@@ -548,15 +604,15 @@ BOOL LLViewerPartSim::shouldAddPart()
     const F32 MIN_FRAME_RATE_FOR_NEW_PARTICLES = 4.f;
     if (gFPSClamped < MIN_FRAME_RATE_FOR_NEW_PARTICLES)
     {
-        return FALSE;
+        return false;
     }
 
-    return TRUE;
+    return true;
 }
 
 void LLViewerPartSim::addPart(LLViewerPart* part)
 {
-    if (sParticleCount < MAX_PART_COUNT)
+    if (LLViewerPartSim::sParticleCount < MAX_PART_COUNT)
     {
         put(part);
     }
@@ -703,30 +759,30 @@ void LLViewerPartSim::updateSimulation()
 
         if (!mViewerPartSources[i]->isDead())
         {
-            BOOL upd = TRUE;
+            bool upd = true;
             LLViewerObject* vobj = mViewerPartSources[i]->mSourceObjectp;
 
             if (vobj && vobj->isAvatar() && ((LLVOAvatar*)vobj)->isInMuteList())
             {
-                upd = FALSE;
+                upd = false;
             }
 
             if(vobj && vobj->isOwnerInMuteList(mViewerPartSources[i]->getOwnerUUID()))
             {
-                upd = FALSE;
+                upd = false;
             }
 
             if (upd && vobj && (vobj->getPCode() == LL_PCODE_VOLUME))
             {
                 if(vobj->getAvatar() && vobj->getAvatar()->isTooComplex() && vobj->getAvatar()->isTooSlow())
                 {
-                    upd = FALSE;
+                    upd = false;
                 }
 
                 LLVOVolume* vvo = (LLVOVolume *)vobj;
                 if (!LLPipeline::sRenderAttachedParticles && vvo && vvo->isAttachment())
                 {
-                    upd = FALSE;
+                    upd = false;
                 }
             }
 
@@ -791,13 +847,13 @@ void LLViewerPartSim::updateSimulation()
     if (LLDrawable::getCurrentFrame()%16==0)
     {
         if (sParticleCount > sMaxParticleCount * 0.875f
-            && sParticleAdaptiveRate < 2.0f)
+             && sParticleAdaptiveRate < 2.0f)
         {
             sParticleAdaptiveRate *= PART_ADAPT_RATE_MULT;
         }
         else
         {
-            if (sParticleCount < sMaxParticleCount * 0.5f
+            if ( sParticleCount < sMaxParticleCount * 0.5f
                 && sParticleAdaptiveRate > 0.03125f)
             {
                 sParticleAdaptiveRate *= PART_ADAPT_RATE_MULT_RECIP;

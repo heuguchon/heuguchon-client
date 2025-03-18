@@ -217,10 +217,10 @@ LLNotificationForm::LLNotificationForm(const std::string& name, const LLNotifica
             ui_inst->mSettingGroups["ignores"]->declareLLSD(std::string("Default") + name, "", std::string("Default response for notification " + name));
         }
 
-        BOOL show_notification = TRUE;
+        bool show_notification = true;
         if (p.ignore.control.isProvided())
         {
-            mIgnoreSetting = ui_inst->mSettingGroups["config"]->getControl(p.ignore.control);
+            mIgnoreSetting = ui_inst->mSettingGroups["config"]->getControl(p.ignore.control());
             mInvertSetting = p.ignore.invert_control;
         }
         else if (mIgnore > IGNORE_NO)
@@ -267,7 +267,7 @@ LLSD LLNotificationForm::asLLSD() const
     return mFormData;
 }
 
-LLSD LLNotificationForm::getElement(const std::string& element_name)
+LLSD LLNotificationForm::getElement(std::string_view element_name)
 {
     for (LLSD::array_const_iterator it = mFormData.beginArray();
         it != mFormData.endArray();
@@ -279,7 +279,7 @@ LLSD LLNotificationForm::getElement(const std::string& element_name)
 }
 
 
-bool LLNotificationForm::hasElement(const std::string& element_name) const
+bool LLNotificationForm::hasElement(std::string_view element_name) const
 {
     for (LLSD::array_const_iterator it = mFormData.beginArray();
         it != mFormData.endArray();
@@ -302,7 +302,7 @@ void LLNotificationForm::getElements(LLSD& elements, S32 offset)
     }
 }
 
-bool LLNotificationForm::getElementEnabled(const std::string& element_name) const
+bool LLNotificationForm::getElementEnabled(std::string_view element_name) const
 {
     for (LLSD::array_const_iterator it = mFormData.beginArray();
         it != mFormData.endArray();
@@ -317,7 +317,7 @@ bool LLNotificationForm::getElementEnabled(const std::string& element_name) cons
     return false;
 }
 
-void LLNotificationForm::setElementEnabled(const std::string& element_name, bool enabled)
+void LLNotificationForm::setElementEnabled(std::string_view element_name, bool enabled)
 {
     for (LLSD::array_iterator it = mFormData.beginArray();
         it != mFormData.endArray();
@@ -440,7 +440,7 @@ LLNotificationTemplate::LLNotificationTemplate(const LLNotificationTemplate::Par
     mSoundName("")
 {
     if (p.sound.isProvided() && LLUI::getInstance()->mSettingGroups["config"]
-        && LLUI::getInstance()->mSettingGroups["config"]->controlExists(p.sound))
+        && LLUI::getInstance()->mSettingGroups["config"]->controlExists(p.sound()))
     {
         mSoundName = p.sound;
     }
@@ -770,7 +770,7 @@ bool LLNotification::hasUniquenessConstraints() const
     return (mTemplatep ? mTemplatep->mUnique : false);
 }
 
-bool LLNotification::matchesTag(const std::string& tag)
+bool LLNotification::matchesTag(std::string_view tag)
 {
     bool result = false;
 
@@ -862,7 +862,7 @@ void LLNotification::init(const std::string& template_name, const LLSD& form_ele
     for (LLStringUtil::format_map_t::const_iterator iter = default_args.begin();
          iter != default_args.end(); ++iter)
     {
-        mSubstitutions[iter->first] = iter->second;
+        mSubstitutions[std::string(iter->first)] = iter->second;
     }
     mSubstitutions["_URL"] = getURL();
     mSubstitutions["_NAME"] = template_name;
@@ -1014,7 +1014,6 @@ LLBoundListener LLNotificationChannelBase::connectChangedImpl(const LLEventListe
 
 LLBoundListener LLNotificationChannelBase::connectAtFrontChangedImpl(const LLEventListener& slot)
 {
-    LLMutexLock lock(&mItemsMutex); // <FS:Beq/> Guard against against unlocked access to mItems
     for (LLNotificationSet::iterator it = mItems.begin(); it != mItems.end(); ++it)
     {
         slot(LLSD().with("sigtype", "load").with("id", (*it)->id()));
@@ -1053,17 +1052,10 @@ bool LLNotificationChannelBase::updateItem(const LLSD& payload)
 bool LLNotificationChannelBase::updateItem(const LLSD& payload, LLNotificationPtr pNotification)
 {
     std::string cmd = payload["sigtype"];
-    // <FS:Beq> Guard against unlocked access to mItems
-    // LLNotificationSet::iterator foundItem = mItems.find(pNotification);
-    // bool wasFound = (foundItem != mItems.end());
-    bool wasFound = false;
-    {
-        LLMutexLock lock(&mItemsMutex);
-        LLNotificationSet::iterator foundItem = mItems.find(pNotification);
-        wasFound = (foundItem != mItems.end());
-    } 
-    // </FS:Beq>
+    LLNotificationSet::iterator foundItem = mItems.find(pNotification);
+    bool wasFound = (foundItem != mItems.end());
     bool passesFilter = mFilter ? mFilter(pNotification) : true;
+
     // first, we offer the result of the filter test to the simple
     // signals for pass/fail. One of these is guaranteed to be called.
     // If either signal returns true, the change processing is NOT performed
@@ -1092,7 +1084,6 @@ bool LLNotificationChannelBase::updateItem(const LLSD& payload, LLNotificationPt
         assert(!wasFound);
         if (passesFilter)
         {
-          LLMutexLock lock(&mItemsMutex); // <FS:Beq/> Guard against unlocked access to mItems
             // not in our list, add it and say so
             mItems.insert(pNotification);
             onLoad(pNotification);
@@ -1116,7 +1107,6 @@ bool LLNotificationChannelBase::updateItem(const LLSD& payload, LLNotificationPt
             }
             else
             {
-                LLMutexLock lock(&mItemsMutex); // <FS:Beq/> Guard against unlocked access to mItems
                 // not in our list, add it and say so
                 mItems.insert(pNotification);
                 onChange(pNotification);
@@ -1130,7 +1120,6 @@ bool LLNotificationChannelBase::updateItem(const LLSD& payload, LLNotificationPt
         {
             if (wasFound)
             {
-                LLMutexLock lock(&mItemsMutex); // <FS:Beq/> Guard against unlocked access to mItems
                 // it already existed, so this is a delete
                 mItems.erase(pNotification);
                 onChange(pNotification);
@@ -1149,7 +1138,6 @@ bool LLNotificationChannelBase::updateItem(const LLSD& payload, LLNotificationPt
         assert(!wasFound);
         if (passesFilter)
         {
-            LLMutexLock lock(&mItemsMutex); // <FS:Beq/> Guard against unlocked access to mItems
             // not in our list, add it and say so
             mItems.insert(pNotification);
             onAdd(pNotification);
@@ -1161,7 +1149,6 @@ bool LLNotificationChannelBase::updateItem(const LLSD& payload, LLNotificationPt
         // if we have it in our list, pass on the delete, then delete it, else do nothing
         if (wasFound)
         {
-            LLMutexLock lock(&mItemsMutex); // <FS:Beq/> Guard against unlocked access to mItems
             onDelete(pNotification);
             abortProcessing = mChanged(payload);
             mItems.erase(pNotification);
@@ -1208,7 +1195,7 @@ bool LLNotificationChannel::isEmpty() const
 
 S32 LLNotificationChannel::size() const
 {
-    return mItems.size();
+    return static_cast<S32>(mItems.size());
 }
 
 size_t LLNotificationChannel::size()
@@ -1263,8 +1250,7 @@ LLNotifications::LLNotifications()
 :   LLNotificationChannelBase(LLNotificationFilters::includeEverything),
     mIgnoreAllNotifications(false)
 {
-    // <FS:Ansariel> Disable test API
-        //mListener.reset(new LLNotificationsListener(*this));
+        mListener.reset(new LLNotificationsListener(*this));
     LLUICtrl::CommitCallbackRegistry::currentRegistrar().add("Notification.Show", boost::bind(&LLNotifications::addFromCallback, this, _2));
 
     // touch the instance tracker for notification channels, so that it will still be around in our destructor
@@ -1465,11 +1451,12 @@ void LLNotifications::createDefaultChannels()
 }
 
 
-LLNotificationTemplatePtr LLNotifications::getTemplate(const std::string& name)
+LLNotificationTemplatePtr LLNotifications::getTemplate(std::string_view name)
 {
-    if (mTemplates.count(name))
+    auto it = mTemplates.find(name);
+    if (it != mTemplates.end())
     {
-        return mTemplates[name];
+        return it->second;
     }
     else
     {
@@ -1477,7 +1464,7 @@ LLNotificationTemplatePtr LLNotifications::getTemplate(const std::string& name)
     }
 }
 
-bool LLNotifications::templateExists(const std::string& name)
+bool LLNotifications::templateExists(std::string_view name)
 {
     return (mTemplates.count(name) != 0);
 }
@@ -1582,7 +1569,7 @@ bool LLNotifications::loadTemplates()
 
     std::string base_filename = search_paths.front();
     LLXMLNodePtr root;
-    BOOL success  = LLXMLNode::getLayeredXMLNode(root, search_paths);
+    bool success  = LLXMLNode::getLayeredXMLNode(root, search_paths);
 
     if (!success || root.isNull() || !root->hasName( "notifications" ))
     {
@@ -1727,7 +1714,6 @@ void LLNotifications::add(const LLNotificationPtr pNotif)
     if (pNotif == NULL) return;
 
     // first see if we already have it -- if so, that's a problem
-    LLMutexLock lock(&mItemsMutex); // <FS:Beq/> Guard against unlocked acceess to mItems
     LLNotificationSet::iterator it=mItems.find(pNotif);
     if (it != mItems.end())
     {
@@ -1763,7 +1749,7 @@ void LLNotifications::cancel(LLNotificationPtr pNotif)
     }
 }
 
-void LLNotifications::cancelByName(const std::string& name)
+void LLNotifications::cancelByName(std::string_view name)
 {
     LLMutexLock lock(&mItemsMutex);
     std::vector<LLNotificationPtr> notifs_to_cancel;
@@ -1838,7 +1824,7 @@ LLNotificationPtr LLNotifications::find(LLUUID uuid)
     }
 }
 
-std::string LLNotifications::getGlobalString(const std::string& key) const
+std::string LLNotifications::getGlobalString(std::string_view key) const
 {
     GlobalStringMap::const_iterator it = mGlobalStrings.find(key);
     if (it != mGlobalStrings.end())
@@ -1849,7 +1835,7 @@ std::string LLNotifications::getGlobalString(const std::string& key) const
     {
         // if we don't have the key as a global, return the key itself so that the error
         // is self-diagnosing.
-        return key;
+        return std::string(key);
     }
 }
 
@@ -1862,13 +1848,13 @@ bool LLNotifications::getIgnoreAllNotifications()
     return mIgnoreAllNotifications;
 }
 
-void LLNotifications::setIgnored(const std::string& name, bool ignored)
+void LLNotifications::setIgnored(std::string_view name, bool ignored)
 {
     LLNotificationTemplatePtr templatep = getTemplate(name);
     templatep->mForm->setIgnored(ignored);
 }
 
-bool LLNotifications::getIgnored(const std::string& name)
+bool LLNotifications::getIgnored(std::string_view name)
 {
     LLNotificationTemplatePtr templatep = getTemplate(name);
     return (mIgnoreAllNotifications) || ( (templatep->mForm->getIgnoreType() != LLNotificationForm::IGNORE_NO) && (templatep->mForm->getIgnored()) );

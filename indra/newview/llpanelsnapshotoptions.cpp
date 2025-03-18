@@ -33,9 +33,6 @@
 #include "llfloaterreg.h"
 #include "llfloaterflickr.h" // <FS:Ansariel> Share to Flickr
 
-#include "llagentbenefits.h"
-
-
 /**
  * Provides several ways to save a snapshot.
  */
@@ -46,9 +43,7 @@ class LLPanelSnapshotOptions
 
 public:
     LLPanelSnapshotOptions();
-    ~LLPanelSnapshotOptions();
-    /*virtual*/ BOOL postBuild();
-    /*virtual*/ void onOpen(const LLSD& key);
+    bool postBuild() override;
 
 private:
     void updateUploadCost();
@@ -73,27 +68,11 @@ LLPanelSnapshotOptions::LLPanelSnapshotOptions()
     mCommitCallbackRegistrar.add("Snapshot.SendToFlickr",       boost::bind(&LLPanelSnapshotOptions::onSendToFlickr, this)); // <FS:Ansariel> Share to Flickr
 }
 
-LLPanelSnapshotOptions::~LLPanelSnapshotOptions()
-{
-}
-
 // virtual
-BOOL LLPanelSnapshotOptions::postBuild()
+bool LLPanelSnapshotOptions::postBuild()
 {
     mSnapshotFloater = getParentByType<LLFloaterSnapshotBase>();
     return LLPanel::postBuild();
-}
-
-// virtual
-void LLPanelSnapshotOptions::onOpen(const LLSD& key)
-{
-    updateUploadCost();
-}
-
-void LLPanelSnapshotOptions::updateUploadCost()
-{
-    S32 upload_cost = LLAgentBenefitsMgr::current().getTextureUploadCost();
-    getChild<LLUICtrl>("save_to_inventory_btn")->setLabelArg("[AMOUNT]", llformat("%d", upload_cost));
 }
 
 void LLPanelSnapshotOptions::openPanel(const std::string& panel_name)

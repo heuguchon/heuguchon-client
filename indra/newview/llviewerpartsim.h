@@ -95,11 +95,11 @@ public:
 
     void cleanup();
 
-    BOOL addPart(LLViewerPart* part, const F32 desired_size = -1.f);
+    bool addPart(LLViewerPart* part, const F32 desired_size = -1.f);
 
     void updateParticles(const F32 lastdt);
 
-    BOOL posInGroup(const LLVector3 &pos, const F32 desired_size = -1.f);
+    bool posInGroup(const LLVector3 &pos, const F32 desired_size = -1.f);
 
     void shift(const LLVector3 &offset);
 
@@ -117,7 +117,7 @@ public:
 
     LLPointer<LLVOPartGroup> mVOPartGroupp;
 
-    BOOL mUniformParticles;
+    bool mUniformParticles;
     U32 mID;
 
     F32 mSkippedTime;
@@ -152,7 +152,7 @@ public:
 
     void cleanupRegion(LLViewerRegion *regionp);
 
-    static BOOL shouldAddPart(); // Just decides whether this particle should be added or not (for particle count capping)
+    static bool shouldAddPart(); // Just decides whether this particle should be added or not (for particle count capping)
     F32 maxRate() // Return maximum particle generation rate
     {
         if (sParticleCount >= MAX_PART_COUNT)
@@ -177,13 +177,15 @@ public:
 
     friend class LLViewerPartGroup;
 
-    BOOL aboveParticleLimit() const { return sParticleCount > sMaxParticleCount; }
-
+    bool aboveParticleLimit() const { return sParticleCount > sMaxParticleCount; }
     static void setMaxPartCount(const S32 max_parts)    { sMaxParticleCount = max_parts; }
     static S32  getMaxPartCount()                       { return sMaxParticleCount; }
-    static void incPartCount(const S32 count)           { sParticleCount += count; }
-    static void decPartCount(const S32 count)           { sParticleCount -= count; }
 
+    // <FS:Beq> FIRE-34600 - bugsplat AVX2 particle count mismatch
+    // Deprecate these and use native operators for consistency
+    // static void incPartCount(const S32 count)           { sParticleCount += count; }
+    // static void decPartCount(const S32 count)           { sParticleCount -= count; }
+    // </FS:Beq>
     U32 mID;
 
 protected:
@@ -195,7 +197,7 @@ protected:
     LLFrameTimer mSimulationTimer;
 
     static S32 sMaxParticleCount;
-    static S32 sParticleCount;
+    static std::atomic<S32> sParticleCount; // <FS:Beq/> FIRE-34600 - bugsplat AVX2 particle count mismatch
     static F32 sParticleAdaptiveRate;
     static F32 sParticleBurstRate;
 
@@ -207,7 +209,7 @@ protected:
 
 //debug use only
 public:
-    static S32 sParticleCount2;
+    static std::atomic<S32> sParticleCount2; // <FS:Beq/> FIRE-34600 - bugsplat AVX2 particle count mismatch
 
     static void checkParticleCount(U32 size = 0) ;
 };

@@ -49,12 +49,12 @@
 #include "llsettingssky.h"
 #include "llsettingswater.h"
 
-BOOL LLDrawPoolWater::sSkipScreenCopy = FALSE;
-BOOL LLDrawPoolWater::sNeedsReflectionUpdate = TRUE;
-BOOL LLDrawPoolWater::sNeedsDistortionUpdate = TRUE;
+bool LLDrawPoolWater::sSkipScreenCopy = false;
+bool LLDrawPoolWater::sNeedsReflectionUpdate = true;
+bool LLDrawPoolWater::sNeedsDistortionUpdate = true;
 F32 LLDrawPoolWater::sWaterFogEnd = 0.f;
 
-extern BOOL gCubeSnapshot;
+extern bool gCubeSnapshot;
 
 LLDrawPoolWater::LLDrawPoolWater() : LLFacePool(POOL_WATER)
 {
@@ -152,6 +152,13 @@ void LLDrawPoolWater::renderPostDeferred(S32 pass)
     LLEnvironment& environment = LLEnvironment::instance();
     LLSettingsWater::ptr_t pwater = environment.getCurrentWater();
     LLSettingsSky::ptr_t   psky   = environment.getCurrentSky();
+    // <FS:Beq> FIRE-34590 - Bugsplat Crash typically in startup state, due to null water.
+    if (!pwater || !psky)
+    {
+        LL_WARNS() << "LLDrawPoolWater::renderPostDeferred: water or sky settings not available" << LL_ENDL;
+        return;
+    }
+    // </FS:Beq>
     LLVector3              light_dir       = environment.getLightDirection();
     bool                   sun_up          = environment.getIsSunUp();
     bool                   moon_up         = environment.getIsMoonUp();
@@ -221,7 +228,7 @@ void LLDrawPoolWater::renderPostDeferred(S32 pass)
         LLViewerTexture* tex_a = mWaterNormp[0];
         LLViewerTexture* tex_b = mWaterNormp[1];
 
-        F32 blend_factor = pwater->getBlendFactor();
+        F32 blend_factor = (F32)pwater->getBlendFactor();
 
         gGL.getTexUnit(bumpTex)->unbind(LLTexUnit::TT_TEXTURE);
         gGL.getTexUnit(bumpTex2)->unbind(LLTexUnit::TT_TEXTURE);
@@ -247,8 +254,6 @@ void LLDrawPoolWater::renderPostDeferred(S32 pass)
 
         F32 screenRes[] = { 1.f / gGLViewport[2], 1.f / gGLViewport[3] };
 
-        S32 diffTex = shader->enableTexture(LLShaderMgr::DIFFUSE_MAP);
-
         shader->uniform2fv(LLShaderMgr::DEFERRED_SCREEN_RES, 1, screenRes);
         shader->uniform1f(LLShaderMgr::BLEND_FACTOR, blend_factor);
 
@@ -262,7 +267,7 @@ void LLDrawPoolWater::renderPostDeferred(S32 pass)
 
         if (mShaderLevel == 1)
         {
-            fog_color.mV[VW] = log(fog_density) / log(2);
+            fog_color.mV[VALPHA] = (F32)(log(fog_density) / log(2));
         }
 
         F32 water_height = environment.getWaterHeight();
@@ -322,8 +327,6 @@ void LLDrawPoolWater::renderPostDeferred(S32 pass)
             water = static_cast<LLVOWater*>(face->getViewerObject());
             if (!water) continue;
 
-            gGL.getTexUnit(diffTex)->bind(face->getTexture());
-
             if ((bool)edge == (bool)water->getIsEdgePatch())
             {
                 face->renderIndexed();
@@ -331,8 +334,8 @@ void LLDrawPoolWater::renderPostDeferred(S32 pass)
                 // Note non-void water being drawn, updates required
                 if (!edge)  // SL-16461 remove !LLPipeline::sUseOcclusion check
                 {
-                    sNeedsReflectionUpdate = TRUE;
-                    sNeedsDistortionUpdate = TRUE;
+                    sNeedsReflectionUpdate = true;
+                    sNeedsDistortionUpdate = true;
                 }
             }
         }
@@ -340,7 +343,6 @@ void LLDrawPoolWater::renderPostDeferred(S32 pass)
         shader->disableTexture(LLShaderMgr::ENVIRONMENT_MAP, LLTexUnit::TT_CUBE_MAP);
         shader->disableTexture(LLShaderMgr::WATER_SCREENTEX);
         shader->disableTexture(LLShaderMgr::BUMP_MAP);
-        shader->disableTexture(LLShaderMgr::DIFFUSE_MAP);
         shader->disableTexture(LLShaderMgr::WATER_REFTEX);
 
         // clean up
