@@ -2586,7 +2586,7 @@ LRESULT CALLBACK LLWindowWin32::mainWindowProc(HWND h_wnd, UINT u_msg, WPARAM w_
             LL_PROFILE_ZONE_NAMED_CATEGORY_WIN32("mwp - WM_IME_COMPOSITION");
             if (LLWinImm::isAvailable() && window_imp->mPreeditor)
             {
-                WINDOW_IMP_POST(window_imp->handleCompositionMessage((U32)l_param));
+                window_imp->handleCompositionMessage((U32)l_param);
                 return 0;
             }
             break;
@@ -4328,10 +4328,7 @@ void LLWindowWin32::handleCompositionMessage(const U32 indexes)
 
     if (needs_update)
     {
-        if (preedit_string.length() != 0 || result_string.length() != 0)
-        {
-            mPreeditor->resetPreedit();
-        }
+        mPreeditor->resetPreedit();
 
         if (result_string.length() > 0)
         {
