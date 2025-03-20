@@ -1544,7 +1544,7 @@ class Darwin_x86_64_Manifest(ViewerManifest):
                 with self.prefix(src=icon_path) :
                     self.path("heuguchon_icon.icns")
 
-                self.path("Firestorm.nib")
+                self.path("Heuguchon.nib")
                 # Translations
                 self.path("English.lproj/language.txt")
                 self.replace_in(src="English.lproj/InfoPlist.strings",
