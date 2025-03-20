@@ -1767,7 +1767,7 @@ if (DARWIN)
   # Add resource files to the project.
   set(viewer_RESOURCE_FILES
     heuguchon_icon.icns
-    Info-Firestorm.plist
+    Info-Heuguchon.plist
     Firestorm.xib/
     # CMake doesn't seem to support Xcode language variants well just yet
     English.lproj/InfoPlist.strings
@@ -2573,17 +2573,17 @@ if (DARWIN)
   # magically known to CMake -- it's that these names are referenced in the
   # Info-SecondLife.plist file in the configure_file() directive below.
   #set(product "${VIEWER_CHANNEL}")
-  set(product "Firestorm")
-  set(MACOSX_EXECUTABLE_NAME "Firestorm")
-  set(MACOSX_BUNDLE_INFO_STRING "Firestorm Viewer")
+  set(product "Heuguchon")
+  set(MACOSX_EXECUTABLE_NAME "Heuguchon")
+  set(MACOSX_BUNDLE_INFO_STRING "Heuguchon Client")
   set(MACOSX_BUNDLE_ICON_FILE "heuguchon_icon.icns")
-  set(MACOSX_BUNDLE_GUI_IDENTIFIER "org.firestormviewer.firestorm")
+  set(MACOSX_BUNDLE_GUI_IDENTIFIER "kr.wiselight.heuguchon")
   set(MACOSX_BUNDLE_LONG_VERSION_STRING "${VIEWER_CHANNEL} ${VIEWER_SHORT_VERSION}.${VIEWER_VERSION_REVISION}")
-  set(MACOSX_BUNDLE_BUNDLE_NAME "Firestorm")
+  set(MACOSX_BUNDLE_BUNDLE_NAME "Heuguchon")
   set(MACOSX_BUNDLE_SHORT_VERSION_STRING "${VIEWER_SHORT_VERSION}.${VIEWER_VERSION_REVISION}")
   set(MACOSX_BUNDLE_BUNDLE_VERSION "${VIEWER_SHORT_VERSION}${VIEWER_MACOSX_PHASE}${VIEWER_REVISION}")
-  set(MACOSX_BUNDLE_COPYRIGHT "Copyright 2010-2024 The Phoenix Firestorm Project, Inc.")
-  set(MACOSX_BUNDLE_NSMAIN_NIB_FILE "Firestorm.nib")
+  set(MACOSX_BUNDLE_COPYRIGHT "Copyright 2021-2025 WISELIGHT.")
+  set(MACOSX_BUNDLE_NSMAIN_NIB_FILE "Heuguchon.nib")
   set(MACOSX_BUNDLE_NSPRINCIPAL_CLASS "LLApplication")
 
   # https://blog.kitware.com/upcoming-in-cmake-2-8-12-osx-rpath-support/
@@ -2598,7 +2598,7 @@ if (DARWIN)
     # SIGH, as of 2018-05-24 (cmake 3.11.1) the INSTALL_RPATH property simply
     # does not work. Try this:
     LINK_FLAGS "-rpath @loader_path/../Frameworks"
-    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/Info-Firestorm.plist"
+    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/Info-Heuguchon.plist"
     XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "${MACOSX_BUNDLE_GUI_IDENTIFIER}"
     )
 
@@ -2610,7 +2610,7 @@ if (DARWIN)
   configure_file(
      # <FS:CR> Use Firestorm plist
      #"${CMAKE_CURRENT_SOURCE_DIR}/Info-SecondLife.plist"
-     "${CMAKE_CURRENT_SOURCE_DIR}/Info-Firestorm.plist"
+     "${CMAKE_CURRENT_SOURCE_DIR}/Info-Heuguchon.plist"
      "${VIEWER_APP_BUNDLE}/Contents/Info.plist"
     )
 
