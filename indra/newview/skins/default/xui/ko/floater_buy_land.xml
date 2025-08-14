@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="buy land" title="토지 구매">
+	<floater.string name="can_resell">
+		재판매 가능
+	</floater.string>
+	<floater.string name="can_not_resell">
+		재판매 불가
+	</floater.string>
+	<floater.string name="can_change">
+		병합/분할 가능
+	</floater.string>
+	<floater.string name="can_not_change">
+		병합/분할 불가
+	</floater.string>
+	<floater.string name="cant_buy_for_group">
+		활성 그룹을 위해 토지를 구매할 권한이 없습니다.
+	</floater.string>
+	<floater.string name="no_land_selected">
+		토지가 선택되지 않았습니다.
+	</floater.string>
+	<floater.string name="multiple_parcels_selected">
+		여러 개의 다른 구획이 선택되었습니다.
+더 작은 영역을 선택해 보세요.
+	</floater.string>
+	<floater.string name="no_permission">
+		활성 그룹을 위해 토지를 구매할 권한이 없습니다.
+	</floater.string>
+	<floater.string name="parcel_not_for_sale">
+		선택한 구획이 판매용이 아닙니다.
+	</floater.string>
+	<floater.string name="group_already_owns">
+		그룹이 이미 이 구획을 소유하고 있습니다.
+	</floater.string>
+	<floater.string name="you_already_own">
+		당신이 이미 이 구획을 소유하고 있습니다.
+	</floater.string>
+	<floater.string name="set_to_sell_to_other">
+		선택한 구획이 다른 사람에게 판매하도록 설정되어 있습니다.
+	</floater.string>
+	<floater.string name="no_public_land">
+		선택한 지역에는 공공 토지가 없습니다.
+	</floater.string>
+	<floater.string name="not_owned_by_you">
+		다른 거주자가 소유한 토지가 선택되었습니다.
+더 작은 영역을 선택해 보세요.
+	</floater.string>
+	<floater.string name="processing">
+		구매를 처리 중입니다...
+
+(1-2분 정도 걸릴 수 있습니다.)
+	</floater.string>
+	<floater.string name="fetching_error">
+		토지 구매 정보를 가져오는 중 오류가 발생했습니다.
+	</floater.string>
+	<floater.string name="buying_will">
+		이 토지를 구매하면:
+	</floater.string>
+	<floater.string name="buying_for_group">
+		그룹을 위한 토지 구매:
+	</floater.string>
+	<floater.string name="cannot_buy_now">
+		지금 구매할 수 없음:
+	</floater.string>
+	<floater.string name="not_for_sale">
+		판매용 아님:
+	</floater.string>
+	<floater.string name="none_needed">
+		필요 없음
+	</floater.string>
+	<floater.string name="must_upgrade">
+		토지를 소유하려면 계정을 업그레이드해야 합니다.
+	</floater.string>
+	<floater.string name="cant_own_land">
+		당신의 계정으로 토지를 소유할 수 있습니다.
+	</floater.string>
+	<floater.string name="land_holdings">
+		당신은 [BUYER] m² 토지를 보유하고 있습니다.
+	</floater.string>
+	<floater.string name="pay_to_for_land">
+		이 토지를 위해 [SELLER]에게 [AMOUNT] L$ 지불
+	</floater.string>
+	<floater.string name="buy_for_US">
+		약 [LOCAL_AMOUNT]에 [AMOUNT] L$ 구매,
+	</floater.string>
+	<floater.string name="parcel_meters">
+		이 구획은 [AMOUNT] m²입니다
+	</floater.string>
+	<floater.string name="premium_land">
+		이 토지는 프리미엄이며 [AMOUNT] m²로 책정됩니다.
+	</floater.string>
+	<floater.string name="discounted_land">
+		이 토지는 할인되어 [AMOUNT] m²로 책정됩니다.
+	</floater.string>
+	<floater.string name="meters_supports_object">
+		[AMOUNT] m²
+[AMOUNT2]개 객체 지원
+	</floater.string>
+	<floater.string name="sold_with_objects">
+		객체와 함께 판매
+	</floater.string>
+	<floater.string name="sold_without_objects">
+		객체는 포함되지 않음
+	</floater.string>
+	<floater.string name="info_price_string">
+		[PRICE] L$
+([PRICE_PER_SQM] L$/m²)
+[SOLD_WITH_OBJECTS]
+	</floater.string>
+	<floater.string name="insufficient_land_credits">
+		그룹 [GROUP]은 구매가 완료되기 전에 이 구획을 커버할 충분한 기여된 토지 사용 크레딧이 필요합니다.
+	</floater.string>
+	<floater.string name="have_enough_lindens">
+		당신은 [AMOUNT] L$를 가지고 있으며, 이 토지를 구매하기에 충분합니다.
+	</floater.string>
+	<floater.string name="not_enough_lindens">
+		당신은 [AMOUNT] L$만 가지고 있고, [AMOUNT2] L$가 더 필요합니다.
+	</floater.string>
+	<floater.string name="balance_left">
+		구매 후 [AMOUNT] L$가 남게 됩니다.
+	</floater.string>
+	<floater.string name="balance_needed">
+		이 토지를 구매하려면 최소 [AMOUNT] L$를 구매해야 합니다.
+	</floater.string>
+	<floater.string name="no_parcel_selected">
+		(구획이 선택되지 않음)
+	</floater.string>
+	<text name="region_name_label">
+		지역:
+	</text>
+	<text name="region_name_text">
+		(알 수 없음)
+	</text>
+	<text name="region_type_label">
+		유형:
+	</text>
+	<text name="region_type_text">
+		(알 수 없음)
+	</text>
+	<text name="estate_name_label">
+		부동산:
+	</text>
+	<text name="estate_name_text">
+		(알 수 없음)
+	</text>
+	<text name="estate_owner_label">
+		부동산 소유자:
+	</text>
+	<text name="estate_owner_text">
+		(알 수 없음)
+	</text>
+	<text name="resellable_changeable_label">
+		이 지역에서 구매한 토지:
+	</text>
+	<text name="resellable_clause">
+		재판매 가능 또는 불가
+	</text>
+	<text name="changeable_clause">
+		병합/분할 가능 또는 불가
+	</text>
+	<text name="covenant_text">
+		부동산 계약에 동의해야 합니다:
+	</text>
+	<text name="covenant_timestamp_text"/>
+	<text_editor name="covenant_editor">
+		로딩 중...
+	</text_editor>
+	<check_box label="위 계약에 동의합니다." name="agree_covenant"/>
+	<text name="info_parcel_label">
+		구획:
+	</text>
+	<text name="info_parcel">
+		Scotopteryx 138,204
+	</text>
+	<text name="info_size_label">
+		크기:
+	</text>
+	<text name="info_size">
+		1,024 m²
+	</text>
+	<text name="info_price_label">
+		가격:
+	</text>
+	<text name="info_price">
+		1,500 L$
+(1.1 L$/m²)
+객체와 함께 판매
+	</text>
+	<text name="info_action">
+		이 토지를 구매하면:
+	</text>
+	<text name="error_message">
+		무언가 잘못되었습니다.
+	</text>
+	<button label="웹사이트로 이동" name="error_web" />
+	<text name="account_action">
+		프리미엄 멤버십으로 업그레이드합니다.
+	</text>
+	<text name="account_reason">
+		프리미엄 멤버만이 토지를 소유할 수 있습니다.
+	</text>
+	<combo_box name="account_level">
+		<combo_box.item label="US$9.95/월, 월별 결제" name="US$9.95/month,billedmonthly"/>
+		<combo_box.item label="US$7.50/월, 분기별 결제" name="US$7.50/month,billedquarterly"/>
+		<combo_box.item label="US$6.00/월, 연간 결제" name="US$6.00/month,billedannually"/>
+	</combo_box>
+	<text name="land_use_action">
+		월 토지 사용료를 US$40/월로 인상합니다.
+	</text>
+	<text name="land_use_reason">
+		당신은 1,309 m² 토지를 보유하고 있습니다.
+이 구획은 512 m²입니다.
+	</text>
+	<text name="purchase_action">
+		토지를 위해 Joe Resident에게 4,000 L$ 지불
+	</text>
+	<text name="currency_reason">
+		당신은 2,100 L$를 가지고 있습니다.
+	</text>
+	<text name="currency_action">
+		추가 L$ 구매
+	</text>
+	<line_editor name="currency_amt">
+		1000
+	</line_editor>
+	<text name="currency_est">
+		약 [LOCAL_AMOUNT]에
+	</text>
+	<text name="currency_balance">
+		당신은 2,100 L$를 가지고 있습니다.
+	</text>
+	<check_box label="그룹에서 [AMOUNT] m² 기여분을 제거합니다." name="remove_contribution"/>
+	<button label="구매" name="buy_btn"/>
+	<button label="취소" name="cancel_btn"/>
+</floater>

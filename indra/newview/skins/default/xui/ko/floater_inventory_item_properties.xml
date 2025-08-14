@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="item properties" title="속성: 인벤토리 아이템">
+	<floater.string name="loading_experience">(로딩 중)</floater.string>
+	<floater.string name="unknown">(알 수 없음)</floater.string>
+	<floater.string name="public">(공개)</floater.string>
+	<floater.string name="you_can">당신은 할 수 있는 것:</floater.string>
+	<floater.string name="owner_can">소유자가 할 수 있는 것:</floater.string>
+	<floater.string name="acquiredDate">[year,datetime,local]년 [mth,datetime,local]월 [day,datetime,local]일 [wkday,datetime,local] [hour,datetime,local]:[min,datetime,local]:[second,datetime,local]</floater.string>
+	<text name="LabelItemNameTitle">이름:</text>
+	<text name="LabelItemDescTitle">설명:</text>
+	<text name="LabelCreatorTitle">제작자:</text>
+	<button label="프로필..." label_selected="" name="BtnCreator"/>
+	<text name="LabelOwnerTitle">소유자:</text>
+	<button label="프로필..." label_selected="" name="BtnOwner"/>
+	<text name="LabelAcquiredTitle">획득일:</text>
+	<text name="LabelAcquiredDate">2006년 5월 24일 수요일, 12:50:46</text>
+	<text name="OwnerLabel">당신:</text>
+	<text name="LabelItemExperienceTitle">경험:</text>
+	<check_box label="수정" name="CheckOwnerModify"/>
+	<check_box label="복사" name="CheckOwnerCopy"/>
+	<check_box label="양도" name="CheckOwnerTransfer"/>
+	<check_box label="내보내기" name="CheckOwnerExport"/>
+	<text name="AnyoneLabel">누구나:</text>
+	<check_box label="복사" name="CheckEveryoneCopy"/>
+	<text name="GroupLabel">그룹:</text>
+	<check_box label="공유" name="CheckShareWithGroup"/>
+	<text name="NextOwnerLabel" width="150">다음 소유자:</text>
+	<check_box label="수정" name="CheckNextOwnerModify"/>
+	<check_box label="복사" name="CheckNextOwnerCopy"/>
+	<check_box label="양도" name="CheckNextOwnerTransfer"/>
+	<check_box label="판매용" name="CheckPurchase" width="100"/>
+	<combo_box name="ComboBoxSaleType">
+		<combo_box.item label="복사본" name="Copy"/>
+		<combo_box.item label="내용물" name="Contents"/>
+		<combo_box.item label="원본" name="Original"/>
+	</combo_box>
+	<spinner label="가격:" name="Edit Cost"/>
+	<text name="CurrencySymbol">L$</text>
+</floater>
