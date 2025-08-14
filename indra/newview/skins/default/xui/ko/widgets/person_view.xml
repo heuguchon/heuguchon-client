@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<person_view>
+	<facebook_icon name="facebook_icon" tool_tip="Facebook 사용자"/>
+	<permission_edit_theirs_icon name="permission_edit_theirs_icon" tool_tip="이 친구의 객체를 편집할 수 있습니다"/>
+	<permission_edit_mine_icon name="permission_edit_mine_icon" tool_tip="이 친구가 당신의 객체를 편집, 삭제 및 가져갈 수 있습니다"/>
+	<permission_map_icon tool_tip="이 친구가 지도에서 당신을 찾을 수 있습니다" name="permission_map_icon"/>
+	<permission_online_icon name="permission_online_icon" tool_tip="이 친구가 당신이 온라인인지 볼 수 있습니다"/>
+	<info_btn name="info_btn" tool_tip="더 많은 정보"/>
+	<profile_btn name="profile_btn" tool_tip="프로필 보기"/>
+</person_view>

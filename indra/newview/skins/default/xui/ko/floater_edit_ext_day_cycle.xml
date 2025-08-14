@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="env_edit_extdaycycle" title="주간 주기 편집">
+	<string name="title_new">
+		새로운 주간 주기 생성
+	</string>
+	<string name="title_edit">
+		주간 주기 편집
+	</string>
+	<string name="hint_new">
+		주간 주기의 이름을 입력하고, 컨트롤을 조정하여 주간 주기를 생성한 다음 "저장"을 클릭하세요.
+	</string>
+	<string name="hint_edit">
+		주간 주기를 편집하려면 아래의 컨트롤을 조정하고 "저장"을 클릭하세요.
+	</string>
+	<string name="time_label">
+		([HH]:[MM])
+	</string>
+	<string name="sky_track_label">
+		하늘 [ALT]
+	</string>
+	<string name="sky_label">
+		하늘
+	</string>
+	<string name="water_label">
+		물
+	</string>
+	<string name="commit_parcel">
+		구역에 적용
+	</string>
+	<string name="commit_region">
+		지역에 적용
+	</string>
+	<layout_stack name="outer_stack">
+		<layout_panel name="name_and_import">
+			<text name="label">
+				주간 주기 이름:
+			</text>
+			<button label="가져오기" name="btn_import" tool_tip="디스크에서 기존 설정을 가져옵니다."/>
+		</layout_panel>
+		<layout_panel name="content">
+			<layout_stack name="content_stack">
+				<layout_panel name="timeline_track_selection">
+					<panel name="timeline_layers">
+						<button label="하늘 4" name="sky4_track"/>
+						<button label="하늘 3" name="sky3_track"/>
+						<button label="하늘 2" name="sky2_track"/>
+						<button label="지상 레벨" name="sky1_track"/>
+						<button label="물" name="water_track"/>
+					</panel>
+					<panel name="timeline">
+						<text name="p0" value="0%[DSC]"/>
+						<text name="p1" value="25%[DSC]"/>
+						<text name="p2" value="50%[DSC]"/>
+						<text name="p3" value="75%[DSC]"/>
+						<text name="p4" value="100%[DSC]"/>
+						<multi_slider initial_value="0" name="WLTimeSlider"/>
+						<multi_slider initial_value="0" name="WLDayCycleFrames"/>
+						<text name="current_time" value="[PRCNT]%[DSC]"/>
+						<layout_stack name="track_options_ls">
+							<layout_panel name="track_options_lp">
+								<button label="트랙 복제 원본" name="copy_track"/>
+								<button label="트랙 로드 원본" name="load_track"/>
+								<button label="트랙 지우기" name="clear_track"/>
+							</layout_panel>
+							<layout_panel name="track_progress_lp">
+								<layout_stack name="progress_control">
+									<layout_panel name="skip_back">
+										<button name="skip_back_btn" tool_tip="다음 단계"/>
+									</layout_panel>
+									<layout_panel name="skip_forward">
+										<button name="skip_forward_btn" tool_tip="이전 단계"/>
+									</layout_panel>
+								</layout_stack>
+							</layout_panel>
+							<layout_panel name="frames_lp">
+								<button label="[FRAME] 추가" name="add_frame"/>
+								<button label="[FRAME] 로드" name="btn_load_frame"/>
+								<button label="[FRAME] 삭제" name="delete_frame"/>
+							</layout_panel>
+						</layout_stack>
+					</panel>
+				</layout_panel>
+				<layout_panel name="frame_edit_controls">
+					<text name="icn_lock_edit">
+						위의 타임라인에서 키 프레임을 선택하여 설정을 편집하세요.
+					</text>
+				</layout_panel>
+				<layout_panel name="frame_settings_water">
+					<tab_container name="water_tabs">
+						<panel label="물" name="water_panel"/>
+					</tab_container>
+				</layout_panel>
+				<layout_panel name="frame_settings_sky">
+					<tab_container name="sky_tabs" tab_width="165">
+						<panel label="대기 및 조명" name="atmosphere_panel"/>
+						<panel label="구름" name="clouds_panel"/>
+						<panel label="태양과 달" name="moon_panel"/>
+					</tab_container>
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+		<layout_panel name="buttons">
+			<button label="저장" name="save_btn"/>
+			<button label="취소" name="cancel_btn"/>
+		</layout_panel>
+	</layout_stack>
+</floater>

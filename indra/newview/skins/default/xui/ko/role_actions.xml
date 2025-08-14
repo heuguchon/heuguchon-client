@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<role_actions>
+	<action_set description="이러한 능력을 통해 멤버를 추가하고 제거할 수 있으며 초대 없이 가입할 수도 있습니다." name="Membership">
+		<action description="이 그룹에 사람 초대" longdescription="멤버 &amp; 역할 섹션 &gt; 멤버 탭에서 '초대' 버튼을 사용하여 이 그룹에 사람을 초대합니다." name="member invite" value="1"/>
+		<action description="'모든 사람' 역할을 가진 멤버를 이 그룹에서 추방" longdescription="멤버 &amp; 역할 섹션 &gt; 멤버 탭에서 '추방' 버튼을 사용하여 그룹에서 사람을 추방합니다. 소유자는 다른 소유자를 제외한 누구든지 추방할 수 있습니다. 소유자가 아닌 경우, '모든 사람' 역할만 가지고 있고 다른 역할은 없는 멤버만 그룹에서 추방할 수 있습니다. 멤버에게서 역할을 제거하려면 '멤버에서 역할 제거' 능력이 있어야 합니다." name="member eject" value="2"/>
+		<action description="밴 목록 관리" longdescription="그룹 멤버가 이 그룹에서 주민들을 밴/허용할 수 있게 허용합니다." name="allow ban" value="51"/>
+		<action description="'개방 등록' 토글 및 '가입비' 변경" longdescription="일반 섹션에서 새 멤버가 초대 없이 가입할 수 있도록 '개방 등록'을 토글하고 '가입비'를 변경합니다." name="member options" value="3"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 그룹 역할을 추가, 제거 및 변경하고, 역할을 할당 및 제거하며, 역할에 능력을 할당할 수 있습니다." name="Roles">
+		<action description="새 역할 생성" longdescription="멤버 &amp; 역할 섹션 &gt; 역할 탭에서 새 역할을 생성합니다." name="role create" value="4"/>
+		<action description="역할 삭제" longdescription="멤버 &amp; 역할 섹션 &gt; 역할 탭에서 역할을 삭제합니다." name="role delete" value="5"/>
+		<action description="역할 이름, 타이틀, 설명 변경 및 역할 멤버가 공개적으로 표시될지 여부" longdescription="역할 이름, 타이틀, 설명 및 역할 멤버가 공개적으로 표시될지 여부를 변경합니다. 이는 멤버 &amp; 역할 섹션 &gt; 역할 탭 하단에서 역할을 선택한 후 수행됩니다." name="role properties" value="6"/>
+		<action description="자신의 역할만 멤버에게 할당" longdescription="할당된 역할 목록(멤버 &amp; 역할 섹션 &gt; 멤버 탭)에서 멤버에게 역할을 할당합니다. 이 능력을 가진 멤버는 자신이 가진 역할만 다른 멤버에게 할당할 수 있습니다." name="role assign member limited" value="7"/>
+		<action description="멤버에게 모든 역할 할당" longdescription="할당된 역할 목록(멤버 &amp; 역할 섹션 &gt; 멤버 탭)에서 멤버에게 모든 역할을 할당할 수 있습니다. *경고* 이 능력을 가진 역할의 모든 멤버는 자신과 다른 모든 멤버(소유자 제외)에게 더 강력한 능력을 가진 역할을 할당하여 거의 소유자 수준의 권한을 얻을 수 있습니다. 이 능력을 누구에게 부여할지 신중히 생각하십시오." name="role assign member" value="8"/>
+		<action description="멤버에서 역할 제거" longdescription="할당된 역할 목록(멤버 &amp; 역할 섹션 &gt; 멤버 탭)에서 멤버의 역할을 제거합니다. 소유자는 제거할 수 없습니다." name="role remove member" value="9"/>
+		<action description="역할 능력 할당 및 제거" longdescription="허용된 능력 목록(멤버 &amp; 역할 섹션 &gt; 역할 탭)에서 각 역할에 대한 능력을 할당하고 제거합니다. *경고* 이 능력을 가진 역할의 모든 멤버는 자신과 다른 모든 멤버(소유자 제외)에게 모든 능력을 할당하여 거의 소유자 수준의 권한을 얻을 수 있습니다. 이 능력을 누구에게 부여할지 신중히 생각하십시오." name="role change actions" value="10"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 공개 가시성, 헌장, 휘장과 같은 그룹 신원을 변경할 수 있습니다." name="Group Identity">
+		<action description="헌장, 휘장 및 '웹에 게시' 변경 및 그룹 정보에서 공개적으로 표시될 멤버 결정" longdescription="일반 섹션에서 헌장, 휘장 및 '검색에 표시' 설정을 변경합니다." name="group change identity" value="11"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 그룹 소유 토지를 양도, 수정 및 판매할 수 있습니다. 토지 정보에 액세스하려면 지면을 우클릭하고 '토지 정보...'를 선택하거나 네비게이션 바에서 'i' 아이콘을 클릭하십시오." name="Parcel Management">
+		<action description="토지 양도 및 그룹을 위한 토지 구매" longdescription="토지를 양도하고 그룹을 위해 구매합니다. 이는 토지 정보 &gt; 일반에서 수행됩니다." name="land deed" value="12"/>
+		<action description="Governor Linden에게 토지 포기" longdescription="Governor Linden에게 토지를 포기합니다. *경고* 이 능력을 가진 역할의 모든 멤버는 토지 정보 &gt; 일반에서 그룹 소유 토지를 포기하여 판매 없이 Linden 소유로 되돌릴 수 있습니다! 이 능력을 누구에게 부여할지 신중히 생각하십시오." name="land release" value="13"/>
+		<action description="판매용 토지 정보 설정" longdescription="판매용 토지 정보를 설정합니다. *경고* 이 능력을 가진 역할의 모든 멤버는 토지 정보 &gt; 일반에서 언제든지 그룹 소유 토지를 판매할 수 있습니다! 이 능력을 누구에게 부여할지 신중히 생각하십시오." name="land set sale info" value="14"/>
+		<action description="구획 분할 및 결합" longdescription="구획을 분할하고 결합합니다. 지면을 우클릭하고 '지형 편집'을 선택한 다음 마우스를 토지 위로 드래그하여 선택합니다. 분할하려면 선택하고 '세분'을 클릭합니다. 인접한 두 개 이상의 구획을 결합하려면 '결합'을 클릭합니다." name="land divide join" value="15"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 구획 이름 및 게시 설정, 검색 디렉토리 표시, 착지점 및 TP 라우팅 옵션을 설정할 수 있습니다." name="Parcel Identity">
+		<action description="'검색에서 장소 표시' 토글 및 카테고리 설정" longdescription="토지 정보의 옵션 탭에서 '검색에서 장소 표시'를 토글하고 구획 카테고리를 설정합니다." name="land find places" value="17"/>
+		<action description="구획 이름, 설명 및 '성인 등급' 설정 변경" longdescription="구획 이름, 설명 및 '성인 등급' 설정을 변경합니다. 이는 토지 정보 &gt; 옵션 탭에서 수행됩니다." name="land change identity" value="18"/>
+		<action description="착지점 및 텔레포트 라우팅 설정" longdescription="이 능력을 가진 역할의 멤버는 그룹 소유 구획에서 들어오는 텔레포트를 위한 착지점과 텔레포트 라우팅을 설정할 수 있습니다. 이는 토지 정보 &gt; 옵션에서 수행됩니다." name="land set landing point" value="19"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 '객체 생성', '지형 편집'과 같은 구획 옵션 및 음악과 미디어 설정을 변경할 수 있습니다." name="Parcel Settings">
+		<action description="음악 및 미디어 설정 변경" longdescription="스트리밍 음악 및 영화 설정은 토지 정보 &gt; 미디어에서 변경됩니다." name="land change media" value="20"/>
+		<action description="'지형 편집' 토글" longdescription="'지형 편집'을 토글합니다. *경고* 토지 정보 &gt; 옵션 &gt; 지형 편집을 사용하면 누구나 당신의 토지를 지형 변형하고 Linden 식물을 설치하고 이동할 수 있습니다. 이 능력을 누구에게 부여할지 신중히 생각하십시오. 이 설정은 토지 정보 &gt; 옵션에서 수행됩니다." name="land edit" value="21"/>
+		<action description="다양한 '토지 정보' 옵션 설정" longdescription="'안전(피해 없음)' 및 '비행'을 토글하고, 그룹 소유 토지에서 다른 주민이 '지형 편집', '건축', '랜드마크 생성' 및 '스크립트 실행'을 할 수 있도록 허용합니다. 토지 정보 &gt; 옵션 탭에서 수행됩니다." name="land options" value="22"/>
+		<action description="환경 설정 및 주간 주기를 변경합니다." longdescription="토지 정보 -&gt; 환경 탭에서 환경 설정을 변경합니다." name="land change environment" value="46"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 멤버가 그룹 소유 구획의 제한을 우회할 수 있습니다." name="Parcel Powers">
+		<action description="'지형 편집' 허용" longdescription="이 능력을 가진 역할의 멤버는 토지 정보 &gt; 옵션에서 해당 설정이 해제되어 있어도 그룹 소유 구획에서 지형을 편집할 수 있습니다." name="land allow edit land" value="23"/>
+		<action description="'비행' 허용" longdescription="이 능력을 가진 역할의 멤버는 토지 정보 &gt; 옵션에서 해당 설정이 해제되어 있어도 그룹 소유 구역에서 비행할 수 있습니다." name="land allow fly" value="24"/>
+		<action description="'객체 생성' 허용" longdescription="이 능력을 가진 역할의 멤버는 토지 정보 &gt; 옵션에서 해당 설정이 해제되어 있어도 그룹 소유 구역에서 객체를 생성할 수 있습니다." name="land allow create" value="25"/>
+		<action description="착지점 무시" longdescription="이 능력을 가진 역할의 멤버는 토지 정보 &gt; 옵션에서 착지점이 설정되어 있어도 그룹 소유 구역으로 직접 텔레포트할 수 있습니다." name="land allow direct teleport" value="26"/>
+		<action description="그룹 토지에서 '홈으로 설정' 허용" longdescription="이 능력을 가진 역할의 멤버는 이 그룹에 양도된 구역에서 월드 &gt; 랜드마크 &gt; 홈으로 설정을 사용할 수 있습니다." name="land allow set home" value="28"/>
+		<action description="그룹 토지에서 이벤트 호스팅 허용" longdescription="이 능력을 가진 역할의 멤버는 그룹 소유 구역을 이벤트 개최지로 선택할 수 있습니다." name="land allow host event" value="41"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 주민 동결 및 추방을 포함하여 그룹 소유 구역에 대한 액세스를 제어할 수 있습니다." name="Parcel Access">
+		<action description="구역 액세스 목록 관리" longdescription="토지 정보 &gt; 액세스에서 구역 액세스 목록을 관리합니다." name="land manage allowed" value="29"/>
+		<action description="구역 밴 목록 관리" longdescription="토지 정보 &gt; 액세스 탭에서 구역 밴 목록을 관리합니다." name="land manage banned" value="30"/>
+		<action description="구역 '패스 판매' 설정 변경" longdescription="토지 정보 &gt; 액세스 탭에서 구역 '패스 판매' 설정을 변경합니다." name="land manage passes" value="31"/>
+		<action description="주민을 구역에서 추방 및 동결" longdescription="이 능력을 가진 역할의 멤버는 그룹 소유 구역에서 원하지 않는 주민을 처리할 수 있습니다. 주민을 우클릭하고 '추방' 또는 '동결'을 선택합니다." name="land admin" value="32"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 멤버가 객체를 반환하고 Linden 식물을 배치 및 이동할 수 있습니다. 멤버는 토지를 정리하고 조경을 도울 수 있지만 주의하세요. 반환된 객체는 되찾을 수 없습니다." name="Parcel Content">
+		<action description="그룹 소유 객체 반환" longdescription="토지 정보 &gt; 객체에서 그룹 소유 구역의 그룹 소유 객체를 반환합니다." name="land return group owned" value="48"/>
+		<action description="그룹 설정 객체 반환" longdescription="토지 정보 &gt; 객체에서 그룹 소유 구역의 그룹 설정 객체를 반환합니다." name="land return group set" value="33"/>
+		<action description="비그룹 객체 반환" longdescription="토지 정보 &gt; 객체에서 그룹 소유 구역의 그룹에 속하지 않은 객체를 반환합니다." name="land return non group" value="34"/>
+		<action description="Linden 식물로 조경" longdescription="조경 능력을 통해 Linden 나무, 식물, 풀을 배치하고 이동할 수 있습니다. 이러한 아이템은 인벤토리의 라이브러리 폴더 &gt; 객체에서 찾거나 건축 메뉴를 통해 생성할 수 있습니다." name="land gardening" value="35"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 그룹 소유 객체를 양도, 수정 및 판매할 수 있습니다. 변경은 편집 도구의 일반 탭에서 수행됩니다. 객체를 우클릭하고 '편집'을 선택하여 설정을 확인합니다." name="Object Management">
+		<action description="그룹에 객체 양도" longdescription="편집 도구의 일반 탭에서 그룹에 객체를 양도합니다." name="object deed" value="36"/>
+		<action description="그룹 소유 객체 조작(이동, 복사, 수정)" longdescription="편집 도구의 일반 탭에서 그룹 소유 객체를 조작(이동, 복사, 수정)합니다." name="object manipulate" value="38"/>
+		<action description="그룹 소유 객체 판매 설정" longdescription="편집 도구의 일반 탭에서 그룹 소유 객체를 판매용으로 설정합니다." name="object set sale" value="39"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 그룹 책임 및 그룹 배당금이 필요하며 그룹 계정에 대한 액세스를 제한합니다." name="Accounting">
+		<action description="그룹 책임 지불 및 그룹 배당금 수령" longdescription="이 능력을 가진 역할의 멤버는 자동으로 그룹 책임을 지불하고 그룹 배당금을 받습니다. 즉, 매일 정산되는 그룹 소유 토지 판매 수익의 일부를 받습니다. 또한 구역 목록 수수료 같은 모든 요금을 자동으로 지불합니다." name="accounting accountable" value="40"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 멤버가 그룹 공지를 보내고, 받고, 확인할 수 있습니다." name="Notices">
+		<action description="공지 보내기" longdescription="이 능력을 가진 역할의 멤버는 그룹 &gt; 공지 섹션에서 공지를 보낼 수 있습니다." name="notices send" value="42"/>
+		<action description="공지 받기 및 이전 공지 보기" longdescription="이 능력을 가진 역할의 멤버는 공지를 받고 그룹 &gt; 공지 섹션에서 이전 공지를 볼 수 있습니다." name="notices receive" value="43"/>
+	</action_set>
+	<action_set description="이러한 능력을 통해 그룹 채팅 및 그룹 음성 채팅에 대한 액세스를 제어할 수 있습니다." name="Chat">
+		<action description="그룹 채팅 참여" longdescription="이 능력을 가진 역할의 멤버는 그룹 채팅과 그룹 음성 채팅에 참여할 수 있습니다." name="join group chat" value="16"/>
+		<action description="그룹 음성 채팅 참여" longdescription="이 능력을 가진 역할의 멤버는 그룹 음성 채팅에 참여할 수 있습니다. 참고: 이 음성 채팅 세션에 액세스하려면 '그룹 채팅 참여' 능력이 필요합니다." name="join voice chat" value="27"/>
+		<action description="그룹 채팅 중재" longdescription="이 능력을 가진 역할의 멤버는 그룹 채팅 및 음성 채팅 세션에 대한 액세스와 참여를 제어할 수 있습니다." name="moderate group chat" value="37"/>
+	</action_set>
+	<action_set description="이러한 능력은 이 그룹이 소유한 경험을 수정할 수 있는 권한을 포함합니다." name="experience_tools_experience">
+		<action description="경험 관리자" longdescription="이 능력을 가진 역할의 멤버는 경험의 메타데이터를 변경할 수 있습니다." name="experience admin" value="49"/>
+		<action description="경험 기여자" longdescription="이 능력을 가진 역할의 멤버는 경험을 위한 스크립트에 기여할 수 있습니다." name="experience contributor" value="50"/>
+	</action_set>
+</role_actions>

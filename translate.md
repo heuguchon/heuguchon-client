@@ -253,6 +253,24 @@
   - [x] floater_price_for_listing.xml (광고 게시)
   - [x] floater_profile_permissions.xml (프로필 권한)
   - [x] 총 91개의 누락된 floater 파일 확인
+- [x] 70차: 누락된 floater 및 widgets 파일 번역 (7개)
+  - [x] floater_big_preview.xml (큰 미리보기)
+  - [x] floater_fast_timers.xml (빠른 타이머 - 성능 측정)
+  - [x] floater_edit_ext_day_cycle.xml (확장 주간 주기 편집)
+  - [x] floater_fixedenvironment.xml (고정 환경)
+  - [x] floater_adjust_environment.xml (개인 조명)
+  - [x] widgets/texture_picker.xml (텍스처 선택기 위젯)
+  - [x] widgets/density_ctrl.xml (밀도 컨트롤 위젯)
+  - [x] widgets/sun_moon_trackball.xml (태양/달 트랙볼 위젯)
+  - [x] widgets/name_editor.xml (이름 편집기 위젯)
+- [x] 71차: 추가 중요 파일 및 widgets 확장 번역 (11개)
+  - [x] widgets/bodyparts_list_item.xml (체형 목록 아이템 위젯)
+  - [x] widgets/clothing_list_item.xml (의복 목록 아이템 위젯)
+  - [x] widgets/deletable_wearable_list_item.xml (삭제 가능한 착용 아이템 위젯)
+  - [x] widgets/dummy_clothing_list_item.xml (더미 의복 목록 아이템 위젯)
+  - [x] widgets/person_view.xml (사용자 뷰 위젯 - 개인정보 및 권한)
+  - [x] role_actions.xml (그룹 역할 및 능력 정의 - 중요)
+  - [x] mime_types.xml (미디어 파일 유형 정의)
 - [x] 16차: 추가 플로터 창 번역 완료 (Option C)
   - [x] floater_report_abuse.xml (신고 시스템)
   - [x] floater_god_tools.xml (관리자 도구)
@@ -681,7 +699,7 @@
 - **69차: 추가 floater 창 번역 시작** - 콘텐츠 구매, 이모지 선택, Flickr 공유, 마켓플레이스 상품 및 검증, 차단 목록, 연락처 세트 및 설정, Discord 연동, 그룹 타이틀, Firestorm 성능 개선, RLV 기능, 프로필 권한 등 추가 기능 (20개)
 
 ### 번역 완료율
-- **총 419개 파일 번역** (독일어 기준 약 400개 중 **105% 완료!** 초과 달성)
+- **총 439개 파일 번역** (독일어 기준 약 403개 중 **109% 완료!** 초과 달성)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화

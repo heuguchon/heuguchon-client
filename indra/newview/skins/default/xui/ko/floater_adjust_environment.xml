@@ -7,22 +7,22 @@
 		밝기:
 	</string>
 	<string name="hdr_tooltip">
-		현실적인 빛나는 하늘과 동적 노출 같은 노출 효과의 강도. 1.0이 표준, 0은 끄기, 0과 1 사이의 값은 환경을 HDR과 혼합합니다.
+		현실적인 빛나는 하늘과 동적 노출 등 노출 효과의 강도입니다. 1.0이 기본값, 0은 끄기, 0과 1 사이 값은 환경과 HDR을 혼합합니다.
 	</string>
 	<layout_stack name="outer_stack">
 		<layout_panel name="env_controls">
 			<layout_stack name="settings_stack">
 				<layout_panel name="lp_1">
 					<text name="ambient_lbl">
-						환경광:
+						주변광:
 					</text>
 					<text name="blue_horizon_lbl">
-						푸른 수평선:
+						푸른 지평선:
 					</text>
 					<text name="blue_density_lbl">
 						푸른 밀도:
 					</text>
-					<button label="리셋" name="btn_reset" tool_tip="닫기 및 공유 환경으로 리셋"/>
+					<button label="재설정" name="btn_reset" tool_tip="닫고 공유 환경으로 재설정"/>
 					<text name="sun_color_lbl">
 						태양 색상:
 					</text>
@@ -30,15 +30,15 @@
 						구름 색상:
 					</text>
 					<text name="cloud_map_label">
-						구름 맵:
+						구름 텍스처:
 					</text>
 					<text name="water_map_label">
-						물 맵:
+						물 텍스처:
 					</text>
 				</layout_panel>
 				<layout_panel name="lp_2">
 					<text name="haze_horizon_label">
-						안개 수평선:
+						안개 지평선:
 					</text>
 					<text name="haze_density_label">
 						안개 밀도:
@@ -50,9 +50,9 @@
 						구름 스케일:
 					</text>
 					<text name="reflection_probe_ambiance_label">
-						반사 프로브 환경:
+						반사 프로브 분위기:
 					</text>
-					<slider name="probe_ambiance" tool_tip="환경 기반 간접 조명의 강도. 0에서는 HDR 스케일이 밝기로 변경됩니다."/>
+					<slider name="probe_ambiance" tool_tip="주변광 기반 간접 조명의 강도입니다. 0일 때 HDR은 밝기로 스케일됩니다."/>
 					<text name="scene_gamma_label">
 						밝기:
 					</text>
@@ -65,10 +65,10 @@
 						스케일:
 					</text>
 					<text name="glow_focus_label">
-						글로우 초점:
+						광채 초점:
 					</text>
 					<text name="glow_size_label">
-						글로우 크기:
+						광채 크기:
 					</text>
 					<text name="star_brightness_label">
 						별 밝기:
