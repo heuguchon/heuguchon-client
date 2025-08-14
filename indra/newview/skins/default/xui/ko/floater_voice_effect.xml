@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater label="장소" name="voice_effects" title="음성 변조 미리보기">
+	<string name="no_voice_effect">
+		(음성 변조 없음)
+	</string>
+	<string name="active_voice_effect">
+		(활성)
+	</string>
+	<string name="unsubscribed_voice_effect">
+		(구독 안함)
+	</string>
+	<string name="new_voice_effect">
+		(신규!)
+	</string>
+	<string name="effect_Arena">
+		아레나
+	</string>
+	<string name="effect_Beast">
+		야수
+	</string>
+	<string name="effect_Buff">
+		버프
+	</string>
+	<string name="effect_Buzz">
+		버즈
+	</string>
+	<string name="effect_Camille">
+		카밀
+	</string>
+	<string name="effect_Creepy">
+		섬뜩한
+	</string>
+	<string name="effect_CreepyBot">
+		섬뜩한봇
+	</string>
+	<string name="effect_Cyber">
+		사이버
+	</string>
+	<string name="effect_DeepBot">
+		딥봇
+	</string>
+	<string name="effect_Demon">
+		악마
+	</string>
+	<string name="effect_Female Elf">
+		여성 엘프
+	</string>
+	<string name="effect_Flirty">
+		애교
+	</string>
+	<string name="effect_Foxy">
+		섹시한
+	</string>
+	<string name="effect_Halloween 2010 Bonus">
+		할로윈 2010 보너스
+	</string>
+	<string name="effect_Helium">
+		헬륨
+	</string>
+	<string name="effect_Husky">
+		허스키
+	</string>
+	<string name="effect_Husky Whisper">
+		허스키 속삭임
+	</string>
+	<string name="effect_Intercom">
+		인터콤
+	</string>
+	<string name="effect_Julia">
+		줄리아
+	</string>
+	<string name="effect_Lo Lilt">
+		낮은 선율
+	</string>
+	<string name="effect_Macho">
+		마초
+	</string>
+	<string name="effect_Micro">
+		마이크로
+	</string>
+	<string name="effect_Mini">
+		미니
+	</string>
+	<string name="effect_Model">
+		모델
+	</string>
+	<string name="effect_Nano">
+		나노
+	</string>
+	<string name="effect_Nightmare">
+		악몽
+	</string>
+	<string name="effect_PopBot">
+		팝봇
+	</string>
+	<string name="effect_Rachel">
+		레이첼
+	</string>
+	<string name="effect_Radio">
+		라디오
+	</string>
+	<string name="effect_Robot">
+		로봇
+	</string>
+	<string name="effect_Roxanne">
+		록산
+	</string>
+	<string name="effect_Rumble">
+		럼블
+	</string>
+	<string name="effect_Sabrina">
+		사브리나
+	</string>
+	<string name="effect_Samantha">
+		사만다
+	</string>
+	<string name="effect_Sexy">
+		섹시
+	</string>
+	<string name="effect_Shorty">
+		쇼티
+	</string>
+	<string name="effect_Smaller">
+		더 작게
+	</string>
+	<string name="effect_Sneaky">
+		교활한
+	</string>
+	<string name="effect_Stallion">
+		종마
+	</string>
+	<string name="effect_Sultry">
+		매혹적인
+	</string>
+	<string name="effect_Thunder">
+		천둥
+	</string>
+	<string name="effect_Vixen">
+		매력적인
+	</string>
+	<string name="effect_WhinyBot">
+		징징봇
+	</string>
+	<text name="preview_text">
+		미리보기용
+	</text>
+	<text name="status_text">
+		음성을 녹음하고 효과를 클릭하여 당신의 목소리에 적용해보세요.
+	</text>
+	<button label="녹음" name="record_btn" tool_tip="음성을 녹음합니다."/>
+	<button label="중지" name="record_stop_btn"/>
+	<text name="voice_morphing_link">
+		[[URL] 지금 구독하기]
+	</text>
+	<scroll_list name="voice_effect_list" tool_tip="음성을 녹음한 후 효과를 클릭하여 시도해보세요.">
+		<scroll_list.columns label="이름" name="name"/>
+		<scroll_list.columns label="만료일" name="expires"/>
+	</scroll_list>
+</floater>

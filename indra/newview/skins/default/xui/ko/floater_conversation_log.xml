@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_conversation_log" title="대화 기록">
+	<panel name="buttons_panel">
+		<filter_editor label="사람별 필터" name="people_filter_input"/>
+		<menu_button name="conversation_view_btn" tool_tip="보기/정렬 옵션"/>
+		<menu_button name="conversations_gear_btn" tool_tip="선택된 사람/그룹 작업"/>
+	</panel>
+</floater>

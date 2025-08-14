@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_voice_volume" title="음성 채팅 볼륨">
+	<slider label="음성 채팅" name="chat_voice_volume"/>
+</floater>
