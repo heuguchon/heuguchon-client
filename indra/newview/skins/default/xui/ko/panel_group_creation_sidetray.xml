@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel label="그룹 생성" name="GroupCreation">
+	<panel.string name="current_membership">
+		(현재 멤버십)
+	</panel.string>
+	<panel name="group_info_top">
+		<text name="group_name_label" width="82">
+			그룹 이름:
+		</text>
+		<line_editor label="새 그룹 이름 입력" name="group_name_editor"/>
+	</panel>
+	<scroll_container name="content_scroll_container">
+		<panel name="content_panel">
+			<layout_stack name="layout">
+				<layout_panel name="group_info">
+					<panel name="group_info_top2">
+						<texture_picker name="insignia" tool_tip="클릭하여 이미지 선택"/>
+						<text_editor name="charter">
+							그룹 헌장
+						</text_editor>
+					</panel>
+					<panel name="preferences_container">
+						<check_box label="누구나 가입 가능" name="open_enrollement" tool_tip="초대 없이도 그룹에 가입할 수 있는지 설정"/>
+						<check_box label="가입비" name="check_enrollment_fee" tool_tip="신규 멤버가 가입비를 지불해야 하는지 설정"/>
+						<spinner label="L$" name="spin_enrollment_fee" tool_tip="가입비 옵션이 체크되면 신규 멤버는 이 금액을 지불해야 함"/>
+						<combo_box name="group_mature_check" tool_tip="콘텐츠 등급은 그룹에서 허용되는 콘텐츠와 행동을 나타냄">
+							<combo_item name="select_mature">
+								- 콘텐츠 등급 선택 -
+							</combo_item>
+							<combo_box.item label="성인 콘텐츠" name="mature"/>
+							<combo_box.item label="일반 콘텐츠" name="pg"/>
+						</combo_box>
+					</panel>
+				</layout_panel>
+				<layout_panel name="create_info">
+					<text name="fee_information">
+						그룹 생성 비용은 멤버십 수준에 따라 다릅니다. [https://secondlife.com/my/account/membership.php 자세한 정보]
+					</text>
+					<scroll_list name="membership_list">
+						<scroll_list.rows name="basic" value="기본 (플레이스홀더)"/>
+						<scroll_list.rows name="premium" value="프리미엄 (플레이스홀더)" />
+					</scroll_list>
+				</layout_panel>
+				<layout_panel name="create_actions">
+					<layout_stack name="button_row_ls">
+						<layout_panel name="layout_crt">
+							<button label="그룹 생성 ([COST] L$)" name="btn_create" tool_tip="새 그룹 생성"/>
+							<button name="back" label="취소"/>
+						</layout_panel>
+					</layout_stack>
+					<text name="info_deletion">
+						참고: 2명 미만의 멤버를 가진 그룹은 48시간 후 삭제됩니다!
+					</text>
+				</layout_panel>
+			</layout_stack>
+		</panel>
+	</scroll_container>
+</panel>

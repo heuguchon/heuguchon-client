@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="그룹 프로필" name="GroupInfo">
+	<panel.string name="default_needs_apply_text">
+		변경사항이 저장되지 않았습니다.
+	</panel.string>
+	<panel.string name="want_apply_text">
+		변경사항을 저장하시겠습니까?
+	</panel.string>
+	<panel.string name="group_join_btn">
+		가입 ([AMOUNT]L$)
+	</panel.string>
+	<panel.string name="group_join_free">
+		무료
+	</panel.string>
+	<panel.string name="group_member">
+		멤버
+	</panel.string>
+	<panel.string name="join_txt">
+		가입
+	</panel.string>
+	<panel.string name="leave_txt">
+		탈퇴
+	</panel.string>
+
+	<layout_stack name="group_info_sidetray_main">
+		<layout_panel name="header_container">
+
+	<panel name="group_info_top">
+		<text_editor name="group_name" value="(로딩 중...)"/>
+		<line_editor label="새 그룹 이름 입력" name="group_name_editor"/>
+	</panel>
+
+		</layout_panel>
+		<layout_panel name="group_info_content">
+
+	<layout_stack name="layout">
+		<layout_panel name="group_accordions">
+			<accordion name="groups_accordion">
+				<accordion_tab name="group_general_tab" title="일반"/>
+				<accordion_tab name="group_roles_tab" title="역할 &amp; 멤버"/>
+				<accordion_tab name="group_notices_tab" title="공지사항"/>
+				<accordion_tab name="group_land_tab" title="토지/자본"/>
+				<accordion_tab name="group_experiences_tab" title="경험"/>
+			</accordion>
+		</layout_panel>
+	</layout_stack>
+	<layout_stack name="button_row_ls">
+		<layout_panel name="btn_activate_lp">
+			<button label="활성화" name="btn_activate"/>
+		</layout_panel>
+		<layout_panel name="btn_chat_lp">
+			<button label="채팅" name="btn_chat"/>
+		</layout_panel>
+		<layout_panel name="call_btn_lp">
+			<button label="그룹 통화" name="btn_call" tool_tip="이 그룹에 전화 걸기"/>
+		</layout_panel>
+		<layout_panel name="btn_apply_lp">
+			<button label="저장" label_selected="저장" name="btn_apply"/>
+			<button label="그룹 생성" name="btn_create" tool_tip="새 그룹 생성"/>
+		</layout_panel>
+	</layout_stack>
+
+		</layout_panel>
+	</layout_stack>
+</panel>

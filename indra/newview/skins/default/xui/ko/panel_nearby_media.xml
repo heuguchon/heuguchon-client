@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="nearby_media">
+	<string name="media_item_count_format">
+		(%ls개 미디어 객체)
+	</string>
+	<string name="empty_item_text">
+		&lt;비어있음&gt;
+	</string>
+	<string name="parcel_media_name">
+		구획 스트리밍 미디어
+	</string>
+	<string name="parcel_audio_name">
+		구획 스트리밍 오디오
+	</string>
+	<string name="playing_suffix">
+		(재생 중)
+	</string>
+	<panel name="minimized_controls">
+		<button label="중지" name="all_nearby_media_disable_btn" tool_tip="모든 근처 미디어 끄기"/>
+		<button label="시작" name="all_nearby_media_enable_btn" tool_tip="모든 근처 미디어 켜기"/>
+		<button name="open_prefs_btn" tool_tip="미디어 설정 열기"/>
+		<button label="더보기 &gt;&gt;" label_selected="&lt;&lt; 숨기기" name="more_btn" tool_tip="고급 컨트롤" width="76"/>
+	</panel>
+	<panel name="nearby_media_panel">
+		<text name="nearby_media_title">
+			근처 미디어
+		</text>
+		<text name="show_text">
+			표시:
+		</text>
+		<combo_box name="show_combo">
+			<combo_box.item label="모두" name="All"/>
+			<combo_box.item label="이 구획 내" name="WithinParcel"/>
+			<combo_box.item label="이 구획 외부" name="OutsideParcel"/>
+			<combo_box.item label="다른 아바타에서" name="OnOthers"/>
+		</combo_box>
+		<scroll_list name="media_list">
+			<scroll_list.columns label="근접성" name="media_proximity"/>
+			<scroll_list.columns label="표시여부" name="media_visibility"/>
+			<scroll_list.columns label="클래스" name="media_class"/>
+			<scroll_list.columns label="이름" name="media_name"/>
+			<scroll_list.columns label="디버그" name="media_debug"/>
+		</scroll_list>
+		<panel name="media_controls_panel">
+			<layout_stack name="media_controls">
+				<layout_panel name="stop">
+					<button name="stop_btn" tool_tip="선택한 미디어 중지"/>
+				</layout_panel>
+				<layout_panel name="play">
+					<button name="play_btn" tool_tip="선택한 미디어 재생"/>
+				</layout_panel>
+				<layout_panel name="pause">
+					<button name="pause_btn" tool_tip="선택한 미디어 일시정지"/>
+				</layout_panel>
+				<layout_panel name="volume_slider_ctrl">
+					<slider_bar initial_value="0.5" name="volume_slider" tool_tip="선택한 미디어 볼륨"/>
+				</layout_panel>
+				<layout_panel name="mute">
+					<button name="mute_btn" tool_tip="선택한 미디어 음소거"/>
+				</layout_panel>
+				<layout_panel name="zoom">
+					<button name="zoom_btn" tool_tip="선택한 미디어로 줌인"/>
+				</layout_panel>
+				<layout_panel name="unzoom">
+					<button name="unzoom_btn" tool_tip="선택한 미디어에서 줌아웃"/>
+				</layout_panel>
+			</layout_stack>
+		</panel>
+	</panel>
+</panel>

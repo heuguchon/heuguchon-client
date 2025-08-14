@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <panel name="edit_underpants_panel">
 	<panel name="avatar_underpants_color_panel">
-		<texture_picker label="텍스처" name="Fabric" tool_tip="클릭하여 이미지를 선택하세요"/>
-		<color_swatch label="색상/톤" name="Color/Tint" tool_tip="클릭하여 색상 선택기를 엽니다"/>
+		<texture_picker label="텍스처" name="Fabric" tool_tip="클릭하여 이미지 선택"/>
+		<color_swatch label="색상/톤" name="Color/Tint" tool_tip="클릭하여 색상 선택기 열기"/>
 	</panel>
 	<panel name="accordion_panel">
 		<accordion name="wearable_accordion">
