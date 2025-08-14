@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="quickprefs" title="빠른 설정" width="280">
+	<panel name="quickprefs" width="280">
+		<layout_stack name="options_stack" width="280"/>
+		<layout_stack name="wl_options_stack" width="280">
+			<layout_panel name="wl_options_panel">
+				<text name="HoverHeightLabel" width="105" tool_tip="자신의 아바타 호버 높이를 설정합니다.">
+					호버 높이:
+				</text>
+				<slider name="HoverHeightSlider"/>
+				<text name="Maximum bandwidth" width="105" tool_tip="Kbps(초당 킬로비트) 단위로 최대 네트워크 대역폭을 설정합니다.">
+					최대 대역폭:
+				</text>
+				<slider name="max_bandwidth"/>
+				<text name="Maximum complexity" width="105" tool_tip="시각적으로 복잡한 아바타를 젤리돌로 표시할 복잡도 값을 설정합니다.">
+					최대 복잡도:
+				</text>
+				<slider name="IndirectMaxComplexity" right="-68"/>
+				<text name="IndirectMaxComplexityText" width="60">
+					제한 없음
+				</text>
+				<text name="WL Sky" width="67" tool_tip="하늘 프리셋.">
+					하늘:
+				</text>
+				<combo_box left_delta="77" name="WLPresetsCombo"/>
+				<text name="WL Water" width="67" tool_tip="물 프리셋.">
+					물:
+				</text>
+				<combo_box left_delta="77" name="WaterPresetsCombo"/>
+				<text name="Day Cycle" width="67" tool_tip="주기 프리셋.">
+					주기:
+				</text>
+				<combo_box left_delta="77" name="DCPresetsCombo"/>
+				<button name="btn_personal_lighting" label="개인 조명..." width="227"/>
+				<button name="ResetToRegionDefault" tool_tip="환경 설정을 공유 환경으로 재설정합니다." left="234"/>
+				<button name="button_edit" tool_tip="빠른 설정 구성" left="255"/>
+			</layout_panel>
+		</layout_stack>
+	</panel>
+
+	<panel name="edit_overlay_panel">
+		<button name="move_up_button" tool_tip="설정을 위로 이동"/>
+		<line_editor name="label_edit" tool_tip="설정에 표시할 텍스트" label="라벨:" width="205"/>
+		<combo_box name="control_name_combo" tool_tip="사용 가능한 설정 목록에서 설정 선택" width="245">
+			<combo_box.item label="== 선택 ==" name="control_name_list_header"/>
+		</combo_box>
+		<button name="move_down_button" tool_tip="설정을 아래로 이동"/>
+		<button name="add_new_button" tool_tip="새 설정 추가"/>
+		<text name="control_type_label">
+			유형:
+		</text>
+		<combo_box name="control_type_combo_box" tool_tip="이 설정에 사용할 컨트롤의 유형을 설정합니다." width="148">
+			<combo_box.item label="체크박스" name="Checkbox"/>
+			<combo_box.item label="텍스트" name="Text"/>
+			<combo_box.item label="스피너" name="Spinner"/>
+			<combo_box.item label="슬라이더" name="Slider"/>
+			<combo_box.item label="라디오 버튼" name="Radio"/>
+			<combo_box.item label="색상 3" name="Color 3"/>
+			<combo_box.item label="색상 4" name="Color 4"/>
+		</combo_box>
+
+		<check_box name="control_integer_checkbox" tool_tip="설정이 정수 값인 경우(소수점 없는 숫자만) 활성화" label="정수"/>
+		<spinner name="control_min_edit" tool_tip="선택할 수 있는 최소값" label="최소:"/>
+		<spinner name="control_max_edit" tool_tip="선택할 수 있는 최대값" label="최대:"/>
+		<spinner name="control_increment_edit" tool_tip="스피너의 위/아래 화살표를 클릭했을 때 값이 증가/감소하는 단위" label="단위:" label_width="40" width="90"/>
+		<button name="Restore_Btn" tool_tip="기본 설정 복원" label="재설정" />
+		<button name="button_close" tool_tip="편집 모드 종료"/>
+	</panel>
+</floater>

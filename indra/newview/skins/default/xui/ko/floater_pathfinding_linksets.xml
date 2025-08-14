@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_pathfinding_linksets" title="지역 객체">
+	<floater.string name="messaging_get_inprogress">
+		패스파인딩 링크셋을 가져오는 중...
+	</floater.string>
+	<floater.string name="messaging_get_error">
+		패스파인딩 링크셋을 가져오는데 오류가 발생했습니다.
+	</floater.string>
+	<floater.string name="messaging_set_inprogress">
+		선택된 패스파인딩 링크셋을 변경하는 중...
+	</floater.string>
+	<floater.string name="messaging_set_error">
+		선택된 패스파인딩 링크셋을 변경하는데 오류가 발생했습니다.
+	</floater.string>
+	<floater.string name="messaging_complete_none_found">
+		패스파인딩 링크셋이 없습니다.
+	</floater.string>
+	<floater.string name="messaging_complete_available">
+		전체 [NUM_TOTAL]개 중 [NUM_SELECTED]개가 선택되었습니다.
+	</floater.string>
+	<floater.string name="messaging_not_enabled">
+		이 지역에서는 패스파인딩이 활성화되지 않았습니다.
+	</floater.string>
+	<floater.string name="linkset_terrain_name">
+		[지형]
+	</floater.string>
+	<floater.string name="linkset_terrain_description">
+		--
+	</floater.string>
+	<floater.string name="linkset_terrain_owner">
+		--
+	</floater.string>
+	<floater.string name="linkset_terrain_scripted">
+		--
+	</floater.string>
+	<floater.string name="linkset_terrain_land_impact">
+		--
+	</floater.string>
+	<floater.string name="linkset_terrain_dist_from_you">
+		--
+	</floater.string>
+	<floater.string name="linkset_owner_loading">
+		[로딩 중]
+	</floater.string>
+	<floater.string name="linkset_owner_unknown">
+		[알 수 없음]
+	</floater.string>
+	<floater.string name="linkset_owner_group">
+		[그룹]
+	</floater.string>
+	<floater.string name="linkset_is_scripted">
+		예
+	</floater.string>
+	<floater.string name="linkset_is_not_scripted">
+		아니오
+	</floater.string>
+	<floater.string name="linkset_is_unknown_scripted">
+		알 수 없음
+	</floater.string>
+	<floater.string name="linkset_use_walkable">
+		보행 가능
+	</floater.string>
+	<floater.string name="linkset_use_static_obstacle">
+		정적 장애물
+	</floater.string>
+	<floater.string name="linkset_use_dynamic_obstacle">
+		동적 장애물
+	</floater.string>
+	<floater.string name="linkset_use_material_volume">
+		재질 볼륨
+	</floater.string>
+	<floater.string name="linkset_use_exclusion_volume">
+		제외 볼륨
+	</floater.string>
+	<floater.string name="linkset_use_dynamic_phantom">
+		동적 팬텀
+	</floater.string>
+	<floater.string name="linkset_is_terrain">
+		[변경 불가]
+	</floater.string>
+	<floater.string name="linkset_is_restricted_state">
+		[제한됨]
+	</floater.string>
+	<floater.string name="linkset_is_non_volume_state">
+		[오목]
+	</floater.string>
+	<floater.string name="linkset_is_restricted_non_volume_state">
+		[제한됨, 오목]
+	</floater.string>
+	<floater.string name="linkset_choose_use">
+		링크셋 사용 선택...
+	</floater.string>
+	<panel name="pathfinding_linksets_main">
+		<text name="linksets_filter_label" width="70">
+			필터:
+		</text>
+		<text name="linksets_name_label">
+			이름
+		</text>
+		<search_editor label="이름으로 객체 검색" name="filter_by_name"/>
+		<text name="linksets_desc_label">
+			설명
+		</text>
+		<search_editor label="설명으로 객체 검색" name="filter_by_description"/>
+		<combo_box name="filter_by_linkset_use">
+			<combo_box.item label="링크셋 용도별 필터..." name="filter_by_linkset_use_none"/>
+			<combo_box.item label="보행 가능" name="filter_by_linkset_use_walkable"/>
+			<combo_box.item label="정적 장애물" name="filter_by_linkset_use_static_obstacle"/>
+			<combo_box.item label="동적 장애물" name="filter_by_linkset_use_dynamic_obstacle"/>
+			<combo_box.item label="재질 볼륨" name="filter_by_linkset_use_material_volume"/>
+			<combo_box.item label="제외 볼륨" name="filter_by_linkset_use_exclusion_volume"/>
+			<combo_box.item label="동적 팬텀" name="filter_by_linkset_use_dynamic_phantom"/>
+		</combo_box>
+		<button label="적용" name="apply_filters"/>
+		<button label="지우기" name="clear_filters"/>
+		<scroll_list name="objects_scroll_list">
+			<scroll_list.columns label="이름 (루트 프림)" name="name"/>
+			<scroll_list.columns label="설명 (루트 프림)" name="description"/>
+			<scroll_list.columns label="소유자" name="owner"/>
+			<scroll_list.columns label="스크립트" name="scripted"/>
+			<scroll_list.columns label="토지 영향도" name="land_impact"/>
+			<scroll_list.columns label="거리" name="dist_from_you"/>
+			<scroll_list.columns label="패스파인딩 용도" name="linkset_use"/>
+			<scroll_list.columns label="A %" name="a_percent"/>
+			<scroll_list.columns label="B %" name="b_percent"/>
+			<scroll_list.columns label="C %" name="c_percent"/>
+			<scroll_list.columns label="D %" name="d_percent"/>
+		</scroll_list>
+		<text name="messaging_status">
+			링크셋:
+		</text>
+		<button label="목록 새로고침" name="refresh_objects_list"/>
+		<button label="모두 선택" name="select_all_objects"/>
+		<button label="선택 해제" name="select_none_objects"/>
+	</panel>
+	<panel name="pathfinding_linksets_actions">
+		<text name="linksets_actions_label">
+			선택 항목에 대한 작업
+		</text>
+		<check_box label="비콘 표시" name="show_beacon"/>
+		<button label="가져오기" name="take_objects"/>
+		<button label="사본 가져오기" name="take_copy_objects"/>
+		<button label="거기로 텔레포트" name="teleport_me_to_object"/>
+		<button label="반환" name="return_objects"/>
+		<button label="삭제" name="delete_objects"/>
+	</panel>
+	<panel name="pathfinding_linksets_attributes">
+		<text name="linksets_attributes_label">
+			패스파인딩 속성 편집
+		</text>
+		<text name="walkability_coefficients_label">
+			보행도:
+		</text>
+		<text name="edit_a_label">
+			A
+		</text>
+		<line_editor name="edit_a_value" tool_tip="A 타입 캐릭터의 보행도. 이 타입의 예는 '휴머노이드'입니다."/>
+		<text name="edit_b_label">
+			B
+		</text>
+		<line_editor name="edit_b_value" tool_tip="B 타입 캐릭터의 보행도. 이 타입의 예는 '생물'입니다."/>
+		<text name="edit_c_label">
+			C
+		</text>
+		<line_editor name="edit_c_value" tool_tip="C 타입 캐릭터의 보행도. 이 타입의 예는 '기계'입니다."/>
+		<text name="edit_d_label">
+			D
+		</text>
+		<line_editor name="edit_d_value" tool_tip="D 타입 캐릭터의 보행도. 이 타입의 예는 '기타'입니다."/>
+		<button label="변경사항 적용" name="apply_edit_values" width="160"/>
+		<text name="suggested_use_a_label">
+			(휴머노이드)
+		</text>
+		<text name="suggested_use_b_label">
+			(생물)
+		</text>
+		<text name="suggested_use_c_label">
+			(기계)
+		</text>
+		<text name="suggested_use_d_label">
+			(기타)
+		</text>
+	</panel>
+</floater>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="perms default" title="기본 생성 권한">
+	<panel name="default permissions" label="기본권한">
+		<text name="label_1">
+			다음 소유자:
+		</text>
+		<text name="label_2">
+			복사
+		</text>
+		<text name="label_3">
+			편집
+		</text>
+		<text name="label_4">
+			재판매/양도
+		</text>
+		<text name="label_5">
+			그룹과 공유
+		</text>
+		<text name="label_6">
+			모든 사람이 복사 허용
+		</text>
+		<text name="label_7" tool_tip="객체 생성에 대한 기본 권한 설정">
+			객체
+		</text>
+		<text name="label_8" tool_tip="업로드된 객체에 대한 기본 권한">
+			업로드
+		</text>
+		<text name="label_9" tool_tip="생성되는 스크립트에 대한 기본 권한">
+			스크립트
+		</text>
+		<text name="label_10" tool_tip="노트카드 생성에 대한 기본 권한 설정">
+			노트카드
+		</text>
+		<text name="label_11" tool_tip="제스처 생성에 대한 기본 권한 설정">
+			제스처
+		</text>
+		<text name="label_12" tool_tip="의상 및 신체 부위 생성에 대한 기본 권한 설정">
+			착용 아이템
+		</text>
+		<text name="label_13" tool_tip="환경 설정 생성에 대한 기본 권한 설정">
+			설정
+		</text>
+		<text name="label_14" tool_tip="GLTF 재질 생성에 대한 기본 권한 설정">
+			재질
+		</text>
+	</panel>
+	<button label="확인" label_selected="확인" name="ok"/>
+	<button label="취소" label_selected="취소" name="cancel"/>
+</floater>
