@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="avatarinfo" title="프로필">
+	<panel name="panel_profile_view">
+		<tab_container name="panel_profile_tabs">
+			<panel label="가상 세계" name="panel_profile_secondlife"/>
+			<panel label="피드" name="panel_profile_web"/>
+			<panel label="선택 목록" name="panel_profile_picks"/>
+			<panel label="광고" name="panel_profile_classifieds"/>
+			<panel label="실제 생활" name="panel_profile_firstlife"/>
+			<panel label="메모" name="panel_profile_notes"/>
+		</tab_container>
+		<button label="확인" name="ok_btn" tool_tip="프로필 변경사항을 저장하고 닫기"/>
+		<button label="취소" tool_tip="저장하지 않은 변경사항을 취소하고 창 닫기" label_selected="취소" name="cancel_btn"/>
+	</panel>
+</floater>
