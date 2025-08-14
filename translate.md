@@ -166,6 +166,15 @@
   - [x] panel_place_profile.xml (장소 프로필)
   - [x] panel_script_experience.xml (스크립트 경험)
   - [x] panel_sound_devices.xml (사운드 장치)
+- [x] 57차: 마켓플레이스 및 프로필 패널 확장 완료 (8개)
+  - [x] panel_marketplace_listings_inventory.xml (마켓플레이스 인벤토리)
+  - [x] panel_marketplace_listings_listed.xml (마켓플레이스 등록된 상품)
+  - [x] panel_marketplace_listings_unlisted.xml (마켓플레이스 등록되지 않은 상품)
+  - [x] panel_marketplace_listings_unassociated.xml (마켓플레이스 연결되지 않은 상품)
+  - [x] panel_profile_firstlife.xml (실생활 프로필)
+  - [x] panel_profile_web.xml (웹 프로필)
+  - [x] panel_teleport_history.xml (텔레포트 기록)
+  - [x] panel_teleport_history_item.xml (텔레포트 기록 아이템)
 - [x] 16차: 추가 플로터 창 번역 완료 (Option C)
   - [x] floater_report_abuse.xml (신고 시스템)
   - [x] floater_god_tools.xml (관리자 도구)
@@ -588,9 +597,10 @@
 - **54차: Firestorm 전용 기능 확장 패널** - Firestorm 연락처 친구/그룹/세트, NUI 로그인, 성능 자동 조정, HUD 관리 (6개)
 - **55차: 검색 시스템 및 성능 설정 확장** - 분류광고/이벤트/토지/웹 검색, 태양과 달 설정, 성능 환경설정 (6개)
 - **56차: 고급 패널 UI 확장** - 그룹 대량 차단, 미디어 권한, 착용 중 의상, 장소 프로필, 스크립트 경험, 사운드 장치 (6개)
+- **57차: 마켓플레이스 및 프로필 패널 확장** - 마켓플레이스 상품 관리, 실생활/웹 프로필, 텔레포트 기록 가능 (8개)
 
 ### 번역 완료율
-- **총 295개 파일 번역** (독일어 기준 약 400개 중 약 73.8%)
+- **총 303개 파일 번역** (독일어 기준 약 400개 중 약 75.8%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화

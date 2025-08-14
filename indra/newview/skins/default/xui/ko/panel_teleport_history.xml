@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="Teleport History">
+	<accordion name="history_accordion">
+		<no_matched_tabs_text name="no_matched_teleports_msg" value="원하는 것을 찾지 못하셨나요? [secondlife:///app/search/places/[SEARCH_TERM] 검색]을 시도해 보세요."/>
+		<no_visible_tabs_text name="no_teleports_msg" value="텔레포트 기록이 비어있습니다. [secondlife:///app/search/all 검색]을 시도해 보세요."/>
+		<accordion_tab name="today" title="오늘"/>
+		<accordion_tab name="yesterday" title="어제"/>
+		<accordion_tab name="2_days_ago" title="2일 전"/>
+		<accordion_tab name="3_days_ago" title="3일 전"/>
+		<accordion_tab name="4_days_ago" title="4일 전"/>
+		<accordion_tab name="5_days_ago" title="5일 전"/>
+		<accordion_tab name="6_days_and_older" title="6일 이상"/>
+		<accordion_tab name="1_month_and_older" title="1개월 이상"/>
+		<accordion_tab name="6_months_and_older" title="6개월 이상"/>
+	</accordion>
+</panel>

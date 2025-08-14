@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="웹" name="panel_profile_web">
+	<panel.string name="LoadTime" value="로딩 시간: [TIME]초"/>
+	<line_editor name="url_edit">
+		(로딩 중..)
+	</line_editor>
+	<flyout_button label="로드" name="load" tool_tip="내장된 웹 브라우저에서 이 프로필 페이지를 로드합니다.">
+		<flyout_button.item label="뷰어 브라우저에서 열기" name="open_item"/>
+		<flyout_button.item label="외부 브라우저에서 열기" name="home_item"/>
+	</flyout_button>
+	<button name="web_profile_popout_btn" tool_tip="웹 프로필 팝아웃"/>
+</panel>
