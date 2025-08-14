@@ -10,8 +10,8 @@
 	</scroll_list>
 	<panel name="buttons_panel">
 		<button label="중지" name="stop_btn" />
-		<button label="중지 후 회수" name="stop_and_revoke_btn" />
+		<button label="중지 및 철회" name="stop_and_revoke_btn" />
 		<button label="블랙리스트" name="blacklist_btn" />
-		<check_box label="내 소유 제외" name="no_owned_animations_check" tool_tip="활성화하면 자신의 아바타가 소유한 모든 애니메이션(AO 애니메이션이나 기본 시스템 애니메이션 등)을 필터링합니다" />
+		<check_box label="소유하지 않은 것만" name="no_owned_animations_check" tool_tip="활성화하면 아바타가 소유한 모든 애니메이션을 필터링합니다 (예: AO 애니메이션 또는 기본 시스템 애니메이션)" />
 	</panel>
 </floater>

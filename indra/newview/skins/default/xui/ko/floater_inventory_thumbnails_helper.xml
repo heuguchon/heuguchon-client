@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="contents" title="인벤토리 썸네일 도우미">
+	<scroll_list name="inventory_thumbnails_list" tool_tip="인벤토리에서 객체를 삽입합니다">
+		<scroll_list.columns label="인벤토리 객체" name="item_name"/>
+		<scroll_list.columns label="현재 썸네일" name="existing_texture"/>
+		<scroll_list.columns label="새 썸네일" name="new_texture"/>
+	</scroll_list>
+	<button label="인벤토리에서 아이템 붙여넣기" name="paste_items_btn"/>
+	<button label="인벤토리에서 텍스처 붙여넣기" name="paste_textures_btn"/>
+	<button label="썸네일 저장" name="write_thumbnails_btn"/>
+	<button label="썸네일 없는 객체 로그" name="log_missing_thumbnails_btn"/>
+	<button label="객체에서 썸네일 제거" name="clear_thumbnails_btn"/>
+</floater>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="MemLeak" title="메모리 누수 시뮬레이션">
+	<spinner label="누수 속도 (프레임당 바이트):" name="leak_speed" label_width="224"/>
+	<spinner label="최대 메모리 누수 (MB):" name="max_leak" label_width="224"/>
+	<text name="total_leaked_label">
+		현재 메모리 누수:[SIZE] KB
+	</text>
+	<text name="note_label_1">
+		[NOTE1]
+	</text>
+	<text name="note_label_2">
+		[NOTE2]
+	</text>
+	<button label="시작" name="start_btn"/>
+	<button label="중지" name="stop_btn"/>
+	<button label="해제" name="release_btn"/>
+	<button label="닫기" name="close_btn"/>
+</floater>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="publish_classified" title="분류광고 게시 중">
+	<text name="explanation_text">
+		분류광고가 일주일간 게시됩니다.
+
+분류광고 수수료는 환불되지 않습니다.
+	</text>
+	<spinner label="가격: L$" name="price_for_listing" tool_tip="분류광고 가격." value="50"/>
+	<text name="l$_text" value="L$"/>
+	<text name="more_info_text">
+		추가 정보 (도움말 링크)
+	</text>
+	<button label="게시" name="publish_btn"/>
+	<button label="취소" name="cancel_btn"/>
+</floater>

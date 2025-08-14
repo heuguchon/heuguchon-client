@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="HoverHeight" title="부유 높이 설정">
+	<slider label="높이" name="HoverHeightSlider"/>
+	<check_box name="BindCameraCheck" label="카메라 시점에 영향"/>
+</floater>

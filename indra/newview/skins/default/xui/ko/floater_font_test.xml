@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="contents" title="폰트 테스트">
+	<text name="linea">
+		오버라이드 테스트, 여기서 Times로 표시되어야 함. (default/xui/en-us에서)
+	</text>
+</floater>

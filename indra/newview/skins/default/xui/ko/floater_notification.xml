@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="notification" title="알림">
+	<text_editor name="payload">
+		로딩 중...
+	</text_editor>
+	<combo_box label="응답" name="response"/>
+</floater>

@@ -271,6 +271,16 @@
   - [x] widgets/person_view.xml (사용자 뷰 위젯 - 개인정보 및 권한)
   - [x] role_actions.xml (그룹 역할 및 능력 정의 - 중요)
   - [x] mime_types.xml (미디어 파일 유형 정의)
+- [x] 72차: 누락된 floater 창 추가 번역 (10개)
+  - [x] floater_animation_explorer.xml (애니메이션 탐색기 - Firestorm 전용)
+  - [x] floater_associate_listing.xml (마켓플레이스 목록 연결)
+  - [x] floater_beamcolor.xml (선택 빔 색상 회전 - Firestorm 전용)
+  - [x] floater_beamshape.xml (선택 빔 형태 편집기 - Firestorm 전용)
+  - [x] floater_edit_hover_height.xml (아바타 부유 높이 설정)
+  - [x] floater_experience_search.xml (경험 선택)
+  - [x] floater_export_collada.xml (Collada 3D 모델 내보내기)
+  - [x] floater_font_test.xml (폰트 테스트)
+  - [x] floater_fs_asset_blacklist.xml (Firestorm 자산 블랙리스트)
 - [x] 16차: 추가 플로터 창 번역 완료 (Option C)
   - [x] floater_report_abuse.xml (신고 시스템)
   - [x] floater_god_tools.xml (관리자 도구)
@@ -697,9 +707,11 @@
 - **58-65차: Panel 중심 대규모 번역 확장** - 알림 시스템, 미디어 제어, 스크립트 제한, 사이드패널 정보, 스냅샷, 엽서, 프리셋, Firestorm 전용 기능 등 고급 panel UI 완성 (29개)
 - **66-68차: 확장 시스템 panel 번역 완료** - 의상 인벤토리 및 갤러리, Primfeed 소셜 미디어 연동, 지역 설정 및 환경 시스템, RLV 잠금, Firestorm 전용 환경 설정 등 전문적인 기능 한국어화 (20개)
 - **69차: 추가 floater 창 번역 시작** - 콘텐츠 구매, 이모지 선택, Flickr 공유, 마켓플레이스 상품 및 검증, 차단 목록, 연락처 세트 및 설정, Discord 연동, 그룹 타이틀, Firestorm 성능 개선, RLV 기능, 프로필 권한 등 추가 기능 (20개)
+- **70-71차: 누락된 floater 및 widgets 편집** - 환경 설정, 위젯 시스템 확장, 그룹 역할 및 능력, 미디어 유형 등 중요 시스템 파일 (20개)
+- **72-73차: 추가 floater 창 번역 완료** - 애니메이션 탐색기, 마켓플레이스 연결, Firestorm 전용 빔 도구, COLLADA 3D 모델, 자산 블랙리스트, LSL 참조, 카메라 프리셋 등 고급 기능 (18개)
 
 ### 번역 완료율
-- **총 439개 파일 번역** (독일어 기준 약 403개 중 **109% 완료!** 초과 달성)
+- **총 458개 파일 번역** (독일어 기준 약 403개 중 **114% 완료!** 초과 달성)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화

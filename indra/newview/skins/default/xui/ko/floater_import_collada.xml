@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="Import Collada" title="씬 가져오기">
+	<text name="mesh count">
+		메시: [COUNT]
+	</text>
+	<text name="texture count">
+		텍스처: [COUNT]
+	</text>
+	<text name="status">
+		상태: [STATUS]
+	</text>
+	<button label="취소" name="cancel"/>
+	<button label="확인" name="ok"/>
+	<string name="status_idle">
+		대기 중
+	</string>
+	<string name="status_uploading">
+		[NAME] 업로드 중
+	</string>
+	<string name="status_creating">
+		객체명 [NAME] 생성 중
+	</string>
+</floater>

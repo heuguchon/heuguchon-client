@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="floater_export_collada" title="Collada로 저장...">
+	<floater.string name="texture_progress">
+		[OBJECT] Collada 저장 중: 텍스처 저장 중 ([COUNT]개 남음)
+	</floater.string>
+	<floater.string name="floater_title">
+		[OBJECT]를 Collada로 저장...
+	</floater.string>
+	<layout_stack name="resizing_stack">
+		<layout_panel name="control_panel">
+			<text name="ObjectInfoText">
+				객체 정보
+			</text>
+			<text name="NameText">
+				이름: [NAME]
+			</text>
+			<text name="exportable_prims">
+				내보낼 수 있는 프림: [COUNT]/[TOTAL]
+			</text>
+			<text name="exportable_textures">
+				내보낼 수 있는 텍스처: [COUNT]/[TOTAL]
+			</text>
+			<text name="OptionsText">
+				옵션:
+			</text>
+			<check_box label="텍스처 저장" name="export_textures_check" />
+			<check_box label="텍스처 통합" name="consolidate_check" />
+			<check_box label="투명 텍스처 건너뛰기" name="skip_transparent_check" />
+			<check_box label="텍스처 매개변수 적용" name="texture_params_check" />
+			<check_box label="단일 UV 맵" name="single_uv_map_check" />
+			<text name="TextureFormatText">
+				텍스처 포맷:
+			</text>
+			<button label="다른 이름으로 저장..." name="export_btn" />
+		</layout_panel>
+	</layout_stack>
+</floater>
