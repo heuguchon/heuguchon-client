@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="toolbox floater" short_title="빌드 도구" title="">
+	<floater.string name="grid_screen_text">
+		화면
+	</floater.string>
+	<floater.string name="grid_local_text">
+		로컬
+	</floater.string>
+	<floater.string name="grid_world_text">
+		월드
+	</floater.string>
+	<floater.string name="grid_reference_text">
+		참조
+	</floater.string>
+	<floater.string name="grid_attachment_text">
+		첨부
+	</floater.string>
+	<floater.string name="status_rotate">
+		색깔 띠를 드래그하여 객체를 회전시킵니다
+	</floater.string>
+	<floater.string name="status_scale">
+		클릭하고 드래그하여 선택된 면을 늘립니다
+	</floater.string>
+	<floater.string name="status_move">
+		마우스로 이동, Shift+마우스로 복사
+	</floater.string>
+	<floater.string name="status_modifyland">
+		클릭하고 유지하여 토지를 편집합니다
+	</floater.string>
+	<floater.string name="status_camera">
+		클릭하고 드래그하여 카메라를 이동시킵니다
+	</floater.string>
+	<floater.string name="status_grab">
+		드래그하여 객체를 이동, Ctrl로 들어올리기, Ctrl+Shift로 회전
+	</floater.string>
+	<floater.string name="status_place">
+		월드에서 클릭하여 건축하기
+	</floater.string>
+	<floater.string name="status_selectland">
+		클릭하고 드래그하여 토지를 선택합니다
+	</floater.string>
+    <floater.string
+     name="status_selectcount">
+		[OBJ_COUNT]개 객체 선택됨, 토지 영향도 [LAND_IMPACT]
+    </floater.string>
+    <floater.string
+     name="status_remaining_capacity">
+        남은 용량 [LAND_CAPACITY].
+    </floater.string>
+	<floater.string
+	  name="link_number">
+		링크 번호:
+	</floater.string>
+	<floater.string
+	  name="selected_faces">
+		면:
+	</floater.string>
+	<text name="grid_mode_label" tool_tip="격자 불투명도">
+		모드
+	</text>
+	<button label="" label_selected="" name="button focus" tool_tip="포커스"/>
+	<button label="" label_selected="" name="button move" tool_tip="이동"/>
+	<button label="" label_selected="" name="button edit" tool_tip="편집"/>
+	<button label="" label_selected="" name="button create" tool_tip="생성"/>
+	<button label="" label_selected="" name="button land" tool_tip="토지"/>
+	<text name="text status">
+		이동하려면 드래그, 복사하려면 Shift-드래그
+	</text>
+	<radio_group name="focus_radio_group">
+		<radio_item label="줌" name="radio zoom"/>
+		<radio_item label="궤도 (Ctrl)" name="radio orbit"/>
+		<radio_item label="팬 (Ctrl+Shift)" name="radio pan"/>
+	</radio_group>
+	<radio_group name="move_radio_group">
+		<radio_item label="이동" name="radio move"/>
+		<radio_item label="들어올리기 (Ctrl)" name="radio lift"/>
+		<radio_item label="회전 (Ctrl+Shift)" name="radio spin"/>
+	</radio_group>
+	<radio_group name="edit_radio_group">
+		<radio_item label="이동" name="radio position"/>
+		<radio_item label="회전 (Ctrl)" name="radio rotate"/>
+		<radio_item label="늘이기 (Ctrl+Shift)" name="radio stretch"/>
+		<radio_item label="면 선택" name="radio select face"/>
+		<radio_item label="정렬" name="radio align"/>
+	</radio_group>
+	<check_box label="연결된 부분 편집" name="checkbox edit linked parts"/>
+	<button name="prev_part_btn" tool_tip="이전 연결된 부분 또는 면 선택"/>
+	<button name="next_part_btn" tool_tip="다음 연결된 부분 또는 면 선택"/>
+	<button label="연결" name="link_btn" width="50"/>
+	<button label="분리" name="unlink_btn" width="55"/>
+	<text name="RenderingCost" tool_tip="이 객체의 계산된 렌더링 비용을 표시합니다">
+		þ: [COUNT]
+	</text>
+	<check_box label="양쪽 면 늘이기" name="checkbox uniform"/>
+	<check_box label="텍스처 늘이기" name="checkbox stretch textures"/>
+	<check_box label="격자에 맞춤" name="checkbox snap to grid"/>
+	<check_box label="루트 축 편집" name="checkbox actual root"/>
+	<check_box label="하이라이트 활성화" name="checkbox show highlight"/>
+	<check_box label="반사 프로브 선택" name="checkbox select probes"/>
+	<combo_box name="combobox grid mode" tool_tip="객체 위치 지정을 위한 격자 눈금자를 선택하세요" left_pad="20">
+		<combo_box.item label="월드" name="World"/>
+		<combo_box.item label="로컬" name="Local"/>
+		<combo_box.item label="참조" name="Reference"/>
+	</combo_box>
+	<button label="옵션..." label_selected="옵션..." name="Options..." tool_tip="더 많은 격자 옵션 보기" top="63"/>
+	<button label="" label_selected="" name="ToolCube" tool_tip="정육면체"/>
+	<button label="" label_selected="" name="ToolPrism" tool_tip="프리즘"/>
+	<button label="" label_selected="" name="ToolPyramid" tool_tip="피라미드"/>
+	<button label="" label_selected="" name="ToolTetrahedron" tool_tip="사면체"/>
+	<button label="" label_selected="" name="ToolCylinder" tool_tip="원기둥"/>
+	<button label="" label_selected="" name="ToolHemiCylinder" tool_tip="반원기둥"/>
+	<button label="" label_selected="" name="ToolCone" tool_tip="원뿔"/>
+	<button label="" label_selected="" name="ToolHemiCone" tool_tip="반원뿔"/>
+	<button label="" label_selected="" name="ToolSphere" tool_tip="구"/>
+	<button label="" label_selected="" name="ToolHemiSphere" tool_tip="반구"/>
+	<button label="" label_selected="" name="ToolTorus" tool_tip="토러스"/>
+	<button label="" label_selected="" name="ToolTube" tool_tip="튜브"/>
+	<button label="" label_selected="" name="ToolRing" tool_tip="링"/>
+	<button label="" label_selected="" name="ToolTree" tool_tip="나무"/>
+	<button label="" label_selected="" name="ToolGrass" tool_tip="풀"/>
+	<check_box label="도구 유지" name="checkbox sticky" left="150"/>
+	<check_box label="선택 복사" name="checkbox copy selection"/>
+	<check_box initial_value="true" label="복사본 중앙 정렬" name="checkbox copy centers"/>
+	<check_box label="복사본 회전" name="checkbox copy rotates"/>
+	<radio_group name="land_radio_group">
+		<radio_item label="토지 선택" name="radio select land"/>
+		<radio_item label="평탄화" name="radio flatten"/>
+		<radio_item label="올리기" name="radio raise"/>
+		<radio_item label="낮추기" name="radio lower"/>
+		<radio_item label="매끄럽게" name="radio smooth"/>
+		<radio_item label="거칠게" name="radio noise"/>
+		<radio_item label="되돌리기" name="radio revert"/>
+	</radio_group>
+	<text name="Bulldozer:">
+		불도저:
+	</text>
+	<text name="Dozer Size:">
+		크기
+	</text>
+	<text name="Strength:">
+		강도
+	</text>
+	<button label="적용" label_selected="적용" name="button apply to selection" tool_tip="선택된 토지 편집"/>
+	<text name="selection_empty">
+		선택된 것이 없습니다.
+	</text>
+	<text name="selection_faces">
+		선택된 면: [FACES_STRING]
+	</text>
+	<text name="more info label">
+		[CAPACITY_STRING] [secondlife:///app/openfloater/object_weights 추가 정보]
+	</text>
+	<text name="selection_weight">
+		물리 중량 [PHYS_WEIGHT], 표시 비용 [DISP_WEIGHT].
+	</text>
+	<tab_container name="Object Info Tabs">
+		<panel label="일반" name="General">
+			<panel.string name="text deed continued">
+				양도
+			</panel.string>
+			<panel.string name="text deed">
+				양도
+			</panel.string>
+			<panel.string name="text modify info 1">
+				이 객체를 편집할 수 있습니다.
+			</panel.string>
+			<panel.string name="text modify info 2">
+				이 객체들을 편집할 수 있습니다.
+			</panel.string>
+			<panel.string name="text modify info 3">
+				이 객체를 편집할 수 없습니다.
+			</panel.string>
+			<panel.string name="text modify info 4">
+				이 객체들을 편집할 수 없습니다.
+			</panel.string>
+			<panel.string name="text modify info 5">
+				이 객체는 지역 경계를 넘어서 수정할 수 없습니다.
+			</panel.string>
+			<panel.string name="text modify info 6">
+				이 객체들은 지역 경계를 넘어서 수정할 수 없습니다.
+			</panel.string>
+			<panel.string name="text modify warning">
+				권한을 설정하려면 전체 객체를 선택하세요.
+			</panel.string>
+			<panel.string name="Cost Default">
+				가격: L$
+			</panel.string>
+			<panel.string name="Cost Total">
+				총액: L$
+			</panel.string>
+			<panel.string name="Cost Per Unit">
+				개당 가격: L$
+			</panel.string>
+			<panel.string name="Cost Mixed">
+				혼합 가격
+			</panel.string>
+			<panel.string name="Sale Mixed">
+				혼합 판매
+			</panel.string>
+			<text name="Name:">
+				이름:
+			</text>
+			<line_editor name="Object Name" tool_tip="이름은 63자로 제한됩니다. 더 긴 공식 이름은 잘립니다. 이름은 수직 막대 &quot;|&quot;를 제외한 인쇄 가능한 ASCII-7 문자 세트의 문자만 포함해야 합니다."/>
+			<text name="Description:">
+				설명:
+			</text>
+			<line_editor name="Object Description" tool_tip="뷰어 설정에서 &quot;모든 객체에 툴팁 표시&quot; 옵션을 선택하면 모든 객체에 대해 마우스 커서 아래에 객체 설명 팝업이 표시됩니다. 공식 설명은 127바이트로 제한되며 더 긴 문자열은 잘립니다."/>
+			<text name="Creator:">
+				제작자:
+			</text>
+			<text name="Owner:">
+				소유자:
+			</text>
+			<text name="Last Owner:">
+				이전 소유자:
+			</text>
+			<text name="Group:">
+				그룹:
+			</text>
+			<name_box initial_value="로딩 중..." name="Group Name Proxy"/>
+			<button label="설정..." label_selected="설정..." name="button set group" tool_tip="객체의 권한을 공유할 그룹을 선택하세요"/>
+			<check_box label="공유" name="checkbox share with group" tool_tip="할당된 그룹의 모든 멤버와 이 객체를 수정할 권한을 공유합니다. 역할 제한을 활성화하려면 양도해야 합니다."/>
+			<button label="양도" label_selected="양도" name="button deed" tool_tip="양도는 객체를 '다음 소유자' 권한으로 넘겨주는 것을 의미합니다. 그룹과 공유된 객체는 그룹 담당자가 양도할 수 있습니다."/>
+			<text name="label click action">
+				왼쪽 클릭 시:
+			</text>
+			<combo_box name="clickaction" tool_tip="클릭 액션을 사용하면 한 번의 왼쪽 클릭으로 객체와 상호작용할 수 있습니다. 각 클릭 액션에는 액션을 나타내는 특별한 커서가 있습니다. 일부 클릭 액션은 기능을 보장하기 위해 요구 사항을 충족해야 합니다. Touch and Pay(터치 및 지불) 기능에는 스크립트가 필요합니다.">
+				<combo_box.item label="터치 (기본)" name="Touch/grab(default)"/>
+				<combo_box.item label="객체에 앉기" name="Sitonobject"/>
+				<combo_box.item label="객체 구매" name="Buyobject"/>
+				<combo_box.item label="객체에 지불" name="Payobject"/>
+				<combo_box.item label="열기" name="Open"/>
+				<combo_box.item label="줌" name="Zoom"/>
+				<combo_box.item label="객체 무시" name="Ignoreobject"/>
+				<combo_box.item label="없음" name="None"/>
+			</combo_box>
+			<check_box label="판매용:" name="checkbox for sale" tool_tip="주민들이 이 객체, 그 내용 또는 복사본을 지정된 가격으로 인월드에서 구매할 수 있도록 합니다."/>
+			<spinner label="가격: L$" name="Edit Cost" tool_tip="객체 비용"/>
+			<combo_box name="sale type" tool_tip="구매자가 복사본, 내용의 복사본 또는 아이템 자체를 받을지 선택하세요">
+				<combo_box.item label="복사본" name="Copy"/>
+				<combo_box.item label="내용" name="Contents"/>
+				<combo_box.item label="원본" name="Original"/>
+			</combo_box>
+			<button label="적용" name="button mark for sale" tool_tip="객체를 판매용으로 표시/업데이트"/>
+			<button label="UUID 복사" name="btnCopyKeys" tool_tip="루트 프림의 키를 클립보드에 복사합니다. Shift+클릭하면 객체의 모든 키를 복사합니다." width="110"/>
+			<check_box label="검색에 표시" name="search_check" tool_tip="검색 결과에 이 객체를 표시"/>
+			<panel name="perms_build">
+				<text name="perm_modify">
+					이 객체를 편집할 수 있습니다.
+				</text>
+				<text name="Anyone can:">
+					누구나:
+				</text>
+				<check_box label="이동" name="checkbox allow everyone move" tool_tip="모든 사용자가 객체를 이동할 수 있습니다"/>
+				<check_box label="복사" name="checkbox allow everyone copy" tool_tip="모든 사용자가 객체의 복사본을 얻을 수 있습니다. 객체와 모든 내용이 복사 및 전송 가능해야 합니다."/>
+				<check_box label="내보내기" name="checkbox allow export" tool_tip="모든 사용자가 객체를 내보낼 수 있습니다"/>
+				<text name="Next owner can:">
+					다음 소유자:
+				</text>
+				<check_box label="수정" name="checkbox next owner can modify" tool_tip="다음 소유자는 아이템 이름이나 이 객체의 크기 같은 속성을 편집할 수 있습니다"/>
+				<check_box label="복사" name="checkbox next owner can copy" tool_tip="다음 소유자는 이 객체의 무제한 복사본을 만들 수 있습니다. 복사본은 제작자 정보를 포함하며 복사된 아이템보다 더 많은 권한을 가질 수 없습니다."/>
+				<check_box label="전송" name="checkbox next owner can transfer" tool_tip="다음 소유자는 이 객체를 양도하거나 판매할 수 있습니다"/>
+				<text name="B:">
+					B:
+				</text>
+				<text name="O:">
+					O:
+				</text>
+				<text name="G:">
+					G:
+				</text>
+				<text name="E:">
+					E:
+				</text>
+				<text name="N:">
+					N:
+				</text>
+				<text name="F:">
+					F:
+				</text>
+			</panel>
+			<panel name="pathfinding_attrs_panel">
+				<text name="pathfinding_attributes_label">
+					경로찾기 속성:
+				</text>
+				<text name="pathfinding_attributes_value">
+				</text>
+			</panel>
+		</panel>
+		<panel label="객체" name="Object">
+			<panel.string name="paste_position">
+				위치 붙여넣기
+[VALUE]
+			</panel.string>
+			<panel.string name="paste_size">
+				크기 붙여넣기
+[VALUE]
+			</panel.string>
+			<panel.string name="paste_rotation">
+				회전 붙여넣기
+[VALUE]
+			</panel.string>
+			<check_box label="잠김" name="checkbox locked" tool_tip="객체가 이동되거나 삭제되는 것을 방지합니다. 빌딩할 때 의도치 않은 편집을 피하기 위해 유용합니다."/>
+			<check_box label="물리" name="Physical Checkbox Ctrl" tool_tip="객체가 밀려나고 중력의 영향을 받도록 허용"/>
+			<check_box label="임시" name="Temporary Checkbox Ctrl" tool_tip="객체가 생성된 후 1분 후에 삭제되도록 함"/>
+			<check_box label="팬텀" name="Phantom Checkbox Ctrl" tool_tip="객체가 다른 객체나 아바타와 충돌하는 것을 방지"/>
+			<text name="label position">
+				위치 (미터)
+			</text>
+			<spinner label="X" name="Pos X"/>
+			<button name="copy_pos_btn" label="복사" tool_tip="위치 복사"/>
+			<spinner label="Y" name="Pos Y"/>
+			<button name="paste_pos_btn" label="붙여넣기" tool_tip="위치 붙여넣기"/>
+			<spinner label="Z" name="Pos Z"/>
+			<button name="paste_pos_clip_btn" label="클립보드" tool_tip="클립보드에서 위치 붙여넣기 시도"/>
+			<text name="label size">
+				크기 (미터)
+			</text>
+			<spinner label="X" name="Scale X"/>
+			<button name="copy_size_btn" label="복사" tool_tip="크기 복사"/>
+			<spinner label="Y" name="Scale Y"/>
+			<button name="paste_size_btn" label="붙여넣기" tool_tip="크기 붙여넣기"/>
+			<spinner label="Z" name="Scale Z"/>
+			<button name="paste_size_clip_btn" label="클립보드" tool_tip="클립보드에서 크기 붙여넣기 시도"/>
+			<text name="label rotation">
+				회전 (도)
+			</text>
+			<spinner label="X" name="Rot X"/>
+			<button name="copy_rot_btn" label="복사" tool_tip="회전 복사"/>
+			<spinner label="Y" name="Rot Y"/>
+			<button name="paste_rot_btn" label="붙여넣기" tool_tip="회전 붙여넣기"/>
+			<spinner label="Z" name="Rot Z"/>
+			<button name="paste_rot_clip_btn" label="클립보드" tool_tip="클립보드에서 회전 붙여넣기 시도"/>
+			<button name="copy_params_btn" tool_tip="객체 매개변수를 클립보드에 복사"/>
+			<button name="paste_params_btn" tool_tip="클립보드에서 객체 매개변수 붙여넣기"/>
+			<combo_box name="comboBaseType">
+				<combo_box.item label="상자" name="Box"/>
+				<combo_box.item label="원기둥" name="Cylinder"/>
+				<combo_box.item label="프리즘" name="Prism"/>
+				<combo_box.item label="구" name="Sphere"/>
+				<combo_box.item label="토러스" name="Torus"/>
+				<combo_box.item label="튜브" name="Tube"/>
+				<combo_box.item label="링" name="Ring"/>
+				<combo_box.item label="조각됨" name="Sculpted"/>
+			</combo_box>
+			<text name="text cut">
+				경로 자르기 (시작/끝)
+			</text>
+			<spinner label="시작" name="cut begin"/>
+			<spinner label="끝" name="cut end"/>
+			<text name="text hollow">
+				중공
+			</text>
+			<text name="text skew">
+				기울이기
+			</text>
+			<spinner name="Scale 1"/>
+			<spinner name="Skew"/>
+			<text name="Hollow Shape">
+				중공 모양
+			</text>
+			<combo_box name="hole">
+				<combo_box.item label="기본" name="Default"/>
+				<combo_box.item label="원" name="Circle"/>
+				<combo_box.item label="사각형" name="Square"/>
+				<combo_box.item label="삼각형" name="Triangle"/>
+			</combo_box>
+			<text name="text twist">
+				비틀기 (시작/끝)
+			</text>
+			<spinner label="시작" name="Twist Begin"/>
+			<spinner label="끝" name="Twist End"/>
+			<text name="scale_taper">
+				테이퍼
+			</text>
+			<text name="scale_hole">
+				구멍 크기
+			</text>
+			<spinner label="X" name="Taper Scale X"/>
+			<spinner label="Y" name="Taper Scale Y"/>
+			<text name="text topshear">
+				전단
+			</text>
+			<spinner label="X" name="Shear X"/>
+			<spinner label="Y" name="Shear Y"/>
+			<text name="advanced_cut">
+				프로파일 자르기 (시작/끝)
+			</text>
+			<text name="advanced_dimple">
+				딤플 (시작/끝)
+			</text>
+			<text name="advanced_slice">
+				슬라이스 (시작/끝)
+			</text>
+			<spinner label="시작" name="Path Limit Begin"/>
+			<spinner label="끝" name="Path Limit End"/>
+			<text name="text taper2" tool_tip="모든 프림 유형에서 작동하지 않습니다">
+				테이퍼
+			</text>
+			<spinner label="X" name="Taper X"/>
+			<spinner label="Y" name="Taper Y"/>
+			<text name="text radius delta">
+				반지름
+			</text>
+			<text name="text revolutions">
+				회전수
+			</text>
+			<spinner name="Radius Offset"/>
+			<texture_picker label="조각된 프림용 텍스처" name="sculpt texture control" tool_tip="이미지를 선택하려면 클릭하세요"/>
+			<check_box label="거울" name="sculpt mirror control" tool_tip="조각된 프림을 X축을 따라 거울상으로 만듭니다"/>
+			<check_box label="뒤집기" name="sculpt invert control" tool_tip="조각된 프림의 법선을 안쪽에서 바깥쪽으로 뒤집습니다"/>
+			<text name="label sculpt type">
+				이음새
+			</text>
+			<combo_box name="sculpt type control" tool_tip="&quot;없음&quot; 옵션은 &quot;평면&quot;과 동일하므로 제거되었습니다">
+				<combo_box.item label="구" name="Sphere"/>
+				<combo_box.item label="토러스" name="Torus"/>
+				<combo_box.item label="평면 / 없음" name="Plane"/>
+				<combo_box.item label="원기둥" name="Cylinder"/>
+			</combo_box>
+			<text name="mesh_info_label">
+				메시 정보:
+			</text>
+			<text name="lod_label" value="LOD"/>
+			<text name="lod_num_tris" value="삼각형 수"/>
+			<text name="mesh_lod_label">
+				높음:
+중간:
+낮음:
+최저:
+			</text>
+			<combo_box name="LOD_show_combo">
+				<combo_box.item label="기본" name="Default"/>
+				<combo_box.item label="높음" name="High"/>
+				<combo_box.item label="중간" name="Medium"/>
+				<combo_box.item label="낮음" name="Low"/>
+				<combo_box.item label="최저/임포스터" name="Lowest/Imposter"/>
+			</combo_box>
+			<text name="ObjectLODbehaviourLabel" value="객체 LOD 동작:"/>
+			<text name="object_radius" value="객체 반지름:"/>
+			<text name="LOD_swap_factors_label" value="LOD 인수"/>
+			<text name="LOD_swap_defaults_label" value="기본" tool_tip="대부분의 뷰어에서 사용하는 기본 LOD 인수입니다"/>
+			<text name="LOD_swap_usr_label" value="사용자" tool_tip="RenderVolumeLODFactor를 기반으로 한 현재 설정입니다"/>
+			<text name="LOD_swap_label" value="전환" tool_tip="RenderVolumeLODFactor를 기반으로 한 현재 설정입니다"/>
+			<string name="ll_lod_tooltip_msg">Linden Lab Second Life 뷰어 기본값 ([FACTOR])</string>
+			<text name="LOD_swap_ll_default" value="LL"/>
+			<string name="fs_lod_tooltip_msg">[APP_NAME] 뷰어 기본값 ([FACTOR])</string>
+			<text name="LOD_swap_usr_current" tool_tip="현재 LOD 인수"/>
+			<text name="LOD_swap_LOD_Change_label">
+				높음 ↔ 중간
+중간 ↔ 낮음
+낮음 ↔ 최저
+			</text>
+			<text name="LODSwapTableDscriptionsText" tool_tip="모범 사례: 제작자는 모든 뷰어의 기본 설정에서 좋은 LOD 동작을 보장해야 합니다">
+				이 표는 카메라 위치에서 LOD 전환 한계를 미터 단위로 보여줍니다.
+			</text>
+		</panel>
+		<panel label="기능" name="Features">
+			<panel.string name="None">
+				없음
+			</panel.string>
+			<panel.string name="Prim">
+				프림
+			</panel.string>
+			<panel.string name="Convex Hull">
+				볼록 껍질
+			</panel.string>
+			<text name="select_single">
+				편집할 하나의 빌딩 블록만 선택하세요.
+			</text>
+			<text name="edit_object">
+				객체 속성 편집:
+			</text>
+			<check_box label="애니메이션 메시" name="Animated Mesh Checkbox Ctrl" tool_tip="리깅된 메시 객체의 독립적인 애니메이션을 허용"/>
+			<check_box label="유연한 경로" name="Flexible1D Checkbox Ctrl" tool_tip="객체가 Z축을 중심으로 굽어지도록 함 (클라이언트 측만)"/>
+			<button name="copy_features_btn" tool_tip="기능 매개변수를 클립보드에 복사"/>
+			<button name="paste_features_btn" tool_tip="클립보드에서 기능 매개변수 붙여넣기"/>
+			<spinner label="부드러움" name="FlexNumSections"/>
+			<spinner label="중력" name="FlexGravity"/>
+			<spinner label="저항" name="FlexFriction"/>
+			<spinner label="바람" name="FlexWind"/>
+			<spinner label="긴장" name="FlexTension"/>
+			<spinner label="힘 X" name="FlexForceX"/>
+			<spinner label="힘 Y" name="FlexForceY"/>
+			<spinner label="힘 Z" name="FlexForceZ"/>
+			<check_box label="빛" name="Light Checkbox Ctrl" tool_tip="객체가 빛을 방출하도록 함"/>
+			<color_swatch label="" name="colorswatch" tool_tip="색상 선택기를 열려면 클릭하세요"/>
+			<texture_picker label="" name="light texture control" tool_tip="이미지를 선택하려면 클릭 (이 효과는 지연 렌더링이 활성화된 경우에만 작동)"/>
+			<spinner label="강도" name="Light Intensity"/>
+			<spinner label="FOV" name="Light FOV"/>
+			<spinner label="반지름" name="Light Radius"/>
+			<spinner label="포커스" name="Light Focus"/>
+			<spinner label="감소" name="Light Falloff"/>
+			<spinner label="앰비언트" name="Light Ambiance"/>
+			<check_box label="반사 프로브" name="Reflection Probe" tool_tip="물리 기반 렌더링이 활성화된 경우 이 영향 영역의 객체가 반사를 경험하는 방식을 조정합니다" />
+			<combo_box name="Probe Volume Type" tool_tip="프로브의 영향 영역 선택">
+				<combo_box.item label="구" name="Sphere" />
+				<combo_box.item label="상자" name="Box" />
+			</combo_box>
+			<check_box label="동적" name="Probe Dynamic" tool_tip="활성화된 경우 영향 영역 내의 반사에 아바타가 포함됩니다" />
+			<text name="Probe Update Label">
+				프로브 업데이트:
+			</text>
+			<combo_box name="Probe Update Type" tool_tip="반사 프로브가 업데이트되는 방식을 정의합니다. 정적은 가장 느리게 업데이트되며 아바타 없이 업데이트됩니다. 동적은 더 자주 업데이트되며 프로브에 아바타가 포함됩니다. 거울은 이 객체를 실시간으로 업데이트되는 평면 투영 거울로 변환하지만 환경은 계산되지 않습니다">
+				<combo_box.item label="정적" name="Static" />
+				<combo_box.item label="동적" name="Dynamic" />
+				<combo_box.item label="거울" name="Mirror" />
+			</combo_box>
+			<spinner label="앰비언트" name="Probe Ambiance" />
+			<spinner label="근접 클립" name="Probe Near Clip"/>
+			<text name="label physicsshapetype">
+				물리 모양 유형:
+			</text>
+			<combo_box name="Physics Shape Type Combo Ctrl" tool_tip="물리 모양 유형 선택"/>
+			<button name="PhysicsViewToggle" tool_tip="물리 모양 보기 전환"/>
+			<combo_box name="material">
+				<combo_box.item label="돌" name="Stone"/>
+				<combo_box.item label="금속" name="Metal"/>
+				<combo_box.item label="유리" name="Glass"/>
+				<combo_box.item label="나무" name="Wood"/>
+				<combo_box.item label="살" name="Flesh"/>
+				<combo_box.item label="플라스틱" name="Plastic"/>
+				<combo_box.item label="고무" name="Rubber"/>
+			</combo_box>
+			<spinner label="중력" name="Physics Gravity"/>
+			<spinner label="마찰" name="Physics Friction"/>
+			<spinner label="밀도 (100kg/m^3 단위)" name="Physics Density"/>
+			<spinner label="반발력" name="Physics Restitution"/>
+		</panel>
+		<panel label="텍스처" name="Texture"/>
+		<panel label="내용" name="Contents">
+			<button label="새 스크립트" label_selected="새 스크립트" name="button new script" width="80"/>
+			<button label="권한" name="button permissions" width="95" left_pad="3"/>
+			<button label="새로고침" name="button refresh" width="92" left_pad="3"/>
+			<button label="스크립트 리셋" name="btn_reset_scripts" width="92"/>
+			<filter_editor label="내용 필터" name="contents_filter"/>
+		</panel>
+	</tab_container>
+	<panel name="land info panel">
+		<text name="label_parcel_info">
+			구획 정보
+		</text>
+		<text name="label_area_price">
+			가격: [PRICE] L$, 면적 [AREA] m²
+		</text>
+		<text name="label_area">
+			면적: [AREA] m².
+		</text>
+		<button label="토지 정보" label_selected="토지 정보" name="button about land"/>
+		<check_box label="소유자 표시" name="checkbox show owners" tool_tip="구획을 소유자 유형별로 색상으로 표시합니다   초록 = 내 토지  파랑 = 내 그룹의 토지  빨강 = 다른 사람 소유  노랑 = 판매용  보라 = 경매용  회색 = 공공"/>
+		<text name="label_parcel_modify">
+			구획 수정
+		</text>
+		<button label="분할" label_selected="분할" name="button subdivide land"/>
+		<button label="합병" label_selected="합병" name="button join land"/>
+		<text name="label_parcel_trans">
+			토지 거래
+		</text>
+		<button label="토지 구매" label_selected="토지 구매" name="button buy land"/>
+		<button label="토지 포기" label_selected="토지 포기" name="button abandon land"/>
+	</panel>
+</floater>
