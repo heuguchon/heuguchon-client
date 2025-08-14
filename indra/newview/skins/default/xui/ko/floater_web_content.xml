@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_web_content" title="">
+	<layout_stack name="stack1">
+		<layout_panel name="nav_controls">
+			<button name="back" tool_tip="뒤로 이동"/>
+			<button name="forward" tool_tip="앞으로 이동"/>
+			<button name="stop" tool_tip="탐색 중지"/>
+			<button name="reload" tool_tip="페이지 새로고침"/>
+			<combo_box name="address" tool_tip="URL을 여기에 입력"/>
+			<icon name="media_secure_lock_flag" tool_tip="보안 브라우징"/>
+			<button name="popexternal" tool_tip="현재 URL을 데스크톱 브라우저에서 열기"/>
+		</layout_panel>
+		<layout_panel name="debug_controls">
+			<button name="web_test_home_page" tool_tip="웹 테스트 홈페이지"/>
+		</layout_panel>
+		<layout_panel name="external_controls">
+			<text name="plugin_fail_text">
+웹 브라우저 플러그인을 여는 중입니다.
+플러그인이 로드되지 않으면 다음을 방문하세요:
+
+https://wiki.firestormviewer.org/fs_search_issues
+
+그리고
+
+https://wiki.firestormviewer.org/fs_media
+
+이 문제를 해결하기 위한 가능한 단계들이 있습니다.
+			</text>
+		</layout_panel>
+	</layout_stack>
+</floater>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_auction" title="린든 토지 판매 시작">
+	<floater.string name="already for sale">
+		이미 판매 중인 구획은 경매할 수 없습니다.
+	</floater.string>
+	<check_box initial_value="true" label="노란색 선택 테두리 포함" name="fence_check"/>
+	<button label="스크린샷" label_selected="스크린샷" name="snapshot_btn"/>
+	<button label="누구에게나 판매" label_selected="누구에게나 판매" name="sell_to_anyone_btn"/>
+	<button label="설정 지우기" label_selected="설정 지우기" name="reset_parcel_btn"/>
+	<button label="경매 시작" label_selected="경매 시작" name="start_auction_btn"/>
+</floater>

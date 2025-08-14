@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floaterbulkperms" title="콘텐츠 권한 조정">
+	<floater.string name="nothing_to_modify_text">
+		선택 항목에 편집 가능한 콘텐츠가 없습니다.
+	</floater.string>
+	<floater.string name="status_text">
+		[NAME]에 권한 설정 중
+	</floater.string>
+	<floater.string name="start_text">
+		권한 변경 요청을 시작합니다...
+	</floater.string>
+	<floater.string name="done_text">
+		권한 변경 요청을 완료했습니다.
+	</floater.string>
+	<check_box label="애니메이션" name="check_animation"/>
+	<icon name="icon_animation" tool_tip="애니메이션"/>
+	<check_box label="신체 부위" name="check_bodypart"/>
+	<icon name="icon_bodypart" tool_tip="신체 부위"/>
+	<check_box label="의류" name="check_clothing"/>
+	<icon name="icon_clothing" tool_tip="의류"/>
+	<check_box label="제스처" name="check_gesture"/>
+	<icon name="icon_gesture" tool_tip="제스처"/>
+	<check_box label="메모카드" name="check_notecard"/>
+	<icon name="icon_notecard" tool_tip="메모카드"/>
+	<check_box label="객체" name="check_object"/>
+	<icon name="icon_object" tool_tip="객체"/>
+	<check_box label="스크립트" name="check_script"/>
+	<icon name="icon_script" tool_tip="스크립트"/>
+	<check_box label="사운드" name="check_sound"/>
+	<icon name="icon_sound" tool_tip="사운드"/>
+	<check_box label="텍스처" name="check_texture"/>
+	<icon name="icon_texture" tool_tip="텍스처"/>
+	<icon name="icon_setting" tool_tip="환경 설정"/>
+	<icon name="icon_materials" tool_tip="재료"/>
+	<button label="√ 전체" label_selected="전체" name="check_all"/>
+	<button label="지우기" label_selected="없음" name="check_none"/>
+	<text name="newperms">
+		콘텐츠 권한 조정 대상
+	</text>
+	<text name="GroupLabel">
+		그룹:
+	</text>
+	<check_box label="공유" name="share_with_group" tool_tip="설정된 그룹의 모든 멤버가 이 객체에 대한 수정 권한을 공유할 수 있도록 허용합니다. 역할 제한을 활성화하려면 양도해야 합니다."/>
+	<text name="AnyoneLabel">
+		누구나:
+	</text>
+	<check_box label="복사" name="everyone_copy" tool_tip="누구나 객체의 사본을 가져갈 수 있습니다. 객체와 모든 콘텐츠는 복사 및 양도 가능해야 합니다."/>
+	<text name="NextOwnerLabel">
+		다음 소유자:
+	</text>
+	<check_box label="수정" name="next_owner_modify" tool_tip="다음 소유자는 이 객체의 아이템 이름이나 크기와 같은 속성을 편집할 수 있습니다."/>
+	<check_box label="복사" name="next_owner_copy" tool_tip="다음 소유자는 이 객체의 무제한 사본을 만들 수 있습니다. 사본은 제작자 정보를 유지하며 복사된 아이템보다 더 관대한 권한을 가질 수 없습니다."/>
+	<check_box initial_value="true" label="양도" name="next_owner_transfer" tool_tip="다음 소유자는 이 객체를 양도하거나 재판매할 수 있습니다."/>
+	<button label="확인" name="ok"/>
+	<button label="적용" name="apply"/>
+	<button label="취소" name="close"/>
+</floater>

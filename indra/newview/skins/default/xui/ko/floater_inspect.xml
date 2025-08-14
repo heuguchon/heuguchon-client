@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="inspect" title="객체 검사">
+	<floater.string name="timeStamp">
+		[year,datetime,slt]년 [mth,datetime,slt]월 [day,datetime,slt]일 [wkday,datetime,slt], [hour,datetime,slt]:[min,datetime,slt]:[second,datetime,slt]
+	</floater.string>
+	<floater.string name="Group">
+		(그룹)
+	</floater.string>
+	<floater.string name="stats_list">
+		전체 통계:
+
+[NUM_OBJECTS]개 객체, [NUM_PRIMS]개 프림
+
+면: [NUM_FACES]개
+보임: [NUM_VISIBLE_FACES]개
+정점: [NUM_VERTICES]개
+삼각형: [NUM_TRIANGLES]개
+복잡도: [COMPLEXITY]
+
+텍스처: [NUM_TEXTURES]개
+TMem: [TEXTURE_MEMORY] KB
+VRAM: [VRAM_USAGE] KB
+	</floater.string>
+	<text_editor name="linksetstats_text" value="(로딩 중...)"/>
+	<scroll_list name="object_list" tool_tip="이 목록에서 객체를 선택하면 월드에서 하이라이트됩니다">
+		<scroll_list.columns label="객체 이름" name="object_name"/>
+		<scroll_list.columns label="설명" name="description"/>
+		<scroll_list.columns label="소유자 이름" name="owner_name" />
+		<scroll_list.columns label="제작자 이름" name="creator_name"/>
+		<scroll_list.columns label="면" name="facecount"/>
+		<scroll_list.columns label="정점" name="vertexcount"/>
+		<scroll_list.columns label="삼각형" name="trianglecount"/>
+		<scroll_list.columns label="TMem" name="tramcount"/>
+		<scroll_list.columns label="VRAM" name="vramcount"/>
+		<scroll_list.columns label="제작 날짜" name="creation_date"/>
+	</scroll_list>
+	<button label="소유자 프로필 보기..." name="button owner" tool_tip="하이라이트된 객체의 소유자 프로필 보기" width="155"/>
+	<button label="제작자 프로필 보기..." left="175" name="button creator" tool_tip="하이라이트된 객체의 원래 제작자 프로필 보기" width="155"/>
+	<menu_button name="options_btn" tool_tip="옵션"/>
+</floater>
