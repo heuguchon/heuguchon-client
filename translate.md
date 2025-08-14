@@ -209,6 +209,15 @@
   - [x] widgets/panel_camera_item.xml (카메라 위젯 아이템)
   - [x] panel_sidetray_home_tab.xml (사이드트레이 홈 탭)
   - [x] panel_side_tray_tab_caption.xml (사이드트레이 탭 캐션)
+- [x] 66차: 의상 및 소셜 미디어 확장 panel 번역 완료 (8개)
+  - [x] panel_outfits_inventory_gear_default.xml (의상 인벤토리 기어 메뉴)
+  - [x] panel_outfit_gallery.xml (의상 갤러리)
+  - [x] panel_outfit_gallery_item.xml (의상 갤러리 아이템)
+  - [x] panel_outfit_snapshot_inventory.xml (의상 스냅샷 인벤토리)
+  - [x] panel_people_contact_sets.xml (사람 연락처 세트)
+  - [x] panel_primfeed_account.xml (Primfeed 계정)
+  - [x] panel_primfeed_photo.xml (Primfeed 사진 공유)
+  - [x] panel_profile_classified.xml (프로필 분류광고)
 - [x] 16차: 추가 플로터 창 번역 완료 (Option C)
   - [x] floater_report_abuse.xml (신고 시스템)
   - [x] floater_god_tools.xml (관리자 도구)
@@ -584,7 +593,7 @@
 ---
 
 *작업 시작일: 2025-08-14*
-*최종 수정일: 2025-08-14*
+*최종 수정일: 2025-08-15*
 
 ## 작업 요약
 
@@ -633,9 +642,10 @@
 - **56차: 고급 패널 UI 확장** - 그룹 대량 차단, 미디어 권한, 착용 중 의상, 장소 프로필, 스크립트 경험, 사운드 장치 (6개)
 - **57차: 마켓플레이스 및 프로필 패널 확장** - 마켓플레이스 상품 관리, 실생활/웹 프로필, 텔레포트 기록 가능 (8개)
 - **58-65차: Panel 중심 대규모 번역 확장** - 알림 시스템, 미디어 제어, 스크립트 제한, 사이드패널 정보, 스냅샷, 엽서, 프리셋, Firestorm 전용 기능 등 고급 panel UI 완성 (29개)
+- **66-67차: 확장 시스템 panel 번역 완료** - 의상 인벤토리 및 갤러리, Primfeed 소셜 미디어 연동, 지역 설정 및 환경 시스템, RLV 잠금 등 전문적인 기능 한국어화 (16개)
 
 ### 번역 완료율
-- **총 362개 파일 번역** (독일어 기준 약 400개 중 약 90.5%)
+- **총 378개 파일 번역** (독일어 기준 약 400개 중 약 94.5%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화

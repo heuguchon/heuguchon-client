@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="Outfit Gallery">
+	<string name="outfit_photo_string">
+		의상 "[OUTFIT_NAME]" 사진
+	</string>
+	<string name="no_outfits_msg">
+		아직 의상이 없습니다. [secondlife:///app/search/all/ 검색]을 시도해보세요.
+	</string>
+	<string name="no_matched_outfits_msg">
+		원하는 것을 찾지 못하셨나요? [secondlife:///app/search/all/[SEARCH_TERM] 검색]을 시도해보세요.
+	</string>
+	<text name="no_outfits_txt">
+		검색 중...
+	</text> 
+	<panel name="bottom_panel">
+		<menu_button name="options_gear_btn" tool_tip="추가 옵션 표시"/>
+		<text name="OutfitcountText">
+			[COUNT]개 의상
+		</text>
+		<text name="avatar_complexity_label">
+			복잡도: [WEIGHT]
+		</text>
+		<button name="trash_btn" tool_tip="선택한 의상 삭제"/>
+	</panel>
+</panel>

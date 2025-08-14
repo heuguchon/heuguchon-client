@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="panel_rlvLocks" title="활성 RLV 잠금">
+	<scroll_list name="lock_list">
+		<scroll_list.columns label="잠금 유형" name="lock_type"/>
+		<scroll_list.columns label="추가 / 제거" name="lock_addrem"/>
+		<scroll_list.columns label="잠금 대상" name="lock_target"/>
+		<scroll_list.columns label="설정자" name="lock_origin"/>
+	</scroll_list>
+	<panel name="bottom_panel">
+		<button label="새로 고침" name="refresh_btn" width="100"/>
+		<icon name="dummy_icon" width="399" />
+	</panel>
+</panel>

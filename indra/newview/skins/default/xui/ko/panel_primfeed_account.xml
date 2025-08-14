@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<panel name="panel_primfeed_account">
+	<string name="primfeed_connected" value="다음으로 Primfeed에 연결되었습니다:"/>
+	<string name="primfeed_disconnected" value="Primfeed에 연결되지 않았습니다."/>
+	<string name="primfeed_plan_unknown" value="알 수 없음"/>
+	<text name="connected_as_label">
+		Primfeed에 연결되지 않았습니다.
+	</text>
+	<text name="primfeed_account_plan_label">
+		계정 유형:
+	</text>
+	<panel name="panel_buttons">
+		<button label="연결..." name="connect_btn"/>
+		<button label="연결 해제" name="disconnect_btn"/>
+		<text name="account_learn_more_label">
+			[https://docs.primfeed.com Primfeed에 대해 더 알아보기]
+		</text>
+	</panel>
+</panel>

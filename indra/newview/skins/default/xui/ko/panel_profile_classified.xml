@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="panel_profile_classified">
+	<panel.string name="type_mature">
+		보통
+	</panel.string>
+	<panel.string name="type_pg">
+		일반 콘텐츠
+	</panel.string>
+	<panel.string name="l$_price">
+		L$[PRICE]
+	</panel.string>
+	<panel.string name="click_through_text_fmt">
+		[TELEPORT] 텔레포트, [MAP] 지도, [PROFILE] 프로필
+	</panel.string>
+	<panel.string name="date_fmt">
+		[mthnum,datetime,slt]/[day,datetime,slt]/[year,datetime,slt]
+	</panel.string>
+	<panel.string name="auto_renew_on">
+		활성화됨
+	</panel.string>
+	<panel.string name="auto_renew_off">
+		비활성화됨
+	</panel.string>
+	<panel.string name="location_notice">
+		(저장 후 업데이트됨)
+	</panel.string>
+	<string name="publish_label">
+		게시
+	</string>
+	<string name="save_label">
+		저장
+	</string>
+	<layout_stack name="main_classifieds_stack">
+		<layout_panel name="scroll_layout_panel">
+			<scroll_container name="profile_scroll">
+				<panel name="info_scroll_content_panel">
+					<icon label="" name="edit_icon" tool_tip="이미지를 선택하려면 클릭"/>
+					<layout_stack name="info_panel">
+						<layout_panel name="main_info_panel">
+							<text_editor name="classified_name">
+								[name]
+							</text_editor>
+							<text name="classified_location_label" value="위치:"/>
+							<text_editor name="classified_location" value="[loading...]"/>
+							<text name="content_type_label" value="콘텐츠 유형:"/>
+							<text_editor name="content_type" value="[content type]"/>
+							<text name="category_label" value="카테고리:"/>
+							<text_editor name="category" value="[category]"/>
+							<text name="creation_date_label" value="생성 날짜:"/>
+							<text_editor name="creation_date" tool_tip="생성 날짜" value="[date]"/>
+							<text name="price_for_listing_label" value="등록 가격:"/>
+							<text_editor name="price_for_listing" tool_tip="등록 가격.">
+								[PRICE]
+							</text_editor>
+						</layout_panel>
+						<layout_panel name="clickthrough_layout_panel">
+							<text name="click_through_label" value="클릭:"/>
+							<text_editor name="click_through_text" tool_tip="클릭-스루 데이터" value="[clicks]"/>
+						</layout_panel>
+						<layout_panel name="auto_renew_layout_panel">
+							<text name="auto_renew_label" value="자동 갱신:"/>
+							<text name="auto_renew" value="활성화됨"/>
+						</layout_panel>
+						<layout_panel name="descr_layout_panel">
+							<text name="classified_desc_label" value="설명:"/>
+							<text_editor name="classified_desc" value="[description]"/>
+						</layout_panel>
+					</layout_stack>
+					<panel name="edit_panel">
+						<text name="Name:">
+							제목:
+						</text>
+						<text name="description_label">
+							설명:
+						</text>
+						<text name="location_label">
+							위치:
+						</text>
+						<text name="classified_location_edit">
+							로딩 중...
+						</text>
+						<button label="현재 위치 사용" name="set_to_curr_location_btn"/>
+						<text name="category_label" value="카테고리:"/>
+						<text name="content_type_label" value="콘텐츠 유형:"/>
+						<icons_combo_box label="일반 콘텐츠" name="content_type_edit">
+							<icons_combo_box.item label="보통 콘텐츠" name="mature_ci" value="Adult"/>
+							<icons_combo_box.item label="일반 콘텐츠" name="pg_ci" value="PG"/>
+						</icons_combo_box>
+						<check_box label="매주 자동 갱신" name="auto_renew_edit"/>
+						<text name="price_for_listing_edit_label" value="등록 가격:"/>
+						<spinner label="L$" name="price_for_listing_edit" tool_tip="등록 가격." value="50"/>
+					</panel>
+				</panel>
+			</scroll_container>
+		</layout_panel>
+
+		<layout_panel name="util_buttons_lp">
+			<layout_stack name="util_buttons_stack">
+				<layout_panel name="teleport_btn_lp">
+					<button label="텔레포트" name="teleport_btn"/>
+				</layout_panel>
+				<layout_panel name="map_btn_lp">
+					<button label="지도" name="show_on_map_btn"/>
+				</layout_panel>
+				<layout_panel name="edit_btn_lp">
+					<button label="편집" name="edit_btn"/>
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+
+		<layout_panel name="publish_layout_panel">
+			<layout_stack name="publish_stack">
+				<layout_panel name="save_btn_lp">
+					<button label="[LABEL]" name="save_changes_btn"/>
+				</layout_panel>
+				<layout_panel name="cancel_btn_lp">
+					<button label="취소" name="cancel_btn"/>
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+	</layout_stack>
+</panel>

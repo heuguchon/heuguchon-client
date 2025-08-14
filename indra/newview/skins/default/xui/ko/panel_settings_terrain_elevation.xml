@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="고도" name="panel_settings_terrain_elevation">
+	<spinner label="물 높이" name="water_height_spin"/>
+	<spinner label="지형 높이 제한" name="terrain_raise_spin"/>
+	<spinner label="지형 깊이 제한" name="terrain_lower_spin"/>
+	<text name="height_text_lbl5">
+		텍스처 고도 범위
+	</text>
+	<text name="height_text_lbl5_material">
+		머티리얼 고도 범위
+	</text>
+	<text name="height_text_lbl10">
+		이 값들은 위 텍스처들의 블렌딩 범위입니다.
+	</text>
+	<text name="height_text_lbl10_material">
+		이 값들은 위 머티리얼들의 블렌딩 범위를 반영합니다.
+	</text>
+	<text name="height_text_lbl11">
+		미터 단위로 측정되며, 낮은 값은 텍스처 #1의 최대 높이이고 높은 값은 텍스처 #4의 최소 높이입니다.
+	</text>
+	<text name="height_text_lbl11_material">
+		미터 단위로 측정되며, 낮은 값은 머티리얼 #1의 최대 높이이고 높은 값은 머티리얼 #4의 최소 높이입니다.
+	</text>
+	<text name="height_text_lbl6">
+		북서쪽
+	</text>
+	<text name="height_text_lbl7">
+		북동쪽
+	</text>
+	<!--  northwest low-->
+	<spinner label="낮음" name="height_start_spin_1"/>
+	<!--    northeast low-->
+	<spinner label="낮음" name="height_start_spin_3"/>
+	<!--  northwest high-->
+	<spinner label="높음" name="height_range_spin_1"/>
+	<!--  northeast high-->
+	<spinner label="높음" name="height_range_spin_3"/>
+	<text name="height_text_lbl8">
+		남서쪽
+	</text>
+	<text name="height_text_lbl9">
+		남동쪽
+	</text>
+	<!--  southwest low-->
+	<spinner label="낮음" name="height_start_spin_0"/>
+	<!--  southeast low-->
+	<spinner label="낮음" name="height_start_spin_2"/>
+	<!--southwest high-->
+	<spinner label="높음" name="height_range_spin_0"/>
+	<!--  southeast high-->
+	<spinner label="높음" name="height_range_spin_2"/>
+	<!-- Terrain Download/Upload/Bake buttons -->
+	<button label="RAW 지형 다운로드..." name="download_raw_btn" tool_tip="부동산 소유자만 사용 가능, 관리자는 불가"/>
+	<button label="RAW 지형 업로드..." name="upload_raw_btn" tool_tip="부동산 소유자만 사용 가능, 관리자는 불가"/>
+	<button label="지형 구워내기" name="bake_terrain_btn" tool_tip="현재 지형을 높이/깊이 제한의 중점으로 설정"/>
+</panel>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel label="지역 설정" name="RegionSettings">
+	<spinner label="기본 그리기 거리" name="draw_distance" tool_tip="이 지역의 기본 그리기 거리를 설정합니다."/>
+	<check_box label="그리기 거리 강제" name="force_draw_distance" tool_tip="활성화되면 이 지역의 모든 주민에게 그리기 거리가 강제로 적용됩니다. 참고: 이 설정은 구형 하드웨어 사용자에게 렉을 유발할 수 있습니다. (기본값: 꺼짐)"/>
+	<spinner label="최대 드래그 거리" name="max_drag_distance" tool_tip="이 지역에서 프리미티브를 이동할 수 있는 최대 거리를 설정합니다."/>
+	<spinner label="최대 프림 크기" name="max_prim_scale" tool_tip="이 지역에서 프리미티브가 가질 수 있는 최대 크기를 설정합니다."/>
+	<spinner label="최소 프림 크기" name="min_prim_scale" tool_tip="이 지역에서 프리미티브가 가질 수 있는 최소 크기를 설정합니다."/>
+	<spinner label="최대 물리 프림 크기" name="max_phys_prim_scale" tool_tip="이 지역에서 물리 프리미티브가 가질 수 있는 최대 크기를 설정합니다."/>
+	<spinner label="최대 구멍 크기" name="max_hollow_size" tool_tip="이 지역에서 프리미티브에 설정할 수 있는 최대 구멍 크기를 설정합니다."/>
+	<spinner label="최소 구멍 크기" name="min_hole_size" tool_tip="이 지역에서 프리미티브에 설정할 수 있는 최소 구멍 크기를 설정합니다."/>
+	<spinner label="최대 링크 개수" name="max_link_count" tool_tip="이 지역에서 링크할 수 있는 비물리 프리미티브의 최대 개수를 설정합니다."/>
+	<spinner label="최대 물리 링크 개수" name="max_link_count_phys" tool_tip="이 지역에서 링크할 수 있는 물리 프리미티브의 최대 개수를 설정합니다."/>
+	<spinner label="최대 인벤토리 전송 아이템" name="max_inventory_items_transfer" tool_tip="동시에 전송할 수 있는 오브젝트 수를 설정합니다. -1은 제한 없음을 의미합니다. (기본값: -1)"/>
+	<spinner label="지형 상세 크기" name="terrain_detail_scale" tool_tip="지역의 지형 상세 크기를 설정합니다."/>
+	<spinner label="태그 표시" name="show_tags" tool_tip="지역에서 아바타 위에 아바타 이름이 표시되는 방식을 설정합니다. (항상 표시 = 2, 짧게 표시 = 1, 표시 안 함 = 0)"/>
+	<spinner label="최대 그룹 수" name="max_groups" tool_tip="주민이 가입할 수 있는 그룹 수를 설정합니다. -1은 제한 없음을 의미합니다. (기본값: -1)"/>
+	<check_box label="물 표시" name="render_water" tool_tip="활성화되면 지역에 물이 표시됩니다. (기본값: 활성화)"/>
+	<check_box label="미니맵 허용" name="allow_minimap" tool_tip="활성화되면 지역에서 미니맵 사용을 허용합니다. (기본값: 활성화)"/>
+	<check_box label="물리 프리미티브 허용" name="allow_physical_prims" tool_tip="활성화되면 지역에서 물리 프리미티브 생성을 허용합니다. (기본값: 활성화)"/>
+	<check_box label="최대 건축 제한 강제" name="enforce_max_build" tool_tip="활성화되면 지역에서 최대 건축 제한이 강제됩니다."/>
+	<check_box label="파셀 윈드라이트 허용" name="allow_parcel_windlight" tool_tip="활성화되면 파셀에 대한 윈드라이트 설정이 활성화됩니다. (기본값: 활성화)"/>
+	<button label="적용" name="apply_ors_btn"/>
+</panel>

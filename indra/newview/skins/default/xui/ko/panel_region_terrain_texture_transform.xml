@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="지형" name="Terrain">
+	<text name="region_text_lbl">
+		지역:
+	</text>
+	<text name="region_text">
+		알 수 없음
+	</text>
+	<text name="detail_texture_text">
+		지형 텍스처
+	</text>
+	<text name="detail_material_text">
+		지형 머티리얼
+	</text>
+	<check_box label="PBR 메탈릭 러프니스" name="terrain_material_type" tool_tip="활성화되면 지형에 PBR 메탈릭 러프니스 머티리얼이 사용됩니다. 그렇지 않으면 텍스처가 사용됩니다."/>
+	<text name="height_text_lbl">
+		1 (낮음)
+	</text>
+	<text name="height_text_lbl2">
+		2
+	</text>
+	<text name="height_text_lbl3">
+		3
+	</text>
+	<text name="height_text_lbl4">
+		4 (높음)
+	</text>
+	<layout_stack name="terrain_features_stack">
+		<layout_panel name="frame_settings_terrain">
+			<tab_container name="terrain_tabs">
+				<panel label="고도" name="terrain_elevation_panel" />
+				<panel label="변환" name="terrain_transform_panel" />
+			</tab_container>
+		</layout_panel>
+	</layout_stack>
+	<button label="적용" name="apply_btn"/>
+</panel>
