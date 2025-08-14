@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Width and height of this panel should be synchronized with "panel_modes" in the floater_moveview.xml-->
+<panel name="panel_stand_stop_flying">
+	<button label="서기" name="stand_btn" tool_tip="일어서려면 여기를 클릭하세요."/>
+	<button label="날기 중지" name="stop_fly_btn" tool_tip="날기를 중지합니다"/>
+</panel>

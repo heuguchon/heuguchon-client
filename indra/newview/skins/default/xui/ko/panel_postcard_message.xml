@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="panel_postcard_message">
+	<text name="to_label">
+		받는 사람:
+	</text>
+	<text name="name_label">
+		보내는 사람:
+	</text>
+	<text name="subject_label">
+		제목:
+	</text>
+	<line_editor label="제목을 입력하세요." name="subject_form"/>
+	<text name="msg_label">
+		메시지:
+	</text>
+	<text_editor name="msg_form">
+		메시지를 입력하세요.
+	</text_editor>
+</panel>

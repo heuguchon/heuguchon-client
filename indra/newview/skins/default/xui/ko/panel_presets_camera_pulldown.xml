@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="presets_camera_pulldown">
+	<text name="Camera Presets">
+		카메라 프리셋
+	</text>
+	<button label="카메라 창 열기" name="open_prefs_btn" tool_tip="카메라 창을 표시합니다"/>
+</panel>

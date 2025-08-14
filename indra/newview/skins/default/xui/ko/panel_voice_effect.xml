@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="panel_voice_effect">
+	<string name="no_voice_effect">
+		음성 변조 해제
+	</string>
+	<string name="preview_voice_effects">
+		음성 변조 체험하기 ▶
+	</string>
+	<string name="get_voice_effects">
+		음성 변조 구독하기 ▶
+	</string>
+	<combo_box name="voice_effect" tool_tip="음성을 변경할 음성 변조 효과를 선택하세요.">
+		<combo_box.item label="음성 변조 해제" name="no_voice_effect"/>
+	</combo_box>
+</panel>

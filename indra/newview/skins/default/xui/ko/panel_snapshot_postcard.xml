@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="panel_snapshot_postcard">
+	<string name="default_subject">
+		[SECOND_LIFE]에서 보내는 엽서.
+	</string>
+	<string name="default_message">
+		보세요!
+	</string>
+	<string name="upload_message">
+		전송 중...
+	</string>
+	<text name="title">
+		이메일
+	</text>
+	<tab_container name="postcard_tabs">
+		<panel label="메시지" name="panel_postcard_message"/>
+		<panel label="설정" name="panel_postcard_settings"/>
+	</tab_container>
+	<button label="&#x25B6; 선택" name="cancel_btn"/>
+	<button label="전송" name="send_btn"/>
+</panel>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="분류광고" name="panel_profile_classifieds">
+	<string name="no_classifieds" value="분류광고 없음"/>
+	<layout_stack name="main_stack">
+		<layout_panel name="buttons_header">
+			<button label="새로 만들기..." tool_tip="현재 위치에 새 분류광고 생성" name="new_btn"/>
+			<button label="삭제..." tool_tip="현재 선택된 분류광고 삭제" name="delete_btn"/>
+		</layout_panel>
+		<layout_panel name="main_body">
+			<text name="classifieds_panel_text">
+				로딩 중...
+			</text>
+		</layout_panel>
+	</layout_stack>
+</panel>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- All our XML is utf-8 encoded. -->
+<panel name="sys_well_item" title="sys_well_item">
+	<text name="title">
+		시스템 알림 메시지가 여기에 표시됩니다.
+	</text>
+</panel>

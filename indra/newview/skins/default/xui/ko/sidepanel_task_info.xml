@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="object properties" title="객체 프로필">
+	<panel.string name="text deed continued">
+		이양
+	</panel.string>
+	<panel.string name="text deed">
+		이양
+	</panel.string>
+	<panel.string name="text modify info 1">
+		이 객체를 편집할 수 있습니다.
+	</panel.string>
+	<panel.string name="text modify info 2">
+		이러한 객체들을 편집할 수 있습니다.
+	</panel.string>
+	<panel.string name="text modify info 3">
+		이 객체를 편집할 수 없습니다.
+	</panel.string>
+	<panel.string name="text modify info 4">
+		이러한 객체들을 편집할 수 없습니다.
+	</panel.string>
+	<panel.string name="text modify info 5">
+		이 객체는 지역 경계를 넘어 변경할 수 없습니다.
+	</panel.string>
+	<panel.string name="text modify info 6">
+		이러한 객체들은 지역 경계를 넘어 변경할 수 없습니다.
+	</panel.string>
+	<panel.string name="text modify warning">
+		이 객체는 연결된 부분들이 있습니다.
+	</panel.string>
+	<panel.string name="Cost Default">
+		가격: L$
+	</panel.string>
+	<panel.string name="Cost Total">
+		합계: L$
+	</panel.string>
+	<panel.string name="Cost Per Unit">
+		개별 가격: L$
+	</panel.string>
+	<panel.string name="Cost Mixed">
+		혼합 가격
+	</panel.string>
+	<panel.string name="Sale Mixed">
+		혼합 판매
+	</panel.string>
+	<text name="title" value="객체 프로필"/>
+	<text name="where" value="(인월드)"/>
+	<scroll_container name="item_profile_scroll">
+	<panel label="" name="properties_panel">
+		<text name="Name:">
+			이름:
+		</text>
+		<line_editor name="Object Name" tool_tip="이름은 63자로 제한됩니다. 더 긴 공식 이름은 잘립니다. 이름은 세로 막대 '|'를 제외한 ASCII-7 문자 집합의 인쇄 가능한 문자만 포함할 수 있습니다."/>
+		<text name="Description:">
+			설명:
+		</text>
+		<line_editor name="Object Description" tool_tip="뷰어 설정에서 '모든 객체에 대한 마우스 오버 팁' 옵션이 선택되면, 마우스 커서 아래의 모든 객체에 대해 객체 설명 팝업이 표시됩니다. 공식 설명은 127바이트로 제한되며, 더 긴 문자열은 잘립니다."/>
+		<text name="CreatorNameLabel">
+			제작자:
+		</text>
+		<text name="Owner:">
+			소유자:
+		</text>
+		<text name="Group_label">
+			그룹:
+		</text>
+		<button name="button set group" tool_tip="객체의 권한을 공유할 그룹을 선택하세요."/>
+		<name_box initial_value="로딩 중..." name="Group Name Proxy"/>
+		<button label="이양" label_selected="이양" name="button deed" tool_tip="이양은 객체를 '다음 소유자' 권한으로 전달하는 것을 의미합니다. 그룹과 공유된 객체는 그룹 임원이 이양할 수 있습니다."/>
+		<text name="label click action">
+			좌클릭 시:
+		</text>
+		<combo_box name="clickaction" tool_tip="클릭 액션을 사용하면 단일 좌클릭으로 객체와 상호작용할 수 있습니다. 각 클릭 액션에는 액션을 명확히 하는 특별한 커서가 있습니다. 일부 클릭 액션은 기능을 위해 요구사항을 충족해야 합니다. 터치 앤 페이에는 스크립트가 필요합니다.">
+			<combo_box.item label="터치 (기본)" name="Touch/grab(default)"/>
+			<combo_box.item label="앉기" name="Sitonobject"/>
+			<combo_box.item label="구매" name="Buyobject"/>
+			<combo_box.item label="지불" name="Payobject"/>
+			<combo_box.item label="열기" name="Open"/>
+			<combo_box.item label="줌" name="Zoom"/>
+			<combo_box.item label="객체 무시" name="Ignoreobject"/>
+			<combo_box.item label="액션 없음" name="None"/>
+		</combo_box>
+		<panel name="perms_inv">
+			<text name="perm_modify">
+				이 객체를 편집할 수 있습니다.
+			</text>
+			<text name="Anyone can:">
+				모든 사람:
+			</text>
+			<check_box label="복사" name="checkbox allow everyone copy" tool_tip="모든 사용자가 객체의 복사본을 얻을 수 있습니다. 객체 및 모든 내용물이 복사 및 양도 가능해야 합니다."/>
+			<check_box label="이동" name="checkbox allow everyone move" tool_tip="모든 사용자가 객체를 이동할 수 있습니다."/>
+			<text name="GroupLabel">
+				그룹:
+			</text>
+			<check_box label="공유" name="checkbox share with group" tool_tip="할당된 그룹의 모든 구성원과 이 객체를 수정할 수 있는 권한을 공유합니다. 역할 제한을 활성화하려면 이양해야 합니다."/>
+			<text name="NextOwnerLabel">
+				다음 소유자:
+			</text>
+			<check_box label="수정" name="checkbox next owner can modify" tool_tip="다음 소유자가 아이템 이름이나 이 객체의 크기 같은 속성을 수정할 수 있습니다."/>
+			<check_box label="복사" name="checkbox next owner can copy" tool_tip="다음 소유자가 이 객체의 복사본을 무제한 만들 수 있습니다. 복사본에는 제작자 정보가 포함되며, 복사된 아이템보다 더 많은 권한을 가질 수 없습니다."/>
+			<check_box label="양도" name="checkbox next owner can transfer" tool_tip="다음 소유자가 이 객체를 전달하거나 판매할 수 있습니다."/>
+		</panel>
+		<check_box label="판매 중" name="checkbox for sale" tool_tip="주민들이 이 객체, 그 내용물 또는 지정된 가격으로 인월드에서 복사본을 구매할 수 있게 합니다."/>
+		<combo_box name="sale type" tool_tip="구매자가 복사본, 내용물의 복사본 또는 아이템 자체를 받을지 선택하세요.">
+			<combo_box.item label="복사본" name="Copy"/>
+			<combo_box.item label="내용물" name="Contents"/>
+			<combo_box.item label="원본" name="Original"/>
+		</combo_box>
+		<spinner label="가격: L$" name="Edit Cost" tool_tip="객체 비용."/>
+		<check_box label="검색에 표시" name="search_check" tool_tip="이 객체를 검색 결과에 표시"/>
+		<text name="pathfinding_attributes_label">
+			패스파인딩 속성:
+		</text>
+		<text name="B:">
+			B:
+		</text>
+		<text name="O:">
+			O:
+		</text>
+		<text name="G:">
+			G:
+		</text>
+		<text name="E:">
+			E:
+		</text>
+		<text name="N:">
+			N:
+		</text>
+		<text name="F:">
+			F:
+		</text>
+	</panel>
+	</scroll_container>
+	<layout_stack name="buttons_ls">
+		<layout_panel name="open_btn_panel">
+			<button label="열기" name="open_btn" tool_tip="객체 내용물을 보려면 열기."/>
+		</layout_panel>
+		<layout_panel name="pay_btn_panel">
+			<button label="지불" name="pay_btn" tool_tip="지불 창을 엽니다. 객체에 이 기능을 사용하려면 지불 스크립트가 있어야 합니다."/>
+		</layout_panel>
+		<layout_panel name="buy_btn_panel">
+			<button label="구매" name="buy_btn" tool_tip="구매 창을 엽니다. 객체가 판매 중으로 표시되어야 합니다."/>
+		</layout_panel>
+		<layout_panel name="details_btn_panel">
+			<button label="상세정보" name="details_btn" tool_tip="'객체 검사' 창을 엽니다."/>
+		</layout_panel>
+	</layout_stack>
+</panel>

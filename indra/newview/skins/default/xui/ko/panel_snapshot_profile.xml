@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="panel_snapshot_profile">
+	<text name="title">
+		프로필
+	</text>
+	<combo_box label="해상도" name="profile_size_combo">
+		<combo_box.item label="현재 창" name="CurrentWindow"/>
+		<combo_box.item label="640x480" name="640x480"/>
+		<combo_box.item label="800x600" name="800x600"/>
+		<combo_box.item label="1024x768" name="1024x768"/>
+		<combo_box.item label="사용자 정의" name="Custom"/>
+	</combo_box>
+	<spinner label="가로 x 세로" name="profile_snapshot_width"/>
+	<check_box label="종횡비 유지" name="profile_keep_aspect_check"/>
+	<text name="caption_label">
+		캡션:
+	</text>
+	<check_box initial_value="true" label="위치 포함" name="add_location_cb"/>
+	<button label="&#x25B6; 선택" name="cancel_btn"/>
+	<button label="게시" name="post_btn"/>
+</panel>

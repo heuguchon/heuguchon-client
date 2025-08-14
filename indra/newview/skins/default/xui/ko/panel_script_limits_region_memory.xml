@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="지역 메모리" name="script_limits_region_memory_panel">
+	<text name="script_memory">
+		구획 스크립트 메모리
+	</text>
+	<text name="parcels_listed"/>
+	<text name="memory_used"/>
+	<text name="loading_text">
+		로딩 중...
+	</text>
+	<scroll_list name="scripts_list">
+		<scroll_list.columns label="크기 (KB)" name="size" width="80"/>
+		<scroll_list.columns label="URL" name="urls"/>
+		<scroll_list.columns label="객체 이름" name="name"/>
+		<scroll_list.columns label="객체 소유자" name="owner" width="130"/>
+		<scroll_list.columns label="구획" name="parcel"/>
+		<scroll_list.columns label="위치" name="location"/>
+	</scroll_list>
+	<button label="목록 새로고침" name="refresh_list_btn" width="110"/>
+	<button label="하이라이트" name="highlight_btn"/>
+	<button label="반환" name="return_btn"/>
+</panel>

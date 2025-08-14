@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel label="스크립트_질문_패널" name="panel_script_question_toast">
+	<panel label="버튼_패널" name="buttons_panel"/>
+</panel>
