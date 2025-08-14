@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="beacons" title="비컨">
+	<panel name="beacons_panel">
+		<text name="label_show">
+			표시:
+		</text>
+		<check_box label="광원의 경계 상자" name="lights_bounding_boxes"/>
+		<check_box label="비컨" name="beacons"/>
+		<check_box label="강조" name="highlights"/>
+		<check_box label="뷰어 창의 비컨 정보 텍스트" name="FSRenderBeaconText"/>
+		<text name="beacon_width_label" tool_tip="빔 너비">
+			너비:
+		</text>
+		<text name="label_objects">
+			다음 객체들에 대해:
+		</text>
+		<check_box label="물리 객체" name="physical"/>
+		<check_box label="스크립트 객체" name="scripted"/>
+		<check_box label="터치 전용" name="touch_only"/>
+		<check_box label="사운드 소스" name="sounds"/>
+		<check_box label="파티클 소스" name="particles"/>
+		<check_box label="미디어 소스" name="moapbeacon"/>
+		<text name="label_direction">
+			방향 표시:
+		</text>
+		<check_box label="태양" name="sun"/>
+		<check_box label="달" name="moon"/>
+	</panel>
+</floater>

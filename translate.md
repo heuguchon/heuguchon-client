@@ -100,7 +100,11 @@
   - [x] floater_inventory_settings.xml (인벤토리 설정)
   - [x] floater_outfit_save_as.xml (의상 저장)
   - [x] floater_inventory_view_finder.xml (인벤토리 검색)
-- [ ] 12차: 대용량 파일 도전 (menu_viewer.xml, notifications.xml 등)
+- [x] 12차: 4차 시스템/디버깅 관련 완료 (3개)
+  - [x] floater_lagmeter.xml (지연 측정기)
+  - [x] floater_beacons.xml (비컨 설정)
+  - [x] floater_notifications_console.xml (알림 콘솔)
+- [ ] 13차: 대용량 파일 도전 (menu_viewer.xml, notifications.xml 등)
 - [ ] 6차: 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -180,6 +184,9 @@
   - floater_inventory_settings.xml (인벤토리 설정)
   - floater_outfit_save_as.xml (의상 저장)
   - floater_inventory_view_finder.xml (인벤토리 검색)
+  - floater_lagmeter.xml (지연 측정기)
+  - floater_beacons.xml (비컨 설정)
+  - floater_notifications_console.xml (알림 콘솔)
 
 ### 진행 중인 작업
 - 추가 중요 UI 파일 식별 및 번역

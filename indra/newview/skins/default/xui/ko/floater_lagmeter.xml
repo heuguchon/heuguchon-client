@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_lagmeter" title="지연 측정기">
+	<floater.string name="max_title_msg">
+		지연 표시기
+	</floater.string>
+	<floater.string name="max_width_px">
+		360
+	</floater.string>
+	<floater.string name="min_title_msg">
+		지연
+	</floater.string>
+	<floater.string name="min_width_px">
+		90
+	</floater.string>
+	<floater.string name="client_text_msg">
+		클라이언트
+	</floater.string>
+	<floater.string name="client_frame_rate_critical_fps">
+		10
+	</floater.string>
+	<floater.string name="client_frame_rate_warning_fps">
+		15
+	</floater.string>
+	<floater.string name="client_frame_time_window_bg_msg">
+		정상, 백그라운드 창
+	</floater.string>
+	<floater.string name="client_frame_time_critical_msg">
+		클라이언트 프레임율이 [CLIENT_FRAME_RATE_CRITICAL] 미만
+	</floater.string>
+	<floater.string name="client_frame_time_warning_msg">
+		클라이언트 프레임율이 [CLIENT_FRAME_RATE_CRITICAL]와 [CLIENT_FRAME_RATE_WARNING] 사이
+	</floater.string>
+	<floater.string name="client_frame_time_normal_msg">
+		정상
+	</floater.string>
+	<floater.string name="client_draw_distance_cause_msg">
+		가능한 원인: 그리기 거리가 너무 큼
+	</floater.string>
+	<floater.string name="client_texture_loading_cause_msg">
+		가능한 원인: 이미지를 로딩 중
+	</floater.string>
+	<floater.string name="client_texture_memory_cause_msg">
+		가능한 원인: 메모리에 이미지가 너무 많음
+	</floater.string>
+	<floater.string name="client_complex_objects_cause_msg">
+		가능한 원인: 장면에 복잡한 객체가 너무 많음
+	</floater.string>
+	<floater.string name="network_text_msg">
+		네트워크
+	</floater.string>
+	<floater.string name="network_packet_loss_critical_pct">
+		10
+	</floater.string>
+	<floater.string name="network_packet_loss_warning_pct">
+		5
+	</floater.string>
+	<floater.string name="network_packet_loss_critical_msg">
+		연결의 패킷 손실이 [NETWORK_PACKET_LOSS_CRITICAL]% 초과
+	</floater.string>
+	<floater.string name="network_packet_loss_warning_msg">
+		연결의 패킷 손실이 [NETWORK_PACKET_LOSS_WARNING]%-[NETWORK_PACKET_LOSS_CRITICAL]%
+	</floater.string>
+	<floater.string name="network_performance_normal_msg">
+		정상
+	</floater.string>
+	<floater.string name="network_ping_critical_ms">
+		600
+	</floater.string>
+	<floater.string name="network_ping_warning_ms">
+		300
+	</floater.string>
+	<floater.string name="network_ping_critical_msg">
+		연결 핑 시간이 [NETWORK_PING_CRITICAL]ms 초과
+	</floater.string>
+	<floater.string name="network_ping_warning_msg">
+		연결 핑 시간이 [NETWORK_PING_WARNING]-[NETWORK_PING_CRITICAL]ms
+	</floater.string>
+	<floater.string name="network_packet_loss_cause_msg">
+		불량한 연결이거나 대역폭 값이 너무 높을 수 있습니다.
+	</floater.string>
+	<floater.string name="network_ping_cause_msg">
+		불량한 연결이거나 파일 공유 애플리케이션일 수 있습니다.
+	</floater.string>
+	<floater.string name="server_text_msg">
+		서버
+	</floater.string>
+	<floater.string name="server_frame_rate_critical_fps">
+		20
+	</floater.string>
+	<floater.string name="server_frame_rate_warning_fps">
+		30
+	</floater.string>
+	<floater.string name="server_single_process_max_time_ms">
+		20
+	</floater.string>
+	<floater.string name="server_frame_time_critical_msg">
+		시뮬레이터 프레임율이 [SERVER_FRAME_RATE_CRITICAL] 미만
+	</floater.string>
+	<floater.string name="server_frame_time_warning_msg">
+		시뮬레이터 프레임율이 [SERVER_FRAME_RATE_CRITICAL]와 [SERVER_FRAME_RATE_WARNING] 사이
+	</floater.string>
+	<floater.string name="server_frame_time_normal_msg">
+		정상
+	</floater.string>
+	<floater.string name="server_physics_cause_msg">
+		가능한 원인: 물리 객체가 너무 많음
+	</floater.string>
+	<floater.string name="server_scripts_cause_msg">
+		가능한 원인: 스크립트 객체가 너무 많음
+	</floater.string>
+	<floater.string name="server_net_cause_msg">
+		가능한 원인: 네트워크 트래픽이 너무 많음
+	</floater.string>
+	<floater.string name="server_agent_cause_msg">
+		가능한 원인: 지역에서 움직이는 사람이 너무 많음
+	</floater.string>
+	<floater.string name="server_images_cause_msg">
+		가능한 원인: 이미지 계산이 너무 많음
+	</floater.string>
+	<floater.string name="server_generic_cause_msg">
+		가능한 원인: 시뮬레이터 부하가 너무 높음
+	</floater.string>
+	<floater.string name="smaller_label">
+		&gt;&gt;
+	</floater.string>
+	<floater.string name="bigger_label">
+		&lt;&lt;
+	</floater.string>
+	<button name="client_lagmeter" tool_tip="클라이언트 지연 상태"/>
+	<text name="client">
+		클라이언트
+	</text>
+	<text name="client_text">
+		정상
+	</text>
+	<button name="network_lagmeter" tool_tip="네트워크 지연 상태"/>
+	<text name="network">
+		네트워크
+	</text>
+	<text name="network_text">
+		정상
+	</text>
+	<button name="server_lagmeter" tool_tip="서버 지연 상태"/>
+	<text name="server">
+		서버
+	</text>
+	<text name="server_text">
+		정상
+	</text>
+	<button label="&gt;&gt;" name="minimize" tool_tip="창 크기 변경"/>
+</floater>
