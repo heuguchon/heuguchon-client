@@ -159,6 +159,20 @@
   - [x] floater_quickprefs.xml (빠른 설정)
   - [x] floater_region_debug_console.xml (지역 디버그 콘솔)
   - [x] floater_region_restarting.xml (지역 재시작)
+- [x] 23차: 시스템 및 서비스 도구 번역 완료 (7개)
+  - [x] floater_avatar.xml (아바타 선택)
+  - [x] floater_im_container.xml (대화 컨테이너)
+  - [x] floater_grid_status.xml (그리드 상태)
+  - [x] floater_script_limits.xml (스크립트 정보)
+  - [x] floater_top_objects.xml (상위 객체)
+  - [x] floater_tos.xml (서비스 약관)
+  - [x] floater_translation_settings.xml (채팅 번역 설정)
+- [x] 24차: 추가 시스템 도구 및 메뉴 번역 완룼 (8개)
+  - [x] floater_web_profile.xml (웹 프로필)
+  - [x] floater_my_web_profile.xml (내 웹 프로필)
+  - [x] floater_whitelist.xml (화이트리스트 폴더 및 실행 파일)
+  - [x] floater_window_size.xml (창 크기)
+  - [x] menu_attachment_other.xml (어타치먼트 컨텍스트 메뉴)
 - [ ] 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -184,7 +198,7 @@
 - 프로젝트 구조 분석
 - 작업 계획 수립
 - ko 폴더 생성
-- **핵심 파일 93개 번역 완룼:**
+- **핵심 파일 113개 번역 완료:**
   - strings.xml (기본 문자열)
   - floater_about.xml (정보 창)
   - menu_login.xml (로그인 메뉴)
@@ -277,6 +291,18 @@
   - floater_forget_user.xml (사용자 정보 삭제)
   - floater_hud.xml (HUD 도움말)
   - menu_viewer.xml (메인 뷰어 메뉴)
+  - floater_avatar.xml (아바타 선택)
+  - floater_im_container.xml (대화 컨테이너)
+  - floater_grid_status.xml (그리드 상태)
+  - floater_script_limits.xml (스크립트 정보)
+  - floater_top_objects.xml (상위 객체)
+  - floater_tos.xml (서비스 약관)
+  - floater_translation_settings.xml (채팅 번역 설정)
+  - floater_web_profile.xml (웹 프로필)
+  - floater_my_web_profile.xml (내 웹 프로필)
+  - floater_whitelist.xml (화이트리스트 폴더 및 실행 파일)
+  - floater_window_size.xml (창 크기)
+  - menu_attachment_other.xml (어타치먼트 컨텍스트 메뉴)
 
 ### 진행 중인 작업
 - 추가 중요 UI 파일 식별 및 번역
@@ -318,9 +344,11 @@
 - **20차 이벤트/경험 시스템 완료** - 이벤트 상세정보, 경험 프로필, 경험 관리, 사용자 정보 삭제, HUD 도움말
 - **21차 통신/패스파인딩 시스템 완료** - 수신/발신 전화, 객체 차단, 패스파인딩 캐릭터 및 콘솔
 - **22차 고급 시스템 및 디버그 도구 완료** - 패스파인딩 링크셋, 기본 권한 설정, 빠른 설정, 지역 디버그 콘솔, 지역 재시작
+- **23차 시스템 및 서비스 도구 완료** - 아바타 선택, 대화 컨테이너, 그리드 상태, 스크립트 정보, 상위 객체, 서비스 약관, 채팅 번역 설정
+- **24차 추가 시스템 도구 및 메뉴 완료** - 웹 프로필, 내 웹 프로필, 화이트리스트 폴더, 창 크기, 어타치먼트 컨텍스트 메뉴
 
 ### 번역 완료율
-- **총 98개 파일 번역** (독일어 기준 약 400개 중 약 24.5%)
+- **총 113개 파일 번역** (독일어 기준 약 400개 중 약 28.3%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화

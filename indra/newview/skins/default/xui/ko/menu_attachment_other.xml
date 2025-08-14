@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- *NOTE: See also menu_avatar_other.xml -->
+<context_menu name="Avatar Pie">
+	<menu_item_call label="프로필 보기" name="Profile..."/>
+	<menu_item_call label="친구 추가" name="Add Friend"/>
+	<menu_item_call label="명함 주기" name="Give Calling Card"/>
+	<menu_item_call label="연락처 세트에 추가" name="Add to Set"/>
+	<menu_item_call label="IM" name="Send IM..."/>
+	<menu_item_call label="전화 걸기" name="Call"/>
+	<menu_item_call label="그룹 초대" name="Invite..."/>
+	<menu_item_call label="골격 재설정" name="Reset Skeleton"/>
+	<menu_item_call label="골격 및 애니메이션 재설정" name="Reset Skeleton And Animations"/>
+	<menu_item_call label="메시 LOD 재설정" name="Reset Mesh LOD"/>
+	<context_menu label="방해행위" name="Annoyance">
+		<menu_item_call label="차단" name="Avatar Mute"/>
+		<menu_item_call label="차단 해제" name="Avatar Unmute"/>
+		<menu_item_call label="신고" name="abuse"/>
+		<menu_item_call label="얼리기" name="Freeze..."/>
+		<menu_item_call label="추방" name="Eject..."/>
+	</context_menu>
+	<menu_item_call label="XML 덤프" name="Dump XML"/>
+	<menu_item_call label="확대" name="Zoom In"/>
+	<menu_item_call label="지불" name="Pay..."/>
+	<menu_item_call label="객체 프로필" name="Object Inspect"/>
+	<menu_item_check label="항상 완전히 렌더링" name="AlwaysRenderFully"/>
+	<menu_item_check label="완전히 렌더링 안 함" name="DoNotRender"/>
+	<menu_item_check label="렌더링 예외에서 제거" name="RenderNormally"/>
+	<menu_item_call label="파티클 소유자 차단" name="Mute Particle"/>
+	<menu_item_call label="검사" name="Object_Inspect_Floater"/>
+	<menu_item_call label="스크립트 정보" name="ScriptInfo"/>
+	<menu_item_call label="렌더링 해제" name="Derender"/>
+	<menu_item_call label="렌더링 해제 + 블랙리스트" name="DerenderPermanent"/>
+	<menu_item_call label="텍스처 보기" name="Debug..."/>
+	<menu_item_call label="텍스처 새로고침" name="Texture Refresh"/>
+	<context_menu label="다른 이름으로 저장" name="Export Menu">
+		<menu_item_call label="백업" name="Backup"/>
+		<menu_item_call label="Collada" name="Collada"/>
+	</context_menu>
+</context_menu>

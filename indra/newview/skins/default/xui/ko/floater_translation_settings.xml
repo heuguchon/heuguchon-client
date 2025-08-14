@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_translation_settings" title="채팅 번역 설정">
+	<string name="azure_api_key_not_verified">
+		Azure 서비스 식별자가 검증되지 않았습니다. 상태: [STATUS]. 설정을 확인하고 다시 시도해 주세요.
+	</string>
+	<string name="google_api_key_not_verified">
+		Google API 키가 검증되지 않았습니다. 상태: [STATUS]. 키를 확인하고 다시 시도해 주세요.
+	</string>
+	<string name="deepl_api_key_not_verified">
+		DeepL 인증 키가 검증되지 않았습니다. 상태: [STATUS]. 키를 확인하고 다시 시도해 주세요.
+	</string>
+	<string name="azure_api_key_verified">
+		Azure 서비스 식별자가 검증되었습니다.
+	</string>
+	<string name="google_api_key_verified">
+		Google API 키가 검증되었습니다.
+	</string>
+	<string name="deepl_api_key_verified">
+		DeepL API 키가 검증되었습니다.
+	</string>
+	<check_box label="채팅 중 기계 번역 활성화" name="translate_chat_checkbox"/>
+	<text name="translate_language_label">
+		채팅을 다음 언어로 번역:
+	</text>
+	<combo_box name="translate_language_combo">
+		<combo_box.item label="시스템 기본값" name="System Default Language"/>
+		<combo_box.item label="English (영어)" name="English"/>
+		<combo_box.item label="Dansk (덴마크어)" name="Danish"/>
+		<combo_box.item label="Deutsch (독일어)" name="German"/>
+		<combo_box.item label="Español (스페인어)" name="Spanish"/>
+		<combo_box.item label="Français (프랑스어)" name="French"/>
+		<combo_box.item label="Italiano (이탈리아어)" name="Italian"/>
+		<combo_box.item label="Magyar (헝가리어)" name="Hungarian"/>
+		<combo_box.item label="Nederlands (네덜란드어)" name="Dutch"/>
+		<combo_box.item label="Polski (폴란드어)" name="Polish"/>
+		<combo_box.item label="Português (포르투갈어)" name="Portugese"/>
+		<combo_box.item label="Русский (러시아어)" name="Russian"/>
+		<combo_box.item label="Türkçe (터키어)" name="Turkish"/>
+		<combo_box.item label="Українська (우크라이나어)" name="Ukrainian"/>
+		<combo_box.item label="中文 (正體) (중국어)" name="Chinese"/>
+		<combo_box.item label="日本語 (일본어)" name="Japanese"/>
+		<combo_box.item label="한국어" name="Korean"/>
+	</combo_box>
+	<text name="tip">
+		번역 서비스 선택:
+	</text>
+	<radio_group name="translation_service_rg">
+		<radio_item label="Azure Translator" name="azure"/>
+		<radio_item label="Google Translate" name="google"/>
+		<radio_item label="DeepL Translator" name="deepl"/>
+	</radio_group>
+	<text name="azure_links_text">
+		[https://learn.microsoft.com/ko-kr/azure/cognitive-services/translator/create-translator-resource 설정]
+	</text>
+	<text name="azure_api_endoint_label">
+		엔드포인트:
+	</text>
+	<text name="azure_api_key_label">
+		Azure 키:
+	</text>
+	<line_editor default_text="API 키를 입력하고 &quot;검증&quot;을 클릭하세요" name="azure_api_key"/>
+	<text name="azure_api_region_label">
+		지역:
+	</text>
+	<line_editor default_text="글로벌 서비스의 경우 비워둘 수 있습니다" name="azure_api_region"/>
+	<button label="검증" name="verify_azure_api_key_btn"/>
+	<text name="google_api_key_label">
+		Google [http://code.google.com/apis/language/translate/v2/getting_started.html#auth API 키]:
+	</text>
+	<line_editor default_text="API 키를 입력하고 &quot;검증&quot;을 클릭하세요" name="google_api_key"/>
+	<button label="검증" name="verify_google_api_key_btn"/>
+	<text name="google_links_text">
+		[http://code.google.com/apis/language/translate/v2/pricing.html 가격] | [https://code.google.com/apis/console 통계]
+	</text>
+	<text name="deepl_api_domain_label">
+		엔드포인트:
+	</text>
+	<text name="deepl_api_key_label">
+		DeepL API 키:
+	</text>
+	<line_editor default_text="API 키를 입력하고 &quot;검증&quot;을 클릭하세요" name="deepl_api_key"/>
+	<button label="검증" name="verify_deepl_api_key_btn"/>
+	<text name="deepl_links_text">
+		[https://www.deepl.com/pro/select-country?cta=header-prices 가격]
+	</text>
+	<button label="확인" name="ok_btn"/>
+	<button label="취소" name="cancel_btn"/>
+</floater>
