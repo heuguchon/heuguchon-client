@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="접근" name="Access">
+	<tab_container name="tabs">
+		<panel label="부동산 관리자" name="estate_managers_panel">
+			<text name="estate_manager_label">
+				부동산 관리자:
+			</text>
+			<name_list name="estate_manager_name_list">
+				<columns label="이름" name="name"/>
+			</name_list>
+			<button label="추가..." name="add_estate_manager_btn"/>
+			<button label="제거..." name="remove_estate_manager_btn"/>
+			<button label="내보내기..." name="export_estate_manager_btn"/>
+			<button label="가져오기..." name="import_estate_manager_btn" tool_tip="유효한 UUID만 포함된 CSV 파일 가져오기 - 줄당 하나씩, 추가 문자나 서식 없이"/>
+		</panel>
+		<panel label="허용 목록" name="allowed_panel">
+			<panel label="top_panel" name="allowed_search_panel">
+				<filter_editor label="허용된 에이전트 검색" name="allowed_search_input"/>
+				<button label="복사" name="copy_allowed_list_btn"/>
+			</panel>
+			<text name="allow_resident_label">
+				항상 허용:
+			</text>
+			<name_list name="allowed_avatar_name_list">
+				<columns label="이름" name="name"/>
+			</name_list>
+			<button label="추가..." name="add_allowed_avatar_btn"/>
+			<button label="제거..." name="remove_allowed_avatar_btn"/>
+			<button label="내보내기..." name="export_allowed_list_btn"/>
+			<button label="가져오기..." name="import_allowed_list_btn" tool_tip="유효한 UUID만 포함된 CSV 파일 가져오기 - 줄당 하나씩, 추가 문자나 서식 없이"/>
+		</panel>
+		<panel label="허용 그룹" name="allowed_groups_panel">
+			<panel label="top_panel" name="allowed_group_search_panel">
+				<filter_editor label="허용된 그룹 검색" name="allowed_group_search_input"/>
+				<button label="복사" name="copy_allowed_group_list_btn"/>
+			</panel>
+			<text name="allow_group_label">
+				항상 허용된 그룹:
+			</text>
+			<name_list name="allowed_group_name_list">
+				<columns label="이름" name="name"/>
+			</name_list>
+			<button label="추가..." name="add_allowed_group_btn"/>
+			<button label="제거..." name="remove_allowed_group_btn"/>
+			<button label="내보내기..." name="export_allowed_group_btn"/>
+			<button label="가져오기..." name="import_allowed_group_btn" tool_tip="유효한 UUID만 포함된 CSV 파일 가져오기 - 줄당 하나씩, 추가 문자나 서식 없이"/>
+		</panel>
+		<panel label="차단 목록" name="banned_panel">
+			<panel label="top_panel" name="banned_search_panel">
+				<filter_editor label="차단된 에이전트 검색" name="banned_search_input"/>
+				<button label="복사" name="copy_banned_list_btn"/>
+			</panel>
+			<text name="ban_resident_label">
+				항상 차단:
+			</text>
+			<name_list name="banned_avatar_name_list">
+				<columns label="이름" name="name"/>
+				<columns label="마지막 로그인 날짜" name="last_login_date"/>
+				<columns label="차단 날짜" name="ban_date"/>
+				<columns label="차단자" name="bannedby"/>
+			</name_list>
+			<button label="추가..." name="add_banned_avatar_btn"/>
+			<button label="제거..." name="remove_banned_avatar_btn"/>
+			<button label="내보내기..." name="export_banned_avatar_btn"/>
+			<button label="가져오기..." name="import_banned_avatar_btn" tool_tip="유효한 UUID만 포함된 CSV 파일 가져오기 - 줄당 하나씩, 추가 문자나 서식 없이"/>
+		</panel>
+	</tab_container>
+</panel>

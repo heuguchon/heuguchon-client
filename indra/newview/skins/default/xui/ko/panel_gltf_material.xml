@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="panel_gltf_material">
+	<check_box label="양면" name="double sided"/>
+	<panel name="base_color_texture_pnl">
+		<text name="base_color_lbl">
+			기본 색상:
+		</text>
+		<texture_picker name="base_color_texture" tool_tip="기본 색상 맵. 알파 채널은 선택사항이며 투명도에 사용됩니다."/>
+		<text name="base_color_upload_fee">
+			업로드 수수료 없음
+		</text>
+		<text name="base_color_tint_lbl">
+			색조
+		</text>
+		<text name="base_color_transparency_lbl">
+			알파
+		</text>
+		<text name="alpha_mode_lbl">
+			알파 모드
+		</text>
+		<combo_box name="alpha mode">
+			<combo_box.item label="불투명" name="None"/>
+			<combo_box.item label="블렌딩" name="Alpha blending"/>
+			<combo_box.item label="마스킹" name="Alpha masking"/>
+		</combo_box>
+		<text name="alpha_cutoff_lbl">
+			알파 컷오프
+		</text>
+	</panel>
+	<panel name="metallic_texture_pnl">
+		<text name="metallic_roughness_lbl">
+			금속성-거칠기:
+		</text>
+		<texture_picker name="metallic_roughness_texture" tool_tip="선택적 오클루전이 있는 GLTF 금속성-거칠기 맵. 빨간색 채널은 오클루전, 녹색 채널은 거칠기, 파란색 채널은 금속성입니다."/>
+		<text name="metallic_upload_fee">
+			업로드 수수료 없음
+		</text>
+		<text name="metallic_factor_lbl">
+			금속성 팩터
+		</text>
+		<text name="roughness_factor_lbl">
+			거칠기 팩터
+		</text>
+	</panel>
+	<panel name="emissive_texture_pnl">
+		<text name="emissive_lbl">
+			발광:
+		</text>
+		<text name="emissive_upload_fee">
+			업로드 수수료 없음
+		</text>
+		<text name="emissive_tint_lbl">
+			색조
+		</text>
+	</panel>
+	<panel name="normal_texture_pnl">
+		<text name="normal_lbl">
+			노말:
+		</text>
+		<text name="normal_upload_fee">
+			업로드 수수료 없음
+		</text>
+	</panel>
+</panel>

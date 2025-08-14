@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="계약서" name="Covenant">
+	<panel.string name="can_resell">
+		이 지역에서 구매한 토지는 재판매될 수 있습니다.
+	</panel.string>
+	<panel.string name="can_not_resell">
+		이 지역에서 구매한 토지는 재판매될 수 없습니다.
+	</panel.string>
+	<panel.string name="can_change">
+		이 지역에서 구매한 토지는 통합하거나 분할할 수 있습니다.
+	</panel.string>
+	<panel.string name="can_not_change">
+		이 지역에서 구매한 토지는 통합하거나 분할할 수 없습니다.
+	</panel.string>
+	<text name="estate_section_lbl">
+		부동산
+	</text>
+	<text name="estate_name_lbl">
+		이름:
+	</text>
+	<text name="estate_name_text">
+		본토
+	</text>
+	<text name="estate_owner_lbl">
+		소유자:
+	</text>
+	<text name="estate_owner_text">
+		(없음)
+	</text>
+	<text name="estate_cov_lbl">
+		계약서:
+	</text>
+	<text name="covenant_timestamp_text">
+		최종 수정일: 1969년 12월 31일 수요일 16:00:00
+	</text>
+	<text_editor name="covenant_editor">
+		이 부동산에 대한 계약서가 제공되지 않았습니다.
+	</text_editor>
+	<button label="재설정" name="reset_covenant"/>
+	<text name="covenant_help_text">
+		계약서 변경 사항은 부동산의 모든 토지에 표시됩니다.
+	</text>
+	<text name="covenant_instructions">
+		이 부동산의 계약서를 변경하려면 노트카드를 끌어 놓으세요.
+	</text>
+	<text name="region_section_lbl">
+		지역
+	</text>
+	<text name="region_name_lbl">
+		이름:
+	</text>
+	<text name="region_name_text">
+		에리카
+	</text>
+	<text name="region_landtype_lbl">
+		유형:
+	</text>
+	<text name="region_landtype_text">
+		본토 / 홈스테드
+	</text>
+	<text name="region_maturity_lbl">
+		등급:
+	</text>
+	<text name="region_maturity_text">
+		성인
+	</text>
+	<text name="resellable_lbl">
+		재판매:
+	</text>
+	<text name="resellable_clause">
+		이 지역의 토지는 재판매될 수 없습니다.
+	</text>
+	<text name="changeable_lbl">
+		분할:
+	</text>
+	<text name="changeable_clause">
+		이 지역의 토지는 통합/분할될 수 없습니다.
+	</text>
+</panel>

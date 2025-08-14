@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="script panel">
+	<panel.string name="loading">
+		로딩 중...
+	</panel.string>
+	<panel.string name="can_not_view">
+		이 스크립트는 제한된 권한으로 설정되어 있어 보거나 편집할 수 없습니다. 객체 내의 스크립트를 보거나 편집하려면 완전한 권한이 필요합니다.
+	</panel.string>
+	<panel.string name="public_objects_can_not_run">
+		공개 객체는 스크립트를 실행할 수 없습니다
+	</panel.string>
+	<panel.string name="script_running">
+		실행 중
+	</panel.string>
+	<panel.string name="Title">
+		스크립트: [NAME]
+	</panel.string>
+	<menu_bar name="script_menu">
+		<menu label="파일" name="File">
+			<menu_item_call label="저장" name="Save"/>
+			<menu_item_call label="모든 변경사항 되돌리기" name="Revert All Changes"/>
+			<menu_item_call label="파일에서 로드..." name="LoadFromFile"/>
+			<menu_item_call label="파일로 저장..." name="SaveToFile"/>
+			<menu_item_call label="스크립트 에디터 환경설정" name="ScriptPrefs"/>
+		</menu>
+		<menu label="편집" name="Edit">
+			<menu_item_call label="실행취소" name="Undo"/>
+			<menu_item_call label="다시실행" name="Redo"/>
+			<menu_item_call label="잘라내기" name="Cut"/>
+			<menu_item_call label="복사" name="Copy"/>
+			<menu_item_call label="붙여넣기" name="Paste"/>
+			<menu_item_call label="모두 선택" name="Select All"/>
+			<menu_item_call label="선택 해제" name="Deselect"/>
+			<menu_item_call label="찾기 / 바꾸기..." name="Search / Replace..."/>
+			<menu_item_call label="줄로 이동..." name="Go to line..."/>
+		</menu>
+		<menu label="도움말" name="Help">
+			<menu_item_call label="도움말..." name="Help..."/>
+			<menu_item_call label="키워드 도움말..." name="Keyword Help..."/>
+			<menu_item_call label="스크립트 라이브러리" name="Script Library"/>
+		</menu>
+	</menu_bar>
+	<layout_stack name="script_editor_button_bar">
+		<layout_panel name="script_editor_buttons_panel">
+			<button tool_tip="스크립트 저장" name="save_btn"/>
+			<button tool_tip="외부 스크립트 에디터" name="Edit_btn"/>
+			<button tool_tip="하드디스크에서 스크립트 로드" name="load_disk_btn"/>
+			<button tool_tip="하드디스크에 스크립트 저장" name="save_disk_btn"/>
+			<button tool_tip="잘라내기" name="cut_btn"/>
+			<button tool_tip="복사" name="copy_btn"/>
+			<button tool_tip="붙여넣기" name="paste_btn"/>
+			<button tool_tip="실행취소" name="undo_btn"/>
+			<button tool_tip="다시실행" name="redo_btn"/>
+			<button tool_tip="찾기 / 바꾸기" name="search_btn"/>
+			<button tool_tip="스크립트 에디터 환경설정" name="prefs_btn"/>
+		</layout_panel>
+	</layout_stack>
+	<tab_container name="Tabset">
+		<panel name="Script" label="스크립트">
+			<script_editor name="Script Editor">
+				로딩 중...
+			</script_editor>
+		</panel>
+		<panel name="Preprocessed" label="전처리됨">
+			<fs_lsl_preproc_viewer name="Post Editor">
+				로딩 중...
+			</fs_lsl_preproc_viewer>
+		</panel>
+	</tab_container>
+	<combo_box label="삽입..." name="Insert..."/>
+	<button label="편집..." name="edit_btn_2"/>
+	<button label="저장" name="save_btn_2"/>
+</panel>

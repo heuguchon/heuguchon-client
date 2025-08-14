@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="텍스처" name="Texture">
+	<panel.string name="string repeats per meter">
+		미터당 반복
+	</panel.string>
+	<panel.string name="string repeats per face">
+		면당 반복
+	</panel.string>
+	<panel.string name="paste_error_face_selection_mismatch">
+		여러 면을 복사할 때, 대상 객체에서 같은 수의 면이 선택되어야 합니다.
+	</panel.string>
+	<panel.string name="paste_error_object_face_count_mismatch">
+		객체의 모든 면을 복사할 때, 대상 객체는 같은 수의 면을 가져야 합니다.
+	</panel.string>
+	<panel.string name="paste_error_inventory_not_found">
+		하나 이상의 텍스처를 인벤토리에서 찾을 수 없습니다.
+	</panel.string>
+	<panel.string name="paste_options">
+		텍스처 매개변수를 클립보드에 복사
+	</panel.string>
+	<text name="color label">
+		색상
+	</text>
+	<color_swatch label="" name="colorswatch" tool_tip="클릭하여 색상 선택기 열기"/>
+	<text name="color trans">
+		투명도 %
+	</text>
+	<text name="glow label">
+		발광
+	</text>
+	<check_box label="완전 밝게" name="checkbox fullbright"/>
+	<check_box label="물 숨기기" name="checkbox_hide_water"/>
+	<button name="copy_face_btn" tool_tip="텍스처 매개변수를 클립보드에 복사"/>
+	<button name="paste_face_btn" tool_tip="클립보드에서 텍스처 매개변수 붙여넣기"/>
+	<menu_button name="paste_face_gear_btn" tool_tip="붙여넣기 옵션"/>
+	<!-- <text name="label_matmedia">
+		머티리얼
+	</text> -->
+	<combo_box name="combobox matmedia">
+		<combo_box.item label="텍스처" name="Materials"/>
+		<combo_box.item label="PBR 금속 거칠기" name="PBR"/>
+		<combo_box.item label="미디어" name="Media"/>
+	</combo_box>
+	<radio_group name="radio_material_type">
+		<radio_item label="텍스처 (확산)" name="Texture (diffuse)"/>
+		<radio_item label="범프 (노말)" name="Bumpiness (normal)"/>
+		<radio_item label="광택 (스펙큘러)" name="Shininess (specular)"/>
+	</radio_group>
+	<radio_group name="radio_pbr_type">
+		<radio_item label="완전한 머티리얼" name="Complete material"/>
+		<radio_item label="기본 색상" name="Base color"/>
+		<radio_item label="금속성/거칠기" name="Metallic/roughness"/>
+		<radio_item label="발광" name="Emissive"/>
+		<radio_item label="노말" name="Normal"/>
+	</radio_group>
+	<texture_picker label="머티리얼" name="pbr_control" tool_tip="클릭하여 PBR 머티리얼 선택"/>
+	<!-- <button name="pbr_from_inventory" label="인벤토리에서 선택"/> -->
+	<text name="material_permissions_loading_label">
+		콘텐츠 로딩 중...
+	</text>
+	<button name="edit_selected_pbr" label="편집"/>
+	<button name="save_selected_pbr" label="저장"/>
+	<texture_picker label="텍스처" name="texture control" tool_tip="클릭하여 이미지 선택"/>
+	<text name="label alphamode">
+		알파 모드
+	</text>
+	<combo_box name="combobox alphamode">
+		<combo_box.item label="없음" name="None"/>
+		<combo_box.item label="알파 블렌딩" name="Alpha blending"/>
+		<combo_box.item label="알파 마스킹" name="Alpha masking"/>
+		<combo_box.item label="발광 마스크" name="Emissive mask"/>
+	</combo_box>
+	<text name="label maskcutoff">
+		마스크 컷오프
+	</text>
+	<texture_picker label="텍스처" name="bumpytexture control" tool_tip="클릭하여 이미지 선택"/>
+	<text name="label bumpiness">
+		범프
+	</text>
+	<combo_box name="combobox bumpiness">
+		<combo_box.item label="없음" name="None"/>
+		<combo_box.item label="밝기" name="Brightness"/>
+		<combo_box.item label="어둠" name="Darkness"/>
+		<combo_box.item label="나무결" name="woodgrain"/>
+		<combo_box.item label="나무껍질" name="bark"/>
+		<combo_box.item label="벽돌" name="bricks"/>
+		<combo_box.item label="체커보드" name="checker"/>
+		<combo_box.item label="콘크리트" name="concrete"/>
+		<combo_box.item label="거친 타일" name="crustytile"/>
+		<combo_box.item label="깎인 돌" name="cutstone"/>
+		<combo_box.item label="원판" name="discs"/>
+		<combo_box.item label="자갈" name="gravel"/>
+		<combo_box.item label="페트리 접시" name="petridish"/>
+		<combo_box.item label="사이딩" name="siding"/>
+		<combo_box.item label="석재 타일" name="stonetile"/>
+		<combo_box.item label="치장벽토" name="stucco"/>
+		<combo_box.item label="흡입" name="suction"/>
+		<combo_box.item label="직조" name="weave"/>
+		<combo_box.item label="텍스처 사용" name="Use texture"/>
+	</combo_box>
+	<texture_picker label="텍스처" name="shinytexture control" tool_tip="클릭하여 이미지 선택"/>
+	<text name="label shininess">
+		광택
+	</text>
+	<combo_box name="combobox shininess">
+		<combo_box.item label="없음" name="None"/>
+		<combo_box.item label="낮음" name="Low"/>
+		<combo_box.item label="보통" name="Medium"/>
+		<combo_box.item label="높음" name="High"/>
+		<combo_box.item label="텍스처 사용" name="Use texture"/>
+	</combo_box>
+	<text name="label glossiness">
+		광택도
+	</text>
+	<text name="label environment">
+		환경
+	</text>
+	<text name="label shinycolor">
+		색상
+	</text>
+	<color_swatch label="" name="shinycolorswatch" tool_tip="클릭하여 색상 선택기 열기"/>
+	<text name="media_info">
+		선택된 미디어 URL
+	</text>
+	<button name="add_media" tool_tip="미디어 추가" label="선택..."/>
+	<button name="delete_media" tool_tip="이 미디어 텍스처 삭제" label="제거"/>
+	<button label="정렬" label_selected="미디어 정렬" name="button align" tool_tip="미디어 텍스처 정렬 (먼저 로드되어야 함)"/>
+	<text name="tex gen">
+		매핑
+	</text>
+	<combo_box name="combobox texgen">
+		<combo_box.item label="기본값" name="Default"/>
+		<combo_box.item label="평면" name="Planar"/>
+	</combo_box>
+	<spinner label="가로 스케일" name="TexScaleU"/>
+	<button name="flipTextureScaleU" tool_tip="뒤집기"/>
+	<spinner label="세로 스케일" name="TexScaleV"/>
+	<button name="flipTextureScaleV" tool_tip="뒤집기"/>
+	<spinner label="미터당 반복" name="rptctrl"/>
+	<spinner label="회전 각도" name="TexRot"/>
+	<spinner label="가로 오프셋" name="TexOffsetU"/>
+	<spinner label="세로 오프셋" name="TexOffsetV"/>
+	<spinner label="가로 스케일" name="bumpyScaleU"/>
+	<spinner label="세로 스케일" name="bumpyScaleV"/>
+	<spinner label="회전 각도" name="bumpyRot"/>
+	<spinner label="가로 오프셋" name="bumpyOffsetU"/>
+	<spinner label="세로 오프셋" name="bumpyOffsetV"/>
+	<spinner label="가로 스케일" name="shinyScaleU"/>
+	<spinner label="세로 스케일" name="shinyScaleV"/>
+	<spinner label="회전 각도" name="shinyRot"/>
+	<spinner label="가로 오프셋" name="shinyOffsetU"/>
+	<spinner label="세로 오프셋" name="shinyOffsetV"/>
+	<spinner label="스케일 u" name="gltfTextureScaleU"/>
+	<spinner label="스케일 v" name="gltfTextureScaleV"/>
+	<spinner label="회전 각도" name="gltfTextureRotation"/>
+	<spinner label="오프셋 u" name="gltfTextureOffsetU"/>
+	<spinner label="오프셋 v" name="gltfTextureOffsetV"/>
+	<check_box label="평면 면 정렬" name="checkbox planar align" tool_tip="모든 선택된 면의 텍스처를 마지막 선택된 면에 맞춰 정렬. 평면 텍스처 매핑 필요."/>
+	<check_box label="머티리얼 동기화" name="checkbox_sync_settings" tool_tip="텍스처 매핑 매개변수 동기화"/>
+	<button name="button align textures" label="정렬" tool_tip="현재 텍스처 레이어 정렬"/>
+	<button label="모두 찾기" name="btn_select_same_diff" tool_tip="이것과 같은 확산 텍스처를 가진 모든 면 선택"/>
+	<button label="모두 찾기" name="btn_select_same_norm" tool_tip="이것과 같은 노말맵을 가진 모든 면 선택"/>
+	<button label="모두 찾기" name="btn_select_same_spec" tool_tip="이것과 같은 스펙큘러맵을 가진 모든 면 선택"/>
+</panel>
