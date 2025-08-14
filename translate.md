@@ -129,8 +129,14 @@
   - [x] floater_avatar_render_settings.xml (아바타 렌더링 예외 설정)
   - [x] floater_classified.xml (분류 광고 시스템)
   - [x] floater_destinations.xml (목적지/여행지)
-- [ ] 18차: 다음 중요 플로터들
-- [ ] 19차: 대용량 파일 도전 - menu_viewer.xml, notifications.xml
+- [x] 18차: 콘텐츠 생성/편집 도구 번역 완료 (5개)
+  - [x] floater_bulk_upload.xml (대량 업로드)
+  - [x] floater_material_editor.xml (머티리얼 에디터)
+  - [x] floater_model_preview.xml (모델 미리보기)
+  - [x] floater_script.xml (스크립트 에디터)
+  - [x] floater_texture_ctrl.xml (텍스처 컨트롤)
+- [ ] 19차: 다음 중요 플로터들
+- [ ] 20차: 대용량 파일 도전 - menu_viewer.xml, notifications.xml
 - [ ] 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -233,6 +239,11 @@
   - floater_avatar_render_settings.xml (아바타 렌더링 예외 설정)
   - floater_classified.xml (분류 광고 시스템)
   - floater_destinations.xml (목적지/여행지)
+  - floater_bulk_upload.xml (대량 업로드)
+  - floater_material_editor.xml (머티리얼 에디터)
+  - floater_model_preview.xml (모델 미리보기)
+  - floater_script.xml (스크립트 에디터)
+  - floater_texture_ctrl.xml (텍스처 컨트롤)
 
 ### 진행 중인 작업
 - 추가 중요 UI 파일 식별 및 번역
@@ -252,7 +263,7 @@
 
 ### 오늘 수행한 작업 (2025-08-14)
 - 프로젝트 구조 분석 및 ko 폴더 생성
-- **73개 핵심 UI 파일 번역 완룼** (빌드 도구 포함)
+- **78개 핵심 UI 파일 번역 완룼** (빌드 도구 포함)
 - 기본 로그인, 메뉴, 채팅, 지도, 검색 등 핵심 기능 포함
 - 언어 설정 파일로 한국어 로케일 지원
 - **주요 컨텍스트 메뉴 번역 완료** (객체, 토지, 아바타 메뉴)
@@ -269,14 +280,16 @@
 - **대용량 파일 도전 시작** - floater_tools.xml (빌드 도구) 완료
 - **추가 플로터 창 번역 완료** - 신고 시스템, 관리자 도구, 조이스틱 설정, 이동 시점
 - **17차 고급 기능 번역 완료** - AO 시스템, 자동 치환, 아바타 렌더링, 분류광고, 목적지
+- **18차 콘텐츠 생성 도구 완료** - 대량 업로드, 머티리얼 에디터, 모델 미리보기, 스크립트 에디터, 텍스처 컨트롤
 
 ### 번역 완료율
-- **총 73개 파일 번역** (독일어 기준 약 400개 중 약 18%)
+- **총 78개 파일 번역** (독일어 기준 약 400개 중 약 19.5%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화
 - **미디어/프리뷰 완료** - 모든 미디어 콘텐츠 미리보기 기능 한국어화
 - **고급 기능 완료** - AO 시스템, 자동 텍스트 치환, 아바타 렌더링 예외 설정 등
+- **콘텐츠 생성 도구 완료** - 대량 업로드, 머티리얼 에디터, 모델 미리보기, 스크립트 에디터 등
 
 ### 다음 단계 우선순위
 1. **더 많은 플로터 창들**:
