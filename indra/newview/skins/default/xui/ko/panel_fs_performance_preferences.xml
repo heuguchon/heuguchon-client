@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="panel_performance_preferences">
+	<text name="back_lbl">
+		뒤로
+	</text>
+	<text name="settings_title">
+		그래픽 설정
+	</text>
+	<text name="quality_lbl">
+		품질 vs 속도
+	</text>
+	<text name="FasterText">
+		빠름
+	</text>
+	<text name="BetterText">
+		품질
+	</text>
+	<text name="ShadersPrefText">
+		낮음
+	</text>
+	<text name="ShadersPrefText2">
+		보통
+	</text>
+	<text name="ShadersPrefText3">
+		높음
+	</text>
+	<text name="ShadersPrefText4">
+		최고
+	</text>
+	<text name="quality_desc">
+		프리셋을 선택하면 모든 수동 조정이 재설정됩니다.
+	</text>
+	<text name="distance_lbl">
+		가시거리
+	</text>
+	<text name="faster_lbl">
+		빠름
+	</text>
+	<text name="farther_lbl">
+		멀리
+	</text>
+	<text name="distance_desc1">
+		더 나은 성능을 위해 낮게 유지하거나, 더 넓은 시야를 위해 높이세요.
+	</text>
+	<text name="environment_lbl">
+		환경
+	</text>
+	<text name="enhancements_desc">
+그림자를 줄이거나 제거하면 FPS를 크게 향상시킬 수 있지만,
+분위기와 장면의 외관에는 영향을 줍니다.
+	</text>
+	<text name="RenderShadowDetailText">
+		그림자 소스:
+	</text>
+	<combo_box name="ShadowDetail">
+		<combo_box.item label="없음" name="0" />
+		<combo_box.item label="태양/달" name="1" />
+		<combo_box.item label="태양/달 + 프로젝터" name="2" />
+	</combo_box>
+	<text name="water_lbl">
+		물
+	</text>
+	<text name="water_desc">
+		물 품질을 낮추면 FPS를 크게 향상시킬 수 있습니다.
+	</text>
+	<text name="ReflectionsText">
+		물 반사:
+	</text>
+	<combo_box name="Reflections">
+		<combo_box.item label="없음 (불투명)" name="-2" />
+		<combo_box.item label="없음 (투명)" name="-1" />
+		<combo_box.item label="최소" name="0" />
+		<combo_box.item label="지형과 나무" name="1" />
+		<combo_box.item label="모든 고정 객체" name="2" />
+		<combo_box.item label="모든 아바타와 객체" name="3" />
+		<combo_box.item label="모든 것" name="4" />
+	</combo_box>
+	<text name="photo_lbl">
+		사진 촬영
+	</text>
+	<text name="photo_desc">
+사진작가들은 고화질이 필요하지만,
+종종 성능을 희생해야 합니다. 사진 도구가
+올바른 균형을 찾는 데 도움이 될 수 있습니다.
+	</text>
+	<button name="open_phototools" label="사진 도구" tool_tip="고급 설정을 위한 전용 사진 도구를 엽니다." />
+</panel>

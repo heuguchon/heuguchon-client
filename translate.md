@@ -152,6 +152,13 @@
   - [x] panel_fs_nui_login.xml (Firestorm NUI 로그인)
   - [x] panel_fs_performance_autotune.xml (Firestorm 성능 - 자동 조정)
   - [x] panel_fs_performance_huds.xml (Firestorm 성능 - HUD들)
+- [x] 55차: 검색 시스템 및 성능 설정 확장 완료 (6개)
+  - [x] panel_fs_search_legacy_classifieds.xml (분류광고 검색)
+  - [x] panel_fs_search_legacy_events.xml (이벤트 검색)
+  - [x] panel_fs_search_legacy_land.xml (토지 판매 검색)
+  - [x] panel_fs_search_legacy_web.xml (웹 검색)
+  - [x] panel_fs_settings_sky_sunmoon.xml (Firestorm 하늘 설정 - 태양과 달)
+  - [x] panel_fs_performance_preferences.xml (Firestorm 성능 환경설정)
 - [x] 16차: 추가 플로터 창 번역 완료 (Option C)
   - [x] floater_report_abuse.xml (신고 시스템)
   - [x] floater_god_tools.xml (관리자 도구)
@@ -572,9 +579,10 @@
 - **52차: 추가 중요 패널 UI** - 그룹 공지, 랜드마크 정보, 첫 로그인, 인벤토리 갤러리, 근처 미디어, 알림 목록 (6개)
 - **53차: 경험 시스템 및 소셜 미디어 패널** - 경험 목록 에디터, 경험 로그, 경험 검색, Flickr 계정 및 사진 공유 (6개)
 - **54차: Firestorm 전용 기능 확장 패널** - Firestorm 연락처 친구/그룹/세트, NUI 로그인, 성능 자동 조정, HUD 관리 (6개)
+- **55차: 검색 시스템 및 성능 설정 확장** - 분류광고/이벤트/토지/웹 검색, 태양과 달 설정, 성능 환경설정 (6개)
 
 ### 번역 완료율
-- **총 283개 파일 번역** (독일어 기준 약 400개 중 약 70.8%)
+- **총 289개 파일 번역** (독일어 기준 약 400개 중 약 72.3%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화
@@ -584,6 +592,8 @@
 - **중요 패널 UI 완료** - 개인정보, Firestorm 환경설정, 의상 편집, 그룹 관리, 네비게이션, 상태바, 프로필, 그룹 토지/매니, 역할, 공지, 월드맵, IM 패널
 - **환경설정 패널 거의 완료** - 고급, 알림, 컨트롤, 백업, 이동, 스킨, 업로드, 크래시 보고서, OpenSim, 색상, UI 환경설정 한국어화
 - **빌드 도구 및 스크립트 에디터 완료** - 텍스처 설정, PBR/Blinn-Phong 머티리얼, 미디어 매핑, 스크립트 에디터, GLTF 머티리얼 등 모든 제작 도구 한국어화
+- **경험 시스템 및 소셜 미디어 완료** - 경험 관리, Flickr 연동 등 전체 한국어화
+- **Firestorm 전용 기능 완료** - 고급 연락처 관리, 성능 최적화, 검색 시스템 확장 등
 
 ### 다음 단계 우선순위
 1. **더 많은 플로터 창들**:

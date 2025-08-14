@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel label="분류광고" name="panel_ls_classifieds">
+	<panel name="panel_ls_input">
+		<text name="search_text">
+			검색어를 입력하세요:
+		</text>
+		<line_editor name="classifieds_edit" width="590"/>
+	</panel>
+	<!-- Search Pane -->
+	<panel name="panel_ls_scrolllist">
+		<scroll_list name="search_results_classifieds">
+			<columns label="" name="icon"/>
+			<columns label="이름" name="classified_name"/>
+			<columns label="광고 가격" name="price"/>
+		</scroll_list>
+		<button label="뒤로" name="classifieds_back"/>
+		<button	label="다음" name="classifieds_next"/>
+	</panel>
+</panel>

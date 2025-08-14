@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel label="태양과 달" name="panel_fs_settings_sky_hbodies">
+		<panel name="P_Sun_Color">
+			<text name="T_Sun_Header" value="태양과 달 색상"/>
+		</panel>
+
+		<panel name="P_SM_Color">
+			<text name="color_label" width="140">
+					태양과 달 색상:
+				</text>
+		</panel>
+
+		<panel name="P_Sun_Header">
+			<text name="T_Sun_Header" value="태양과 별 설정"/>
+		</panel>
+
+		<panel name="P_Sun_Setting">
+			<text name="image_label" width="150">
+				이미지:
+			</text>
+			<check_box label="비컨 표시" name="sunbeacon" />
+			<text name="glow_focus_label">
+				빛 집중도:
+			</text>
+			<text name="glow_size_label">
+				빛 크기:
+			</text>
+			<text name="star_brightness_label">
+				별 밝기:
+			</text>
+			<text name="sun_scale_label">
+				스케일링:
+			</text>	
+			<text name="sun_azimuth_label">
+				방위각:
+			</text>
+			<text name="sun_elevation_label">
+				고도각:
+			</text>
+		</panel>
+
+		<panel name="P_Moon_Header">
+			<text name="T_Moon_Header" value="달 설정"/>
+		</panel>
+
+		<panel name="P_Moon_Setting">
+			<text name="moon_image_label" width="150">
+				이미지:
+			</text>
+			<check_box label="비컨 표시" name="moonbeacon" />
+			<text name="moon_scale_label">
+				스케일링:
+			</text>
+			<text name="brightness_label">
+				밝기:
+			</text>
+			<text name="moon_azimuth_label">
+				방위각:
+			</text>
+			<text name="moon_elevation_label">
+				고도각:
+			</text>
+		</panel>
+</panel>
