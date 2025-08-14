@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel name="panel_flickr_photo">
+	<combo_box name="resolution_combobox" tool_tip="이미지 해상도">
+		<combo_box.item label="현재 창" name="CurrentWindow"/>
+		<combo_box.item label="사용자 정의" name="Custom"/>
+	</combo_box>
+	<combo_box name="filters_combobox" tool_tip="이미지 필터">
+		<combo_box.item label="필터 없음" name="NoFilter"/>
+	</combo_box>
+	<check_box label="비율 유지" name="keep_aspect_ratio"/>
+	<text name="working_lbl">
+		업데이트 중...
+	</text>
+	<check_box label="프레임 표시" name="show_frame" tool_tip="캡처 영역 주위에 프레임을 표시합니다. 캡처 영역 밖에 있는 장면 부분은 채도가 낮아지고 약간 흐려집니다."/>
+	<check_box label="가이드 표시" name="show_guides" tool_tip="캡처 영역 내에 캡처 가이드(3분할 법칙)를 표시합니다."/>
+	<button label="새로 고침" name="new_snapshot_btn" tool_tip="새로 고치려면 클릭"/>
+	<button label="미리 보기" name="big_preview_btn" tool_tip="미리 보기를 켜거나 끄려면 클릭"/>
+	<text name="title_label">
+		제목:
+	</text>
+	<text name="description_label">
+		설명:
+	</text>
+	<check_box initial_value="true" label="설명에 위치 추가" name="add_location_cb"/>
+	<text name="tags_label" tool_tip="태그는 공백으로 구분하세요. 여러 단어로 구성된 태그의 경우 &quot;&quot;를 사용하세요.">
+		태그:
+	</text>
+	<combo_box name="rating_combobox" tool_tip="Flickr 콘텐츠 등급">
+		<combo_box.item label="안전한 Flickr 등급" name="SafeRating"/>
+		<combo_box.item label="보통 Flickr 등급" name="ModerateRating"/>
+		<combo_box.item label="제한된 Flickr 등급" name="RestrictedRating"/>
+	</combo_box>
+	<button label="공유" name="post_photo_btn"/>
+	<button label="취소" name="cancel_photo_btn"/>
+</panel>

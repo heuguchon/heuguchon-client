@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="panel_performance_huds">
+	<text name="back_lbl">
+		뒤로
+	</text>
+	<text name="huds_title">
+		활성 HUD들
+	</text>
+	<text name="huds_desc1">
+		불필요한 HUD를 제거하면 메모리를 절약하고 뷰어를 더 빠르게 만들 수 있습니다.
+	</text>
+	<text name="huds_desc2">
+		HUD는 종종 많은 스크립트를 포함하며 서버 측 지연도 생성합니다.
+	</text>
+	<text name="huds_desc3">
+		참고: HUD의 최소화 버튼은 HUD를 제거하지 않습니다. "X"를 클릭하여 제거하세요.
+	</text>
+	<name_list name="hud_list">
+		<name_list.columns label="시간 (μs)" name="art_value" tool_tip="HUD를 렌더링하는 데 필요한 시간(밀리초)입니다." />
+		<name_list.columns label="이름" tool_tip="제거하려면 'X'를 클릭하세요." name="name" />
+	</name_list>
+</panel>

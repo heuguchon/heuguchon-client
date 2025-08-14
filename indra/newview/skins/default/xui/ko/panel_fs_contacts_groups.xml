@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="groups">
+	<filter_editor label="그룹 필터" name="group_filter_input" right="-91"/>
+	<view_border
+	 width="257"
+	 name="info_border" />
+	<group_list
+	 width="255"
+	 name="group_list" />
+	<button
+	 label="IM/전화"
+	 name="chat_btn"
+	 tool_tip="인스턴트 메시지 세션을 엽니다"
+	 left_delta="262"
+	 width="85" />
+	<button
+	 label="프로필"
+	 name="info_btn"
+	 width="85" />
+	<button
+	 label="그룹 제목"
+	 name="titles_btn"
+	 width="85" />
+	<button
+	 label="활성화"
+	 name="activate_btn"
+	 width="85" />
+	<button
+	 label="떠나기"
+	 name="leave_btn"
+	 width="85" />
+	<button
+	 label="생성..."
+	 name="create_btn"
+	 width="85" />
+	<button
+	 label="검색..."
+	 name="search_btn"
+	 width="85" />
+	<button
+	 label="초대..."
+	 name="invite_btn"
+	 width="85" />
+</panel>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="experince_list_editor">
+	<panel.string name="loading">
+		로딩 중...
+	</panel.string>
+	<panel.string name="panel_allowed">
+		허용된 경험:
+	</panel.string>
+	<panel.string name="panel_blocked">
+		차단된 경험:
+	</panel.string>
+	<panel.string name="panel_trusted">
+		핵심 경험:
+	</panel.string>
+	<panel.string name="no_results">
+		(비어있음)
+	</panel.string>
+	<text name="text_name">
+		경험 목록
+	</text>
+	<name_list name="experience_list">
+		<name_list.columns label="이름" name="experience_name"/>
+	</name_list>
+	<button label="추가" name="btn_add"/>
+	<button label="제거" name="btn_remove"/>
+	<button label="프로필..." name="btn_profile"/>
+</panel>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="friends">
+	<layout_stack name="ls_friend_list" right="-90">
+		<layout_panel name="lp_search">
+			<filter_editor label="친구 필터" name="friend_filter_input"/>
+		</layout_panel>
+		<layout_panel name="lp_friend_list">
+			<fs_scroll_list name="friend_list">
+				<fs_scroll_list.column name="icon_online_status" tool_tip="온라인 상태"/>
+				<fs_scroll_list.column label="사용자명" name="user_name" tool_tip="이 친구의 사용자명입니다."/>
+				<fs_scroll_list.column label="표시 이름" name="display_name" tool_tip="이 친구의 표시 이름입니다."/>
+				<fs_scroll_list.column label="이름" name="full_name" tool_tip="이 친구의 이름입니다."/>
+				<fs_scroll_list.column name="icon_visible_online" tool_tip="이 친구가 당신이 온라인인지 볼 수 있습니다."/>
+				<fs_scroll_list.column name="icon_visible_map" tool_tip="이 친구가 지도에서 당신의 위치를 볼 수 있습니다."/>
+				<fs_scroll_list.column name="icon_edit_mine" tool_tip="이 친구가 당신의 객체를 편집, 삭제 또는 가져갈 수 있습니다."/>
+				<fs_scroll_list.column name="icon_visible_map_theirs" tool_tip="당신이 지도에서 이 친구의 위치를 볼 수 있습니다."/>
+				<fs_scroll_list.column name="icon_edit_theirs" tool_tip="당신이 이 친구의 객체를 편집할 수 있습니다."/>
+			</fs_scroll_list>
+		</layout_panel>
+	</layout_stack>
+	<button
+	 label="IM/전화"
+	 name="im_btn"
+	 tool_tip="인스턴트 메시지 세션을 엽니다"
+	 left_delta="265"
+	 width="85" />
+	<button
+	 label="프로필"
+	 name="profile_btn"
+	 tool_tip="사진, 그룹 및 기타 정보를 표시합니다"
+	 width="85" />
+	<button
+	 label="텔레포트..."
+	 name="offer_teleport_btn"
+	 tool_tip="이 친구에게 현재 위치로 텔레포트 제안"
+	 width="85" />
+	<button
+	 label="지도..."
+	 name="map_btn"
+	 tool_tip="지도에서 이 친구의 위치 표시"
+	 width="85" />
+	<button
+	 label="지불..."
+	 name="pay_btn"
+	 tool_tip="이 친구에게 린든달러(L$) 지불"
+	 width="85" />
+	<button
+	 label="제거..."
+	 name="remove_btn"
+	 tool_tip="친구 목록에서 이 사람을 제거합니다"
+	 width="85" />
+	<button
+	 label="추가..."
+	 name="add_btn"
+	 tool_tip="이 주민에게 친구 요청 보내기"
+	 width="85" />
+	<text name="friend_count" width="85">
+	 친구들: [COUNT]
+	</text>
+</panel>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="contact_sets_panel">
+	<panel.string name="empty_list">
+		이 연락처 세트가 비어있습니다.
+	</panel.string>
+	<panel.string name="no_sets">
+		연락처 세트 없음
+	</panel.string>
+	<panel.string name="all_sets">
+		모든 연락처 세트
+	</panel.string>
+	<panel.string name="pseudonyms">
+		별칭
+	</panel.string>
+	<panel.string name="non_friends">
+		친구가 아닌 사람들
+	</panel.string>
+	<combo_box name="combo_sets" width="199"/>
+	<button name="config_btn" tool_tip="선택된 연락처 세트 구성"/>
+	<button name="add_set_btn" tool_tip="새 연락처 세트 추가"/>
+	<button name="remove_set_btn" tool_tip="선택된 연락처 세트 제거"/>
+	<avatar_list name="contact_list" right="-90"/>
+	<button label="추가..." name="add_btn" tool_tip="현재 연락처 세트에 아바타 추가" width="85" left_delta="265"/>
+	<button label="제거..." name="remove_btn" tool_tip="현재 연락처 세트에서 아바타 제거" width="85"/>
+	<button label="프로필..." name="profile_btn" tool_tip="아바타 프로필 열기" width="85"/>
+	<button label="IM..." name="start_im_btn" tool_tip="인스턴트 메시지 세션을 엽니다" width="85"/>
+	<button label="텔레포트..." name="offer_teleport_btn" tool_tip="이 아바타에게 현재 위치로 텔레포트 제안" width="85"/>
+	<button label="별칭 설정" name="set_pseudonym_btn" tool_tip="이 아바타의 가명을 설정합니다" width="85"/>
+	<button label="별칭 제거" name="remove_pseudonym_btn" tool_tip="아바타의 가명을 제거합니다" width="85"/>
+	<button label="표시명 제거" name="remove_displayname_btn" tool_tip="아바타의 표시 이름을 제거합니다" width="85"/>
+	<text name="member_count">
+		구성원: [COUNT]
+	</text>
+</panel>

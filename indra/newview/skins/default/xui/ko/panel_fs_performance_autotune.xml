@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="panel_performance_autotune">
+	<text name="back_lbl">
+		뒤로
+	</text>
+	<text name="settings_title">
+		자동 조정 설정
+	</text>
+	<text name="quality_lbl">
+		가장 먼 아바타들
+	</text>
+	<check_box label="거리 기반 최적화" name="FSAutoTuneImpostorByDistEnabled" tool_tip="활성화된 경우 MaxNonImpostors 설정을 조정하여 완전히 표시된 아바타를 지정된 반경으로 제한합니다." />
+	<spinner label="가장 먼 완전한 아바타" name="ffa_autotune" />
+	<text name="distant_av_advice" height="68">
+더 먼 거리의 아바타들은 렌더링 비용에 관계없이 자동으로 최적화될 수 있습니다.
+아바타가 최적화될 카메라로부터의 거리를 설정하세요.
+주의: 이 설정은 근처에 아바타가 없으면 MaxNonImpostors를 1로 설정합니다.
+	</text>
+	<text name="distance_lbl">
+		가시거리
+조정 제한
+	</text>
+	<spinner label="최소 거리" name="min_dd_autotune" />
+	<spinner label="선호 거리" name="pref_dd_autotune" />
+	<text name="distance_desc1">
+		경관 매개변수를 조정할 때 자동 조정은 최소와 선호 가시거리 사이의 값을 선택합니다.
+	</text>
+	<text name="sundry_lbl">
+		기타 설정
+	</text>
+	<check_box label="자신의 아바타 최적화 허용" name="alow_self_impostor" tool_tip="활성화된 경우 뷰어가 자신의 아바타를 임포스터로 표시할 수 있습니다." />
+	<check_box label="최적화된 렌더링 시간 표시" name="show_tuned_art" tool_tip="활성화된 경우 시간 열에 최적화 전 렌더링 시간이 아닌 현재 렌더링 시간이 표시됩니다." />
+	<text name="sundry_desc1">
+이 옵션들은 미묘한 설정을 제어합니다. 이것들이 정확히 무엇을 의미하는지에 대한 자세한 정보는 온라인 도움말에서 찾을 수 있습니다.
+	</text>
+</panel>

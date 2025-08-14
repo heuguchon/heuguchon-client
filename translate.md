@@ -138,6 +138,20 @@
   - [x] panel_inventory_gallery.xml (인벤토리 갤러리)
   - [x] panel_nearby_media.xml (근처 미디어)
   - [x] panel_notification_list_item.xml (알림 목록 아이템)
+- [x] 53차: 경험 시스템 및 소셜 미디어 패널 완료 (6개)
+  - [x] panel_experience_list_editor.xml (경험 목록 에디터)
+  - [x] panel_experience_list_item.xml (경험 목록 아이템)
+  - [x] panel_experience_log.xml (경험 로그)
+  - [x] panel_experience_search.xml (경험 검색)
+  - [x] panel_flickr_account.xml (Flickr 계정)
+  - [x] panel_flickr_photo.xml (Flickr 사진 공유)
+- [x] 54차: Firestorm 전용 기능 확장 패널 완료 (6개)
+  - [x] panel_fs_contacts_friends.xml (Firestorm 연락처 - 친구들)
+  - [x] panel_fs_contacts_groups.xml (Firestorm 연락처 - 그룹들)
+  - [x] panel_fs_contacts_sets.xml (Firestorm 연락처 - 세트)
+  - [x] panel_fs_nui_login.xml (Firestorm NUI 로그인)
+  - [x] panel_fs_performance_autotune.xml (Firestorm 성능 - 자동 조정)
+  - [x] panel_fs_performance_huds.xml (Firestorm 성능 - HUD들)
 - [x] 16차: 추가 플로터 창 번역 완료 (Option C)
   - [x] floater_report_abuse.xml (신고 시스템)
   - [x] floater_god_tools.xml (관리자 도구)
@@ -556,9 +570,11 @@
 - **50차: 아바타 편집 패널 확장** - 유니버설 타투, 치마, 양말, 타투, 속바지, 속옷 편집 패널 (6개)
 - **51차: 그룹 관리 시스템** - 그룹 생성, 그룹 정보, 멤버 초대, 그룹 목록 관련 패널 (5개)
 - **52차: 추가 중요 패널 UI** - 그룹 공지, 랜드마크 정보, 첫 로그인, 인벤토리 갤러리, 근처 미디어, 알림 목록 (6개)
+- **53차: 경험 시스템 및 소셜 미디어 패널** - 경험 목록 에디터, 경험 로그, 경험 검색, Flickr 계정 및 사진 공유 (6개)
+- **54차: Firestorm 전용 기능 확장 패널** - Firestorm 연락처 친구/그룹/세트, NUI 로그인, 성능 자동 조정, HUD 관리 (6개)
 
 ### 번역 완료율
-- **총 271개 파일 번역** (독일어 기준 약 400개 중 약 67.8%)
+- **총 283개 파일 번역** (독일어 기준 약 400개 중 약 70.8%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화
