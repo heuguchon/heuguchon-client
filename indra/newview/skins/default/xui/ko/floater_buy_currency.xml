@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="buy currency" title="L$ 구매">
+	<floater.string name="buy_currency">
+		[LINDENS] L$를 약 [LOCALAMOUNT]에 구매
+	</floater.string>
+	<floater.string name="info_cannot_buy">
+		구매할 수 없음
+	</floater.string>
+	<layout_stack name="outer_stack">
+		<layout_panel name="layout_panel_title">
+			<text name="info_need_more">
+				더 많은 L$가 필요합니다
+			</text>
+			<text name="info_buying">
+				L$ 구매
+			</text>
+		</layout_panel>
+		<layout_panel name="layout_panel_price">
+			<text name="target_price_label">
+				필요한 금액
+			</text>
+			<text name="target_price">
+				L$ [AMT]
+			</text>
+		</layout_panel>
+		<layout_panel name="layout_panel_balance">
+			<text name="balance_label">
+				현재 보유
+			</text>
+			<text name="balance_amount">
+				L$ [AMT]
+			</text>
+		</layout_panel>
+		<layout_panel name="layout_panel_required">
+			<text name="required_label">
+				최소 구매해야 할 금액
+			</text>
+			<text name="required_amount">
+				L$ [AMT]
+			</text>
+		</layout_panel>
+		<layout_panel name="layout_panel_action">
+			<text name="currency_action">
+				구매할 금액 선택
+			</text>
+			<text name="currency_label">
+				L$
+			</text>
+			<line_editor label="L$" name="currency_amt">
+				1234
+			</line_editor>
+			<text name="currency_est">
+				약 [LOCALAMOUNT]
+			</text>
+			<text name="getting_data">
+				추정 중...
+			</text>
+			<text name="total_label">
+				새로운 잔액
+			</text>
+			<text name="total_amount">
+				L$ [AMT]
+			</text>
+		</layout_panel>
+		<layout_panel name="layout_panel_msg">
+			<text name="currency_links">
+				[http://www.secondlife.com/my/account/payment_method_management.php 지불 방법] | [https://www.secondlife.com/my/account/currency.php 통화]
+			</text>
+			<text name="exchange_rate_note">
+				최신 환율을 확인하려면 금액을 다시 입력하세요.
+			</text>
+			<text name="purchase_warning_repurchase">
+				L$를 받은 후 구매를 다시 시도하세요.
+			</text>
+		</layout_panel>
+		<layout_panel name="layout_panel_buttons">
+			<text name="contacting">
+				LindeX에 연결 중...
+			</text>
+			<button label="지금 구매" name="buy_btn"/>
+			<button label="취소" name="cancel_btn"/>
+		</layout_panel>
+	</layout_stack>
+</floater>

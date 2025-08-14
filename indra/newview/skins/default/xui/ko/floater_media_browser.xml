@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_about" title="미디어 브라우저">
+	<floater.string name="home_page_url">
+		http://www.secondlife.com
+	</floater.string>
+	<floater.string name="support_page_url">
+		http://support.secondlife.com
+	</floater.string>
+	<layout_stack name="stack1">
+		<layout_panel name="nav_controls">
+			<button label="뒤로" name="back"/>
+			<button label="앞으로" name="forward"/>
+			<button label="새로고침" name="reload"/>
+			<button label="이동" name="go"/>
+		</layout_panel>
+		<layout_panel name="time_controls">
+			<button label="되감기" name="rewind" width="100"/>
+			<button label="정지" name="stop" left_pad="20"/>
+			<button label="빨리감기" name="seek"/>
+		</layout_panel>
+		<layout_panel name="parcel_owner_controls">
+			<button label="현재 페이지를 구획에 보내기" name="assign"/>
+		</layout_panel>
+		<layout_panel name="external_controls">
+			<text name="plugin_fail_text">
+웹 브라우저 플러그인을 여는 중입니다.
+플러그인이 로드되지 않으면 다음을 방문하세요:
+
+https://wiki.firestormviewer.org/fs_media
+
+이 문제를 해결하기 위한 가능한 단계들이 있습니다.
+			</text>
+			<button label="내 웹 브라우저에서 열기" name="open_browser"/>
+			<check_box label="항상 내 브라우저에서 열기" name="open_always"/>
+			<button label="닫기" name="close"/>
+		</layout_panel>
+	</layout_stack>
+</floater>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="avatarpicker" title="거주자 선택">
+	<floater.string name="not_found">
+		'[TEXT]'를 찾을 수 없음
+	</floater.string>
+	<floater.string name="not_found_text">
+		거주자를 찾을 수 없습니다.
+	</floater.string>
+	<floater.string name="no_one_near">
+		주변에 아무도 없음
+	</floater.string>
+	<floater.string name="no_results">
+		결과 없음
+	</floater.string>
+	<floater.string name="searching">
+		검색 중...
+	</floater.string>
+	<string label="확인" label_selected="확인" name="Select">
+		선택
+	</string>
+	<string name="Close">
+		닫기
+	</string>
+	<tab_container name="ResidentChooserTabs">
+		<panel label="검색" name="SearchPanel">
+			<text name="InstructSearchResidentName">
+				사람 이름의 일부를 입력하세요:
+			</text>
+			<button label="검색" label_selected="검색" name="Find"/>
+			<fs_scroll_list name="SearchResults">
+				<columns label="이름" name="name"/>
+				<columns label="사용자명" name="username"/>
+			</fs_scroll_list>
+		</panel>
+		<panel label="친구" name="FriendsPanel">
+			<text name="InstructSelectFriend">
+				사람을 선택하세요:
+			</text>
+			<fs_scroll_list name="Friends">
+				<columns label="이름" name="name"/>
+				<columns label="사용자명" name="username"/>
+			</fs_scroll_list>
+		</panel>
+		<panel label="내 주변" name="NearMePanel">
+			<text name="InstructSelectResident">
+				주변 사람을 선택하세요:
+			</text>
+			<slider label="범위" name="near_me_range"/>
+			<text name="meters">
+				미터
+			</text>
+			<fs_scroll_list name="NearMe">
+				<columns label="이름" name="name"/>
+				<columns label="사용자명" name="username"/>
+			</fs_scroll_list>
+		</panel>
+		<panel label="UUID로 검색" name="SearchPanelUUID">
+			<text name="SearchByUUIDLabel">
+				사람의 UUID를 입력하세요:
+			</text>
+			<button label="검색" label_selected="검색" name="FindUUID"/>
+			<fs_scroll_list name="SearchResultsUUID">
+				<columns label="이름" name="nameUUID"/>
+				<columns label="사용자명" name="usernameUUID"/>
+			</fs_scroll_list>
+		</panel>
+	</tab_container>
+	<button label="확인" label_selected="확인" name="ok_btn"/>
+	<button label="취소" label_selected="취소" name="cancel_btn"/>
+</floater>

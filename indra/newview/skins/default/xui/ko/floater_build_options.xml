@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="build options floater" title="격자 옵션">
+	<spinner label="단위 (미터)" name="GridResolution"/>
+	<spinner label="격자 크기 (미터)" name="GridDrawSize"/>
+	<spinner label="소수점 자릿수" name="DecimalPrecision"/>
+	<spinner label="각도 (도)" name="RotationStep" tool_tip="회전 도구의 모든 회전은 이 값의 배수로 제한됩니다 (기본값: 1.0)"/>
+	<check_box label="하위 단위에 맞춤" name="GridSubUnit"/>
+	<check_box label="단면 보기" name="GridCrossSection"/>
+	<text name="grid_opacity_label" tool_tip="격자 투명도">
+		투명도:
+	</text>
+	<slider label="격자 투명도" name="GridOpacity"/>
+</floater>

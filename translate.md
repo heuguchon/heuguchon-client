@@ -71,7 +71,13 @@
   - [x] floater_im_session.xml (IM 세션)
   - [x] floater_how_to.xml (도움말)
   - [x] floater_script_debug.xml (스크립트 디버그)
-- [ ] 6차: 대용량 파일 도전 (menu_viewer.xml, notifications.xml 등)
+- [x] 6차: 2단계 추가 중요 플로터 번역 완료
+  - [x] floater_build_options.xml (건축 옵션)
+  - [x] floater_avatar_picker.xml (아바타 선택기)
+  - [x] floater_help_browser.xml (도움말 브라우저)
+  - [x] floater_media_browser.xml (미디어 브라우저)
+  - [x] floater_buy_currency.xml (통화 구매)
+- [ ] 7차: 대용량 파일 도전 (menu_viewer.xml, notifications.xml 등)
 - [ ] 6차: 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -97,7 +103,7 @@
 - 프로젝트 구조 분석
 - 작업 계획 수립
 - ko 폴더 생성
-- **핵심 파일 30개 번역 완료:**
+- **핵심 파일 35개 번역 완료:**
   - strings.xml (기본 문자열)
   - floater_about.xml (정보 창)
   - menu_login.xml (로그인 메뉴)
@@ -128,6 +134,11 @@
   - floater_im_session.xml (IM 세션)
   - floater_how_to.xml (도움말)
   - floater_script_debug.xml (스크립트 디버그)
+  - floater_build_options.xml (건축 옵션)
+  - floater_avatar_picker.xml (아바타 선택기)
+  - floater_help_browser.xml (도움말 브라우저)
+  - floater_media_browser.xml (미디어 브라우저)
+  - floater_buy_currency.xml (통화 구매)
 
 ### 진행 중인 작업
 - 추가 중요 UI 파일 식별 및 번역
@@ -147,15 +158,16 @@
 
 ### 오늘 수행한 작업 (2025-08-14)
 - 프로젝트 구조 분석 및 ko 폴더 생성
-- **30개 핵심 UI 파일 번역 완료**
+- **35개 핵심 UI 파일 번역 완료**
 - 기본 로그인, 메뉴, 채팅, 지도, 검색 등 핵심 기능 포함
 - 언어 설정 파일로 한국어 로케일 지원
 - **주요 컨텍스트 메뉴 번역 완료** (객체, 토지, 아바타 메뉴)
 - **핵심 플로터 창들 번역 완료** (카메라, 제스처, 스크린샷, 지불, 통계 등)
 - **추가 중요 UI 번역 완료** (프로필, 그룹, IM 세션, 도움말, 스크립트 디버그)
+- **2단계 고급 UI 번역 완료** (건축, 아바타 선택, 도움말 브라우저, 미디어 브라우저, L$ 구매)
 
 ### 번역 완료율
-- **총 30개 파일 번역** (독일어 기준 약 400개 중 약 7.5%)
+- **총 35개 파일 번역** (독일어 기준 약 400개 중 약 8.75%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 
