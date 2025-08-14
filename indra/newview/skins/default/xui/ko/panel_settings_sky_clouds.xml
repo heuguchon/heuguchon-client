@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="구름" name="panel_settings_sky_clouds">
+	<layout_stack name="main_ls">
+		<layout_panel name="left_lp">
+			<text name="cloud_coverage_label" width="110">
+				구름 덮개:
+			</text>
+			<text name="cloud_scale_label" width="110">
+				구름 크기:
+			</text>
+			<text name="cloud_variance_label" width="110">
+				구름 변화:
+			</text>
+			<text name="cloud_scroll_label">
+				구름 이동:
+			</text>
+			<text name="cloud_image_label">
+				구름 이미지:
+			</text>
+			<text name="cloud_color_label">
+				구름 색상:
+			</text>
+		</layout_panel>
+		<layout_panel name="right_lp">
+			<text name="cloud_density_label">
+				구름 밀도:
+			</text>
+			<slider label="X" name="cloud_density_x"/>
+			<slider label="Y" name="cloud_density_y"/>
+			<slider label="D" name="cloud_density_d"/>
+			<text name="cloud_detail_label">
+				구름 디테일:
+			</text>
+			<slider label="X" name="cloud_detail_x"/>
+			<slider label="Y" name="cloud_detail_y"/>
+			<slider label="D" name="cloud_detail_d"/>
+		</layout_panel>
+	</layout_stack>
+</panel>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="panel_radar">
+	<string name="NotesColumnIcon" value="radarbox_n"/>
+	<string name="SittingColumnIcon" value="radarbox_s"/>
+	<string name="TypingColumnIcon" value="radarbox_t"/>
+	<string
+		name="MiniMapToolTipMsg"
+		value="[REGION] (더블클릭으로 지도 열기; Shift를 누르고 드래그하여 패닝)"/>
+	<string
+		name="AltMiniMapToolTipMsg"
+		value="[REGION] (더블클릭으로 텔레포트; Shift를 누르고 드래그하여 패닝)"/>
+	<string
+		name="avatar_name_count"
+		value="이름 [[TOTAL]/[IN_REGION]/[IN_CHAT_RANGE]]"/>
+	<panel name="nearby_panel">
+		<panel name="nearby_buttons_panel">
+			<filter_editor label="사람으로 필터" name="nearby_filter_input"/>
+			<button name="gear_btn" tool_tip="선택한 사람에게 취할 행동"/>
+			<menu_button name="options_btn" tool_tip="레이더 옵션"/>
+			<button name="add_friend_btn" tool_tip="선택한 주민을 친구 목록에 추가"/>
+		</panel>
+		<layout_stack name="radar_outer_ls">
+			<layout_panel name="radar_upper_layout">
+				<layout_stack name="radar_ls">
+					<layout_panel name="radarlayout">
+						<radar_list name="radar_list">
+							<radar_list.columns label="이름" tool_tip="[TOTAL]명의 아바타, [IN_REGION]명이 같은 지역에, [IN_CHAT_RANGE]명이 채팅 범위에 있음" name="name"/>
+							<radar_list.columns tool_tip="음성으로 말하고 있음" name="voice_level"/>
+							<radar_list.columns tool_tip="같은 지역(녹색) 또는 같은 토지(녹색/노랑)에 있음" name="in_region"/>
+							<radar_list.columns tool_tip="입력 중" name="typing_status"/>
+							<radar_list.columns tool_tip="앉아있음" name="sitting_status"/>
+							<radar_list.columns tool_tip="결제 정보 상태" name="flags"/>
+							<radar_list.columns tool_tip="노트 있음" name="has_notes"/>
+							<radar_list.columns label="나이" name="age"/>
+							<radar_list.columns label="시간" name="seen"/>
+							<radar_list.columns label="거리" name="range"/>
+						</radar_list>
+					</layout_panel>
+				</layout_stack>
+			</layout_panel>
+			<layout_panel name="radar_lower_layout">
+				<slider label="거리 (m):" name="NearMeRange"/>
+			</layout_panel>
+		</layout_stack>
+	</panel>
+</panel>

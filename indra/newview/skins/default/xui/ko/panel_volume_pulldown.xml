@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="volumepulldown_floater" width="240">
+	<button left="217" name="prefs_btn"/>
+	<slider label="마스터" label_width="80" name="System Volume" width="180"/>
+	<slider label="버튼" label_width="80" name="UI Volume" width="180"/>
+	<slider label="환경" label_width="80" name="Wind Volume" width="180"/>
+	<check_box name="collisions_audio_play_btn" tool_tip="충돌 시 사운드 재생"/>
+	<slider label="효과음" label_width="80" name="SFX Volume" width="180"/>
+	<check_box name="gesture_audio_play_btn" tool_tip="제스처 사운드 활성화"/>
+	<slider label="음악" label_width="80" name="Music Volume" width="180"/>
+	<check_box name="enable_music" tool_tip="스트리밍 음악 활성화"/>
+	<slider label="미디어" label_width="80" name="Media Volume" width="180"/>
+	<check_box name="enable_media" tool_tip="스트리밍 미디어 활성화"/>
+	<slider label="음성" label_width="80" name="Voice Volume" width="180"/>
+	<check_box name="enable_voice_check" tool_tip="음성 채팅 활성화"/>
+</panel>

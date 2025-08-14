@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="기타" name="Outfits">
+	<panel.string name="wear_outfit_tooltip">
+		선택한 의상 착용
+	</panel.string>
+	<panel.string name="wear_items_tooltip">
+		선택한 아이템 착용
+	</panel.string>
+	<panel.string name="cof_tab_label">
+		현재 의상 ([COUNT]/[MAX] 부착물)
+	</panel.string>
+	<tab_container name="appearance_tabs">
+		<panel label="의상 갤러리" name="outfit_gallery_tab"/>
+		<panel label="의상" name="outfitslist_tab"/>
+		<panel label="현재 의상" name="cof_tab"/>
+	</tab_container>
+	<panel name="bottom_panel">
+		<layout_stack name="bottom_panel_ls">
+			<layout_panel name="save_btn_lp">
+				<button label="저장" name="save_btn"/>
+			</layout_panel>
+			<layout_panel name="save_as_btn_lp">
+				<button label="다른 이름으로 저장" name="save_as_btn" />
+			</layout_panel>
+			<layout_panel name="wear_btn_lp">
+				<button label="착용" name="wear_btn"/>
+			</layout_panel>
+		</layout_stack>
+	</panel>
+</panel>

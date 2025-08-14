@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="panel_snapshot_inventory">
+	<text name="title">
+		인벤토리
+	</text>
+	<combo_box label="해상도" name="texture_size_combo">
+		<combo_box.item label="소 (128x128)" name="Small(128x128)"/>
+		<combo_box.item label="중 (256x256)" name="Medium(256x256)"/>
+		<combo_box.item label="대 (512x512)" name="Large(512x512)"/>
+		<combo_box.item label="특대 (1024x1024)" name="Very Large(1024x1024)"/>
+		<combo_box.item label="거대 (2048x2048)" name="Huge(2048x2048)"/>
+		<combo_box.item label="현재 창" name="CurrentWindow"/>
+		<combo_box.item label="사용자 지정" name="Custom"/>
+	</combo_box>
+	<spinner label="너비 x 높이" name="inventory_snapshot_width"/>
+	<spinner label="" name="inventory_snapshot_height"/>
+	<check_box label="화면 비율 유지" name="inventory_keep_aspect_check"/>
+	<text name="hint_lbl">
+		이미지를 텍스처로 저장하려면 정사각형 형식 중 하나를 선택하세요.
+
+업로드 비용: [UPLOAD_COST] L$
+	</text>
+	<button label="&#x25B6; 선택" name="cancel_btn"/>
+	<button label="저장" name="save_btn"/>
+</panel>

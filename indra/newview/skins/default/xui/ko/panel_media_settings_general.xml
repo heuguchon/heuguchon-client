@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="일반" name="Media Settings General">
+	<text name="home_label">
+		홈페이지:
+	</text>
+	<text name="home_fails_whitelist_label">
+		(이 페이지는 지정된 화이트리스트에서 허용되지 않습니다)
+	</text>
+	<line_editor name="home_url" tool_tip="이 미디어 소스의 시작 URL"/>
+	<text name="preview_label">
+		미리보기
+	</text>
+	<text name="current_url_label">
+		현재 페이지:
+	</text>
+	<text name="current_url" tool_tip="이 미디어 소스의 현재 페이지" value=""/>
+	<button label="초기화" name="current_url_reset_btn"/>
+	<check_box initial_value="false" label="자동 반복" name="auto_loop"/>
+	<check_box initial_value="false" label="첫 클릭에서 상호작용" name="first_click_interact"/>
+	<check_box initial_value="false" label="자동 줌" name="auto_zoom"/>
+	<check_box initial_value="false" label="미디어 자동 재생" name="auto_play"/>
+	<text name="media_setting_note">
+		참고: 주민들이 이 설정을 재정의할 수 있습니다
+	</text>
+	<check_box initial_value="false" label="미디어를 객체 표면에 자동 맞춤" name="auto_scale"/>
+	<text name="size_label">
+		크기:
+	</text>
+	<text name="X_label">
+		X
+	</text>
+</panel>

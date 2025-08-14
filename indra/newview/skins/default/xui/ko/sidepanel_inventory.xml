@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="기타" name="objects panel">
+	<panel label="" name="sidepanel_inventory_panel">
+		<layout_stack name="inventory_layout_stack">
+			<layout_panel name="inbox_layout_panel">
+				<panel label="" name="marketplace_inbox">
+					<string name="InboxLabelWithArg">
+						받은 아이템 ([NUM])
+					</string>
+					<string name="InboxLabelNoArg">
+						받은 아이템
+					</string>
+					<button label="받은 아이템" name="inbox_btn"/>
+					<button tool_tip="받은 아이템 목록 새로고침" name="reload_received_items_btn"/>
+					<text name="inbox_fresh_new_count">
+						[NUM]개 신규
+					</text>
+					<panel name="inbox_inventory_placeholder_panel" tool_tip="사용할 아이템을 인벤토리로 드래그하세요">
+						<text name="inbox_inventory_placeholder">
+							마켓플레이스에서 구매한 물건이 여기에 배송됩니다.
+						</text>
+					</panel>
+				</panel>
+			</layout_panel>
+		</layout_stack>
+	</panel>
+</panel>

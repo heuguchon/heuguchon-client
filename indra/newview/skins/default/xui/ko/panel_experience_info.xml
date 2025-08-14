@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="panel_experience_info">
+	<text name="title" value="경험 프로필"/>
+	<scroll_container name="xp_scroll">
+		<panel name="scrolling_panel">
+			<layout_stack name="ls1">
+				<layout_panel name="title panel">
+					<text name="experience_title" value="Kyle의 슈퍼히어로 RPG"/>
+				</layout_panel>
+				<layout_panel name="location panel">
+					<text name="Location">
+						위치:
+					</text>
+					<text name="LocationTextText">
+						어디선가
+					</text>
+					<button label="텔레포트" name="teleport_btn"/>
+					<button label="지도" name="map_btn"/>
+				</layout_panel>
+				<layout_panel name="marketplace panel">
+					<text name="Location">
+						마켓플레이스 상점:
+					</text>
+					<text name="LocationTextText">
+						어디선가
+					</text>
+				</layout_panel>
+				<layout_panel name="details panel">
+					<text name="ContentRating">
+						등급:
+					</text>
+					<text name="ContentRatingText">
+						성인
+					</text>
+					<text name="Owner">
+						소유자:
+					</text>
+					<text name="OwnerText">
+						Kyle
+					</text>
+					<button label="편집" name="edit_btn"/>
+				</layout_panel>
+			</layout_stack>
+		</panel>
+	</scroll_container>
+</panel>

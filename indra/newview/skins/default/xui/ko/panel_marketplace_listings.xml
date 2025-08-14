@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="마켓플레이스" name="Marketplace Panel">
+	<panel name="tool_panel">
+		<menu_button name="sort_btn" tool_tip="표시/정렬 옵션"/>
+		<button name="add_btn" tool_tip="새 상품 등록 폴더 생성"/>
+		<button label="오류 검사" name="audit_btn" tool_tip="마켓플레이스 상품 등록 검사" width="105" left_pad="137"/>
+	</panel>
+	<panel name="tab_container_panel">
+		<filter_editor label="마켓플레이스 상품 등록 필터링" name="filter_editor"/>
+	</panel>
+	<panel name="marketplace_drop_zone">
+		<text name="drop_zone_label">
+			폴더를 드래그하여 상품 등록 생성
+		</text>
+	</panel>
+</panel>

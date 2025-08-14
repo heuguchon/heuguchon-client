@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="edit_shape_panel">
+	<string name="meters">
+		미터
+	</string>
+	<string name="feet">
+		피트
+	</string>
+	<string name="height">
+		키:
+	</string>
+	<text name="avatar_height"/>
+	<panel label="체형" name="accordion_panel">
+		<accordion name="wearable_accordion">
+			<accordion_tab name="shape_body_tab" title="몸"/>
+			<accordion_tab name="shape_head_tab" title="머리"/>
+			<accordion_tab name="shape_eyes_tab" title="눈"/>
+			<accordion_tab name="shape_ears_tab" title="귀"/>
+			<accordion_tab name="shape_nose_tab" title="코"/>
+			<accordion_tab name="shape_mouth_tab" title="입"/>
+			<accordion_tab name="shape_chin_tab" title="턱"/>
+			<accordion_tab name="shape_torso_tab" title="상체"/>
+			<accordion_tab name="shape_legs_tab" title="다리"/>
+		</accordion>
+	</panel>
+</panel>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="보안" name="Media Settings Security">
+	<check_box initial_value="false" label="지정된 URL 패턴만 접근 허용" name="whitelist_enable"/>
+	<text name="home_url_fails_some_items_in_whitelist">
+		홈페이지에서 허용되지 않는 항목이 표시됩니다:
+	</text>
+	<button label="추가" name="whitelist_add"/>
+	<button label="삭제" name="whitelist_del"/>
+	<text name="home_url_fails_whitelist">
+		주의: 일반 탭에서 지정한 홈페이지가 화이트리스트에서 허용되지 않습니다. 유효한 항목이 추가될 때까지 비활성화됩니다.
+	</text>
+</panel>

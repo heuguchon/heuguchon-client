@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="panel_performance_complexity">
+	<text name="back_lbl">
+		뒤로
+	</text>
+	<text name="attachments_title">
+		아바타 부착물 복잡도
+	</text>
+	<text name="tot_att_count">
+		총합: 50 (120000.10μs)
+	</text>
+	<text name="attachments_desc1">
+		부착물은 아바타를 더 복잡하게 만들고 렌더링 속도를 느리게 합니다.
+	</text>
+	<text name="attachments_desc2">
+		이 창은 본인 아바타의 모든 부착물을 보여줍니다.
+	</text>
+	<text name="attachments_desc3">
+		부착물을 선택하고 "X"를 클릭해서 쉽게 제거할 수 있습니다.
+	</text>
+	<name_list name="obj_list">
+		<name_list.columns label="시간 (μs)" name="art_value" tool_tip="부착물 렌더링에 소요되는 시간(밀리초)." />
+		<name_list.columns name="complex_value" tool_tip="부착물 복잡도 (ARC)" />
+		<name_list.columns label="부착물 이름" tool_tip="제거하려면 'X'를 클릭하세요." name="name" />
+	</name_list>
+</panel>

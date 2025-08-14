@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel name="panel_performance_nearby">
+	<text name="back_lbl">
+		뒤로
+	</text>
+	<text name="av_nearby_title">
+		근처 아바타
+	</text>
+	<text name="tot_av_count">
+		총합: 50 (120000.10μs)
+	</text>
+	<text name="av_nearby_desc">
+		가장 복잡한 아바타들을 숨겨서 성능 향상
+	</text>
+	<slider tool_tip="아바타가 임포스터로 렌더링될 복잡도를 정의합니다" label="최대 복잡도 (K)" name="IndirectMaxComplexity" />
+	<slider tool_tip="아바타가 렌더링하기에 너무 복잡하다고 간주되는 시점을 정의합니다 (단위: 마이크로초)" label="최대 렌더링 시간 (μs)" name="FSRenderAvatarMaxART" />
+	<text name="FSRenderAvatarMaxARTText">
+		제한 없음
+	</text>
+	<name_list name="nearby_list">
+		<name_list.columns tool_tip="필요한 렌더링 시간(자동 조정 포함)의 백분율 막대 그래프, 가장 느린 것 기준." name="art_visual" />
+		<name_list.columns label="시간 (μs)" tool_tip="아바타 렌더링 시간(ART). 자동 조정 전 아바타 렌더링에 실제로 소요된 시간(마이크로초)." name="art_value" />
+		<name_list.columns label="조정 시간 (μs)" tool_tip="아바타 렌더링 시간(ART). 조정 후 아바타 렌더링에 실제로 소요된 시간(마이크로초)." name="adj_art_value" />
+		<name_list.columns tool_tip="표준 계산에 기반한 아바타 복잡도(ARC)." name="complex_value" />
+		<name_list.columns tool_tip="자동 조정 표시: I = 임포스터, S = 그림자 없음." name="state" />
+		<name_list.columns label="이름" name="name"/>
+		<name_list.columns label="분석" tool_tip="렌더링 시간이 소요되는 부분(지오메트리/셰이더/기타)" name="breakdown"/>
+	</name_list>
+	<text name="av_nearby_desc2">
+		아바타를 우클릭하면 렌더링을 조정할 수도 있습니다.
+	</text>
+	<text name="av_nearby_desc3">
+		참고: 본인 아바타의 영향은 "내 아바타 복잡도" 탭에서 확인하세요.
+	</text>
+	<text name="AvatarComplexityMode_Label">
+		아바타 표시:
+	</text>
+	<combo_box name="AvatarComplexityMode">
+		<combo_box.item label="복잡도 제한" name="complexity_limit_everone"/>
+		<combo_box.item label="항상 친구 표시" name="complexity_always_show_friends"/>
+		<combo_box.item label="친구만 표시" name="complexity_only_show_friends"/>
+	</combo_box>
+	<button label="예외사항..." name="exceptions_btn" />
+	<check_box label="모든 아바타 숨기기 (풍경 스크린샷에 좋음)" name="hide_avatars" />
+	<text name="name_tags_textbox">
+		아바타 이름:
+	</text>
+	<radio_group name="name_tag_mode">
+		<radio_item label="켜기" name="radio" />
+		<radio_item label="끄기" name="radio2" />
+		<radio_item label="짧게 표시" name="radio3" />
+	</radio_group>
+</panel>

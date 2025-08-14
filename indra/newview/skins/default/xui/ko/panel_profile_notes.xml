@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="메모 및 개인정보" name="panel_notes">
+	<string name="header_symbol_limit">
+		주의: 메모가 1000자를 초과합니다.
+	</string>
+	<string name="body_symbol_limit">
+		여기에는 처음 1000자만 표시됩니다. 메모를 편집하고 확인을 클릭하면 초과 문자는 손실됩니다. 초과 문자를 보존하려면 [[PROFILE_URL] 웹에서] 편집해야 합니다.
+	</string>
+	<text name="status_message" value="이 아바타에 대한 개인 메모:"/>
+	<button name="notes_save_changes" label="저장"/>
+	<button name="notes_discard_changes" label="취소"/>
+</panel>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="의상" name="appearance panel">
+	<string name="No Outfit" value="의상 없음"/>
+	<string name="Unsaved Changes" value="저장되지 않은 변경사항"/>
+	<string name="Now Wearing" value="현재 의상..."/>
+	<string name="Changing outfits" value="의상 변경"/>
+	<panel name="panel_currentlook">
+		<button label="편" name="editappearance_btn"/>
+		<button label="열" name="openoutfit_btn"/>
+		<text name="currentlook_status">
+			(상태)
+		</text>
+		<text name="currentlook_name">
+			정말 긴 이름을 가진 내 의상 같은 MOOSE
+		</text>
+		<button label="" name="edit_outfit_btn" tool_tip="이 의상 편집"/>
+	</panel>
+	<filter_editor label="의상 필터" name="Filter"/>
+</panel>

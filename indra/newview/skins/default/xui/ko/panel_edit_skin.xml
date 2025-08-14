@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="edit_skin_panel">
+	<panel name="avatar_skin_color_panel">
+		<texture_picker label="머리" name="Head" tool_tip="이미지를 선택하려면 클릭하세요"/>
+		<texture_picker label="상체" name="Upper Body" tool_tip="이미지를 선택하려면 클릭하세요"/>
+		<texture_picker label="하체" name="Lower Body" tool_tip="이미지를 선택하려면 클릭하세요"/>
+	</panel>
+	<panel name="accordion_panel">
+		<accordion name="wearable_accordion">
+			<accordion_tab name="skin_color_tab" title="피부색"/>
+			<accordion_tab name="skin_face_tab" title="얼굴 디테일"/>
+			<accordion_tab name="skin_makeup_tab" title="메이크업"/>
+			<accordion_tab name="skin_body_tab" title="몸 디테일"/>
+		</accordion>
+	</panel>
+</panel>

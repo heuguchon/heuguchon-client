@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="Outfits">
+	<accordion name="outfits_accordion">
+		<no_matched_tabs_text name="no_matched_outfits_msg" value="원하시는 것을 찾지 못하셨나요? [secondlife:///app/search/all/[SEARCH_TERM] 검색]을 이용해 보세요."/>
+		<no_visible_tabs_text name="no_outfits_msg" value="아직 의상이 없습니다. [secondlife:///app/search/all/ 검색]을 이용해 보세요."/>
+	</accordion>
+	<panel name="bottom_panel">
+		<menu_button name="options_gear_btn" tool_tip="추가 옵션 표시"/>
+		<text name="OutfitcountText">
+			[COUNT]개 의상
+		</text>
+		<text name="avatar_complexity_label">
+			복잡도: [WEIGHT]
+		</text>
+		<button name="trash_btn" tool_tip="선택한 의상 삭제"/>
+	</panel>
+</panel>
