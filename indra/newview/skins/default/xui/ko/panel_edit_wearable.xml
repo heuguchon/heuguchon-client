@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="착용 가능한 아이템" name="panel_edit_wearable">
+	<string name="edit_shape_title">
+		체형 편집
+	</string>
+	<string name="edit_skin_title">
+		피부 편집
+	</string>
+	<string name="edit_hair_title">
+		헤어 편집
+	</string>
+	<string name="edit_eyes_title">
+		눈 편집
+	</string>
+	<string name="edit_shirt_title">
+		셔츠 편집
+	</string>
+	<string name="edit_pants_title">
+		바지 편집
+	</string>
+	<string name="edit_shoes_title">
+		신발 편집
+	</string>
+	<string name="edit_socks_title">
+		양말 편집
+	</string>
+	<string name="edit_jacket_title">
+		재킷 편집
+	</string>
+	<string name="edit_skirt_title">
+		스커트 편집
+	</string>
+	<string name="edit_gloves_title">
+		장갑 편집
+	</string>
+	<string name="edit_undershirt_title">
+		속셔츠 편집
+	</string>
+	<string name="edit_underpants_title">
+		속바지 편집
+	</string>
+	<string name="edit_alpha_title">
+		알파 마스크 편집
+	</string>
+	<string name="edit_tattoo_title">
+		타투 편집
+	</string>
+	<string name="edit_universal_title">
+		유니버설 편집
+	</string>
+	<string name="edit_physics_title">
+		피지컬 편집
+	</string>
+	<string name="shape_desc_text">
+		체형:
+	</string>
+	<string name="skin_desc_text">
+		피부:
+	</string>
+	<string name="hair_desc_text">
+		헤어:
+	</string>
+	<string name="eyes_desc_text">
+		눈:
+	</string>
+	<string name="shirt_desc_text">
+		셔츠:
+	</string>
+	<string name="pants_desc_text">
+		바지:
+	</string>
+	<string name="shoes_desc_text">
+		신발:
+	</string>
+	<string name="socks_desc_text">
+		양말:
+	</string>
+	<string name="jacket_desc_text">
+		재킷:
+	</string>
+	<string name="skirt_desc_text">
+		스커트:
+	</string>
+	<string name="gloves_desc_text">
+		장갑:
+	</string>
+	<string name="undershirt_desc_text">
+		속셔츠:
+	</string>
+	<string name="underpants_desc_text">
+		속바지:
+	</string>
+	<string name="alpha_desc_text">
+		알파 마스크:
+	</string>
+	<string name="tattoo_desc_text">
+		타투:
+	</string>
+	<string name="universal_desc_text">
+		유니버설:
+	</string>
+	<string name="physics_desc_text">
+		피지컬:
+	</string>
+	<labeled_back_button label="저장" name="back_btn" tool_tip="의상 편집으로 돌아가기"/>
+	<text name="edit_wearable_title" value="체형 편집"/>
+	<panel label="셔츠" name="wearable_type_panel">
+		<text name="description_text" value="체형:"/>
+		<radio_group name="sex_radio">
+			<radio_item label="" name="sex_male" tool_tip="남성" value="1"/>
+			<radio_item label="" name="sex_female" tool_tip="여성" value="0"/>
+		</radio_group>
+		<icon name="male_icon" tool_tip="남성"/>
+		<icon name="female_icon" tool_tip="여성"/>
+	</panel>
+	<panel name="button_panel">
+		<layout_stack name="button_panel_ls">
+			<layout_panel name="save_as_btn_lp">
+				<button label="다른 이름으로 저장" name="save_as_button"/>
+			</layout_panel>
+			<layout_panel name="revert_btn_lp">
+				<button label="변경 취소" name="revert_button"/>
+			</layout_panel>
+			<layout_panel name="import_btn_lp">
+				<button label="가져오기" name="import_btn"/>
+			</layout_panel>
+		</layout_stack>
+	</panel>
+</panel>
