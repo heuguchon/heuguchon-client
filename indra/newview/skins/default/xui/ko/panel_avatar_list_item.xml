@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="avatar_list_item">
+	<string name="FormatSeconds">
+		[COUNT]초
+	</string>
+	<string name="FormatMinutes">
+		[COUNT]분
+	</string>
+	<string name="FormatHours">
+		[COUNT]시간
+	</string>
+	<string name="FormatDays">
+		[COUNT]일
+	</string>
+	<string name="FormatWeeks">
+		[COUNT]주
+	</string>
+	<string name="FormatMonths">
+		[COUNT]개월
+	</string>
+	<string name="FormatYears">
+		[COUNT]년
+	</string>
+	<text name="avatar_name" value="(로딩 중)"/>
+	<icon name="permission_edit_theirs_icon" tool_tip="이 친구의 객체를 편집할 수 있습니다"/>
+	<icon name="permission_edit_mine_btn" tool_tip="이 친구가 내 객체를 편집, 삭제, 가져갈 수 있습니다"/>
+	<icon name="permission_map_btn" tool_tip="이 친구가 지도에서 나를 찾을 수 있습니다"/>
+	<icon name="permission_online_btn" tool_tip="이 친구가 내 온라인 상태를 볼 수 있습니다"/>
+	<slider name="volume_slider" tool_tip="음성 볼륨"/>
+	<button name="info_btn" tool_tip="자세한 정보"/>
+	<button name="profile_btn" tool_tip="프로필 보기"/>
+	<output_monitor name="speaking_indicator" tool_tip="음성 볼륨"/>
+</panel>

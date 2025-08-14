@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel name="animation_overrider_outer_panel">
+
+<!-- Main Panel -->
+
+	<panel name="animation_overrider_panel">
+		<combo_box name="ao_set_selection_combo" tool_tip="편집할 애니메이션 세트를 선택하세요."/>
+		<button	name="ao_activate" tool_tip="현재 애니메이션 세트를 활성화합니다."/>
+		<check_box name="ao_default" label="기본값" tool_tip="이 애니메이션 세트를 로그인 후 사용할 기본값으로 설정합니다."/>
+		<button	name="ao_add" tool_tip="새 애니메이션 세트를 만듭니다."/>
+		<button	name="ao_remove" tool_tip="이 애니메이션 세트를 삭제합니다."/>
+		<check_box name="ao_sit_override" label="앉기 무시" tool_tip="앉기 애니메이션 무시를 활성화합니다."/>
+		<check_box name="ao_smart" label="스마트 모드" tool_tip="스마트 모드는 앉기 애니메이션 무시가 앉는 객체의 애니메이션과 충돌하는지 감지합니다. 충돌이 감지되면 애니메이션 오버라이더를 임시로 비활성화합니다." left_pad="-6"/>
+		<check_box name="ao_disable_stands_in_mouselook" label="마우스룩에서 서기 비활성화" tool_tip="마우스룩 모드에서 사용자 정의 서기 애니메이션을 비활성화합니다."/>
+		<combo_box name="ao_state_selection_combo" tool_tip="편집할 애니메이션 타입을 선택하세요."/>
+
+		<panel name="ao_animation_move_trash_panel">
+			<button	name="ao_move_up" tool_tip="선택된 애니메이션을 목록에서 위로 이동합니다."/>
+			<button	name="ao_move_down"	tool_tip="선택된 애니메이션을 목록에서 아래로 이동합니다."/>
+			<button	name="ao_trash"	tool_tip="선택된 애니메이션을 목록에서 삭제합니다."/>
+		</panel>
+
+		<check_box name="ao_cycle" label="순환"	tool_tip="재생 시 목록의 애니메이션을 순환합니다." width="63"/>
+		<check_box name="ao_randomize" label="임의 순서" tool_tip="순환 모드에서 애니메이션을 임의로 선택합니다."/>
+		<text name="ao_cycle_time_seconds_label" value="순환 시간 (초):"/>
+		<spinner name="ao_cycle_time" tool_tip="목록의 다음 애니메이션이 재생되기 전까지의 시간입니다. 비활성화하려면 0으로 설정하세요."/>
+		<button	name="ao_reload" label="다시 로드" tool_tip="애니메이션 오버라이더 설정을 다시 로드합니다."/>
+
+		<layout_stack name="next_previous_buttons_stack">
+			<layout_panel name="next_previous_buttons_stack_left">
+				<button	name="ao_previous" tool_tip="목록의 이전 애니메이션을 재생합니다."/>
+			</layout_panel>
+			<layout_panel name="next_previous_buttons_stack_right">
+				<button	name="ao_next" tool_tip="목록의 다음 애니메이션을 재생합니다."/>
+			</layout_panel>
+		</layout_stack>
+
+		<button	name="ao_less" tool_tip="간단한 창을 표시합니다."/>
+	</panel>
+
+<!-- Reload Cover Panel -->
+
+	<panel name="ao_reload_cover">
+		<panel name="ao_reload_text_panel">
+			<text name="reload_label">
+				설정을 로드하는 중
+			</text>
+			<text name="wait_label">
+				잠시만 기다려주세요
+			</text>
+		</panel>
+	</panel>
+
+<!-- Small Panel -->
+
+	<panel name="animation_overrider_panel_small">
+		<combo_box name="ao_set_selection_combo_small" tool_tip="편집할 애니메이션 세트를 선택하세요."/>
+		<button	name="ao_more" tool_tip="전체 설정 창을 표시합니다."/>
+		<button	name="ao_previous_small" tool_tip="목록의 이전 애니메이션을 재생합니다."/>
+		<button name="ao_next_small" tool_tip="목록의 다음 애니메이션을 재생합니다."/>
+		<check_box name="ao_sit_override_small"	label="앉기" tool_tip="앉기 애니메이션 무시를 활성화합니다."/>
+	</panel>
+</panel>

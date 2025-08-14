@@ -310,6 +310,28 @@
   - [x] panel_toolbar_view.xml - (도구모음 보기)
   - [x] panel_volume_pulldown.xml - (볼륨 풀다운)
   - [x] panel_progress.xml - (진행 표시)
+- [x] 48차: 핵심 UI 상호작용 패널 번역 완료 (15개)
+  - [x] panel_active_object_row.xml - (활성 객체 행)
+  - [x] panel_ao.xml - (애니메이션 오버라이더)
+  - [x] panel_avatar_list_item.xml - (아바타 목록 항목)
+  - [x] panel_avatar_tag.xml - (아바타 태그 알림)
+  - [x] panel_bodyparts_list_button_bar.xml - (체형 목록 버튼 바)
+  - [x] panel_body_parts_list_item.xml - (체형 목록 항목)
+  - [x] panel_camera_preset_item.xml - (카메라 프리셋 항목)
+  - [x] panel_classified_info.xml - (분류 광고 정보)
+  - [x] panel_clothing_list_button_bar.xml - (의복 목록 버튼 바)
+  - [x] panel_clothing_list_item.xml - (의복 목록 항목)
+  - [x] panel_conversation_list_item.xml - (대화 목록 항목)
+  - [x] panel_conversation_log_list_item.xml - (대화 기록 목록 항목)
+  - [x] panel_deletable_wearable_list_item.xml - (제거 가능한 착용 아이템 목록)
+  - [x] panel_dummy_clothing_list_item.xml - (더미 의복 목록 항목)
+  - [x] panel_edit_alpha.xml - (알파 편집)
+- [x] 49차: 아바타 편집 도구 패널 번역 완료 (5개)
+  - [x] panel_edit_eyes.xml - (눈 편집)
+  - [x] panel_edit_gloves.xml - (장갑 편집)
+  - [x] panel_edit_jacket.xml - (재킷 편집)
+  - [x] panel_edit_physics.xml - (물리 효과 편집)
+  - [x] panel_edit_shoes.xml - (신발 편집)
 - [ ] 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -475,7 +497,7 @@
 
 ## 작업 요약
 
-### 오늘 수행한 작업 (2025-08-14)
+### 오늘 수행한 작업 (2025-08-15)
 - 프로젝트 구조 분석 및 ko 폴더 생성
 - **78개 핵심 UI 파일 번역 완룼** (빌드 도구 포함)
 - 기본 로그인, 메뉴, 채팅, 지도, 검색 등 핵심 기능 포함
@@ -506,9 +528,11 @@
 - **27차: 텍스트 편집 및 작업 도구 완료** - 줄로 이동, 찾기/바꾸기, 키 선택, 간단한 스크린샷, 아이템 속성
 - **28차: UI 도구 및 유틸리티** - XUI 미리보기 도구, URL 입력
 - **33차: 중요 환경설정 패널 완료** - 채팅, 그래픽, 소리 환경설정 (대용량 파일 3개)
+- **48차: 핵심 UI 상호작용 패널 완료** - 활성 객체, AO, 아바타 목록, 분류 광고, 대화 기록, 알파 편집 등 (15개)
+- **49차: 아바타 편집 도구 완료** - 눈, 장갑, 재킷, 물리 효과, 신발 편집 패널 (5개)
 
 ### 번역 완료율
-- **총 234개 파일 번역** (독일어 기준 약 400개 중 약 58.5%)
+- **총 254개 파일 번역** (독일어 기준 약 400개 중 약 63.5%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화

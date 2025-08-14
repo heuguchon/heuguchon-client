@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="conversation_log_list_item">
+	<icon name="voice_session_icon" tool_tip="음성 대화가 포함되어 있습니다"/>
+	<icon name="unread_ims_icon" tool_tip="로그오프 중에 도착한 메시지가 있습니다"/>
+	<button name="delete_btn" tool_tip="이 항목을 제거합니다"/>
+</panel>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="panel_classified_info">
+	<panel.string name="type_mature">
+		성인
+	</panel.string>
+	<panel.string name="type_pg">
+		일반 콘텐츠
+	</panel.string>
+	<panel.string name="l$_price">
+		[PRICE] L$
+	</panel.string>
+	<panel.string name="click_through_text_fmt">
+		[TELEPORT] 텔레포트, [MAP] 지도, [PROFILE] 프로필
+	</panel.string>
+	<panel.string name="date_fmt">
+		[year,datetime,slt]/[mthnum,datetime,slt]/[day,datetime,slt]
+	</panel.string>
+	<panel.string name="auto_renew_on">
+		활성화됨
+	</panel.string>
+	<panel.string name="auto_renew_off">
+		비활성화됨
+	</panel.string>
+	<text name="title" value="광고 정보"/>
+	<scroll_container name="profile_scroll">
+		<panel name="scroll_content_panel">
+			<text_editor name="classified_name" value="[name]"/>
+			<text name="classified_location_label" value="위치:"/>
+			<text_editor name="classified_location" value="[loading...]"/>
+			<text name="content_type_label" value="콘텐츠 유형:"/>
+			<text_editor name="content_type" value="[콘텐츠 유형]"/>
+			<text name="category_label" value="카테고리:"/>
+			<text_editor name="category" value="[카테고리]"/>
+			<text name="creation_date_label" value="생성 일자:"/>
+			<text_editor name="creation_date" tool_tip="생성 일자" value="[date]"/>
+			<text name="price_for_listing_label" value="광고 가격:"/>
+			<text_editor name="price_for_listing" tool_tip="광고 가격입니다." value="[price]"/>
+			<layout_stack name="descr_stack">
+				<layout_panel name="clickthrough_layout_panel">
+					<text name="click_through_label" value="클릭 수:"/>
+					<text_editor name="click_through_text" tool_tip="클릭 스루 데이터" value="[clicks]"/>
+				</layout_panel>
+				<layout_panel name="price_layout_panel">
+					<text name="auto_renew_label" value="자동 갱신:"/>
+					<text name="auto_renew" value="활성화됨"/>
+				</layout_panel>
+				<layout_panel name="descr_layout_panel">
+					<text name="classified_desc_label" value="설명:"/>
+					<text_editor name="classified_desc" value="[description]"/>
+				</layout_panel>
+			</layout_stack>
+		</panel>
+	</scroll_container>
+	<panel name="buttons">
+		<layout_stack name="layout_stack1">
+			<layout_panel name="layout_panel1">
+				<button label="텔레포트" name="teleport_btn"/>
+			</layout_panel>
+			<layout_panel name="show_on_map_btn_lp">
+				<button label="지도" name="show_on_map_btn"/>
+			</layout_panel>
+			<layout_panel name="edit_btn_lp">
+				<button label="편집" name="edit_btn"/>
+			</layout_panel>
+		</layout_stack>
+	</panel>
+</panel>

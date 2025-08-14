@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="avatar_tag_notification">
+	<panel name="msg_caption">
+		<text name="sender_tag_name">
+			테스터
+		</text>
+		<text name="tag_time" value="23:30"/>
+	</panel>
+	<text_editor name="msg_text">
+		안녕하세요! 이것은 샘플 메시지입니다.
+	</text_editor>
+</panel>

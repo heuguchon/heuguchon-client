@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="edit_alpha_panel">
+	<scroll_container name="avatar_alpha_color_panel_scroll">
+		<panel name="avatar_alpha_color_panel">
+			<texture_picker label="알파: 하반신" name="Lower Alpha" tool_tip="클릭하여 이미지를 선택하세요"/>
+			<texture_picker label="알파: 상반신" name="Upper Alpha" tool_tip="클릭하여 이미지를 선택하세요"/>
+			<texture_picker label="알파: 머리" name="Head Alpha" tool_tip="클릭하여 이미지를 선택하세요"/>
+			<texture_picker label="알파: 눈" name="Eye Alpha" tool_tip="클릭하여 이미지를 선택하세요"/>
+			<texture_picker label="알파: 헤어" name="Hair Alpha" tool_tip="클릭하여 이미지를 선택하세요"/>
+		</panel>
+	</scroll_container>
+</panel>
