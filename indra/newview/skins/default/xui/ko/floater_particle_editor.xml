@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="particle_editor_floater" title="파티클 에디터">
+	<panel name="particle_editor_panel">
+		<panel name="top_left_panel">
+			<text name="Pattern_Label">
+				패턴:
+			</text>
+
+			<combo_box name="pattern_type_combo">
+				<combo_box.item label="폭발" name="explode"/>
+				<combo_box.item label="각도" name="angle"/>
+				<combo_box.item label="각도 원뿔" name="angle_cone"/>
+				<combo_box.item label="각도 원뿔 비움" name="angle_cone_empty"/>
+				<combo_box.item label="낙하" name="drop"/>
+			</combo_box>
+
+			<text name="Texture_Label">
+				텍스처:
+			</text>
+			<text name="Burst_Rate_Label">
+				폭발 빈도:
+			</text>
+			<text name="Burst_Count_Label">
+				폭발 개수:
+			</text>
+			<text name="Burst_Radius_Label">
+				폭발 반지름:
+			</text>
+			<text name="Angle_Begin_Label">
+				시작 각도:
+			</text>
+			<text name="Burst_Speed_Min_Label">
+				최소 폭발 속도:
+			</text>
+			<text name="Angle_End_Label">
+				끝 각도:
+			</text>
+			<text name="Burst_Speed_Max_Label">
+				최대 폭발 속도:
+			</text>
+			<text name="Source_Max_Age_Label">
+				최대 소스 지속시간:
+			</text>
+			<text name="Start_Alpha_Label">
+				시작 투명도:
+			</text>
+			<text name="Particles_Max_Age_Label">
+				최대 파티클 지속시간:
+			</text>
+			<text name="End_Alpha_Label">
+				끝 투명도:
+			</text>
+			<text name="Scale_Start_Label">
+				시작 크기:
+			</text>
+			<text name="End_Label" left_pad="5" width="32">
+				끝:
+			</text>
+		</panel>
+
+		<panel name="top_right_panel">
+			<check_box name="bounce_checkbox" label="튀어오름"/>
+			<check_box name="emissive_checkbox" label="발광"/>
+			<check_box name="follow_source_checkbox" label="소스 따라가기"/>
+			<check_box name="follow_velocity_checkbox" label="속도 따라가기"/>
+			<check_box name="interpolate_color_checkbox" label="색상 보간"/>
+			<check_box name="interpolate_scale_checkbox" label="크기 보간"/>
+			<check_box name="target_position_checkbox" label="위치를 목표로"/>
+			<check_box name="target_linear_checkbox" label="선형 목표"/>
+			<check_box name="wind_checkbox" label="바람"/>
+			<button name="copy_button" label="복사" tool_tip="파티클 시스템의 매개변수를 LSL 스크립트로 클립보드에 복사합니다."/>
+			<button name="inject_button" label="주입" tool_tip="이 파티클 시스템을 선택된 객체에 주입합니다."/>
+		</panel>
+
+		<panel name="bottom_left_panel">
+			<text name="Target_Key_Label">
+				목표 UUID:
+			</text>
+
+			<button name="clear_target_button" tool_tip="객체나 아바타를 목표에서 제거합니다."/>
+			<button name="pick_target_button" tool_tip="클릭하여 객체나 아바타를 목표로 설정합니다."/>
+
+			<text name="Acceleration_Label">
+				가속도:
+			</text>
+			<text name="Omega_Label">
+				오메가:
+			</text>
+		</panel>
+
+		<panel name="bottom_right_panel">
+			<color_swatch label="시작 색상" name="start_color_selector"/>
+			<color_swatch label="끝 색상" name="end_color_selector"/>
+		</panel>
+	</panel>
+</floater>

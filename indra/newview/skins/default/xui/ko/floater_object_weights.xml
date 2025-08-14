@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="object_weights" title="고급">
+	<floater.string name="nothing_selected" value="--"/>
+	<text name="selected_text" value="선택됨"/>
+	<text name="objects" value="--"/>
+	<text name="objects_label" value="객체"/>
+	<text name="prims" value="--"/>
+	<text name="prims_label" value="프림"/>
+	<text name="weights_of_selected_text" value="선택된 객체의 무게"/>
+	<text name="download" value="--"/>
+	<text name="download_label" value="다운로드"/>
+	<text name="physics" value="--"/>
+	<text name="physics_label" value="물리"/>
+	<text name="server" value="--"/>
+	<text name="server_label" value="서버"/>
+	<text name="display" value="--"/>
+	<text name="display_label" value="디스플레이"/>
+	<text name="land_impacts_text" value="토지에 미치는 영향"/>
+	<text name="selected" value="--"/>
+	<text name="selected_label" value="선택됨"/>
+	<text name="rezzed_on_land" value="--"/>
+	<text name="rezzed_on_land_label" value="토지에 생성됨"/>
+	<text name="remaining_capacity" value="--"/>
+	<text name="remaining_capacity_label" value="남은 용량"/>
+	<text name="total_capacity" value="--"/>
+	<text name="total_capacity_label" value="전체 용량"/>
+	<text name="help_SLURL" value="[secondlife:///app/help/object_weights 이것은 무엇입니까?...]"/>
+</floater>
