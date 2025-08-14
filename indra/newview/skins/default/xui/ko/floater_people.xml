@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_people" title="사람">
+	<panel_container name="main_panel">
+		<panel label="그룹 프로필" name="panel_group_info_sidetray"/>
+		<panel label="차단된 주민 및 객체" name="panel_block_list_sidetray"/>
+	</panel_container>
+</floater>

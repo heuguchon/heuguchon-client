@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="worldmap" title="지도">
+	<floater.string name="UnnamedParcel">
+		(이름 없는 구역)
+	</floater.string>
+	<layout_stack name="resizing_stack">
+		<layout_panel name="map_details_panel">
+			<panel name="layout_panel_1">
+				<text name="events_label">
+					범례
+				</text>
+			</panel>
+			<panel name="layout_panel_2">
+				<button label="내 위치" label_selected="내가 어디있나?" name="Show My Location" tool_tip="지도를 내 아바타의 위치로 중앙 정렬"/>
+				<text name="me_label">
+					현재 위치
+				</text>
+				<check_box label="주민" name="people_chk"/>
+				<text name="person_label">
+					사람
+				</text>
+				<check_box label="인포허브" name="infohub_chk"/>
+				<text name="infohub_label">
+					인포허브
+				</text>
+				<check_box label="판매중인 토지" name="land_for_sale_chk"/>
+				<text name="land_sale_label">
+					토지 판매
+				</text>
+				<text name="auction_label">
+					토지 경매
+				</text>
+				<text name="by_owner_label">
+					소유자별
+				</text>
+				<button label="홈으로" label_selected="홈으로" name="Go Home" tool_tip="홈으로 텔레포트"/>
+				<text name="Home_label">
+					홈으로
+				</text>
+				<text name="events_label">
+					이벤트:
+				</text>
+				<check_box label="PG" name="event_chk"/>
+				<text name="pg_label">
+					일반
+				</text>
+				<check_box initial_value="true" label="Mature" name="events_mature_chk"/>
+				<text name="events_mature_label">
+					성인
+				</text>
+				<check_box label="Adult" name="events_adult_chk"/>
+				<text name="events_adult_label">
+					어른
+				</text>
+			</panel>
+			<panel name="layout_panel_3">
+				<text name="find_on_map_label">
+					지도에서 찾기
+				</text>
+			</panel>
+			<panel name="layout_panel_4">
+				<combo_box label="온라인 친구" name="friend combo" tool_tip="지도에 친구 표시">
+					<combo_box.item label="내 친구들: 온라인" name="item1"/>
+				</combo_box>
+				<combo_box label="내 랜드마크" name="landmark combo" tool_tip="지도에 표시할 랜드마크">
+					<combo_box.item label="내 랜드마크" name="item1"/>
+				</combo_box>
+				<search_editor label="지역 이름으로 검색" name="location" tool_tip="지역 이름을 입력하세요"/>
+				<button label="검색" name="DoSearch" tool_tip="지역 검색"/>
+				<scroll_list name="search_results">
+					<scroll_list.columns label="" name="icon"/>
+					<scroll_list.columns label="" name="sim_name"/>
+				</scroll_list>
+			</panel>
+			<panel name="layout_panel_7">
+				<text name="events_label">
+					위치:
+				</text>
+				<button label="텔레포트" label_selected="텔레포트" name="Teleport" tool_tip="선택한 위치로 텔레포트"/>
+				<button label="SLurl 복사" name="copy_slurl" tool_tip="현재 위치를 웹에서 사용할 수 있는 SLurl로 복사" width="88"/>
+				<button label="지우기" name="Clear" tool_tip="추적을 끄고 지도를 초기화" width="75"/>
+				<button label="선택 표시" label_selected="목적지 표시" name="Show Destination" tool_tip="지도를 선택한 위치로 중앙 정렬"/>
+				<button label="지역 추적" name="track_region" tool_tip="지역 트래커에 지역 추가"/>
+			</panel>
+		</layout_panel> 
+	</layout_stack> 
+</floater>

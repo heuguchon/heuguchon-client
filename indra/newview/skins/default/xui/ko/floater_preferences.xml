@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="Preferences" title="환경설정">
+	<button label="확인" label_selected="확인" name="OK"/>
+	<button label="취소" label_selected="취소" name="Cancel"/>
+	<panel name="search_panel">
+		<search_editor label="설정 검색" name="search_prefs_edit" tool_tip="원하는 검색어를 입력하세요. 설정 이름이나 설명 내의 부분 일치 결과가 표시됩니다."/>
+		<button name="copy_search_slurl_btn" tool_tip="검색어를 SLURL로 복사"/>
+	</panel>
+	<tab_container name="pref core">
+		<panel label="일반" name="general"/>
+		<panel label="채팅" name="chat"/>
+		<panel label="색상" name="colors"/>
+		<panel label="그래픽" name="display"/>
+		<panel label="사운드 &amp; 미디어" name="audio"/>
+		<panel label="네트워크 &amp; 파일" name="input"/>
+		<panel label="이동/보기" name="move"/>
+		<panel label="키 설정" name="controls"/>
+		<panel label="알림" name="msgs"/>
+		<panel label="개인정보" name="im"/>
+		<panel label="고급" name="advanced1"/>
+		<panel label="Firestorm" name="firestorm"/>
+		<panel label="UI" name="ui"/>
+		<panel label="OpenSim" name="opensim"/>
+		<panel label="백업" name="backup"/>
+		<panel label="업로드" name="uploads"/>
+		<panel label="스킨" name="skins"/>
+		<panel label="크래시 리포트" name="crashreports"/>
+		<panel label="설정" name="setup"/>
+	</tab_container>
+</floater>

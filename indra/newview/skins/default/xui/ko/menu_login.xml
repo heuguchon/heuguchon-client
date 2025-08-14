@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<menu_bar name="Login Menu">
+	<menu label="뷰어" name="File">
+		<menu_item_call label="환경설정..." name="Preferences..."/>
+		<menu_item_call label="창 닫기" name="Close Window"/>
+		<menu_item_check label="그리드 선택기 표시" name="Show Grid Picker"/>
+		<menu_item_call label="[APP_NAME] 종료" name="Quit"/>
+	</menu>
+	<menu label="도움말" name="Help">
+		<menu_item_call label="Firestorm 위키" name="Firestorm Wiki"/>
+		<menu_item_call label="문제 해결" name="Troubleshooting"/>
+		<menu_item_call label="사용법..." name="How To"/>
+		<menu_item_call label="지식 베이스" name="Knowledge Base"/>
+		<menu_item_call label="위키" name="Wiki"/>
+		<menu_item_call label="커뮤니티 포럼" name="Community Forums"/>
+		<menu_item_call label="지원 포털" name="Support portal"/>
+		<menu_item_call label="[SECOND_LIFE] 뉴스" name="Second Life News"/>
+		<menu_item_call label="[SECOND_LIFE] 블로그" name="Second Life Blogs"/>
+		<menu_item_call label="버그 신고" name="Report Bug"/>
+		<menu_item_call label="[APP_NAME] 도움말" name="Second Life Help"/>
+	</menu>
+</menu_bar>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- This file contains strings that used to be hardcoded in the source.
+     It is only for those strings which do not belong in a floater.
+     For example, the strings used in avatar chat bubbles, and strings
+     that are returned from one component and may appear in many places-->
+<strings>
+	<string name="SECOND_LIFE_GRID">
+		Second Life 그리드:
+	</string>
+	<string name="SUPPORT_SITE">
+		Firestorm 지원 포털
+	</string>
+	<string name="StartupDetectingHardware">
+		하드웨어 감지 중...
+	</string>
+	<string name="StartupLoading">
+		[APP_NAME] 로딩 중...
+	</string>
+	<string name="StartupClearingCache">
+		캐시 정리 중...
+	</string>
+	<string name="StartupClearingTextureCache">
+		텍스처 캐시 정리 중...
+	</string>
+	<string name="StartupInitializingTextureCache">
+		텍스처 캐시 초기화 중...
+	</string>
+	<string name="StartupRequireDriverUpdate">
+		그래픽 초기화가 실패했습니다. 그래픽 드라이버를 업데이트해 주세요.
+	</string>
+	<string name="AboutHeader">
+		[APP_NAME] [VIEWER_VERSION_0].[VIEWER_VERSION_1].[VIEWER_VERSION_2] ([VIEWER_VERSION_3]) [BUILD_DATE] [BUILD_TIME] ([ADDRESS_SIZE]bit / [SIMD]) ([CHANNEL]) [BUILD_TYPE]
+[[VIEWER_RELEASE_NOTES_URL] [ReleaseNotes]]
+	</string>
+	<string name="AboutCompiler">
+		[COMPILER] 버전 [COMPILER_VERSION]으로 컴파일됨
+	</string>
+	<string name="BuildConfig">
+		빌드 구성 [BUILD_CONFIG]
+	</string>
+	<string name="AboutPosition">
+		현재 위치: [POSITION_LOCAL_0,number,1], [POSITION_LOCAL_1,number,1], [POSITION_LOCAL_2,number,1] (지역: [REGION]) &lt;nolink&gt;[HOSTNAME]&lt;/nolink&gt;
+SLURL: &lt;nolink&gt;[SLURL]&lt;/nolink&gt;
+(전역 좌표 [POSITION_0,number,1], [POSITION_1,number,1], [POSITION_2,number,1])
+[SERVER_VERSION]
+[SERVER_RELEASE_NOTES_URL]
+	</string>
+	<string name="AboutPositionRLVShowLoc">
+		현재 지역: [REGION]
+[SERVER_VERSION]
+[SERVER_RELEASE_NOTES_URL]
+	</string>
+	<string name="AboutSystem">
+		CPU: [CPU]
+메모리: [MEMORY_MB] MB (사용중: [USED_RAM] MB)
+동시성: [CONCURRENCY]
+운영체제 버전: [OS_VERSION]
+그래픽 카드 제조사: [GRAPHICS_CARD_VENDOR]
+그래픽 카드: [GRAPHICS_CARD]
+그래픽 메모리: [GRAPHICS_CARD_MEMORY] MB
+그래픽 메모리 (감지됨): [GRAPHICS_CARD_MEMORY_DETECTED] MB
+그래픽 메모리 (예산): [VRAM_BUDGET]
+	</string>
+	<string name="AboutDriver">
+		Windows 그래픽 드라이버 버전: [GRAPHICS_DRIVER_VERSION]
+	</string>
+	<string name="AboutOGL">
+		OpenGL 버전: [OPENGL_VERSION]
+	</string>
+	<string name="AboutSettings">
+모드: [MODE]
+스킨: [SKIN] ([THEME])
+창 크기: [WINDOW_WIDTH]x[WINDOW_HEIGHT] px
+글꼴: [FONT] ([FONT_SCREEN_DPI] dpi)
+글꼴 크기 조정: [FONT_SIZE] pt
+UI 크기 조정: [UI_SCALE_FACTOR]
+그리기 거리: [DRAW_DISTANCE] m
+대역폭: [BANDWIDTH] kbit/s
+LOD 요소: [LOD]
+렌더링 품질: [RENDERQUALITY]
+	</string>
+	<string name="AboutCache">
+		디스크 캐시: [DISK_CACHE_INFO]
+	</string>
+	<string name="AboutOSXHiDPI">
+		HiDPI 디스플레이 모드: [HIDPI]
+	</string>
+	<string name="AboutLibs">
+RestrainedLove API: [RLV_VERSION]
+libcurl 버전: [LIBCURL_VERSION]
+J2C 디코더 버전: [J2C_VERSION]
+오디오 드라이버 버전: [AUDIO_DRIVER_VERSION]
+[LIBCEF_VERSION]
+LibVLC 버전: [LIBVLC_VERSION]
+음성 서버 버전: [VOICE_VERSION]
+	</string>
+	<string name="AboutTraffic">
+		패킷 손실: [PACKETS_LOST,number,0]/[PACKETS_IN,number,0] ([PACKETS_PCT,number,1]%)
+	</string>
+</strings>

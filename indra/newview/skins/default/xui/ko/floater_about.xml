@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_about" title="[APP_NAME] 정보">
+	<tab_container name="about_tab">
+		<panel label="정보" name="support_panel">
+    <text name="support_intro">    
+Firestorm에 대한 최신 정보는
+https://www.firestormviewer.org 에서 확인하세요
+    </text>
+			<button label="클립보드에 복사" name="copy_btn"/>
+			<button label="업데이트 확인" name="update_btn"/>
+		</panel>
+		<panel label="크레딧" name="credits_panel">
+			<text name="linden_intro">
+Linden Lab이 Second Life 뷰어를 오픈소스로 공개하기로 결정하지 않았다면 Firestorm은 불가능했을 것입니다.
+
+Second Life는 다음 오픈소스 기여자들과 함께 Linden들에 의해 제공됩니다:
+			</text>
+			<text_editor name="contrib_names">
+				더미 이름이 실행시 대체됩니다
+			</text_editor>
+		</panel>
+<!-- Firestorm Credits -->
+		<panel label="Firestorm" name="fs_credits_panel" height="930">
+			<scroll_container name="fs_credits_scroll_container">
+				<panel name="fs_credits_scroll_container_content_panel">
+					<text name="firestorm_intro" height="120">
+Firestorm은 SecondLife(tm) 뷰어 경험을 향상시키기 위한 커뮤니티 프로젝트입니다. 우리는 커뮤니티 개발자들의 기여를 Linden Lab의 코드 및 자체 확장 기능과 결합하여 고품질의 기능이 풍부한 뷰어 경험을 제공합니다. 우리는 대규모의 자원봉사 지원팀의 지원을 받습니다. Firestorm은 비영리 단체인 The Phoenix Firestorm Project, Inc.에서 제공됩니다.
+
+Firestorm 개발팀:
+
+					</text>
+				</panel>
+			</scroll_container>
+		</panel>
+	</tab_container>
+</floater>

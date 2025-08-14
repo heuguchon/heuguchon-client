@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="floater_fs_search" title="Firestorm 검색">
+	<floater.string name="string.location">
+		위치: [LOCATION]
+	</floater.string>
+	<floater.string name="string.traffic">
+		트래픽: [DWELL]
+	</floater.string>
+	<floater.string name="string.area">
+		크기: [AREA]
+	</floater.string>
+	<floater.string name="string.members">
+		멤버: [MEMBER_COUNT]
+	</floater.string>
+	<floater.string name="string.founder">
+		창립자: [FOUNDER]
+	</floater.string>
+	<floater.string name="string.age">
+		나이: [AGE]
+	</floater.string>
+	<floater.string name="string.partner">
+		파트너: [PARTNER]
+	</floater.string>
+	<floater.string name="string.listing_price">
+		등록 가격: [LISTING_PRICE]
+	</floater.string>
+	<floater.string name="string.slurl">
+		[SLURL]
+	</floater.string>
+	<floater.string name="string.duration">
+		이벤트 기간: [DURATION]
+	</floater.string>
+	<floater.string name="string.covercharge">
+		입장료: [COVERCHARGE]
+	</floater.string>
+	<tab_container name="ls_tabs">
+		<panel label="웹 검색" name="panel_ls_web"/>
+		<panel label="사람" name="panel_ls_people"/>
+		<panel label="그룹" name="panel_ls_groups"/>
+		<panel label="장소" name="panel_ls_places"/>
+		<panel label="토지 판매" name="panel_ls_land"/>
+		<panel label="이벤트" name="panel_ls_events"/>
+		<panel label="광고" name="panel_ls_classifieds"/>
+	</tab_container>
+	<!-- Details/Action Panes -->
+	<panel name="panel_ls_details">
+		<text_editor name="title" value="정의되지 않은 이름"/>
+		<text_editor name="desc" value="상상의 열쇠로 이 문을 여세요. 그 너머에는 또 다른 차원이 있습니다: 소리의 차원, 시각의 차원, 마음의 차원. 당신은 그림자와 실체의 땅, 사물과 아이디어의 땅으로 들어가고 있습니다. 당신은 황혼 지대에 들어섰습니다. 이제 보시게 될 것은 실제입니다; 화면의 당사자들은 배우가 아닙니다. 그들은 실제 소액재판소에서 소송을 제기한 진짜 시민들로, 그곳에서 소송을 취하하고 여기, 이 법정... 인민법원에서 해결하도록 설득되었습니다."/>
+		<button	label="프로필 보기" name="people_profile_btn"/>
+		<button label="메시지 보내기" name="people_message_btn"/>
+		<button label="친구 추가" name="people_friend_btn"/>
+		<button label="프로필 보기" name="group_profile_btn"/>
+		<button label="채팅 참여" name="group_message_btn"/>
+		<button label="그룹 가입" name="group_join_btn"/>
+		<button label="텔레포트" name="teleport_btn"/>
+		<button label="지도" name="map_btn"/>
+		<button label="알림" name="event_reminder_btn"/>
+	</panel>
+</floater>
