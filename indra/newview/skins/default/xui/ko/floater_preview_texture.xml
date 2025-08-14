@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="preview_texture">
+	<floater.string name="Title">
+		텍스처: [NAME]
+	</floater.string>
+	<floater.string name="Copy">
+		인벤토리에 복사
+	</floater.string>
+	<floater.string name="DateTime">
+		[weekday,datetime,slt], [day,datetime,slt]. [month,datetime,slt] [year,datetime,slt], [hour24,datetime,slt]:[min,datetime,slt]:[second,datetime,slt] [timezone,datetime,slt]
+	</floater.string>
+	<floater.string name="UploaderDateTime">
+		[UPLOADER]가 [DATE_TIME]에 업로드.
+	</floater.string>
+	<text name="desc txt">
+		설명:
+	</text>
+	<text name="uploader_label">
+		업로더:
+	</text>
+	<button label="프로필" name="openprofile"/>
+	<panel name="dimensions_panel">
+		<text name="dimensions">
+			[WIDTH]px x [HEIGHT]px
+		</text>
+		<button label="UUID" name="copyuuid" tool_tip="UUID를 클립보드에 복사"/>
+		<text name="aspect_ratio">
+			화면비
+		</text>
+		<combo_box name="combo_aspect_ratio" tool_tip="미리 정의된 화면비로 표시"/>
+	</panel>
+	<panel name="button_panel">
+		<button label="확인" name="Keep"/>
+		<button label="버리기" name="Discard"/>
+		<flyout_button label="저장..." name="save_tex_btn">
+			<flyout_button.item label="TGA로 저장" name="save_item_tga"/>
+			<flyout_button.item label="PNG로 저장" name="save_item_png"/>
+		</flyout_button>
+	</panel>
+</floater>

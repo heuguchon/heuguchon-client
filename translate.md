@@ -110,7 +110,13 @@
   - [x] floater_sell_land.xml (토지 판매)
   - [x] floater_land_holdings.xml (토지 소유 현황)
   - [x] floater_telehub.xml (텔레허브)
-- [ ] 14차: 대용량 파일 도전 (menu_viewer.xml, notifications.xml 등)
+- [x] 14차: 미디어/프리뷰 관련 완료 (5개)
+  - [x] floater_image_preview.xml (이미지 미리보기)
+  - [x] floater_preview_animation.xml (애니메이션 미리보기)
+  - [x] floater_preview_sound.xml (소리 미리보기)
+  - [x] floater_preview_texture.xml (텍스처 미리보기)
+  - [x] floater_preview_notecard.xml (노트카드 미리보기)
+- [ ] 15차: 대용량 파일 도전 (menu_viewer.xml, notifications.xml 등)
 - [ ] 6차: 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -136,7 +142,7 @@
 - 프로젝트 구조 분석
 - 작업 계획 수립
 - ko 폴더 생성
-- **핵심 파일 58개 번역 완료:**
+- **핵심 파일 63개 번역 완료:**
   - strings.xml (기본 문자열)
   - floater_about.xml (정보 창)
   - menu_login.xml (로그인 메뉴)
@@ -198,6 +204,11 @@
   - floater_sell_land.xml (토지 판매)
   - floater_land_holdings.xml (토지 소유 현황)
   - floater_telehub.xml (텔레허브)
+  - floater_image_preview.xml (이미지 미리보기)
+  - floater_preview_animation.xml (애니메이션 미리보기)
+  - floater_preview_sound.xml (소리 미리보기)
+  - floater_preview_texture.xml (텍스처 미리보기)
+  - floater_preview_notecard.xml (노트카드 미리보기)
 
 ### 진행 중인 작업
 - 추가 중요 UI 파일 식별 및 번역
@@ -217,7 +228,7 @@
 
 ### 오늘 수행한 작업 (2025-08-14)
 - 프로젝트 구조 분석 및 ko 폴더 생성
-- **58개 핵심 UI 파일 번역 완료**
+- **63개 핵심 UI 파일 번역 완료**
 - 기본 로그인, 메뉴, 채팅, 지도, 검색 등 핵심 기능 포함
 - 언어 설정 파일로 한국어 로케일 지원
 - **주요 컨텍스트 메뉴 번역 완료** (객체, 토지, 아바타 메뉴)
@@ -230,12 +241,14 @@
 - **2차 빌드/편집 도구 번역 완료** (객체 무게, 파티클 에디터, 객체 열기)
 - **3차 인벤토리/아이템 관리 번역 완료** (인벤토리 설정, 의상 저장, 인벤토리 검색)
 - **토지/부동산 관리 번역 완료** (토지 정보, 객체 구매, 토지 판매, 토지 소유 현황, 텔레허브)
+- **미디어/프리뷰 번역 완료** (이미지, 애니메이션, 사운드, 텍스처, 노트카드 미리보기)
 
 ### 번역 완료율
-- **총 58개 파일 번역** (독일어 기준 약 400개 중 약 14.5%)
+- **총 63개 파일 번역** (독일어 기준 약 400개 중 약 15.8%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화
+- **미디어/프리뷰 완료** - 모든 미디어 콘텐츠 미리보기 기능 한국어화
 
 ### 다음 단계 우선순위
 1. **더 많은 플로터 창들**:

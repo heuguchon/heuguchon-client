@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="preview_anim">
+	<floater.string name="Title">
+		애니메이션: [NAME]
+	</floater.string>
+	<panel name="basic_info_panel">
+		<text name="desc txt" width="90">
+			설명:
+		</text>
+		<button label="인월드 재생" label_selected="정지" name="Inworld" tool_tip="다른 사람들도 볼 수 있도록 이 애니메이션을 재생합니다."/>
+		<button label="로컬 재생" label_selected="정지" name="Locally" tool_tip="본인만 볼 수 있도록 이 애니메이션을 재생합니다."/>
+		<button name="btn_expand" tool_tip="펼쳐서 이 애니메이션의 고급 정보를 확인합니다."/>
+	</panel>
+	<panel name="advanced_info_panel">
+		<text name="AdvancedStatsLeft">
+우선순위: [PRIORITY]
+지속시간: [DURATION]초
+반복: [IS_LOOP]
+		</text>
+		<text name="AdvancedStatsRight">
+페이드인: [EASE_IN]초
+페이드아웃: [EASE_OUT]초
+관절: [NUM_JOINTS]개
+		</text>
+	</panel>
+</floater>

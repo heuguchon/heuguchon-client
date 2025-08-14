@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="Image Preview" title="">
+	<string name="with_alpha">
+		알파 채널 포함
+	</string>
+	<string name="no_alpha">
+		알파 채널 없음
+	</string>
+	<text name="name_label">
+		이름:
+	</text>
+	<text name="description_label">
+		설명:
+	</text>
+	<text name="preview_label">
+		이미지 미리보기:
+	</text>
+	<combo_box label="의복 종류" name="clothing_type_combo">
+		<item label="이미지" name="Image" value="이미지"/>
+		<item label="머리카락" name="Hair" value="머리카락"/>
+		<item label="머리 (여성)" name="FemaleHead" value="머리 (여성)"/>
+		<item label="상체 (여성)" name="FemaleUpperBody" value="상체 (여성)"/>
+		<item label="하체 (여성)" name="FemaleLowerBody" value="하체 (여성)"/>
+		<item label="머리 (남성)" name="MaleHead" value="머리 (남성)"/>
+		<item label="상체 (남성)" name="MaleUpperBody" value="상체 (남성)"/>
+		<item label="하체 (남성)" name="MaleLowerBody" value="하체 (남성)"/>
+		<item label="치마" name="Skirt" value="치마"/>
+		<item label="조각된 프림" name="SculptedPrim" value="조각된 프림"/>
+	</combo_box>
+	<panel name="image_alpha_warning">
+		<check_box name="strip_alpha_check" label="빈 알파 채널 제거"/>
+	</panel>
+	<text name="bad_image_text">
+		이미지를 읽을 수 없습니다.
+
+이미지를 24비트 Targa (.tga) 형식으로 저장하세요.
+	</text>
+	<text name="uploaded_size_text">
+		업로드 크기: [X_RES]x[Y_RES], [ALPHA]
+	</text>
+	<check_box label="무손실 압축" name="lossless_check" left_delta="-5"/>
+	<check_box name="temp_check" label="임시 (무료)" tool_tip="이미지를 임시로 업로드합니다. 업로드 비용이 무료이지만, 일정 시간 후 자동으로 삭제됩니다." />
+	<button label="업로드 (L$[AMOUNT])" name="ok_btn" width="146"/>
+	<button label="취소" name="cancel_btn"/>
+</floater>
