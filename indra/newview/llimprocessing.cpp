@@ -405,7 +405,7 @@ void inventory_offer_handler(LLOfferInfo* info)
             LLPostponedNotification::add<LLPostponedOfferNotification>(p, info->mFromID, false);
         }
         // <FS:Ansariel> FIRE-19540: Log auto-accepted inventory to nearby chat
-        else if (gSavedSettings.getBOOL("FSLogAutoAcceptInventoryToChat"))
+        else if (gSavedSettings.getBOOL("FSLogAutoAcceptInventoryToChat") || gSavedSettings.getBOOL("FSShowAutoAcceptInventoryInNotifications"))
         {
             std::string message_type;
             LLStringUtil::format_map_t chat_args;
@@ -438,7 +438,18 @@ void inventory_offer_handler(LLOfferInfo* info)
                 message_type = "InvOfferAutoAcceptUser";
             }
 
-            FSCommon::report_to_nearby_chat(LLTrans::getString(message_type, chat_args));
+            std::string inv_offer_message = LLTrans::getString(message_type, chat_args);
+            if (gSavedSettings.getBOOL("FSLogAutoAcceptInventoryToChat"))
+            {
+                FSCommon::report_to_nearby_chat(inv_offer_message);
+            }
+            if (gSavedSettings.getBOOL("FSShowAutoAcceptInventoryInNotifications"))
+            {
+                LLSD args;
+                args["MESSAGE"] = inv_offer_message;
+                LLNotificationsUtil::add("IMSystemMessageTip", args);
+            }
+
             make_ui_sound("UISndInventoryOffer");
         }
         // </FS:Ansariel>
@@ -753,7 +764,7 @@ void LLIMProcessing::processNewMessage(LLUUID from_id,
         case IM_NOTHING_SPECIAL:    // p2p IM
             // Don't show dialog, just do IM
             if (!gAgent.isGodlike()
-                && gAgent.getRegion()->isPrelude()
+                && gAgent.inPrelude()
                 && to_id.isNull())
             {
                 // do nothing -- don't distract newbies in
@@ -1110,14 +1121,6 @@ void LLIMProcessing::processNewMessage(LLUUID from_id,
                     asset_type = (LLAssetType::EType)(atoi((*(iter++)).c_str()));
                     iter++; // wearable type if applicable, otherwise asset type
                     item_name = std::string((*(iter++)).c_str());
-                    // Note There is more elements in 'tokens' ...
-
-
-                    for (int i = 0; i < 6; i++)
-                    {
-                        LL_WARNS() << *(iter++) << LL_ENDL;
-                        iter++;
-                    }
                 }
             }
             else

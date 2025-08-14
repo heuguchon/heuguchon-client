@@ -71,6 +71,7 @@
 		<menu_item_call label="360° Foto" name="Capture 360"/>
 		<menu_item_call label="Money-Tracker" name="money_tracker"/>
 		<menu_item_call label="Pose-Stand..." name="pose_stand"/>
+		<menu_item_check label="Poser" name="Poser"/>
 		<menu_item_call label="Einstellungen" name="Preferences"/>
 		<menu_item_call label="Symbolleistenschaltflächen" name="Toolbar Buttons"/>
 		<menu_item_check label="HUD-Anhänge anzeigen" name="Show HUD Attachments"/>
@@ -103,11 +104,13 @@
         <menu_item_check label="Gesten" name="Gestures"/>
 		<menu_item_call label="Twitter..." name="Twitter"/>
 		<menu_item_call label="Flickr..." name="Flickr"/>
+		<menu_item_call label="Primfeed..." name="Primfeed"/>
 		<menu_item_call label="Discord..." name="Discord"/>
 		<menu_item_check label="Gesten..." name="Gestures"/>
 		<menu_item_check label="Unterhaltungsprotokoll..." name="Conversation Log..."/>
 		<menu_item_check label="Stimmen in der Nähe" name="Nearby Voice"/>
 		<menu_item_call label="Blockierliste" name="Block List"/>
+		<menu_item_check label="Chat-Konsole anzeigen" name="Show On-screen Console"/>
 	</menu>
 	<menu label="Welt" name="World">
 		<menu_item_call label="Animationen synchronisieren" name="Resync Animations"/>
@@ -162,6 +165,7 @@
 			<menu_item_call label="Fototools" name="phototools_item_call"/>
 			<menu_item_call label="Kameratools" name="cameratools_item_call"/>
 			<menu_item_check label="Schärfentiefe-Fokus fixieren" name="lock_focus_point"/>
+			<menu_item_check label="Fadenkreuz für Schärfentiefe-Fokus anzeigen" name="render_focus_point"/>
 		</menu>
 		<menu_item_call label="Umgebungssuche" name="area_search"/>
 		<menu_item_call label="Sound-Explorer" name="Sound Explorer"/>
@@ -468,6 +472,8 @@
 			<menu_item_call label="Treiber-Absturz erzwingen" name="Force Driver Carsh"/>
 			<menu_item_call label="Softwareausnahme erzwingen" name="Force Software Exception"/>
 			<menu_item_call label="Softwareausnahme in Coroutine erzwingen" name="Force Software Exception in Coroutine"/>
+			<menu_item_call label="Absturz in Coprocedure erzwingen" name="Force a Crash in a Coroprocedure"/>
+			<menu_item_call label="Absturz in Work Queue erzwingen" name="Force a Crash in a Work Queue"/>
 			<menu_item_call label="Absturz in Thread erzwingen" name="Force a Crash in a Thread"/>
 			<menu_item_call label="Verbindungsabbruch erzwingen" name="Force Disconnect Viewer"/>
 			<menu_item_call label="Speicherverlust simulieren" name="Memory Leaking Simulation"/>
@@ -546,6 +552,7 @@
 			<menu_item_check label="Texturen in Vollauflösung (gefährlich)" name="Full Res Textures"/>
 			<menu_item_check label="Angehängte Lichter rendern" name="Render Attached Lights"/>
 			<menu_item_check label="Angehängte Partikel rendern" name="Render Attached Particles"/>
+			<menu_item_check label="Sammeln von Vertex Buffern für Schrift aktivieren" name="Collect Font Vertex Buffers"/>
 			<menu_item_check label="Shader-Cache aktivieren" name="Enable Shader Cache"/>
 			<menu_item_call label="Shader-Cache bereinigen" name="Shader Cache Clear"/>
 		</menu>
@@ -614,6 +621,7 @@
 			<menu_item_call label="Farbeinstellungen anzeigen" name="Color Settings"/>
 			<menu_item_call label="Farbeinstellungen neu laden" name="Reload Color Settings"/>
 			<menu_item_call label="Schriftarttest anzeigen" name="Show Font Test"/>
+			<menu_item_call label="SLapps-Test anzeigen" name="Show SLapps Test"/>
 			<menu_item_call label="Aus XML-Datei laden" name="Load from XML"/>
 			<menu_item_call label="In XML-Datei speichern" name="Save to XML"/>
 			<menu_item_check label="XUI-Namen anzeigen" name="Show XUI Names"/>
@@ -666,6 +674,8 @@
 		<menu_item_check label="HTTP-Inventar" name="HTTP Inventory"/>
 		<menu_item_call label="Bilder komprimieren" name="Compress Images"/>
 		<menu_item_call label="Datei-Komprimierung testen" name="Compress File Test"/>
+		<menu_item_call label="Primfeed Autorisierungstest" name="primfeed_auth_test"/>
+		<menu_item_call label="Primfeed Autorisierung zurücksetzen" name="primfeed_auth_clear"/>
 		<menu_item_call label="Visual Leak Detector aktivieren" name="Enable Visual Leak Detector"/>
 		<menu_item_check label="Ausgabe Fehlerbeseitigung ausgeben" name="Output Debug Minidump"/>
 		<menu_item_check label="Bei nächster Ausführung Debugkonsole öffnen" name="Console Window"/>

@@ -99,7 +99,11 @@ void LLVOGrass::updateSpecies()
         SpeciesMap::const_iterator it = sSpeciesTable.begin();
         mSpecies = (*it).first;
     }
-    setTEImage(0, LLViewerTextureManager::getFetchedTexture(sSpeciesTable[mSpecies]->mTextureID, FTT_DEFAULT, true, LLGLTexture::BOOST_NONE, LLViewerTexture::LOD_TEXTURE));
+    // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+    //setTEImage(0, LLViewerTextureManager::getFetchedTexture(sSpeciesTable[mSpecies]->mTextureID, FTT_DEFAULT, true, LLGLTexture::BOOST_NONE, LLViewerTexture::LOD_TEXTURE));
+    // Added new boost Grass as it forces a fixed size on updates
+    setTEImage(0, LLViewerTextureManager::getFetchedTexture(sSpeciesTable[mSpecies]->mTextureID, FTT_DEFAULT, true, LLGLTexture::BOOST_GRASS, LLViewerTexture::LOD_TEXTURE));
+    // </FS:minerjr> [FIRE-35081] 
 }
 
 
@@ -606,7 +610,7 @@ U32 LLVOGrass::getPartitionType() const
 }
 
 LLGrassPartition::LLGrassPartition(LLViewerRegion* regionp)
-: LLSpatialPartition(LLDrawPoolAlpha::VERTEX_DATA_MASK | LLVertexBuffer::MAP_TEXTURE_INDEX, true, regionp)
+: LLSpatialPartition(static_cast<U32>(LLDrawPoolAlpha::VERTEX_DATA_MASK) | static_cast<U32>(LLVertexBuffer::MAP_TEXTURE_INDEX), true, regionp)
 {
     mDrawableType = LLPipeline::RENDER_TYPE_GRASS;
     mPartitionType = LLViewerRegion::PARTITION_GRASS;
@@ -774,7 +778,6 @@ void LLGrassPartition::getGeometry(LLSpatialGroup* group)
         }
     }
 
-    buffer->unmapBuffer();
     mFaceList.clear();
 }
 

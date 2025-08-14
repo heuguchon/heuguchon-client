@@ -66,6 +66,20 @@ class LLViewerRegion;
 
 extern LLTrace::BlockTimerStatHandle FTM_FRAME;
 
+typedef enum
+{
+    LAST_EXEC_NORMAL = 0,
+    LAST_EXEC_FROZE,
+    LAST_EXEC_LLERROR_CRASH,
+    LAST_EXEC_OTHER_CRASH,
+    LAST_EXEC_LOGOUT_FROZE,
+    LAST_EXEC_LOGOUT_CRASH,
+    LAST_EXEC_BAD_ALLOC,
+    LAST_EXEC_MISSING_FILES,
+    LAST_EXEC_GRAPHICS_INIT,
+    LAST_EXEC_COUNT
+} eLastExecEvent;
+
 class LLAppViewer : public LLApp
 {
 public:
@@ -144,6 +158,7 @@ public:
     void saveNameCache();
 
     void removeMarkerFiles();
+    void recordSessionToMarker();
 
     void removeDumpDir();
     // LLAppViewer testing helpers.
@@ -158,6 +173,8 @@ public:
     virtual void forceErrorDriverCrash();
     // <FS:Ansariel> Wrongly merged back in by LL
     //virtual void forceErrorCoroutineCrash();
+    virtual void forceErrorCoroprocedureCrash();
+    virtual void forceErrorWorkQueueCrash();
     virtual void forceErrorThreadCrash();
 
     // The list is found in app_settings/settings_files.xml
@@ -239,6 +256,9 @@ public:
     // post given work to the "mainloop" work queue for handling on the main thread
     void postToMainCoro(const LL::WorkQueue::Work& work);
 
+    // Writes an error code into the error_marker file for use on next startup.
+    void createErrorMarker(eLastExecEvent error_code) const;
+
     // Attempt a 'soft' quit with disconnect and saving of settings/cache.
     // Intended to be thread safe.
     // Good chance of viewer crashing either way, but better than alternatives.
@@ -253,6 +273,7 @@ protected:
     virtual void overrideDetectedHardware(); // <FS:Beq/> Override VRAM (and others in future?) consistently.
     virtual bool initSLURLHandler();
     virtual bool sendURLToOtherInstance(const std::string& url);
+    virtual void bugsplatAddStaticAttributes(const LLSD& info) {/*empty*/}; // <FS:Beq/> create a NOOP base impl
 
     virtual bool initParseCommandLine(LLCommandLineParser& clp)
         { return true; } // Allow platforms to specify the command line args.
@@ -285,6 +306,9 @@ private:
     void processMarkerFiles();
     static void recordMarkerVersion(LLAPRFile& marker_file);
     bool markerIsSameVersion(const std::string& marker_name) const;
+    LLUUID getMarkerSessionId(const std::string& marker_name) const;
+    S32 getMarkerErrorCode(const std::string& marker_name) const;
+    bool getMarkerData(const std::string& marker_name, std::string &data) const;
 
     void idle();
     void idleShutdown();
@@ -344,8 +368,6 @@ private:
     bool mQuitRequested;                // User wants to quit, may have modified documents open.
     bool mClosingFloaters;
     bool mLogoutRequestSent;            // Disconnect message sent to simulator, no longer safe to send messages to the sim.
-    U32 mLastAgentControlFlags;
-    F32 mLastAgentForceUpdate;
     struct SettingsFiles* mSettingsLocationList;
 
     LLWatchdogTimeout* mMainloopTimeout;
@@ -373,10 +395,6 @@ private:
     virtual void startCachePurge() {}
 };
 
-// consts from viewer.h
-const S32 AGENT_UPDATES_PER_SECOND  = 125; // Value derived experimentally to avoid Input Delays with latest PBR-Capable Viewers when viewer FPS is highly volatile.
-const S32 AGENT_FORCE_UPDATES_PER_SECOND  = 1;
-
 // Globals with external linkage. From viewer.h
 // *NOTE:Mani - These will be removed as the Viewer App Cleanup project continues.
 //
@@ -385,18 +403,9 @@ const S32 AGENT_FORCE_UPDATES_PER_SECOND  = 1;
 extern LLSD gDebugInfo;
 extern bool gShowObjectUpdates;
 
-typedef enum
-{
-    LAST_EXEC_NORMAL = 0,
-    LAST_EXEC_FROZE,
-    LAST_EXEC_LLERROR_CRASH,
-    LAST_EXEC_OTHER_CRASH,
-    LAST_EXEC_LOGOUT_FROZE,
-    LAST_EXEC_LOGOUT_CRASH
-} eLastExecEvent;
-
 extern eLastExecEvent gLastExecEvent; // llstartup
 extern S32 gLastExecDuration; ///< the duration of the previous run in seconds (<0 indicates unknown)
+extern LLUUID gLastAgentSessionId; // will be set if agent logged in
 
 extern const char* gPlatform;
 
@@ -437,11 +446,10 @@ extern std::string gLastVersionChannel;
 
 extern LLVector3 gWindVec;
 extern LLVector3 gRelativeWindVec;
-extern U32  gPacketsIn;
-extern bool gPrintMessagesThisFrame;
 
 extern bool gRandomizeFramerate;
 extern bool gPeriodicSlowFrame;
+extern bool gDoDisconnect;
 
 extern bool gSimulateMemLeak;
 

@@ -209,8 +209,15 @@ public:
     }
     virtual bool execute( LLTextBase* editor, S32* delta )
     {
-        mWString = editor->getWText().substr(getPosition(), mLen);
-        *delta = remove(editor, getPosition(), mLen );
+        try
+        {
+            mWString = editor->getWText().substr(getPosition(), mLen);
+            *delta = remove(editor, getPosition(), mLen);
+        }
+        catch (std::out_of_range&)
+        {
+            return false;
+        }
         return (*delta != 0);
     }
     virtual S32 undo( LLTextBase* editor )
@@ -344,6 +351,20 @@ void LLTextEditor::setText(const LLStringExplicit &utf8str, const LLStyle::Param
 
     resetDirty();
 }
+
+// <AS:Chanayane> Preview button
+void LLTextEditor::reparseText(const LLStringExplicit &utf8str, const LLStyle::Params& input_params)
+{
+    mParseOnTheFly = false;
+    LLTextBase::setText(utf8str, input_params);
+    mParseOnTheFly = true;
+}
+
+void LLTextEditor::reparseValue(const LLSD& value)
+{
+    reparseText(value.asString());
+}
+// </AS:Chanayane>
 
 // [SL:KB] - Patch: UI-FloaterSearchReplace | Checked: 2013-12-30 (Catznip-3.6)
 std::string LLTextEditor::getSelectionString() const

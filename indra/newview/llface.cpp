@@ -56,6 +56,7 @@
 #include "llvoavatar.h"
 #include "llsculptidsize.h"
 #include "llmeshrepository.h"
+#include "llskinningutil.h"
 // [RLVa:KB] - Checked: RLVa-2.0.0
 #include "rlvhandler.h"
 // [/RLVa:KB]
@@ -74,6 +75,14 @@ static LLStaticHashedString sColorIn("color_in");
 
 bool LLFace::sSafeRenderSelect = true; // false
 
+// <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+// Moved to allow more code to access these values
+const S8 FACE_IMPORTANCE_LEVEL = 4 ;
+const F32 FACE_IMPORTANCE_TO_CAMERA_OVER_DISTANCE[FACE_IMPORTANCE_LEVEL][2] = //{distance, importance_weight}
+{{16.1f, 1.0f}, {32.1f, 0.5f}, {48.1f, 0.2f}, {96.1f, 0.05f} } ;
+const F32 FACE_IMPORTANCE_TO_CAMERA_OVER_ANGLE[FACE_IMPORTANCE_LEVEL][2] =    //{cos(angle), importance_weight}
+{{0.985f /*cos(10 degrees)*/, 1.0f}, {0.94f /*cos(20 degrees)*/, 0.8f}, {0.866f /*cos(30 degrees)*/, 0.64f}, {0.0f, 0.36f}} ;
+// </FS:minerjr> [FIRE-35081]
 
 #define DOTVEC(a,b) (a.mV[0]*b.mV[0] + a.mV[1]*b.mV[1] + a.mV[2]*b.mV[2])
 
@@ -170,7 +179,10 @@ void LLFace::init(LLDrawable* drawablep, LLViewerObject* objp)
 
     mFaceColor = LLColor4(1,0,0,1);
 
-    mImportanceToCamera = 0.f ;
+    mImportanceToCamera = 1.f ;
+    // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+    mCloseToCamera = 1.0f;
+    // </FS:minerjr> [FIRE-35081]
     mBoundingSphereRadius = 0.0f ;
 
     mTexExtents[0].set(0, 0);
@@ -918,7 +930,7 @@ LLVector2 LLFace::surfaceToTexture(LLVector2 surface_coord, const LLVector4a& po
 
     //VECTORIZE THIS
     // see if we have a non-default mapping
-    U8 texgen = getTextureEntry()->getTexGen();
+    U8 texgen = tep->getTexGen();
     if (texgen != LLTextureEntry::TEX_GEN_DEFAULT)
     {
         LLVector4a& center = *(mDrawablep->getVOVolume()->getVolume()->getVolumeFace(mTEOffset).mCenter);
@@ -1025,8 +1037,17 @@ bool LLFace::calcAlignedPlanarTE(const LLFace* align_to,  LLVector2* res_st_offs
         return false;
     }
     const LLTextureEntry *orig_tep = align_to->getTextureEntry();
+    if (!orig_tep)
+    {
+        return false;
+    }
+    const LLTextureEntry* tep = getTextureEntry();
+    if (!tep)
+    {
+        return false;
+    }
     if ((orig_tep->getTexGen() != LLTextureEntry::TEX_GEN_PLANAR) ||
-        (getTextureEntry()->getTexGen() != LLTextureEntry::TEX_GEN_PLANAR))
+        (tep->getTexGen() != LLTextureEntry::TEX_GEN_PLANAR))
     {
         return false;
     }
@@ -1441,13 +1462,6 @@ bool LLFace::getGeometryVolume(const LLVolume& volume,
     // LLMaterial* mat = tep->getMaterialParams().get();
     LLMaterial* mat = tep ? tep->getMaterialParams().get() : 0;
     // </FS:ND>
-    // <FS:Beq> show legacy when editing the fallback materials.
-    static LLCachedControl<bool> showSelectedinBP(gSavedSettings, "FSShowSelectedInBlinnPhong");
-    if( gltf_mat && getViewerObject()->isSelected() && showSelectedinBP )
-    {
-        gltf_mat = nullptr;
-    }
-    // </FS:Beq>
 
     F32 r = 0, os = 0, ot = 0, ms = 0, mt = 0, cos_ang = 0, sin_ang = 0;
 
@@ -1558,9 +1572,9 @@ bool LLFace::getGeometryVolume(const LLVolume& volume,
             }
 
             //TODO -- cache this (check profile marker above)?
-            glh::matrix4f m((F32*) skin->mBindShapeMatrix.getF32ptr());
-            m = m.inverse().transpose();
-            mat_normal.loadu(m.m);
+            glm::mat4 m = glm::make_mat4((F32*)skin->mBindShapeMatrix.getF32ptr());
+            m = glm::transpose(glm::inverse(m));
+            mat_normal.loadu(glm::value_ptr(m));
         }
         else
         {
@@ -1633,11 +1647,8 @@ bool LLFace::getGeometryVolume(const LLVolume& volume,
                 bump_t_primary_light_ray.load3((offset_multiple * t_scale * primary_light_ray).mV);
             }
 
-            // <FS:ND> FIRE-14261 Guard against null textures
-            // U8 texgen = getTextureEntry()->getTexGen();
-            U8 texgen = getTextureEntry() ? getTextureEntry()->getTexGen() : LLTextureEntry::TEX_GEN_DEFAULT;
-            // </FS:ND>
-
+            const LLTextureEntry* tep = getTextureEntry();
+            U8 texgen = tep ? tep->getTexGen() : LLTextureEntry::TEX_GEN_DEFAULT;
             if (rebuild_tcoord && texgen != LLTextureEntry::TEX_GEN_DEFAULT)
             { //planar texgen needs binormals
                 mVObjp->getVolume()->genTangents(face_index);
@@ -1672,7 +1683,10 @@ bool LLFace::getGeometryVolume(const LLVolume& volume,
                     xforms = XFORM_NONE;
                 }
 
-                if (getVirtualSize() >= MIN_TEX_ANIM_SIZE) // || isState(LLFace::RIGGED))
+                // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+                // Removed check for turning off animations
+                //if (getVirtualSize() >= MIN_TEX_ANIM_SIZE) // || isState(LLFace::RIGGED))
+                // </FS:minerjr> [FIRE-35081]
                 { //don't override texture transform during tc bake
                     tex_mode = 0;
                 }
@@ -1823,7 +1837,7 @@ bool LLFace::getGeometryVolume(const LLVolume& volume,
             { //bump mapped or has material, just do the whole expensive loop
                 LL_PROFILE_ZONE_NAMED_CATEGORY_FACE("getGeometryVolume - texgen default");
 
-                std::vector<LLVector2> bump_tc;
+                LLStrider<LLVector2> bump_tc;
 
                 if (mat && !mat->getNormalID().isNull())
                 { //writing out normal and specular texture coordinates, not bump offsets
@@ -1885,49 +1899,70 @@ bool LLFace::getGeometryVolume(const LLVolume& volume,
                     }
                     const bool do_xform = (xforms & xform_channel) != XFORM_NONE;
 
+                    // hold onto strider to front of TC array for use later
+                    bump_tc = dst;
 
-                    for (S32 i = 0; i < num_vertices; i++)
                     {
-                        LLVector2 tc(vf.mTexCoords[i]);
-
-                        LLVector4a& norm = vf.mNormals[i];
-
-                        LLVector4a& center = *(vf.mCenter);
-
-                        if (texgen != LLTextureEntry::TEX_GEN_DEFAULT)
+                        // NOTE: split TEX_GEN_PLANAR implementation to reduce branchiness of inner loop
+                        // These are per-vertex operations and every little bit counts
+                        if (texgen == LLTextureEntry::TEX_GEN_PLANAR)
                         {
-                            LLVector4a vec = vf.mPositions[i];
-
-                            vec.mul(scalea);
-
-                            if (texgen == LLTextureEntry::TEX_GEN_PLANAR)
+                            LL_PROFILE_ZONE_NAMED_CATEGORY_FACE("tgd - planar");
+                            for (S32 i = 0; i < num_vertices; i++)
                             {
+                                LLVector2 tc(vf.mTexCoords[i]);
+                                LLVector4a& norm = vf.mNormals[i];
+                                LLVector4a& center = *(vf.mCenter);
+                                LLVector4a vec = vf.mPositions[i];
+
+                                vec.mul(scalea);
+
                                 planarProjection(tc, norm, center, vec);
+
+                                if (tex_mode && mTextureMatrix)
+                                {
+                                    LLVector3 tmp(tc.mV[0], tc.mV[1], 0.f);
+                                    tmp = tmp * *mTextureMatrix;
+                                    tc.mV[0] = tmp.mV[0];
+                                    tc.mV[1] = tmp.mV[1];
+                                }
+                                else if (do_xform)
+                                {
+                                    xform(tc, cos_ang, sin_ang, os, ot, ms, mt);
+                                }
+
+                                *dst++ = tc;
                             }
                         }
+                        else
+                        {
+                            LL_PROFILE_ZONE_NAMED_CATEGORY_FACE("tgd - transform");
 
-                        if (tex_mode && mTextureMatrix)
-                        {
-                            LLVector3 tmp(tc.mV[0], tc.mV[1], 0.f);
-                            tmp = tmp * *mTextureMatrix;
-                            tc.mV[0] = tmp.mV[0];
-                            tc.mV[1] = tmp.mV[1];
-                        }
-                        else if (do_xform)
-                        {
-                            xform(tc, cos_ang, sin_ang, os, ot, ms, mt);
-                        }
+                            for (S32 i = 0; i < num_vertices; i++)
+                            {
+                                LLVector2 tc(vf.mTexCoords[i]);
 
-                        *dst++ = tc;
-                        if (do_bump)
-                        {
-                            bump_tc.push_back(tc);
+                                if (tex_mode && mTextureMatrix)
+                                {
+                                    LLVector3 tmp(tc.mV[0], tc.mV[1], 0.f);
+                                    tmp = tmp * *mTextureMatrix;
+                                    tc.mV[0] = tmp.mV[0];
+                                    tc.mV[1] = tmp.mV[1];
+                                }
+                                else if (do_xform)
+                                {
+                                    xform(tc, cos_ang, sin_ang, os, ot, ms, mt);
+                                }
+
+                                *dst++ = tc;
+                            }
                         }
                     }
                 }
 
                 if ((!mat && !gltf_mat) && do_bump)
                 {
+                    LL_PROFILE_ZONE_NAMED_CATEGORY_FACE("tgd - do bump");
                     mVertexBuffer->getTexCoord1Strider(tex_coords1, mGeomIndex, mGeomCount);
 
                     mVObjp->getVolume()->genTangents(face_index);
@@ -2160,7 +2195,12 @@ bool LLFace::getGeometryVolume(const LLVolume& volume,
             LLStrider<LLColor4U> emissive;
             mVertexBuffer->getEmissiveStrider(emissive, mGeomIndex, mGeomCount);
 
-            U8 glow = (U8) llclamp((S32) (getTextureEntry()->getGlow()*255), 0, 255);
+            const LLTextureEntry* tep = getTextureEntry();
+            U8 glow = 0;
+            if (tep)
+            {
+                glow = (U8)llclamp((S32)(tep->getGlow() * 255), 0, 255);
+            }
 
             LLVector4a src;
 
@@ -2247,10 +2287,16 @@ F32 LLFace::getTextureVirtualSize()
 
     F32 radius;
     F32 cos_angle_to_view_dir;
-    bool in_frustum = calcPixelArea(cos_angle_to_view_dir, radius);
+    // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+    //bool in_frustum = calcPixelArea(cos_angle_to_view_dir, radius);
+    // The mInFrustum value is now updated in calcPixelArea, so no longer need to accss the value
+    calcPixelArea(cos_angle_to_view_dir, radius);
 
 
-    if (mPixelArea < F_ALMOST_ZERO || !in_frustum)
+    //if (mPixelArea < F_ALMOST_ZERO || !in_frustum)
+    // Use the stored value from calcPixelArea
+    if (mPixelArea < F_ALMOST_ZERO || !mInFrustum)
+    // </FS:minerjr> [FIRE-35081]
     {
         setVirtualSize(0.f) ;
         return 0.f;
@@ -2278,7 +2324,11 @@ F32 LLFace::getTextureVirtualSize()
         face_area =  mPixelArea / llclamp(texel_area, 0.015625f, 128.f);
     }
 
-    face_area = LLFace::adjustPixelArea(mImportanceToCamera, face_area) ;
+    face_area = LLFace::adjustPixelArea(mImportanceToCamera, face_area);
+    // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+    // Remove the face area being affected by being partial off screen as close to screen textures can then become scaled down along with
+    // animated textures.
+    /*
     if(face_area > LLViewerTexture::sMinLargeImageSize) //if is large image, shrink face_area by considering the partial overlapping.
     {
         if(mImportanceToCamera > LEAST_IMPORTANCE_FOR_LARGE_IMAGE && mTexture[LLRender::DIFFUSE_MAP].notNull() && mTexture[LLRender::DIFFUSE_MAP]->isLargeImage())
@@ -2286,7 +2336,8 @@ F32 LLFace::getTextureVirtualSize()
             face_area *= adjustPartialOverlapPixelArea(cos_angle_to_view_dir, radius );
         }
     }
-
+    */
+    // </FS:minerjr> [FIRE-35081]    
     setVirtualSize(face_area) ;
 
     return face_area;
@@ -2294,29 +2345,102 @@ F32 LLFace::getTextureVirtualSize()
 
 bool LLFace::calcPixelArea(F32& cos_angle_to_view_dir, F32& radius)
 {
+    constexpr F32 PIXEL_AREA_UPDATE_PERIOD = 0.1f;
+    // this is an expensive operation and the result is valid (enough) for several frames
+    // don't update every frame
+    if (gFrameTimeSeconds - mLastPixelAreaUpdate < PIXEL_AREA_UPDATE_PERIOD)
+    {
+        return true;
+    }
+
     LL_PROFILE_ZONE_SCOPED_CATEGORY_FACE;
 
-    //VECTORIZE THIS
     //get area of circle around face
-
     LLVector4a center;
     LLVector4a size;
 
-
     if (isState(LLFace::RIGGED))
     {
-        //override with avatar bounding box
-        LLVOAvatar* avatar = mVObjp->getAvatar();
+        LL_PROFILE_ZONE_NAMED_CATEGORY_FACE("calcPixelArea - rigged");
+        //override with joint volume face joint bounding boxes
+        LLVOAvatar* avatar = mVObjp.notNull() ? mVObjp->getAvatar() : nullptr;
+        bool hasRiggedExtents = false;
+
         if (avatar && avatar->mDrawable)
         {
-            center.load3(avatar->getPositionAgent().mV);
-            const LLVector4a* exts = avatar->mDrawable->getSpatialExtents();
-            size.setSub(exts[1], exts[0]);
+            LLVolume* volume = mVObjp->getVolume();
+            if (volume)
+            {
+                LLVolumeFace& face = volume->getVolumeFace(mTEOffset);
+
+                auto& rigInfo = face.mJointRiggingInfoTab;
+
+                if (rigInfo.needsUpdate())
+                {
+                    LLVOVolume* vo_volume = (LLVOVolume*)mVObjp.get();
+                    const LLMeshSkinInfo* skin = vo_volume->getSkinInfo();
+                    if (skin)
+                    {
+                        LLSkinningUtil::updateRiggingInfo(skin, avatar, face);
+                    }
+                }
+
+                // calculate the world space bounding box of the face by combining the bounding boxes of all the joints
+                LLVector4a& minp = mRiggedExtents[0];
+                LLVector4a& maxp = mRiggedExtents[1];
+                minp = LLVector4a(FLT_MAX, FLT_MAX, FLT_MAX);
+                maxp = LLVector4a(-FLT_MAX, -FLT_MAX, -FLT_MAX);
+
+                for (S32 i = 0; i < rigInfo.size(); i++)
+                {
+                    auto& jointInfo = rigInfo[i];
+                    if (jointInfo.isRiggedTo())
+                    {
+                        LLJoint* joint = avatar->getJoint(i);
+
+                        if (joint)
+                        {
+                            LLVector4a jointPos;
+
+                            LLMatrix4a worldMat;
+                            worldMat.loadu((F32*)&joint->getWorldMatrix().mMatrix[0][0]);
+
+                            LLVector4a extents[2];
+
+                            matMulBoundBox(worldMat, jointInfo.getRiggedExtents(), extents);
+
+                            minp.setMin(minp, extents[0]);
+                            maxp.setMax(maxp, extents[1]);
+                            hasRiggedExtents = true;
+                        }
+                    }
+                }
+            }
         }
-        else
+
+        if (!hasRiggedExtents)
         {
+            // no rigged extents, zero out bounding box and skip update
+            mRiggedExtents[0] = mRiggedExtents[1] = LLVector4a(0.f, 0.f, 0.f);
+
+            // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+            // Set the face to be out of the frustum as the object is invalid
+            mInFrustum = false;
+            // </FS:minerjr> [FIRE-35081]
             return false;
         }
+
+        center.setAdd(mRiggedExtents[1], mRiggedExtents[0]);
+        center.mul(0.5f);
+        size.setSub(mRiggedExtents[1], mRiggedExtents[0]);
+    }
+    else if (mDrawablep && mVObjp.notNull() && mVObjp->getPartitionType() == LLViewerRegion::PARTITION_PARTICLE && mDrawablep->getSpatialGroup())
+    { // use box of spatial group for particles (over approximates size, but we don't actually have a good size per particle)
+        LLSpatialGroup* group = mDrawablep->getSpatialGroup();
+        const LLVector4a* extents = group->getExtents();
+        size.setSub(extents[1], extents[0]);
+        center.setAdd(extents[1], extents[0]);
+        center.mul(0.5f);
     }
     else
     {
@@ -2342,9 +2466,21 @@ bool LLFace::calcPixelArea(F32& cos_angle_to_view_dir, F32& radius)
     F32 app_angle = atanf((F32) sqrt(size_squared) / dist);
     radius = app_angle*LLDrawable::sCurPixelAngle;
     mPixelArea = radius*radius * 3.14159f;
+
+    // remember last update time, add 10% noise to avoid all faces updating at the same time
+    mLastPixelAreaUpdate = gFrameTimeSeconds + ll_frand() * PIXEL_AREA_UPDATE_PERIOD * 0.1f;
+
     LLVector4a x_axis;
     x_axis.load3(camera->getXAxis().mV);
     cos_angle_to_view_dir = lookAt.dot3(x_axis).getF32();
+    // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+    // Added close to camera (based upon the mImportanceToCamera) where any object that is within the FACE_IMPORTANCE_TO_CAMERA_OVER_DISTANCE (16.1f)
+    // gets an extra texture scaling up.
+    // Use positive distance to the camera and apply the multiplier based upon the texture scaled for increase in the default draw distance
+    mCloseToCamera = (dist >= 0.0f && dist <= FACE_IMPORTANCE_TO_CAMERA_OVER_DISTANCE[0][0] * camera->getDrawDistanceMultiplier()) ? 1.0f : 0.0f;
+    // Check if the object is positive distance to the far plane and positive cos angle is in frustum
+    mInFrustum = (dist >= 0 && dist <= camera->getFar() && cos_angle_to_view_dir > 0.0f);
+    // </FS:minerjr> [FIRE-35081]
 
     //if has media, check if the face is out of the view frustum.
     if(hasMedia())
@@ -2352,6 +2488,10 @@ bool LLFace::calcPixelArea(F32& cos_angle_to_view_dir, F32& radius)
         if(!camera->AABBInFrustum(center, size))
         {
             mImportanceToCamera = 0.f ;
+            // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+            // Added real in frustum check value. Previous was only false for media textures off screen and invalid rig objects
+            mInFrustum = false;
+            // </FS:minerjr> [FIRE-35081]
             return false ;
         }
         if(cos_angle_to_view_dir > camera->getCosHalfFov()) //the center is within the view frustum
@@ -2374,6 +2514,10 @@ bool LLFace::calcPixelArea(F32& cos_angle_to_view_dir, F32& radius)
     {
         cos_angle_to_view_dir = 1.0f ;
         mImportanceToCamera = 1.0f ;
+        // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+        mInFrustum = true; // If the face is important to the camera, it is in the frustum
+        mCloseToCamera = 1.0f;
+        // </FS:minerjr> [FIRE-35081]
     }
     else
     {
@@ -2412,21 +2556,21 @@ F32 LLFace::adjustPartialOverlapPixelArea(F32 cos_angle_to_view_dir, F32 radius 
     return 1.0f ;
 }
 
-const S8 FACE_IMPORTANCE_LEVEL = 4 ;
-const F32 FACE_IMPORTANCE_TO_CAMERA_OVER_DISTANCE[FACE_IMPORTANCE_LEVEL][2] = //{distance, importance_weight}
-    {{16.1f, 1.0f}, {32.1f, 0.5f}, {48.1f, 0.2f}, {96.1f, 0.05f} } ;
-const F32 FACE_IMPORTANCE_TO_CAMERA_OVER_ANGLE[FACE_IMPORTANCE_LEVEL][2] =    //{cos(angle), importance_weight}
-    {{0.985f /*cos(10 degrees)*/, 1.0f}, {0.94f /*cos(20 degrees)*/, 0.8f}, {0.866f /*cos(30 degrees)*/, 0.64f}, {0.0f, 0.36f}} ;
-
 //static
 F32 LLFace::calcImportanceToCamera(F32 cos_angle_to_view_dir, F32 dist)
 {
+    LL_PROFILE_ZONE_SCOPED_CATEGORY_FACE;
     F32 importance = 0.f ;
+    // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+    // Move camera out to use for the inital check for the distance to the face importance with the multiplier
+    LLViewerCamera* camera = LLViewerCamera::getInstance();
 
-    if(cos_angle_to_view_dir > LLViewerCamera::getInstance()->getCosHalfFov() &&
-        dist < FACE_IMPORTANCE_TO_CAMERA_OVER_DISTANCE[FACE_IMPORTANCE_LEVEL - 1][0])
+    if(cos_angle_to_view_dir > LLViewerCamera::getInstance()->getCosHalfFov() &&    
+        //dist < FACE_IMPORTANCE_TO_CAMERA_OVER_DISTANCE[FACE_IMPORTANCE_LEVEL - 1][0])
+        dist < FACE_IMPORTANCE_TO_CAMERA_OVER_DISTANCE[FACE_IMPORTANCE_LEVEL - 1][0] * camera->getDrawDistanceMultiplier())
     {
-        LLViewerCamera* camera = LLViewerCamera::getInstance();
+        //LLViewerCamera* camera = LLViewerCamera::getInstance();
+        // </FS:minerjr> [FIRE-35081]
         F32 camera_moving_speed = camera->getAverageSpeed() ;
         F32 camera_angular_speed = camera->getAverageAngularSpeed();
 
@@ -2437,7 +2581,10 @@ F32 LLFace::calcImportanceToCamera(F32 cos_angle_to_view_dir, F32 dist)
         }
 
         S32 i = 0 ;
-        for(i = 0; i < FACE_IMPORTANCE_LEVEL && dist > FACE_IMPORTANCE_TO_CAMERA_OVER_DISTANCE[i][0]; ++i);
+        // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+        // Added draw distance multiplier to the distance
+        for(i = 0; i < FACE_IMPORTANCE_LEVEL && dist > FACE_IMPORTANCE_TO_CAMERA_OVER_DISTANCE[i][0] * camera->getDrawDistanceMultiplier(); ++i);
+        // </FS:minerjr> [FIRE-35081]
         i = llmin(i, FACE_IMPORTANCE_LEVEL - 1) ;
         F32 dist_factor = FACE_IMPORTANCE_TO_CAMERA_OVER_DISTANCE[i][1] ;
 

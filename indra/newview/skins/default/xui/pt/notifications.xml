@@ -1592,6 +1592,7 @@ Deseja prosseguir?
 	</notification>
 	<notification name="WebLaunchExternalTarget">
 		Abrir uma janela do navegador para ver essas informações?
+URL: [UNTRUSTED_URL]
 		<usetemplate ignoretext="Abrir o navegador para acessar uma página na web" name="okcancelignore" notext="Cancelar" yestext="OK"/>
 	</notification>
 	<notification name="WebLaunchJoinNow">
@@ -3180,12 +3181,10 @@ Se você é um Membro Premium, [[PREMIUM_URL] clique aqui] para receber o seu ap
 
 Se você é um Membro Premium, [[PREMIUM_URL] clique aqui] para receber o seu app de distorção de voz.
 	</notification>
-	<notification name="VoiceEffectsWillExpire">
-		Uma ou mais das suas distorções de voz tem vencimento em menos de [INTERVAL] dias. 
+	<notification name="VoiceEffectsWillExpire">Uma ou mais das suas distorções de voz tem vencimento em menos de [INTERVAL] dias. 
 [[URL] Clique aqui] para renovar o serviço. 
 
-Se você é um Membro Premium, [[PREMIUM_URL] clique aqui] para receber o seu app de distorção de voz.
-	</notification>
+Se você é um Membro Premium, [[PREMIUM_URL] clique aqui] para receber o seu app de distorção de voz.</notification>
 	<notification name="VoiceEffectsNew">
 		Novas Distorções de voz!
 	</notification>

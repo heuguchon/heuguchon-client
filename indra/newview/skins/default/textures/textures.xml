@@ -164,7 +164,9 @@ with the same filename but different name
   <texture name="Command_Performance_Icon"  file_name="toolbar_icons/performance.png"  preload="true" />
   <texture name="Command_Picks_Icon"        file_name="toolbar_icons/picks.png"        preload="true" />
   <texture name="Command_Places_Icon"       file_name="toolbar_icons/places.png"       preload="true" />
+  <texture name="Command_Poser_Icon"       	file_name="toolbar_icons/poser.png"        preload="true" />     <!-- FS:AR FIRE-30873 -->
   <texture name="Command_Preferences_Icon"  file_name="toolbar_icons/preferences.png"  preload="true" />
+  <texture name="Command_Primfeed_Icon"     file_name="icons/primfeed_white.png"       preload="true" />     <!-- FS:Beq Primfeed support -->
   <texture name="Command_Profile_Icon"      file_name="toolbar_icons/profile.png"      preload="true" />
   <texture name="Command_Report_Abuse_Icon" file_name="toolbar_icons/report_abuse.png" preload="true" />
   <texture name="Command_Search_Icon"       file_name="toolbar_icons/search.png"       preload="true" />
@@ -285,6 +287,7 @@ with the same filename but different name
 
   <texture name="Icon_Dock_Foreground" file_name="windows/Icon_Dock_Foreground.png" preload="true" />
   <texture name="Icon_Dock_Press" file_name="windows/Icon_Dock_Press.png" preload="true" />
+  <texture name="Icon_Undock_Foreground" file_name="windows/Icon_Undock_Foreground.png" preload="true" />     <!-- FS:AR FIRE-30873 /-->
 
   <texture name="Icon_File_Upload" file_name="icons/file_upload.png" preload="true" />
   
@@ -591,6 +594,10 @@ with the same filename but different name
   <texture name="Pathfinding_Dirty_Light" file_name="icons/Pathfinding_Dirty_Light.png" preload="false" />
   <texture name="Pathfinding_Disabled_Light" file_name="icons/Pathfinding_Disabled_Light.png" preload="false" />
 
+<!-- FS:Beq: Poser icons -->
+	<texture name="Poser_Visual_On"			file_name="icons/visual_pose_enabled.png" />
+
+
 <!-- FS:Ansariel: Icon for script errors in V1 status bar -->
   <texture name="Statusbar_Script_Error" file_name="icons/status_script_debug.tga" preload="false" />
 
@@ -842,7 +849,7 @@ with the same filename but different name
   <texture name="TrashItem_Disabled" file_name="icons/TrashItem_Disabled.png" preload="true" />
   <texture name="TrashItem_Off" file_name="icons/TrashItem_Off.png" preload="true" />
   <texture name="TrashItem_Press" file_name="icons/TrashItem_Press.png" preload="true" />
-
+  <texture name="show_filters_18" file_name="bottomtray/show_filters_18.png" preload="true" />
   <texture name="inventory_18" file_name="bottomtray/inventory_18.png" preload="true" />
   <texture name="chatbar_18" file_name="bottomtray/chatbar_18.png" preload="true" />
   <texture name="nearbychat_18" file_name="toolbar_icons/nearbychat.png" preload="true" />

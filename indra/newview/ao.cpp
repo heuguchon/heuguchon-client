@@ -203,6 +203,16 @@ void FloaterAO::updateList()
     }
 }
 
+void FloaterAO::updateScrollListData()
+{
+    auto animationListData = mAnimationList->getAllData();
+    for (auto index = 0; index < mSelectedState->mAnimations.size(); ++index)
+    {
+        LLScrollListItem* item = animationListData[index];
+        item->setUserdata(&mSelectedState->mAnimations[index].mInventoryUUID);
+    }
+}
+
 bool FloaterAO::postBuild()
 {
     LLPanel* aoPanel = getChild<LLPanel>("animation_overrider_outer_panel");
@@ -271,6 +281,10 @@ bool FloaterAO::postBuild()
     mMoreButton->setCommitCallback(boost::bind(&FloaterAO::onClickMore, this));
     mPreviousButtonSmall->setCommitCallback(boost::bind(&FloaterAO::onClickPrevious, this));
     mNextButtonSmall->setCommitCallback(boost::bind(&FloaterAO::onClickNext, this));
+
+// <AS:Chanayane> Double click on animation in AO
+    mAnimationList->setDoubleClickCallback(boost::bind(&FloaterAO::onDoubleClick, this));
+// </AS:Chanayane>
 
     updateSmart();
 
@@ -674,6 +688,7 @@ void FloaterAO::onClickMoveUp()
     if (AOEngine::instance().swapWithPrevious(mSelectedState, currentIndex))
     {
         mAnimationList->swapWithPrevious(currentIndex);
+        updateScrollListData();
     }
 }
 
@@ -699,6 +714,7 @@ void FloaterAO::onClickMoveDown()
     if (AOEngine::instance().swapWithNext(mSelectedState, currentIndex))
     {
         mAnimationList->swapWithNext(currentIndex);
+        updateScrollListData();
     }
 }
 
@@ -768,6 +784,40 @@ void FloaterAO::onClickNext()
     AOEngine::instance().cycle(AOEngine::CycleNext);
 }
 
+// <AS:Chanayane> Double click on animation in AO
+void FloaterAO::onDoubleClick()
+{
+    LLScrollListItem* item = mAnimationList->getFirstSelected();
+    if (!item)
+    {
+        return;
+    }
+    LLUUID* animUUID = (LLUUID*)item->getUserdata();
+    if (!animUUID)
+    {
+        return;
+    }
+
+    // do nothing if animation is for a different state than the active state
+    if (mSelectedState != AOEngine::instance().getCurrentState())
+    {
+        return;
+    }
+
+    // activate AO set if necessary
+    if (AOEngine::instance().getCurrentSet() != mSelectedSet)
+    {
+        // sync small set selector with main set selector
+        mSetSelectorSmall->selectNthItem(mSetSelector->getCurrentIndex());
+
+        LL_DEBUGS("AOEngine") << "Set activated: " << mSetSelector->getSelectedItemLabel() << LL_ENDL;
+        AOEngine::instance().selectSet(mSelectedSet);
+    }
+
+    AOEngine::instance().playAnimation(*animUUID);
+}
+// </AS:Chanayane>
+
 void FloaterAO::onClickMore()
 {
     LLRect fullSize = gSavedPerAccountSettings.getRect("floater_rect_animation_overrider_full");
@@ -821,8 +871,23 @@ void FloaterAO::onAnimationChanged(const LLUUID& animation)
 
     if (mCurrentBoldItem)
     {
-        ((LLScrollListIcon*)mCurrentBoldItem->getColumn(0))->setValue("FSAO_Animation_Stopped");
-        ((LLScrollListText*)mCurrentBoldItem->getColumn(1))->setFontStyle(LLFontGL::NORMAL);
+// <AS:Chanayane> Safer casts
+        if (LLScrollListCell* icon_cell = mCurrentBoldItem->getColumn(0))
+        {
+            if (LLScrollListIcon* icon = dynamic_cast<LLScrollListIcon*>(icon_cell))
+            {
+                icon->setValue("FSAO_Animation_Stopped");
+            }
+        }
+
+        if (LLScrollListCell* text_cell = mCurrentBoldItem->getColumn(1))
+        {
+            if (LLScrollListText* text = dynamic_cast<LLScrollListText*>(text_cell))
+            {
+                text->setFontStyle(LLFontGL::NORMAL);
+            }
+        }
+// </AS:Chanayane>
 
         mCurrentBoldItem = nullptr;
     }
@@ -832,21 +897,46 @@ void FloaterAO::onAnimationChanged(const LLUUID& animation)
         return;
     }
 
-    // why do we have no LLScrollListCtrl::getItemByUserdata() ? -Zi
-    for (auto item : mAnimationList->getAllData())
+// <AS:Chanayane> Fix potential nullptr
+    if (!mAnimationList)
     {
-        LLUUID* id = (LLUUID*)item->getUserdata();
+        LL_WARNS("AO") << "Animation list control is null." << LL_ENDL;
+        return;
+    }
+// </AS:Chanayane>
 
-        if (id == &animation)
+// <AS:Chanayane> Safer casts
+    // why do we have no LLScrollListCtrl::getItemByUserdata() ? -Zi
+    for (LLScrollListItem* item : mAnimationList->getAllData())
+    {
+        LLUUID* id = static_cast<LLUUID*>(item->getUserdata());
+        // <AS:Chanayane> compares the LLUUID values instead of pointer values
+        //if (id == &animation)
+        if (id && *id == animation)
+        // </AS:Chanayane>
         {
             mCurrentBoldItem = item;
 
-            ((LLScrollListIcon*)mCurrentBoldItem->getColumn(0))->setValue("FSAO_Animation_Playing");
-            ((LLScrollListText*)mCurrentBoldItem->getColumn(1))->setFontStyle(LLFontGL::BOLD);
+            if (LLScrollListCell* icon_cell = mCurrentBoldItem->getColumn(0))
+            {
+                if (LLScrollListIcon* icon = dynamic_cast<LLScrollListIcon*>(icon_cell))
+                {
+                    icon->setValue("FSAO_Animation_Playing");
+                }
+            }
+
+            if (LLScrollListCell* text_cell = mCurrentBoldItem->getColumn(1))
+            {
+                if (LLScrollListText* text = dynamic_cast<LLScrollListText*>(text_cell))
+                {
+                    text->setFontStyle(LLFontGL::BOLD);
+                }
+            }
 
             return;
         }
     }
+// </AS:Chanayane>
 }
 
 // virtual

@@ -129,7 +129,7 @@ public:
 
     //attempt to allocate screen buffers at resX, resY
     //returns true if allocation successful, false otherwise
-    bool allocateScreenBuffer(U32 resX, U32 resY, U32 samples);
+    bool allocateScreenBufferInternal(U32 resX, U32 resY);
     bool allocateShadowBuffer(U32 resX, U32 resY);
 
     // rebuild all LLVOVolume render batches
@@ -155,9 +155,13 @@ public:
     void copyScreenSpaceReflections(LLRenderTarget* src, LLRenderTarget* dst);
     void generateLuminance(LLRenderTarget* src, LLRenderTarget* dst);
     void generateExposure(LLRenderTarget* src, LLRenderTarget* dst, bool use_history = true);
+    void tonemap(LLRenderTarget* src, LLRenderTarget* dst);
     void gammaCorrect(LLRenderTarget* src, LLRenderTarget* dst);
     void generateGlow(LLRenderTarget* src);
+    void applyCAS(LLRenderTarget* src, LLRenderTarget* dst);
     void applyFXAA(LLRenderTarget* src, LLRenderTarget* dst);
+    void generateSMAABuffers(LLRenderTarget* src);
+    void applySMAA(LLRenderTarget* src, LLRenderTarget* dst);
     void renderDoF(LLRenderTarget* src, LLRenderTarget* dst);
     void copyRenderTarget(LLRenderTarget* src, LLRenderTarget* dst);
     void combineGlow(LLRenderTarget* src, LLRenderTarget* dst);
@@ -287,6 +291,7 @@ public:
     void renderGLTFObjects(U32 type, bool texture = true, bool rigged = false);
 
     void renderAlphaObjects(bool rigged = false);
+    void renderFocusPoint(); // <FS:Beq/> FIRE-32023 Add focus point rendering
     void renderMaskedObjects(U32 type, bool texture = true, bool batch_texture = false, bool rigged = false);
     void renderFullbrightMaskedObjects(U32 type, bool texture = true, bool batch_texture = false, bool rigged = false);
 
@@ -333,6 +338,9 @@ public:
     // should be called just before rendering pre-water alpha objects
     void doWaterHaze();
 
+    // Generate the water exclusion surface mask.
+    void doWaterExclusionMask();
+
     void postDeferredGammaCorrect(LLRenderTarget* screen_target);
 
     void generateSunShadow(LLCamera& camera);
@@ -341,10 +349,11 @@ public:
 
     void renderHighlight(const LLViewerObject* obj, F32 fade);
 
-    void renderShadow(glh::matrix4f& view, glh::matrix4f& proj, LLCamera& camera, LLCullResult& result, bool depth_clamp);
+    void renderShadow(const glm::mat4& view, const glm::mat4& proj, LLCamera& camera, LLCullResult& result, bool depth_clamp);
     void renderSelectedFaces(const LLColor4& color);
     void renderHighlights();
-    void renderVignette(LLRenderTarget* src, LLRenderTarget* dst);
+    bool renderVignette(LLRenderTarget* src, LLRenderTarget* dst);
+    bool renderSnapshotFrame(LLRenderTarget* src, LLRenderTarget* dst); // <FS:Beq/> Add snapshot frame rendering
     void renderDebug();
     void renderPhysicsDisplay();
 
@@ -501,6 +510,7 @@ public:
         RENDER_TYPE_AVATAR                      = LLDrawPool::POOL_AVATAR,
         RENDER_TYPE_CONTROL_AV                  = LLDrawPool::POOL_CONTROL_AV, // Animesh
         RENDER_TYPE_TREE                        = LLDrawPool::POOL_TREE,
+        RENDER_TYPE_WATEREXCLUSION              = LLDrawPool::POOL_WATEREXCLUSION,
         RENDER_TYPE_VOIDWATER                   = LLDrawPool::POOL_VOIDWATER,
         RENDER_TYPE_WATER                       = LLDrawPool::POOL_WATER,
         RENDER_TYPE_GLTF_PBR                    = LLDrawPool::POOL_GLTF_PBR,
@@ -689,7 +699,8 @@ public:
 // [SL:KB] - Patch: Render-TextureToggle (Catznip-4.0)
     static bool             sRenderTextures;
 // [/SL:KB]
-
+    static LLVector3        sLastFocusPoint;// <FS:Beq/> FIRE-16728 focus point lock & free focus DoF 
+    static bool             sDoFEnabled;// <FS:Beq/> FIRE-32023 focus point render 
     static LLTrace::EventStatHandle<S64> sStatBatchSize;
 
     class RenderTargetPack
@@ -713,12 +724,14 @@ public:
     // auxillary 512x512 render target pack
     // used by reflection probes and dynamic texture bakes
     RenderTargetPack mAuxillaryRT;
+    // <FS:Beq> Fix the build floater preview window
+    // dedicated 2048x2048 render target for preview
+    // used by preview window dynamic textures
+    LLRenderTarget mPreviewScreen; 
+    // </FS:Beq>
 
     // Auxillary render target pack scaled to the hero probe's per-face size.
     RenderTargetPack mHeroProbeRT;
-
-    // <FS:Ansariel> Auxillary render target pack for 1024px LLDynamicTexture
-    RenderTargetPack mDynamicTextureRT;
 
     // currently used render target pack
     RenderTargetPack* mRT;
@@ -726,6 +739,7 @@ public:
     LLRenderTarget          mSpotShadow[2];
 
     LLRenderTarget          mPbrBrdfLut;
+    LLRenderTarget          mWaterExclusionMask;
 
     // copy of the color/depth buffer just before gamma correction
     // for use by SSR
@@ -741,12 +755,16 @@ public:
 
     // FXAA helper target
     LLRenderTarget          mFXAAMap;
+    LLRenderTarget          mSMAABlendBuffer;
 
     // render ui to buffer target
     LLRenderTarget          mUIScreen;
 
     // downres scratch space for GPU downscaling of textures
     LLRenderTarget          mDownResMap;
+
+    // 2k bom scratch target
+    LLRenderTarget          mBakeMap;
 
     LLCullResult            mSky;
     LLCullResult            mReflectedObjects;
@@ -771,10 +789,10 @@ public:
     LLCamera                mShadowCamera[8];
     LLVector3               mShadowExtents[4][2];
     // TODO : separate Sun Shadow and Spot Shadow matrices
-    glh::matrix4f           mSunShadowMatrix[6];
-    glh::matrix4f           mShadowModelview[6];
-    glh::matrix4f           mShadowProjection[6];
-    glh::matrix4f           mReflectionModelView;
+    glm::mat4               mSunShadowMatrix[6];
+    glm::mat4               mShadowModelview[6];
+    glm::mat4               mShadowProjection[6];
+    glm::mat4               mReflectionModelView;
 
     LLPointer<LLDrawable>   mShadowSpotLight[2];
     F32                     mSpotLightFade[2];
@@ -787,7 +805,8 @@ public:
     //water distortion texture (refraction)
     LLRenderTarget              mWaterDis;
 
-    static const U32 MAX_BAKE_WIDTH;
+    static const U32 MAX_PREVIEW_WIDTH;
+    static const U32 MAX_PREVIEW_HEIGHT; // <FS:Beq/> dedicated render target for previews
 
     //texture for making the glow
     LLRenderTarget              mGlow[3];
@@ -799,6 +818,11 @@ public:
     U32                 mNoiseMap;
     U32                 mTrueNoiseMap;
     U32                 mLightFunc;
+
+    //smaa
+    U32                 mSMAAAreaMap = 0;
+    U32                 mSMAASearchMap = 0;
+    U32                 mSMAASampleMap = 0;
 
     LLColor4            mSunDiffuse;
     LLColor4            mMoonDiffuse;
@@ -962,6 +986,7 @@ protected:
     LLDrawPool*                 mWLSkyPool = nullptr;
     LLDrawPool*                 mPBROpaquePool = nullptr;
     LLDrawPool*                 mPBRAlphaMaskPool = nullptr;
+    LLDrawPool*                 mWaterExclusionPool      = nullptr;
 
     // Note: no need to keep an quick-lookup to avatar pools, since there's only one per avatar
 
@@ -1010,7 +1035,7 @@ public:
     static bool WindLightUseAtmosShaders;
     static bool RenderDeferred;
     static F32 RenderDeferredSunWash;
-    static U32 RenderFSAASamples;
+    static U32 RenderFSAAType;
     static U32 RenderResolutionDivisor;
 // [SL:KB] - Patch: Settings-RenderResolutionMultiplier | Checked: Catznip-5.4
     static F32 RenderResolutionMultiplier;

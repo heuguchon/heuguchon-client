@@ -451,8 +451,10 @@ void LLInventoryPanel::setFilterTypes(U64 types, LLInventoryFilter::EFilterType 
     {
         getFilter().setFilterObjectTypes(types);
     }
-    if (filter_type == LLInventoryFilter::FILTERTYPE_CATEGORY)
+    else if (filter_type == LLInventoryFilter::FILTERTYPE_CATEGORY)
+    {
         getFilter().setFilterCategoryTypes(types);
+    }
 }
 
 void LLInventoryPanel::setFilterWorn()
@@ -645,7 +647,7 @@ void LLInventoryPanel::itemChanged(const LLUUID& item_id, U32 mask, const LLInve
     {
         if (model_item && view_item && viewmodel_item)
         {
-            const LLUUID& idp = viewmodel_item->getUUID();
+            const LLUUID idp = viewmodel_item->getUUID();
             view_item->destroyView();
             removeItemID(idp);
         }
@@ -1422,6 +1424,8 @@ void LLInventoryPanel::openStartFolderOrMyInventory()
         LLFolderViewFolder *fchild = dynamic_cast<LLFolderViewFolder*>(child);
         if (fchild
             && fchild->getViewModelItem()
+            // Is this right? Name might be localized,
+            // use FT_ROOT_INVENTORY or gInventory.getRootFolderID()?
             && fchild->getViewModelItem()->getName() == "My Inventory")
         {
             fchild->setOpen(true);

@@ -65,8 +65,8 @@ const U8 UPD_UNIFORM        = 0x10; // used with UPD_SCALE
 
 // <FS:Ansariel> Moved here to make them publically accessible
 // For linked sets
-const S32 MAX_CHILDREN_PER_TASK = 255;
-const S32 MAX_CHILDREN_PER_PHYSICAL_TASK = 32;
+constexpr S32 MAX_CHILDREN_PER_TASK = 255;
+constexpr S32 MAX_CHILDREN_PER_PHYSICAL_TASK = 32;
 // </FS:Ansariel>
 
 // <FS:KC> show/hide build highlight
@@ -216,6 +216,8 @@ public:
     // final gltf material that users see.
     // Ids get applied and restored by tools floater,
     // overrides get applied in live material editor
+    // @param override_materials' content will be copied to not
+    // affect originals
     void saveGLTFMaterials(const uuid_vec_t& materials, const gltf_materials_vec_t& override_materials);
 
     bool allowOperationOnNode(PermissionBit op, U64 group_proxy_power) const;
@@ -906,6 +908,7 @@ public:
     void getAgentHUDZoom(F32 &target_zoom, F32 &current_zoom) const;
 
     void updatePointAt();
+    void clearWaterExclusion();
 
     // Internal list maintenance functions. TODO: Make these private!
     void remove(std::vector<LLViewerObject*>& objects);
@@ -1021,6 +1024,8 @@ public:
     // (edit linked parts, select face)
     bool selectGetNoIndividual();
 // </FS:Zi>
+    void showGLTFMaterial(); // <FS/> [FIRE-35138] Show the GLTF Material since we are no longer in BP
+    void hideGLTFMaterial(); // <FS/> [FIRE-35138] Hide the GLTF Material since we are currently in BP
 };
 
 // *DEPRECATED: For callbacks or observers, use

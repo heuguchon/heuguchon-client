@@ -111,7 +111,6 @@ public:
 
 protected:
     virtual             ~LLVOAvatar();
-    static bool         handleVOAvatarPrefsChanged(const LLSD &newvalue);
 
 /**                    Initialization
  **                                                                            **
@@ -129,17 +128,18 @@ public:
     /*virtual*/ void            updateGL();
     /*virtual*/ LLVOAvatar*     asAvatar();
 
-    virtual U32             processUpdateMessage(LLMessageSystem *mesgsys,
+    virtual U32                 processUpdateMessage(LLMessageSystem *mesgsys,
                                                      void **user_data,
                                                      U32 block_num,
                                                      const EObjectUpdateType update_type,
                                                      LLDataPacker *dp);
-    virtual void            idleUpdate(LLAgent &agent, const F64 &time);
+    virtual void                idleUpdate(LLAgent &agent, const F64 &time);
     /*virtual*/ bool            updateLOD();
-    bool                    updateJointLODs();
-    void                    updateLODRiggedAttachments( void );
+    bool                        updateJointLODs();
+    void                        updateLODRiggedAttachments(void);
+    void                        setCorrectedPixelArea(F32 area);
     /*virtual*/ bool            isActive() const; // Whether this object needs to do an idleUpdate.
-    S32Bytes                totalTextureMemForUUIDS(std::set<LLUUID>& ids);
+    S32Bytes                    totalTextureMemForUUIDS(std::set<LLUUID>& ids);
     bool                        allTexturesCompletelyDownloaded(std::set<LLUUID>& ids) const;
     bool                        allLocalTexturesCompletelyDownloaded() const;
     bool                        allBakedTexturesCompletelyDownloaded() const;
@@ -204,12 +204,11 @@ public:
     void                    startDefaultMotions();
     void                    dumpAnimationState();
 
-//<FS:ND> Query by JointKey rather than just a string, the key can be a U32 index for faster lookup
-    //virtual LLJoint*      getJoint( const std::string &name );
-    virtual LLJoint*        getJoint( const JointKey &name );
-    LLJoint* getJoint( const std::string &name ) { return getJoint( JointKey::construct( name ) ); }
-// </FS:ND>
+    //<FS:Ansariel> Joint-lookup improvements
+    //virtual LLJoint*      getJoint(const std::string &name);
+    virtual LLJoint*        getJoint(std::string_view name);
     LLJoint*                getJoint(S32 num);
+    void                    initAllJoints();
 
     //if you KNOW joint_num is a valid animated joint index, use getSkeletonJoint for efficiency
     inline LLJoint* getSkeletonJoint(S32 joint_num) { return mSkeleton[joint_num]; }
@@ -232,7 +231,7 @@ public:
     // virtual
     void                    updateRiggingInfo();
     // This encodes mesh id and LOD, so we can see whether display is up-to-date.
-    std::map<LLUUID,S32>    mLastRiggingInfoKey;
+    size_t    mLastRiggingInfoKey;
 
     std::set<LLUUID>        mActiveOverrideMeshes;
     virtual void            onActiveOverrideMeshesChanged();
@@ -384,7 +383,6 @@ public:
     static F32      sLODFactor; // user-settable LOD factor
     static F32      sPhysicsLODFactor; // user-settable physics LOD factor
     static bool     sJointDebug; // output total number of joints being touched for each avatar
-    static bool     sLipSyncEnabled;
 
     static LLPartSysData sCloud;
 
@@ -404,6 +402,7 @@ public:
     //--------------------------------------------------------------------
 public:
     bool            isFullyLoaded() const;
+    bool            hasFirstFullAttachmentData() const;
     F32             getFirstDecloudTime() const {return mFirstDecloudTime;}
 
     // check and return current state relative to limits
@@ -569,7 +568,9 @@ public:
     U32         renderTransparent(bool first_pass);
     void        renderCollisionVolumes();
     void        renderBones(const std::string &selected_joint = std::string());
-    void        renderJoints();
+    virtual void renderJoints();
+    void        renderOnlySelectedBones(const std::vector<std::string> &selected_joints);
+    void        renderBoxAroundJointAttachments(LLJoint * joint);
     static void deleteCachedImages(bool clearAll=true);
     static void destroyGL();
     static void restoreGL();
@@ -648,6 +649,7 @@ public:
 protected:
     void        updateVisibility();
 private:
+    F32         mVisibilityPreference;
     U32         mVisibilityRank;
     bool        mVisible;
 

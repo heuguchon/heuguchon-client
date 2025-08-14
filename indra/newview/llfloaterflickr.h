@@ -134,7 +134,9 @@ public:
 
     // <FS:Ansariel> Exodus' flickr upload
     void onOpen(const LLSD& key);
+    LLSnapshotLivePreview* getPreviewView(); // <FS:Beq/> Required for snapshot frame rendering
 
+    static void update(); // <FS:Beq/> FIRE-35002 - Flickr preview not updating whne opened directly from tool tray icon
 private:
     LLFlickrPhotoPanel* mFlickrPhotoPanel;
     LLTextBox* mStatusErrorText;

@@ -238,6 +238,10 @@ If you feel this is an error, please contact support@secondlife.com</string>
   <string name="SocialFlickrErrorConnecting">Problem connecting to Flickr</string>
   <string name="SocialFlickrErrorPosting">Problem posting to Flickr</string>
   <string name="SocialFlickrErrorDisconnecting">Problem disconnecting from Flickr</string>
+  <string name="SocialPrimfeedConnecting">Connecting to Primfeed...</string>
+  <string name="SocialPrimfeedNotAuthorized">Not Authorized...</string>
+  <string name="SocialPrimfeedPosting">Posting...</string>
+  <string name="SocialPrimfeedErrorPosting">Problem posting to Primfeed</string>
   
 	<!-- SLShare: User Friendly Filter Names Translation -->
     <string name="BlackAndWhite">Black &amp; White</string>
@@ -927,6 +931,9 @@ If you continue to receive this message, please contact Second Life support for 
 	<string name="Textures"      value=" Textures," />
 	<string name="Settings"      value=" Settings," />
 	<string name="Snapshots"     value=" Snapshots," />
+	<!-- [AS:Chanayane] Search folders only -->
+	<string name="Folders"       value=" Folders," />
+	<!-- [/AS:Chanayane] -->
 	<string name="No Filters"    value="No " />
 	<string name="Since Logoff"  value=" - Since Logoff" />
 	<!-- <FS:Zi> FIRE-1175 - Filter Permissions Menu -->
@@ -2762,6 +2769,10 @@ name="Command_360_Capture_Label">360° Snapshot</string>
   <string name="Command_RFO_Label">Show Friends Only</string>
   <string name="Command_DAO_Label">Derender Animesh</string>
   <string name="Command_Beacons_Label">Beacons</string>
+  <string name="Command_Poser_Label">Poser</string>
+  <string name="Command_Poser_Tooltip">Pose your avatar and animated objects</string>
+  <string name="Command_Primfeed_Label">Primfeed</string>
+  <string name="Command_Primfeed_Tooltip">Post directly to your Primfeed account.</string>
 
   <string 
 name="Command_360_Capture_Tooltip">Capture a 360° equirectangular image</string>
@@ -2960,6 +2971,9 @@ name="Command_360_Capture_Tooltip">Capture a 360° equirectangular image</string
 
   <!-- PBR Materials -->
   <string name="Material Texture Name Header">Textures present this material: </string>
+  <string name="material_selection_title">Material selection</string>
+  <string name="material_selection_text">Select material:</string>
+  <string name="material_batch_import_text">--- Bulk Upload All ---</string>
   
   <!-- Conversation log messages -->
   <string name="logging_calls_disabled_log_empty">
@@ -3302,4 +3316,10 @@ Your current position: [AVATAR_POS]
   <string name="FSObjectInventoryElements">[NUM_ELEMENTS] Elements</string>
   <string name="OpenSimInventoryValidationErrorGenericHelp">your Grid Operator's support team</string>
   <string name="Unlimited">Unlimited</string>
+
+  <string name="ListEmpty">List is empty</string>
+  <string name="NoValidUUIDs">No valid UUIDs found in the imported file.</string>
+  <string name="ImportListTooLarge">Too many entries. The CSV file has [COUNT] entries and there are [MAX] slots available.</string>
+  <string name="ImportSuccessful">Successfully processed [COUNT] entries.</string>
+
 </strings>

@@ -390,24 +390,6 @@ Wenn Sie der Ansicht sind, dass Sie diese Meldung fälschlicherweise erhalten ha
 	<string name="TestingDisconnect">
 		Verbindungsabbruch wird getestet
 	</string>
-	<string name="SocialFacebookConnecting">
-		Mit Facebook verbinden...
-	</string>
-	<string name="SocialFacebookPosting">
-		Posten...
-	</string>
-	<string name="SocialFacebookDisconnecting">
-		Facebook-Verbindung trennen...
-	</string>
-	<string name="SocialFacebookErrorConnecting">
-		Problem beim Verbinden mit Facebook
-	</string>
-	<string name="SocialFacebookErrorPosting">
-		Problem beim Posten auf Facebook
-	</string>
-	<string name="SocialFacebookErrorDisconnecting">
-		Problem beim Trennen der Facebook-Verbindung
-	</string>
 	<string name="SocialFlickrConnecting">
 		Verbinden mit Flickr...
 	</string>
@@ -426,23 +408,17 @@ Wenn Sie der Ansicht sind, dass Sie diese Meldung fälschlicherweise erhalten ha
 	<string name="SocialFlickrErrorDisconnecting">
 		Problem beim Trennen der Flickr-Verbindung
 	</string>
-	<string name="SocialTwitterConnecting">
-		Verbinden mit Twitter...
+	<string name="SocialPrimfeedConnecting">
+		Verbinden mit Primfeed...
 	</string>
-	<string name="SocialTwitterPosting">
-		Posten...
+	<string name="SocialPrimfeedNotAuthorized">
+		Nicht autorisiert...
 	</string>
-	<string name="SocialTwitterDisconnecting">
-		Twitter-Verbindung wird getrennt...
+	<string name="SocialPrimfeedPosting">
+		Teilen...
 	</string>
-	<string name="SocialTwitterErrorConnecting">
-		Problem beim Verbinden mit Twitter
-	</string>
-	<string name="SocialTwitterErrorPosting">
-		Problem beim Posten auf Twitter
-	</string>
-	<string name="SocialTwitterErrorDisconnecting">
-		Problem beim Trennen der Twitter-Verbindung
+	<string name="SocialPrimfeedErrorPosting">
+		Problem beim Posten auf Primfeed
 	</string>
 	<string name="BlackAndWhite">
 		Schwarzweiß
@@ -1952,6 +1928,7 @@ Falls diese Meldung weiterhin angezeigt wird, wenden Sie sich unter http://suppo
 	<string name="Textures" value=" Texturen,"/>
 	<string name="Settings" value=" Einstellungen," />
 	<string name="Snapshots" value=" Fotos,"/>
+	<string name="Folders" value=" Ordner,"/>
 	<string name="No Filters" value="Keine"/>
 	<string name="Since Logoff" value=" - Seit Abmeldung"/>
 	<string name="Modifiable" value="Modifizierbar" />
@@ -6118,6 +6095,12 @@ Setzen Sie den Editorpfad in Anführungszeichen
 	<string name="Command_Discord_Label">
 		Discord
 	</string>
+	<string name="Command_Poser_Label">
+		Poser
+	</string>
+	<string name="Command_Primfeed_Label">
+		Primfeed
+	</string>
 	<string name="Command_Appearance_Tooltip">
 		Avatar ändern
 	</string>
@@ -6316,6 +6299,12 @@ Setzen Sie den Editorpfad in Anführungszeichen
 	<string name="Command_Discord_Tooltip">
 		Discord
 	</string>
+	<string name="Command_Poser_Tooltip">
+		Eigenen Avatar und Animeshe posieren
+	</string>
+	<string name="Command_Primfeed_Tooltip">
+		Auf Primfeed posten
+	</string>
 	<string name="Toolbar_Bottom_Tooltip">
 		gegenwärtig in der unteren Symbolleiste
 	</string>
@@ -6498,6 +6487,15 @@ Setzen Sie den Editorpfad in Anführungszeichen
 	</string>
 	<string name="Material Texture Name Header">
 		Vorhandene Texturen im Material:
+	</string>
+	<string name="material_selection_title">
+		Material-Auswahl
+	</string>
+	<string name="material_selection_text">
+		Material auswählen:
+	</string>
+	<string name="material_batch_import_text">
+		--- Alle hochladen ---
 	</string>
 	<string name="logging_calls_disabled_log_empty">
 		Unterhaltungen werden nicht protokolliert. Um ein Protokoll zu starten, wählen Sie „Speichern: nur Protokoll“ oder „Speichern: Protokoll und Transkripte“ unter „Einstellungen“ &gt; „Chat“.
@@ -7276,5 +7274,17 @@ Ihre aktuelle Position: [AVATAR_POS]
 	</string>
 	<string name="Unlimited">
 		Unlimitiert
+	</string>
+	<string name="ListEmpty">
+		Liste is leer
+	</string>
+	<string name="NoValidUUIDs">
+		Keine gültigen UUIDs in importierter Datei gefunden.
+	</string>
+	<string name="ImportListTooLarge">
+		Zu viele Einträge. Die CSV-Datei hat [COUNT] Einträge, es sind aber nur [MAX] Plätze verfügbar.
+	</string>
+	<string name="ImportSuccessful">
+		[COUNT] Einträge erfolgreich verarbeitet.
 	</string>
 </strings>

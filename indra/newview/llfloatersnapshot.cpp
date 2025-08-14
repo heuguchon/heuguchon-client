@@ -30,6 +30,7 @@
 
 #include "llfloaterreg.h"
 #include "llfloaterflickr.h" // <FS:Ansariel> Share to Flickr
+#include "fsfloaterprimfeed.h" // <FS:Beq> Share to Primfeed
 #include "llimagefiltersmanager.h"
 #include "llcheckboxctrl.h"
 #include "llcombobox.h"
@@ -67,6 +68,10 @@ LLPanelSnapshot* LLFloaterSnapshot::Impl::getActivePanel(LLFloaterSnapshotBase* 
 {
     LLSideTrayPanelContainer* panel_container = floater->getChild<LLSideTrayPanelContainer>("panel_container");
     LLPanelSnapshot* active_panel = dynamic_cast<LLPanelSnapshot*>(panel_container->getCurrentPanel());
+    if (!active_panel)
+    {
+        LL_WARNS() << "No snapshot active panel, current panel index: " << panel_container->getCurrentPanelIndex() << LL_ENDL;
+    }
     if (!ok_if_not_found)
     {
         llassert_always(active_panel != NULL);
@@ -217,16 +222,19 @@ void LLFloaterSnapshotBase::ImplBase::updateLayout(LLFloaterSnapshotBase* floate
     if (!mSkipReshaping && !floaterp->isMinimized())
     {
         LLView* controls_container = floaterp->getChild<LLView>("controls_container");
+        constexpr S32 THUMB_HEIGHT_LARGE = 420;
+        constexpr S32 THUMB_HEIGHT_SMALL = 124;
+        constexpr S32 THUMB_WIDTH_SMALL = 216;
         if (mAdvanced)
         {
             LLRect cc_rect = controls_container->getRect();
 
-            floaterp->reshape(floater_width, 483);
+            floaterp->reshape(floater_width, floaterp->getOriginalHeight());
 
             controls_container->setRect(cc_rect);
             controls_container->updateBoundingRect();
 
-            thumbnail_placeholder->reshape(panel_width, 420);
+            thumbnail_placeholder->reshape(panel_width, THUMB_HEIGHT_LARGE);
 
             LLRect tn_rect = thumbnail_placeholder->getRect();
             tn_rect.setLeftTopAndSize(215, floaterp->getRect().getHeight() - 30, tn_rect.getWidth(), tn_rect.getHeight());
@@ -240,15 +248,15 @@ void LLFloaterSnapshotBase::ImplBase::updateLayout(LLFloaterSnapshotBase* floate
         {
             LLRect cc_rect = controls_container->getRect();
 
-            floaterp->reshape(floater_width, 613);
+            floaterp->reshape(floater_width,floaterp->getOriginalHeight()+THUMB_HEIGHT_SMALL);
 
             controls_container->setRect(cc_rect);
             controls_container->updateBoundingRect();
 
-            thumbnail_placeholder->reshape(216, 124);
+            thumbnail_placeholder->reshape(THUMB_WIDTH_SMALL, THUMB_HEIGHT_SMALL);
 
             LLRect tn_rect = thumbnail_placeholder->getRect();
-            tn_rect.setLeftTopAndSize(5, floaterp->getRect().getHeight() - 30, 216, 124);
+            tn_rect.setLeftTopAndSize(5, floaterp->getRect().getHeight() - 30, THUMB_WIDTH_SMALL, THUMB_HEIGHT_SMALL);
             thumbnail_placeholder->setRect(tn_rect);
             thumbnail_placeholder->updateBoundingRect();
 
@@ -403,7 +411,6 @@ void LLFloaterSnapshot::Impl::updateControls(LLFloaterSnapshotBase* floater)
     bool got_bytes = previewp && previewp->getDataSize() > 0;
     bool got_snap = previewp && previewp->getSnapshotUpToDate();
 
-    // *TODO: Separate maximum size for Web images from postcards
     LL_DEBUGS() << "Is snapshot up-to-date? " << got_snap << LL_ENDL;
 
     // <FS:Ansariel> Use user-default locale from operating system
@@ -425,7 +432,8 @@ void LLFloaterSnapshot::Impl::updateControls(LLFloaterSnapshotBase* floater)
         image_res_tb->setTextArg("[HEIGHT]", llformat("%d", previewp->getEncodedImageHeight()));
     }
 
-    floater->getChild<LLUICtrl>("file_size_label")->setTextArg("[SIZE]", got_snap ? bytes_string : floater->getString("unknown"));
+    LLTextBox* file_size_label = floater->getChild<LLTextBox>("file_size_label");
+    file_size_label->setTextArg("[SIZE]", got_snap ? bytes_string : floater->getString("unknown"));
 
     LLUIColor color = LLUIColorTable::instance().getColor( "LabelTextColor" );
     if (shot_type == LLSnapshotModel::SNAPSHOT_POSTCARD
@@ -441,7 +449,8 @@ void LLFloaterSnapshot::Impl::updateControls(LLFloaterSnapshotBase* floater)
         color = LLUIColor(LLColor4::red);
     }
 
-    floater->getChild<LLUICtrl>("file_size_label")->setColor(color);
+    file_size_label->setColor(color);
+    file_size_label->setReadOnlyColor(color); // field gets disabled during upload
 
     // Update the width and height spinners based on the corresponding resolution combos. (?)
     switch(shot_type)
@@ -745,20 +754,18 @@ void LLFloaterSnapshotBase::ImplBase::setWorking(bool working)
     working_lbl->setVisible(working);
     mFloater->getChild<LLUICtrl>("working_indicator")->setVisible(working);
 
-    if (working)
-    {
-        const std::string panel_name = getActivePanel(mFloater, false)->getName();
-        const std::string prefix = panel_name.substr(getSnapshotPanelPrefix().size());
-        std::string progress_text = mFloater->getString(prefix + "_" + "progress_str");
-        working_lbl->setValue(progress_text);
-    }
-
     // All controls should be disabled while posting.
     mFloater->setCtrlsEnabled(!working);
-    LLPanelSnapshot* active_panel = getActivePanel(mFloater);
-    if (active_panel)
+    if (LLPanelSnapshot* active_panel = getActivePanel(mFloater))
     {
         active_panel->enableControls(!working);
+        if (working)
+        {
+            const std::string panel_name = active_panel->getName();
+            const std::string prefix = panel_name.substr(getSnapshotPanelPrefix().size());
+            std::string progress_text = mFloater->getString(prefix + "_" + "progress_str");
+            working_lbl->setValue(progress_text);
+        }
     }
 }
 
@@ -1206,7 +1213,7 @@ bool LLFloaterSnapshot::postBuild()
     //getChild<LLComboBox>("local_size_combo")->selectNthItem(8);
     //getChild<LLComboBox>("local_format_combo")->selectNthItem(0);
     // </FS:Ansariel>
-
+    mOriginalHeight = getRect().getHeight();
     impl->mPreviewHandle = previewp->getHandle();
     previewp->setContainer(this);
     impl->updateControls(this);
@@ -1477,12 +1484,14 @@ bool LLFloaterSnapshot::isWaitingState()
     return (impl->getStatus() == ImplBase::STATUS_WORKING);
 }
 
-bool LLFloaterSnapshotBase::ImplBase::updatePreviewList(bool initialized)
+// <FS:Beq> FIRE-35002 - Post to flickr broken, improved solution
+// bool LLFloaterSnapshotBase::ImplBase::updatePreviewList(bool initialized)
+bool LLFloaterSnapshotBase::ImplBase::updatePreviewList(bool initialized, bool have_socials)
+// </FS:Beq>
 {
     // <FS:Ansariel> Share to Flickr
     //if (!initialized)
-    LLFloaterFlickr* floater_flickr = LLFloaterReg::findTypedInstance<LLFloaterFlickr>("flickr");
-    if (!initialized && !floater_flickr)
+    if (!initialized && !have_socials)
     // </FS:Ansariel>
         return false;
 
@@ -1499,11 +1508,20 @@ bool LLFloaterSnapshotBase::ImplBase::updatePreviewList(bool initialized)
 
 void LLFloaterSnapshotBase::ImplBase::updateLivePreview()
 {
-    if (ImplBase::updatePreviewList(true) && mFloater)
+    // don't update preview for hidden floater
+    // <FS:Beq> FIRE-35002 - Post to flickr broken
+    bool have_socials = (
+        LLFloaterReg::findTypedInstance<LLFloaterFlickr>("flickr") != nullptr ||
+        LLFloaterReg::findTypedInstance<FSFloaterPrimfeed>("primfeed") != nullptr
+        );
+    if ( ((mFloater && mFloater->isInVisibleChain()) ||
+        have_socials) &&
+        ImplBase::updatePreviewList(true, have_socials))
+    // </FS:Beq>
     {
         LL_DEBUGS() << "changed" << LL_ENDL;
         updateControls(mFloater);
-    }
+    }    
 }
 
 //static

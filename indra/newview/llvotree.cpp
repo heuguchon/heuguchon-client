@@ -330,7 +330,11 @@ U32 LLVOTree::processUpdateMessage(LLMessageSystem *mesgsys,
     //  Load Species-Specific data
     //
     static const S32 MAX_TREE_TEXTURE_VIRTURE_SIZE_RESET_INTERVAL = 32 ; //frames.
-    mTreeImagep = LLViewerTextureManager::getFetchedTexture(sSpeciesTable[mSpecies]->mTextureID, FTT_DEFAULT, true, LLGLTexture::BOOST_NONE, LLViewerTexture::LOD_TEXTURE);
+    // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+    //mTreeImagep = LLViewerTextureManager::getFetchedTexture(sSpeciesTable[mSpecies]->mTextureID, FTT_DEFAULT, true, LLGLTexture::BOOST_NONE, LLViewerTexture::LOD_TEXTURE);
+    // Set boost level for Tree as it overrides the normal texture sizes
+    mTreeImagep = LLViewerTextureManager::getFetchedTexture(sSpeciesTable[mSpecies]->mTextureID, FTT_DEFAULT, true, LLGLTexture::BOOST_TREE, LLViewerTexture::LOD_TEXTURE);
+    // </FS:minerjr> [FIRE-35081]
     mTreeImagep->setMaxVirtualSizeResetInterval(MAX_TREE_TEXTURE_VIRTURE_SIZE_RESET_INTERVAL); //allow to wait for at most 16 frames to reset virtual size.
 
     mBranchLength = sSpeciesTable[mSpecies]->mBranchLength;
@@ -1058,10 +1062,9 @@ void LLVOTree::genBranchPipeline(LLStrider<LLVector3>& vertices,
                 scale_mat.mMatrix[2][2] = scale*length;
                 scale_mat *= matrix;
 
-                glh::matrix4f norm((F32*) scale_mat.mMatrix);
-                LLMatrix4 norm_mat = LLMatrix4(norm.inverse().transpose().m);
+                glm::mat4 norm(glm::make_mat4((F32*) scale_mat.mMatrix));
+                LLMatrix4 norm_mat = LLMatrix4(glm::value_ptr(glm::transpose(glm::inverse(norm))));
 
-                norm_mat.invert();
                 appendMesh(vertices, normals, tex_coords, colors, indices, index_offset, scale_mat, norm_mat,
                             sLODVertexOffset[trunk_LOD], sLODVertexCount[trunk_LOD], sLODIndexCount[trunk_LOD], sLODIndexOffset[trunk_LOD]);
             }
@@ -1108,8 +1111,8 @@ void LLVOTree::genBranchPipeline(LLStrider<LLVector3>& vertices,
 
                 scale_mat *= matrix;
 
-                glh::matrix4f norm((F32*) scale_mat.mMatrix);
-                LLMatrix4 norm_mat = LLMatrix4(norm.inverse().transpose().m);
+                glm::mat4 norm(glm::make_mat4((F32*)scale_mat.mMatrix));
+                LLMatrix4 norm_mat = LLMatrix4(glm::value_ptr(glm::transpose(glm::inverse(norm))));
 
                 appendMesh(vertices, normals, tex_coords, colors, indices, index_offset, scale_mat, norm_mat, 0, LEAF_VERTICES, LEAF_INDICES, 0);
             }
@@ -1179,10 +1182,15 @@ void LLVOTree::updateSpatialExtents(LLVector4a& newMin, LLVector4a& newMax)
     pos.load3(center.mV);
     mDrawable->setPositionGroup(pos);
 
-    LLFace* facep = mDrawable->getFace(0);
-    if (!facep) return; // <FS:Beq/> FIRE-34565 Repeatable Bugsplat crash while driving on mainland.
-    facep->mExtents[0] = newMin;
-    facep->mExtents[1] = newMax;
+    if (mDrawable->getNumFaces() > 0)
+    {
+        LLFace* facep = mDrawable->getFace(0);
+        if (facep)
+        {
+            facep->mExtents[0] = newMin;
+            facep->mExtents[1] = newMax;
+        }
+    }
 }
 
 bool LLVOTree::lineSegmentIntersect(const LLVector4a& start, const LLVector4a& end, S32 face, bool pick_transparent, bool pick_rigged, bool pick_unselectable, S32 *face_hitp,

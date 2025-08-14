@@ -2503,6 +2503,16 @@ Unable to upload snapshot.
 File might be too big, try reducing resolution or try again later.
   <tag>fail</tag>
   </notification>
+    
+  <notification
+   icon="alertmodal.tga"
+   name="CannotOpenFileTooBig"
+   type="alertmodal">
+Unable to open file.
+
+Viewer ran out of memory while opening file. File might be too big.
+  <tag>fail</tag>
+  </notification>
 
   <notification
    icon="notifytip.tga"
@@ -4543,6 +4553,7 @@ Deeding this object will cause the group to:
    type="alertmodal">
 Do you want to open your Web browser to view this content?
 Opening webpages from an unknown source may place your computer at risk.
+URL: [UNTRUSTED_URL]
     <tag>confirm</tag>
     <usetemplate
      ignoretext="Launch my browser to view a web page"
@@ -7900,6 +7911,13 @@ Please select at least one type of content to search (General, Moderate, or Adul
    type="notifytip">
    [MESSAGE]
   </notification>
+  
+  <notification
+   icon="notify.tga"
+  name="PrimfeedConnect"
+   type="notifytip">
+   [MESSAGE]
+  </notification>
 
   <notification
    icon="notify.tga"
@@ -9527,7 +9545,11 @@ One or more of your Voice Morphs will expire in less than [INTERVAL] days.
 
 If you are a Premium Member, [[PREMIUM_URL] click here] to receive your voice morphing perk.
   <tag>fail</tag>
-    <tag>voice</tag>
+  <tag>voice</tag>
+  <usetemplate
+      ignoretext="Warn me about voice morph expiring"
+      name="okignore"
+      yestext="OK"/>
   </notification>
 
   <notification
@@ -10847,12 +10869,6 @@ Do you wish to continue?
      notext="Cancel"
      yestext="OK"/>
   </notification>
-
-  <global name="UnsupportedIntelDriver">
-The installed Intel graphics driver for [GPUNAME], version [VERSION], is significantly out of date and is known to cause excessive rates of program crashes. You are strongly advised to update to a current Intel driver.
-
-Do you want to check the Intel driver website?
-  </global>
 
   <global name="UnsupportedCPUAmount">
 796
@@ -13952,7 +13968,13 @@ Flickr verification failed. Please try again, and be sure to double check the ve
    icon="notifytip.tga"
    name="ExodusFlickrUploadComplete"
    type="notifytip">
-Your snapshot can now be viewed [http://www.flickr.com/photos/upload/edit/?ids=[ID] here].
+Your snapshot can now be viewed [https://www.flickr.com/photos/me/[ID] here].
+  </notification>
+  <notification
+   icon="notifytip.tga"
+   name="FSPrimfeedUploadComplete"
+   type="notifytip">
+Your Primfeed post can now be viewed [[PF_POSTURL] here].
   </notification>
   <!-- </FS:TS> FIRE-5453 -->
 
@@ -14516,6 +14538,17 @@ This will replace the items in the selected outfit with the items you are wearin
        yestext="OK"/>
   </notification>
 
+  <notification
+   icon="alertmodal.tga"
+   name="WaterExclusionSurfacesWarning"
+   type="alertmodal">
+    Checking the hide water box will overwrite the texture, bumpiness, and shininess choices.
+    <tag>confirm</tag>
+    <usetemplate
+      name="okcancelbuttons"
+      notext="Cancel"
+      yestext="Continue"/>
+  </notification>
 
   <notification
    icon="alertmodal.tga"
@@ -14629,4 +14662,87 @@ Camera reset might be inhibited by the following objects:
   </notification>
   <!-- </FS:Zi> -->
 
+  <notification
+    icon="notifytip.tga"
+    name="WhitelistReminder"
+    type="alertmodal">
+To improve [APP_NAME]'s performance, please whitelist it.
+
+Some antivirus programs may mistakenly block parts of [APP_NAME], slowing down its performance and causing some features to malfunction. To prevent these issues, we strongly recommend adding [APP_NAME] to your antivirus program's whitelist (or exclusion list). This will ensure the viewer runs smoothly.
+
+For detailed instructions on how to whitelist [APP_NAME] - including a list of files and folders to exclude - please visit our guide:
+
+https://wiki.firestormviewer.org/antivirus_whitelisting
+  </notification>
+
+   <notification
+   icon="alertmodal.tga"
+   label="Confirm Pose Overwrite"
+   name="ConfirmPoserOverwrite"
+   type="alertmodal">
+    <unique/>
+    Overwrite existing pose “[POSE_NAME]”?
+    <tag>confirm</tag>
+    <usetemplate
+     name="okcancelbuttons"
+     notext="Cancel"
+     yestext="Okay"/>
+  </notification>
+
+  <notification
+   icon="alertmodal.tga"
+   name="PrimfeedLoginRequestFailed"
+   persist="false"
+   log_to_im="true"
+   type="notify">
+Login request denied by Primfeed.
+  </notification>
+  <notification
+   icon="alertmodal.tga"
+   name="PrimfeedAuthorizationFailed"
+   persist="false"
+   tag="fail"
+   type="alertmodal">
+Primfeed authorization failed. The authorization sequence was not completed.
+  </notification>
+  <notification
+   icon="alertmodal.tga"
+   name="PrimfeedAuthorizationAlreadyInProgress"
+   persist="false"
+   tag="fail"
+   type="alertmodal">
+Primfeed authorization is already in progress. Please complete the Primfeed authorization in your web browser before trying again.
+  </notification>
+  <notification
+   icon="alertmodal.tga"
+   name="PrimfeedAuthorizationSuccessful"
+   persist="false"
+   tag="success"
+   type="alertmodal">
+Primfeed authorization completed. You may now post images to Primfeed.
+  </notification>
+  <notification
+   icon="alertmodal.tga"
+   name="PrimfeedValidateFailed"
+   persist="false"
+   tag="fail"
+   type="alertmodal">
+Primfeed user validation failed. Primfeed did not recognise this account, or the login failed.
+  </notification>
+  <notification
+   icon="alertmodal.tga"
+   name="PrimfeedAlreadyAuthorized"
+   persist="false"
+   tag="success"
+   type="alertmodal">
+You have already linked this account to Primfeed. Use the reset button if you wish to start over.
+  </notification>
+  <notification
+   icon="alertmodal.tga"
+   name="PrimfeedUserStatusFailed"
+   persist="false"
+   tag="fail"
+   type="alertmodal">
+Primfeed user login successful, but status checks have failed. Please check the Primfeed is working.
+  </notification>
 </notifications>

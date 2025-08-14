@@ -179,7 +179,11 @@ void LLVoiceClient::init(LLPumpIO *pump)
 
 void LLVoiceClient::userAuthorized(const std::string& user_id, const LLUUID &agentID)
 {
-    gAgent.addRegionChangedCallback(boost::bind(&LLVoiceClient::onRegionChanged, this));
+    if (mRegionChangedCallbackSlot.connected())
+    {
+        mRegionChangedCallbackSlot.disconnect();
+    }
+    mRegionChangedCallbackSlot = gAgent.addRegionChangedCallback(boost::bind(&LLVoiceClient::onRegionChanged, this));
     LLWebRTCVoiceClient::getInstance()->userAuthorized(user_id, agentID);
     LLVivoxVoiceClient::getInstance()->userAuthorized(user_id, agentID);
 }
@@ -264,8 +268,8 @@ void LLVoiceClient::setSpatialVoiceModule(const std::string &voice_server_type)
         if (inProximalChannel())
         {
             mSpatialVoiceModule->processChannels(false);
+            module->processChannels(true);
         }
-        module->processChannels(true);
         mSpatialVoiceModule = module;
         mSpatialVoiceModule->updateSettings();
     }
@@ -289,6 +293,7 @@ void LLVoiceClient::setNonSpatialVoiceModule(const std::string &voice_server_typ
 
 void LLVoiceClient::setHidden(bool hidden)
 {
+    LL_INFOS("Voice") << "( " << (hidden ? "true" : "false") << " )" << LL_ENDL;
 #ifdef OPENSIM
     LLWebRTCVoiceClient::getInstance()->setHidden(hidden && LLGridManager::getInstance()->isInSecondLife());
     LLVivoxVoiceClient::getInstance()->setHidden(hidden && LLGridManager::getInstance()->isInSecondLife());
@@ -629,8 +634,14 @@ bool LLVoiceClient::voiceEnabled(bool no_cache)
 
 void LLVoiceClient::setVoiceEnabled(bool enabled)
 {
-    LLWebRTCVoiceClient::getInstance()->setVoiceEnabled(enabled);
-    LLVivoxVoiceClient::getInstance()->setVoiceEnabled(enabled);
+    if (LLWebRTCVoiceClient::instanceExists())
+    {
+        LLWebRTCVoiceClient::getInstance()->setVoiceEnabled(enabled);
+    }
+    if (LLVivoxVoiceClient::instanceExists())
+    {
+        LLVivoxVoiceClient::getInstance()->setVoiceEnabled(enabled);
+    }
 }
 
 void LLVoiceClient::updateMicMuteLogic()

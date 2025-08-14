@@ -35,6 +35,7 @@ include(NVAPI)
 include(OPENAL)
 include(OpenGL)
 include(OpenSSL)
+include(OpenXR)
 include(PNG)
 include(TemplateCheck)
 include(TinyEXR)
@@ -53,7 +54,7 @@ include(jemalloc)
 include(Discord)
 
 # <FS:ND> if using ndPhysicsstub this variable will be unset, we don't need to build any stub code viewer side in that case
-if( LLPHYSICSEXTENSIONS_SRC_DIR )
+if (LLPHYSICSEXTENSIONS_SRC_DIR)
 # </FS:ND>
 
 if (NOT HAVOK_TPV)
@@ -80,7 +81,7 @@ if (NOT HAVOK_TPV)
 endif (NOT HAVOK_TPV)
 
 # <FS:ND>
-endif( LLPHYSICSEXTENSIONS_SRC_DIR )
+endif (LLPHYSICSEXTENSIONS_SRC_DIR)
 # </FS:ND>
 
 set(viewer_SOURCE_FILES
@@ -95,6 +96,7 @@ set(viewer_SOURCE_FILES
     dialogstack.cpp
     exoflickr.cpp
     exoflickrauth.cpp
+    fsprimfeedauth.cpp
     exogroupmutelist.cpp
     floatermedialists.cpp
     fsareasearch.cpp
@@ -126,6 +128,7 @@ set(viewer_SOURCE_FILES
     fsfloaternearbychat.cpp
     fsfloaterpartialinventory.cpp
     fsfloaterplacedetails.cpp
+    fsfloaterposer.cpp
     fsfloaterposestand.cpp
     fsfloaterprotectedfolders.cpp
     fsfloaterradar.cpp
@@ -138,11 +141,13 @@ set(viewer_SOURCE_FILES
     fsfloatervramusage.cpp
     fsfloaterwearablefavorites.cpp
     fsfloaterwhitelisthelper.cpp
+    fsjointpose.cpp
     fskeywords.cpp
     fslslbridge.cpp
     fslslbridgerequest.cpp
     fslslpreproc.cpp
     fslslpreprocviewer.cpp
+    fsmaniprotatejoint.cpp
     fsmoneytracker.cpp
     fsnamelistavatarmenu.cpp
     fsnearbychatbarlistener.cpp
@@ -158,6 +163,9 @@ set(viewer_SOURCE_FILES
     fspanelradar.cpp
     fsparticipantlist.cpp
     fspose.cpp
+    fsposeranimator.cpp
+    fsposingmotion.cpp
+    fsprimfeedauth.cpp
     fsradar.cpp
     fsradarentry.cpp
     fsradarlistctrl.cpp
@@ -166,6 +174,7 @@ set(viewer_SOURCE_FILES
     fsscriptlibrary.cpp
     fsscrolllistctrl.cpp
     fsslurlcommand.cpp
+    fsvirtualtrackpad.cpp
     fsworldmapmessage.cpp
     lggbeamcolormapfloater.cpp
     lggbeammapfloater.cpp
@@ -175,6 +184,8 @@ set(viewer_SOURCE_FILES
     lfsimfeaturehandler.cpp
     llflickrconnect.cpp
     llfloaterflickr.cpp
+    fsprimfeedconnect.cpp
+    fsfloaterprimfeed.cpp
     llpanelopenregionsettings.cpp
     # <FS:Ansariel> [Legacy Bake]
     llagentwearablesfetch.cpp
@@ -183,10 +194,12 @@ set(viewer_SOURCE_FILES
     vjlocalmeshimportdae.cpp
 
     gltfscenemanager.cpp
-    gltf/asset.cpp
-    gltf/accessor.cpp
-    gltf/primitive.cpp
-    gltf/animation.cpp
+    # <FS:Ansariel> Group GLTF files into their subfolders
+    #gltf/asset.cpp
+    #gltf/accessor.cpp
+    #gltf/primitive.cpp
+    #gltf/animation.cpp
+    # </FS:Ansariel> Group GLTF files into their subfolders
     groupchatlistener.cpp
     llaccountingcostmanager.cpp
     llaisapi.cpp
@@ -267,6 +280,7 @@ set(viewer_SOURCE_FILES
     lldrawpooltree.cpp
     lldrawpoolwater.cpp
     lldrawpoolwlsky.cpp
+    lldrawpoolwaterexclusion.cpp
     lldynamictexture.cpp
     llemote.cpp
     llenvironment.cpp
@@ -405,6 +419,7 @@ set(viewer_SOURCE_FILES
     llfloatersettingscolor.cpp
     llfloatersettingsdebug.cpp
     llfloatersidepanelcontainer.cpp
+    llfloaterslapptest.cpp
     llfloatersnapshot.cpp
     llfloatersounddevices.cpp
     llfloaterspellchecksettings.cpp
@@ -870,6 +885,18 @@ set(viewer_SOURCE_FILES
     NACLfloaterexploresounds.cpp
     )
 
+# <FS:Ansariel> Group GLTF files into their subfolders
+set(viewer_GLTF_SOURCE_FILES
+    gltf/asset.cpp
+    gltf/accessor.cpp
+    gltf/primitive.cpp
+    gltf/animation.cpp
+    )
+
+source_group("Source Files\\GLTF" FILES ${viewer_GLTF_SOURCE_FILES})
+list(APPEND viewer_SOURCE_FILES ${viewer_GLTF_SOURCE_FILES})
+# </FS:Ansariel> Group GLTF files into their subfolders
+
 if (OPENSIM)
     list(APPEND viewer_SOURCE_FILES
                 fsgridhandler.cpp
@@ -900,6 +927,7 @@ set(viewer_HEADER_FILES
     dialogstack.h
     exoflickr.h
     exoflickrauth.h
+    fsprimfeedauth.h
     exogroupmutelist.h
     floatermedialists.h
     fsareasearch.h
@@ -932,6 +960,7 @@ set(viewer_HEADER_FILES
     fsfloaternearbychat.h
     fsfloaterpartialinventory.h
     fsfloaterplacedetails.h
+    fsfloaterposer.h
     fsfloaterposestand.h
     fsfloaterprotectedfolders.h
     fsfloaterradar.h
@@ -944,6 +973,7 @@ set(viewer_HEADER_FILES
     fsfloatervramusage.h
     fsfloaterwearablefavorites.h
     fsfloaterwhitelisthelper.h
+	fsjointpose.h
     fsgridhandler.h
     fskeywords.h
     fslslbridge.h
@@ -951,6 +981,7 @@ set(viewer_HEADER_FILES
     fslslpreproc.h
     fslslpreprocviewer.h
     fsmoneytracker.h
+    fsmaniprotatejoint.h
     fsnamelistavatarmenu.h
     fsnearbychatbarlistener.h
     fsnearbychatcontrol.h
@@ -965,6 +996,9 @@ set(viewer_HEADER_FILES
     fspanelradar.h
     fsparticipantlist.h
     fspose.h
+    fsposeranimator.h
+    fsposingmotion.h
+    fsprimfeedauth.h
     fsradar.h
     fsradarentry.h
     fsradarlistctrl.h
@@ -974,6 +1008,7 @@ set(viewer_HEADER_FILES
     fsscrolllistctrl.h
     fsslurl.h
     fsslurlcommand.h
+    fsvirtualtrackpad.h
     fsworldmapmessage.h
     lggbeamcolormapfloater.h
     lggbeammapfloater.h
@@ -983,6 +1018,8 @@ set(viewer_HEADER_FILES
     lfsimfeaturehandler.h
     llflickrconnect.h
     llfloaterflickr.h
+    fsprimfeedconnect.h
+    fsfloaterprimfeed.h
     # <FS:Ansariel> [Legacy Bake]
     llagentwearablesfetch.h
     vjlocalmesh.h
@@ -991,11 +1028,13 @@ set(viewer_HEADER_FILES
 
     gltfscenemanager.h
     groupchatlistener.h
-    gltf/asset.h
-    gltf/accessor.h
-    gltf/buffer_util.h
-    gltf/primitive.h
-    gltf/animation.h
+    # <FS:Ansariel> Group GLTF files into their subfolders
+    #gltf/asset.h
+    #gltf/accessor.h
+    #gltf/buffer_util.h
+    #gltf/primitive.h
+    #gltf/animation.h
+    # </FS:Ansariel> Group GLTF files into their subfolders
     llaccountingcost.h
     llaccountingcostmanager.h
     llaisapi.h
@@ -1077,6 +1116,7 @@ set(viewer_HEADER_FILES
     lldrawpooltree.h
     lldrawpoolwater.h
     lldrawpoolwlsky.h
+    lldrawpoolwaterexclusion.h
     lldynamictexture.h
     llemote.h
     llenvironment.h
@@ -1218,6 +1258,7 @@ set(viewer_HEADER_FILES
     llfloatersettingscolor.h
     llfloatersettingsdebug.h
     llfloatersidepanelcontainer.h
+    llfloaterslapptest.h
     llfloatersnapshot.h
     llfloatersounddevices.h
     llfloaterspellchecksettings.h
@@ -1680,6 +1721,28 @@ set(viewer_HEADER_FILES
   list(APPEND viewer_SOURCE_FILES llperfstats.cpp)
   list(APPEND viewer_HEADER_FILES llperfstats.h)
 
+# <FS:Ansariel> Group GLTF files into their subfolders
+set(viewer_GLTF_HEADER_FILES
+    gltf/asset.h
+    gltf/accessor.h
+    gltf/buffer_util.h
+    gltf/primitive.h
+    gltf/animation.h
+    )
+
+source_group("Header Files\\GLTF" FILES ${viewer_GLTF_HEADER_FILES})
+list(APPEND viewer_HEADER_FILES ${viewer_GLTF_HEADER_FILES})
+# </FS:Ansariel> Group GLTF files into their subfolders
+
+if (USE_BUGSPLAT)
+    list(APPEND viewer_SOURCE_FILES
+                bugsplatattributes.cpp
+        )
+    list(APPEND viewer_HEADER_FILES
+                bugsplatattributes.h
+        )
+endif (USE_BUGSPLAT)
+
 # <FS:Ansariel> Flickr / Discord keys and fsversionvalues headers are generated in here
 include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
 
@@ -1737,11 +1800,24 @@ if (DARWIN)
   LIST(APPEND viewer_SOURCE_FILES llfilepicker_mac.mm)
   LIST(APPEND viewer_HEADER_FILES llfilepicker_mac.h)
 
+  set_source_files_properties(
+    llappviewermacosx-objc.mm
+    PROPERTIES
+    SKIP_PRECOMPILE_HEADERS TRUE
+  )
+
+  set_source_files_properties(
+    llfilepicker_mac.mm
+    PROPERTIES
+    SKIP_PRECOMPILE_HEADERS TRUE
+  )
+
   # This should be compiled with the viewer.
   LIST(APPEND viewer_SOURCE_FILES llappdelegate-objc.mm)
   set_source_files_properties(
     llappdelegate-objc.mm
     PROPERTIES
+    SKIP_PRECOMPILE_HEADERS TRUE
     COMPILE_DEFINITIONS "${VIEWER_CHANNEL_VERSION_DEFINES}"
     # BugsplatMac is a module, imported with @import. That language feature
     # demands these -f switches.
@@ -2112,6 +2188,14 @@ set_source_files_properties(${viewer_PY_SCRIPTS}
 list(APPEND viewer_SOURCE_FILES ${viewer_PY_SCRIPTS})
 # </FS:Ansariel>
 
+# <FS:AR> Add Poser Presets
+file(GLOB viewer_POSER_PRESET_FILES poses/hand_presets/*.xml)
+source_group("Poser Presets" FILES ${viewer_POSER_PRESET_FILES})
+set_source_files_properties(${viewer_POSER_PRESET_FILES}
+                            PROPERTIES HEADER_FILE_ONLY TRUE)
+list(APPEND viewer_SOURCE_FILES ${viewer_POSER_PRESET_FILES})
+# </FS:AR> Poser presets
+
 if (WINDOWS)
   file(GLOB viewer_INSTALLER_FILES installers/windows/*.nsi)
 
@@ -2153,7 +2237,11 @@ list(APPEND EVENT_HOST_SCRIPTS ${EVENT_HOST_SCRIPT_GLOB_LIST})
 set(PACKAGE ON CACHE BOOL
     "Add a package target that builds an installer package.")
 
-if (OPENSIM )
+if(USE_PRECOMPILED_HEADERS)
+  target_precompile_headers( ${VIEWER_BINARY_NAME} PRIVATE llviewerprecompiledheaders.h )
+endif(USE_PRECOMPILED_HEADERS)
+
+if (OPENSIM)
   set(ND_VIEWER_FLAVOR "oss")
 else (OPENSIM)
   set(ND_VIEWER_FLAVOR "hvk")
@@ -2168,10 +2256,6 @@ if (WINDOWS)
         LINK_FLAGS_RELEASE "/FORCE:MULTIPLE /MAP\"secondlife-bin.MAP\" /OPT:REF /LARGEADDRESSAWARE /NOEXP /NOIMPLIB"
         )
     target_compile_options(${VIEWER_BINARY_NAME} PRIVATE /bigobj)
-
-    if(USE_PRECOMPILED_HEADERS)
-       target_precompile_headers( ${VIEWER_BINARY_NAME} PRIVATE llviewerprecompiledheaders.h )
-    endif(USE_PRECOMPILED_HEADERS)
 
     # If adding a file to viewer_manifest.py in the WindowsManifest.construct() method, be sure to add the dependency
     # here.
@@ -2274,6 +2358,50 @@ if (WINDOWS)
     add_custom_target(copy_w_viewer_manifest ALL DEPENDS ${CMAKE_CFG_INTDIR}/copy_touched.bat)
 
     add_dependencies(${VIEWER_BINARY_NAME} stage_third_party_libs llcommon llwebrtc copy_w_viewer_manifest)
+
+    # Useful for remote debugging or profiling if set to target a shared drive. for example, brad sets it to "dist/secondlife" to deploy under
+    # the build tree (and then I share that directory) or "f:/dist/secondlife" to deploy to a network mounted drive (although this can be slow).
+    # this will also create an "unpacked" tarball at build-<platform>/newview/unpacked_<platform>_7_1_11_<build num>.tar
+    set(LOCAL_DIST_DIR "" CACHE PATH "Path for 'local' unpacked copy of viewer distribution to be deployed to.")
+    set(product SecondLife-${ARCH}-${VIEWER_SHORT_VERSION}.${VIEWER_VERSION_REVISION})
+    if(IS_DIRECTORY ${LOCAL_DIST_DIR})
+        add_custom_command(
+            OUTPUT  ${LOCAL_DIST_DIR}/.${product}.copy_touched
+            COMMAND ${PYTHON_EXECUTABLE}
+            ARGS
+            ${CMAKE_CURRENT_SOURCE_DIR}/viewer_manifest.py
+            "--actions=\"copy package unpacked\""
+            --arch=${ARCH}
+            --artwork=${ARTWORK_DIR}
+            "--bugsplat=${BUGSPLAT_DB}"
+            "--fmodstudio=${USE_FMODSTUDIO}"
+            "--openal=${USE_OPENAL}"
+            "--tracy=${USE_TRACY}"
+            "--avx2=${USE_AVX2_OPTIMIZATION}"
+            --build=${CMAKE_CURRENT_BINARY_DIR}
+            --buildtype=$<IF:$<BOOL:${LL_GENERATOR_IS_MULTI_CONFIG}>,$<CONFIG>,${CMAKE_BUILD_TYPE}>
+            "--channel=${VIEWER_CHANNEL}"
+            --configuration=$<CONFIG>
+            --dest=${LOCAL_DIST_DIR}
+            --grid=${GRID}
+            --source=${CMAKE_CURRENT_SOURCE_DIR}
+            --versionfile=${CMAKE_CURRENT_BINARY_DIR}/viewer_version.txt
+            --touch=${LOCAL_DIST_DIR}/.${product}.copy_touched
+            --viewer_flavor=${ND_VIEWER_FLAVOR}
+            DEPENDS
+            ${CMAKE_CURRENT_SOURCE_DIR}/viewer_manifest.py
+            stage_third_party_libs
+            llwebrtc
+            ${CMAKE_CURRENT_BINARY_DIR}/viewer_version.txt
+            ${COPY_INPUT_DEPENDENCIES}
+            ${VIEWER_BINARY_NAME}
+            COMMENT "Performing viewer_manifest local dist copy"
+            )
+
+        add_custom_target(copy_local_dist_viewer_manifest ALL DEPENDS ${LOCAL_DIST_DIR}/.${product}.copy_touched)
+    elseif (NOT LOCAL_DIST_DIR STREQUAL "")
+        message(FATAL_ERROR "LOCAL_DIST_DIR ${LOCAL_DIST_DIR} specified but is not valid target directory to copy viewer distribution into.  Please create the directory and try again")
+    endif ()  # IS_DIRECTORY ${LOCAL_DIST_DIR}
 
     if (EXISTS ${CMAKE_SOURCE_DIR}/copy_win_scripts)
       add_dependencies(${VIEWER_BINARY_NAME} copy_win_scripts)
@@ -2412,6 +2540,7 @@ target_link_libraries(${VIEWER_BINARY_NAME}
         ${LLPHYSICSEXTENSIONS_LIBRARIES}
         ll::bugsplat
         ll::tracy
+        ll::openxr
         fs::glod # <FS:Beq/> restore GLOD dependencies
         fs::discord # <FS:Ansariel> Discord  support
         )

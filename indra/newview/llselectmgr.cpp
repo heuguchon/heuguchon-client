@@ -102,6 +102,7 @@
 // [RLVa:KB] - Checked: 2011-05-22 (RLVa-1.3.1a)
 #include "rlvactions.h"
 #include "rlvhandler.h"
+#include "rlvlocks.h"
 #include "rlvmodifiers.h"
 // [/RLVa:KB]
 // <FS:CR> Aurora Sim
@@ -118,23 +119,14 @@ LLViewerObject* getSelectedParentObject(LLViewerObject *object) ;
 // Consts
 //
 
-const F32 SILHOUETTE_UPDATE_THRESHOLD_SQUARED = 0.02f;
-const S32 MAX_SILS_PER_FRAME = 50;
-const S32 MAX_OBJECTS_PER_PACKET = 254;
+constexpr F32 SILHOUETTE_UPDATE_THRESHOLD_SQUARED = 0.02f;
+constexpr S32 MAX_SILS_PER_FRAME = 50;
+constexpr S32 MAX_OBJECTS_PER_PACKET = 254;
 // For linked sets
 // <FS:Ansariel> Moved to header to make them publically accessible
-//const S32 MAX_CHILDREN_PER_TASK = 255;
-//const S32 MAX_CHILDREN_PER_PHYSICAL_TASK = 32;
+//constexpr S32 MAX_CHILDREN_PER_TASK = 255;
 // </FS:Ansariel>
 
-//
-// Globals
-//
-
-//bool gDebugSelectMgr = false;
-
-//bool gHideSelectedObjects = false;
-//bool gAllowSelectAvatar = false;
 
 bool LLSelectMgr::sRectSelectInclusive = true;
 bool LLSelectMgr::sRenderHiddenSelections = true;
@@ -2147,7 +2139,7 @@ bool LLSelectMgr::selectionSetGLTFMaterial(const LLUUID& mat_id)
                     asset_id = BLANK_MATERIAL_ASSET_ID;
                 }
             }
-
+            objectp->clearTEWaterExclusion(te);
             // Blank out most override data on the object and send to server
             objectp->setRenderMaterialID(te, asset_id);
 
@@ -2405,13 +2397,18 @@ void LLSelectMgr::selectionRevertGLTFMaterials()
 
                 // Update material locally
                 objectp->setRenderMaterialID(te, asset_id, false /*wait for LLGLTFMaterialList update*/);
-                objectp->setTEGLTFMaterialOverride(te, nodep->mSavedGLTFOverrideMaterials[te]);
+                LLGLTFMaterial* material = nodep->mSavedGLTFOverrideMaterials[te];
+                if (material)
+                {
+                    material = new LLGLTFMaterial(*material);
+                    objectp->setTEGLTFMaterialOverride(te, material);
+                }
 
                 // Enqueue update to server
-                if (asset_id.notNull())
+                if (asset_id.notNull() && material)
                 {
                     // Restore overrides and base material
-                    LLGLTFMaterialList::queueApply(objectp, te, asset_id, nodep->mSavedGLTFOverrideMaterials[te]);
+                    LLGLTFMaterialList::queueApply(objectp, te, asset_id, material);
                 }
                 else
                 {
@@ -2626,6 +2623,7 @@ void LLSelectMgr::selectionSetMedia(U8 media_type, const LLSD &media_data)
                     }
                     else {
                         // Add/update media
+                        object->clearTEWaterExclusion(te);
                         object->setTEMediaFlags(te, mMediaFlags);
                         LLVOVolume *vo = dynamic_cast<LLVOVolume*>(object);
                         llassert(NULL != vo);
@@ -3313,15 +3311,20 @@ void LLSelectMgr::adjustTexturesByScale(bool send_to_sim, bool stretch)
                         material->mTextureTransform[i].mScale.set(scale_x, scale_y);
                     }
 
-                    LLFetchedGLTFMaterial* render_mat = (LLFetchedGLTFMaterial*)tep->getGLTFRenderMaterial();
-                    if (render_mat)
+                    const LLGLTFMaterial* base_material = tep->getGLTFMaterial();
+                    if (base_material)
                     {
-                        render_mat->applyOverride(*material);
+                        LLGLTFMaterial* render_material = new LLFetchedGLTFMaterial();
+                        *render_material = *base_material;
+                        render_material->applyOverride(*material);
+                        tep->setGLTFRenderMaterial(render_material);
                     }
 
                     if (send_to_sim)
                     {
-                        LLGLTFMaterialList::queueModify(object, te_num, material);
+                        LLGLTFMaterial new_override;
+                        new_override = *material;
+                        LLGLTFMaterialList::queueModify(object, te_num, &new_override);
                     }
                 }
                 send = send_to_sim;
@@ -5276,6 +5279,18 @@ void LLSelectMgr::sendDetach()
         return;
     }
 
+// [RLVa:KB]
+    if ( (rlv_handler_t::isEnabled()) && (gRlvAttachmentLocks.hasLockedAttachmentPoint(RLV_LOCK_REMOVE)) )
+    {
+        LLObjectSelectionHandle hSelect = LLSelectMgr::getInstance()->getSelection();
+        RlvSelectHasLockedAttach f;
+        if ( (hSelect->isAttachment()) && (hSelect->getFirstRootNode(&f, false) != NULL) )
+        {
+            return;
+        }
+    }
+// [/RLVa:KB]
+
     sendListToRegions(
         "ObjectDetach",
         packAgentAndSessionID,
@@ -6222,18 +6237,25 @@ void LLSelectMgr::processObjectProperties(LLMessageSystem* msg, void** user_data
                         LLGLTFMaterial* old_override = node->getObject()->getTE(i)->getGLTFMaterialOverride();
                         if (old_override)
                         {
-                            LLPointer<LLGLTFMaterial> mat = new LLGLTFMaterial(*old_override);
-                            override_materials.push_back(mat);
+                            // saveGLTFMaterials will make a copy
+                            override_materials.emplace_back(old_override);
                         }
                         else
                         {
-                            override_materials.push_back(nullptr);
+                            override_materials.emplace_back(nullptr);
                         }
                     }
                     // processObjectProperties does not include overrides so this
                     // might need to be moved to LLGLTFMaterialOverrideDispatchHandler
                     node->saveGLTFMaterials(material_ids, override_materials);
                 }
+
+                // <FS> [FIRE-35138] Show or hide the GLTF Material based on showSelectedinBP
+                static LLCachedControl<bool> showSelectedinBP(gSavedSettings, "FSShowSelectedInBlinnPhong");
+                if (showSelectedinBP)
+                    LLSelectMgr::instance().hideGLTFMaterial();
+                else
+                    LLSelectMgr::instance().showGLTFMaterial();
             }
 
             node->mValid = true;
@@ -7147,16 +7169,22 @@ void LLSelectNode::saveGLTFMaterials(const uuid_vec_t& materials, const gltf_mat
         mSavedGLTFMaterialIds.clear();
         mSavedGLTFOverrideMaterials.clear();
 
-        for (uuid_vec_t::const_iterator materials_it = materials.begin();
-            materials_it != materials.end(); ++materials_it)
+        for (const LLUUID& id : materials)
         {
-            mSavedGLTFMaterialIds.push_back(*materials_it);
+            mSavedGLTFMaterialIds.push_back(id);
         }
 
-        for (gltf_materials_vec_t::const_iterator mat_it = override_materials.begin();
-            mat_it != override_materials.end(); ++mat_it)
+        for (const LLPointer<LLGLTFMaterial> &mat : override_materials)
         {
-            mSavedGLTFOverrideMaterials.push_back(*mat_it);
+            if (mat.notNull())
+            {
+                LLGLTFMaterial* copy = new LLGLTFMaterial(*mat);
+                mSavedGLTFOverrideMaterials.emplace_back(copy);
+            }
+            else
+            {
+                mSavedGLTFOverrideMaterials.emplace_back(nullptr);
+            }
         }
     }
 }
@@ -7517,7 +7545,10 @@ void dialog_refresh_all()
     // *TODO: Eliminate all calls into outside classes below, make those
     // objects register with the update signal.
 
-    gFloaterTools->dirty();
+    if (gFloaterTools)
+    {
+        gFloaterTools->dirty();
+    }
 
     gMenuObject->needsArrange();
 
@@ -7748,7 +7779,8 @@ void LLSelectMgr::updatePointAt()
             LLVector3 select_offset;
             const LLPickInfo& pick = gViewerWindow->getLastPick();
             LLViewerObject *click_object = pick.getObject();
-            if (click_object && click_object->isSelected())
+            bool was_hud = pick.mPickHUD && click_object && !click_object->isHUDAttachment();
+            if (click_object && click_object->isSelected() && !was_hud)
             {
                 // clicked on another object in our selection group, use that as target
                 select_offset.setVec(pick.mObjectOffset);
@@ -7950,19 +7982,20 @@ bool LLSelectMgr::canSelectObject(LLViewerObject* object, bool ignore_select_own
             // only select my own objects
             return false;
         }
+
+        // <FS:Ansariel> FIRE-14593: Option to select only copyable objects
+        if (!object->permCopy() && gSavedSettings.getBOOL("FSSelectCopyableOnly"))
+        {
+            return false;
+        }
+        // </FS:Ansariel>
+        // <FS:Ansariel> FIRE-17696: Option to select only locked objects
+        if (gSavedSettings.getBOOL("FSSelectLockedOnly") && object->permMove() && !object->isPermanentEnforced())
+        {
+            return false;
+        }
+        // </FS:Ansariel>
     }
-    // <FS:Ansariel> FIRE-14593: Option to select only copyable objects
-    if (!object->permCopy() && gSavedSettings.getBOOL("FSSelectCopyableOnly"))
-    {
-        return false;
-    }
-    // </FS:Ansariel>
-    // <FS:Ansariel> FIRE-17696: Option to select only locked objects
-    if (gSavedSettings.getBOOL("FSSelectLockedOnly") && object->permMove() && !object->isPermanentEnforced())
-    {
-        return false;
-    }
-    // </FS:Ansariel>
 
     // Can't select orphans
     if (object->isOrphaned()) return false;
@@ -8004,6 +8037,14 @@ void LLSelectMgr::setAgentHUDZoom(F32 target_zoom, F32 current_zoom)
 {
     gAgentCamera.mHUDTargetZoom = target_zoom;
     gAgentCamera.mHUDCurZoom = current_zoom;
+}
+
+void LLSelectMgr::clearWaterExclusion()
+{
+    // reset texture to default plywood
+    LLSelectMgr::getInstance()->selectionSetImage(DEFAULT_OBJECT_TEXTURE);
+    // reset texture repeats, that might be altered by invisiprim script from wiki
+    LLSelectMgr::getInstance()->selectionTexScaleAutofit(2.f);
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -9053,6 +9094,88 @@ bool LLSelectMgr::selectGetNoIndividual()
     return true;
 }
 // </FS:Zi>
+
+// <FS> [FIRE-35138] Hide the GLTF Material since we are currently in BP
+void LLSelectMgr::hideGLTFMaterial()
+{
+    struct f : public LLSelectedObjectFunctor
+    {
+        f() {}
+        bool apply(LLViewerObject* objectp)
+        {
+            if (!objectp || !objectp->permModify())
+            {
+                return false;
+            }
+
+            // Save the current GLTF materials so they can be restored later
+            objectp->saveGLTFMaterials();
+
+            for (S32 te = 0; te < objectp->getNumTEs(); ++te)
+            {
+                // Blank out most override data on the object and don't send to server
+                objectp->setRenderMaterialID(te, LLUUID(), false);
+            }
+
+            return true;
+        }
+    };
+    f setfunc;
+    getSelection()->applyToObjects(&setfunc);
+}
+// </FS>
+
+// <FS> [FIRE-35138] Show the GLTF Material since we are no longer in BP
+void LLSelectMgr::showGLTFMaterial()
+{
+    struct f : public LLSelectedObjectFunctor
+    {
+        f() {}
+        bool apply(LLViewerObject* objectp)
+        {
+            if (!objectp || !objectp->permModify())
+            {
+                return false;
+            }
+
+            const uuid_vec_t& saved_gltf_material_ids = objectp->getSavedGLTFMaterialIds();
+            const gltf_materials_vec_t& saved_gltf_override_materials = objectp->getSavedGLTFOverrideMaterials();
+
+            if (saved_gltf_material_ids.empty())
+            {
+                return false;
+            }
+
+            for (S32 te = 0; te < objectp->getNumTEs(); ++te)
+            {
+                if (te >= saved_gltf_material_ids.size())
+                {
+                    LL_WARNS("FS") << "TE index out of bounds for saved GLTF materials" << LL_ENDL;
+                    break;
+                }
+
+                // Restore gltf material
+                LLUUID asset_id = saved_gltf_material_ids[te];
+                LLGLTFMaterial* material = saved_gltf_override_materials[te];
+
+                // Update material locally
+                objectp->setRenderMaterialID(te, asset_id, false);
+                if (material)
+                {
+                    material = new LLGLTFMaterial(*material);
+                    objectp->setTEGLTFMaterialOverride(te, material);
+                }
+
+                // Do not enqueue update to server
+            }
+
+            objectp->clearSavedGLTFMaterials();
+            return true;
+        }
+    } setfunc;
+    getSelection()->applyToObjects(&setfunc);
+}
+// </FS>
 
 template<>
 bool LLCheckIdenticalFunctor<F32>::same(const F32& a, const F32& b, const F32& tolerance)

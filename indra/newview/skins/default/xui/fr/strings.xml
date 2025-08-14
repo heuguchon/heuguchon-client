@@ -1860,6 +1860,7 @@ Si vous continuez à recevoir ce message, veuillez contacter l'assistance de Sec
 	<string name="Clothing" value=" Habits,"/>
 	<string name="Gestures" value=" Gestes,"/>
 	<string name="Landmarks" value=" Repères,"/>
+	<string name="Materials" value=" Matériaux," />
 	<string name="Notecards" value=" Notes,"/>
 	<string name="Objects" value=" Objets,"/>
 	<string name="Scripts" value=" Scripts,"/>
@@ -1867,6 +1868,7 @@ Si vous continuez à recevoir ce message, veuillez contacter l'assistance de Sec
 	<string name="Textures" value=" Textures,"/>
 	<string name="Settings" value=" Paramètres," />
 	<string name="Snapshots" value=" Photos,"/>
+	<string name="Folders" value=" Dossiers," />
 	<string name="No Filters" value="Non "/>
 	<string name="Since Logoff" value="depuis la déconnexion"/>
 	<string name="Modifiable" value="Modifiable" />
@@ -6474,6 +6476,15 @@ Essayez avec le chemin d&apos;accès à l&apos;éditeur entre guillemets doubles
 	<string name="ExperiencePermissionShort17">
 		Environnement
 	</string>
+	<string name="material_selection_title">
+		Sélection des matériaux
+	</string>
+	<string name="material_selection_text">
+		Sélectionner un matériau l:
+	</string>
+	<string name="material_batch_import_text">
+		--- Les charger tous ---
+	</string>
 	<string name="logging_calls_disabled_log_empty">
 		Les conversations ne sont pas archivées. Pour commencer à tenir un journal, choisissez Enregistrer : Journal seul ou Enregistrer : Journal et transcriptions sous Préférences &gt; Chat.
 	</string>
@@ -7137,5 +7148,17 @@ Votre position actuelle : [AVATAR_POS]
 	</string>
 	<string name="Unlimited">
 		Illimité
+	</string>
+	<string name="ListEmpty">
+		La liste est vide
+	</string>
+	<string name="NoValidUUIDs">
+		Le fichier importé ne contient aucun UUID valide.
+	</string>
+	<string name="ImportListTooLarge">
+		Trop d'entrées. Le fichier CSV contient [COUNT] entrées et il y a [MAX] emplacements disponibles.
+	</string>
+	<string name="ImportSuccessful">
+		Successfully processed [COUNT] entries.
 	</string>
 </strings>

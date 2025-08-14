@@ -56,16 +56,16 @@ public:
     U32 sizeBytes() const;
 
     LLUUID mMeshID;
-//<FS:ND> Query by JointKey rather than just a string, the key can be a U32 index for faster lookup
-//  std::vector<std::string> mJointNames;
-    std::vector< JointKey > mJointNames;
-// </FS:ND>
+    std::vector<std::string> mJointNames;
     mutable std::vector<S32> mJointNums;
-    typedef std::vector<LLMatrix4a, boost::alignment::aligned_allocator<LLMatrix4a, 16>> matrix_list_t;
+    typedef std::vector<LLMatrix4a> matrix_list_t;
     matrix_list_t mInvBindMatrix;
 
     // bones/joints position overrides
     matrix_list_t mAlternateBindMatrix;
+
+    // cached multiply of mBindShapeMatrix and mInvBindMatrix
+    matrix_list_t mBindPoseMatrix;
 
     LL_ALIGN_16(LLMatrix4a mBindShapeMatrix);
 
@@ -208,7 +208,7 @@ public:
     void remapVolumeFaces();
     void optimizeVolumeFaces();
     void offsetMesh( const LLVector3& pivotPoint );
-    void getNormalizedScaleTranslation(LLVector3& scale_out, LLVector3& translation_out);
+    void getNormalizedScaleTranslation(LLVector3& scale_out, LLVector3& translation_out) const;
     LLVector3 getTransformedCenter(const LLMatrix4& mat);
 
     //reorder face list based on mMaterialList in this and reference so

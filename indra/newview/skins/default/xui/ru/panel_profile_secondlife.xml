@@ -40,13 +40,21 @@
 			<text name="label2" value="Аккаунт:"/>
 			<layout_stack name="badgepositioner">
 				<layout_panel name="badge_layout">
-					<icon name="badge_icon" tool_tip="Сотрудник лаборатории Линден"/>
+					<layout_stack name="badge_stacker">
+						<layout_panel name="top_badge_layout">
+							<icon name="top_badge_icon" tool_tip="Сотрудник лаборатории Линден"/>
+						</layout_panel>
+						<layout_panel name="bottom_badge_layout">
+							<icon name="bottom_badge_icon" tool_tip="Сотрудник лаборатории Линден"/>
+						</layout_panel>
+					</layout_stack>
 				</layout_panel>
 			</layout_stack>
 			<text name="partner_label" value="Партнер:"/>
 		</layout_panel>
 	</layout_stack>
 	<text name="About:" value="О себе:"/>
+	<button name="btn_preview" tool_tip="Переключить предварительный просмотр раздела 'О себе' вашего профиля"/>
 	<text name="Groups:" value="Группы:"/>
 	<button name="group_invite" tool_tip="Пригласить в группу"/>
 	<text name="Give item:" value="Дать:"/>

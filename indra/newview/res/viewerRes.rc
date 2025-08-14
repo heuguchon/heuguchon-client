@@ -161,7 +161,7 @@ BEGIN
             VALUE "FileDescription", "Heuguchon"
             VALUE "FileVersion", "${VIEWER_VERSION_MAJOR}.${VIEWER_VERSION_MINOR}.${VIEWER_VERSION_PATCH}.${VIEWER_VERSION_REVISION}"
             VALUE "InternalName", "Heuguchon"
-            VALUE "LegalCopyright", "Copyright \251 2021-2024, WISELIGHT."
+            VALUE "LegalCopyright", "Copyright \251 2021-2025, WISELIGHT."
             VALUE "OriginalFilename", "Heuguchon.exe"
             VALUE "ProductName", "Heuguchon"
             VALUE "ProductVersion", "${VIEWER_VERSION_MAJOR}.${VIEWER_VERSION_MINOR}.${VIEWER_VERSION_PATCH}.${VIEWER_VERSION_REVISION}"

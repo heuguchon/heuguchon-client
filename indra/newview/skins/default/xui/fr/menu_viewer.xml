@@ -65,6 +65,7 @@
 		<menu_item_call label="Photos 360°" name="Capture 360"/>
 		<menu_item_call label="Suivi des transactions" name="money_tracker"/>
 		<menu_item_call label="Stand de pose..." name="pose_stand"/>
+		<menu_item_check label="Poseur" name="Poser"/>
 		<menu_item_call label="Préférences..." name="Preferences"/>
 		<menu_item_call label="Boutons de la barre d'outils" name="Toolbar Buttons"/>
 		<menu_item_check label="Afficher les éléments HUD" name="Show HUD Attachments"/>
@@ -92,6 +93,7 @@
 		<menu_item_check label="Conversations..." name="Conversations"/>
 		<menu_item_check label="Gestes..." name="Gestures"/>
 		<menu_item_call label="Flickr..." name="Flickr"/>
+		<menu_item_call label="Primfeed..." name="Primfeed"/>
 		<menu_item_call label="Discord..." name="Discord"/>
 		<menu label="Effets de voix" name="VoiceMorphing">
 			<menu_item_check label="Aucun effet de voix" name="NoVoiceMorphing"/>
@@ -102,6 +104,7 @@
 		<menu_item_check label="Journal des conversations..." name="Conversation Log..."/>
 		<menu_item_check label="Chat vocal à proximité" name="Nearby Voice"/>
 		<menu_item_call label="Liste des ignorés" name="Block List"/>
+		<menu_item_check label="Afficher la console de conversation" name="Show On-screen Console"/>
 	</menu>
 	<menu label="Monde" name="World">
 		<menu_item_call label="Resynchroniser les animations" name="Resync Animations"/>
@@ -155,12 +158,18 @@
 			<menu_item_call label="Outils de prise de vue" name="phototools_item_call"/>
 			<menu_item_call label="Contrôle de la caméra" name="cameratools_item_call"/>
 			<menu_item_check label="Verrouillage de la mise au point de la PdC" name="lock_focus_point"/>
+			<menu_item_check label="Tracer le réticule de mise au point de la PdC" name="render_focus_point"/>
 		</menu>
 		<menu_item_call label="Recherche dans la région" name="area_search"/>
 		<menu_item_call label="Explorateur de sons" name="Sound Explorer"/>
 		<menu_item_call label="Explorateur d'animations" name="Animation Explorer"/>
 		<menu_item_call label="Liste noire d'éléments" name="asset_blacklist"/>
 		<menu_item_call label="Paramètres d'affichage de l'avatar" name="Avatar Render Settings"/>
+		<menu label="Affichage des avatars" name="AvatarComplexityMode">
+			<menu_item_check label="Limiter par la complexité" name="complexity_limit_everone"/>
+			<menu_item_check label="Toujours afficher les amis" name="complexity_always_show_friends"/>
+			<menu_item_check label="N'afficher que les amis" name="complexity_only_show_friends"/>
+		</menu>
 		<menu_item_check label="N'afficher que les amis" name="Render Friends Only"/>
 	</menu>
 	<menu label="Construire" name="BuildTools">
@@ -279,7 +288,6 @@
 		<menu_item_call label="Wiki" name="Wiki"/>
 		<menu_item_call label="Forums communautaires" name="Community Forums"/>
 		<menu_item_call label="Portail d'assistance" name="Support portal"/>
-		<menu_item_call label="Nouvelles de [SECOND_LIFE]" name="Second Life News"/>
 		<menu_item_call label="Blogs de [SECOND_LIFE]" name="Second Life Blogs"/>-->
 		<menu_item_call name="whitelist_folders" label="Conseils de liste blanche"/>
 		<menu_item_check label="Consulter l'état de la grille" name="Grid Status"/>
@@ -421,7 +429,11 @@
 			<menu_item_call label="Forcer une boucle infinie" name="Force Infinite Loop"/>
 			<menu_item_call label="Forcer le plantage du driver" name="Force Driver Carsh"/>
 			<menu_item_call label="Forcer une exception logicielle" name="Force Software Exception"/>
+			<menu_item_call label="Forcer une exception système" name="Force OS Exception"/>
+			<menu_item_call label="Forcer une exception logicielle dans une coroutine" name="Force Software Exception in Coroutine"/>
 			<menu_item_call label="Forcer une exception logicielle dans une coroutine" name="Force a Crash in a Coroutine"/>
+			<menu_item_call label="Forcer un plantage dans une coroprocédure" name="Force a Crash in a Coroprocedure"/>
+			<menu_item_call label="Forcer un plantage dans une file d'attente" name="Force a Crash in a Work Queue"/>
 			<menu_item_call label="Forcer un plantage dans un processus" name="Force a Crash in a Thread"/>
 			<menu_item_call label="Forcer la déconnexion du client" name="Force Disconnect Viewer"/>
 			<menu_item_call label="Simuler une fuite de mémoire" name="Memory Leaking Simulation"/>
@@ -494,6 +506,7 @@
 			<menu_item_check label="Textures pleine résolution" name="Rull Res Textures"/>
 			<menu_item_check label="Rendu des lumières jointes" name="Render Attached Lights"/>
 			<menu_item_check label="Rendu des particules jointes" name="Render Attached Particles"/>
+			<menu_item_check label="Collecter les buffers de vertex des polices" name="Collect Font Vertex Buffers"/>
 			<menu_item_check label="Activer le cache des shaders" name="Enable Shader Cache"/>
 			<menu_item_call label="Vider le cache des shaders" name="Shader Cache Clear"/>
 			<menu_item_call label="Reconstruire le terrain" name="Rebuild Terrain"/>
@@ -555,6 +568,7 @@
 		<menu label="XUI" name="XUI">
 			<menu_item_call label="Recharger les paramètres de couleurs" name="Reload Color Settings"/>
 			<menu_item_call label="Afficher le test de police" name="Show Font Test"/>
+			<menu_item_call label="Afficher le test SLapps" name="Show SLapps Test"/>
 			<menu_item_call label="Charge à partir d'XML" name="Load from XML"/>
 			<menu_item_call label="Enregistre en XML" name="Save to XML"/>
 			<menu_item_check label="Afficher les noms XUI" name="Show XUI Names"/>
@@ -603,6 +617,8 @@
 		<menu_item_check label="Textures HTTP" name="HTTP Textures"/>
 		<menu_item_call label="Compresser les images" name="Compress Images"/>
 		<menu_item_call label="Test de compression de fichiers" name="Compress File Test" />
+		<menu_item_call label="Test d'authentification Primfeed" name="primfeed_auth_test" />
+		<menu_item_call label="Réinitialisation de l'authentification Primfeed" name="primfeed_auth_clear" />
 		<menu_item_call label="Activer Visual Leak Detector" name="Enable Visual Leak Detector"/>
 		<menu_item_check label="Aperçu du Journal de débogage" name="Output Debug Minidump"/>
 		<menu_item_check label="Ouvrir la console de débogage au prochain lancement" name="Console Window"/>
@@ -616,6 +632,7 @@
 		<menu_item_call label="Demander le statut Admin" name="Request Admin Options"/>
 		<menu_item_call label="Quitter le statut Admin" name="Leave Admin Options"/>
 		<menu_item_check label="Afficher le menu Admin" name="View Admin Options"/>
+		<menu label="Vidage" name="Dump"/>
 	</menu>
 	<menu label="Admin" name="Admin">
 		<menu label="Objet" name="AdminObject">

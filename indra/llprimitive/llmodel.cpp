@@ -94,19 +94,15 @@ std::string LLModel::getStatusString(U32 status)
 }
 
 
-void LLModel::offsetMesh( const LLVector3& pivotPoint )
+void LLModel::offsetMesh(const LLVector3& pivotPoint)
 {
-    LLVector4a pivot( pivotPoint[VX], pivotPoint[VY], pivotPoint[VZ] );
+    LLVector4a pivot(pivotPoint[VX], pivotPoint[VY], pivotPoint[VZ]);
 
-    for (std::vector<LLVolumeFace>::iterator faceIt = mVolumeFaces.begin(); faceIt != mVolumeFaces.end(); )
+    for (LLVolumeFace& face : mVolumeFaces)
     {
-        std::vector<LLVolumeFace>:: iterator currentFaceIt = faceIt++;
-        LLVolumeFace& face = *currentFaceIt;
-        LLVector4a *pos = (LLVector4a*) face.mPositions;
-
-        for (S32 i=0; i<face.mNumVertices; ++i )
+        for (S32 i = 0; i < face.mNumVertices; ++i)
         {
-            pos[i].add( pivot );
+            face.mPositions[i].add(pivot);
         }
     }
 }
@@ -350,7 +346,7 @@ void LLModel::normalizeVolumeFaces()
     }
 }
 
-void LLModel::getNormalizedScaleTranslation(LLVector3& scale_out, LLVector3& translation_out)
+void LLModel::getNormalizedScaleTranslation(LLVector3& scale_out, LLVector3& translation_out) const
 {
     scale_out = mNormalizedScale;
     translation_out = mNormalizedTranslation;
@@ -1500,10 +1496,7 @@ void LLMeshSkinInfo::fromLLSD(LLSD& skin)
     {
         for (U32 i = 0; i < skin["joint_names"].size(); ++i)
         {
-//<FS:ND> Query by JointKey rather than just a string, the key can be a U32 index for faster lookup
-//          mJointNames.push_back( skin[ "joint_names" ][ i ] );
-            mJointNames.push_back( JointKey::construct( skin[ "joint_names" ][ i ] ) );
-// </FS>ND>
+            mJointNames.push_back( skin[ "joint_names" ][ i ] );
             mJointNums.push_back(-1);
         }
     }
@@ -1577,6 +1570,13 @@ void LLMeshSkinInfo::fromLLSD(LLSD& skin)
         mLockScaleIfJointPosition = false;
     }
 
+    // combine mBindShapeMatrix and mInvBindMatrix into mBindPoseMatrix
+    mBindPoseMatrix.resize(mInvBindMatrix.size());
+    for (U32 i = 0; i < mInvBindMatrix.size(); ++i)
+    {
+        matMul(mBindShapeMatrix, mInvBindMatrix[i], mBindPoseMatrix[i]);
+    }
+
     updateHash();
 }
 
@@ -1586,11 +1586,8 @@ LLSD LLMeshSkinInfo::asLLSD(bool include_joints, bool lock_scale_if_joint_positi
 
     for (U32 i = 0; i < mJointNames.size(); ++i)
     {
-//<FS:ND> Query by JointKey rather than just a string, the key can be a U32 index for faster lookup
-//      ret[ "joint_names" ][ i ] = mJointNames[ i ];
-        ret[ "joint_names" ][ i ] = mJointNames[ i ].mName;
-// </FS:ND>
-
+        ret[ "joint_names" ][ i ] = mJointNames[ i ];
+        if (mInvBindMatrix.size() < i) break; // <FS:Beq/> FIRE-34811 Crash during import due to missing inv_bind_matrices.
         for (U32 j = 0; j < 4; j++)
         {
             for (U32 k = 0; k < 4; k++)
@@ -1640,9 +1637,7 @@ void LLMeshSkinInfo::updateHash()
     //mJointNames
     for (auto& name : mJointNames)
     {
-        // <FS:Ansariel> Joint lookup speedup
-        //hash.update(name);
-        hash.update(name.mName);
+        hash.update(name);
     }
 
     //mJointNums
@@ -1668,10 +1663,7 @@ U32 LLMeshSkinInfo::sizeBytes() const
     res += sizeof(std::vector<std::string>) + sizeof(std::string) * static_cast<U32>(mJointNames.size());
     for (U32 i = 0; i < mJointNames.size(); ++i)
     {
-        // <FS> Query by JointKey rather than just a string, the key can be a U32 index for faster lookup
-        //res += static_cast<U32>(mJointNames[i].size()); // actual size, not capacity
-        res += static_cast<U32>(mJointNames[i].mName.size()); // actual size, not capacity
-        // </FS>
+        res += static_cast<U32>(mJointNames[i].size()); // actual size, not capacity
     }
 
     res += sizeof(std::vector<S32>) + sizeof(S32) * static_cast<U32>(mJointNums.size());

@@ -159,8 +159,8 @@ void LLConsole::draw()
     // <FS>
     //static const F32 padding_horizontal = 10;
     //static const F32 padding_vertical = 3;
-    static const F32 padding_horizontal = 15;
-    static const F32 padding_vertical = 8;
+    constexpr F32 padding_horizontal = 15;
+    constexpr F32 padding_vertical = 8;
     // </FS>
     LLGLSUIDefault gls_ui;
 
@@ -174,6 +174,17 @@ void LLConsole::draw()
     {
         return;
     }
+
+    // <FS:minerjr> [FIRE-35039] Add flag to show/hide the on-screen console   
+    // Get the Show On-screen Console flag from the Comm menu
+    static LLUICachedControl<bool> showOnscreenConsole("FSShowOnscreenConsole");
+    // If the Show On-screen Console flag is disabled and the current console is the global console
+    // (Not a debug console), then don't try to draw
+    if (!showOnscreenConsole && this == gConsole)
+    {
+        return;
+    }
+    // </FS:minerjr> [FIRE-35039]
 
     // <FS:Ansariel> Session support
     if (!mSessionSupport)
@@ -554,8 +565,13 @@ void LLConsole::Paragraph::updateLines(F32 screen_width, const LLFontGL* font, L
 {
     if ( !force_resize )
     {
-        if ( mMaxWidth >= 0.0f
-         &&  mMaxWidth < screen_width )
+        // <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+        // if ( mMaxWidth >= 0.0f
+        //&&  mMaxWidth < screen_width)
+        // If viewer window was made as small as possible with the console enabled, it would cause an assert error
+        // as the line below can go as small as -38
+        if ( ((mMaxWidth >= 0.0f) && (mMaxWidth < screen_width)) || (screen_width <= 30) ) 
+        // </FS:minerjr> [FIRE-35081]
         {
             return;                 //No resize required.
         }

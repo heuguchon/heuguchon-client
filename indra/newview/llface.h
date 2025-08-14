@@ -52,7 +52,11 @@ class LLDrawInfo;
 class LLMeshSkinInfo;
 
 const F32 MIN_ALPHA_SIZE = 1024.f;
-const F32 MIN_TEX_ANIM_SIZE = 512.f;
+// <FS:minerjr> [FIRE-35081] Blurry prims not changing with graphics settings
+//const F32 MIN_TEX_ANIM_SIZE = 512.f;
+// Change the min size to 
+const F32 MIN_TEX_ANIM_SIZE = 10.f;
+// </FS:minerjr> [FIRE-35081]
 const U8 FACE_DO_NOT_BATCH_TEXTURES = 255;
 
 class alignas(16) LLFace
@@ -123,6 +127,8 @@ public:
     void            setPixelArea(F32 area)  { mPixelArea = area; }
     F32             getVirtualSize() const { return mVSize; }
     F32             getPixelArea() const { return mPixelArea; }
+    F32             getImportanceToCamera() const { return mImportanceToCamera; }
+    F32             getCloseToCamera() const { return mCloseToCamera; }
 
     S32             getIndexInTex(U32 ch) const      { llassert(ch < LLRender::NUM_TEXTURE_CHANNELS); return mIndexInTex[ch]; }
     void            setIndexInTex(U32 ch, S32 index) { llassert(ch < LLRender::NUM_TEXTURE_CHANNELS); mIndexInTex[ch] = index; }
@@ -212,7 +218,6 @@ public:
     void        setDrawInfo(LLDrawInfo* draw_info);
 
     F32         getTextureVirtualSize() ;
-    F32         getImportanceToCamera()const {return mImportanceToCamera ;}
     void        resetVirtualSize();
 
     void        setHasMedia(bool has_media)  { mHasMedia = has_media ;}
@@ -243,7 +248,13 @@ public:
     // return true if this face is in an alpha draw pool
     bool isInAlphaPool() const;
 public: //aligned members
+
+    // bounding box of face in drawable space
     LLVector4a      mExtents[2];
+
+    // cached bounding box of rigged face in world space
+    // calculated on-demand by LLFace::calcPixelArea and may not be up-to-date
+    LLVector4a  mRiggedExtents[2] = { LLVector4a(0,0,0), LLVector4a(0,0,0) };
 
 private:
     friend class LLViewerTextureList;
@@ -272,6 +283,11 @@ public:
 
     // return mSkinInfo->mHash or 0 if mSkinInfo is null
     U64 getSkinHash();
+
+    // true if face was recently in the main camera frustum according to LLViewerTextureList updates
+    bool mInFrustum = false;
+    // value of gFrameCount the last time the face was touched by LLViewerTextureList::updateImageDecodePriority
+    U32 mLastTextureUpdate = 0;
 
 private:
     LLPointer<LLVertexBuffer> mVertexBuffer;
@@ -305,13 +321,21 @@ private:
     S32         mReferenceIndex;
     std::vector<S32> mRiggedIndex;
 
+    // gFrameTimeSeconds when mPixelArea was last updated
+    F32         mLastPixelAreaUpdate = 0.f;
+
+    // virtual size of face in texture area  (mPixelArea adjusted by texture repeats)
+    // used to determine desired resolution of texture
     F32         mVSize;
+
+    // pixel area face covers on screen
     F32         mPixelArea;
 
     //importance factor, in the range [0, 1.0].
     //1.0: the most important.
     //based on the distance from the face to the view point and the angle from the face center to the view direction.
     F32         mImportanceToCamera ;
+    F32         mCloseToCamera;
     F32         mBoundingSphereRadius ;
     bool        mHasMedia ;
     bool        mIsMediaAllowed;

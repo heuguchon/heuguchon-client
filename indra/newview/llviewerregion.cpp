@@ -121,6 +121,7 @@ namespace
 
 void newRegionEntry(LLViewerRegion& region)
 {
+    LL_PROFILE_ZONE_SCOPED; // <FS:Beq/> improve instrumentation
     LL_INFOS("LLViewerRegion") << "Entering region [" << region.getName() << "]" << LL_ENDL;
     gDebugInfo["CurrentRegion"] = region.getName();
     LLAppViewer::instance()->writeDebugInfo();
@@ -352,12 +353,10 @@ void LLViewerRegionImpl::requestBaseCapabilitiesCoro(U64 regionHandle)
 
         impl = regionp->getRegionImplNC();
 
-        // <FS:Ansariel> Fix seed cap retry count
-        //++(impl->mSeedCapAttempts);
-
         if (!result.isMap() || result.has("error"))
         {
             LL_WARNS("AppInit", "Capabilities") << "Malformed response" << LL_ENDL;
+            ++(impl->mSeedCapAttempts);
             // setup for retry.
             continue;
         }
@@ -367,6 +366,7 @@ void LLViewerRegionImpl::requestBaseCapabilitiesCoro(U64 regionHandle)
         if (!status)
         {
             LL_WARNS("AppInit", "Capabilities") << "HttpStatus error " << LL_ENDL;
+            ++(impl->mSeedCapAttempts);
             // setup for retry.
             continue;
         }
@@ -377,8 +377,8 @@ void LLViewerRegionImpl::requestBaseCapabilitiesCoro(U64 regionHandle)
         if (id != impl->mHttpResponderID) // region is no longer referring to this request
         {
             LL_WARNS("AppInit", "Capabilities") << "Received results for a stale capabilities request!" << LL_ENDL;
+            ++(impl->mSeedCapAttempts);
             // setup for retry.
-            ++(impl->mSeedCapAttempts); // <FS:Ansariel> Fix seed cap retry count
             continue;
         }
 
@@ -1389,12 +1389,15 @@ void LLViewerRegion::updateReflectionProbes(bool full_update)
                 mReflectionMaps[idx] = gPipeline.mReflectionMapManager.addProbe();
             }
 
-            LLVector3 probe_origin = LLVector3(x, y, llmax(water_height, mImpl->mLandp->resolveHeightRegion(x, y)));
-            probe_origin.mV[2] += hover_height;
-            probe_origin += origin;
+            if (mReflectionMaps[idx])
+            {
+                LLVector3 probe_origin = LLVector3(x, y, llmax(water_height, mImpl->mLandp->resolveHeightRegion(x, y)));
+                probe_origin.mV[2] += hover_height;
+                probe_origin += origin;
 
-            mReflectionMaps[idx]->mOrigin.load3(probe_origin.mV);
-            mReflectionMaps[idx]->mRadius = probe_radius;
+                mReflectionMaps[idx]->mOrigin.load3(probe_origin.mV);
+                mReflectionMaps[idx]->mRadius = probe_radius;
+            }
         }
     }
 }
@@ -3476,6 +3479,7 @@ void LLViewerRegionImpl::buildCapabilityNames(LLSD& capabilityNames)
     capabilityNames.append("FetchInventory2");
     capabilityNames.append("FetchInventoryDescendents2");
     capabilityNames.append("IncrementCOFVersion");
+    capabilityNames.append("RequestTaskInventory");
     AISAPI::getCapNames(capabilityNames);
     } //</FS:Ansariel>
 
@@ -3976,15 +3980,18 @@ bool LLViewerRegion::meshUploadEnabled() const
 
 bool LLViewerRegion::bakesOnMeshEnabled() const
 {
-    return (mSimulatorFeatures.has("BakesOnMeshEnabled") &&
+    return (mSimulatorFeaturesReceived && mSimulatorFeatures.has("BakesOnMeshEnabled") && // FIRE-35111 (bugsplat) checking bakes on mesh feature before features received.
         mSimulatorFeatures["BakesOnMeshEnabled"].asBoolean());
 }
 
+// <FS:Beq> FIRE-35602 etc - Mesh not appearing after TP/login (opensim only)
+#ifdef OPENSIM
 bool LLViewerRegion::meshRezEnabled() const
 {
-    return (mSimulatorFeatures.has("MeshRezEnabled") &&
-                mSimulatorFeatures["MeshRezEnabled"].asBoolean());
+    return (mSimulatorFeatures.has("MeshRezEnabled") && mSimulatorFeatures["MeshRezEnabled"].asBoolean());
 }
+#endif
+// </FS:Beq>
 
 bool LLViewerRegion::dynamicPathfindingEnabled() const
 {

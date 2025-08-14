@@ -92,6 +92,10 @@
 #include "rlvcommon.h"
 // [/RLVa:KB]
 
+#if LL_DARWIN
+#include "llwindowmacosx.h"
+#endif
+
 // Firestorm inclues
 #include "fsfloatercontacts.h"
 #include "fsfloaterim.h"
@@ -326,6 +330,25 @@ static bool handleReleaseGLBufferChanged(const LLSD& newvalue)
     return true;
 }
 
+static bool handleEnableEmissiveChanged(const LLSD& newvalue)
+{
+    return handleReleaseGLBufferChanged(newvalue) && handleSetShaderChanged(newvalue);
+}
+
+static bool handleDisableVintageMode(const LLSD& newvalue)
+{
+    gSavedSettings.setBOOL("RenderEnableEmissiveBuffer", newvalue.asBoolean());
+    gSavedSettings.setBOOL("RenderHDREnabled", newvalue.asBoolean());
+    return true;
+}
+
+static bool handleEnableHDR(const LLSD& newvalue)
+{
+    gPipeline.mReflectionMapManager.reset();
+    gPipeline.mHeroProbeManager.reset();
+    return handleReleaseGLBufferChanged(newvalue) && handleSetShaderChanged(newvalue);
+}
+
 static bool handleLUTBufferChanged(const LLSD& newvalue)
 {
     if (gPipeline.isInit())
@@ -554,14 +577,25 @@ static bool handleReflectionProbeDetailChanged(const LLSD& newvalue)
     if (gPipeline.isInit())
     {
         LLPipeline::refreshCachedSettings();
+        gPipeline.mReflectionMapManager.reset();
+        gPipeline.mHeroProbeManager.reset();
         gPipeline.releaseGLBuffers();
         gPipeline.createGLBuffers();
         LLViewerShaderMgr::instance()->setShaders();
-        gPipeline.mReflectionMapManager.reset();
-        gPipeline.mHeroProbeManager.reset();
     }
     return true;
 }
+
+#if LL_DARWIN
+static bool handleAppleUseMultGLChanged(const LLSD& newvalue)
+{
+    if (gGLManager.mInited)
+    {
+        LLWindowMacOSX::setUseMultGL(newvalue.asBoolean());
+    }
+    return true;
+}
+#endif
 
 static bool handleHeroProbeResolutionChanged(const LLSD &newvalue)
 {
@@ -1207,9 +1241,9 @@ LLPointer<LLControlVariable> setting_get_control(LLControlGroup& group, const st
     LLPointer<LLControlVariable> cntrl_ptr = group.getControl(setting);
     if (cntrl_ptr.isNull())
     {
+        LLError::LLUserWarningMsg::showMissingFiles();
         LL_ERRS() << "Unable to set up setting listener for " << setting
-            << ". Please reinstall viewer from  https://www.firestormviewer.org/choose-your-platform/ and contact https://www.firestormviewer.org/support if issue persists after reinstall."
-            << LL_ENDL;
+            << "." << LL_ENDL;
     }
     return cntrl_ptr;
 }
@@ -1247,8 +1281,7 @@ void settings_setup_listeners()
     setting_setup_signal_listener(gSavedSettings, "RenderMaxTextureIndex", handleSetShaderChanged);
     setting_setup_signal_listener(gSavedSettings, "RenderUIBuffer", handleWindowResized);
     setting_setup_signal_listener(gSavedSettings, "RenderDepthOfField", handleReleaseGLBufferChanged);
-    setting_setup_signal_listener(gSavedSettings, "RenderFSAASamples", handleReleaseGLBufferChanged);
-    setting_setup_signal_listener(gSavedSettings, "RenderPostProcessingHDR", handleReleaseGLBufferChanged);
+    setting_setup_signal_listener(gSavedSettings, "RenderFSAAType", handleReleaseGLBufferChanged);
     setting_setup_signal_listener(gSavedSettings, "RenderSpecularResX", handleLUTBufferChanged);
     setting_setup_signal_listener(gSavedSettings, "RenderSpecularResY", handleLUTBufferChanged);
     setting_setup_signal_listener(gSavedSettings, "RenderSpecularExponent", handleLUTBufferChanged);
@@ -1258,6 +1291,9 @@ void settings_setup_listeners()
     setting_setup_signal_listener(gSavedSettings, "RenderGlow", handleSetShaderChanged);
     setting_setup_signal_listener(gSavedSettings, "RenderGlowResolutionPow", handleReleaseGLBufferChanged);
     setting_setup_signal_listener(gSavedSettings, "RenderGlowHDR", handleReleaseGLBufferChanged);
+    setting_setup_signal_listener(gSavedSettings, "RenderEnableEmissiveBuffer", handleEnableEmissiveChanged);
+    setting_setup_signal_listener(gSavedSettings, "RenderDisableVintageMode", handleDisableVintageMode);
+    setting_setup_signal_listener(gSavedSettings, "RenderHDREnabled", handleEnableHDR);
     setting_setup_signal_listener(gSavedSettings, "RenderGlowNoise", handleSetShaderChanged);
     setting_setup_signal_listener(gSavedSettings, "RenderGammaFull", handleSetShaderChanged);
     setting_setup_signal_listener(gSavedSettings, "FSOverrideVRAMDetection", handleOverrideVRAMDetectionChanged); // <FS:Beq/> Override VRAM detection support
@@ -1282,6 +1318,9 @@ void settings_setup_listeners()
     setting_setup_signal_listener(gSavedSettings, "RenderReflectionProbeLevel", handleReflectionProbeDetailChanged);
     setting_setup_signal_listener(gSavedSettings, "RenderReflectionProbeDetail", handleReflectionProbeDetailChanged);
     // setting_setup_signal_listener(gSavedSettings, "RenderReflectionsEnabled", handleReflectionsEnabled); // <FS:Beq/> FIRE-33659 better way to enable/disable reflections
+#if LL_DARWIN
+    setting_setup_signal_listener(gSavedSettings, "RenderAppleUseMultGL", handleAppleUseMultGLChanged);
+#endif
     setting_setup_signal_listener(gSavedSettings, "RenderScreenSpaceReflections", handleReflectionProbeDetailChanged);
     setting_setup_signal_listener(gSavedSettings, "RenderMirrors", handleReflectionProbeDetailChanged);
     setting_setup_signal_listener(gSavedSettings, "RenderHeroProbeResolution", handleHeroProbeResolutionChanged);

@@ -25,6 +25,7 @@
 			</combo_box>
 			<slider name="manual_environment_change_transition_period" label="Durée de transition de l'environnement :" tool_tip="Intervalle de transition en secondes entre des environnements. Zéro veut dire instantané."/>
 			<check_box name="EnvironmentPersistAcrossLogin" label="Persistance des réglages d'environnement entre deux sessions" tool_tip="Reprend les réglages actuels d'environnement lors de la prochaine connexion."/>
+			<check_box name="FSRepeatedEnvTogglesShared" label="La répétition des raccourcis clavier de l'environnement rétablit l'environnement partagé" tool_tip="Permet à des combinaisons de touches répétées (par exemple ctrl+shift+y) d'alterner entre le préréglage demandé &amp; l'environnement partagé"/>
 		</panel>
 		<panel label="Protection" name="ProtectionTab">
 			<check_box label="Empêcher de s'asseoir sur les objets par clic simple" name="FSBlockClickSit"/>
@@ -155,7 +156,8 @@
 			<check_box label="Prévisualiser les animations sur son avatar pendant le téléchargement sur le serveur" tool_tip="Si activé, vous pouvez prévisualiser les animations sur votre propre avatar pendant le téléchargement sur le serveur" name="FSUploadAnimationOnOwnAvatar"/>
 			<check_box label="Toujours développer les informations détaillées de la prévisualisation de l'animation" tool_tip="Développer par défaut les informations détaillées sur l'animation dans le flotteur de l'aperçu de l'animation" name="FSAnimationPreviewExpanded"/>
 			<check_box label="Active les informations détaillées pour les script" tool_tip="Activée, ajoute aux informations de base sur les scripts des détails utiles aux créateurs" name="FSScriptInfoExtended"/>
-			<check_box label="Trier par ordre alphabétique les points d'attachement dans les menus &quot;Attacher à&quot; (redémarrage requis)" tool_tip="Si cette option est activée, la liste des points d'attachement dans les menus &amp;Attacher à&amp; sera triée par ordre alphabétique." name="FSSortAttachmentSpotsAlphabetically"/>
+			<check_box label="Points d'attachement alphabétiques dans les menus &quot;Attacher à&quot; (redémarrage requis)" tool_tip="Si cette option est activée, la liste des points d'attachement dans les menus 'Attacher à' sera triée par ordre alphabétique." name="FSSortAttachmentSpotsAlphabetically"/>
+			<check_box label="Nouveau module de texture Firestorm dans la fenêtre d'outils (nécessite un redémarrage)" tool_tip="Si cette option est activée, les outils d'édition de textures utiliseront le flux de travail amélioré de FS et permettront l'édition de textures Blinn-Phong et PBR." name="FSUseNewTexturePanel"/>
 		</panel>
 		<panel label="Chargements" name="UploadsTab">
 			<text name="title">Dossiers de destination pour les chargements :</text>

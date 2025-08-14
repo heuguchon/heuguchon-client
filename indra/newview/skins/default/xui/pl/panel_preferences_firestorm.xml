@@ -36,6 +36,7 @@
         </combo_box>
         <slider name="manual_environment_change_transition_period" label="Czas przejścia otoczenia:" tool_tip="Interwał w sekundach, w czasie którego ręczne zmiany środowiska będą zachodzić. Zero oznacza natychmiast." />
         <check_box name="EnvironmentPersistAcrossLogin" label="Trzymaj ustawienia otoczenia pomiędzy sesjami" tool_tip="Przywraca aktualne ustawienia otoczenia po następnym zalogowaniu." />
+        <check_box name="FSRepeatedEnvTogglesShared" label="Skróty klawiszowe zmiany otoczenia przy powtarzaniu przełączają na otoczenie współdzielone" tool_tip="Sprawia, że powielone używanie skrótów klawiszowych (np. ctrl+shift+y) przełącza między wybranym wstępnie zapisanym otoczeniem, a otoczeniem współdzielonym." />
     </panel>
     <panel label="Ochrona" name="ProtectionTab">
         <check_box label="Blokuj siadanie na obiektach przez kliknięcie lewym przyciskiem myszy" name="FSBlockClickSit" />
@@ -214,7 +215,7 @@
         <check_box label="Zawsze rozwijaj zaawansowane informacje o podglądzie animacji" tool_tip="Domyślnie rozwiń zaawansowane informacje o animacji w oknie podglądu animacji" name="FSAnimationPreviewExpanded" />
         <check_box label="Włącz rozszerzanie funkcjonalności informacji o skryptach" tool_tip="Gdy zaznaczysz tą opcję, to podstawowa funkcjonalność informacji o skryptach zostanie rozszerzona za pomocą różnych szczegółów przydatnych dla budowniczych" name="FSScriptInfoExtended" />
         <check_box label="Sortuj miejsca dodatków w sekcjach menu &quot;Dołącz do&quot; alfabetycznie (wymaga restartu)" tool_tip="Jeśli ta opcja jest włączona, to lista miejsc dla doczepienia dodatków pojawiająca się w menusach &quot;Dołącz do&quot; będzie posortowana alfabetycznie" name="FSSortAttachmentSpotsAlphabetically" />
-        <check_box label="Nowy panel tekstur Firestorma w panelu budowania (wymaga restartu)" tool_tip="Gdy zaznaczysz tą opcję, to narzędzia do edycji tekstur będą korzystać z udoskonalonego panelu FS i pozwolą na edycję BlinnPhong" name="FSUseNewTexturePanel" />
+        <check_box label="Nowy panel tekstur [APP_NAME] w panelu budowania (wymaga restartu)" tool_tip="Gdy zaznaczysz tą opcję, to narzędzia do edycji tekstur będą korzystać z udoskonalonego panelu [APP_NAME] i pozwolą na edycję tekstur BlinnPhong oraz PBR." name="FSUseNewTexturePanel" />
     </panel>
     <panel label="Nowe pliki" name="UploadsTab">
         <text name="title">

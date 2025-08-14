@@ -601,6 +601,20 @@
 				parameter="fs_when_not_sitting" />
         </menu_item_call>
 
+<!-- FS:AR FIRE-30873 -->
+        <menu_item_check
+         label="Poser"
+         name="Poser"
+         use_mac_ctrl="true">
+            <menu_item_check.on_check
+             function="Floater.Visible"
+             parameter="fs_poser" />
+            <menu_item_check.on_click
+             function="Floater.Toggle"
+             parameter="fs_poser" />
+        </menu_item_check>
+<!-- /FS:AR FIRE-30873 -->
+
         <menu_item_separator/>
 
         <menu_item_call
@@ -840,6 +854,13 @@
           parameter="flickr"/>
       </menu_item_call>
       <menu_item_call
+        label="Primfeed..."
+        name="Primfeed">
+        <menu_item_call.on_click
+          function="Floater.Toggle"
+          parameter="primfeed"/>
+      </menu_item_call>
+      <menu_item_call
         label="Discord..."
         name="Discord">
         <menu_item_call.on_click
@@ -912,6 +933,17 @@
               function="SideTray.PanelPeopleTab"
               parameter="blocked_panel" />
         </menu_item_call>
+        <!-- <FS:minerjr> [FIRE-35039] Add flag to show/hide the on-screen console -->
+	    <menu_item_check
+	    label="Show On-screen Chat Console"
+	    name="Show On-screen Console"
+	    shortcut="shift|`">
+	      <menu_item_check.on_check
+	      function="Comm.CheckShowOnscreenConsole" />
+	      <menu_item_check.on_click
+	      function="Comm.SetShowOnscreenConsole" />
+	    </menu_item_check>
+        <!-- </FS:minerjr> [FIRE-35039] -->		      
     </menu>
     
     <!-- World Menu -->
@@ -1549,6 +1581,17 @@
             <menu_item_check.on_click
                function="ToggleControl"
                parameter="FSFocusPointLocked" />
+            </menu_item_check>
+            <menu_item_check
+               label="Draw DoF Focus crosshair"
+               layout="topleft"
+               name="render_focus_point">
+            <menu_item_check.on_check
+               function="CheckControl"
+               parameter="FSFocusPointRender" />
+            <menu_item_check.on_click
+               function="ToggleControl"
+               parameter="FSFocusPointRender" />
             </menu_item_check>
 		</menu>
       <menu_item_call
@@ -2616,18 +2659,11 @@
         </menu_item_call>
         <menu_item_separator/>
         <menu_item_call
-             label="[SECOND_LIFE] News"
-             name="Second Life News">
-             <menu_item_call.on_click
-                 function="Advanced.ShowURL"
-                 parameter="http://community.secondlife.com/t5/Featured-News/bg-p/blog_feature_news"/>  
-        </menu_item_call>
-        <menu_item_call
              label="[SECOND_LIFE] Blogs"
              name="Second Life Blogs">
              <menu_item_call.on_click
                  function="Advanced.ShowURL"
-                 parameter="http://community.secondlife.com/t5/Blogs/ct-p/Blogs"/>
+                 parameter="https://community.secondlife.com/news/"/>
         </menu_item_call>-->
         <menu_item_separator/>
         <menu_item_call
@@ -4107,6 +4143,18 @@
                  function="Advanced.ForceErrorSoftwareExceptionCoro" />
             </menu_item_call>
             <menu_item_call
+             label="Force a Crash in a Coroprocedure"
+             name="Force a Crash in a Coroprocedure">
+                <menu_item_call.on_click
+                 function="Advanced.ForceErrorCoroprocedureCrash" />
+            </menu_item_call>
+            <menu_item_call
+             label="Force a Crash in a Work Queue"
+             name="Force a Crash in a Work Queue">
+                <menu_item_call.on_click
+                 function="Advanced.ForceErrorWorkQueueCrash" />
+            </menu_item_call>
+            <menu_item_call
              label="Force a Crash in a Thread"
              name="Force a Crash in a Thread">
                 <menu_item_call.on_click
@@ -4737,6 +4785,16 @@
                  function="Advanced.HandleAttachedLightParticles"
                  parameter="RenderAttachedParticles" />
             </menu_item_check>
+            <menu_item_check
+             label="Collect Font Vertex Buffers"
+             name="Collect Font Vertex Buffers">
+                <menu_item_check.on_check
+                 function="CheckControl"
+                 parameter="CollectFontVertexBuffers" />
+                <menu_item_check.on_click
+                 function="ToggleControl"
+                 parameter="CollectFontVertexBuffers" />
+            </menu_item_check>
           <menu_item_separator />
           <menu_item_check
              label="Enable Shader Cache"
@@ -5222,6 +5280,13 @@
                  parameter="font_test" />
             </menu_item_call>
             <menu_item_call
+             label="Show SLapps Test"
+             name="Show SLapps Test">
+                <menu_item_call.on_click
+                 function="Floater.Show"
+                 parameter="slapp_test" />
+            </menu_item_call>
+            <menu_item_call
              label="Load from XML"
              name="Load from XML">
                 <menu_item_call.on_click
@@ -5611,6 +5676,18 @@
         <menu_item_call.on_click
          function="Advanced.CompressFileTest" />
       </menu_item_call>
+      <menu_item_call
+       label="Primfeed Auth Test"
+       name="primfeed_auth_test">
+        <menu_item_call.on_click
+         function="Advanced.PrimfeedAuth" />
+      </menu_item_call>
+      <menu_item_call
+       label="Primfeed Auth Reset"
+       name="primfeed_auth_clear">
+        <menu_item_call.on_click
+         function="Advanced.PrimfeedAuthReset" />
+      </menu_item_call>
 
       <menu_item_call
          label="Enable Visual Leak Detector"
@@ -5722,6 +5799,20 @@
             <menu_item_check.on_click
              function="Advanced.ToggleViewAdminOptions" />
         </menu_item_check>
+
+        <menu_item_separator/>
+        <menu
+         create_jump_keys="true"
+         label="Dump"
+         name="Dump"
+         tear_off="true">
+            <menu_item_call
+             label="LLViewerTexturelist"
+             name="LLViewerTexturelist">
+                <menu_item_call.on_click
+                 function="Develop.TextureList.Dump" />
+            </menu_item_call>
+        </menu>        
     </menu>
     <menu
      create_jump_keys="true"

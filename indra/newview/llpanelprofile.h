@@ -203,6 +203,9 @@ private:
     void onAvatarNameCacheSetName(const LLUUID& id, const LLAvatarName& av_name);
 
     void setDescriptionText(const std::string &text);
+    // <AS:Chanayane> Preview button
+    void reparseDescriptionText(const std::string& text);
+    // </AS:Chanayane>
     void onSetDescriptionDirty();
     void onShowInSearchCallback();
     void onHideAgeCallback();
@@ -215,8 +218,13 @@ private:
     void onCommitProfileImage(const LLUUID& id);
 
     // <FS:Ansariel> Fix LL UI/UX design accident
+    enum class BadgeLocation
+    {
+        top,
+        bottom
+    };
     void updateButtons();
-    void setBadge(std::string_view icon_name, std::string_view tooltip);
+    void setBadge(std::string_view icon_name, std::string_view tooltip, BadgeLocation location);
 
 private:
     typedef std::map<std::string, LLUUID> group_map_t;
@@ -261,6 +269,7 @@ private:
     LLButton*           mIMButton;
     LLMenuButton*       mOverflowButton;
     // </FS:Ansariel>
+    LLButton*           mPreviewButton; // <AS:Chanayane> Preview button
 
     LLHandle<LLFloater> mFloaterPermissionsHandle;
     LLHandle<LLFloater> mFloaterProfileTextureHandle;
@@ -270,8 +279,10 @@ private:
     bool                mVoiceStatus;
     bool                mWaitingForImageUpload;
     bool                mAllowPublish;
+    bool                mPreview; // <AS:Chanayane> Preview button
     bool                mHideAge;
     std::string         mDescriptionText;
+    std::string         mOriginalDescriptionText; // <AS:Chanayane> Preview button
     LLUUID              mImageId;
 
     boost::signals2::connection mAvatarNameCacheConnection;
@@ -361,9 +372,13 @@ protected:
     void onFirstLifePicChanged();   // <FS:Zi> Allow proper texture swatch handling
     void onCommitPhoto(const LLUUID& id);
     void setDescriptionText(const std::string &text);
+    // <AS:Chanayane> Preview button
+    void reparseDescriptionText(const std::string& text);
+    // </AS:Chanayane>
     void onSetDescriptionDirty();
     void onSaveDescriptionChanges();
     void onDiscardDescriptionChanges();
+    void onClickPreview(); // <AS:Chanayane> Preview button
 
     LLTextEditor*   mDescriptionEdit;
     // <FS:Zi> Allow proper texture swatch handling
@@ -375,12 +390,17 @@ protected:
     LLButton* mRemovePhoto;
     LLButton* mSaveChanges;
     LLButton* mDiscardChanges;
+    LLButton* mPreviewButton; // <AS:Chanayane> Preview button
 
     LLHandle<LLFloater> mFloaterTexturePickerHandle;
 
     std::string     mCurrentDescription;
     LLUUID          mImageId;
     bool            mHasUnsavedChanges;
+// <AS:Chanayane> Preview button
+    bool            mPreview;
+    std::string     mOriginalDescription;
+// </AS:Chanayane>
 };
 
 /**

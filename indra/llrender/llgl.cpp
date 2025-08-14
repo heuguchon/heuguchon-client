@@ -50,6 +50,10 @@
 #include "llglheaders.h"
 #include "llglslshader.h"
 
+#include "glm/glm.hpp"
+#include <glm/gtc/matrix_access.hpp>
+#include "glm/gtc/type_ptr.hpp"
+
 #if LL_WINDOWS
 #include "lldxhardware.h"
 #endif
@@ -1070,6 +1074,7 @@ void LLGLManager::initWGL()
 // return false if unable (or unwilling due to old drivers) to init GL
 bool LLGLManager::initGL()
 {
+    LL_INFOS("RenderInit") << "Initializing OpenGL" << LL_ENDL; // <FS:Beq/> Extra logging to confirm usage on Linux
     if (mInited)
     {
         LL_ERRS("RenderInit") << "Calling init on LLGLManager after already initialized!" << LL_ENDL;
@@ -1175,6 +1180,11 @@ bool LLGLManager::initGL()
     {
         mGLVendorShort = "INTEL";
         mIsIntel = true;
+    }
+    else if (mGLVendor.find("APPLE") != std::string::npos)
+    {
+        mGLVendorShort = "APPLE";
+        mIsApple = true;
     }
     else
     {
@@ -1315,6 +1325,7 @@ bool LLGLManager::initGL()
     glGetIntegerv(GL_MAX_INTEGER_SAMPLES, &mMaxIntegerSamples);
     glGetIntegerv(GL_MAX_SAMPLE_MASK_WORDS, &mMaxSampleMaskWords);
     glGetIntegerv(GL_MAX_SAMPLES, &mMaxSamples);
+    glGetIntegerv(GL_MAX_VARYING_VECTORS, &mMaxVaryingVectors);
     glGetIntegerv(GL_MAX_UNIFORM_BLOCK_SIZE, &mMaxUniformBlockSize);
 
     // sanity clamp max uniform block size to 64k just in case
@@ -1504,6 +1515,11 @@ void LLGLManager::initExtensions()
     mHasATIMemInfo = ExtensionExists("GL_ATI_meminfo", gGLHExts.mSysExts); //Basic AMD method, also see mHasAMDAssociations
 
     LL_DEBUGS("RenderInit") << "GL Probe: Getting symbols" << LL_ENDL;
+// FIRE-34655 - VRAM detection failing on Linux. Load all the GL functions we need.
+#if LL_LINUX && !LL_MESA_HEADLESS    
+    mHasNVXGpuMemoryInfo = ExtensionExists("GL_NVX_gpu_memory_info", gGLHExts.mSysExts);
+    mHasAMDAssociations = ExtensionExists("WGL_AMD_gpu_association", gGLHExts.mSysExts);
+#endif
 
 #if LL_WINDOWS
 // </FS:Zi>
@@ -2526,12 +2542,15 @@ void LLGLState::checkStates(GLboolean writeAlpha)
         return;
     }
 
-    GLint src;
-    GLint dst;
-    glGetIntegerv(GL_BLEND_SRC, &src);
-    glGetIntegerv(GL_BLEND_DST, &dst);
-    llassert_always(src == GL_SRC_ALPHA);
-    llassert_always(dst == GL_ONE_MINUS_SRC_ALPHA);
+    GLint srcRGB, dstRGB, srcAlpha, dstAlpha;
+    glGetIntegerv(GL_BLEND_SRC_RGB, &srcRGB);
+    glGetIntegerv(GL_BLEND_DST_RGB, &dstRGB);
+    glGetIntegerv(GL_BLEND_SRC_ALPHA, &srcAlpha);
+    glGetIntegerv(GL_BLEND_DST_ALPHA, &dstAlpha);
+    llassert_always(srcRGB == GL_SRC_ALPHA);
+    llassert_always(srcAlpha == GL_SRC_ALPHA);
+    llassert_always(dstRGB == GL_ONE_MINUS_SRC_ALPHA);
+    llassert_always(dstAlpha == GL_ONE_MINUS_SRC_ALPHA);
 
     // disable for now until usage is consistent
     //GLboolean colorMask[4];
@@ -2772,7 +2791,7 @@ void parse_glsl_version(S32& major, S32& minor)
     LLStringUtil::convertToS32(minor_str, minor);
 }
 
-LLGLUserClipPlane::LLGLUserClipPlane(const LLPlane& p, const glh::matrix4f& modelview, const glh::matrix4f& projection, bool apply)
+LLGLUserClipPlane::LLGLUserClipPlane(const LLPlane& p, const glm::mat4& modelview, const glm::mat4& projection, bool apply)
 {
     mApply = apply;
 
@@ -2799,13 +2818,12 @@ void LLGLUserClipPlane::disable()
 
 void LLGLUserClipPlane::setPlane(F32 a, F32 b, F32 c, F32 d)
 {
-    glh::matrix4f& P = mProjection;
-    glh::matrix4f& M = mModelview;
+    const glm::mat4& P = mProjection;
+    const glm::mat4& M = mModelview;
 
-    glh::matrix4f invtrans_MVP = (P * M).inverse().transpose();
-    glh::vec4f oplane(a,b,c,d);
-    glh::vec4f cplane;
-    invtrans_MVP.mult_matrix_vec(oplane, cplane);
+    glm::mat4 invtrans_MVP = glm::transpose(glm::inverse(P*M));
+    glm::vec4 oplane(a,b,c,d);
+    glm::vec4 cplane = invtrans_MVP * oplane;
 
     cplane /= fabs(cplane[2]); // normalize such that depth is not scaled
     cplane[3] -= 1;
@@ -2813,13 +2831,13 @@ void LLGLUserClipPlane::setPlane(F32 a, F32 b, F32 c, F32 d)
     if(cplane[2] < 0)
         cplane *= -1;
 
-    glh::matrix4f suffix;
-    suffix.set_row(2, cplane);
-    glh::matrix4f newP = suffix * P;
+    glm::mat4 suffix;
+    suffix = glm::row(suffix, 2, cplane);
+    glm::mat4 newP = suffix * P;
     gGL.matrixMode(LLRender::MM_PROJECTION);
     gGL.pushMatrix();
-    gGL.loadMatrix(newP.m);
-    gGLObliqueProjectionInverse = LLMatrix4(newP.inverse().transpose().m);
+    gGL.loadMatrix(glm::value_ptr(newP));
+    gGLObliqueProjectionInverse = LLMatrix4(glm::value_ptr(glm::transpose(glm::inverse(newP))));
     gGL.matrixMode(LLRender::MM_MODELVIEW);
 }
 
@@ -2832,7 +2850,7 @@ LLGLDepthTest::LLGLDepthTest(GLboolean depth_enabled, GLboolean write_enabled, G
 : mPrevDepthEnabled(sDepthEnabled), mPrevDepthFunc(sDepthFunc), mPrevWriteEnabled(sWriteEnabled)
 {
     stop_glerror();
-
+    LL_PROFILE_ZONE_SCOPED_CATEGORY_PIPELINE;
     checkState();
 
     if (!depth_enabled)
@@ -2865,6 +2883,7 @@ LLGLDepthTest::LLGLDepthTest(GLboolean depth_enabled, GLboolean write_enabled, G
 
 LLGLDepthTest::~LLGLDepthTest()
 {
+    LL_PROFILE_ZONE_SCOPED_CATEGORY_PIPELINE;
     checkState();
     if (sDepthEnabled != mPrevDepthEnabled )
     {
@@ -2915,31 +2934,27 @@ void LLGLDepthTest::checkState()
 
 LLGLSquashToFarClip::LLGLSquashToFarClip()
 {
-    glh::matrix4f proj = get_current_projection();
+    glm::mat4 proj = get_current_projection();
     setProjectionMatrix(proj, 0);
 }
 
-LLGLSquashToFarClip::LLGLSquashToFarClip(glh::matrix4f& P, U32 layer)
+LLGLSquashToFarClip::LLGLSquashToFarClip(const glm::mat4& P, U32 layer)
 {
     setProjectionMatrix(P, layer);
 }
 
-
-void LLGLSquashToFarClip::setProjectionMatrix(glh::matrix4f& projection, U32 layer)
+void LLGLSquashToFarClip::setProjectionMatrix(glm::mat4 projection, U32 layer)
 {
-
     F32 depth = 0.99999f - 0.0001f * layer;
 
-    for (U32 i = 0; i < 4; i++)
-    {
-        projection.element(2, i) = projection.element(3, i) * depth;
-    }
+    glm::vec4 P_row_3 = glm::row(projection, 3) * depth;
+    projection = glm::row(projection, 2, P_row_3);
 
     LLRender::eMatrixMode last_matrix_mode = gGL.getMatrixMode();
 
     gGL.matrixMode(LLRender::MM_PROJECTION);
     gGL.pushMatrix();
-    gGL.loadMatrix(projection.m);
+    gGL.loadMatrix(glm::value_ptr(projection));
 
     gGL.matrixMode(last_matrix_mode);
 }

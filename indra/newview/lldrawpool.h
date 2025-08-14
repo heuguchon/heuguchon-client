@@ -38,6 +38,7 @@ class LLViewerFetchedTexture;
 class LLSpatialGroup;
 class LLDrawInfo;
 class LLVOAvatar;
+class LLGLSLShader;
 class LLMeshSkinInfo;
 
 class LLDrawPool
@@ -54,6 +55,7 @@ public:
         // based on fill rate and likelihood to occlude future passes (faster, large occluders first).
         //
         POOL_SKY = 1,
+        POOL_WATEREXCLUSION,
         POOL_WL_SKY,
         POOL_SIMPLE,
         POOL_FULLBRIGHT,
@@ -139,7 +141,7 @@ public:
         PASS_GRASS,
         PASS_FULLBRIGHT,
         PASS_FULLBRIGHT_RIGGED,
-        PASS_INVISIBLE,
+        PASS_INVISIBLE,                         // Formerly, invisiprims.  Now, water exclusion surfaces.
         PASS_INVISIBLE_RIGGED,
         PASS_INVISI_SHINY,
         PASS_INVISI_SHINY_RIGGED,
@@ -375,9 +377,9 @@ public:
 
     // push a single GLTF draw call
     static void pushGLTFBatch(LLDrawInfo& params);
-    static void pushRiggedGLTFBatch(LLDrawInfo& params, LLVOAvatar*& lastAvatar, U64& lastMeshId);
+    static void pushRiggedGLTFBatch(LLDrawInfo& params, const LLVOAvatar*& lastAvatar, U64& lastMeshId, bool& skipLastSkin);
     static void pushUntexturedGLTFBatch(LLDrawInfo& params);
-    static void pushUntexturedRiggedGLTFBatch(LLDrawInfo& params, LLVOAvatar*& lastAvatar, U64& lastMeshId);
+    static void pushUntexturedRiggedGLTFBatch(LLDrawInfo& params, const LLVOAvatar*& lastAvatar, U64& lastMeshId, bool& skipLastSkin);
 
     void pushMaskBatches(U32 type, bool texture = true, bool batch_textures = false);
     void pushRiggedMaskBatches(U32 type, bool texture = true, bool batch_textures = false);
@@ -386,6 +388,8 @@ public:
     void pushBumpBatch(LLDrawInfo& params, bool texture, bool batch_textures = false);
     static bool uploadMatrixPalette(LLDrawInfo& params);
     static bool uploadMatrixPalette(LLVOAvatar* avatar, LLMeshSkinInfo* skinInfo);
+    static bool uploadMatrixPalette(LLVOAvatar* avatar, LLMeshSkinInfo* skinInfo, const LLVOAvatar*& lastAvatar, U64& lastMeshId, bool& skipLastSkin);
+    static bool uploadMatrixPalette(LLVOAvatar* avatar, LLMeshSkinInfo* skinInfo, const LLVOAvatar*& lastAvatar, U64& lastMeshId, const LLGLSLShader*& lastAvatarShader, bool& skipLastSkin);
     virtual void renderGroup(LLSpatialGroup* group, U32 type, bool texture = true);
     virtual void renderRiggedGroup(LLSpatialGroup* group, U32 type, bool texture = true);
 };

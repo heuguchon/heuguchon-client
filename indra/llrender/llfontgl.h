@@ -90,6 +90,7 @@ public:
     bool loadFace(const std::string& filename, F32 point_size, const F32 vert_dpi, const F32 horz_dpi, bool is_fallback, S32 face_n);
 
     S32 getNumFaces(const std::string& filename);
+    S32 getCacheGeneration() const;
 
     S32 render(const LLWString &text, S32 begin_offset,
                 const LLRect& rect,
@@ -235,6 +236,7 @@ public:
     static F32 sHorizDPI;
     static F32 sScaleX;
     static F32 sScaleY;
+    static S32 sResolutionGeneration;
     static bool sDisplayFont ;
     static std::string sAppDir;         // For loading fonts
 
@@ -249,11 +251,8 @@ private:
     LLFontDescriptor mFontDescriptor;
     LLPointer<LLFontFreetype> mFontFreetype;
 
-    // <FS:Ansariel> Remove QUADS rendering mode
-    //void renderQuad(LLVector3* vertex_out, LLVector2* uv_out, LLColor4U* colors_out, const LLRectf& screen_rect, const LLRectf& uv_rect, const LLColor4U& color, F32 slant_amt) const;
-    void renderTriangle(LLVector3* vertex_out, LLVector2* uv_out, LLColor4U* colors_out, const LLRectf& screen_rect, const LLRectf& uv_rect, const LLColor4U& color, F32 slant_amt) const;
-    // </FS:Ansariel>
-    void drawGlyph(S32& glyph_count, LLVector3* vertex_out, LLVector2* uv_out, LLColor4U* colors_out, const LLRectf& screen_rect, const LLRectf& uv_rect, const LLColor4U& color, U8 style, ShadowType shadow, F32 drop_shadow_fade) const;
+    void renderTriangle(LLVector4a* vertex_out, LLVector2* uv_out, LLColor4U* colors_out, const LLRectf& screen_rect, const LLRectf& uv_rect, const LLColor4U& color, F32 slant_amt) const;
+    void drawGlyph(S32& glyph_count, LLVector4a* vertex_out, LLVector2* uv_out, LLColor4U* colors_out, const LLRectf& screen_rect, const LLRectf& uv_rect, const LLColor4U& color, U8 style, ShadowType shadow, F32 drop_shadow_fade) const;
 
     // Registry holds all instantiated fonts.
     static LLFontRegistry* sFontRegistry;
