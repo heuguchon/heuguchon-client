@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater min_width="300" name="floater_buy_contents" title="콘텐츠 구매">
+	<text name="contains_text">
+		&lt;nolink&gt;[NAME]&lt;/nolink&gt; 포함 항목:
+	</text>
+	<text name="buy_text">
+		[NAME]에서 [AMOUNT] L$에 구매하시겠습니까?
+	</text>
+	<button label="취소" label_selected="취소" name="cancel_btn" width="73"/>
+	<button label="구매" label_selected="구매" name="buy_btn"/>
+	<check_box label="옷 즉시 착용" name="wear_check"/>
+	<text name="no_copy_text">
+		(복사 불가)
+	</text>
+	<text name="no_modify_text">
+		(수정 불가)
+	</text>
+	<text name="no_transfer_text">
+		(양도 불가)
+	</text>
+</floater>

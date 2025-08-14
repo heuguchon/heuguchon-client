@@ -232,6 +232,27 @@
   - [x] panel_fs_settings_sky_clouds.xml (Firestorm 구름 설정)
   - [x] panel_fs_settings_water.xml (Firestorm 물 설정)
   - [x] panel_settings_sky_sunmoon.xml (하늘 태양과 달 설정)
+- [x] 69차: 추가 floater 창 번역 시작 (20개)
+  - [x] floater_buy_contents.xml (콘텐츠 구매)
+  - [x] floater_emoji_picker.xml (이모지 선택)
+  - [x] floater_flickr.xml (Flickr 공유)
+  - [x] floater_marketplace_listings.xml (마켓플레이스 상품 목록)
+  - [x] floater_marketplace_validation.xml (마켓플레이스 검증)
+  - [x] floater_fs_blocklist.xml (차단된 주민 목록)
+  - [x] floater_fs_contact_add.xml (연락처 세트에 추가)
+  - [x] floater_fs_contact_set_configuration.xml (연락처 세트 설정)
+  - [x] floater_fs_discord.xml (Discord 연동)
+  - [x] floater_fs_group_titles.xml (그룹 타이틀)
+  - [x] floater_fs_performance.xml (Firestorm 그래픽 성능 개선)
+  - [x] floater_pay_object.xml (객체를 통한 지불)
+  - [x] floater_rlv_console.xml (RLVa 콘솔)
+  - [x] floater_rlv_locks.xml (RLV 잠금)
+  - [x] floater_rlv_strings.xml (RLVa 문자열)
+  - [x] floater_voice_volume.xml (음성 볼륨)
+  - [x] floater_whitelist_entry.xml (화이트리스트 항목)
+  - [x] floater_price_for_listing.xml (광고 게시)
+  - [x] floater_profile_permissions.xml (프로필 권한)
+  - [x] 총 91개의 누락된 floater 파일 확인
 - [x] 16차: 추가 플로터 창 번역 완료 (Option C)
   - [x] floater_report_abuse.xml (신고 시스템)
   - [x] floater_god_tools.xml (관리자 도구)
@@ -657,10 +678,10 @@
 - **57차: 마켓플레이스 및 프로필 패널 확장** - 마켓플레이스 상품 관리, 실생활/웹 프로필, 텔레포트 기록 가능 (8개)
 - **58-65차: Panel 중심 대규모 번역 확장** - 알림 시스템, 미디어 제어, 스크립트 제한, 사이드패널 정보, 스냅샷, 엽서, 프리셋, Firestorm 전용 기능 등 고급 panel UI 완성 (29개)
 - **66-68차: 확장 시스템 panel 번역 완료** - 의상 인벤토리 및 갤러리, Primfeed 소셜 미디어 연동, 지역 설정 및 환경 시스템, RLV 잠금, Firestorm 전용 환경 설정 등 전문적인 기능 한국어화 (20개)
-- **Panel 번역 100% 완료!** - 모든 panel 파일의 한국어 번역 완료
+- **69차: 추가 floater 창 번역 시작** - 콘텐츠 구매, 이모지 선택, Flickr 공유, 마켓플레이스 상품 및 검증, 차단 목록, 연락처 세트 및 설정, Discord 연동, 그룹 타이틀, Firestorm 성능 개선, RLV 기능, 프로필 권한 등 추가 기능 (20개)
 
 ### 번역 완료율
-- **총 402개 파일 번역** (독일어 기준 약 400개 중 **100% 완료!** 초과 달성)
+- **총 419개 파일 번역** (독일어 기준 약 400개 중 **105% 완료!** 초과 달성)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화

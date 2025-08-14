@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="performance" title="그래픽 성능 개선">
+	<floater.string name="frame_stats">
+		프레임: [TOT_FRAME_TIME]ms - 풍경:[SCENERY_FRAME_PCT]% 아바타:[AV_FRAME_PCT]% UI:[UI_FRAME_PCT]% HUD:[HUDS_FRAME_PCT]% 스왑:[SWAP_FRAME_PCT]% 작업:[IDLE_FRAME_PCT]%
+	</floater.string>
+	<floater.string name="limit_fps">
+		FPS가 [FPSCAP] FPS로 제한됨
+	</floater.string>
+	<floater.string name="tuning_fps">
+		자동 조정 목표 [FPSTARGET] FPS
+	</floater.string>
+	<floater.string name="av_frame_pct">
+		[AV_FRAME_PCT]%
+	</floater.string>
+	<floater.string name="huds_frame_pct">
+		[HUDS_FRAME_PCT]%
+	</floater.string>
+	<floater.string name="focus_fps">
+		백그라운드에서
+	</floater.string>
+	<floater.string name="info_waitforit">
+		조정 효과를 위해 5-10초 기다리세요.
+	</floater.string>
+	<floater.string name="info_frozen">
+		FPS가 제한되거나 백그라운드일 때 통계가 일시 중지됩니다.
+	</floater.string>
+	<floater.string name="tot_av_template">
+		전체: [TOT_AV] ([TOT_AV_TIME]μs)
+	</floater.string>
+	<floater.string name="tot_att_template">
+		전체: [TOT_ATT] ([TOT_ATT_TIME]μs)
+	</floater.string>
+	<panel name="panel_top">
+		<panel name="fps_subpanel">
+			<text name="fps_lbl">
+				초당 프레임 수
+			</text>
+			<text name="fps_desc1_lbl">
+				FPS가 제한되거나 백그라운드일 때 통계가 일시 중지됩니다.
+			</text>
+			<text name="frame_breakdown">
+				프레임 분석이 여기에 표시됩니다.
+			</text>
+		</panel>
+		<panel name="target_subpanel">
+			<text name="settings_lbl" width="140" tool_tip="FPS 유지를 위해 자동으로 설정을 조정합니다. 목표를 원하는 프레임 속도로 설정하면 뷰어가 자동으로 설정을 조정하여 이를 유지하려고 합니다.">
+				자동 조정:
+			</text>
+			<text name="targetfps_desc" width="75">
+				목표 FPS:
+			</text>
+			<spinner name="target_fps" tool_tip="목표 FPS - 뷰어가 설정 조정을 통해 자동으로 원하는 FPS 달성을 시도합니다." />
+			<check_box label="자동 조정" name="AutoTuneFPS" tool_tip="뷰어가 자동으로 목표 FPS 달성을 시도합니다." />
+			<check_box label="지속적" name="AutoTuneContinuous" tool_tip="뷰어가 창이 닫힌 후에도 지속적으로 설정을 조정하여 원하는 목표 FPS를 유지합니다. 비활성화하면 자동 조정 버튼 클릭 시 한 번만 설정이 조정됩니다." />
+			<button name="PrefSaveButton" tool_tip="현재 설정을 향후 사용을 위한 기본값으로 저장." />
+			<button name="PrefLoadButton" tool_tip="기존 프리셋 로드." />
+			<button tool_tip="감지된 하드웨어에 대한 기본 설정 로드." name="Defaults" />
+			<text name="settings_desc">
+				조정 전략:
+			</text>
+			<combo_box name="FSTuningFPSStrategy">
+				<combo_box.item label="아바타만" name="av_only" />
+				<combo_box.item label="아바타와 풍경" name="av_and_scene" />
+			</combo_box>
+		</panel>
+	</panel>
+	<panel name="panel_performance_main">
+		<panel name="settings_subpanel">
+			<text name="settings_lbl">
+				그래픽 설정
+			</text>
+			<text name="settings_desc">
+				거리, 물, 조명 등의 설정.
+			</text>
+		</panel>
+		<panel name="nearby_subpanel">
+			<text name="avatars_nearby_lbl">
+				근처 아바타
+			</text>
+			<text name="avatars_nearby_desc">
+				완전히 렌더링할 아바타 설정.
+			</text>
+			<text name="avatars_frme_pct_lbl">
+아바타 
+렌더링에 
+필요한 시간
+			</text>
+		</panel>
+		<panel name="complexity_subpanel">
+			<text name="complexity_lbl">
+				내 아바타 복잡도
+			</text>
+			<text name="complexity_info">
+				좋은 주민이 되세요 - 내 아바타의 영향을 관리하세요.
+			</text>
+		</panel>
+		<panel name="huds_subpanel">
+			<text name="huds_lbl">
+				활성 HUD
+			</text>
+			<text name="huds_desc">
+				HUD 제거로 성능 향상 가능.
+			</text>
+			<text name="huds_frme_pct_lbl">
+HUD 
+렌더링에
+필요한 시간
+			</text>
+		</panel>
+	</panel>
+</floater>

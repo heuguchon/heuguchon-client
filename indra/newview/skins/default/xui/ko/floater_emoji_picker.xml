@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="emojipicker" title="이모지 선택">
+	<floater.string name="title_for_frequently_used" value="자주 사용"/>
+	<line_editor name="Filter" label="이모지 검색"/>
+	<text name="Dummy">이모지가 선택되지 않음</text>
+</floater>

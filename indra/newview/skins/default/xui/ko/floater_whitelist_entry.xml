@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="whitelist_entry" title="화이트리스트 항목">
+	<text name="media_label">
+		URL 또는 URL 패턴
+	</text>
+	<line_editor name="whitelist_entry" tool_tip="화이트리스트에 추가할 URL 또는 URL 패턴 입력"/>
+	<button label="확인" name="ok_btn"/>
+	<button label="취소" name="cancel_btn" width="80"/>
+</floater>

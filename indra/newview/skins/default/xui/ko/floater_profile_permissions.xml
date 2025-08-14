@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="profile_permissions">
+	<string name="description_string" value="[AGENT_NAME]에게 다음을 허용:" />
+	<text name="perm_description" value="주민에게 허용:"/>
+	<check_box name="online_check" label="내 온라인 상태 보기"/>
+	<check_box name="map_check" label="월드맵에서 나를 찾기"/>
+	<check_box name="objects_check" label="내 오브젝트 편집, 삭제 또는 가져가기"/>
+	<button name="perms_btn_ok" label="확인"/>
+	<button name="perms_btn_cancel" label="취소"/>
+</floater>

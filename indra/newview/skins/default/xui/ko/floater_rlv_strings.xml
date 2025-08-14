@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="rlva_strings" title="RLVa 문자열">
+	<panel name="bottom_panel">
+		<button label="기본값으로 재설정" name="default_btn" width="200"/>
+	</panel>
+</floater>

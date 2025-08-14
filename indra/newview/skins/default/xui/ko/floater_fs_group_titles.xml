@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="group_titles" title="그룹 타이틀">
+	<floater.string name="NoGroupTitle" value="&lt;타이틀 없음&gt;"/>
+	<filter_editor label="그룹 타이틀로 검색" name="filter_input"/>
+	<scroll_list name="title_list">
+		<column name="grouptitle" label="타이틀"/>
+		<column name="groupname" label="그룹"/>
+	</scroll_list>
+	<button tool_tip="사용 가능한 그룹 타이틀 목록 새로고침" name="btnRefresh"/>
+	<button name="btnInfo" label="정보" tool_tip="현재 선택된 타이틀 그룹의 정보 표시"/>
+	<button name="btnActivate" label="활성화" tool_tip="현재 선택된 그룹 타이틀 활성화"/>
+</floater>
