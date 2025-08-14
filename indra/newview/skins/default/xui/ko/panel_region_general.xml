@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="지역" name="General">
+	<text name="region_text_lbl">
+		지역:
+	</text>
+	<text name="region_text">
+		알 수 없음
+	</text>
+	<text name="estate_id_lbl">
+		부동산 ID:
+	</text>
+	<line_editor name="estate_id" initial_value="알 수 없음"/>
+	<text name="version_channel_text_lbl">
+		버전:
+	</text>
+	<text name="version_channel_text">
+		알 수 없음
+	</text>
+	<text name="grid_position_lbl">
+		그리드 위치:
+	</text>
+	<line_editor name="grid_position_x" default_text="해당 없음"/>
+	<line_editor name="grid_position_y" default_text="해당 없음"/>
+	<text name="region_type_lbl">
+		유형:
+	</text>
+	<text name="region_type">
+		알 수 없음
+	</text>
+	<check_box label="지형 편집 차단" name="block_terraform_check"/>
+	<check_box label="비행 차단" name="block_fly_check"/>
+	<check_box label="토지 상공 비행 차단" name="block_fly_over_check" tool_tip="토지 상공 비행을 방지하기 위해 접근 확인을 위쪽으로 확장"/>
+	<check_box label="데미지 허용" name="allow_damage_check"/>
+	<check_box label="밀기 제한" name="restrict_pushobject"/>
+	<check_box label="토지 재판매 허용" name="allow_land_resell_check"/>
+	<check_box label="토지 통합/분할 허용" name="allow_parcel_changes_check"/>
+	<check_box label="토지 검색 표시 차단" name="block_parcel_search_check" tool_tip="이 지역과 토지를 검색 결과에 표시되도록 허용"/>
+	<spinner label="아바타 한계" name="agent_limit_spin"/>
+	<spinner label="객체 보너스" name="object_bonus_spin"/>
+	<text label="등급" name="access_text">
+		등급:
+	</text>
+	<icons_combo_box label="보통" name="access_combo">
+		<icons_combo_box.item label="성인" name="Adult" value="42"/>
+		<icons_combo_box.item label="보통" name="Mature" value="21"/>
+		<icons_combo_box.item label="일반" name="PG" value="13"/>
+	</icons_combo_box>
+	<button label="적용" name="apply_btn"/>
+	<button label="한 거주자를 홈으로 텔레포트..." name="kick_btn"/>
+	<button label="모든 거주자를 홈으로 텔레포트..." name="kick_all_btn"/>
+	<button label="지역에 메시지 보내기..." name="im_btn"/>
+	<button label="텔레허브 관리..." name="manage_telehub_btn"/>
+	<button label="재시작 스케줄 관리..." name="manage_restart_btn"/>
+</panel>
