@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="사용자 정의" name="Media settings for controls">
+	<text name="controls_label">
+		컨트롤:
+	</text>
+	<combo_box name="controls">
+		<combo_item name="Standard">
+			표준
+		</combo_item>
+		<combo_item name="Mini">
+			미니
+		</combo_item>
+	</combo_box>
+	<text name="owner_label">
+		소유자
+	</text>
+	<check_box initial_value="false" label="네비게이션 및 상호작용 허용" name="perms_owner_interact"/>
+	<check_box initial_value="false" label="컨트롤 바 표시" name="perms_owner_control"/>
+	<text name="group_label">
+		그룹:
+	</text>
+	<check_box initial_value="false" label="네비게이션 및 상호작용 허용" name="perms_group_interact"/>
+	<check_box initial_value="false" label="컨트롤 바 표시" name="perms_group_control"/>
+	<text name="anyone_label">
+		모든 사람
+	</text>
+	<check_box initial_value="false" label="네비게이션 및 상호작용 허용" name="perms_anyone_interact"/>
+	<check_box initial_value="false" label="컨트롤 바 표시" name="perms_anyone_control"/>
+</panel>

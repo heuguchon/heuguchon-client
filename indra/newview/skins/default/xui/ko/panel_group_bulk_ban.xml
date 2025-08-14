@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel label="주민 차단" name="bulk_ban_panel">
+	<panel.string name="loading">
+		(로딩 중...)
+	</panel.string>
+	<panel.string name="ban_selection_too_large">
+		그룹 차단이 전송되지 않았습니다: 너무 많은 주민이 선택되었습니다. 그룹 차단은 요청당 100명으로 제한됩니다.
+	</panel.string>
+	<panel.string name="ban_not_permitted">
+		그룹 차단이 전송되지 않았습니다: '차단 목록 관리' 권한이 없습니다.
+	</panel.string>
+	<panel.string name="ban_limit_fail">
+		그룹 차단이 전송되지 않았습니다: 그룹이 가능한 그룹 차단 한도에 도달했습니다.
+	</panel.string>
+	<panel.string name="partial_ban">
+		일부 그룹 차단이 전송되지 않았습니다:
+[REASONS]
+	</panel.string>
+	<panel.string name="ban_failed">
+		그룹 차단이 전송되지 않았습니다:
+[REASONS]
+	</panel.string>
+	<panel.string name="residents_already_banned">
+		- 다음 주민들은 이미 차단되어 있습니다: [RESIDENTS].
+	</panel.string>
+	<panel.string name="ban_limit_reached">
+		- 차단 한도에 도달했습니다; 다음 주민들은 차단되지 않았습니다: [RESIDENTS].
+	</panel.string>
+	<panel.string name="cant_ban_yourself">
+		- 그룹에서 자기 자신을 차단할 수 없습니다.
+	</panel.string>
+	<text name="help_text">
+		여러 주민을 차단하려면 "주민 선택 열기"를 클릭하세요.
+	</text>
+	<button label="주민 선택 열기" name="add_button"/>
+	<name_list name="banned_agent_list" tool_tip="여러 이름을 선택하려면 CTRL 키를 누르고 주민 이름을 클릭하세요."/>
+	<button label="목록에서 선택된 항목 제거" name="remove_button" tool_tip="위에서 선택한 주민을 목록에서 제거합니다"/>
+	<button label="주민 차단" name="ban_button" />
+	<button label="취소" name="cancel_button" />
+	<string name="GroupBulkBan">
+		그룹 차단
+	</string>
+</panel>

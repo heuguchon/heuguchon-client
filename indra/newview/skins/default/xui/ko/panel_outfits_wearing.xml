@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="Wearing">
+	<panel.string name="no_attachments">
+		착용한 어태치먼트가 없습니다.
+	</panel.string>
+	<accordion name="wearables_accordion">
+		<accordion_tab name="tab_wearables" title="착용 가능한 객체"/>
+		<accordion_tab name="tab_temp_attachments" title="임시 어태치먼트"/>
+	</accordion>
+	<panel name="bottom_panel">
+		<menu_button name="options_gear_btn" tool_tip="추가 옵션 표시"/>
+		<text name="avatar_complexity_label">
+			복잡도: [WEIGHT]
+		</text>
+	</panel>
+</panel>

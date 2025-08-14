@@ -159,6 +159,13 @@
   - [x] panel_fs_search_legacy_web.xml (웹 검색)
   - [x] panel_fs_settings_sky_sunmoon.xml (Firestorm 하늘 설정 - 태양과 달)
   - [x] panel_fs_performance_preferences.xml (Firestorm 성능 환경설정)
+- [x] 56차: 고급 패널 UI 확장 완료 (6개)
+  - [x] panel_group_bulk_ban.xml (그룹 대량 차단)
+  - [x] panel_media_settings_permissions.xml (미디어 권한 설정)
+  - [x] panel_outfits_wearing.xml (현재 착용 중인 의상)
+  - [x] panel_place_profile.xml (장소 프로필)
+  - [x] panel_script_experience.xml (스크립트 경험)
+  - [x] panel_sound_devices.xml (사운드 장치)
 - [x] 16차: 추가 플로터 창 번역 완료 (Option C)
   - [x] floater_report_abuse.xml (신고 시스템)
   - [x] floater_god_tools.xml (관리자 도구)
@@ -580,9 +587,10 @@
 - **53차: 경험 시스템 및 소셜 미디어 패널** - 경험 목록 에디터, 경험 로그, 경험 검색, Flickr 계정 및 사진 공유 (6개)
 - **54차: Firestorm 전용 기능 확장 패널** - Firestorm 연락처 친구/그룹/세트, NUI 로그인, 성능 자동 조정, HUD 관리 (6개)
 - **55차: 검색 시스템 및 성능 설정 확장** - 분류광고/이벤트/토지/웹 검색, 태양과 달 설정, 성능 환경설정 (6개)
+- **56차: 고급 패널 UI 확장** - 그룹 대량 차단, 미디어 권한, 착용 중 의상, 장소 프로필, 스크립트 경험, 사운드 장치 (6개)
 
 ### 번역 완료율
-- **총 289개 파일 번역** (독일어 기준 약 400개 중 약 72.3%)
+- **총 295개 파일 번역** (독일어 기준 약 400개 중 약 73.8%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화
