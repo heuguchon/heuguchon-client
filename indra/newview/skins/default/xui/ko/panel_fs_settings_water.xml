@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel label="물" name="panel_fs_settings_water">
+	<panel name="P_Wave_Fog">
+		<text name="water_fog_label" tool_tip="물 안개 색상: 물 덩어리의 색상을 변경합니다. 안개가 없으면 물이 투명하고 무색으로 나타납니다.">
+			물 안개 색상
+		</text>
+		<text name="normal_map_label" tool_tip="노멀 맵: 반사와 굴절을 결정하는데 사용되는 이미지.">
+			노멀 맵
+		</text>
+	</panel>
+
+	<panel name="P_Wave_Fog_2" label="안개">
+		<text name="density_exponent_label">
+			밀도 지수:
+		</text>
+		<text name="underwater_modifier_label">
+			수중 수정자:
+		</text>
+		<text name="FresnelScaleText">
+			프레넬 크기:
+		</text>
+		<text name="FresnelOffsetText">
+			프레넬 오프셋:
+		</text>
+	</panel>
+
+	<panel name="P_Water_Wave">
+		<text name="large_wave_speed_label">
+			큰 파도 속도:
+		</text>
+		<text name="small_wave_speed_label">
+			작은 파도 속도:
+		</text>
+		<text name="reflection_wavelet_scale_label">
+			파도 반사 크기:
+		</text>
+		<slider label="X:" name="water_normal_scale_x"/>
+		<slider label="Y:" name="water_normal_scale_y"/>
+		<slider label="Z:" name="water_normal_scale_z"/>
+	</panel>
+
+	<panel name="P_Water_Reflection">
+		<text name="refraction_scale_above_label" width="165">
+			굴절 크기 (수면 위):
+		</text>
+		<slider name="water_scale_above" width="105"/>
+		<text name="refraction_scale_below_label" width="165">
+			굴절 크기 (수면 아래):
+		</text>
+		<slider name="water_scale_below" width="105"/>
+		<text name="blur_multiplier_label" width="165">
+			흐림 배수:
+		</text>
+		<slider name="water_blur_multip" width="105"/>
+	</panel>
+</panel>

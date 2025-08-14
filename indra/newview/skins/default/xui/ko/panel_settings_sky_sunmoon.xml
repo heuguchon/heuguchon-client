@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="태양과 달" name="panel_settings_sky_hbodies">
+	<layout_stack name="main_ls">
+		<layout_panel name="sun_layout">
+			<text name="sun_stars_label">
+				태양 &amp; 별
+			</text>
+			<check_box label="비콘 표시" name="sunbeacon" right="-80"/>
+			<text name="position_label">
+				위치:
+			</text>
+			<text name="image_label">
+				이미지 &amp; 크기:
+			</text>
+			<text name="color_label">
+				색상:
+			</text>
+			<text name="sun_azimuth_label">
+				방위각:
+			</text>
+			<text name="sun_elevation_label">
+				고도각:
+			</text>
+			<text name="glow_focus_label">
+				빛 초점:
+			</text>
+			<text name="glow_size_label">
+				빛 크기:
+			</text>
+			<text name="star_brightness_label">
+				별 밝기:
+			</text>
+		</layout_panel>
+		<layout_panel name="moon_layout">
+			<text name="moon_label">
+				달
+			</text>
+			<check_box label="비콘 표시" name="moonbeacon" right="-80"/>
+			<text name="position_label">
+				위치:
+			</text>
+			<text name="moon_image_label">
+				이미지 &amp; 크기:
+			</text>
+			<text name="moon_azimuth_label">
+				방위각:
+			</text>
+			<text name="moon_elevation_label">
+				고도각:
+			</text>
+			<text name="brightness_label">
+				밝기:
+			</text>
+		</layout_panel>
+	</layout_stack>
+</panel>
