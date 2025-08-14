@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="Animation Preview">
+	<floater.string name="failed_to_initialize">
+		모션을 초기화할 수 없습니다
+	</floater.string>
+	<floater.string name="anim_too_long">
+		애니메이션 파일은 [LENGTH]초입니다.
+
+최대 허용 시간은 [MAX_LENGTH]초입니다.
+	</floater.string>
+	<floater.string name="failed_file_read">
+		애니메이션 파일을 읽을 수 없습니다.
+
+[STATUS]
+	</floater.string>
+	<floater.string name="E_ST_OK">
+		확인
+	</floater.string>
+	<floater.string name="E_ST_EOF">
+		불완전한 파일
+	</floater.string>
+	<floater.string name="E_ST_NO_CONSTRAINT">
+		제약 조건 정의를 읽을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_FILE">
+		BVH 파일을 열 수 없습니다
+	</floater.string>
+	<floater.string name="E_ST_NO_HIER">
+		잘못된 HIERARCHY 헤더.
+	</floater.string>
+	<floater.string name="E_ST_NO_JOINT">
+		ROOT 또는 JOINT를 찾을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_NAME">
+		JOINT 이름을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_OFFSET">
+		OFFSET을 찾을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_CHANNELS">
+		CHANNELS을 찾을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_ROTATION">
+		회전 순서를 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_AXIS">
+		회전 축을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_MOTION">
+		MOTION을 찾을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_FRAMES">
+		프레임 수를 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_FRAME_TIME">
+		프레임 시간을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_POS">
+		위치 값을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_ROT">
+		회전 값을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_FILE">
+		파일을 열 수 없습니다
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_HEADER">
+		번역 헤더를 읽을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_NAME">
+		번역 이름을 읽을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_IGNORE">
+		무시 값을 읽을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_RELATIVE">
+		상대 값을 읽을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_OUTNAME">
+		출력 이름 값을 읽을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_MATRIX">
+		번역 매트릭스를 읽을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_MERGECHILD">
+		병합 자식 이름을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_MERGEPARENT">
+		병합 부모 이름을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_PRIORITY">
+		우선순위 값을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_LOOP">
+		루프 값을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_EASEIN">
+		easeIn 값을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_EASEOUT">
+		easeOut 값을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_HAND">
+		손 변형 값을 가져올 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_NO_XLT_EMOTE">
+		감정 표현 이름을 읽을 수 없습니다.
+	</floater.string>
+	<floater.string name="E_ST_BAD_ROOT">
+		잘못된 루트 관절 이름, &quot;hip&quot;을 사용하세요.
+	</floater.string>
+	<floater.string name="FS_report_frames">
+		[F]프레임  [S]초  [FPS]FPS
+	</floater.string>
+	<text name="name_label">
+		이름:
+	</text>
+	<text name="description_label">
+		설명:
+	</text>
+	<spinner label="우선순위" name="priority" tool_tip="이 애니메이션으로 재정의할 수 있는 다른 애니메이션을 제어합니다"/>
+	<check_box label="루프" name="loop_check" tool_tip="이 애니메이션을 루프로 재생합니다"/>
+	<text name="frames_label">
+		300프레임 30초 10FPS
+	</text>
+	<spinner label="시작 (%)" name="loop_in_point" tool_tip="애니메이션이 루프로 돌아가는 지점 설정"/>
+	<spinner label="끝 (%)" name="loop_out_point" tool_tip="애니메이션이 루프를 중지하는 지점 설정"/>
+	<spinner label="시작 (프레임)" name="loop_in_frames" tool_tip="애니메이션이 루프로 돌아가는 지점 설정 (프레임)"/>
+	<spinner label="끝 (프레임)" name="loop_out_frames" tool_tip="애니메이션이 루프를 중지하는 지점 설정 (프레임)"/>
+	<text name="hand_label">
+		손 자세
+	</text>
+	<combo_box name="hand_pose_combo" tool_tip="애니메이션 도중 손의 동작을 제어합니다">
+		<combo_box.item label="펼치기" name="Spread"/>
+		<combo_box.item label="편안함" name="Relaxed"/>
+		<combo_box.item label="양손 가리키기" name="PointBoth"/>
+		<combo_box.item label="주먹" name="Fist"/>
+		<combo_box.item label="왼손 편안함" name="RelaxedLeft"/>
+		<combo_box.item label="왼쪽 가리키기" name="PointLeft"/>
+		<combo_box.item label="왼손 주먹" name="FistLeft"/>
+		<combo_box.item label="오른손 편안함" name="RelaxedRight"/>
+		<combo_box.item label="오른쪽 가리키기" name="PointRight"/>
+		<combo_box.item label="오른손 주먹" name="FistRight"/>
+		<combo_box.item label="오른손 경례" name="SaluteRight"/>
+		<combo_box.item label="타이핑" name="Typing"/>
+		<combo_box.item label="오른손 평화" name="PeaceRight"/>
+	</combo_box>
+	<text name="emote_label">
+		표현
+	</text>
+	<combo_box name="emote_combo" tool_tip="애니메이션 도중 얼굴 표정을 제어합니다">
+		<item label="(없음)" name="[None]"/>
+		<item label="아아아" name="Aaaaah"/>
+		<item label="무서움" name="Afraid"/>
+		<item label="화남" name="Angry"/>
+		<item label="활짝 웃음" name="BigSmile"/>
+		<item label="지루함" name="Bored"/>
+		<item label="울음" name="Cry"/>
+		<item label="경멸" name="Disdain"/>
+		<item label="당황" name="Embarrassed"/>
+		<item label="찌푸림" name="Frown"/>
+		<item label="키스" name="Kiss"/>
+		<item label="웃음" name="Laugh"/>
+		<item label="메롱" name="Plllppt"/>
+		<item label="역겨움" name="Repulsed"/>
+		<item label="슬픔" name="Sad"/>
+		<item label="어깨 으쓱" name="Shrug"/>
+		<item label="미소" name="Smile"/>
+		<item label="놀람" name="Surprise"/>
+		<item label="윙크" name="Wink"/>
+		<item label="걱정" name="Worry"/>
+	</combo_box>
+	<text name="preview_label">
+		미리보기:
+	</text>
+	<combo_box name="preview_base_anim" tool_tip="아바타가 일반적인 움직임을 하는 동안 애니메이션의 동작을 테스트해볼 수 있습니다.">
+		<item label="서기" name="Standing"/>
+		<item label="걷기" name="Walking"/>
+		<item label="앉기" name="Sitting"/>
+		<item label="날기" name="Flying"/>
+	</combo_box>
+	<spinner label="페이드 인 (초)" name="ease_in_time" tool_tip="애니메이션 페이드 인 시간(초)"/>
+	<spinner label="페이드 아웃 (초)" name="ease_out_time" tool_tip="애니메이션 페이드 아웃 시간(초)"/>
+	<button name="play_btn" tool_tip="애니메이션 재생"/>
+	<button name="pause_btn" tool_tip="애니메이션 일시 정지"/>
+	<button name="stop_btn" tool_tip="애니메이션 중지"/>
+	<text name="bad_animation_text">
+		애니메이션 파일을 읽을 수 없습니다. Poser 4에서 내보낸 BVH 파일을 권장합니다.
+	</text>
+    <button label="파일 다시 로드" name="reload_btn"/>
+	<button label="업로드 (L$[AMOUNT])" name="ok_btn"/>
+	<button label="취소" name="cancel_btn"/>
+</floater>

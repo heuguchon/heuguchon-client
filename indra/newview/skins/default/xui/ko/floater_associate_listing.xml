@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="associate listing" title="목록 연결">
+	<text name="message">목록 ID:</text>
+	<line_editor name="listing_id">ID를 여기에 입력</line_editor>
+	<button label="확인" name="OK"/>
+	<button label="취소" name="Cancel"/>
+</floater>

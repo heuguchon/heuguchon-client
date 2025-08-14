@@ -192,9 +192,30 @@
   - [x] floater_select_key.xml - (키 선택)
   - [x] floater_simple_snapshot.xml - (간단한 스크린샷)
   - [x] floater_task_properties.xml - (아이템 속성)
-- [x] 28차: UI 도구 및 유틸리티 (3개)
+- [x] 28차: UI 도구 및 유틸리티 (2개)
   - [x] floater_ui_preview.xml - (XUI 미리보기 도구)
   - [x] floater_url_entry.xml - (URL 입력)
+- [x] 29차: 핵심 패널 UI 번역 시작 (4개)
+  - [x] panel_login.xml - (로그인 패널)
+  - [x] panel_main_inventory.xml - (메인 인벤토리 패널)
+  - [x] panel_people.xml - (사람 패널)
+  - [x] panel_places.xml - (장소 패널)
+- [x] 30차: 환경설정 및 문자열 파일 (2개)
+  - [x] panel_preferences_general.xml - (일반 환경설정)
+  - [x] teleport_strings.xml - (텔레포트 메시지)
+- [x] 31차: 추가 플로터 창 번역 (10개)
+  - [x] floater_360capture.xml - (360도 사진)
+  - [x] floater_add_payment_method.xml - (결제 수단 추가)
+  - [x] floater_ban_duration.xml - (차단 기간)
+  - [x] floater_buy_contents.xml - (콘텐츠 구매)
+  - [x] floater_camera_presets.xml - (카메라 프리셋)
+  - [x] floater_change_item_thumbnail.xml - (아이템 이미지 변경)
+  - [x] floater_combobox_ok_cancel.xml - (콤보박스 확인/취소)
+  - [x] floater_conversation_preview.xml - (대화 미리보기)
+  - [x] floater_critical.xml - (중요한 메시지)
+  - [x] floater_animation_anim_preview.xml - (애니메이션 미리보기)
+- [x] 32차: 애니메이션 시스템 (1개 대용량)
+  - [x] floater_animation_bvh_preview.xml - (BVH 애니메이션 미리보기 - 7.5KB)
 - [ ] 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -220,7 +241,7 @@
 - 프로젝트 구조 분석
 - 작업 계획 수립
 - ko 폴더 생성
-- **핵심 파일 135개 번역 완료:**
+- **핵심 파일 152개 번역 완료:**
   - strings.xml (기본 문자열)
   - floater_about.xml (정보 창)
   - menu_login.xml (로그인 메뉴)
@@ -392,7 +413,7 @@
 - **28차: UI 도구 및 유틸리티** - XUI 미리보기 도구, URL 입력
 
 ### 번역 완료율
-- **총 135개 파일 번역** (독일어 기준 약 400개 중 약 33.8%)
+- **총 152개 파일 번역** (독일어 기준 약 400개 중 약 38.0%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화

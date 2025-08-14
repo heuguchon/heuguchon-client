@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Side tray panel -->
+<panel label="사람" name="people_panel">
+	<string name="no_recent_people" value="아무도 없습니다."/>
+	<string name="no_filtered_recent_people" value="원하는 것을 찾지 못하셨나요? [secondlife:///app/search/people/[SEARCH_TERM] 검색]을 시도해보세요."/>
+	<string name="no_one_near" value="근처에 아무도 없습니다. 사람들을 찾으신가요? [secondlife:///app/search/people 검색]이나 [secondlife:///app/worldmap 지도]를 사용해보세요."/>
+	<string name="no_one_filtered_near" value="원하는 것을 찾지 못하셨나요? [secondlife:///app/search/people/[SEARCH_TERM] 검색]을 시도해보세요."/>
+	<string name="no_friends_online" value="온라인 친구 없음"/>
+	<string name="no_friends" value="친구 없음"/>
+	<string name="no_friends_msg">
+		누군가를 친구로 추가하려면 해당 아바타나 이름을 오른쪽 클릭하세요.
+
+더 많은 사람들이 있는 장소를 찾으시나요?
+
+[secondlife:///app/floater/destinations 목적지]에는 그리드 운영자가 선별한 장소들이 있습니다.
+
+[secondlife:///app/search/ 검색]으로 특정 키워드로 그리드를 검색할 수 있습니다.
+	</string>
+	<string name="no_filtered_friends_msg">
+		원하는 것을 찾지 못하셨나요? [secondlife:///app/search/people/[SEARCH_TERM] 검색]을 시도해보세요.
+	</string>
+	<string name="no_filtered_groups_msg" value="원하는 것을 찾지 못하셨나요? [secondlife:///app/search/groups/[SEARCH_TERM] 그룹 검색]을 시도해보세요."/>
+	<string name="no_groups_msg" value="그룹을 찾으시나요? [secondlife:///app/search/groups 검색]을 시도해보세요.">
+		당신은 어떤 그룹의 멤버도 아닙니다.
+
+[https://community.secondlife.com/knowledgebase/joining-and-participating-in-groups-r51/ 그룹]에 대해 알아보세요.
+	</string>
+	<string name="MiniMapToolTipMsg" value="[REGION] (더블클릭하여 지도 열기, Shift 키를 누른 채 드래그하여 패닝)"/>
+	<string name="AltMiniMapToolTipMsg" value="[REGION] (더블클릭하여 텔레포트, Shift 키를 누른 채 드래그하여 패닝)"/>
+	<string name="GroupCountWithInfo" value="당신은 [COUNT]개 그룹에 속해 있고, [REMAINING]개 더 가입할 수 있습니다. [secondlife:/// 한도 늘리기]"/>
+	<string name="empty_list">
+		이 연락처 세트가 비어 있습니다.
+	</string>
+	<string name="no_sets">
+		연락처 세트 없음
+	</string>
+	<string name="all_sets">
+		모든 연락처 세트
+	</string>
+	<string name="pseudonyms">
+		별명
+	</string>
+	<string name="AllFriendsTitle">
+		전체 ([ALL])
+	</string>
+	<string name="OnlineFriendsTitle">
+		온라인 ([ONLINE])
+	</string>
+	<tab_container name="tabs">
+		<panel label="근처" name="nearby_panel">
+			<panel label="bottom_panel" name="nearby_buttons_panel">
+				<filter_editor label="사람 필터" name="nearby_filter_input"/>
+				<button name="gear_btn" tool_tip="선택한 사람에 대한 동작"/>
+				<menu_button name="nearby_view_btn" tool_tip="보기/정렬 옵션"/>
+				<button name="add_friend_btn" tool_tip="거주민에게 친구 요청하기"/>
+				<dnd_button name="nearby_del_btn" tool_tip="선택한 사람을 친구에서 제거"/>
+			</panel>
+		</panel>
+		<panel label="친구" name="friends_panel">
+			<tab_container name="friends_accordion">
+				<panel name="tab_online" title="온라인"/>
+				<panel name="tab_all" title="전체"/>
+				<panel name="tab_suggested_friends" title="친구 추천"/>
+			</tab_container>
+			<panel label="bottom_panel" name="friends_buttons_panel">
+				<filter_editor label="사람 필터" name="friends_filter_input"/>
+				<button name="gear_btn" tool_tip="선택한 사람에 대한 동작"/>
+				<menu_button name="friends_view_btn" tool_tip="보기/정렬 옵션"/>
+				<button name="friends_add_btn" tool_tip="거주민에게 친구 요청하기"/>
+				<button name="GlobalOnlineStatusToggle" tool_tip="온라인 상태 표시 전역 전환"/>
+				<dnd_button name="friends_del_btn" tool_tip="선택한 사람을 친구에서 제거"/>
+			</panel>
+				<accordion_tab name="tab_suggested_friends" title="친구 후보"/>
+		</panel>
+		<panel label="그룹" name="groups_panel">
+			<panel label="bottom_panel" name="groups_buttons_panel">
+				<filter_editor label="그룹 필터" name="groups_filter_input"/>
+				<menu_button name="groups_gear_btn" tool_tip="선택한 그룹에 대한 동작"/>
+				<menu_button name="groups_view_btn" tool_tip="보기/정렬 옵션"/>
+				<menu_button name="plus_btn" tool_tip="그룹 가입/새 그룹 만들기"/>
+				<dnd_button name="minus_btn" tool_tip="선택한 그룹 탈퇴"/>
+			</panel>
+			<text name="groupcount">
+				당신은 [COUNT]개 그룹에 속해 있습니다 ([REMAINING]개 남음).
+			</text>
+		</panel>
+		<panel label="최근" name="recent_panel">
+			<panel label="bottom_panel" name="recent_buttons_panel">
+				<filter_editor label="사람 필터" name="recent_filter_input"/>
+				<button name="gear_btn" tool_tip="선택한 사람에 대한 동작"/>
+				<menu_button name="recent_view_btn" tool_tip="보기/정렬 옵션"/>
+				<button name="add_friend_btn" tool_tip="거주민에게 친구 요청하기"/>
+				<dnd_button name="recent_del_btn" tool_tip="선택한 사람을 친구에서 제거"/>
+			</panel>
+		</panel>
+		<panel label="차단됨" name="blocked_panel">
+			<panel label="차단된 거주민 및 객체" name="panel_block_list_sidetray"/>
+		</panel>
+		<panel label="연락처 세트" name="contact_sets_panel">
+			<panel label="연락처 세트" name="panel_people_contacts_sidetray"/>
+		</panel>
+	</tab_container>
+</panel>

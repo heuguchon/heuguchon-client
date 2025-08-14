@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="preview_conversation" title="대화:">
+	<floater.string name="Title">
+		대화: [NAME]
+	</floater.string>
+	<text name="page_label" value="페이지"/>
+	<button name="open_external_btn" tool_tip="외부 창에서 채팅 기록 열기"/>
+	<button name="search_btn" tool_tip="채팅 기록 검색"/>
+</floater>

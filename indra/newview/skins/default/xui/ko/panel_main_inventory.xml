@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="기타" name="main inventory panel">
+	<panel.string name="ItemcountFetching">
+		인벤토리 ([ITEM_COUNT]개 아이템 가져오는 중... [FILTER]
+	</panel.string>
+	<panel.string name="ItemcountCompleted">
+		[ITEM_COUNT]개 아이템 [FILTER]
+	</panel.string>
+	<panel.string name="ItemcountUnknown">
+		[ITEM_COUNT]개 아이템 가져옴 [FILTER]
+	</panel.string>
+	<panel.string name="inventory_title">인벤토리</panel.string>
+	<layout_stack name="top_stack">
+		<layout_panel name="nav_buttons">
+			<button name="back_btn" tool_tip="뒤로"/>
+			<button name="forward_btn" tool_tip="앞으로"/>
+			<button name="up_btn" tool_tip="상위 폴더로"/>
+		</layout_panel>
+		<layout_panel name="filter_panel">
+			<filter_editor label="인벤토리 필터" name="inventory search editor" tool_tip="'+'로 구분하여 하나 이상의 검색어 입력"/>
+		</layout_panel>
+	</layout_stack>
+	<layout_stack name="ctrl_stack">
+		<layout_panel name="collapse_expand_buttons">
+			<button name="collapse_btn" label="접기" />
+			<button name="expand_btn" label="펼치기" />
+		</layout_panel>
+		<layout_panel name="filter_ctrls">
+			<text name="filter_label" value="필터:"/>
+			<combo_box name="filter_combo_box" width="100">
+				<combo_box.item value="filter_type_all" label="모든 유형" />
+				<combo_box.item value="filter_separator" label="------------" enabled="false" />
+				<combo_box.item value="filter_type_animations" label="애니메이션" />
+				<combo_box.item value="filter_type_calling_cards" label="명함" />
+				<combo_box.item value="filter_type_clothing" label="의상 / 신체 부위" />
+				<combo_box.item value="filter_type_gestures" label="제스처" />
+				<combo_box.item value="filter_type_landmarks" label="랜드마크" />
+				<combo_box.item value="filter_type_notecards" label="노트카드" />
+				<combo_box.item value="filter_type_objects" label="객체" />
+				<combo_box.item value="filter_type_scripts" label="스크립트" />
+				<combo_box.item value="filter_type_sounds" label="사운드" />
+				<combo_box.item value="filter_type_textures" label="텍스처" />
+				<combo_box.item value="filter_type_snapshots" label="사진" />
+				<combo_box.item value="filter_type_materials" label="머티리얼" />
+				<combo_box.item value="filter_type_settings" label="설정" />
+				<combo_box.item value="filter_type_folders" label="폴더" />
+				<combo_box.item value="filter_type_coalesced" label="연결된 객체만"/>
+				<combo_box.item value="filter_type_custom" label="사용자 정의..." />
+			</combo_box>
+			<menu_button name="options_visibility_btn" tool_tip="검색 결과의 표시 설정 보기"/>
+		</layout_panel>
+	</layout_stack>
+	<panel name="default_inventory_panel">
+		<tab_container name="inventory filter tabs">
+			<inventory_panel label="인벤토리" name="All Items"/>
+			<recent_inventory_panel label="최근" name="Recent Items"/>
+			<worn_inventory_panel label="착용 중" name="Worn Items"/>
+			<favorites_inventory_panel label="즐겨찾기" name="Favorite Items"/>
+		</tab_container>
+	</panel>
+	<panel name="bottom_panel">
+		<panel name="options_gear_btn_panel">
+			<menu_button name="options_gear_btn" tool_tip="추가 옵션 보기"/>
+		</panel>
+		<panel name="add_btn_panel">
+			<button name="add_btn" tool_tip="새 객체 추가"/>
+		</panel>
+		<panel name="new_inventory_panel">
+			<button name="new_inv_btn" tool_tip="추가 인벤토리 창"/>
+		</panel>
+		<panel name="show_filters_panel">
+			<button name="show_filters_inv_btn" tool_tip="필터 표시 - 선택하면 필터 창이 표시됩니다. 필터가 활성화되면 강조 표시됩니다."/>
+		</panel>
+		<panel name="view_mode_panel">
+			<button name="view_mode_btn" tool_tip="보기 모드 전환"/>
+		</panel>
+		<panel name="dummy_panel">
+			<text name="ItemcountText" tool_tip="[ITEMS]개 객체, [CATEGORIES]개 폴더">
+				아이템
+			</text>
+		</panel>
+		<panel name="trash_btn_panel">
+			<dnd_button name="trash_btn" tool_tip="선택 항목 삭제"/>
+		</panel>
+	</panel>
+</panel>

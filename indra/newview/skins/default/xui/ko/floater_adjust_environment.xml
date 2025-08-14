@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="env_adjust_snapshot" title="개인 조명">
+	<string name="hdr_string">
+		HDR 스케일링:
+	</string>
+	<string name="brightness_string">
+		밝기:
+	</string>
+	<string name="hdr_tooltip">
+		현실적인 빛나는 하늘과 동적 노출 같은 노출 효과의 강도. 1.0이 표준, 0은 끄기, 0과 1 사이의 값은 환경을 HDR과 혼합합니다.
+	</string>
+	<layout_stack name="outer_stack">
+		<layout_panel name="env_controls">
+			<layout_stack name="settings_stack">
+				<layout_panel name="lp_1">
+					<text name="ambient_lbl">
+						환경광:
+					</text>
+					<text name="blue_horizon_lbl">
+						푸른 수평선:
+					</text>
+					<text name="blue_density_lbl">
+						푸른 밀도:
+					</text>
+					<button label="리셋" name="btn_reset" tool_tip="닫기 및 공유 환경으로 리셋"/>
+					<text name="sun_color_lbl">
+						태양 색상:
+					</text>
+					<text name="cloud_color_lbl">
+						구름 색상:
+					</text>
+					<text name="cloud_map_label">
+						구름 맵:
+					</text>
+					<text name="water_map_label">
+						물 맵:
+					</text>
+				</layout_panel>
+				<layout_panel name="lp_2">
+					<text name="haze_horizon_label">
+						안개 수평선:
+					</text>
+					<text name="haze_density_label">
+						안개 밀도:
+					</text>
+					<text name="cloud_coverage_label">
+						구름 덮개:
+					</text>
+					<text name="cloud_scale_label">
+						구름 스케일:
+					</text>
+					<text name="reflection_probe_ambiance_label">
+						반사 프로브 환경:
+					</text>
+					<slider name="probe_ambiance" tool_tip="환경 기반 간접 조명의 강도. 0에서는 HDR 스케일이 밝기로 변경됩니다."/>
+					<text name="scene_gamma_label">
+						밝기:
+					</text>
+				</layout_panel>
+				<layout_panel name="lp_3">
+					<text name="label">
+						태양:
+					</text>
+					<text name="scale_label">
+						스케일:
+					</text>
+					<text name="glow_focus_label">
+						글로우 초점:
+					</text>
+					<text name="glow_size_label">
+						글로우 크기:
+					</text>
+					<text name="star_brightness_label">
+						별 밝기:
+					</text>
+					<text name="sun_azimuth_label">
+						방위각:
+					</text>
+					<text name="sun_elevation_label">
+						고도각:
+					</text>
+					<check_box label="비컨 표시" name="sunbeacon"/>
+				</layout_panel>
+				<layout_panel name="lp_4">
+					<text name="label">
+						달:
+					</text>
+					<text name="moon_azimuth_label">
+						방위각:
+					</text>
+					<text name="moon_elevation_label">
+						고도각:
+					</text>
+					<check_box label="비컨 표시" name="moonbeacon"/>
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+	</layout_stack>
+</floater>

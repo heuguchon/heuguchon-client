@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="change_item_thumbnail" title="이미지 변경">
+	<floater.string name="multiple_item_names">
+		여러 아이템 선택됨
+	</floater.string>
+	<floater.string name="title_item_thumbnail">
+		아이템 이미지 변경
+	</floater.string>
+	<floater.string name="title_folder_thumbnail">
+		폴더 이미지 변경
+	</floater.string>
+	<floater.string name="tooltip_upload_local">
+		컴퓨터에서 업로드
+	</floater.string>
+	<floater.string name="tooltip_upload_snapshot">
+		사진 찍기
+	</floater.string>
+	<floater.string name="tooltip_use_texture">
+		텍스처 선택
+	</floater.string>
+	<floater.string name="tooltip_copy_to_clipboard">
+		클립보드에 복사
+	</floater.string>
+	<floater.string name="tooltip_paste_from_clipboard">
+		클립보드에서 붙여넣기
+	</floater.string>
+	<floater.string name="tooltip_remove_image">
+		이미지 제거
+	</floater.string>
+	<text name="multiple_lbl">
+		여러 이미지
+	</text>
+</floater>

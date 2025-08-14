@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="BeamCreator" title="선택 빔 형태 편집기">
+	<text name="beamcreator_text">
+새로운 선택 빔을 만들려면, 왼쪽 마우스 버튼을
+클릭하여 선택한 색상으로 점을 설정하세요.
+오른쪽 마우스 버튼을 클릭하면
+점을 제거합니다.
+	</text>
+	<color_swatch label="빔 색상" name="beam_color_swatch" tool_tip="클릭하여 색상 선택기 열기"/>
+	<button label="저장" name="beamshape_save"/>
+	<button label="로드" name="beamshape_load"/>
+	<button label="지우기" name="beamshape_clear"/>
+	<button label="취소" name="cancel"/>
+</floater>
