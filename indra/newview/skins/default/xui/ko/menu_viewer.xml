@@ -1,0 +1,744 @@
+<?xml version="1.0" ?>
+<menu_bar name="Main Menu">
+	<menu label="아바타" name="Me">
+		<menu_item_call label="계정" name="Manage Account">
+			<menu_item_call.on_click name="ManageMyAccount_url" parameter="WebLaunchJoinNow,http://secondlife.com/account/index.php?lang=de"/>
+		</menu_item_call>
+		<menu_item_call label="마켓플레이스 상품..." name="MarketplaceListings"/>
+		<menu_item_call label="L$ 구매" name="Buy and Sell L$"/>
+		<menu_item_call label="[Membership]" name="Membership">
+			<menu_item_call.on_click function="Advanced.ShowURL" parameter="https://secondlife.com/my/account/membership.php?lang=de-DE"/>
+		</menu_item_call>
+
+		<menu_item_check label="인벤토리" name="Inventory"/>
+		<menu_item_call label="새 인벤토리 창" name="NewInventoryWindow"/>
+		<menu_item_check label="보호된 폴더" name="Protected Folders"/>
+		<menu_item_check label="의상 즐겨찾기" name="WearableFavorites"/>
+		<menu_item_call label="추천" name="Picks"/>
+		<menu_item_call label="경험" name="Experiences"/>
+		<menu_item_call label="프로필" name="Profile"/>
+		<menu_item_check label="현재 의상" name="NowWearing"/>
+		<menu_item_check label="의상" name="ChangeOutfit"/>
+		<menu label="벗기" name="Take Off &gt;">
+			<menu label="의류" name="Clothes &gt;">
+				<menu_item_call label="셔츠" name="Shirt"/>
+				<menu_item_call label="바지" name="Pants"/>
+				<menu_item_call label="치마" name="Skirt"/>
+				<menu_item_call label="신발" name="Shoes"/>
+				<menu_item_call label="양말" name="Socks"/>
+				<menu_item_call label="재킷" name="Jacket"/>
+				<menu_item_call label="장갑" name="Gloves"/>
+				<menu_item_call label="속옷(상의)" name="Self Undershirt"/>
+				<menu_item_call label="속옷(하의)" name="Self Underpants"/>
+				<menu_item_call label="타투" name="Self Tattoo"/>
+				<menu_item_call label="피지컬" name="Self Physics"/>
+				<menu_item_call label="알파" name="Self Alpha"/>
+				<menu_item_call label="모든 의류" name="All Clothes"/>
+			</menu>
+			<menu label="HUD" name="Avatar Detach HUD"/>
+			<menu label="착용품" name="Avatar Detach"/>
+			<menu_item_call label="모든 착용품 떼기" name="Detach All"/>
+			<menu_item_call label="선택한 착용품 제거" name="Remove Selected Attachments"/>
+		</menu>
+		<menu_item_call label="아바타 선택" name="Avatar Picker"/>
+		<menu_item_call label="공중부양 높이" name="HoverHeight"/>
+		<menu label="움직임" name="Movement">
+			<menu_item_call label="여기 앉기" name="Sit Down Here"/>
+			<menu_item_call label="일어서기" name="Stand up"/>
+			<menu_item_check label="비행" name="Fly"/>
+			<menu_item_check label="항상 뛰기" name="Always Run"/>
+			<menu_item_check label="강제 착석" name="Force Toggle Sitting"/>
+			<menu_item_check label="이동잠금" name="Move Lock"/>
+		</menu>
+		<menu_item_check label="조작" name="Movement Controls"/>
+		<menu_item_check label="카메라 조작" name="Camera Controls"/>
+		<menu label="아바타 상태" name="avhealth">
+			<menu_item_call label="아바타 애니메이션 중지" name="Stop Animating My Avatar"/>
+			<menu_item_call label="아바타 애니메이션 중지 &amp; 스크립트 권한 박탈" name="Stop Animating My Avatar With Revoke"/>
+			<menu_item_call label="아바타 변형 해제" name="undeform_avatar"/>
+			<menu_item_call label="골격 리셋" name="Reset Skeleton"/>
+			<menu_item_call label="골격과 애니메이션 리셋" name="Reset Skeleton And Animations"/>
+			<menu_item_call label="외모 갱신 (Rebake)" name="Rebake Texture"/>
+			<menu_item_call label="착용품 새로고침" name="Refresh Attachments"/>
+			<menu_item_call label="남성 기본 아바타로 리셋" name="ResetDefaultAvM"/>
+			<menu_item_call label="여성 기본 아바타로 리셋" name="ResetDefaultAvF"/>
+			<menu_item_check label="아바타 복잡성 정보 표시" name="Avatar Draw Info"/>
+			<menu_item_call label="스크립트" name="MyScripts"/>
+			<menu_item_call label="지연 측정기" name="Lag Meter"/>
+			<menu_item_call label="LSL 브릿지 재생성" name="Recreate LSL Bridge"/>
+		</menu>
+		<menu_item_call label="사진 찍기" name="Take Snapshot"/>
+		<menu_item_call label="360도 사진" name="Capture 360"/>
+		<menu_item_call label="돈 추적기" name="money_tracker"/>
+		<menu_item_call label="포즈 스탠드..." name="pose_stand"/>
+		<menu_item_check label="포저" name="Poser"/>
+		<menu_item_call label="환경설정" name="Preferences"/>
+		<menu_item_call label="도구 모음 버튼" name="Toolbar Buttons"/>
+		<menu_item_check label="HUD 착용품 표시" name="Show HUD Attachments"/>
+		<menu_item_check label="사용자 인터페이스 표시" name="Show User Interface"/>
+		<menu_item_call label="관리자 상태 요청" name="Request Admin Options"/>
+		<menu_item_call label="관리자 상태 나가기" name="Leave Admin Options"/>
+		<menu_item_call label="[APP_NAME] 종료" name="Quit"/>
+	</menu>
+	<menu label="소통" name="Communicate">
+		<menu_item_call label="친구" name="My Friends"/>
+		<menu_item_check label="연락처" name="Contacts"/>
+		<menu_item_call label="연락처 세트" name="Contact Sets"/>
+		<menu_item_call label="그룹" name="My Groups"/>
+		<menu_item_check label="근처 채팅" name="Nearby Chat"/>
+        <menu_item_check label="사람" name="People"/>
+		<!--
+        <menu_item_call label="텔레포트 기록" name="Teleport History"/>
+        <menu_item_check label="장소" name="Places"/>
+		-->
+        <menu_item_check label="대화" name="Conversations"/>
+        <menu label="온라인 상태" name="Status">
+            <menu_item_check label="자리비움" name="Away"/>
+            <menu_item_check label="방해 금지" name="Do Not Disturb"/>
+            <menu_item_check label="자동 응답" name="Set Autorespond"/>
+            <menu_item_check label="비친구에게 자동 응답" name="Set Autorespond to non-friends"/>
+            <menu_item_check label="텔레포트 제안과 요청 거절" name="Automatically reject teleport offers"/>
+            <menu_item_check label="모든 그룹 초대 거절" name="Reject all group invites"/>
+            <menu_item_check label="모든 친구 요청 거절" name="Reject all friendship requests"/>
+        </menu>
+        <menu_item_check label="제스처" name="Gestures"/>
+		<menu_item_call label="트위터..." name="Twitter"/>
+		<menu_item_call label="플리커..." name="Flickr"/>
+		<menu_item_call label="프림피드..." name="Primfeed"/>
+		<menu_item_call label="디스코드..." name="Discord"/>
+		<menu_item_check label="제스처..." name="Gestures"/>
+		<menu_item_check label="대화 기록..." name="Conversation Log..."/>
+		<menu_item_check label="근처 음성" name="Nearby Voice"/>
+		<menu_item_call label="차단 목록" name="Block List"/>
+		<menu_item_check label="화면 콘솔 표시" name="Show On-screen Console"/>
+	</menu>
+	<menu label="세계" name="World">
+		<menu_item_call label="애니메이션 재동기화" name="Resync Animations"/>
+		<menu_item_call label="근처 아바타" name="Active Speakers"/>
+		<menu_item_check label="레이더" name="Radar"/>
+		<menu_item_call label="텔레포트 기록" name="Teleport History"/>
+		<menu_item_check label="장소" name="Places"/>
+		<menu_item_call label="목적지" name="Destinations"/>
+		<menu_item_call label="이벤트" name="Events"/>
+		<menu_item_check label="미니맵" name="Mini-Map"/>
+		<menu_item_check label="세계지도" name="World Map"/>
+		<menu_item_check label="지역 추적기" name="Region Tracker"/>
+		<menu_item_check label="스트림 제목" name="Stream Title"/>
+		<menu_item_call label="이곳을 랜드마크로" name="Create Landmark Here"/>
+		<menu_item_call label="장소 프로필" name="Place Profile"/>
+		<menu_item_call label="토지 정보" name="About Land"/>
+		<menu_item_call label="지역/부동산" name="RegionEstate"/>
+		<menu_item_call label="이 토지 구매" name="Buy Land"/>
+		<menu_item_call label="내 토지" name="My Land"/>
+		<menu_item_call label="내 린든 홈" name="Linden Home"/>
+		<menu label="표시" name="LandShow">
+			<menu_item_check label="금지선 숨김" name="Hide Ban Lines"/>
+			<menu_item_check label="충돌시 금지선 표시" name="Show Ban Lines On Collision"/>
+			<menu_item_check label="근접시 금지선 표시" name="Show Ban Lines On Proximity"/>
+			<menu_item_check label="비콘" name="beacons"/>
+			<menu_item_check label="구획 경계" name="Property Lines"/>
+			<menu_item_check label="토지 소유자" name="Land Owners"/>
+			<menu_item_check label="좌표" name="Coordinates"/>
+			<menu_item_check label="구획 속성" name="Parcel Properties"/>
+			<menu_item_check label="고급 메뉴 표시" name="Show Advanced Menu"/>
+		</menu>
+		<menu_item_check label="그래픽 성능 향상..." name="Performance"/>
+		<menu_item_call label="집으로 텔레포트" name="Teleport Home"/>
+		<menu_item_call label="이곳을 집으로 설정" name="Set Home to Here"/>
+		<menu label="환경" name="Environment">
+			<menu_item_check label="일출" name="Sunrise"/>
+			<menu_item_check label="정오" name="Noon"/>
+			<menu_item_check label="정오 (레거시)" name="legacy noon"/>
+			<menu_item_check label="일몰" name="Sunset"/>
+			<menu_item_check label="자정" name="Midnight"/>
+			<menu_item_check label="공유 환경 사용" name="Use Shared Environment"/>
+			<menu_item_call label="내 환경..." name="my_environs"/>
+			<menu_item_call label="개인 조명..." name="adjustment_tool"/>
+			<menu_item_check label="구름 일시정지" name="pause_clouds"/>
+			<menu label="대량 가져오기" name="WL Bulk Import">
+				<menu_item_call label="낮 설정..." name="WL Bulk Import Days"/>
+				<menu_item_call label="하늘 설정..." name="WL Bulk Import Skies"/>
+				<menu_item_call label="물 설정..." name="WL Bulk Import Water"/>
+			</menu>
+		</menu>
+		<menu label="사진과 비디오" name="photo_and_video">
+			<menu_item_call label="포토툴" name="phototools_item_call"/>
+			<menu_item_call label="카메라툴" name="cameratools_item_call"/>
+			<menu_item_check label="초점심도 포커스 고정" name="lock_focus_point"/>
+			<menu_item_check label="초점심도 포커스 십자선 표시" name="render_focus_point"/>
+		</menu>
+		<menu_item_call label="영역 검색" name="area_search"/>
+		<menu_item_call label="사운드 탐색기" name="Sound Explorer"/>
+		<menu_item_call label="애니메이션 탐색기" name="Animation Explorer"/>
+		<menu_item_call label="애셋 블랙리스트" name="asset_blacklist"/>
+		<menu_item_call label="아바타 렌더링 설정" name="Avatar Render Settings"/>
+		<menu label="아바타 표시" name="AvatarComplexityMode">
+			<menu_item_check label="복잡성 제한" name="complexity_limit_everone"/>
+			<menu_item_check label="친구는 항상 표시" name="complexity_always_show_friends"/>
+			<menu_item_check label="친구만 표시" name="complexity_only_show_friends"/>
+		</menu>
+		<menu_item_check label="친구만 렌더링" name="Render Friends Only"/>
+	</menu>
+	<menu label="건축" name="BuildTools">
+		<menu_item_check label="건축" name="Show Build Tools"/>
+		<menu label="건축 도구 선택" name="Select Tool">
+			<menu_item_call label="집중" name="Focus"/>
+			<menu_item_call label="이동" name="Move"/>
+			<menu_item_call label="편집" name="Edit"/>
+			<menu_item_call label="생성" name="Create"/>
+			<menu_item_call label="땅" name="Land"/>
+		</menu>
+		<menu_item_call label="연결" name="Link"/>
+		<menu_item_call label="연결 해제" name="Unlink"/>
+		<menu_item_check label="연결된 부분 편집" name="Edit Linked Parts"/>
+		<menu label="요소 선택" name="Select Elements">
+			<menu_item_call label="다음 부분 또는 면 선택" name="Select Next Part or Face"/>
+			<menu_item_call label="이전 부분 또는 면 선택" name="Select Previous Part or Face"/>
+			<menu_item_call label="다음 부분 또는 면 포함" name="Include Next Part or Face"/>
+			<menu_item_call label="이전 부분 또는 면 포함" name="Include Previous Part or Face"/>
+		</menu>
+		<menu_item_call label="선택에 집중" name="Focus on Selection"/>
+		<menu_item_call label="선택으로 줌" name="Zoom to Selection"/>
+		<menu label="객체" name="Object">
+			<menu_item_call label="구매" name="Menu Object Buy"/>
+			<menu_item_call label="가져가기" name="Menu Object Take"/>
+			<menu_item_call label="복사본 가져가기" name="Take Copy"/>
+			<menu_item_call label="복제" name="Duplicate"/>
+			<menu_item_call label="파티클 편집" name="Menu Object Edit Particles"/>
+			<menu_item_call label="객체 콘텐츠에 다시 저장" name="Save Object Back to Object Contents"/>
+			<menu_item_call label="소유자에게 객체 반환" name="Return Object back to Owner"/>
+			<menu label="다른 형식으로 저장" name="Export Menu">
+				<menu_item_call label="백업" name="Backup"/>
+				<menu_item_call label="Collada" name="Collada"/>
+			</menu>
+		</menu>
+		<menu label="스크립트" name="Scripts">
+			<menu_item_call label="스크립트 경고/오류 표시" name="Script Debug"/>
+			<menu_item_call label="스크립트 정보 (카운터)" name="Script Info"/>
+			<menu_item_call label="스크립트 재컴파일 (Mono)" name="Mono"/>
+			<menu_item_call label="스크립트 재컴파일 (LSL)" name="LSL"/>
+			<menu_item_call label="스크립트 리셋" name="Reset Scripts"/>
+			<menu_item_call label="스크립트를 실행으로 설정" name="Set Scripts to Running"/>
+			<menu_item_call label="스크립트를 정지로 설정" name="Set Scripts to Not Running"/>
+			<menu_item_call label="선택에서 스크립트 제거" name="Remove Scripts From Selection"/>
+		</menu>
+		<menu label="패스파인딩" name="Pathfinding">
+			<menu_item_call label="지역 객체" name="pathfinding_linksets_menu_item"/>
+			<menu_item_call label="캐릭터..." name="pathfinding_characters_menu_item"/>
+			<menu_item_call label="표시/테스트..." name="pathfinding_console_menu_item"/>
+			<menu_item_call label="지역 재구성" name="pathfinding_rebake_navmesh_item"/>
+		</menu>
+		<menu label="옵션" name="Options">
+			<menu_item_check label="고급 권한 표시" name="DebugPermissions"/>
+			<menu_item_check label="내 객체만 선택" name="Select Only My Objects"/>
+			<menu_item_check label="이동 가능 객체만 선택" name="Select Only Movable Objects"/>
+			<menu_item_check label="잠긴 객체만 선택" name="Select Only Locked Objects"/>
+			<menu_item_check label="복사 가능 객체만 선택" name="Select Only Copyable Objects"/>
+			<menu_item_check label="그룹 객체 포함" name="Include Group-Owned Objects"/>
+			<menu_item_check label="보이지 않는 객체 선택" name="Select Invisible Objects"/>
+			<menu_item_check label="반사 프로브 선택" name="Select Reflection Probes"/>
+			<menu_item_check label="프로브 업데이트" name="Probe Updates"/>
+			<menu_item_check label="주변으로 선택" name="Select By Surrounding"/>
+			<menu_item_check label="편집시 물리 형태 표시" name="Show Physics Shape"/>
+			<menu_item_check label="선택 윤곽선 표시" name="Show Selection Outlines"/>
+			<menu_item_check label="숨겨진 선택 표시" name="Show Hidden Selection"/>
+			<menu_item_check label="선택에 대한 조명 반경 표시" name="Show Light Radius for Selection"/>
+			<menu_item_check label="반사 프로브 볼륨 표시" name="Show Reflection Probe Volumes"/>
+			<menu_item_check label="선택 빔 표시" name="Show Selection Beam"/>
+			<menu_item_check label="투명하게 강조" name="Highlight Transparent"/>
+			<menu_item_check label="- 투명 리그드 메쉬 포함" name="Include Transparent Rigged"/>
+			<menu_item_check label="후처리 없음" name="No Post"/>
+			<menu_item_check label="격자에 맞춤" name="Snap to Grid"/>
+			<menu_item_call label="객체 XY를 격자에 맞춤" name="Snap Object XY to Grid"/>
+			<menu_item_call label="격자에 선택 사용" name="Use Selection for Grid"/>
+			<menu_item_call label="격자 옵션..." name="Grid Options"/>
+			<menu_item_call label="기본 권한 설정..." name="Set default permissions"/>
+		</menu>
+		<menu label="업로드" name="Upload">
+			<menu_item_call label="이미지..." name="Upload Image"/>
+			<menu_item_call label="사운드 ([COST] L$)..." name="Upload Sound"/>
+			<menu_item_call label="애니메이션 ([COST] L$)..." name="Upload Animation"/>
+			<menu_item_call label="모델..." name="Upload Model"/>
+			<menu_item_call label="머티리얼..." name="Upload Material"/>
+			<menu_item_call label="대량 업로드..." name="Bulk Upload"/>
+			<menu_item_call label="링크셋 가져오기..." name="import linkset"/>
+		</menu>
+		<menu_item_call label="로컬 메쉬" name="local_mesh" />
+		<menu_item_call label="되돌리기" name="Undo"/>
+		<menu_item_call label="다시 실행" name="Redo"/>
+		<menu_item_call label="로컬 비트맵 브라우저" name="Local Bitmap Browser"/>
+	</menu>
+	<menu label="콘텐츠" name="Content">
+		<menu_item_check label="검색" name="Search"/>
+		<menu_item_check label="SL 마켓플레이스" name="SL Marketplace"/>
+		<menu_item_check label="L$ 환율" name="LindenXchange"/>
+		<menu_item_check label="스크립트 라이브러리" name="Script Library"/>
+		<menu_item_call label="SL 커뮤니티 (블로그, 포럼, 뉴스)" name="SL Community Pages"/>
+		<menu_item_call label="오늘의 메시지" name="Firestorm MoTD"/>
+	</menu>
+	<menu label="도움말" name="Help">
+		<menu_item_check label="힌트 활성화" name="Enable Hints"/>
+		<menu_item_call label="Firestorm 위키" name="Firestorm Wiki"/>
+		<menu_item_call label="문제 해결" name="Troubleshooting"/>
+		<menu_item_call label="Firestorm 지원 그룹 가입" name="firestorm_support_group"/>
+		<menu_item_call label="Firestorm 클래스 일정표" name="Firestorm Classes Schedule"/>
+		<menu_item_call label="Firestorm 이벤트 캘린더" name="Firestorm Events Calendar"/>
+		<menu_item_check label="사용법..." name="How To"/>
+		<menu_item_call label="[CURRENT_GRID] 도움말" name="current_grid_help"/>
+		<menu_item_call label="[CURRENT_GRID] 정보" name="current_grid_about"/>
+		<menu_item_call label="허용 목록 지원" name="whitelist_folders"/>
+		<menu_item_call label="그리드 상태 확인" name="Grid Status"/>
+		<menu_item_call label="남용 신고" name="Report Abuse"/>
+		<menu_item_call label="문제 신고" name="Report Bug"/>
+		<menu_item_call label="충돌, 밀어내기 &amp; 타격" name="Bumps, Pushes &amp;amp; Hits"/>
+		<menu_item_check label="시스템 정보 버튼 활성화" name="Enable Sysinfo Button"/>
+		<menu_item_call label="[APP_NAME] 정보" name="About Second Life"/>
+	</menu>
+	<menu label="RLVa" name="RLVa Main">
+		<menu label="디버그" name="Debug">
+			<menu_item_check label="메뉴바에 RLVa 메뉴 표시" name="Show Top-level RLVa Menu"/>
+			<menu_item_check label="디버그 메시지 표시" name="Show Debug Messages"/>
+			<menu_item_check label="해제 또는 중복 메시지 숨김" name="Hide Unset or Duplicate Messages"/>
+			<menu_item_check label="어서션 오류 표시" name="Show Assertion Failures"/>
+			<menu_item_check label="잠긴 레이어 숨김" name="Hide Locked Layers"/>
+			<menu_item_check label="잠긴 착용품 숨김" name="Hide Locked Attachments"/>
+			<menu_item_check label="레거시 명명법 사용" name="Enable Legacy Naming"/>
+			<menu_item_check label="공유 착용 활성화" name="Enable Shared Wear"/>
+			<menu_item_check label="착용시 공유 아이템 이름변경" name="Rename Shared Items on Wear"/>
+			<menu_item_check label="잠금..." name="Locks"/>
+		</menu>
+		<menu_item_check label="OOC 채팅 허용" name="Allow OOC Chat"/>
+		<menu_item_check label="필터링된 채팅 표시" name="Show Filtered Chat"/>
+		<menu_item_check label="리디렉션 채팅 타이핑 표시" name="Show Redirected Chat Typing"/>
+		<menu_item_check label="긴 리디렉션 채팅 분할" name="Split Long Redirected Chat"/>
+		<menu_item_check label="임시 착용품 허용" name="Allow Temporary Attachments"/>
+		<menu_item_check label="#RLV 폴더 제공 금지" name="Forbid Give to #RLV"/>
+		<menu_item_check label="착용시 잠겨지지 않은 의류 교체" name="Wear Replaces Unlocked"/>
+		<menu_item_check label="콘솔" name="Console"/>
+		<menu_item_check label="제한..." name="Restrictions"/>
+		<menu_item_check label="문자열..." name="Strings"/>
+	</menu>
+	<menu label="고급" name="Advanced">
+		<menu_item_call label="텍스처 새로고침" name="Rebake Texture"/>
+		<menu_item_call label="착용품 새로고침" name="Refresh Attachments"/>
+		<menu_item_call label="UI 크기를 기본값으로" name="Set UI Size to Default"/>
+		<menu_item_call label="창 크기 설정..." name="Set Window Size..."/>
+		<menu_item_check label="선택 거리 제한" name="Limit Select Distance"/>
+		<menu_item_check label="카메라 거리 제한 해제" name="Disable Camera Distance"/>
+		<menu_item_check label="고해상도 사진 저장" name="HighResSnapshot"/>
+		<menu_item_check label="조용히 디스크에 사진 저장" name="QuietSnapshotsToDisk"/>
+		<menu label="성능 도구" name="Performance Tools">
+			<menu_item_call label="지연 측정기" name="Lag Meter"/>
+			<menu_item_check label="통계 막대" name="Statistics Bar"/>
+			<menu_item_check label="씬 로딩 통계" name="Scene Load Statistics"/>
+			<menu_item_check label="그래픽 성능 향상..." name="Performance"/>
+			<menu_item_check label="아바타 복잡성 정보 표시" name="Avatar Draw Info"/>
+		</menu>
+		<menu label="하이라이트와 가시성" name="Highlighting and Visibility">
+			<menu_item_check label="맥박치는 비콘" name="Cheesy Beacon"/>
+			<menu_item_check label="파티클 숨김" name="Hide Particles"/>
+			<menu_item_check label="선택 숨김" name="Hide Selected"/>
+			<menu_item_check label="마우스룩 십자선 표시" name="ShowCrosshairs"/>
+			<menu label="호버 팁" name="Hover Tips">
+				<menu_item_check label="팁 표시" name="Show Tips"/>
+				<menu_item_check label="토지 팁" name="Land Tips"/>
+				<menu_item_check label="모든 객체에 팁" name="Tips On All Objects"/>
+			</menu>
+		</menu>
+		<menu label="렌더링 유형" name="Rendering Types">
+			<menu_item_check label="단순" name="Rendering Type Simple"/>
+			<menu_item_check label="머티리얼" name="Rendering Type Materials"/>
+			<menu_item_check label="알파 마스크" name="Rendering Type Alpha Mask"/>
+			<menu_item_check label="풀브라이트 알파 마스크" name="Rendering Type Fullbright Alpha Mask"/>
+			<menu_item_check label="글로우" name="Rendering Type Glow"/>
+			<menu_item_check label="풀브라이트" name="Rendering Type Fullbright"/>
+			<menu_item_check label="알파" name="Rendering Type Alpha"/>
+			<menu_item_check label="나무" name="Rendering Type Tree"/>
+			<menu_item_check label="아바타" name="Rendering Type Character"/>
+			<menu_item_check label="애니메시" name="Rendering Type Control Avatar"/>
+			<menu_item_check label="서페이스 패치" name="Rendering Type Surface Patch"/>
+			<menu_item_check label="하늘" name="Rendering Type Sky"/>
+			<menu_item_check label="물" name="Rendering Type Water"/>
+			<menu_item_check label="볼륨" name="Rendering Type Volume"/>
+			<menu_item_check label="풀" name="Rendering Type Grass"/>
+			<menu_item_check label="구름" name="Rendering Type Clouds"/>
+			<menu_item_check label="파티클" name="Rendering Type Particles"/>
+			<menu_item_check label="범프" name="Rendering Type Bump"/>
+		</menu>
+		<menu label="렌더링 기능" name="Rendering Features">
+			<menu_item_check label="UI" name="ToggleUI"/>
+			<menu_item_check label="선택됨" name="Selected"/>
+			<menu_item_check label="강조됨" name="Highlighted"/>
+			<menu_item_check label="동적 텍스처" name="Dynamic Textures"/>
+			<menu_item_check label="발 그림자" name="Foot Shadows"/>
+			<menu_item_check label="안개" name="Fog"/>
+			<menu_item_check label="FRInfo 테스트" name="Test FRInfo"/>
+			<menu_item_check label="유연한 객체" name="Flexible Objects"/>
+		</menu>
+		<menu label="RLVa" name="RLVa Embedded">
+			<menu label="디버그" name="Debug">
+				<menu_item_check label="메뉴바에 RLVa 메뉴 표시" name="Show Top-level RLVa Menu"/>
+				<menu_item_check label="디버그 메시지 표시" name="Show Debug Messages"/>
+				<menu_item_check label="해제 또는 중복 메시지 숨김" name="Hide Unset or Duplicate Messages"/>
+				<menu_item_check label="어서션 오류 표시" name="Show Assertion Failures"/>
+				<menu_item_check label="레거시 명명법 사용" name="Enable Legacy Naming"/>
+				<menu_item_check label="공유 착용 활성화" name="Enable Shared Wear"/>
+				<menu_item_check label="착용시 공유 아이템 이름변경" name="Rename Shared Items on Wear"/>
+				<menu_item_check label="잠금..." name="Locks"/>
+			</menu>
+			<menu_item_check label="잠긴 레이어 숨김" name="Hide Locked Layers"/>
+			<menu_item_check label="잠긴 착용품 숨김" name="Hide Locked Attachments"/>
+			<menu_item_check label="OOC 채팅 허용" name="Allow OOC Chat"/>
+			<menu_item_check label="#RLV 폴더 제공 금지" name="Forbid Give to #RLV"/>
+			<menu_item_check label="필터링된 채팅 표시" name="Show Filtered Chat"/>
+			<menu_item_check label="이름 태그 표시" name="Show Name Tags"/>
+			<menu_item_check label="착용시 잠겨지지 않은 의류 교체" name="Wear Replaces Unlocked"/>
+			<menu_item_check label="제한..." name="Restrictions"/>
+		</menu>
+		<menu label="미디어 스트림 백업" name="media_stream_import_export">
+			<menu_item_call label="미디어 스트림 XML 가져오기..." name="media_stream_import"/>
+			<menu_item_call label="미디어 스트림을 XML로 내보내기..." name="media_stream_export"/>
+		</menu>
+		<menu_item_check label="플러그인 읽기 스레드 사용" name="Use Plugin Read Thread"/>
+		<menu_item_call label="그룹 캐시 지우기" name="ClearGroupCache"/>
+		<menu_item_check label="부드러운 마우스 움직임" name="Mouse Smoothing"/>
+		<menu_item_call label="키 해제" name="Release Keys"/>
+		<menu label="단축키" name="Shortcuts">
+			<menu_item_check label="검색" name="Search"/>
+			<menu_item_call label="키 해제" name="Release Keys"/>
+			<menu_item_call label="UI 크기를 기본값으로" name="Set UI Size to Default"/>
+			<menu_item_check label="더블클릭 텔레포트" name="DoubleClick Teleport"/>
+            <menu_item_check label="항상 뛰기" name="Always Run"/>
+            <menu_item_check label="비행" name="Fly"/>
+			<menu_item_call label="창 닫기" name="Close Window"/>
+			<menu_item_call label="창 그룹 닫기" name="Close Window Group"/>
+			<menu_item_call label="모든 창 닫기" name="Close All Windows"/>
+			<menu_item_call label="디스크에 사진 저장" name="Snapshot to Disk"/>
+			<menu_item_call label="마우스룩" name="Mouselook"/>
+			<menu_item_check label="조이스틱 플라이캠" name="Joystick Flycam"/>
+			<menu_item_call label="시점 리셋" name="Reset View"/>
+			<menu_item_call label="카메라 각도 리셋" name="Reset Camera Angles"/>
+			<menu_item_call label="마지막 대화자 보기" name="Look at Last Chatter"/>
+			<menu_item_call label="확대" name="Zoom In"/>
+			<menu_item_call label="기본 줌" name="Zoom Default"/>
+			<menu_item_call label="축소" name="Zoom Out"/>
+		</menu>
+		<menu_item_check label="비행 제한 무시" name="Fly Override"/>
+		<menu_item_check label="RestrainedLove API" name="RLV API"/>
+		<menu_item_call label="디버그 설정 표시" name="Debug Settings"/>
+		<menu_item_check label="개발자 메뉴 표시" name="Debug Mode"/>
+	</menu>
+	<menu label="개발자" name="Develop">
+		<menu label="콘솔" name="Consoles">
+			<menu_item_check label="텍스처" name="Texture Console"/>
+			<menu_item_check label="디버그 창" name="Debug Console"/>
+			<menu_item_call label="알림" name="Notifications"/>
+			<menu_item_check label="빠른 타이머" name="Fast Timers"/>
+			<menu_item_check label="메모리" name="Memory"/>
+			<menu_item_check label="씬 통계" name="Scene Statistics"/>
+			<menu_item_check label="씬 로딩 모니터" name="Scene Loading Monitor"/>
+			<menu_item_check label="지역 디버그 콘솔" name="Region Debug Console"/>
+			<menu_item_call label="지역 정보를 디버그 창에" name="Region Info to Debug Console"/>
+			<menu_item_call label="그룹 정보를 디버그 창에" name="Group Info to Debug Console"/>
+			<menu_item_call label="능력 정보를 디버그 창에" name="Capabilities Info to Debug Console"/>
+			<menu_item_check label="카메라" name="Camera"/>
+			<menu_item_check label="바람" name="Wind"/>
+			<menu_item_check label="시야각" name="FOV"/>
+			<menu_item_check label="배지" name="Badge"/>
+		</menu>
+		<menu label="정보 표시" name="Display Info">
+			<menu_item_check label="시간 표시" name="Show Time"/>
+			<menu_item_check label="업로드 트랜잭션 표시" name="Show Upload Transaction"/>
+			<menu_item_check label="텍스처 정보 표시" name="Show Texture Info"/>
+			<menu_item_call label="객체당 VRAM 사용량" name="VRAM usage per object"/>
+			<menu_item_check label="아바타 렌더 정보 표시" name="Show Avatar Render Info"/>
+			<menu_item_check label="렌더 정보 표시" name="Show Render Info"/>
+			<menu_item_check label="행렬 표시" name="Show Matrices"/>
+			<menu_item_check label="커서 아래 색상 표시" name="Show Color Under Cursor"/>
+			<menu_item_check label="메모리 표시" name="Show Memory"/>
+			<menu_item_check label="객체 업데이트 표시" name="Show Updates"/>
+		</menu>
+		<menu label="프로파일링/텔레메트리" name="Enable / Disable telemetry capture">
+			<menu_item_check label="프로파일링" name="Profiling"/>
+			<menu_item_check label="텔레메트리 클라이언트 연결시 시작" name="Start when telemetry client connects"/>
+		</menu>
+		<menu label="오류 강제 발생" name="Force Errors">
+			<menu_item_call label="중단점 강제 발생" name="Force Breakpoint"/>
+			<menu_item_call label="LLError 강제 발생 및 크래시" name="Force LLError And Crash"/>
+			<menu_item_call label="LLError 메시지 강제 발생 및 크래시" name="Force LLError Message And Crash"/>
+			<menu_item_call label="잘못된 메모리 접근 강제 발생" name="Force Bad Memory Access"/>
+			<menu_item_call label="코루틴에서 잘못된 메모리 접근 강제 발생" name="Force Bad Memory Access in Coroutine"/>
+			<menu_item_call label="무한 루프 강제 발생" name="Force Infinite Loop"/>
+			<menu_item_call label="드라이버 크래시 강제 발생" name="Force Driver Carsh"/>
+			<menu_item_call label="소프트웨어 예외 강제 발생" name="Force Software Exception"/>
+			<menu_item_call label="코루틴에서 소프트웨어 예외 강제 발생" name="Force Software Exception in Coroutine"/>
+			<menu_item_call label="코프로시저에서 크래시 강제 발생" name="Force a Crash in a Coroprocedure"/>
+			<menu_item_call label="작업 큐에서 크래시 강제 발생" name="Force a Crash in a Work Queue"/>
+			<menu_item_call label="스레드에서 크래시 강제 발생" name="Force a Crash in a Thread"/>
+			<menu_item_call label="뷰어 연결 끊기 강제 발생" name="Force Disconnect Viewer"/>
+			<menu_item_call label="메모리 누수 시뮬레이션" name="Memory Leaking Simulation"/>
+		</menu>
+		<menu label="GLTF" name="GLTF">
+			<menu_item_call label="열기..." name="Open..."/>
+			<menu_item_call label="다른 이름으로 저장..." name="Save As..."/>
+			<menu_item_call label="업로드..." name="Upload..."/>
+		</menu>
+		<menu label="해상도" name="Video">
+			<menu_item_call label="1080x1920" name="1080x1920"/>
+			<menu_item_call label="1920x1080" name="1920x1080"/>
+			<menu_item_call label="1280x720" name="1280x720"/>
+			<menu_item_call label="720x1280" name="720x1280"/>
+		</menu>
+		<menu label="렌더 테스트" name="Render Tests">
+			<menu_item_check label="카메라 오프셋" name="Camera Offset"/>
+			<menu_item_check label="프레임레이트 랜덤화" name="Randomize Framerate"/>
+			<menu_item_check label="주기적 느린 프레임" name="Periodic Slow Frame"/>
+			<menu_item_check label="프레임 프로파일" name="Frame Profile"/>
+			<menu_item_call label="벤치마크" name="Benchmark"/>
+			<menu_item_call label="HDRI 미리보기" name="HDRI Preview"/>
+			<menu_item_call label="GLTF 씬 미리보기" name="GLTF Scene Preview"/>
+		</menu>
+		<menu label="메타데이터 렌더링" name="Render Metadata">
+			<menu_item_check label="경계 박스" name="Bounding Boxes"/>
+			<menu_item_check label="아바타 히트박스" name="Avatar Hitboxes"/>
+			<menu_item_check label="노멀" name="Normals"/>
+			<menu_item_check label="옥트리" name="Octree"/>
+			<menu_item_check label="그림자 프러스텀" name="Shadow Frusta"/>
+			<menu_item_check label="물리 형태" name="Physics Shapes"/>
+			<menu_item_check label="가림" name="Occlusion"/>
+			<menu_item_check label="렌더 배치" name="Render Batches"/>
+			<menu_item_check label="업데이트 타입" name="Update Type"/>
+			<menu_item_check label="텍스처 애니메이션" name="Texture Anim"/>
+			<menu_item_check label="텍스처 우선순위" name="Texture Priority"/>
+			<menu_item_check label="텍스처 영역" name="Texture Area"/>
+			<menu_item_check label="면 영역" name="Face Area"/>
+			<menu_item_check label="LOD 정보" name="LOD Info"/>
+			<menu_item_check label="삼각형 개수" name="Triangle Count"/>
+			<menu_item_check label="조명" name="Lights"/>
+			<menu_item_check label="파티클" name="Particles"/>
+			<menu_item_check label="충돌 골격" name="Collision Skeleton"/>
+			<menu_item_check label="관절" name="Joints"/>
+			<menu_item_check label="레이캐스트" name="Raycast"/>
+			<menu_item_check label="바람 벡터" name="Wind Vectors"/>
+			<menu_item_check label="조각" name="Sculpt"/>
+			<menu_item_check label="텍스처 크기" name="Texture Size"/>
+			<menu label="텍스처 밀도" name="Texture Density">
+				<menu_item_check label="없음" name="None"/>
+				<menu_item_check label="현재" name="Current"/>
+				<menu_item_check label="원하는" name="Desired"/>
+				<menu_item_check label="완전" name="Full"/>
+			</menu>
+		</menu>
+		<menu label="렌더링" name="Rendering">
+			<menu_item_check label="축" name="Axes"/>
+			<menu_item_check label="접선 기저" name="Tangent Basis"/>
+			<menu_item_call label="선택된 객체 텍스처 정보" name="Selected Texture Info Basis"/>
+			<menu_item_call label="선택된 객체 머티리얼 정보" name="Selected Material Info"/>
+			<menu_item_check label="와이어프레임" name="Wireframe"/>
+			<menu_item_check label="객체-객체 가림" name="Object-Object Occlusion"/>
+			<menu_item_check label="고급 조명 모델" name="Advanced Lighting Model"/>
+			<menu_item_check label="태양/달/프로젝터 그림자" name="Shadows from Sun/Moon/Projectors"/>
+			<menu_item_check label="SSAO와 그림자 부드럽게" name="SSAO and Shadow Smoothing"/>
+			<menu_item_check label="전역 조명 (실험적)" name="Global Illumination"/>
+			<menu_item_check label="다음 시작시 GL 디버그" name="Debug GL"/>
+			<menu_item_check label="파이프라인 디버그" name="Debug Pipeline"/>
+			<menu_item_check label="자동 알파 마스크" name="Automatic Alpha Masks (deferred)"/>
+			<menu_item_check label="애니메이션 텍스처" name="Animation Textures"/>
+			<menu_item_check label="텍스처 비활성화" name="Disable Textures"/>
+			<menu_item_call label="애니메시 렌더링 해제" name="Derender Animesh"/>
+			<menu_item_check label="주변 조명 비활성화" name="Disable Ambient"/>
+			<menu_item_check label="태양빛 비활성화" name="Disable Sunlight"/>
+			<menu_item_check label="로컬 조명 비활성화" name="Disable Local Lights"/>
+			<menu_item_check label="풀 해상도 텍스처 (위험)" name="Full Res Textures"/>
+			<menu_item_check label="부착된 조명 렌더링" name="Render Attached Lights"/>
+			<menu_item_check label="부착된 파티클 렌더링" name="Render Attached Particles"/>
+			<menu_item_check label="폰트 버텍스 버퍼 수집 활성화" name="Collect Font Vertex Buffers"/>
+			<menu_item_check label="셰이더 캐시 활성화" name="Enable Shader Cache"/>
+			<menu_item_call label="셰이더 캐시 지우기" name="Shader Cache Clear"/>
+		</menu>
+		<menu label="네트워크" name="Network">
+			<menu_item_check label="에이전트 일시정지" name="AgentPause"/>
+			<menu_item_call label="메시지 로그 활성화" name="Enable Message Log"/>
+			<menu_item_call label="메시지 로그 비활성화" name="Disable Message Log"/>
+			<menu_item_check label="속도로 객체 위치 보간" name="Velocity Interpolate Objects"/>
+			<menu_item_check label="보간된 객체 위치 핑" name="Ping Interpolate Object Positions"/>
+			<menu_item_call label="패킷 하나 드롭" name="Drop a Packet"/>
+		</menu>
+		<menu label="캐시" name="Cache">
+			<menu_item_call label="디스크 캐시 정리" name="Purge Disk Cache"/>
+		</menu>
+		<menu_item_call label="스크립트 카메라 덤프" name="Dump Scripted Camera"/>
+		<menu label="레코더" name="Recorder">
+			<menu_item_call label="이벤트 녹화 시작" name="Start event recording"/>
+			<menu_item_call label="이벤트 녹화 중지" name="Stop event recording"/>
+			<menu_item_call label="이벤트 녹화 재생" name="Playback event recording"/>
+			<menu_item_call label="재생 시작" name="Start Playback"/>
+			<menu_item_call label="재생 중지" name="Stop Playback"/>
+			<menu_item_check label="재생 반복" name="Loop Playback"/>
+			<menu_item_call label="녹화 시작" name="Start Record"/>
+			<menu_item_call label="녹화 중지" name="Stop Record"/>
+		</menu>
+		<menu label="세계" name="DevelopWorld">
+			<menu_item_check label="시뮬레이터 태양 오버라이드" name="Sim Sun Override"/>
+			<menu_item_check label="고정 날씨" name="Fixed Weather"/>
+			<menu_item_call label="지역 객체 캐시 덤프" name="Dump Region Object Cache"/>
+			<menu_item_check label="통계 레코더 파일" name="Stats Recorder File"/>
+			<menu_item_check label="관심 목록: 360도 모드" name="Interest List: 360 Mode"/>
+			<menu_item_call label="관심 목록 리셋" name="Reset Interest Lists"/>
+			<menu_item_call label="시뮬레이터 기능을 채팅에 덤프" name="DumpSimFeaturesToChat"/>
+		</menu>
+		<menu label="지형" name="DevelopTerrain">
+			<menu_item_call label="지형 재구축" name="Rebuild Terrain"/>
+			<menu_item_call label="로컬 페인트맵 생성" name="Create Local Paintmap"/>
+			<menu_item_call label="로컬 페인트맵 삭제" name="Delete Local Paintmap"/>
+		</menu>
+		<menu label="UI" name="UI">
+			<menu_item_call label="미디어 브라우저 테스트" name="Web Browser Test"/>
+			<menu_item_call label="지역 재시작 테스트" name="Region Restart Test"/>
+			<menu_item_call label="웹 브라우저" name="Web Content Browser"/>
+			<menu_item_call label="인벤토리 썸네일 도우미" name="Inventory Thumbnails Helper"/>
+			<menu_item_call label="폰트 덤프" name="Dump Fonts"/>
+			<menu_item_call label="폰트 텍스처 덤프" name="Dump Font Textures"/>
+			<menu_item_call label="SelectMgr 덤프" name="Dump SelectMgr"/>
+			<menu_item_call label="인벤토리 정보 덤프" name="Dump Inventory"/>
+			<menu_item_call label="타이머 덤프" name="Dump Timers"/>
+			<menu_item_call label="포커스 덤프" name="Dump Focus Holder"/>
+			<menu_item_call label="선택된 객체 정보 출력" name="Print Selected Object Info"/>
+			<menu_item_call label="에이전트 정보 출력" name="Print Agent Info"/>
+			<menu_item_check label="더블클릭 자동 조종" name="Double-ClickAuto-Pilot"/>
+			<menu_item_check label="더블클릭 텔레포트" name="DoubleClick Teleport"/>
+			<menu_item_check label="SelectMgr 디버그" name="Debug SelectMgr"/>
+			<menu_item_check label="클릭 디버그" name="Debug Clicks"/>
+			<menu_item_check label="뷰 디버그" name="Debug Views"/>
+			<menu_item_check label="유니코드 디버그" name="Debug Unicode"/>
+			<menu_item_check label="카메라 컨트롤 디버그" name="Debug Unicode"/>
+			<menu_item_check label="툴팁: 디버그 이름" name="Debug Name Tooltips"/>
+			<menu_item_check label="마우스 이벤트 디버그" name="Debug Mouse Events"/>
+			<menu_item_check label="키 디버그" name="Debug Keys"/>
+			<menu_item_check label="WindowProc 디버그" name="Debug WindowProc"/>
+		</menu>
+		<menu label="XUI" name="XUI">
+			<menu_item_call label="색상 설정 표시" name="Color Settings"/>
+			<menu_item_call label="색상 설정 다시 로드" name="Reload Color Settings"/>
+			<menu_item_call label="폰트 테스트 표시" name="Show Font Test"/>
+			<menu_item_call label="SLapps 테스트 표시" name="Show SLapps Test"/>
+			<menu_item_call label="XML 파일에서 로드" name="Load from XML"/>
+			<menu_item_call label="XML 파일로 저장" name="Save to XML"/>
+			<menu_item_check label="XUI 이름 표시" name="Show XUI Names"/>
+			<menu_item_check label="뷰 디버그 정보 표시" name="DebugViews"/>
+			<menu_item_call label="XUI 에디터" name="UI Preview Tool"/>
+			<menu_item_call label="테스트 IM 전송" name="Send Test IMs"/>
+			<menu_item_call label="이름 캐시 플러시" name="Flush Names Caches"/>
+		</menu>
+		<menu label="아바타" name="Character">
+			<menu label="베이크된 텍스처 캡처" name="Grab Baked Texture">
+				<menu_item_call label="홍채" name="Grab Iris"/>
+				<menu_item_call label="머리" name="Grab Head"/>
+				<menu_item_call label="상체" name="Grab Upper Body"/>
+				<menu_item_call label="하체" name="Grab Lower Body"/>
+				<menu_item_call label="치마" name="Grab Skirt"/>
+			</menu>
+			<menu label="아바타 테스트" name="Character Tests">
+				<menu_item_call label="외모를 XML로 저장" name="Appearance To XML"/>
+				<menu_item_call label="아바타 지오메트리 토글" name="Toggle Character Geometry"/>
+				<menu_item_call label="남성 테스트" name="Test Male"/>
+				<menu_item_call label="여성 테스트" name="Test Female"/>
+				<menu_item_check label="아바타 선택 허용" name="Allow Select Avatar"/>
+				<menu_item_check label="카메라 포커스 애니메이션 비활성화" name="Disable Look At Animation"/>
+				<menu_item_check label="친구만 렌더링" name="Render Only Friends"/>
+			</menu>
+			<menu label="애니메이션 속도" name="Animation Speed">
+				<menu_item_call label="모든 애니메이션 10% 빠르게" name="All Animations 10 Faster"/>
+				<menu_item_call label="모든 애니메이션 10% 느리게" name="All Animations 10 Slower"/>
+				<menu_item_call label="모든 애니메이션 속도 리셋" name="Reset All Animation Speed"/>
+				<menu_item_check label="슬로우 모션 애니메이션" name="Slow Motion Animations"/>
+			</menu>
+			<menu_item_call label="매개변수를 기본값으로 강제" name="Force Params to Default"/>
+			<menu_item_check label="애니메이션 정보" name="Animation Info"/>
+			<menu_item_check label="카메라 포커스 표시" name="Show Look At"/>
+			<menu_item_check label="포인터 표시" name="Show Point At"/>
+			<menu_item_check label="관절 업데이트 디버그" name="Debug Joint Updates"/>
+			<menu_item_check label="LOD 비활성화" name="Disable LOD"/>
+			<menu_item_check label="캐릭터 가시성 디버그" name="Debug Character Vis"/>
+			<menu_item_check label="캐릭터 Rez 상태 디버그" name="Debug Character Rez State"/>
+			<menu_item_check label="충돌 골격 표시" name="Show Collision Skeleton"/>
+			<menu_item_check label="뼈 표시" name="Show Bones"/>
+			<menu_item_check label="에이전트 목표 표시" name="Display Agent Target"/>
+			<menu_item_check label="임포스터 범위 표시" name="Show Impostor Extents"/>
+			<menu_item_call label="착용품 덤프" name="Dump Attachments"/>
+			<menu_item_call label="아바타 텍스처 디버그" name="Debug Avatar Textures"/>
+			<menu_item_call label="로컬 텍스처 덤프" name="Dump Local Textures"/>
+			<menu_item_call label="아바타 클라우드 파티클 다시 로드" name="Reload Avatar Cloud Particle"/>
+		</menu>
+		<menu_item_check label="HTTP 텍스처" name="HTTP Textures"/>
+		<menu_item_check label="HTTP 인벤토리" name="HTTP Inventory"/>
+		<menu_item_call label="이미지 압축" name="Compress Images"/>
+		<menu_item_call label="파일 압축 테스트" name="Compress File Test"/>
+		<menu_item_call label="프림피드 인증 테스트" name="primfeed_auth_test"/>
+		<menu_item_call label="프림피드 인증 지우기" name="primfeed_auth_clear"/>
+		<menu_item_call label="Visual Leak Detector 활성화" name="Enable Visual Leak Detector"/>
+		<menu_item_check label="디버그 미니덤프 출력" name="Output Debug Minidump"/>
+		<menu_item_check label="다음 실행시 디버그 콘솔 열기" name="Console Window"/>
+		<menu label="로그 레벨 설정" name="Set Logging Level">
+			<menu_item_check label="디버그" name="Debug"/>
+			<menu_item_check label="정보" name="Info"/>
+			<menu_item_check label="경고" name="Warning"/>
+			<menu_item_check label="오류" name="Error"/>
+			<menu_item_check label="없음" name="None"/>
+		</menu>
+		<menu_item_call label="관리자 상태 요청" name="Request Admin Options"/>
+		<menu_item_call label="관리자 상태 나가기" name="Leave Admin Options"/>
+		<menu_item_check label="관리자 메뉴 보기" name="View Admin Options"/>
+	</menu>
+	<menu label="관리자" name="Admin">
+		<menu label="객체" name="AdminObject">
+			<menu_item_call label="복사본 가져가기" name="Admin Take Copy"/>
+			<menu_item_call label="나를 소유자로" name="Force Owner To Me"/>
+			<menu_item_call label="소유자 권한 강제" name="Force Owner Permissive"/>
+			<menu_item_call label="삭제" name="Delete"/>
+			<menu_item_call label="잠금" name="Lock"/>
+			<menu_item_call label="애셋 ID 얻기" name="Get Assets IDs"/>
+		</menu>
+		<menu label="구획" name="Parcel">
+			<menu_item_call label="소유자를 나로" name="Owner To Me"/>
+			<menu_item_call label="린든 콘텐츠로 설정" name="Set to Linden Content"/>
+			<menu_item_call label="공공 토지 소유" name="Claim Public Land"/>
+		</menu>
+		<menu label="지역" name="Region">
+			<menu_item_call label="임시 애셋 데이터 덤프" name="Dump Temp Asset Data"/>
+			<menu_item_call label="지역 상태 저장" name="Save Region State"/>
+		</menu>
+		<menu_item_call label="신 도구" name="God Tools"/>
+	</menu>
+	<menu label="더 이상 사용되지 않음" name="Deprecated">
+		<menu label="객체 착용" name="Attach Object"/>
+		<menu label="객체 떼기" name="Detach Object"/>
+		<menu label="의류 벗기" name="Take Off Clothing">
+			<menu_item_call label="셔츠" name="Shirt"/>
+			<menu_item_call label="바지" name="Pants"/>
+			<menu_item_call label="신발" name="Shoes"/>
+			<menu_item_call label="양말" name="Socks"/>
+			<menu_item_call label="재킷" name="Jacket"/>
+			<menu_item_call label="장갑" name="Gloves"/>
+			<menu_item_call label="속옷(상의)" name="Menu Undershirt"/>
+			<menu_item_call label="속옷(하의)" name="Menu Underpants"/>
+			<menu_item_call label="치마" name="Skirt"/>
+			<menu_item_call label="알파" name="Alpha"/>
+			<menu_item_call label="타투" name="Tattoo"/>
+			<menu_item_call label="유니버셜" name="Universal"/>
+			<menu_item_call label="피지컬" name="Physics"/>
+			<menu_item_call label="모든 의류" name="All Clothes"/>
+		</menu>
+		<menu label="도움말" name="DeprecatedHelp">
+			<menu_item_call label="공식 린든 블로그" name="Official Linden Blog"/>
+			<menu_item_call label="스크립팅 포털" name="Scripting Portal"/>
+			<menu label="버그 신고" name="Bug Reporting">
+				<menu_item_call label="공개 이슈 트래커" name="Public Issue Tracker"/>
+				<menu_item_call label="공개 이슈 트래커 도움말" name="Publc Issue Tracker Help"/>
+				<menu_item_call label="버그 신고 입문" name="Bug Reporing 101"/>
+				<menu_item_call label="보안 문제" name="Security Issues"/>
+				<menu_item_call label="QA 위키" name="QA Wiki" />
+			</menu>
+		</menu>
+	</menu>
+</menu_bar>

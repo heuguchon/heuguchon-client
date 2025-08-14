@@ -276,6 +276,7 @@
   - floater_experiences.xml (경험 관리)
   - floater_forget_user.xml (사용자 정보 삭제)
   - floater_hud.xml (HUD 도움말)
+  - menu_viewer.xml (메인 뷰어 메뉴)
 
 ### 진행 중인 작업
 - 추가 중요 UI 파일 식별 및 번역
@@ -336,7 +337,7 @@
 
 2. **대용량 파일 도전**:
    - [x] floater_tools.xml (27KB) - 빌드 도구 (완료)
-   - [ ] menu_viewer.xml (48KB) - 메인 뷰어 메뉴
+   - [x] menu_viewer.xml (48KB) - 메인 뷰어 메뉴
    - [ ] notifications.xml (288KB) - 모든 알림 메시지
 
 3. **검증 및 최적화**:
