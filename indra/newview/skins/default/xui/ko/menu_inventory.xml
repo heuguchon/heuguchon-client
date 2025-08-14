@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<menu name="Popup">
+	<menu_item_call label="등록 생성" name="Marketplace Create Listing"/>
+	<menu_item_call label="등록 연결" name="Marketplace Associate Listing"/>
+	<menu_item_call label="등록 가져오기 (업데이트)" name="Marketplace Get Listing"/>
+	<menu_item_call label="오류 확인" name="Marketplace Check Listing"/>
+	<menu_item_call label="등록 편집" name="Marketplace Edit Listing"/>
+	<menu_item_call label="목록에 추가" name="Marketplace List"/>
+	<menu_item_call label="목록에서 제거" name="Marketplace Unlist"/>
+	<menu_item_call label="활성화" name="Marketplace Activate"/>
+	<menu_item_call label="비활성화" name="Marketplace Deactivate"/>
+	<menu_item_call label="공유" name="Share"/>
+	<menu_item_call label="열기" name="Task Open"/>
+	<menu_item_call label="재생" name="Task Play"/>
+	<menu_item_call label="속성" name="Task Properties"/>
+	<menu_item_call label="이름 바꾸기" name="Task Rename"/>
+	<menu_item_call label="삭제" name="Task Remove"/>
+	<menu_item_call label="휴지통 비우기" name="Empty Trash"/>
+	<menu_item_call label="분실물 비우기" name="Empty Lost And Found"/>
+	<menu_item_call label="새 폴더" name="New Folder"/>
+	<menu_item_call label="새 폴더" name="New Listing Folder"/>
+	<menu_item_call label="새 복장" name="New Outfit"/>
+	<menu_item_call label="새 스크립트" name="New Script"/>
+	<menu_item_call label="새 노트카드" name="New Note"/>
+	<menu_item_call label="새 제스처" name="New Gesture"/>
+	<menu_item_call label="새 재질" name="New Material"/>
+	<menu label="새 의류" name="New Clothes">
+		<menu_item_call label="새 셔츠" name="New Shirt"/>
+		<menu_item_call label="새 바지" name="New Pants"/>
+		<menu_item_call label="새 신발" name="New Shoes"/>
+		<menu_item_call label="새 양말" name="New Socks"/>
+		<menu_item_call label="새 재킷" name="New Jacket"/>
+		<menu_item_call label="새 치마" name="New Skirt"/>
+		<menu_item_call label="새 장갑" name="New Gloves"/>
+		<menu_item_call label="새 속옷" name="New Undershirt"/>
+		<menu_item_call label="새 팬티" name="New Underpants"/>
+		<menu_item_call label="새 알파 마스크" name="New Alpha Mask"/>
+		<menu_item_call label="새 문신" name="New Tattoo"/>
+		<menu_item_call label="새 유니버설" name="New Universal"/>
+		<menu_item_call label="새 물리학" name="New Physics"/>
+	</menu>
+	<menu label="새 신체 부위" name="New Body Parts">
+		<menu_item_call label="새 체형" name="New Shape"/>
+		<menu_item_call label="새 피부" name="New Skin"/>
+		<menu_item_call label="새 머리카락" name="New Hair"/>
+		<menu_item_call label="새 눈" name="New Eyes"/>
+	</menu>
+	<menu label="새 설정" name="New Settings">
+		<menu_item_call label="새 하늘" name="New Sky"/>
+		<menu_item_call label="새 물" name="New Water"/>
+		<menu_item_call label="새 일일 사이클" name="New Day Cycle"/>
+	</menu>
+	<menu label="업로드 기본값으로 사용" name="upload_def">
+		<menu_item_call label="업로드된 이미지" name="Image uploads"/>
+		<menu_item_call label="업로드된 사운드" name="Sound uploads"/>
+		<menu_item_call label="업로드된 애니메이션" name="Animation uploads"/>
+		<menu_item_call label="업로드된 모델" name="Model uploads"/>
+		<menu_item_call label="업로드된 PBR 재질" name="PBR uploads"/>
+	</menu>
+	<menu_item_call label="즐겨찾기 폴더로 설정" name="Set Favorites folder"/>
+	<menu_item_call label="즐겨찾기 폴더 재설정" name="Reset Favorites folder"/>
+	<menu label="유형 변경" name="Change Type">
+		<menu_item_call label="기본값" name="Default"/>
+		<menu_item_call label="장갑" name="Gloves"/>
+		<menu_item_call label="재킷" name="Jacket"/>
+		<menu_item_call label="바지" name="Pants"/>
+		<menu_item_call label="체형" name="Shape"/>
+		<menu_item_call label="신발" name="Shoes"/>
+		<menu_item_call label="셔츠" name="Shirt"/>
+		<menu_item_call label="치마" name="Skirt"/>
+		<menu_item_call label="팬티" name="Underpants"/>
+		<menu_item_call label="속옷" name="Undershirt"/>
+	</menu>
+	<menu_item_call label="텔레포트" name="Landmark Open"/>
+	<menu_item_call label="열기" name="Animation Open"/>
+	<menu_item_call label="열기" name="Sound Open"/>
+	<menu_item_call label="현재 복장 교체" name="Replace Outfit"/>
+	<menu_item_call label="현재 복장에 추가" name="Add To Outfit"/>
+    <menu_item_call label="아이템 착용" name="Wear Items"/>
+	<menu_item_call label="현재 복장에서 제거" name="Remove From Outfit"/>
+	<menu_item_call label="복장 목록을 클립보드로 복사" name="Copy outfit list to clipboard"/>
+	<menu_item_call label="원본 찾기" name="Find Original"/>
+	<menu_item_call label="아이템 제거" name="Purge Item"/>
+	<menu_item_call label="아이템 복원" name="Restore Item"/>
+	<menu_item_call label="열기" name="Open"/>
+	<menu_item_call label="원본 열기" name="Open Original"/>
+	<menu_item_call label="속성" name="Properties"/>
+	<menu_item_call label="이름 바꾸기" name="Rename"/>
+	<menu_item_call label="썸네일..." name="thumbnail"/>
+	<menu_item_call label="보호" name="ProtectFolder"/>
+	<menu_item_call label="보호 해제" name="UnprotectFolder"/>
+	<menu_item_call label="폴더 다시 로드" name="ReloadFolder"/>
+	<menu_item_call label="자산 UUID 복사" name="Copy Asset UUID"/>
+	<menu_item_call label="UUID 복사" name="Copy UUID"/>
+	<menu_item_call label="마지막 위치로 복원" name="Restore to Last Position"/>
+	<menu_item_call label="잘라내기" name="Cut"/>
+	<menu_item_call label="복사" name="Copy"/>
+	<menu_item_call label="붙여넣기" name="Paste"/>
+	<menu_item_call label="링크로 붙여넣기" name="Paste As Link"/>
+	<menu_item_call label="모든 링크 찾기" name="Find Links"/>
+	<menu_item_call label="링크 교체" name="Replace Links"/>
+	<menu_item_call label="삭제" name="Delete"/>
+	<menu_item_call label="손상된 링크 정리" name="Cleanup broken Links"/>
+	<menu_item_call label="기본 폴더로 이동" name="Move to Default Folder"/>
+	<menu_item_call label="분실물함으로 이동" name="Move to Lost And Found"/>
+	<menu_item_call label="시스템 폴더 삭제" name="Delete System Folder"/>
+	<menu_item_call label="선택 항목에서 새 폴더 생성" name="New folder from selected"/>
+	<menu_item_call label="폴더 항목 그룹 해제" name="Ungroup folder items"/>
+	<menu_item_call label="회의 채팅 시작" name="Conference Chat Folder"/>
+	<menu_item_call label="재생" name="PlayGesture"/>
+	<menu_item_call label="재생/실행" name="Sound Play"/>
+	<menu_item_call label="SLurl 복사" name="url_copy"/>
+	<menu_item_call label="랜드마크 정보" name="About Landmark"/>
+	<menu_item_call label="지도에 표시" name="show_on_map"/>
+	<menu_item_call label="월드에서 재생" name="Animation Play"/>
+	<menu_item_call label="로컬에서 재생" name="Animation Audition"/>
+	<menu_item_call label="인스턴트 메시지 보내기" name="Send Instant Message"/>
+	<menu_item_call label="텔레포트 제안..." name="Offer Teleport..."/>
+	<menu_item_call label="텔레포트 요청..." name="Request Teleport..."/>
+	<menu_item_call label="회의 채팅 시작" name="Conference Chat"/>
+	<menu_item_call label="활성화" name="Activate"/>
+	<menu_item_call label="비활성화" name="Deactivate"/>
+	<menu_item_call label="다른 이름으로 저장" name="Save As"/>
+	<menu_item_call label="선택 항목을 다른 이름으로 저장" name="Save Selected As"/>
+	<menu_item_call label="몸에서 분리" name="Detach From Yourself"/>
+	<menu_item_call label="착용 가능한 아이템 및 객체 착용" name="Wearable And Object Wear"/>
+	<menu label="부착할 위치" name="Attach To"/>
+	<menu label="HUD에 부착" name="Attach To HUD"/>
+	<menu_item_call label="터치" name="Attachment Touch" />
+	<menu_item_call label="편집" name="Wearable Edit"/>
+	<menu_item_call label="메인 패널에 표시" name="Show in Main Panel"/>
+	<menu_item_call label="새 창에 표시" name="Show in new Window"/>
+	<menu_item_call label="열기" name="open_in_current_window"/>
+	<menu_item_call label="새 창에서 열기" name="open_in_new_window"/>
+	<menu_item_call label="추가" name="Wearable Add"/>
+	<menu_item_call label="텍스처 새로 고침" name="Texture Refresh Attachment"/>
+	<menu_item_call label="벗기" name="Take Off"/>
+	<menu_item_call label="나에게만 적용" name="Settings Apply Local"/>
+	<menu_item_call label="구역에 적용" name="Settings Apply Parcel"/>
+	<menu_item_call label="마켓플레이스 등록으로 복사" name="Marketplace Copy"/>
+	<menu_item_call label="마켓플레이스 등록으로 이동" name="Marketplace Move"/>
+	<menu_item_call label="--옵션 없음--" name="--no options--"/>
+</menu>

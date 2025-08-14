@@ -31,11 +31,11 @@
 - [x] `xui/ko/` 디렉토리 생성
 - [x] 기본 구조 파악 및 샘플 파일 분석
 
-### 3단계: 파일 우선순위 설정
-- [ ] 핵심 UI 파일 식별 (메뉴, 기본 대화상자 등)
-- [ ] 번역 우선순위 순서 결정
+### 3단계: 파일 우선순위 설정 ✅
+- [x] 핵심 UI 파일 식별 (메뉴, 기본 대화상자 등)
+- [x] 번역 우선순위 순서 결정
 
-### 4단계: 번역 작업 🚧
+### 4단계: 번역 작업 🎯
 - [x] 1차: 핵심 파일 번역 시작
   - [x] strings.xml (기본 문자열)
   - [x] floater_about.xml (정보 창)
@@ -46,12 +46,18 @@
   - [x] floater_world_map.xml (지도)
   - [x] floater_fs_search.xml (검색)
   - [x] floater_fs_nearby_chat.xml (근처 채팅)
-  - [x] floater_fs_im_container.xml (IM 컸테이너)
+  - [x] floater_fs_im_container.xml (IM 컨테이너)
   - [x] floater_people.xml (사람 목록)
   - [x] floater_my_appearance.xml (외모 편집)
   - [x] floater_places.xml (장소)
   - [x] language_settings.xml (언어 설정)
-- [ ] 3차: 패널(Panel) 번역
+- [x] 3차: 주요 메뉴 번역
+  - [x] menu_edit.xml (편집 메뉴)
+  - [x] menu_inventory.xml (인벤토리 메뉴)
+  - [x] menu_object.xml (객체 컨텍스트 메뉴)
+  - [x] menu_land.xml (토지 컨텍스트 메뉴)
+  - [x] menu_avatar_other.xml (다른 사용자 메뉴)
+  - [x] menu_avatar_self.xml (자신 메뉴)
 - [ ] 4차: 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -77,7 +83,7 @@
 - 프로젝트 구조 분석
 - 작업 계획 수립
 - ko 폴더 생성
-- 핵심 파일 13개 번역 완료:
+- **핵심 파일 19개 번역 완료:**
   - strings.xml (기본 문자열)
   - floater_about.xml (정보 창)
   - menu_login.xml (로그인 메뉴)
@@ -85,12 +91,18 @@
   - floater_my_inventory.xml (인벤토리)
   - floater_world_map.xml (지도)
   - floater_fs_search.xml (검색)
-  - floater_fs_nearby_chat.xml (근처 채팡)
-  - floater_fs_im_container.xml (IM 컸테이너)
+  - floater_fs_nearby_chat.xml (근처 채팅)
+  - floater_fs_im_container.xml (IM 컨테이너)
   - floater_people.xml (사람 목록)
   - floater_my_appearance.xml (외모 편집)
   - floater_places.xml (장소)
   - language_settings.xml (언어 설정)
+  - menu_edit.xml (편집 메뉴)
+  - menu_inventory.xml (인벤토리 메뉴)
+  - menu_object.xml (객체 컨텍스트 메뉴)
+  - menu_land.xml (토지 컨텍스트 메뉴)
+  - menu_avatar_other.xml (다른 사용자 메뉴)
+  - menu_avatar_self.xml (자신 메뉴)
 
 ### 진행 중인 작업
 - 추가 중요 UI 파일 식별 및 번역
@@ -110,15 +122,16 @@
 
 ### 오늘 수행한 작업 (2025-08-14)
 - 프로젝트 구조 분석 및 ko 폴더 생성
-- **13개 핵심 UI 파일 번역 완료**
-- 기본 로그인, 메뉴, 채팡, 지도, 검색 등 핵심 기능 포함
-- 언어 설정 파일로 한국어 로캼 지원
+- **19개 핵심 UI 파일 번역 완료**
+- 기본 로그인, 메뉴, 채팅, 지도, 검색 등 핵심 기능 포함
+- 언어 설정 파일로 한국어 로케일 지원
+- **주요 컨텍스트 메뉴 번역 완료** (객체, 토지, 아바타 메뉴)
 
 ### 다음 단계 우선순위
 1. **대용량 파일 번역**:
    - menu_viewer.xml (48KB) - 메인 뷰어 메뉴
    - floater_tools.xml (27KB) - 빌드 도구
-   - notifications.xml - 알림 시스템
+   - notifications.xml (288KB) - 알림 시스템
 
 2. **추가 핵심 기능 파일들**:
    - 지역 및 언어 관련 파일들

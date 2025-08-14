@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<context_menu name="Self Pie">
+	<menu_item_call label="여기에 앉기" name="Sit Down Here"/>
+	<menu_item_call label="일어서기" name="Stand Up"/>
+	<context_menu label="벗기" name="Take Off &gt;">
+		<context_menu label="의류" name="Clothes &gt;">
+			<menu_item_call label="셔츠" name="Shirt"/>
+			<menu_item_call label="바지" name="Pants"/>
+			<menu_item_call label="치마" name="Skirt"/>
+			<menu_item_call label="신발" name="Shoes"/>
+			<menu_item_call label="양말" name="Socks"/>
+			<menu_item_call label="재킷" name="Jacket"/>
+			<menu_item_call label="장갑" name="Gloves"/>
+			<menu_item_call label="속옷" name="Self Undershirt"/>
+			<menu_item_call label="팬티" name="Self Underpants"/>
+			<menu_item_call label="문신" name="Self Tattoo"/>
+			<menu_item_call label="물리학" name="Self Physics"/>
+			<menu_item_call label="알파" name="Self Alpha"/>
+			<menu_item_call label="모든 의류" name="All Clothes"/>
+		</context_menu>
+		<context_menu label="HUD" name="Object Detach HUD"/>
+		<context_menu label="분리" name="Object Detach"/>
+		<menu_item_call label="모두 분리" name="Detach All"/>
+	</context_menu>
+	<context_menu label="외모" name="AppearanceSubmenu">
+		<menu_item_call label="현재 복장" name="NowWearing"/>
+		<menu_item_call label="복장 변경" name="Chenge Outfit"/>
+		<menu_item_call label="체형 편집" name="Edit My Shape"/>
+		<menu_item_call label="복장 부품 편집" name="Edit Outfit Parts"/>
+		<menu_item_call label="공중부양 높이" name="Hover Height"/>
+		<menu_item_call label="골격 재설정" name="Reset Skeleton"/>
+		<menu_item_call label="골격과 애니메이션 재설정" name="Reset Skeleton And Animations"/>
+		<menu_item_call label="메시 LOD 재설정" name="Reset Mesh LOD"/>
+	</context_menu>
+	<context_menu label="커뮤니티" name="CommunitySubmenu">
+		<menu_item_call label="친구" name="Friends..."/>
+		<menu_item_call label="그룹" name="Groups..."/>
+		<menu_item_call label="프로필" name="Profile..."/>
+	</context_menu>
+	<menu_item_call label="스크립트 정보" name="ScriptInfo"/>
+	<menu_item_call label="텍스처 표시" name="Debug..."/>
+	<menu_item_call label="텍스처 새로 고침" name="Texture Refresh"/>
+	<menu_item_call label="XML 출력" name="Dump XML"/>
+	<menu_item_call label="파티클 소유자 차단" name="Mute Particle"/>
+</context_menu>
