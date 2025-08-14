@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="camera_floater" title="카메라 컨트롤">
+	<floater.string name="rotate_tooltip">
+		포커스 주위로 카메라 회전
+	</floater.string>
+	<floater.string name="zoom_tooltip">
+		포커스에 카메라 줌
+	</floater.string>
+	<floater.string name="move_tooltip">
+		카메라를 상하좌우로 이동
+	</floater.string>
+	<floater.string name="free_mode_title">
+		객체 보기
+	</floater.string>
+	<string name="inactive_combo_text">
+		프리셋...
+	</string>
+	<panel name="zoom">
+		<layout_stack name="camera_view_layout_stack">
+			<layout_panel name="camera_rotate_layout_panel">
+				<joystick_rotate name="cam_rotate_stick" tool_tip="포커스 주위로 카메라 회전"/>
+				<button name="roll_left" tool_tip="카메라를 왼쪽으로 롤" />
+				<button name="roll_right" tool_tip="카메라를 오른쪽으로 롤" />
+			</layout_panel>
+			<layout_panel name="camera_zoom_layout_panel">
+				<slider_bar name="zoom_slider" tool_tip="포커스에 카메라 줌"/>
+			</layout_panel>
+			<layout_panel name="panel_track">
+				<joystick_track name="cam_track_stick" tool_tip="카메라를 상하좌우로 이동"/>
+			</layout_panel>
+		</layout_stack>
+	</panel>
+	<panel name="buttons_panel">
+		<panel_camera_item name="front_view" tool_tip="정면 보기">
+			<panel_camera_item.text name="front_view_text">
+			</panel_camera_item.text>
+		</panel_camera_item>
+		<panel_camera_item name="group_view" tool_tip="측면 보기">
+			<panel_camera_item.text name="side_view_text">
+			</panel_camera_item.text>
+		</panel_camera_item>
+		<panel_camera_item name="rear_view" tool_tip="후면 보기">
+			<panel_camera_item.text name="rear_view_text">
+			</panel_camera_item.text>
+		</panel_camera_item>
+		<panel_camera_item name="object_view" tool_tip="객체 보기">
+			<panel_camera_item.text name="object_view_text">
+			</panel_camera_item.text>
+		</panel_camera_item>
+		<panel_camera_item name="mouselook_view" tool_tip="마우스룩">
+			<panel_camera_item.text name="mouselook_view_text">
+			</panel_camera_item.text>
+		</panel_camera_item>
+		<panel_camera_item name="reset_view" tool_tip="뷰 재설정">
+			<panel_camera_item.text name="reset_view_text">
+			</panel_camera_item.text>
+		</panel_camera_item>
+	<button label="위치..." name="camera_position_btn"/>
+	</panel>
+	<panel name="preset_buttons_panel">
+		<combo_box name="preset_combo">
+			<combo_box.item label="프리셋 사용" name="Use preset"/>
+		</combo_box>
+		<button name="gear_btn" tool_tip="카메라 프리셋"/>
+		<button name="save_preset_btn" tool_tip="프리셋으로 저장"/>
+	</panel>
+</floater>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="Snapshot" title="사진 미리보기">
+	<floater.string name="unknown">
+		알 수 없음
+	</floater.string>
+	<string name="postcard_progress_str">
+		이메일 보내는 중
+	</string>
+	<string name="facebook_progress_str">
+		Facebook에 게시하는 중
+	</string>
+	<string name="profile_progress_str">
+		게시하는 중
+	</string>
+	<string name="inventory_progress_str">
+		인벤토리에 저장하는 중
+	</string>
+	<string name="local_progress_str">
+		컴퓨터에 저장하는 중
+	</string>
+	<string name="facebook_succeeded_str">
+		이미지 업로드됨
+	</string>
+	<string name="profile_succeeded_str">
+		이미지 업로드됨
+	</string>
+	<string name="postcard_succeeded_str">
+		이메일 전송됨!
+	</string>
+	<string name="inventory_succeeded_str">
+		인벤토리에 저장됨!
+	</string>
+	<string name="local_succeeded_str">
+		컴퓨터에 저장됨!
+	</string>
+	<string name="facebook_failed_str">
+		Facebook 타임라인에 이미지 업로드를 실패했습니다.
+	</string>
+	<string name="profile_failed_str">
+		프로필에 이미지 업로드를 실패했습니다.
+	</string>
+	<string name="postcard_failed_str">
+		이메일 전송을 실패했습니다.
+	</string>
+	<string name="inventory_failed_str">
+		저장을 실패했습니다.
+	</string>
+	<string name="local_failed_str">
+		저장을 실패했습니다.
+	</string>
+	<view name="controls_container">
+	<button name="new_snapshot_btn" label="새로 고침"/>
+	<panel name="advanced_options_panel">
+		<text name="layer_type_label">
+			촬영:
+		</text>
+		<combo_box label="이미지 레이어" name="layer_types">
+			<combo_box.item label="색상" name="Colors"/>
+			<combo_box.item label="깊이" name="Depth"/>
+			<combo_box.item label="깊이 (24비트)" name="Depth24"/>
+		</combo_box>
+		<check_box label="촬영 프레임 표시" name="show_frame" tool_tip="촬영 영역 주위에 프레임을 표시합니다. 촬영 영역 밖의 장면 부분은 채도가 낮아지고 약간 흐리게 표시됩니다."/>
+		<check_box label="촬영 가이드 표시" name="show_guides" tool_tip="촬영 영역 내에 촬영 가이드(3분할 법칙)를 표시합니다."/>
+		<check_box label="사용자 인터페이스" name="ui_check"/>
+		<check_box label="L$ 잔고" name="currency_check"/>
+		<check_box label="HUD" name="hud_check"/>
+		<check_box label="정지 화면 (전체화면)" name="freeze_frame_check"/>
+		<check_box label="자동 새로 고침" name="auto_snapshot_check"/>
+		<check_box label="후처리 없음" name="no_post_check"/>
+		<combo_box label="필터" name="filters_combobox" tool_tip="이미지 필터">
+			<combo_box.item label="필터 없음" name="NoFilter"/>
+		</combo_box>
+	</panel>
+	<panel name="succeeded_panel">
+		<text name="succeeded_lbl">
+			성공
+		</text>
+	</panel>
+	<panel name="failed_panel">
+		<text name="failed_lbl">
+			실패
+		</text>
+	</panel>
+	<text name="working_lbl">
+		잠시 기다려 주세요
+	</text>
+	<text name="refresh_lbl">
+		저장하려면 새로 고침
+	</text>
+	</view>
+	<text name="image_res_text">
+		[WIDTH]px (너비) x [HEIGHT]px (높이)
+	</text>
+	<text name="file_size_label">
+		[SIZE] KB
+	</text>
+	<button label="360° 사진 찍기" name="360_label"/>
+</floater>
