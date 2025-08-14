@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="move_floater" title="">
+	<string name="walk_forward_tooltip">
+		앞으로 걷기 (위쪽 화살표 또는 W 키)
+	</string>
+	<string name="walk_back_tooltip">
+		뒤로 걷기 (아래쪽 화살표 또는 S 키)
+	</string>
+	<string name="walk_left_tooltip">
+		왼쪽으로 걷기 (Shift + 왼쪽 화살표 또는 A 키)
+	</string>
+	<string name="walk_right_tooltip">
+		오른쪽으로 걷기 (Shift + 오른쪽 화살표 또는 D 키)
+	</string>
+	<string name="run_forward_tooltip">
+		앞으로 달리기 (위쪽 화살표 또는 W 키)
+	</string>
+	<string name="run_back_tooltip">
+		뒤로 달리기 (아래쪽 화살표 또는 S 키)
+	</string>
+	<string name="run_left_tooltip">
+		왼쪽으로 회전 (Shift + 왼쪽 화살표 또는 A 키)
+	</string>
+	<string name="run_right_tooltip">
+		오른쪽으로 달리기 (Shift + 오른쪽 화살표 또는 D 키)
+	</string>
+	<string name="fly_forward_tooltip">
+		앞으로 비행 (위쪽 화살표 또는 W 키)
+	</string>
+	<string name="fly_back_tooltip">
+		뒤로 비행 (아래쪽 화살표 또는 S 키)
+	</string>
+	<string name="fly_left_tooltip">
+		왼쪽으로 비행 (Shift + 왼쪽 화살표 또는 A 키)
+	</string>
+	<string name="fly_right_tooltip">
+		오른쪽으로 비행 (Shift + 오른쪽 화살표 또는 D 키)
+	</string>
+	<string name="fly_up_tooltip">
+		위로 비행, E 키 누르기
+	</string>
+	<string name="fly_down_tooltip">
+		아래로 비행, C 키 누르기
+	</string>
+	<string name="jump_tooltip">
+		점프 (E 키)
+	</string>
+	<string name="crouch_tooltip">
+		웅크리기 (C 키)
+	</string>
+	<string name="walk_title">
+	</string>
+	<string name="run_title">
+	</string>
+	<string name="fly_title">
+	</string>
+	<panel name="panel_actions">
+		<layout_stack name="ls_vertical">
+			<layout_panel name="lp_row1">
+				<layout_stack name="ls_horizontal1">
+					<layout_panel name="lp_col1_1">
+						<button name="turn left btn" tool_tip="왼쪽으로 회전 (왼쪽 화살표 또는 A 키)"/>
+					</layout_panel>
+					<layout_panel name="lp_col1_2">
+						<joystick_turn name="forward btn" tool_tip="앞으로 걷기 (위쪽 화살표 또는 W 키)"/>
+					</layout_panel>
+					<layout_panel name="lp_col1_3">
+						<button name="turn right btn" tool_tip="오른쪽으로 회전 (오른쪽 화살표 또는 D 키)"/>
+					</layout_panel>
+					<layout_panel name="lp_col1_4">
+						<button name="move up btn" tool_tip="위로 비행, E 키 누르기"/>
+					</layout_panel>
+				</layout_stack>
+			</layout_panel>
+			<layout_panel name="lp_row2">
+				<layout_stack name="ls_horizontal2">
+					<layout_panel name="lp_col2_1">
+						<joystick_slide name="move left btn" tool_tip="왼쪽으로 걷기 (Shift + 왼쪽 화살표 또는 A 키)"/>
+					</layout_panel>
+					<layout_panel name="lp_col2_2">
+						<joystick_turn name="backward btn" tool_tip="뒤로 걷기 (아래쪽 화살표 또는 S 키)"/>
+					</layout_panel>
+					<layout_panel name="lp_col2_3">
+						<joystick_slide name="move right btn" tool_tip="오른쪽으로 비행 (Shift + 오른쪽 화살표 또는 D 키)"/>
+					</layout_panel>
+					<layout_panel name="lp_col2_4">
+						<button name="move down btn" tool_tip="아래로 비행, C 키 누르기"/>
+					</layout_panel>
+				</layout_stack>
+			</layout_panel>
+			<layout_panel name="lp_row3">
+				<layout_stack name="ls_horizontal3">
+					<layout_panel name="modes_container">
+						<panel name="panel_modes">
+							<button name="mode_walk_btn" tool_tip="걷기"/>
+							<button name="mode_run_btn" tool_tip="달리기"/>
+							<button name="mode_fly_btn" tool_tip="비행"/>
+						</panel>
+					</layout_panel>
+				</layout_stack>
+			</layout_panel>
+		</layout_stack>
+	</panel>
+</floater>

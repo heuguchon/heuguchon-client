@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="Joystick" title="조이스틱 설정">
+	<string name="JoystickDisabled">
+		없음
+	</string>
+	<text name="joystick_lbl">
+		조이스틱:
+	</text>
+	<spinner label="X축" name="JoystickAxis1"/>
+	<spinner label="Y축" name="JoystickAxis2"/>
+	<spinner label="Z축" name="JoystickAxis0"/>
+	<spinner label="피치" name="JoystickAxis4"/>
+	<spinner label="요" name="JoystickAxis5"/>
+	<spinner label="롤" name="JoystickAxis3"/>
+	<spinner label="줌" name="JoystickAxis6"/>
+	<check_box label="직접 줌" name="ZoomDirect"/>
+	<check_box label="3D 커서" left="300" name="Cursor3D"/>
+	<check_box label="자동 수평 조정" left="390" name="AutoLeveling"/>
+	<text name="Control Modes:">
+		제어 모드:
+	</text>
+	<check_box label="아바타" name="JoystickAvatarEnabled"/>
+	<check_box label="빌드" name="JoystickBuildEnabled"/>
+	<check_box label="플라이캠" name="JoystickFlycamEnabled"/>
+	<text name="joystick_monitor_label">
+		조이스틱 모니터
+	</text>
+	<icon name="button_light_0" tool_tip="조이스틱 버튼 0"/>
+	<icon name="button_light_1" tool_tip="조이스틱 버튼 1"/>
+	<icon name="button_light_2" tool_tip="조이스틱 버튼 2"/>
+	<icon name="button_light_3" tool_tip="조이스틱 버튼 3"/>
+	<icon name="button_light_4" tool_tip="조이스틱 버튼 4"/>
+	<icon name="button_light_5" tool_tip="조이스틱 버튼 5"/>
+	<icon name="button_light_6" tool_tip="조이스틱 버튼 6"/>
+	<icon name="button_light_7" tool_tip="조이스틱 버튼 7"/>
+	<icon name="button_light_8" tool_tip="조이스틱 버튼 8"/>
+	<icon name="button_light_9" tool_tip="조이스틱 버튼 9"/>
+	<icon name="button_light_10" tool_tip="조이스틱 버튼 10"/>
+	<icon name="button_light_11" tool_tip="조이스틱 버튼 11"/>
+	<icon name="button_light_12" tool_tip="조이스틱 버튼 12"/>
+	<icon name="button_light_13" tool_tip="조이스틱 버튼 13"/>
+	<icon name="button_light_14" tool_tip="조이스틱 버튼 14"/>
+	<icon name="button_light_15" tool_tip="조이스틱 버튼 15"/>
+	<scroll_container name="joystick_monitor_axes_scroller">
+		<container_view name="joystick_monitor_axes_container">
+			<stat_view name="axis_view_0">
+				<stat_bar label="축 0" name="axis0"/>
+			</stat_view>
+			<stat_view name="axis_view_1">
+				<stat_bar label="축 1" name="axis1"/>
+			</stat_view>
+			<stat_view name="axis_view_2">
+				<stat_bar label="축 2" name="axis2"/>
+			</stat_view>
+			<stat_view name="axis_view_3">
+				<stat_bar label="축 3" name="axis3"/>
+			</stat_view>
+			<stat_view name="axis_view_4">
+				<stat_bar label="축 4" name="axis4"/>
+			</stat_view>
+			<stat_view name="axis_view_5">
+				<stat_bar label="축 5" name="axis5"/>
+			</stat_view>
+			<stat_view name="axis_view_6">
+				<stat_bar label="축 6" name="axis6"/>
+			</stat_view>
+			<stat_view name="axis_view_7">
+				<stat_bar label="축 7" name="axis7"/>
+			</stat_view>
+		</container_view>
+	</scroll_container>
+	<text name="XScale">
+		X 스케일
+	</text>
+	<text name="YScale">
+		Y 스케일
+	</text>
+	<text name="ZScale">
+		Z 스케일
+	</text>
+	<text name="PitchScale">
+		피치 스케일
+	</text>
+	<text name="YawScale">
+		요 스케일
+	</text>
+	<text name="RollScale">
+		롤 스케일
+	</text>
+	<text name="XDeadZone">
+		X 데드존
+	</text>
+	<text name="YDeadZone">
+		Y 데드존
+	</text>
+	<text name="ZDeadZone">
+		Z 데드존
+	</text>
+	<text name="PitchDeadZone">
+		피치 데드존
+	</text>
+	<text name="YawDeadZone">
+		요 데드존
+	</text>
+	<text name="RollDeadZone">
+		롤 데드존
+	</text>
+	<text name="Feathering">
+		감쇠
+	</text>
+	<text name="ZoomScale2">
+		줌 스케일
+	</text>
+	<text name="ZoomDeadZone">
+		줌 데드존
+	</text>
+	<button label="SpaceNavigator 기본값" name="SpaceNavigatorDefaults"/>
+	<button label="확인" label_selected="확인" name="ok_btn"/>
+	<button label="취소" label_selected="취소" name="cancel_btn"/>
+</floater>

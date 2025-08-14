@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_report_abuse" title="남용 신고">
+	<floater.string name="Screenshot">
+		스크린샷
+	</floater.string>
+	<floater.string name="chat_report_format">
+시간: [MSG_TIME]
+내용: [MSG_DESCRIPTION]
+	</floater.string>
+	<button name="refresh_screenshot" tool_tip="스크린샷 새로고침"/>
+	<check_box bottom_delta="-20" label="이 스크린샷 사용" name="screen_check"/>
+	<text name="reporter_title">
+		신고자:
+	</text>
+	<text name="reporter_field">
+		Loremipsum Dolorsitamut Longnamez
+	</text>
+	<text name="sim_title">
+		지역:
+	</text>
+	<text name="sim_field">
+		지역 이름
+	</text>
+	<text name="pos_title">
+		위치:
+	</text>
+	<text name="pos_field">
+		{128.1, 128.1, 15.4}
+	</text>
+	<text bottom_delta="-38" height="32" name="select_object_label">
+		버튼을 클릭한 후 해당 객체를
+선택하세요:
+	</text>
+	<button label="" label_selected="" name="pick_btn" tool_tip="객체 선택 – 이 신고의 대상이 되는 객체를 선택하세요"/>
+	<text name="object_name_label">
+		객체:
+	</text>
+	<text name="object_name">
+		Consetetur Sadipscing
+	</text>
+	<text name="owner_name_label">
+		소유자:
+	</text>
+	<text name="owner_name">
+		Hendrerit Vulputate Kamawashi Longname
+	</text>
+	<combo_box name="category_combo" tool_tip="카테고리 -- 이 신고에 가장 적합한 카테고리를 선택하세요">
+		<combo_box.item label="카테고리 선택" name="Select_category"/>
+		<combo_box.item label="연령 &gt; 미성년자 역할놀이" name="Age__Age_play"/>
+		<combo_box.item label="공격 &gt; 안전 지역에서 다른 주민을 총으로 쏘거나 밀치거나 들이받기" name="Assault__Safe_area"/>
+		<combo_box.item label="개인정보 공개 &gt; 실제 세계 정보" name="Disclosure__Real_world_information"/>
+		<combo_box.item label="평화 교란 &gt; 과도한 스크립트 객체 사용" name="Disturbing_the_peace__Excessive_scripted_objects"/>
+		<combo_box.item label="평화 교란 &gt; 객체 무분별한 생성" name="Disturbing_the_peace__Object_littering"/>
+		<combo_box.item label="평화 교란 &gt; 지속적인 스팸 반복" name="Disturbing_the_peace__Repetitive_spam"/>
+		<combo_box.item label="사기 &gt; L$ 또는 US$" name="Fraud__US$"/>
+		<combo_box.item label="괴롭힘 &gt; 악의적인 방해 행위" name="Harassment__Solicting_inciting_others_to_violate_ToS"/>
+		<combo_box.item label="음란물 &gt; 공공장소에서 불쾌한 내용이나 행동" name="Indecency__Broadly_offensive_content_or_conduct"/>
+		<combo_box.item label="음란물 &gt; 부적절한 아바타 이름" name="Indecency__Inappropriate_avatar_name"/>
+		<combo_box.item label="부적절한 행위 &gt; 지역 등급에 맞지 않는 내용/행동" name="Indecency__Mature_content_in_PG_region"/>
+		<combo_box.item label="편견/차별" name="Intolerance"/>
+		<combo_box.item label="토지 &gt; 무단 침입 &gt; 객체나 텍스처" name="Land__Encroachment__Objects_textures"/>
+		<combo_box.item label="스킬 게임 정책 위반" name="Wagering_gambling"/>
+	</combo_box>
+	<text name="abuser_name_title">
+		피신고자 이름:
+	</text>
+	<button label="선택" label_selected="" name="select_abuser" tool_tip="목록에서 피신고자의 이름을 선택하세요"/>
+	<text name="abuser_name_title2">
+		남용 발생 장소:
+	</text>
+	<text name="sum_title">
+		요약:
+	</text>
+	<text name="dscr_title">
+		세부사항:
+	</text>
+	<text name="bug_aviso">
+		상세한 설명:
+	</text>
+	<text_editor bottom_delta="-136" height="70" name="details_edit"/>
+	<text bottom_delta="-20" name="incomplete_title">
+		* 불완전한 신고는 처리되지 않습니다
+	</text>
+	<button label="남용 신고" label_selected="남용 신고" name="send_btn"/>
+	<button label="취소" label_selected="취소" name="cancel_btn"/>
+</floater>

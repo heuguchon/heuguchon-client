@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="godtools floater" title="관리자 도구">
+	<tab_container name="GodTools Tabs">
+		<panel label="그리드" name="grid">
+			<button label="이 지역 지도 가시성 캐시 지우기" label_selected="이 지역 지도 가시성 캐시 지우기" name="Flush This Region&apos;s Map Visibility Caches" width="285"/>
+		</panel>
+		<panel label="지역" name="region">
+			<text name="Region Name:">
+				지역 이름:
+			</text>
+			<check_box label="신규 지역 소개" name="check prelude" tool_tip="이 지역을 신규 지역으로 설정합니다"/>
+			<check_box label="태양 고정" name="check fixed sun" tool_tip="태양 위치를 고정합니다 (\"지역/부동산\" &gt; \"지형\"과 같음)"/>
+			<check_box label="텔레포트 시 홈 재설정" name="check reset home" tool_tip="주민이 텔레포트하면 홈을 도착 위치로 설정합니다"/>
+			<check_box label="표시" name="check visible" tool_tip="이 지역을 관리자가 아닌 사용자에게 표시합니다"/>
+			<check_box label="데미지" name="check damage" tool_tip="이 지역에서 데미지를 활성화합니다"/>
+			<check_box label="트래픽 추적 차단" name="block dwell" tool_tip="이 지역에서 트래픽 계산을 비활성화합니다"/>
+			<check_box label="지형변경 차단" name="block terraform" tool_tip="토지 지형변경을 금지합니다 (사람들이 자신의 토지를 지형변경하는 것을 방지하는 데 사용)"/>
+			<check_box label="샌드박스" name="is sandbox" tool_tip="샌드박스 지역을 토글합니다"/>
+			<button label="지형 굽기" label_selected="지형 굽기" name="Bake Terrain" tool_tip="현재 지형을 기본값으로 저장합니다" width="120"/>
+			<button label="지형 되돌리기" label_selected="지형 되돌리기" name="Revert Terrain" tool_tip="현재 지형을 기본값으로 교체합니다" width="120"/>
+			<button label="지형 교환" label_selected="지형 교환" name="Swap Terrain" tool_tip="현재 지형과 기본값을 교환합니다" width="120"/>
+			<text name="estate id">
+				부동산 ID:
+			</text>
+			<text name="parent id">
+				상위 ID:
+			</text>
+			<line_editor name="parentestate" tool_tip="이 지역의 상위 부동산"/>
+			<text name="Grid Pos: ">
+				그리드 위치:
+			</text>
+			<line_editor left_delta="110" name="gridposx" tool_tip="이 지역의 X 그리드 위치" width="35"/>
+			<line_editor left_delta="45" name="gridposy" tool_tip="이 지역의 Y 그리드 위치" width="35"/>
+			<text name="Redirect to Grid: " width="110">
+				그리드로 리디렉션:
+			</text>
+			<line_editor left_delta="110" left_pad="0" name="redirectx" width="35"/>
+			<line_editor left_delta="45" name="redirecty" width="35"/>
+			<text font="SansSerifSmall" name="billable factor text">
+				청구 요소:
+			</text>
+			<text name="land cost text">
+				m²당 L$:
+			</text>
+			<button label="새로고침" label_selected="새로고침" name="Refresh" tool_tip="위 정보를 새로고침하려면 클릭하세요"/>
+			<button label="적용" label_selected="적용" name="Apply" tool_tip="위 변경사항을 적용하려면 클릭하세요"/>
+			<button label="지역 선택" label_selected="지역 선택" left="136" name="Select Region" tool_tip="토지 도구로 전체 지역을 선택합니다" width="132"/>
+			<button label="지금 자동저장" label_selected="지금 자동저장" left="136" name="Autosave now" tool_tip="gzip된 상태를 자동저장 디렉터리에 저장합니다" width="132"/>
+		</panel>
+		<panel label="객체" name="objects">
+			<panel.string name="no_target">
+				(대상 없음)
+			</panel.string>
+			<text name="Region Name:">
+				지역 이름:
+			</text>
+			<text name="region name">
+				Welsh
+			</text>
+			<check_box label="스크립트 비활성화" name="disable scripts" tool_tip="이 지역의 모든 스크립트를 비활성화합니다"/>
+			<check_box label="충돌 비활성화" name="disable collisions" tool_tip="이 지역에서 아바타가 아닌 충돌을 비활성화합니다"/>
+			<check_box label="물리 비활성화" name="disable physics" tool_tip="이 지역에서 물리를 비활성화합니다"/>
+			<button label="적용" label_selected="적용" name="Apply" tool_tip="위 변경사항을 적용하려면 클릭하세요"/>
+			<button label="대상 설정" label_selected="대상 설정" name="Set Target" tool_tip="객체 삭제를 위한 대상 아바타를 선택하세요"/>
+			<text name="target_avatar_name">
+				(대상 없음)
+			</text>
+			<button label="다른 사람 토지에 있는 대상의 스크립트 객체 삭제" label_selected="다른 사람 토지에 있는 대상의 스크립트 객체 삭제" name="Delete Target&apos;s Scripted Objects On Others Land" tool_tip="대상이 소유한 모든 스크립트 객체를 대상이 소유하지 않은 토지에서 삭제합니다. (복사불가) 객체는 반환됩니다."/>
+			<button label="*모든* 토지에 있는 대상의 스크립트 객체 삭제" label_selected="*모든* 토지에 있는 대상의 스크립트 객체 삭제" name="Delete Target&apos;s Scripted Objects On *Any* Land" tool_tip="이 지역에서 대상이 소유한 모든 스크립트 객체를 삭제합니다. (복사불가) 객체는 반환됩니다."/>
+			<button label="대상의 *모든* 객체 삭제" label_selected="대상의 *모든* 객체 삭제" name="Delete *ALL* Of Target&apos;s Objects" tool_tip="이 지역에서 대상이 소유한 모든 객체를 삭제합니다. (복사불가) 객체는 반환됩니다."/>
+			<button label="최고 충돌 객체" label_selected="최고 충돌 객체" name="Get Top Colliders" tool_tip="좁은 단계에서 가장 많은 콜백을 갖는 객체 목록을 가져옵니다" width="130"/>
+			<button label="최고 스크립트" label_selected="최고 스크립트" name="Get Top Scripts" tool_tip="가장 많은 시간을 스크립트 실행에 소비하는 객체 목록을 가져옵니다" width="130"/>
+			<button label="스크립팅 요약" label_selected="스크립팅 요약" name="Scripts digest" tool_tip="모든 스크립트와 발생 횟수 목록을 가져옵니다" width="130"/>
+		</panel>
+		<panel label="요청" name="request">
+			<text name="Destination:">
+				대상:
+			</text>
+			<combo_box name="destination">
+				<combo_box.item label="선택" name="item1"/>
+				<combo_box.item label="아바타 지역" name="item2"/>
+			</combo_box>
+			<text name="Request:">
+				요청:
+			</text>
+			<combo_box name="request">
+				<combo_box.item label="충돌자 &lt;단계&gt;" name="item1"/>
+				<combo_box.item label="스크립트 &lt;수&gt;,&lt;선택적 패턴&gt;" name="item2"/>
+				<combo_box.item label="객체 &lt;패턴&gt;" name="item3"/>
+				<combo_box.item label="rez &lt;asset_id&gt;" name="item4"/>
+			</combo_box>
+			<text name="Parameter:">
+				매개변수:
+			</text>
+			<button label="요청" label_selected="요청" name="Make Request"/>
+		</panel>
+	</tab_container>
+</floater>
