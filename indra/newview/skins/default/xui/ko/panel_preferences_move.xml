@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="이동" name="move_panel">
+	<tab_container label="Move and View" name="tabs">
+		<!--View-->
+		<panel label="시점" name="tab-view">
+			<slider label="시야각" name="camera_fov" tool_tip="현실 세계에서는 줌 기능입니다. 뷰어 창에서 시야각을 변경합니다. Ctrl + 0 또는 Ctrl+8을 누르는 것과 같습니다. 참고: flycam이 활성화되어 있으면(3D SpaceNavigator) 작동하지 않습니다."/>
+			<slider label="거리" name="camera_offset_scale"/>
+			<slider label="전환 시간" name="camera_transition_time"/>
+			<slider label="부드러움" name="camera_position_smoothing"/>
+			<check_box label="카메라 제약 해제" name="DisableCameraConstraints" tool_tip="카메라를 일반적인 경계를 넘어서 그리고 지면 아래로 이동할 수 있게 설정합니다. 카메라 이동에 익숙하지 않다면 더 많은 샷이 나쁜 각도로 찍힐 수 있습니다."/>
+			<check_box label="마우스 휠을 카메라 줌 레벨 제어에 사용하지 않음" name="FSDisableMouseWheelCameraZoom"/>
+			<text name="heading2">
+				자동으로 아바타 포즈 조정 (하나 이상 선택):
+			</text>
+			<check_box label="건축/편집" name="edit_camera_movement" tool_tip="편집 모드 진입 및 종료 시 자동 카메라 위치 조정 사용"/>
+			<check_box label="외모" name="appearance_camera_movement" tool_tip="편집 모드에서 자동 카메라 위치 조정 사용"/>
+			<check_box label="시각적 힌트 표시" name="FSAppearanceShowHints" tool_tip="수정되는 아바타 부분을 보여주는 시각적 힌트를 활성화하거나 비활성화합니다."/>
+			<check_box label="아바타를 클릭해도 카메라 위치 유지" name="clickonavatarkeepscamera" tool_tip="일반적으로 아바타를 클릭하면 카메라 위치가 재설정됩니다. 이 옵션은 이 동작을 제거합니다."/>
+			<check_box label="텔레포트 후 카메라 위치 재설정 (지역 내)" name="FSResetCameraOnTP" tool_tip="일반적으로 텔레포트할 때 카메라 위치가 재설정됩니다. 이 옵션은 이 동작을 방지합니다."/>
+			<check_box label="아바타 이동 시 카메라 위치 재설정" name="FSResetCameraOnMovement"/>
+			<check_box label="시점 재설정 시 아바타를 카메라 방향으로 회전" name="resetviewturnsavatar" tool_tip="이 옵션은 카메라 방향을 유지하고 시점 재설정(ESC 키 누르기)을 선택할 때 아바타를 회전시킵니다."/>
+			<check_box label="카메라가 제약 없이 프림을 통해 이동하도록 허용" name="ignorecameraconstraints" tool_tip="시뮬레이터가 카메라를 객체 밖으로 밀어내려는 '푸시'를 무시합니다." width="305"/>
+			<text name="ignorecameraconstraints_requires_restart">
+				(재시작 필요)
+			</text>
+			<check_box label="텔레포트 후 임시 렌더링 해제된 객체 재렌더링" name="FSTempDerenderUntilTeleport" tool_tip="활성화하면 임시 렌더링 해제된 객체는 텔레포트까지 렌더링 해제 상태를 유지합니다. 비활성화하면 세션이 끝나거나 에셋 블랙리스트 창을 통해 수동으로 재렌더링될 때까지 렌더링 해제 상태를 유지합니다."/>
+		</panel>
+
+		<!--Mouselook-->
+		<panel label="마우스룩" name="tab-mouselook">
+			<check_box label="마우스룩 기능 활성화" name="EnableMouselook" tool_tip="1인칭 시점과 카메라의 마우스 컨트롤을 허용"/>
+			<check_box label="마우스룩에서 아바타 표시" name="first_person_avatar_visible"/>
+			<check_box label="마우스룩에서 사용자 인터페이스 표시" name="first_person_ui_visible"/>
+			<check_box label="마우스룩으로 변경할 때 대화 및 레이더 창 열어두기" name="FSShowConvoAndRadarInML"/>
+			<check_box label="마우스룩에서 컨텍스트 메뉴 활성화" name="FSEnableRightclickMenuInMouselook" tool_tip="ALT + 마우스 오른쪽 버튼으로 마우스룩 모드에서 파이/컨텍스트 메뉴를 엽니다"/>
+			<check_box label="스크롤 휠을 사용하여 마우스룩 종료" name="FSScrollWheelExitsMouselook" tool_tip="활성화하면 마우스의 스크롤 휠을 돌려서 마우스룩을 종료할 수 있습니다"/>
+			<check_box label="마우스룩 지침 표시" name="mouselook_instructions_visible" tool_tip="마우스룩 지침 표시"/>
+			<check_box label="마우스룩 십자선 표시" name="ShowCrosshairs" tool_tip="마우스룩 모드에서 십자선 표시"/>
+			<check_box label="전투 기능 활성화" name="FSMouselookCombatFeatures"/>
+			<check_box label="타겟 마커 그리기" name="ExodusMouselookIFF"/>
+			<slider label="범위 (m):" name="ExodusMouselookIFFRange"/>
+			<text name="Mouse Sensitivity" width="195">
+				마우스룩 마우스 감도:
+			</text>
+			<check_box label="반전" name="invert_mouse"/>
+		</panel>
+
+		<!--Movement-->
+		<panel label="이동" name="tab-movement">
+			<check_box label="화살표 키로 항상 이동" name="arrow_keys_move_avatar_check" tool_tip="뷰어 하단의 주변 채팅 입력 필드에만 적용되며, 대화의 주변 채팅 탭에는 적용되지 않습니다."/>
+			<check_box label="글자 키 입력이 주변 채팅 시작 대신 이동에 영향 (예: WASD)" name="LetterKeysAffectsMovementNotFocusChatBar"/>
+			<check_box label="탭-탭-홀드로 달리기" name="tap_tap_hold_to_run"/>
+			<check_box label="위(점프) / 아래(웅크리기) 홀드 시 비행 / 착지" name="automatic_fly"/>
+			<check_box label="웅크리기 토글 모드 활성화" name="crouch_toggle_mode"/>
+			<check_box label="점프 전 및 착지 애니메이션 대기 비활성화" name="FSIgnoreFinishAnimation"/>
+			<check_box label="아바타가 화면에서 뒤로 걷도록 허용 (SL 기본값, 로컬만)" name="FSDisableTurningAroundWhenWalkingBackwards" tool_tip="체크하면 뒤로 이동하는 아바타가 화면에서 뒤로 걷는 것으로 보입니다. 이 설정은 뷰어가 보여주는 것에만 영향을 주며, 아바타가 실제로 하는 행동에는 영향을 주지 않습니다. 이는 Second Life 뷰어의 기본 동작입니다. 아바타의 AO가 이 동작을 무시하고 대신 아바타를 돌리도록 강제할 수 있습니다."/>
+			<check_box label="선택한 객체로 아바타 회전" name="FSTurnAvatarToSelectedObject" tool_tip="현재 선택 중인 객체를 향해 아바타를 돌립니다."/>
+			<slider label_width="180" label="아바타 회전 회전 속도:" name="av_turn_spd" tool_tip="아바타가 회전에 반응하는 속도를 변경합니다. 최대 회전 속도의 추정 백분율로 0-100. 0이 기본값입니다. 높은 값은 급격하고 경련적입니다." width="305"/>
+			<text name="Region_Crossing_Movement_Label" width="245">
+				지역 교차 이동 예측:
+			</text>
+			<radio_group name="Region_Crossing_Movement">
+				<radio_item label="무제한" name="move_predict" width="85"/>
+				<radio_item label="오류가 너무 클 때 중지" name="move_stop" width="85"/>
+			</radio_group>
+			<text name="movelock_lbl">
+				내장 LSL 브리지 movelock이 활성화된 경우...
+			</text>
+			<check_box label="지역 변경 후 항상 위치 재잠금" name="RelockMoveLockAfterRegionChange"/>
+			<check_box label="이동 중지 또는 시작 후 위치 잠금 및 잠금 해제" name="RelockMoveLockAfterMovement"/>
+			<text name="single_click_action_lbl">
+				땅에서 한 번 클릭:
+			</text>
+			<combo_box name="single_click_action_combo">
+				<combo_box.item label="동작 없음" name="0"/>
+				<combo_box.item label="클릭한 지점으로 이동" name="1"/>
+			</combo_box>
+			<text name="double_click_action_lbl">
+				땅에서 더블 클릭:
+			</text>
+			<combo_box name="double_click_action_combo">
+				<combo_box.item label="동작 없음" name="0"/>
+				<combo_box.item label="클릭한 지점으로 이동" name="1"/>
+				<combo_box.item label="클릭한 지점으로 텔레포트" name="2"/>
+			</combo_box>
+			<check_box label="스크립트된 객체에서 더블 클릭 동작 허용" name="FSAllowDoubleClickOnScriptedObjects"/>
+			<button label="조이스틱 구성" name="joystick_setup_button"/>
+		</panel>
+
+		<!-- Teleports -->
+		<panel label="텔레포트" name="tab-teleports">
+			<check_box label="텔레포트할 때 사운드 효과 재생" name="PlayTeleportSound"/>
+			<check_box label="텔레포트 후 항상 비행" name="FSFlyAfterTeleport"/>
+			<check_box label="항상 텔레포트 취소 버튼 표시" name="FSAlwaysShowTPCancel" tool_tip="시뮬레이터에서 취소할 수 없다고 해도 항상 TP 취소 버튼을 표시합니다. 시뮬레이터는 항상 취소 가능 여부를 알고 있으며 어떤 경우든 사망/신 TP에서 취소 요청을 무시합니다. 이 설정은 RestrainedLoveAPI에 의해 무시됩니다(즉, 제한사항으로 여전히 비활성화할 수 있습니다)."/>
+			<check_box label="텔레포트 비컨 비활성화" name="tp_beam_toggle" tool_tip="텔레포트 후 텔레포트 목적지 비컨을 비활성화합니다."/>
+			<check_box label="텔레포트 화면 비활성화" name="tp_screen_toggle" tool_tip="모든 텔레포트 중 검은 텔레포트 화면을 비활성화합니다."/>
+			<check_box label="텔레포트할 때 지도 닫지 않음" name="FSDoNotHideMapOnTeleport" tool_tip="텔레포트할 때 지도의 자동 닫기를 비활성화합니다."/>
+			<check_box label="텔레포트 후 '친구만 표시' 유지" name="FSRenderFriendsOnlyPersistsTP" tool_tip="'친구만 표시' 기능의 자동 취소를 비활성화합니다 (기본값: 꺼짐)"/>
+			<check_box label="텔레포트를 완료한 지역의 SLURL 보고" name="FSShowBackSLURL"/>
+		</panel>
+
+		<!-- Map & Minimap -->
+		<panel label="지도 및 미니맵" name="tab-maps">
+			<text name="minimap_options_label">
+				미니맵 옵션:
+			</text>
+			<check_box label="미니맵 회전 활성화" name="minimaprotate" tool_tip="아바타 방향에 맞춰 미니 월드맵을 회전시킵니다."/>
+			<text name="netmap_double_click_action_lbl">
+				미니맵에서 더블 클릭:
+			</text>
+			<combo_box name="netmap_double_click_action_combo">
+				<combo_box.item label="동작 없음" name="0"/>
+				<combo_box.item label="월드맵 열기" name="1"/>
+				<combo_box.item label="클릭한 지점으로 텔레포트" name="2"/>
+			</combo_box>
+			<slider label="선택 반경:" tool_tip="미니맵에서 선택 범위의 반경을 제어합니다. 선택 범위의 불투명도와 색상은 선택 반경 색상 및 불투명도 설정으로 조정할 수 있습니다." name="FSMinimapPickScale"/>
+			<text name="world_map_options_label">
+				월드맵 옵션:
+			</text>
+			<check_box label="월드맵에서 중복 랜드마크 필터링" name="WorldmapFilterDuplicateLandmarks" tool_tip="월드맵의 랜드마크 목록에서 중복 랜드마크 항목을 필터링합니다."/>
+			<check_box label="월드맵에 추가 지역 정보 표시" name="FSAdvancedWorldmapRegionInfo" tool_tip="월드맵에 추가 지역 정보(아바타 수 및 성숙도 등급)를 표시합니다."/>
+			<check_box label="월드맵에 격자 좌표 표시" name="FSShowRegionGridCoordinates" tool_tip="월드맵에 격자 좌표(지역 단위)를 표시합니다."/>
+			<check_box label="월드맵에서 더블 클릭 텔레포트 활성화" name="FSWorldMapDoubleclickTeleport" tool_tip="월드맵에서 목적지로 더블 클릭을 통한 텔레포트를 활성화합니다."/>
+		</panel>
+	</tab_container>
+</panel>

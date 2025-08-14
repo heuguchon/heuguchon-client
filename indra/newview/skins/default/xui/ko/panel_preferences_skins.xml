@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel label="스킨" name="skin_panel">
+	<text name="skin_textbox">
+        스킨:
+    </text>
+    <text name="skin_textbox1">
+        (재시작 필요)
+    </text>
+    <text name="theme_textbox">
+        색상 체계:
+    </text>
+    <text name="theme_textbox2">
+        (재시작 필요)
+    </text>
+    <check_box label="스킨 변경 시 도구모음을 스킨의 기본 레이아웃으로 재설정" tool_tip="활성화하면 스킨의 설계된 도구모음 버튼 레이아웃을 보존하고 스킨을 변경할 때 선택한 버튼 사용자 지정을 재정의합니다." name="reset_toolbar_settings"/>
+    <check_box label="로그인 모드 변경 시 도구모음을 로그인 모드의 기본 레이아웃으로 재설정" tool_tip="활성화하면 로그인 모드의 설계된 도구모음 버튼 레이아웃을 보존하고 로그인 모드를 변경할 때 선택한 버튼 사용자 지정을 재정의합니다." name="FSToolbarsResetOnModeChange"/>
+    <check_box label="뷰어 1 스타일 커서 사용" name="use_legacy_cursors"/>
+    <text name="theme_textbox3">
+        (재시작 필요)
+    </text>
+</panel>

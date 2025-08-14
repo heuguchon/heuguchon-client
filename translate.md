@@ -235,6 +235,19 @@
   - [x] panel_group_notices.xml - (그룹 공지 패널)
   - [x] panel_world_map.xml - (월드맵 패널)
   - [x] panel_instant_message.xml - (인스턴트 메시지 패널)
+- [x] 37차: 환경설정 패널 UI 번역 (4개)
+  - [x] panel_preferences_advanced.xml - (고급 환경설정)
+  - [x] panel_preferences_alerts.xml - (알림 환경설정)
+  - [x] panel_preferences_controls.xml - (컨트롤 환경설정)
+  - [x] panel_preferences_backup.xml - (백업 환경설정)
+- [x] 38차: 이동 환경설정 패널 UI 번역 (1개)
+  - [x] panel_preferences_move.xml - (이동 환경설정 - 대용량)
+- [x] 39차: 추가 환경설정 패널 UI 번역 (5개)
+  - [x] panel_preferences_skins.xml - (스킨 환경설정)
+  - [x] panel_preferences_uploads.xml - (업로드 환경설정)
+  - [x] panel_preferences_crashreports.xml - (크래시 보고서 환경설정)
+  - [x] panel_preferences_opensim.xml - (OpenSim 환경설정)
+  - [x] panel_preferences_colors.xml - (색상 환경설정 - 대용량)
 - [ ] 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -260,7 +273,7 @@
 - 프로젝트 구조 분석
 - 작업 계획 수립
 - ko 폴더 생성
-- **핵심 파일 152개 번역 완료:**
+- **핵심 파일 162개 번역 완료:**
   - strings.xml (기본 문자열)
   - floater_about.xml (정보 창)
   - menu_login.xml (로그인 메뉴)
@@ -433,7 +446,7 @@
 - **33차: 중요 환경설정 패널 완료** - 채팅, 그래픽, 소리 환경설정 (대용량 파일 3개)
 
 ### 번역 완료율
-- **총 167개 파일 번역** (독일어 기준 약 400개 중 약 41.8%)
+- **총 177개 파일 번역** (독일어 기준 약 400개 중 약 44.3%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화
@@ -441,6 +454,7 @@
 - **고급 기능 완료** - AO 시스템, 자동 텍스트 치환, 아바타 렌더링 예외 설정 등
 - **콘텐츠 생성 도구 완료** - 대량 업로드, 머티리얼 에디터, 모델 미리보기, 스크립트 에디터 등
 - **중요 패널 UI 완료** - 개인정보, Firestorm 환경설정, 의상 편집, 그룹 관리, 네비게이션, 상태바, 프로필, 그룹 토지/매니, 역할, 공지, 월드맵, IM 패널
+- **환경설정 패널 완료** - 고급, 알림, 컨트롤, 백업, 이동, 스킨, 업로드, 크래시 보고서, OpenSim, 색상 환경설정 한국어화
 
 ### 다음 단계 우선순위
 1. **더 많은 플로터 창들**:

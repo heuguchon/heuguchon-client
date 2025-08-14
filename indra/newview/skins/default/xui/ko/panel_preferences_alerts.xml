@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="알림" name="popups" title="알림">
+	<tab_container name="tabs">
+		<!-- World -->
+		<panel label="월드" name="tab-world">
+			<check_box label="L$을 소비하거나 받을 때 알림" name="notify_money_change_checkbox"/>
+			<check_box name="FSPaymentInfoInChat" label="토스트 대신 주변 채팅에서 L$ 거래 보고"/>
+			<check_box label="지역 변경 시 시뮬레이터 버전이 바뀌면 알림" name="FSShowServerVersionChangeNotice" tool_tip="텔레포트나 지역 간 이동 중 시뮬레이터 버전이 변경되면 알림을 표시합니다."/>
+			<check_box label="로그인 시 status.secondlifegrid.net에서 최신 뉴스 조회" name="AutoQueryGridStatus"/>
+			<check_box label="Growl 알림 활성화" name="notify_growl_checkbox"/>
+			<check_box label="Firestorm이 활성 상태일 때도 Growl 알림 표시" name="notify_growl_always_checkbox"/>
+			<check_box label="키워드 알림의 일부로 이미 표시된 중복 IM 필터링" name="FSFilterGrowlKeywordDuplicateIMs"/>
+		</panel>
+
+		<!-- People -->
+		<panel label="사람들" name="tab-people">
+			<check_box label="메시지를 받고 [APP_NAME]이 포커스에 없을 때 앱 아이콘 깜박임" name="FSFlashOnMessage"/>
+			<check_box label="객체로부터 인스턴트 메시지를 받을 때도 앱 아이콘 깜박임" name="FSFlashOnObjectIM"/>
+			<check_box label="누군가 표시 이름을 변경할 때 알림" name="FSShowDisplayNameUpdateNotification"/>
+			<check_box label="누군가를 차단하거나 차단 해제할 때 알림" name="FSReportBlockToNearbyChat"/>
+			<text name="friends_logon_label">
+				친구들이 로그인하거나 로그아웃할 때 알림:
+			</text>
+			<check_box label="토스트로" name="friends_online_notify_checkbox"/>
+			<check_box name="OnlineOfflinetoNearbyChat" label="주변 채팅 및 콘솔에서"/>
+			<check_box label="주변 채팅에서만" name="OnlineOfflinetoNearbyChatHistory"/>
+		</panel>
+
+		<!-- Objects & Scripts -->
+		<panel label="객체 및 스크립트" name="tab-objects">
+			<check_box label="스크립트 대화상자를 받고 [APP_NAME]이 포커스에 없을 때 앱 아이콘 깜박임" name="FSFlashOnScriptDialog"/>
+			<check_box label="충돌 알림을 주변 채팅에 보고" name="FSCollisionMessagesInChat"/>
+			<check_box label="스크립트 오류 보고 위치:" name="show_script_errors"/>
+			<radio_group name="show_script_errors_location">
+				<radio_item label="주변 채팅" name="script_0"/>
+				<radio_item label="별도 창" name="script_1"/>
+			</radio_group>
+			<check_box label="지역의 총 스크립트 수 변화 보고:" name="FSReportTotalScriptCountChanges"/>
+			<spinner name="FSReportTotalScriptCountChangesThreshold" tool_tip="보고하기 전 총 스크립트 수 변화에 대한 임계값 [기본값: 100]"/>
+			<check_box label="스크립트로 충돌 알림 보고 채널:" name="FSReportCollisionMessages"/>
+			<spinner name="FSReportCollisionMessagesChannel" tool_tip="스크립트로 충돌 메시지를 보고하는 데 사용되는 채널 [기본값: -25000]"/>
+		</panel>
+
+		<!-- Inventory -->
+		<panel label="인벤토리" name="tab-inventory">
+			<check_box label="업로드 요금이 청구될 때 알림" name="FSShowUploadPaymentToast"/>
+			<check_box label="랜드마크가 생성될 때 알림" name="landmark_created_checkbox"/>
+			<check_box label="'객체가 인벤토리로 반환됨' 알림 비활성화" name="FSDisableReturnObjectNotification"/>
+			<check_box label="저장된 스크린샷의 파일명을 채팅 기록에 로그" name="FSLogSnapshotsToLocal"/>
+			<check_box label="객체로부터 아이템이 너무 빨리 들어올 때 알림" name="FSNotifyIncomingObjectSpam"/>
+			<check_box label="다른 주민으로부터 아이템이 너무 빨리 들어올 때 알림" name="FSNotifyIncomingObjectSpamFrom"/>
+			<slider name="FSOfferThrottleMaxCount" label="들어오는 객체 제공 스로틀 임계값:" label_width="225" width="350" tool_tip="10초 내에 들어오는 객체 제공의 임계값을 설정하여 스로틀링 전에 처리합니다. 기본값: 5"/>
+		</panel>
+
+		<!-- Alerts -->
+		<panel label="경고" name="tab-alerts">
+			<text name="show_label" tool_tip="뷰어의 경고 목록입니다. 왼쪽의 체크표시를 선택하면 경고를 활성화하고, 선택 해제하면 경고를 숨깁니다.">
+				표시하거나 숨길 수 있는 뷰어 경고:
+			</text>
+			<filter_editor label="경고 필터" name="popup_filter" tool_tip="관심 있는 검색어를 여기에 입력하세요. 부분 전문 일치 결과가 표시됩니다." />
+			<scroll_list name="all_popups">
+				<column label="표시" name="alert_enabled_check" width="22" />
+				<column label="경고" name="alert_label" width="460" />
+			</scroll_list>
+		</panel>
+	</tab_container>
+</panel>

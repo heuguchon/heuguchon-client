@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel label="고급" name="advanced">
+	<panel.string name="aspect_ratio_text">
+		[NUM]:[DEN]
+	</panel.string>
+	<check_box label="다중 뷰어 허용 (안정성과 성능을 떨어뜨릴 수 있음)" name="allow_multiple_viewer_check"/>
+	<check_box label="다른 그리드 로그인 허용 (모든 그리드가 Firestorm을 지원하지는 않음)" name="show_grid_selection_check"/>
+	<check_box label="고급 메뉴 보기 (자기 위험 부담!)" name="show_advanced_menu_check"/>
+	<check_box label="개발자 메뉴 보기 (자기 위험 부담!)" name="show_develop_menu_check"/>
+	<check_box label="Windows 시스템에서 WMI를 통한 VRAM 감지 비활성화" name="FSDisableWMIProbing"/>
+	<text name="BackgroundYieldTimeText">
+		[APP_NAME]이 최전면 창이 아닐 때 매 프레임마다 다른 애플리케이션에게 양보할 시간 (밀리초) (기본값: 40; 1초 = 1000밀리초):
+	</text>
+	<button label="모든 설정 재설정" label_selected="모든 설정 재설정..." name="clear_settings"/>
+</panel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<panel label="업로드" name="uploads">
+	<text name="title">
+		업로드를 위한 현재 대상 폴더
+	</text>
+	<text name="title_models">
+		이미지
+	</text>
+	<text name="title_sounds">
+		사운드
+	</text>
+	<text name="title_animation">
+		애니메이션
+	</text>
+	<text name="title_model">
+		모델
+	</text>
+	<text name="title_pbr">
+		PBR 머티리얼
+	</text>
+	<text name="upload_help">
+		대상 폴더를 변경하려면 인벤토리에서 해당 폴더를 오른쪽 클릭하고 "기본값으로 사용"을 선택하세요.
+	</text>
+</panel>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel label="OpenSim" name="opensim_panel">
+	<tab_container label="Opensim" name="tabs">
+		<panel name="grid_management_panel" label="그리드 관리자">
+			<text name="add_grid_text">
+				새 그리드 추가
+			</text>
+			<line_editor name="add_grid" label="LoginURI 입력"/>
+			<button label="지우기" label_selected="지우기" name="clear_grid" width="60"/>
+			<button label="적용" name="apply_new_grid" width="70"/>
+			<text name="add_grid_text">
+				그리드 관리
+			</text>
+			<scroll_list name="grid_list">
+				<scroll_list.columns label="그리드 이름" name="grid_label"/>
+				<scroll_list.columns label="로그인 URI" name="login_uri"/>
+			</scroll_list>
+			<button label="새로고침" name="refresh_grid" width="80"/>
+			<button label="제거" name="remove_grid" width="80"/>
+			<panel name="advanced_grid_panel">
+				<text name="grid_name_text" width="110">
+					그리드 이름:
+				</text>
+				<text name="grid_uri_text" width="110">
+					그리드 URI:
+				</text>
+				<text name="login_page_text" width="110">
+					로그인 페이지:
+				</text>
+				<text name="helper_uri_text" width="110">
+					헬퍼 URI:
+				</text>
+				<text name="website_text" width="110">
+					그리드 웹사이트:
+				</text>
+				<text name="support_text" width="110">
+					그리드 지원:
+				</text>
+				<text name="register_text" width="110">
+					그리드 등록:
+				</text>
+				<text name="password_text" width="110">
+					그리드 암호 URI:
+				</text>
+				<text name="search_text" width="110">
+					그리드 검색:
+				</text>
+				<text name="message_text" width="110">
+					그리드 메시지 URI:
+				</text>
+			</panel>
+		</panel>
+		<panel label="기타" name="opensim_misc_panel">
+			<check_box label="검색 디버그" name="DebugSearch"/>
+			<text name="search_url_debug_text">
+				현재 검색 URL 재정의: (비어있으면 재정의 안함)
+			</text>
+			<button label="지우기" label_selected="지우기" width="60" name="clear_search_url_debug"/>
+			<button label="선택" name="pick_current_search_url"/>
+		</panel>
+	</tab_container>
+</panel>

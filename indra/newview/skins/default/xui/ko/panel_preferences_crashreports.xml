@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel label="크래시 보고서" name="crash_reports">
+	<check_box label="크래시 보고서를 firestormviewer.org로 전송" name="checkSendCrashReports"/>
+	<check_box label="전송하기 전에 항상 묻기" name="checkSendCrashReportsAlwaysAsk"/>
+	<check_box label="설정 파일 포함" name="checkSendSettings"/>
+	<text name="textSendSettings">
+		(사용자명 포함)
+	</text>
+	<check_box label="사용자명 포함" name="checkSendName"/>
+	<text name="textSendName">
+		(필요시 추가 정보 요청에 사용됨)
+	</text>
+	<text name="textRestartRequired">
+		설정 변경 사항은 재시작 후에 적용됩니다.
+	</text>
+	<text name="textInformation1">
+		위에서 체크하지 않으면 크래시 보고서는 크래시와 관련된 정보만 포함합니다.
+	</text>
+	<text name="textInformation2">
+		로그는 전송되지 않으므로 내용을 검토한 후 별도로 이메일로 보내주세요.
+	</text>
+	<text name="textInformation3">
+		추가 정보가 포함되어 있다고 생각되면 말입니다.
+	</text>
+	<text name="textInformation4">
+		개인정보 보호정책: [URL]
+	</text>
+</panel>

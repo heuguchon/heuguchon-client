@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="색상" name="colors_panel">
+	<tab_container name="tabs">
+		<panel label="채팅 색상" name="tab-chat">
+			<text name="font_colors">
+				채팅 메시지 색상:
+			</text>
+			<text name="user_label">
+				내 텍스트
+			</text>
+			<text name="others_label">
+				다른 사람
+			</text>
+			<text name="text_box3">
+				객체
+			</text>
+			<text name="friends_label">
+				친구
+			</text>
+			<text name="linden_label">
+				린든
+			</text>
+			<text name="muted_label">
+				차단됨
+			</text>
+			<text name="system_label">
+				시스템
+			</text>
+			<text name="script_error_label">
+				오류
+			</text>
+			<text name="object_im_label">
+				객체 IM
+			</text>
+			<text name="llownersay_label">
+				소유자
+			</text>
+			<text name="htmllink_label">
+				URL
+			</text>
+			<text name="uriquerypart_label">
+				URL 쿼리 부분
+			</text>
+			<text name="direct_label">
+				직접
+			</text>
+			<text name="header_colors">
+				채팅 헤더:
+			</text>
+			<text name="chat_name_label">
+				아바타
+			</text>
+			<text name="object_name_header_label">
+				객체
+			</text>
+			<slider label="채팅 범위 밖 감소 계수:" label_width="200" name="FSBeyondNearbyChatColorDiminishFactor" tool_tip="발신자가 일반 채팅 범위를 넘어섰을 때 실제 채팅 색상을 감소시키는 데 사용되는 계수 (0 = 어둡게, 1 = 밝게)" width="450"/>
+			<check_box name="FSColorIMsDistinctly" label="콘솔에서 IM/그룹 채팅을 구별되게 색칠:"/>
+			<panel name="im_color_panel">
+				<text name="console_im_label">
+					IM/그룹
+				</text>
+			</panel>
+		</panel>
+		<panel label="이름표" name="tab-nametag">
+			<text name="nametag_colors">
+				이름표 색상:
+			</text>
+			<text name="self_tag_label">
+				내 태그
+			</text>
+			<text name="friend_tag_label">
+				친구
+			</text>
+			<text name="muted_tag_label">
+				차단됨
+			</text>
+			<text name="linden_tag_label">
+				린든 랩
+			</text>
+			<text name="match_tag_label">
+				일치
+			</text>
+			<text name="mismatch_tag_label">
+				불일치
+			</text>
+			<check_box label="사용자명을 구별되게 색칠" name="FSColorUsername" tool_tip="사용자명을 다른 색상으로 표시" width="270"/>
+			<check_box label="친구 이름표를 구별되게 색칠" name="NameTagShowFriends" tool_tip="친구 이름표를 다른 색상으로 표시"/>
+			<text name="username_tag_label">
+				사용자명
+			</text>
+			<text name="bubble_chat">
+				이름표 / 말풍선 채팅:
+			</text>
+			<color_swatch name="background" tool_tip="이름표 색상 선택"/>
+			<slider name="bubble_chat_opacity" label="이름표 불투명도:" tool_tip="이름표 불투명도 선택"/>
+			<slider name="FSNameTagZOffsetCorrection" label="이름표 Z-오프셋:" tool_tip="아바타 이름표의 Z-오프셋을 변경합니다. 기본값 0"/>
+			<check_box label="이름표에 거리 표시" name="FSTagShowDistance" tool_tip="이름표에 아바타로부터의 거리 표시"/>
+			<check_box label="거리에 따른 이름표 색상:" name="FSTagShowDistanceColors"/>
+			<panel name="distance_panel">
+				<text name="chat_distance_tag_label">
+					채팅 범위
+				</text>
+				<text name="whisper_distance_tag_label">
+					속삭임 범위
+				</text>
+				<text name="shout_tag_label">
+					외침
+				</text>
+				<text name="beyond_shout_distance_tag_label">
+					외침 범위 밖
+				</text>
+			</panel>
+			<panel name="client_tags_panel">
+				<text name="client_tags_colors">
+					클라이언트 태그 색상: (OpenSim/AuroraSim만)
+				</text>
+				<text name="whattagstoshow">
+					어떤 태그를 보고 싶나요?
+				</text>
+				<combo_box name="ClientTagsVisibility">
+					<combo_box.item name="No Viewertags" value="0" label="뷰어태그 없음"/>
+					<combo_box.item name="TPVD Viewer" value="1" label="TPVD 뷰어 (목록 사용)"/>
+					<combo_box.item name="All known Viewers" value="2" label="알려진 모든 뷰어 (목록 사용)"/>
+					<combo_box.item name="All Viewers" value="3" label="모든 뷰어"/>
+				</combo_box>
+				<text name="colorbasedonviewer">
+					뷰어에 따른 태그 색상?
+				</text>
+				<combo_box name="ColorClienttags">
+					<combo_box.item name="Color not based on Viewer" value="0" label="뷰어 기반 색상 아님"/>
+					<combo_box.item name="Single color per Viewer" value="1" label="뷰어당 단일 색상"/>
+					<combo_box.item name="Multiple colors per Viewer" value="2" label="뷰어당 다중 색상"/>
+					<combo_box.item name="Userdefined color" value="3" label="사용자 정의 색상"/>
+				</combo_box>
+				<text name="listtodisplayviewertags_txt">
+					뷰어태그를 표시하기 위해 목록을 사용하시겠습니까?
+				</text>
+				<combo_box name="UseLegacyClienttags">
+					<combo_box.item name="Don't use a list" value="0" label="목록 사용 안함"/>
+					<combo_box.item name="Local Clienttags" value="1" label="로컬 태그 목록"/>
+					<combo_box.item name="Download Clienttags" value="2" label="뷰어 시작 시 태그 목록 다운로드"/>
+				</combo_box>
+			</panel>
+		</panel>
+		<panel label="미니맵" name="tab-minimap">
+			<slider label="배경 불투명도:" name="FSMiniMapOpacity" tool_tip="미니맵 배경 불투명도 선택"/>
+			<text name="netmap_pickradius_color_textbox">
+				선택 반경 색상:
+			</text>
+			<color_swatch name="MapPickRadiusColor" tool_tip="미니맵에서 선택 범위의 색상을 제어합니다. 선택 범위의 크기는 선택 반경 설정으로 조정할 수 있습니다."/>
+			<text name="netmap_pickradius_opacity_textbox">
+				불투명도:
+			</text>
+			<slider name="MapPickRadiusTransparency" tool_tip="미니맵에서 선택 범위의 불투명도를 제어합니다. 선택 범위의 크기는 선택 반경 설정으로 조정할 수 있습니다."/>
+			<text name="netmap_dots_textbox">
+				미니맵 점들:
+			</text>
+			<text name="MapAvatarSelfColor_label">
+				나
+			</text>
+			<text name="MapAvatarColor_label">
+				다른 사람
+			</text>
+			<text name="MapAvatarFriendColor_label">
+				친구
+			</text>
+			<text name="MapAvatarLindenColor_label">
+				린든 랩
+			</text>
+			<text name="MapAvatarMutedColor_label">
+				차단됨
+			</text>
+			<check_box name="MiniMapChatRing" label="속삭임, 말하기 및 외침 채팅 범위를 나타내는 링을 미니맵에 표시:"/>
+			<text name="netmap_whisperring_color_label">
+				속삭임 범위
+			</text>
+			<text name="netmap_chatring_color_label">
+				채팅 범위
+			</text>
+			<text name="netmap_shoutring_color_label">
+				외침 범위
+			</text>
+		</panel>
+		<panel label="기타" name="tab-misc">
+			<text name="effects_color_textbox">
+				선택 효과 (파티클 빔):
+			</text>
+			<text name="ScriptDialogFgLabel">
+				스크립트 대화상자 F/B:
+			</text>
+			<text name="floater_opacity">
+				플로팅 창 불투명도:
+			</text>
+			<slider label="활성:" name="active"/>
+			<slider label="비활성:" name="inactive"/>
+			<slider label="카메라 / 이동:" name="camera_movement"/>
+			<text name="console_opacity">
+				콘솔 불투명도:
+			</text>
+			<color_swatch name="console_background" tool_tip="콘솔 색상 선택"/>
+			<slider label="불투명도:" name="console_background_opacity" tool_tip="콘솔 배경 불투명도 선택"/>
+			<slider label="플로팅 텍스트 배경 불투명도:" name="FSHudTextBackgroundOpacity" tool_tip="플로팅 텍스트 배경 불투명도 선택"/>
+			<text name="preferences_search_label">
+				환경설정 검색 하이라이트 색상:
+			</text>
+			<text name="preferences_search_bg_label">
+				배경:
+			</text>
+			<color_swatch name="preferences_search_bg_color" tool_tip="환경설정 검색 하이라이트 배경 색상 선택"/>
+			<text name="preferences_search_font_label">
+				글꼴:
+			</text>
+			<color_swatch name="preferences_search_font_color" tool_tip="환경설정 검색 하이라이트 글꼴 색상 선택"/>
+			<text name="area_search_beacon_color_label">
+				영역 검색 비컨 색상:
+			</text>
+			<color_swatch name="area_search_beacon_color" tool_tip="영역 검색 비컨 색상 선택"/>
+			<text name="notecard_editor_color_label">
+				노트카드 색상:
+			</text>
+			<text name="notecard_editor_writable_text_color_label">
+				텍스트:
+			</text>
+			<color_swatch name="notecard_editor_writable_text_color" tool_tip="노트카드 텍스트 색상"/>
+			<text name="notecard_editor_writable_bg_color_label">
+				배경:
+			</text>
+			<color_swatch name="notecard_editor_writable_bg_color" tool_tip="노트카드 배경 색상"/>
+			<text name="notecard_editor_writable_cursor_color_label">
+				커서:
+			</text>
+			<color_swatch name="notecard_editor_writable_cursor_color" tool_tip="노트카드 커서 색상"/>
+			<text name="notecard_editor_writable_selection_color_label">
+				선택:
+			</text>
+			<color_swatch name="notecard_editor_writable_selection_color" tool_tip="노트카드 선택된 텍스트 색상"/>
+			<check_box name="FSScriptDialogNoTransparency" label="스크립트 대화상자를 항상 불투명한 배경에 표시"/>
+			<check_box name="FSGroupNotifyNoTransparency" label="그룹 공지를 항상 불투명한 배경에 표시"/>
+			<check_box name="override_pie_color_checkbox" label="파이 메뉴 배경 색상 및 불투명도 재정의:"/>
+			<panel name="tab-colorize">
+				<color_swatch name="pie_bg_color_override" tool_tip="파이 메뉴 배경 색상 선택"/>
+				<color_swatch name="pie_selected_color_override" tool_tip="파이 메뉴 선택 색상 선택"/>
+				<slider label="불투명도:" name="pie_menu_opacity" tool_tip="파이 메뉴 불투명도 선택"/>
+				<slider label="페이드 아웃:" name="pie_menu_fade_out" tool_tip="파이 가장자리로의 페이드 아웃 양 선택"/>
+			</panel>
+		</panel>
+	</tab_container>
+</panel>
