@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="그래픽" name="Display panel">
+<tab_container label="Graphics Prefs" name="tabs">
+	<panel label="일반" name="General">
+		<text name="preset_label">
+			현재 프리셋:
+		</text>
+		<text name="QualitySpeed">
+			품질과 속도:
+		</text>
+		<text name="FasterText">
+			빠르게
+		</text>
+		<text name="BetterText">
+			더 좋게
+		</text>
+		<text name="ShadersPrefText">
+			낮음
+		</text>
+		<text name="ShadersPrefText2">
+			보통
+		</text>
+		<text name="ShadersPrefText3">
+			높음
+		</text>
+		<text name="ShadersPrefText4">
+			울트라
+		</text>
+		<text name="ShadersText">
+			셰이더:
+		</text>
+		<check_box label="투명한 물" name="TransparentWater"/>
+		<check_box label="앰비언트 오클루전" name="UseSSAO"/>
+		<check_box label="스크린 스페이스 리플렉션" name="ScreenSpaceReflections"/>
+		<check_box label="거울" name="Mirrors"/>
+		<text name="shadows_label">
+			그림자:
+		</text>
+		<combo_box name="ShadowDetail">
+			<combo_box.item label="없음" name="0"/>
+			<combo_box.item label="태양/달" name="1"/>
+			<combo_box.item label="태양/달 + 프로젝터" name="2"/>
+		</combo_box>
+		<text name="ReflectionDetailText">
+			반사 디테일:
+		</text>
+		<combo_box name="ReflectionDetail">
+			<combo_box.item label="정적만" name="0"/>
+			<combo_box.item label="정적 &amp; 동적" name="1"/>
+			<combo_box.item label="실시간" name="2"/>
+		</combo_box>
+		<text name="ReflectionProbeText">
+			반사 범위:
+		</text>
+		<combo_box name="ReflectionLevel">
+			<combo_box.item label="없음" name="0"/>
+			<combo_box.item label="수동만" name="1"/>
+			<combo_box.item label="수동 &amp; 지형" name="2"/>
+			<combo_box.item label="전체 씬" name="3"/>
+		</combo_box>
+		<text name="reflection_label">
+			물 반사:
+		</text>
+		<combo_box label="물 반사" name="Reflections">
+			<combo_box.item label="없음 (불투명)" name="-2"/>
+			<combo_box.item label="없음 (투명)" name="-1"/>
+			<combo_box.item label="최소" name="0"/>
+			<combo_box.item label="지형과 나무" name="1"/>
+			<combo_box.item label="모든 정적 객체" name="2"/>
+			<combo_box.item label="모든 아바타와 객체" name="3"/>
+			<combo_box.item label="모든 것" name="4"/>
+		</combo_box>
+		<text name="local lights_label" tool_tip="표시되는 광원 수에 영향을 줍니다 (재시작 필요).">
+			점광원 조명 (재시작 필요):
+		</text>
+		<combo_box name="LocalLightsDetail">
+			<combo_box.item label="전체 (기본값)" name="3"/>
+			<combo_box.item label="감소" name="2"/>
+			<combo_box.item label="태양/달만" name="1"/>
+		</combo_box>
+		<text name="MirrorResolutionText">
+			거울 해상도:
+		</text>
+		<combo_box name="MirrorResolution">
+			<combo_box.item label="256" name="0"/>
+			<combo_box.item label="512" name="1"/>
+			<combo_box.item label="1024" name="2"/>
+			<combo_box.item label="2048" name="3"/>
+		</combo_box>
+		<text name="HeroProbeUpdateText">
+			반사 업데이트:
+		</text>
+		<combo_box name="HeroProbeUpdateRate">
+			<combo_box.item label="낮음" name="6"/>
+			<combo_box.item label="보통" name="3"/>
+			<combo_box.item label="높음" name="1"/>
+			<combo_box.item label="울트라" name="0"/>
+		</combo_box>
+		<check_box label="전체화면 모드" name="Fullscreen Mode" tool_tip="Firestorm을 전체화면 모드로 실행합니다. (재시작 필요)"/>
+		<slider label="시야 거리:" name="DrawDistance"/>
+		<text name="DrawDistanceMeterText2">
+			m
+		</text>
+		<slider label="최대 파티클 수:" name="MaxParticleCount"/>
+		<text  width="125" name="AvatarComplexityModeLabel">
+			아바타 표시:
+		</text>
+		<combo_box name="AvatarComplexityMode" width="175">
+			<combo_box.item label="복잡도 제한" name="0"/>
+			<combo_box.item label="친구는 항상 표시" name="1"/>
+			<combo_box.item label="친구만 표시" name="2"/>
+		</combo_box>
+		<slider label="최대 복잡도:" name="IndirectMaxComplexity" tool_tip="시각적으로 복잡한 아바타가 젤리돌로 표시되는 값을 설정합니다."/>
+		<slider label="최대 완전 렌더링 아바타:" name="IndirectMaxNonImpostors"/>
+		<slider label="포스트 프로세싱 품질:" name="RenderPostProcess"/>
+		<text name="PostProcessText">
+			낮음
+		</text>
+		<slider label="최대 근처 조명:" name="MaxLights"/>
+		<slider label="아바타 물리:" name="AvatarPhysicsDetail"/>
+		<slider label="노출:" name="RenderExposure"/>
+		<text name="MeshDetailText">
+			렌더링 세부사항:
+		</text>
+		<slider label="   객체:" name="ObjectMeshDetail" tool_tip="렌더링 비용을 줄이기 위해 객체의 낮은 디테일 레벨을 언제 사용할지 설정합니다. 신중히 사용하세요: 높은 값은 성능을 저하시킵니다."/>
+		<slider label="   플렉시 프림:" name="FlexibleMeshDetail"/>
+		<slider label="   나무:" name="TreeMeshDetail"/>
+		<slider label="   아바타:" name="AvatarMeshDetail"/>
+		<slider label="   지형:" name="TerrainMeshDetail"/>
+		<slider label="   하늘:" name="SkyMeshDetail"/>
+		<text name="Presets_Label" width="200">
+			프리셋:
+		</text>
+		<button label="저장" left="300" name="PrefSaveButton" width="72"/>
+		<button label="로드" left_pad="5" name="PrefLoadButton" width="72"/>
+		<button label="삭제" left_pad="5" name="PrefDeleteButton" width="72"/>
+		<button tool_tip="기본 설정 다시 로드" name="Defaults"/>
+	</panel>
+
+	<panel label="하드웨어" name="Hardware Settings">
+		<check_box label="이방성 필터링 (활성화시 느려짐)" name="ani" tool_tip="카메라 위치에 따라 비교적 큰 각도에서 볼 때 텍스처 품질을 향상시키는 이방성 필터를 활성화합니다. 일반적으로 멀리 있는 텍스처가 덜 흐릿하게 보입니다."/>
+		<text name="tc label">
+			S3TC 활성화:
+		</text>
+		<check_box label="텍스처 압축 활성화 (재시작 필요)" name="texture compression" tool_tip="비디오 메모리의 텍스처를 압축하여 더 높은 해상도를 허용하거나 텍스처 품질을 희생하여 더 많은 텍스처를 로드할 수 있습니다."/>
+		<check_box label="HiDPI 디스플레이 지원 활성화 (macOS만; 재시작 필요)" name="use HiDPI" tool_tip="고해상도 그리기를 위한 OpenGL을 활성화합니다."/>
+		<text name="antialiasing label" tool_tip="이 설정을 변경하면 특정 하드웨어에서 재시작이 필요할 수 있습니다.">
+			안티앨리어싱 (재시작 권장):
+		</text>
+		<text name="antialiasing quality label" tool_tip="이 설정을 변경하면 특정 하드웨어에서 재시작이 필요할 수 있습니다.">
+			안티앨리어싱 품질:
+		</text>
+		<combo_box name="fsaa">
+			<combo_box.item label="비활성화" name="FSAADisabled"/>
+			<combo_box.item label="FXAA" name="FXAA"/>
+			<combo_box.item label="SMAA" name="SMAA"/>
+		</combo_box>
+		<combo_box name="fsaa quality">
+			<combo_box.item label="낮음" name="Low"/>
+			<combo_box.item label="보통" name="Medium"/>
+			<combo_box.item label="높음" name="High"/>
+			<combo_box.item label="울트라" name="Ultra"/>
+		</combo_box>
+		<text name="advanced_settings">
+			고급 설정 (재시작 필요):
+		</text>
+		<check_box label="텍스처용 VRAM 메모리 제한 (MB)" name="FSLimitTextureVRAMUsage" tool_tip="텍스처용 VRAM 메모리 사용을 제한합니다. 다른 요소들도 VRAM 메모리를 사용하므로 총 메모리 사용량은 더 높을 수 있습니다."/>
+		<slider name="RenderMaxVRAMBudget" tool_tip="텍스처에 사용되는 최대 VRAM 메모리(메가바이트)."/>
+		<check_box label="VRAM 감지 재정의" name="FSOverrideVRAMDetection" tool_tip="VRAM 감지를 재정의할 수 있습니다 (극도로 주의해서 사용)" />
+		<slider label="전용 GPU VRAM(GB):" name="FSForcedVideoMemory" tool_tip="중요: 극도로 주의해서 사용하세요. 감지된 GPU VRAM을 재정의합니다. 이 값은 시스템 메모리의 일부인 공유 VRAM을 포함해서는 안 됩니다. 차이점을 모르면 이 설정을 변경하지 마세요!" />
+		<text name="automatic_texture_downscale_settings">
+			자동 텍스처 다운스케일:
+		</text>
+		<text name="TextureDiscardBackgroundedTime_label" tool_tip="뷰어가 포커스를 잃었을 때 텍스처를 다운스케일하기까지의 초 수.">
+			백그라운드 (0으로 비활성화)
+		</text>
+		<spinner name="TextureDiscardBackgroundedTime" tool_tip="뷰어가 포커스를 잃었을 때 텍스처를 다운스케일하기까지의 초 수."/>
+		<text name="TextureDiscardBackgroundedTime_seconds">
+			초
+		</text>
+		<text name="TextureDiscardMinimizedTime_label" tool_tip="뷰어가 최소화되었을 때 텍스처를 다운스케일하기까지의 초 수.">
+			최소화 (0으로 비활성화)
+		</text>
+		<spinner name="TextureDiscardMinimizedTime" tool_tip="뷰어가 최소화되었을 때 텍스처를 다운스케일하기까지의 초 수."/>
+		<text name="TextureDiscardMinimizedTime_seconds">
+			초
+		</text>
+	</panel>
+
+	<panel label="렌더링" name="Rendering">
+		<text name="World Updating">
+			월드 업데이트:
+		</text>
+		<check_box label="월드 업데이트 동결 (모든 것 일시정지)" tool_tip="활성화하면 서버의 모든 업데이트를 동결 - 인월드의 모든 행동을 중지하지만 채팅, IM, 음성 채팅에는 영향을 주지 않습니다." name="WorldPause"/>
+		<check_box label="프레임레이트 제한" name="FSLimitFramerate"/>
+		<check_box label="VSync 활성화" name="vsync" tool_tip="초당 프레임 수를 모니터의 새로고침 율과 동기화하여 더 부드러운 성능을 만듭니다."/>
+		<text name="Texture Rendering">
+			텍스처 렌더링:
+		</text>
+		<check_box label="최소 텍스처 로드" tool_tip="이 설정은 'TextureDisable' 매개변수를 설정 - 텍스처를 극도로 느리게 로드하며, 느린 GPU를 가진 컴퓨터에 유용할 수 있습니다" name="TexturesLoaded"/>
+		<check_box label="텍스처 로딩에 HTTP 사용" tool_tip="HTTP 프로토콜을 통한 텍스처 로딩을 활성화 - 텍스처가 제대로 로드되지 않는 문제가 있고 오래된 UDP 프로토콜을 사용해야 할 경우 비활성화하세요." name="TexturesHTTP"/>
+		<text name="FSRestrictMaxTextureSize">
+			텍스처 최대 해상도:
+		</text>
+		<combo_box tool_tip="인월드 텍스처의 최대 해상도를 제한합니다. 이를 통해 사용 가능한 텍스처 메모리가 소진되어 흐릿한 텍스처가 렌더링되기 전에 더 많은 텍스처를 렌더링할 수 있습니다." name="FSRestrictMaxTexturePixels">
+			<combo_box.item label="512 픽셀" name="512"/>
+			<combo_box.item label="1024 픽셀" name="1024"/>
+			<combo_box.item label="2048 픽셀" name="2048"/>
+		</combo_box>
+		<slider label="동시 HTTP GET 요청 최대 수" name="HTTPFetchMaxRequests"/>
+		<text name="TextureDetailLabel" width="215">
+			텍스처 최대 품질 레벨:
+		</text>
+		<combo_box tool_tip="텍스처가 로드되는 품질 레벨. TextureDiscardLevel 설정에 영향을 줍니다" name="TextureDetail">
+			<combo_box.item label="일반 (0) 품질" name="0"/>
+			<combo_box.item label="보통 (3) 품질" name="3"/>
+			<combo_box.item label="낮은 (4) 품질" name="4"/>
+			<combo_box.item label="텍스처 (5) 없음" name="5"/>
+		</combo_box>
+		<text name="Miscellaneous Rendering">
+			기타 렌더링 옵션:
+		</text>
+		<check_box label="HDR 및 발광" tool_tip="최신 머신에서 렌더링 파이프라인의 추가 기능을 활성화합니다. PBR 머티리얼의 HDR 및 발광 텍스처와 같은 기능." name="VintageMode"/>
+		<check_box label="알파 마스크 사용" tool_tip="활성화하면 알파 마스크가 올바르게 렌더링됩니다." name="RenderAutoMaskAlphaDeferred"/>
+		<check_box label="글로우 표시" tool_tip="글로우 효과를 렌더링합니다. 그림자가 활성화된 경우 글로우 효과를 비활성화하려면 강도를 0으로 설정해야 합니다." name="RenderGlow"/>
+		<slider label="강도:" tool_tip="글로우 강도. 높을수록 = 더 넓고 부드러운 렌더링 (기본값: 2)" name="glow_strength"/>
+		<check_box label="완전히 로드되지 않은 아바타 표시" name="RenderUnloadedAvatars"/>
+		<check_box label="씬을 와이어프레임으로 렌더링" name="Wireframe"/>
+		<check_box label="부착된 조명 렌더링" tool_tip="이 옵션은 페이스라이트와 같이 아바타에 부착된 모든 광원을 활성화합니다. 필요한 경우 페이스라이트 등을 비활성화하는 데 유용합니다." name="Render Attached Lights"/>
+		<check_box label="부착된 파티클 렌더링" name="Render Attached Particles"/>
+		<slider name="MaxFPS" label="FPS:"/>
+		<slider label="월드 표시 전 프리캐싱 지연." tool_tip="자신이 온라인으로 보고된 후 월드가 표시되는 지연 시간을 설정합니다. (기본값: 6초)" name="PrecachingDelay"/>
+		<text name="PrecachingDelayText" width="60">
+			초
+		</text>
+		<slider label="그림자 품질" tool_tip="그림자 렌더링 품질 (기본값: 1)" name="ShadowResolution"/>
+		<slider label="지형 텍스처 스케일링 (재시작 필요)" name="RenderTerrainScale" tool_tip="지형 텍스처의 스케일링을 설정 - 낮을수록 더 높은 압축률"/>
+		<slider label="샤프닝" name="RenderSharpness"/>
+		<text name="ReflectionProbeCount">
+			최대 반사 프로브 수:
+		</text>
+		<combo_box name="ProbeCount">
+			<combo_box.item label="없음" name="1"/>
+			<combo_box.item label="낮음" name="32"/>
+			<combo_box.item label="보통" name="64"/>
+			<combo_box.item label="높음" name="128"/>
+			<combo_box.item label="울트라" name="256"/>
+		</combo_box>
+		<text name="TonemapTypeText">
+			톤 매퍼:
+		</text>
+		<combo_box name="TonemapType">
+			<combo_box.item label="Khronos Neutral" name="0"/>
+			<combo_box.item label="ACES" name="1"/>
+		</combo_box>
+		<slider label="톤 매핑 믹스:" tool_tip="선형 색상과 톤 매핑된 색상 간의 믹스" name="TonemapMix"/>
+	</panel>
+	
+	<panel label="피사계 심도" name="DOF panel">
+		<check_box label="피사계 심도 활성화 (카메라 초점 밖의 영역이 흐리게 표시됨)" name="UseDoF"/>
+		<check_box label="편집 모드에서 활성화" name="RenderDepthOfFieldInEditMode"/>
+		<check_box label="피사계 심도 초점이 마우스 포인터 따라감" name="FSFocusPointFollowsPointer" tool_tip="피사계 심도 초점이 마우스를 따라가며, 플라이캠 사용 시와 유사한 동작을 합니다. 고정된 피사계 심도 초점과 함께 사용하세요."/>
+		<slider label="카메라 F-Number (f-stop):" name="CameraFNum" tool_tip="피사계 심도를 위한 카메라 F-Number (f-stop)" label_width="195" width="409"/>
+		<slider label="카메라 초점거리 (mm):" name="CameraFocal" tool_tip="피사계 심도를 위한 카메라 초점거리 (밀리미터)" label_width="195" width="409"/>
+		<slider label="카메라 화각 (도):" name="Camera FOV" tool_tip="피사계 심도를 위한 수직 카메라 화각 (도)" label_width="195" width="409"/>
+		<slider label="카메라 종횡비:" name="CameraAspectRatio" tool_tip="피사계 심도를 위한 카메라 종횡비" label_width="195" width="409"/>
+		<slider label="초점 전환 시간:" name="CameraFocusTrans" tool_tip="초점을 다시 맞추는 데 걸리는 시간" label_width="195" width="409"/>
+		<slider label="피사계 심도 렌더링 품질:" name="CameraDoFResScale" tool_tip="블러 품질과 렌더링 속도에 영향을 줍니다 (높음 = 더 나은 품질, 낮음 = 더 높은 속도)" label_width="195" width="409"/>
+	</panel>
+	
+</tab_container>
+</panel>

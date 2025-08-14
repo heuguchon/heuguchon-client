@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="텍스트 채팅" name="chat">
+	<tab_container name="tabs">
+
+		<!-- Chat: Visuals -->
+		<panel label="표시" name="ChatVisuals">
+			<text name="console_font_size">
+				콘솔 글꼴 크기:
+			</text>
+			<radio_group name="chat_console_font_size">
+				<radio_item label="작게" name="consradio"/>
+				<radio_item label="보통" name="consradio2"/>
+				<radio_item label="크게" name="consradio3"/>
+				<radio_item label="매우 크게" name="consradio4"/>
+			</radio_group>
+			<check_box label="채팅 시 아바타 애니메이션 재생 (예: 외치기 시)" name="play_avatar_animations"/>
+			<check_box label="시스템 메시지를 괄호로 묶어 표시 (V1 스타일 채팅 기록에만 해당)" name="FSIMSystemMessageBrackets"/>
+			<check_box label="채팅 기록에서 자신의 이름 대신 '나'로 표시" name="FSChatHistoryShowYou"/>
+			<check_box name="EmotesUseItalic" label="감정표현에 이탤릭체 사용"/>
+			<check_box name="FSEmphasizeShoutWhisper" label="외치기는 굵게, 속삭이기는 이탤릭체로 강조"/>
+			<check_box name="FSMarkObjects" label="스푸핑 방지를 위해 객체 이름을 (무명)으로 표시"/>
+			<check_box label="llOwnerSay를 스크립트 디버그 창으로 라우팅" name="FSllOwnerSayToScriptDebugWindow_checkbox"/>
+			<check_box label="채팅 말풍선" name="bubble_text_chat"/>
+			<check_box label="근처 채팅을 콘솔 및 토스트에 표시하지 않음" name="FSBubblesHideConsoleAndToasts"/>
+			<check_box label="아바타 위 말풍선에 입력 표시기 보이기" name="bubble_text_typing"/> 
+			<check_box label="아바타 위 이름표에 입력 표시기 보이기" name="FSShowTypingStateInNameTag"/> 
+			<check_box label="시간 스탬프에 초 표시 [HH:MM:SS]" name="FSSecondsinChatTimestamps"/>
+			<text name="show_timestamps_label" width="75">
+				표시 위치:
+			</text>
+			<check_box label="근처 채팅" name="show_timestamps_nearby_chat" width="120"/>
+			<check_box label="인스턴트 메시지" name="show_timestamps_im" width="120"/>
+			<check_box label="기록" name="show_timestamps_transcripts"/>
+			<check_box label="채팅 콘솔 표시" tool_tip="대화 창이 표시되지 않을 때 채팅을 콘솔에 표시/숨김" name="FSShowOnscreenConsole"/>
+			<check_box name="FSConsoleClassicDrawMode" label="콘솔에 클래식 표시 모드 사용" tool_tip="클래식 표시 모드에서는 콘솔 배경이 모든 줄에 걸쳐 가장 긴 줄의 너비로 단일 블록으로 표시됩니다."/>
+			<check_box name="ChatFullWidth" label="콘솔에 화면 전체 너비 사용" width="240"/>
+			<spinner label="채팅 숨김 시간:" label_width="130" name="fade_chat_time" width="180" />
+			<text name="text_box4">
+				(초)
+			</text>
+			<text name="text_box5">
+				(줄 수)
+			</text>
+		</panel>
+
+		<!-- Chat: Windows -->
+		<panel label="채팅 창" name="ChatWindows">
+			<text name="font_size">
+				글꼴 크기:
+			</text>
+			<radio_group name="chat_font_size">
+				<radio_item label="작게" name="radio"/>
+				<radio_item label="보통" name="radio2"/>
+				<radio_item label="크게" name="radio3"/>
+				<radio_item label="매우 크게" name="radio4"/>
+			</radio_group>
+			<check_box label="개인 IM에서 이름 표시" name="IMShowNamesForP2PConv"/>
+			<check_box label="IM 및 텍스트 채팅 기록에 V1 스타일 사용" name="plain_text_chat_history"/>
+			<check_box label="[SHORT_VIEWER_GENERATION] 채팅 스타일 사용 시 작은 아이콘 표시" name="ShowChatMiniIcons"/>	
+			<check_box label="마지막 대화의 끝 표시" name="LogShowHistory"/>
+			<check_box name="FSTypingChevronPrefix" label="IM 창에서 타이핑 표시기로 추가 화살표 (>) 표시"/>
+			<text name="show_unread_messages_label" width="245">
+				다음에 대해 새 메시지 알림 표시:
+			</text>
+			<check_box width="110" name="FSNotifyUnreadChatMessages" label="근처 채팅" tool_tip="기록을 읽기 위해 뷰에서 뒤로 스크롤한 동안 새 메시지가 도착하면 창 내에 읽지 않은 새 메시지 수를 알려주는 알림을 표시합니다."/>
+			<check_box width="200" name="FSNotifyUnreadIMMessages" label="IM 및 그룹 채팅" tool_tip="기록을 읽기 위해 뷰에서 뒤로 스크롤한 동안 새 메시지가 도착하면 창 내에 읽지 않은 새 메시지 수를 알려주는 알림을 표시합니다."/>
+			<text name="show_ims_in_label" width="115">
+				IM 표시 방식:
+			</text>
+			<radio_group name="chat_window" tool_tip="인스턴트 메시지를 별도 창에 표시하거나 다중 탭이 있는 단일 창에 표시합니다 (재시작 필요).">
+				<radio_item label="별도 창" name="radio"/>
+				<radio_item label="탭" name="radio2"/>
+			</radio_group>
+			<text name="req_restart_ims" left_pad="55" width="120">
+				(재시작 필요)
+			</text>
+			<text name="tab_direction_label" width="160">
+				채팅 탭 모드 방향:
+			</text>
+			<radio_group name="chat_tab_direction" tool_tip="컴팩트 채팅이 활성화된 경우 채팅/인스턴트 메시지 탭의 방향을 가로와 세로 사이에서 변경합니다. (재시작 필요)">
+				<radio_item label="가로" name="radio_horizontal"/>
+				<radio_item label="세로" name="radio_vertical"/>
+			</radio_group>
+			<text name="req_restart_chattabs" width="120">
+				(재시작 필요)
+			</text>
+			<text name="FSIMTabNameFormat_label">
+				IM 탭 이름 형식:
+			</text>
+			<combo_box name="FSIMTabNameFormat">
+				<combo_box.item label="표시 이름" name="display_name"/>
+				<combo_box.item label="사용자 이름" name="user_name"/>
+				<combo_box.item label="표시 이름 (사용자 이름)" name="display_user_name"/>
+				<combo_box.item label="사용자 이름 (표시 이름)" name="user_display_name"/>
+			</combo_box>
+			<check_box name="FSHighlightGroupMods" label="그룹 운영진 메시지 강조 활성화"/>
+			<text name="Moderator Name Style">
+				이름:
+			</text>
+			<combo_box name="mod_name_style" width="180">
+				<combo_box.item label="일반" name="normal"/>
+				<combo_box.item label="굵게" name="BOLD"/>
+				<combo_box.item label="이탤릭" name="ITALIC"/>
+				<combo_box.item label="굵게 &amp; 이탤릭" name="BOLDITALIC"/>
+				<combo_box.item label="밑줄" name="UNDERLINE"/>
+				<combo_box.item label="굵게 &amp; 밑줄" name="BOLDUNDERLINE"/>
+				<combo_box.item label="이탤릭 &amp; 밑줄" name="ITALICUNDERLINE"/>
+				<combo_box.item label="굵게, 이탤릭 &amp; 밑줄" name="BOLDITALICUNDERLINE"/>
+			</combo_box>
+			<text name="Moderator Text Style">
+				텍스트:
+			</text>
+			<combo_box name="mod_text_style" width="180">
+				<combo_box.item label="일반" name="normal"/>
+				<combo_box.item label="굵게" name="BOLD"/>
+				<combo_box.item label="이탤릭" name="ITALIC"/>
+				<combo_box.item label="굵게 &amp; 이탤릭" name="BOLDITALIC"/>
+				<combo_box.item label="밑줄" name="UNDERLINE"/>
+				<combo_box.item label="굵게 &amp; 밑줄" name="BOLDUNDERLINE"/>
+				<combo_box.item label="이탤릭 &amp; 밑줄" name="ITALICUNDERLINE"/>
+				<combo_box.item label="굵게, 이탤릭 &amp; 밑줄" name="BOLDITALICUNDERLINE"/>
+			</combo_box>
+			<check_box name="FSMuteAllGroups" label="모든 그룹 채팅 음소거"/>
+			<check_box name="FSMuteGroupWhenNoticesDisabled" label="'그룹 공지 받기'를 비활성화하면 그룹 채팅도 비활성화"/>
+			<check_box name="FSIgnoreAdHocSessions" label="모든 컨퍼런스 자동 무시 및 나가기"/>
+			<check_box name="FSReportIgnoredAdHocSession" label="무시된 컨퍼런스를 근처 채팅에 보고"/>
+			<check_box name="FSDontIgnoreAdHocFromFriends" label="친구의 컨퍼런스 초대는 무시하지 않음"/>
+			<text name="group_snooze_time_label" tool_tip="'일시 음소거' 버튼을 클릭할 때 그룹 채팅이 음소거되는 시간을 설정합니다. 0으로 설정하면 다음 메시지가 도착할 때까지 창이 닫힙니다." width="185">
+				그룹 채팅 음소거 지속 시간:
+			</text>
+			<spinner name="GroupSnoozeTime" tool_tip="'일시 음소거' 버튼을 클릭할 때 그룹 채팅이 음소거되는 시간을 설정합니다. 0으로 설정하면 다음 메시지가 도착할 때까지 창이 닫힙니다."/>
+			<text name="group_snooze_time_seconds_label" tool_tip="'일시 음소거' 버튼을 클릭할 때 그룹 채팅이 음소거되는 시간을 설정합니다. 0으로 설정하면 다음 메시지가 도착할 때까지 창이 닫힙니다.">
+				초
+			</text>
+			<check_box name="FSEnablePerGroupSnoozeDuration" label="그룹별로 일시 음소거 지속 시간 설정"/>
+		</panel>
+
+		<!-- Chat: Typing -->
+		<panel label="입력" name="ChatTyping">
+			<button name="autoreplace_showgui" label="자동 교체..."/>
+			<button name="spellcheck_showgui" label="맞춤법 검사..." width="145"/>
+			<button label="채팅 번역 설정" name="translation_settings_btn" width="190"/>
+			<check_box label="채팅 시 타이핑 애니메이션 재생" name="play_typing_animation"/>
+			<check_box label="감정표현에도 타이핑 애니메이션 재생" name="play_typing_animation_emote"/>
+			<check_box label="근처 채팅에서 타이핑 소리 재생" name="play_typing_sound"/> 
+			<check_box label="IM 세션 중 다른 아바타에게 타이핑 상태 알림" name="FSSendTypingState"/>
+			<check_box label="근처 채팅에서 제스처 자동 완성 활성화" name="FSChatbarGestureAutoCompleteEnable"/>
+			<check_box label="'근처 채팅' 입력란에서 이름 자동 예측 활성화" name="FSChatbarNamePrediction"/>
+			<check_box name="AllowMUpose" label="':'을 &quot;/me&quot;의 동의어로 사용"/>
+			<check_box name="AutoCloseOOC" label="((OOC)) 괄호 자동 닫기"/>
+			<check_box name="FSEnableEmojiWindowPopupWhileTyping" label="채팅 입력 중 자동 이모지 선택 창 활성화"/>
+			<check_box name="FSShowEmojiButton" label="로컬 채팅 IM 세션 입력란에 이모지 버튼 표시"/>
+			<check_box name="FSShowIMSendButton" label="IM 세션 입력란에 전송 버튼 표시"/>
+			<check_box name="FSNearbyChatbar" label="로컬 채팅 창에 입력란 추가"/>
+			<check_box name="FSShowChatChannel" label="입력란에 채널 선택 표시"/>
+			<check_box name="FSShowChatType" label="채팅 유형/전송 버튼 표시"/>
+			<check_box label="메인 채팅 입력란 자동 숨김" name="AutohideChatBar" tool_tip="하단 버튼 바의 입력란을 자동으로 숨기고 입력할 때만 표시"/>
+			<check_box label="전송 후 채팅바 비활성화" name="CloseChatOnReturn"/>
+			<check_box label="채팅 기록도 비활성화" name="FSUnfocusChatHistoryOnReturn"/>
+			<text name="textUseKeyboardShortcuts">
+				키보드 단축키 사용:
+			</text>
+			<check_box label="Ctrl + Enter (외치기)" tool_tip="근처 채팅에서 외치기를 위한 Ctrl + Enter 키보드 단축키를 사용하려면 활성화하세요." name="FSUseCtrlShout"/>
+			<check_box label="Shift + Enter (속삭이기)" tool_tip="근처 채팅에서 속삭이기를 위한 Shift + Enter 키보드 단축키를 사용하려면 활성화하세요." name="FSUseShiftWhisper"/>
+			<check_box label="Alt + Enter (OOC)" tool_tip="근처 채팅에서 OOC 채팅을 위한 Alt + Enter 키보드 단축키를 사용하려면 활성화하세요." name="FSUseAltOOC"/>
+		</panel>
+
+		<!-- Chat: Notices -->
+		<panel label="알림" name="ChatNotices">
+			<text name="disable_toast_label">
+				다음 수신 시 채팅 팝업 활성화:
+			</text>
+			<check_box name="EnableGroupChatPopups" label="그룹 채팅" tool_tip="새 그룹 메시지가 도착할 때 팝업을 표시하려면 활성화"/>
+			<check_box name="EnableIMChatPopups" label="IM 채팅" tool_tip="인스턴트 메시지가 도착할 때 팝업을 표시하려면 활성화"/>
+			<check_box name="FSUseNearbyChatConsole" label="채팅 팝업 대신 채팅 콘솔 사용 (Viewer 1.x 스타일)"/>
+			<check_box name="FSLogImToChatConsole" label="채팅 콘솔에 인스턴트 메시지 표시"/>
+			<check_box name="FSLogGroupImToChatConsole" label="채팅 콘솔에 그룹 채팅 표시"/>
+			<text name="FSShowGroupNameLength_label" width="365">
+				채팅 기록에 표시되는 그룹 이름 길이
+			</text>
+			<spinner tool_tip="전체 그룹 이름은 -1, 비활성화는 0" name="FSShowGroupNameLength"/>
+			<check_box name="FSOpenIMContainerOnOfflineMessage" label="오프라인 메시지 수신 시 대화 열기"/>
+			<check_box label="오프라인일 때 IM을 이메일로 전송 ([EMAIL])" name="send_im_to_email"/>
+			<text name="email_settings">
+				[https://accounts.secondlife.com/change_email?lang=ko-KR 오프라인 IM 이메일 알림 설정 열기]
+			</text>
+			<text name="email_settings_login_to_change">
+				오프라인 IM 이메일 알림을 조정하려면 로그인하세요
+			</text>
+			<check_box name="FSShowIMInChatHistory" label="로컬 채팅에 인스턴트 메시지 및 그룹 채팅 표시"/>
+			<check_box name="FSLogIMInChatHistory" label="로컬 채팅에 IM 및 그룹 채팅 저장" width="190"/>
+			<text name="FSIMChatHistoryFade_label" width="320">
+				채팅 기록 배경 앞의 IM 텍스트 페이드
+			</text>
+			<spinner tool_tip="0.25-1.0, 최대 페이드는 0.25, 페이드 없음은 1" name="FSIMChatHistoryFade"/>
+			<check_box name="FSShowMessageCountInWindowTitle" label="Firestorm 창 제목에 읽지 않은 인스턴트 메시지 수 표시"/>
+			<check_box name="FSAnnounceIncomingIM" label="발신자가 타이핑을 시작하는 즉시 수신 인스턴트 메시지 알림"/>
+			<check_box name="FSIMChatFlashOnFriendStatusChange" label="친구가 로그인/로그아웃할 때 IM 탭 깜박임"/>
+			<check_box name="FSNotifyNearbyChatFlash" label="새로운 근처 채팅이 도착할 때 채팅 툴바 버튼 깜박임" tool_tip="근처 채팅 창이 대화 창에 도킹되어 있고 대화 창이 보이지 않을 때 새로운 근처 채팅이 도착하면 툴바의 채팅 버튼이 깜박입니다."/>
+			<check_box name="FSNotifyIMFlash" label="새로운 (그룹)IM이 도착할 때 채팅 툴바 버튼 깜박임" tool_tip="해당 창이 대화 창에 도킹되어 있고 대화 창이 보이지 않을 때 새로운 인스턴트 메시지나 그룹 채팅이 도착하면 툴바의 채팅 버튼이 깜박입니다. 이 옵션은 (그룹)IM 창이 별도 창이 아닌 탭으로 표시될 때만 사용할 수 있습니다 ('일반' 탭 참조)."/>
+			<check_box name="FSReportMutedGroupChat" label="음소거된 그룹 채팅을 근처 채팅에 보고"/>
+			<check_box name="FSGroupNoticesToIMLog" label="토스트 외에 그룹 채팅에서도 그룹 공지 표시"/>
+			<check_box name="FSBetterGroupNoticesToIMLog" label="제목과 작성자도 표시"/>
+		</panel>
+
+		<!-- Chat: Radar -->
+		<panel label="레이더" name="ChatRadar">
+			<check_box name="reportChatRangeEnter" label="레이더가 아바타가 채팅 범위에 들어올 때 보고"/>
+			<check_box width="140" name="PlayModeUISndRadarChatEnter" label="사운드 UUID 재생:"/>
+			<button label="P" name="Prev_UISndRadarChatEnter" tool_tip="이 소리 미리보기."/>
+			<button label="D" name="Def_UISndRadarChatEnter" tool_tip="기본값으로 재설정."/>
+			<check_box name="reportChatRangeLeave" label="레이더가 아바타가 채팅 범위를 벗어날 때 보고"/>
+			<check_box width="140" name="PlayModeUISndRadarChatLeave" label="사운드 UUID 재생:"/>
+			<button label="P" name="Prev_UISndRadarChatLeave" tool_tip="이 소리 미리보기."/>
+			<button label="D" name="Def_UISndRadarChatLeave" tool_tip="기본값으로 재설정."/>
+			<check_box name="reportDrawRangeEnter" label="레이더가 아바타가 드로우 거리에 들어올 때 보고"/>
+			<check_box width="140" name="PlayModeUISndRadarDrawEnter" label="사운드 UUID 재생:"/>
+			<button label="P" name="Prev_UISndRadarDrawEnter" tool_tip="이 소리 미리보기."/>
+			<button label="D" name="Def_UISndRadarDrawEnter" tool_tip="기본값으로 재설정."/>
+			<check_box name="reportDrawRangeLeaave" label="레이더가 아바타가 드로우 거리를 벗어날 때 보고"/>
+			<check_box width="140" name="PlayModeUISndRadarDrawLeave" label="사운드 UUID 재생:"/>
+			<button label="P" name="Prev_UISndRadarDrawLeave" tool_tip="이 소리 미리보기."/>
+			<button label="D" name="Def_UISndRadarDrawLeave" tool_tip="기본값으로 재설정."/>
+			<check_box name="RadarReportSimRangeEnter" label="레이더가 아바타가 지역에 들어올 때 보고"/>
+			<check_box width="140" name="PlayModeUISndRadarSimEnter" label="사운드 UUID 재생:"/>
+			<button label="P" name="Prev_UISndRadarSimEnter" tool_tip="이 소리 미리보기."/>
+			<button label="D" name="Def_UISndRadarSimEnter" tool_tip="기본값으로 재설정."/>
+			<check_box name="RadarReportSimRangeLeave" label="레이더가 아바타가 지역을 벗어날 때 보고"/>
+			<check_box width="140" name="PlayModeUISndRadarSimLeave" label="사운드 UUID 재생:"/>
+			<button label="P" name="Prev_UISndRadarSimLeave" tool_tip="이 소리 미리보기."/>
+			<button label="D" name="Def_UISndRadarSimLeave" tool_tip="기본값으로 재설정."/>
+			<check_box name="RadarEnterChannelAlert" label="입장 메시지를 스크립트로 전달"/>
+			<check_box name="RadarLeaveChannelAlert" label="퇴장 메시지를 스크립트로 전달"/>
+			<check_box name="FSRadarEnhanceByBridge" label="LSL 브리지를 사용하여 레이더 정확도 향상" tool_tip="활성화하면 LSL 브리지를 사용하여 1020m 이상의 높이에 있고 드로우 거리 밖에 있는 아바타까지의 거리를 확인합니다."/>
+			<text name="AgeAlertLabel">
+				나이 경고:
+			</text>
+			<text name="RadarAvatarAgeAlertValueLabel">
+				임계값:
+			</text>
+			<spinner name="RadarAvatarAgeAlertValue" tool_tip="레이더의 나이 열도 색칠됩니다. 비활성화하려면 -1로 설정하세요."/>
+			<text name="RadarAvatarAgeAlertValueLabelSuffix">
+				일
+			</text>
+			<check_box name="RadarAvatarAgeAlert" label="레이더가 지정된 나이보다 어린 아바타를 보고"/>
+			<check_box width="140" name="PlayModeUISndRadarAgeAlert" label="사운드 UUID 재생:"/>
+			<button label="P" name="Prev_UISndRadarAgeAlert" tool_tip="이 소리 미리보기."/>
+			<button label="D" name="Def_UISndRadarAgeAlert" tool_tip="기본값으로 재설정."/>
+		</panel>
+
+		<!-- Chat: Keyword Alerts -->
+		<panel label="키워드" name="ChatKeywordAlerts">
+			<check_box name="FSKeywordOn" label="키워드 알림 활성화"/>
+			<check_box name="FSKeywordInChat" label="로컬 채팅에서 키워드 검사"/>
+			<check_box name="FSKeywordInIM" label="인스턴트 메시지 및 그룹 채팅에서 키워드 검사"/>
+			<check_box name="FSKeywordSpeakersName" label="발신자 이름에서 키워드 검사"/>
+			<check_box name="FSKeywordCaseSensitive" label="키워드에서 대소문자 구분"/>
+			<check_box name="FSKeywordMatchWholeWords" label="전체 단어만 검사"/>
+			<text name="textFSKeywords">
+				키워드 (쉼표로 구분):
+			</text>
+			<check_box name="FSKeywordChangeColor" label="색상 강조 활성화"/>
+			<color_swatch name="colorswatch" left="220" tool_tip="클릭하여 색상 선택 열기"/>
+			<check_box name="FSKeywordPlaySound" label="소리 재생"/>
+			<text name="textFSKeywordSound" width="200">
+				소리 알림 UUID:
+			</text>
+			<button label="P" name="Prev_UISndFSKeywordSound" tool_tip="이 소리 미리보기."/>
+			<button label="D" name="Def_UISndFSKeywordSound" tool_tip="기본값으로 재설정."/>
+		</panel>
+
+		<!-- Chat: CmdLine -->
+		<panel label="명령행" name="tab-CmdLine">
+			<check_box label="채팅 입력란을 명령 입력에 사용" name="chat_cmd_toggle"/>
+			<text name="FSCmdLineCalc_txt">
+				계산 (명령: cmd SIN(2+2))
+			</text>
+			<text name="FSCmdLineDrawDistance_txt">
+				드로우 거리 변경 (명령: cmd 미터)
+			</text>
+			<text name="FSCmdLineBandWidth_txt">
+				최대 대역폭 (명령: cmd kbps)
+			</text>
+			<text name="FSCmdLineCopyCam_txt">
+				카메라 위치를 클립보드에 복사
+			</text>
+			<text name="FSCmdLineAO_txt">
+				AO 켜기/끄기 (명령: cmd on/off)
+			</text>
+			<text name="FSCmdLineClearChat_txt">
+				채팅 기록 지우기 (명령: cmd)
+			</text>
+			<line_editor tool_tip="스패머로 인한 지연을 방지하기 위해 채팅 기록을 지웁니다." name="FSCmdLineClearChat"/>
+			<text name="FSCmdLineMedia_txt">
+				미디어 URL 설정 (명령: cmd URL 타입)
+			</text>
+			<line_editor tool_tip="지정된 URL로 미디어 스트림을 설정하고 재생합니다." name="FSCmdLineMedia"/>
+			<text name="FSCmdLineMusic_txt">
+				음악 스트림 URL 설정 (명령: cmd URL)
+			</text>
+			<line_editor tool_tip="지정된 URL로 음악 스트림을 설정하고 재생합니다." name="FSCmdLineMusic"/>
+			<text name="FSCmdLineRezPlatform_txt">
+				플랫폼 생성 (명령: cmd 0 - 64)
+			</text>
+			<slider name="FSCmdLinePlatformSize" label="너비" label_width="37" tool_tip="생성할 플랫폼의 크기를 설정합니다."/>
+			<text name="FSCmdLineKeyToName_txt">
+				UUID로 아바타 이름 찾기 (명령: cmd key)
+			</text>
+			<text name="FSCmdLineRollDice_txt">
+				주사위 굴리기 (명령: cmd 주사위 면수 수정자타입 수정자값)
+			</text>
+			<line_editor tool_tip="주사위 굴리기 - cmd [주사위 개수] [면당 면수] [수정자 타입 (선택)] [수정자 값 (선택)]. 예: cmd 1 20, cmd 1 20 + 5. 매개변수를 생략하면 cmd 1 6 (표준 주사위)와 같습니다" name="FSCmdLineRollDice"/>
+			<text name="FSCmdLinePos_txt">
+				지역 내 텔레포트 (명령: cmd x z y)
+			</text>
+			<text name="FSCmdLineGround_txt">
+				지표면으로 텔레포트 (명령: cmd)
+			</text>
+			<text name="FSCmdLineHeight_txt">
+				높이로 텔레포트 (명령: cmd z)
+			</text>
+			<text name="FSCmdTeleportToCam_txt">
+				카메라 위치로 텔레포트 (명령: cmd)
+			</text>
+			<text name="FSCmdLineOfferTp_txt">
+				아바타에게 텔레포트 제안 (명령: cmd key)
+			</text>
+			<text name="FSCmdLineTP2_txt">
+				아바타에게 텔레포트 (명령: cmd name)
+			</text>
+			<line_editor tool_tip="이 명령의 구문은 부분적인 아바타 이름을 허용하며 대소문자를 구분하지 않습니다." name="FSCmdLineTP2"/>		
+			<text name="FSCmdLineTeleportHome_txt">
+				홈으로 텔레포트 (명령: cmd)
+			</text>
+			<text name="FSCmdLineMapTo_txt">
+				지역으로 텔레포트 (cmd 지역명 | x y z)
+			</text>
+			<check_box label="새 지역에서 같은 위치" name="toggle"/>
+		</panel>
+
+	</tab_container>
+</panel>
