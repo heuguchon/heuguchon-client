@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="contents" title="객체 사본 구매">
+	<floater.string name="title_buy_text">
+		구매
+	</floater.string>
+	<floater.string name="title_buy_copy_text">
+		사본 구매 -
+	</floater.string>
+	<floater.string name="no_copy_text">
+		(복사 불가)
+	</floater.string>
+	<floater.string name="no_modify_text">
+		(수정 불가)
+	</floater.string>
+	<floater.string name="no_transfer_text">
+		(양도 불가)
+	</floater.string>
+	<floater.string name="multiple_selected">
+		다중 선택
+	</floater.string>
+	<text name="contents_text">
+		내용:
+	</text>
+	<text name="buy_text">
+		L$[AMOUNT]에 구매 -
+	</text>
+	<text name="buy_name_text">
+		[NAME]?
+	</text>
+	<button label="구매" label_selected="구매" name="buy_btn"/>
+	<button label="취소" label_selected="취소" name="cancel_btn"/>
+</floater>
