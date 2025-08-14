@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="소통" name="im">
+	<string name="AutoresponseItemNotSet">
+		아이템이 설정되지 않음
+	</string>
+	<string name="AutoresponseItemNotAvailable">
+		아이템을 사용할 수 없음
+	</string>
+	<string name="AutoresponseItemNotLoggedIn">
+		로그인되지 않음
+	</string>
+	<tab_container label="개인정보" name="tabs">
+		<!--General-->
+		<panel label="일반" name="tab-general">
+			<panel.string name="log_in_to_change">
+				로그인하여 변경
+			</panel.string>
+			<button label="기록 지우기" name="clear_webcache" tool_tip="검색 및 텔레포트 기록, 웹 및 텍스처 캐시 삭제"/>
+			<text name="cache_size_label">
+				(장소, 이미지, 웹, 검색 기록)
+			</text>
+			<check_box label="검색 결과에 내 프로필 정보 표시" name="online_searchresults"/>
+			<check_box label="친구와 그룹만 내가 온라인인지 알 수 있음" name="online_visibility"/>
+			<check_box label="친구와 그룹만 전화 걸거나 메시지를 보낼 수 있음" name="voice_call_friends_only_check"/>
+			<check_box label="이미 가입한 그룹의 초대장 표시" name="FSShowJoinedGroupInvitations"/>
+			<check_box label="통화 종료 시 마이크 자동 끄기" name="auto_disengage_mic_check"/>
+			<check_box label="스크립트 객체가 내 현재 언어 설정을 볼 수 있도록 허용" name="LanguageIsPublic"/>
+			<check_box label="로그인 시 '시작 위치' 드롭다운 메뉴에 즐겨찾기 랜드마크 표시" name="favorites_on_login_check"/>
+			<check_box label="새 인벤토리 아이템 자동 허용" name="Auto_Accept_New_Inventory"/>
+			<check_box label="자동으로 허용된 인벤토리 아이템을 근처 채팅에 기록" name="FSLogAutoAcceptInventoryToChat"/>
+			<check_box label="자동 허용이 활성화되어도 새 인벤토리 알림 표시" name="FSShowAutoAcceptInventoryInNotifications"/>
+			<check_box label="기존 인벤토리 제안 허용/거부 메시지 사용" name="FSUseLegacyInventoryAcceptMessages" tool_tip="활성화하면 해당 버튼을 누른 후에만 허용 및 거부 메시지를 보냅니다. 비활성화하면 인벤토리 제안을 받는 즉시 허용 응답을 자동으로 보냅니다. 인벤토리 제안이 자동으로 허용되는 경우 이 옵션은 영향을 주지 않습니다."/>
+			<check_box label="새로 허용한 아이템을 인벤토리에 자동으로 표시" name="Show_In_Inventory"/>
+			<check_box label="허용한 노트카드, 텍스처, 랜드마크 자동으로 보기" name="Show_New_Inventory"/>
+			<check_box label="업로드 후 스냅샷을 인벤토리에 자동으로 표시" name="FSOpenInventoryAfterSnapshot"/>
+			<check_box label="다른 아바타에게 인벤토리 객체를 줄 때 파티클 효과 생성" name="FSCreateGiveInventoryParticleEffect"/>
+			<button label="차단/음소거 목록 관리" name="block_list"/>
+		</panel>
+
+		<!--Logging-->
+		<panel label="로그 및 기록" name="tab-logging">
+			<text name="logging_label">
+				저장:
+			</text>
+			<combo_box name="conversation_log_combo" tool_tip="로그(대화 기록): 나나 다른 사람이 시작한 채팅 대화 목록. 기록: 화면에 나타난 실제 문자 텍스트.">
+				<item name="log_and_transcripts" label="로그 및 기록"/>
+				<item name="log_only" label="로그만"/>
+				<item name="no_log_or_transcript" label="로그나 기록 없음"/>
+			</combo_box>
+			<button label="로그 지우기..." name="clear_log"/>
+			<button label="기록 삭제..." name="delete_transcripts"/>
+			<check_box name="LogNearbyChat" label="근처 채팅 기록 저장" tool_tip="근처 채팅 메시지 기록을 하드 드라이브에 저장"/>
+			<check_box name="UseLegacyIMLogNames" label="기록에 기존 파일 이름 형식 사용" tool_tip="활성화하면 기록에 기존 파일 이름 형식(User Name)을 새 형식(user_name) 대신 사용합니다."/>
+			<check_box name="LogFileNamewithDate" label="기록 파일 이름에 날짜 스탬프 추가" tool_tip="채팅 및 IM 로그에 chat-YYYY-MM-DD 및 'IM 파일 이름'-YYYY-MM 형식으로 날짜 스탬프를 추가합니다."/>
+			<check_box name="FSUseBuiltInHistory" label="내장 기록 뷰어 사용" tool_tip="기록을 읽을 때 내장 기록 뷰어를 사용합니다. 비활성화하면 기록은 운영 체제의 기본 텍스트 편집기에서 열립니다."/>
+		</panel>
+
+		<!--LookAt-->
+		<panel label="시선" name="tab-lookat">
+			<check_box label="시선 대상 표시:" name="showlookat" tool_tip="시선 포인트는 애니메이션 힌트로, 뷰어에서 눈, 머리, 몸통을 돌릴 방향을 알기 위해 사용됩니다. 아바타 카메라의 앵커 포인트를 결정하는 데도 사용할 수 있습니다."/>
+			<text name="lookatshownames" tool_tip="시선 대상에 아바타 이름을 표시할 이름 형식 선택">
+				시선 대상에 표시할 이름:
+			</text>
+			<combo_box name="lookatshownames_combobox">
+				<combo_box.item label="없음" name="None"/>
+				<combo_box.item label="전체 이름" name="Complete_Name"/>
+				<combo_box.item label="표시 이름" name="Display_Name"/>
+				<combo_box.item label="기존 이름" name="Legacy_Name"/>
+				<combo_box.item label="사용자 이름" name="User_Name"/>
+			</combo_box>
+			<check_box label="내 자신의 시선 대상 표시하지 않기" name="LookAtHideOwn" tool_tip="내 자신의 카메라 십자선 표시하지 않기"/>
+			<check_box label="시선 대상까지 선 렌더링" name="ExodusLookAtLines" tool_tip="아바타에서 시선 대상 십자선까지 선을 렌더링"/>
+
+			<text name="mylookat">
+				내 시선 대상:
+			</text>
+			<check_box label="내 시선 대상을 다른 사람에게 보내지 않기" name="privatelookat" tool_tip="시선 힌트가 다른 사람에게 브로드캐스트되는 것을 방지"/>
+			<check_box label="시선 대상을 전혀 보내지 않기, 나에게도 보내지 않음" name="privateLocalLookat" tool_tip="카메라가 초점을 맞춘 지점을 향해 아바타의 머리가 움직이는 것을 방지합니다. 이 옵션의 활성화 여부에 관계없이 이 머리 움직임이 다른 사람에게 반드시 보이는 것은 아닙니다"/>
+			<check_box label="내 선택 대상 힌트 보내지 않기" name="privatepointat" tool_tip="선택 지점이 다른 사람에게 표시되는 것을 방지"/>
+			<check_box label="머리에서 거리 제한:" name="LimitLookAt" tool_tip="시선 대상을 머리 주위로 고정"/>
+			<text name="LimitLookAtDistanceMeterText">
+				m
+			</text>
+		</panel>
+
+		<!--Autoresponse1-->
+		<panel label="자동 응답 1" name="tab-autoresponse-1">
+			<text name="autorespond_toggle_location_tip">
+				참고: 자동 응답 메시지를 활성화하려면 소통 메뉴 > 온라인 상태를 통해 온라인 상태를 설정하세요
+			</text>
+			<text name="text_box3">
+				사용 불가(즉, 바쁨) 모드일 때 자동 응답:
+			</text>
+			<text name="autorespond_response_label">
+				모든 사람에게 자동 응답 모드일 때 모든 아바타에 대한 자동 응답:
+			</text>
+			<text name="autorespond_nf_response_label">
+				친구가 아닌 사람에게 자동 응답 모드일 때 친구가 아닌 사람에 대한 자동 응답:
+			</text>
+			<check_box label="자리비움 모드일 때 자동 응답 보내기:" name="send_away_av_response" tool_tip="자리비움 모드에 있을 때 누군가가 IM을 보내면 아래 텍스트를 보냅니다."/>
+			<check_box label="음소거한 아바타에게 자동 응답 보내기:" name="send_muted_av_response" tool_tip="음소거한 사람이 IM을 보내면 아래 텍스트를 보냅니다."/>
+		</panel>
+
+		<!--Autoresponse2-->
+		<panel label="자동 응답 2" name="tab-autoresponse-2">
+			<text name="autorespond_rto_response_label">
+				텔레포트 제안 거부 모드일 때 모든 아바타에 대한 자동 응답:
+			</text>
+			<check_box label="친구 목록에 있는 사람의 텔레포트 제안은 거부(및 응답 전송)하지 않기" name="FSDontRejectTeleportOffersFromFriends"/>
+			<text name="autorespond_rfr_response_label">
+				친구 요청 거부 모드일 때 모든 아바타에 대한 자동 응답:
+			</text>
+			<text name="autoresponse_item_label">
+				모든 자동 응답과 함께 보낼 아이템:
+			</text>
+			<fs_copytrans_inventory_drop_target name="autoresponse_item" tool_tip="여기에 원본 인벤토리 아이템을 끌어다 놓으세요."/>
+			<button label="지우기" name="clear_autoresponse_item"/>
+		</panel>
+	</tab_container>
+</panel>

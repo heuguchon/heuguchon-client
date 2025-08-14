@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel label="Firestorm" name="firestorm">
+
+<panel.string name="BeamsOffLabel">
+	=== 끄기 ===
+</panel.string>
+	<string name="EmbeddedItemNotSet">
+		설정되지 않음
+	</string>
+	<string name="EmbeddedItemNotAvailable">
+		사용할 수 없음
+	</string>
+	<string name="EmbeddedItemNotLoggedIn">
+		로그인되지 않음
+	</string>
+
+<tab_container label="Firestorm 환경설정" name="tabs">
+
+	<!--Extras-->
+	<panel label="부가기능" name="tab-extras">
+		<check_box name="checkMiscRLVa" label="원격 스크립트 뷰어 제어 허용 (RLVa)"/>
+		<text name="textMiscRLVaRestart">
+			(재시작 필요)
+		</text>
+		<check_box label="가능하면 항상 토지 그룹으로 객체 생성" name="grouplandrez" tool_tip="토지 그룹의 구성원인 경우 현재 활성화된 그룹 태그에 관계없이 토지 그룹으로 객체를 생성하려고 시도합니다."/>
+		<check_box label="스크립트 통신 시 파티클 효과 생성" name="EffectScriptChatParticles" tool_tip="활성화하면 스크립트가 통신할 때 객체 주위에 소용돌이치는 파티클 효과가 표시됩니다"/>
+		<check_box label="대상 아바타에 도달하면 추적 비컨 비활성화 (≤ 3m)" name="FSDisableAvatarTrackerAtCloseIn" tool_tip="활성화하면 대상 아바타와의 거리가 3m 미만일 때 추적 비컨이 자동으로 비활성화됩니다. (기본값)"/>
+		<check_box label="Bento 대기 애니메이션 수정" name="play_default_bento_idle_animation_toggle" tool_tip="활성화하면 다른 bento 애니메이션이 실행되지 않을 때 손, 날개, 입, 꼬리를 자연스러운 위치로 포즈를 취하는 기본 우선순위 0 bento 애니메이션을 실행합니다."/>
+		<check_box label="로그인 진행 화면 비활성화" name="login_screen_toggle" tool_tip="검은색 로그인 진행 화면을 비활성화합니다"/>
+		<check_box label="로그아웃 진행 화면 비활성화" name="logout_screen_toggle" tool_tip="검은색 로그아웃 진행 화면을 비활성화합니다"/>
+		<check_box label="점진적 그리기 거리 단계 활성화" name="FSRenderFarClipStepping" tool_tip="활성화하면 Firestorm은 텔레포트 후 점진적 그리기 거리 단계를 사용합니다."/>
+		<slider name="progressive_draw_distance_interval" tool_tip="각 그리기 거리 증가 사이의 간격(초)"/>
+		<check_box name="UseLSLBridge" label="LSL-클라이언트 브리지 활성화" tool_tip="뷰어가 스크립트된 어타치먼트(브리지)를 사용하여 기능을 확장할 수 있게 합니다"/>
+		<combo_box name="UseLSLFlightAssist" tool_tip="확장된 고도에서 비행 및 호버링을 지원하는 스크립트를 활성화합니다">
+			<combo_box.item label="비행 지원: 비활성화" name="flight_disabled"/>
+			<combo_box.item label="비행 지원: 약간 부스트" name="flight_mild"/>
+			<combo_box.item label="비행 지원: 보통 부스트" name="flight_moderate"/>
+			<combo_box.item label="비행 지원: 강한 부스트" name="flight_strong"/>
+			<combo_box.item label="비행 지원: 극도의 부스트" name="flight_extreme"/>
+		</combo_box>
+		<slider label="환경 전환 시간:" tool_tip="수동 환경 변경이 혼합되는 간격(초). 0은 즉시." name="manual_environment_change_transition_period"/>
+		<check_box name="EnvironmentPersistAcrossLogin" label="세션 전반에 걸쳐 환경 설정 유지" tool_tip="다음 로그인 후 현재 환경 설정을 복원합니다."/>
+		<check_box name="FSRepeatedEnvTogglesShared" label="반복된 환경 키바인드가 공유 환경으로 되돌아감" tool_tip="반복된 키바인드(예: ctrl+shift+y)가 요청된 프리셋과 공유 환경 사이를 번갈아 가게 합니다"/>
+	</panel>
+
+	<!--Protection-->
+	<panel label="보안" name="ProtectionTab">
+		<check_box label="객체에 왼쪽 클릭 앉기 차단" name="FSBlockClickSit"/>
+		<check_box label="스크립트가 지도 UI를 표시하는 것 허용 (llMapDestination)" name="ScriptsCanShowUI"/>
+		<text name="revokepermissions_txt">
+			권한 취소:
+		</text>
+		<radio_group name="FSRevokePerms">
+			<radio_item label="안함 (원래 동작)" name="never_radio"/>
+			<radio_item label="앉을 때 취소" name="sit_radio"/>
+			<radio_item label="일어설 때 취소" name="stand_radio"/>
+			<radio_item label="앉고 일어설 때 취소" name="sitnstand_radio"/>
+		</radio_group>
+		<text name="SurfaceAreaThreshholdLabel">
+			텍스처 지연 보호 (일부 객체가 손상될 수 있음):
+		</text>
+		<check_box label="텍스처 영역이 큰 대형 객체 자동으로 숨기기. 임계값: " name="RenderVolumeSAProtection" tool_tip="뷰어 충돌을 위해 설계된 큰 표면적에 매우 큰 텍스처가 있는 객체로부터 보호합니다. 기본값은 5000㎡이지만, 이 옵션이 활성화되어 있는데 일부 객체가 렌더링되지 않는다면 이 값을 늘려야 할 수 있습니다."/>
+		<check_box label="스팸 보호 활성화" name="UseAntiSpam"/>
+		<check_box label="내 소유 객체에도 스팸 보호 활성화" name="FSUseAntiSpamMine" tool_tip="내 소유 객체에도 스팸 방지 보호를 적용합니다."/>
+		<text name="AntiSpamText1">
+			단일 메시지의 최대 줄 수:
+		</text>
+		<spinner name="_NACL_AntiSpamNewlines" tool_tip="단일 텍스트 메시지에서 허용할 최대 줄 수 [기본값: 70]"/>
+		<text name="AntiSpamText2">
+			같은 소스로부터의 최대 이벤트:
+		</text>
+		<spinner name="_NACL_AntiSpamAmount" tool_tip="동일한 소스에서 2초 내에 허용할 유사한 이벤트의 최대 수 [기본값: 10]"/>
+		<text name="AntiSpamText3">
+			사운드 재생 요청 배수:
+		</text>
+		<spinner name="_NACL_AntiSpamSoundMulti" tool_tip="사운드 재생 요청에 대한 이벤트 배수 [기본값: 10]"/>
+		<text name="AntiSpamText4">
+			사운드 미리로드 요청 배수:
+		</text>
+		<spinner name="_NACL_AntiSpamSoundPreloadMulti" tool_tip="사운드 미리로드 요청에 대한 이벤트 배수 [기본값: 4]"/>
+		<button name="AntiSpamUnblock" label="모든 스팸 소스 차단 해제"/>
+		<check_box label="결제 전 확인. 임계값:" name="FSConfirmPayments" tool_tip="임계값보다 큰 금액을 지불하기 전에 확인 대화상자를 표시합니다. 항상 확인을 표시하려면 임계값을 0으로 설정하세요."/>
+		<spinner name="FSPaymentConfirmationThreshold" tool_tip="임계값보다 큰 금액을 지불하기 전에 확인 대화상자를 표시합니다. 항상 확인을 표시하려면 임계값을 0으로 설정하세요."/>
+	</panel>
+
+	<!--Avatar-->
+	<panel label="아바타" name="firestorm_avatar">
+		<text name="HeadMovement">
+			아바타 머리가 마우스를 따라가는 정도 ('0'은 움직임 없음):
+		</text>
+		<slider label="아바타 머리가 마우스를 따라가는 수직 범위:" tool_tip="아바타 머리가 마우스를 따라가는 수직 범위(피치) 각도" name="PitchFromMousePositionSlider"/>
+		<text name="PitchFromMousePositionText">
+			도
+		</text>
+		<slider label="아바타 머리가 마우스를 따라가는 수평 범위:" tool_tip="아바타 머리가 마우스를 따라가는 수평 범위(요) 각도" name="YawFromMousePositionSlider"/>
+		<text name="YawFromMousePositionText">
+			도
+		</text>
+		<text name="note_lookat">
+			(아바타 시선 대상 설정은 개인정보 탭에 있습니다.)
+		</text>
+		<check_box label="무작위 아바타 눈 움직임 비활성화" name="FSStaticEyes"/>
+
+		<!-- LGG Color Beams -->
+		<text name="BeamPrefs">
+			선택 빔 파티클 효과
+		</text>
+		<button name="BeamColor_delete" label="삭제" tool_tip="이 프리셋 제거"/>
+		<combo_box name="BeamColor_combo" tool_tip="선택 빔의 색상 프리셋 선택"/>
+		<button name="BeamColor_new" label="새로 만들기" tool_tip="새 색상 프리셋 만들기"/>
+		<button name="BeamColor_refresh" label="목록 새로고침" tool_tip="프리셋 목록 새로고침"/>
+		<slider name="FSMaxBeamsPerSecond" label="빔 업데이트/초:" tool_tip="초당 보낼 빔 업데이트 수. 기본값 40"/>
+		<check_box label="선택 빔 활성화" name="SLPartBeam" tool_tip="이 설정을 비활성화하면 선택 빔이 로컬에서 렌더링되지 않습니다. 다른 아바타에게 선택 빔을 보내는 것을 방지하지는 않습니다. 선택을 표시하지 않으려면 환경설정 -> 개인정보 -> 시선 -> 내 선택 대상 힌트 보내지 않기를 통해 비활성화할 수 있습니다."/>
+		<check_box label="채팅으로 선택 데이터 전송" name="FSParticleChat" tool_tip="선택 데이터(선택 시작/중지 및 전역 위치)를 채팅 채널 9000으로 전송합니다."/>
+
+		<combo_box name="FSBeamShape_combo" tool_tip="파티클 빔의 모양 선택"/>
+		<button name="delete_beam" label="삭제" tool_tip="이 빔 제거"/>
+		<button name="custom_beam_btn" label="새로 만들기" tool_tip="빔 모양 사용자 지정"/>
+		<button name="refresh_beams" label="목록 새로고침" tool_tip="빔 목록 새로고침"/>
+		<slider name="FSBeamShapeScale" label="크기:" tool_tip="Phoenix 모양 빔에 사용되는 모양의 크기 변경"/>
+		<text name="BridgeProtocols">
+			LSL-클라이언트 브리지 외부 프로토콜 통합:
+		</text>
+		<check_box label="OpenCollar 프로토콜이 내장 AO를 활성화 또는 비활성화하도록 허용" name="BridgeIntegrationOC"/>
+		<check_box label="LockMeister 프로토콜이 내장 AO를 활성화 또는 비활성화하도록 허용" name="BridgeIntegrationLM"/>
+	</panel>
+
+	<!--Build 1-->
+	<panel label="건축 1" name="BuildTab">
+		<text name="text_box_objprams">
+			기본 객체 크기
+		</text>
+		<text name="text_box_objprams2">
+			설정
+		</text>
+		<text name="text_box_objprams3">
+			텍스처
+		</text>
+		<spinner label="X 크기" name="X size"/>
+		<spinner label="Y 크기" name="Y size"/>
+		<spinner label="Z 크기" name="Z size"/>
+		<check_box label="유령" name="FSBuildPrefs_PhantomToggle"/>
+		<check_box label="물리" name="FSBuildPrefs_PhysicalToggle"/>
+		<check_box label="임시" name="FSBuildPrefs_TemporaryToggle"/>
+		<combo_box name="material">
+			<combo_item name="Stone" label="돌"/>
+			<combo_item name="Metal" label="금속"/>
+			<combo_item name="Glass" label="유리"/>
+			<combo_item name="Wood" label="나무"/>
+			<combo_item name="Flesh" label="살"/>
+			<combo_item name="Plastic" label="플라스틱"/>
+			<combo_item name="Rubber" label="고무"/>
+		</combo_box>
+		<texture_picker label="텍스처" name="texture control" tool_tip="클릭하여 그림 선택"/>
+		<color_swatch label="색상" name="colorswatch" tool_tip="클릭하여 색상 선택기 열기"/>
+		<spinner label="투명도" name="alpha"/>
+		<spinner label="발광" name="glow"/>
+		<check_box label="완전 밝게" name="EmFBToggle"/>
+		<combo_box name="combobox shininess" tool_tip="객체의 광택 정도 설정">
+			<combo_item name="None" label="없음"/>
+			<combo_item name="Low" label="낮음"/>
+			<combo_item name="Medium" label="보통"/>
+			<combo_item name="High" label="높음"/>
+		</combo_box>
+		<check_box name="FSBuildPrefs_EmbedItem" label="새 프림에 아이템 삽입"/>
+		<fs_embedded_item_drop_target name="embed_item" tool_tip="인벤토리 아이템을 여기에 드롭하세요">
+			인벤토리 아이템을 여기에 드롭하세요
+		</fs_embedded_item_drop_target>
+		<text name="build_item_add_disp_rect_txt">
+			현재 설정: [ITEM]
+		</text>
+		<text name="text_box_pivotpoint">
+			회전 중심점
+		</text>
+		<check_box label="루트 프림에 축" tool_tip="기본 동작은 링크셋의 질량 중심에 축을 표시하는 것입니다. 활성화하면 링크셋의 루트 프림에 축이 표시됩니다." name="FSBuildPrefsActualRoot_toggle"/>
+		<spinner label="X 위치" name="X pos"/>
+		<spinner label="Y 위치" name="Y pos"/>
+		<spinner label="Z 위치" name="Z pos"/>
+		<check_box label="값은 백분율" tool_tip="기본 설정은 백분율이며 모든 축이 50으로 설정됩니다" name="FSPivotPercToggle"/>
+		<button label="기본 생성 권한" name="fs_default_creation_permissions"/>
+		<text name="text_box_scripting_font">
+			스크립트 편집기 글꼴:
+		</text>
+		<combo_box name="FSScriptingFontName" tool_tip="LSL 스크립트 편집기에서 사용되는 글꼴의 이름">
+			<combo_item name="Monospace" label="Monospace"/>
+			<combo_item name="Scripting" label="Scripting"/>
+			<combo_item name="Cascadia" label="Cascadia Code"/>
+		</combo_box>
+		<combo_box name="FSScriptingFontSize" tool_tip="LSL 스크립트 편집기에서 사용되는 글꼴의 크기">
+			<combo_item name="Small" label="작게"/>
+			<combo_item name="Medium" label="보통"/>
+			<combo_item name="Large" label="크게"/>
+		</combo_box>
+		<check_box label="LSL 전처리기 활성화" tool_tip="체크하면 LSL 전처리기가 활성화됩니다." name="preproc_checkbox"/>
+		<check_box label="스크립트 최적화" tool_tip="체크하면 LSL 전처리기가 스크립트에서 사용하는 공간을 최적화합니다." name="preprocoptimizer_checkbox"/>
+		<check_box label="switch() 문" tool_tip="체크하면 LSL 전처리기가 스크립트 흐름 제어를 위한 switch() 문 사용을 허용합니다." name="preprocswitch_checkbox"/>
+		<check_box label="게으른 목록" tool_tip="체크하면 LSL 전처리기가 목록 처리를 위한 구문 확장 사용을 허용합니다." name="preproclazy_checkbox"/>
+		<check_box label="로컬 디스크에서 #includes" tool_tip="체크하면 LSL 전처리기가 로컬 디스크의 파일을 참조하는 #include 문을 허용합니다." name="preprocinclude_checkbox"/>
+		<text name="lslpreprocinclude_textbox">
+			전처리기 include 경로:
+		</text>
+		<button label="찾아보기" label_selected="찾아보기" name="SetPreprocInclude"/>
+		<text name="externaleditor_textbox">
+			외부 편집기:
+		</text>
+		<button label="찾아보기" label_selected="찾아보기" name="SetExternalEditor"/>
+	</panel>
+
+	<!--Build 2-->
+	<panel label="건축 2" name="BuildTab2">
+		<check_box label="선택된 프림 강조 표시 활성화" tool_tip="체크 해제하면 노란색/파란색 윤곽선 효과가 렌더링되지 않아 많은 수의 프림이 선택되었을 때 성능이 향상됩니다." name="FSBuildPrefsRenderHighlight_toggle"/>
+		<check_box label="현재 선택된 구획의 경계 강조 표시" name="RenderParcelSelection"/>
+		<check_box label="최대 건축 높이까지 경계 표시" name="FSRenderParcelSelectionToMaxBuildHeight"/>
+		<check_box label="선택 거리 제한 (미터):" name="LimitSelectDistance"/>
+		<spinner name="MaxSelectDistance" tool_tip="허용되는 최대 선택 거리 (아바타로부터 미터) [기본값: 128.000]"/>
+		<check_box label="드래그 거리 제한 (미터):" name="LimitDragDistance"/>
+		<spinner name="MaxDragDistance" tool_tip="이동 도구의 단일 작업에서 허용되는 최대 거리 (시작점으로부터 미터) [기본값: 48.000]"/>
+		<text name="RotationStepText1">
+			회전을 다음의 배수로 제한
+		</text>
+		<spinner name="RotationStep" tool_tip="회전 도구를 통한 모든 회전은 이 단위의 배수로 제한됩니다 [기본값: 1.0]"/>
+		<text name="RotationStepText2">
+			도, '격자에 맞춤'을 사용하지 않을 때
+		</text>
+		<check_box label="링크셋에 최소한 다음 수의 객체가 있으면 링크 해제 확인 대화상자 표시" name="FSUnlinkConfirmEnabled"/>
+		<text name="MinObjectsForUnlinkConfirmText2">
+			개 객체
+		</text>
+		<check_box label="Ctrl+마우스를 사용하여 객체 잡기 및 조작" tool_tip="체크하면 마우스와 CTRL 키로 객체를 잡고 이동할 수 있습니다." name="FSEnableGrab"/>
+		<check_box label="건축 모드에서 텍스처 면의 클릭-드래그 또는 클릭-스케일(Caps Lock과 함께) 허용" tool_tip="활성화하면 건축 모드에서 텍스처 면을 클릭-드래그하거나 클릭-스케일(Caps Lock과 함께)할 수 있습니다. 이 기능은 여전히 실험적이며 주의하여 사용해야 합니다." name="FSExperimentalDragTexture"/>
+		<check_box label="기존 '판매용 객체 설정' 동작 사용" tool_tip="체크하면 판매용 객체 정보가 확인 없이 변경 시 저장됩니다." name="FSCommitForSaleOnChange_toggle"/>
+		<check_box label="인벤토리에서 편집한 스크립트를 Mono로 저장" tool_tip="체크하면 인벤토리에서 직접 스크립트를 편집하고 저장할 때 LSL 대신 Mono로 저장합니다." name="FSSaveInventoryScriptsAsMono_toggle"/>
+		<check_box label="기본적으로 TGA 대신 PNG로 디스크에 텍스처 저장" tool_tip="텍스처 미리보기 플로터와 인벤토리의 컨텍스트 메뉴에서 사용됩니다." name="FSTextureDefaultSaveAsFormat"/>
+		<check_box label="업로드 중 자신의 아바타에서 애니메이션 미리보기" tool_tip="활성화하면 업로드 과정에서 자신의 아바타에서 애니메이션을 미리볼 수 있습니다" name="FSUploadAnimationOnOwnAvatar"/>
+		<check_box label="항상 애니메이션 미리보기 고급 정보 확장" tool_tip="기본적으로 애니메이션 미리보기 플로터의 고급 애니메이션 정보를 확장합니다" name="FSAnimationPreviewExpanded"/>
+		<check_box label="확장 스크립트 정보 세부사항 활성화" tool_tip="활성화하면 건축자에게 유용한 다양한 세부사항으로 기본 스크립트 정보 기능을 확장합니다" name="FSScriptInfoExtended"/>
+		<check_box label="'부착 대상' 메뉴에서 부착 지점을 알파벳순으로 정렬 (재시작 필요)" tool_tip="활성화하면 '부착 대상' 메뉴의 부착 지점 목록이 알파벳순으로 정렬됩니다" name="FSSortAttachmentSpotsAlphabetically"/>
+		<check_box label="도구 플로터에서 새로운 [APP_NAME] 텍스처 패널 사용 (재시작 필요)" tool_tip="활성화하면 텍스처 편집 도구가 개선된 [APP_NAME] 워크플로우를 사용하고 Blinn-Phong 및 PBR 텍스처를 모두 편집할 수 있습니다." name="FSUseNewTexturePanel"/>
+	</panel>
+
+	<!--Uploads-->
+	<panel label="업로드" name="UploadsTab">
+		<text name="title">
+			업로드를 위한 현재 대상 폴더:
+		</text>
+		<text name="title_images">
+			이미지
+		</text>
+		<text name="title_sounds">
+			사운드
+		</text>
+		<text name="title_animations">
+			애니메이션
+		</text>
+		<text name="title_models">
+			모델
+		</text>
+		<text name="title_pbr">
+			PBR 머티리얼
+		</text>
+		<text name="upload_help">
+			대상 폴더를 변경하려면 인벤토리에서 해당 폴더를 마우스 오른쪽 클릭하고
+"기본값으로 사용"을 선택하세요
+		</text>
+		<button name="reset_default_folders" label="기본 폴더 재설정"/>
+	</panel>
+</tab_container>
+</panel>

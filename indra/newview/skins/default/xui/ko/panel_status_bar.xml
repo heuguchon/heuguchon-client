@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel name="status">
+	<panel.string name="packet_loss_tooltip">
+		패킷 손실
+	</panel.string>
+	<panel.string name="bandwidth_tooltip">
+		대역폭
+	</panel.string>
+	<panel.string name="time">
+		[hour12, datetime, slt]:[min, datetime, slt]:[second, datetime, slt] [ampm, datetime, slt] [timezone,datetime, slt]
+	</panel.string>
+	<panel.string name="timeTooltip">
+		[weekday, datetime, slt], [day, datetime, slt] [month, datetime, slt] [year, datetime, slt]
+	</panel.string>
+	<panel.string name="buycurrencylabel">
+		L$ [AMT]
+	</panel.string>
+	<panel name="menu_search_panel">
+		<search_editor label="메뉴 검색" name="search_menu_edit" tool_tip="찾고자 하는 검색어를 여기에 입력하세요. 메뉴 내의 부분 일치 검색 결과가 표시됩니다."/>
+	</panel>
+	<panel name="parcel_info_panel">
+		<button name="buy_land_btn" tool_tip="구획을 판매 중입니다"/>
+		<text name="parcel_info_text" value="(로딩 중...)" tool_tip="현재 서 있는 토지 구획의 이름. 토지 정보를 보려면 클릭하세요."/>
+	</panel>
+	<panel name="balance_bg">
+		<text name="balance" tool_tip="L$ 잔액을 새로고침하려면 클릭" value="L$??"/>
+		<button label="L$ 구매" name="buyL" tool_tip="더 많은 L$를 구매하려면 클릭"/>
+	</panel>
+	<panel name="time_and_media_bg">
+		<text name="TimeText" tool_tip="현재 시간 (태평양)">
+			24:00:00 AM PST
+		</text>
+		<button name="stream_toggle_btn" tool_tip="구획 오디오 스트림 시작/중지"/>
+		<button name="media_toggle_btn" tool_tip="모든 미디어 시작/중지 (음악, 비디오, 웹페이지)"/>
+		<button name="volume_btn" tool_tip="전체 볼륨 제어"/>
+		<text name="FPSText" tool_tip="초당 프레임 수 (제한 조정하려면 클릭)">
+			200.0
+		</text>
+	</panel>
+</panel>
