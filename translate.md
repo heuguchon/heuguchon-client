@@ -173,6 +173,28 @@
   - [x] floater_whitelist.xml (화이트리스트 폴더 및 실행 파일)
   - [x] floater_window_size.xml (창 크기)
   - [x] menu_attachment_other.xml (어타치먼트 컨텍스트 메뉴)
+- [x] 25차: Firestorm 특화 기능 도구 (5개)
+  - [x] floater_fs_area_search.xml - (객체 지역 검색)
+  - [x] floater_fs_contacts.xml - (연락처 관리)
+  - [x] floater_fs_money_tracker.xml - (금전 추적기)
+  - [x] floater_performance.xml - (그래픽 성능 모니터)
+  - [x] floater_live_lsleditor.xml - (실시간 LSL 에디터)
+- [x] 26차: 아바타 및 시스템 도구 (6개)
+  - [x] floater_avatar_textures.xml - (아바타 텍스처)
+  - [x] floater_bumps.xml - (충돌, 밀침 및 타격)
+  - [x] floater_display_name.xml - (표시 이름 변경)
+  - [x] floater_my_scripts.xml - (내 스크립트)
+  - [x] floater_notifications_tabbed.xml - (탭화된 알림)
+  - [x] floater_sys_well.xml - (시스템 알림 웰)
+- [x] 27차: 텍스트 편집 및 작업 도구 (5개)
+  - [x] floater_goto_line.xml - (줄로 이동)
+  - [x] floater_search_replace.xml - (찾기/바꾸기)
+  - [x] floater_select_key.xml - (키 선택)
+  - [x] floater_simple_snapshot.xml - (간단한 스크린샷)
+  - [x] floater_task_properties.xml - (아이템 속성)
+- [x] 28차: UI 도구 및 유틸리티 (3개)
+  - [x] floater_ui_preview.xml - (XUI 미리보기 도구)
+  - [x] floater_url_entry.xml - (URL 입력)
 - [ ] 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -198,7 +220,7 @@
 - 프로젝트 구조 분석
 - 작업 계획 수립
 - ko 폴더 생성
-- **핵심 파일 113개 번역 완료:**
+- **핵심 파일 135개 번역 완료:**
   - strings.xml (기본 문자열)
   - floater_about.xml (정보 창)
   - menu_login.xml (로그인 메뉴)
@@ -303,6 +325,24 @@
   - floater_whitelist.xml (화이트리스트 폴더 및 실행 파일)
   - floater_window_size.xml (창 크기)
   - menu_attachment_other.xml (어타치먼트 컨텍스트 메뉴)
+  - floater_fs_area_search.xml - (객체 지역 검색)
+  - floater_fs_contacts.xml - (연락처 관리)
+  - floater_fs_money_tracker.xml - (금전 추적기)
+  - floater_performance.xml - (그래픽 성능 모니터)
+  - floater_live_lsleditor.xml - (실시간 LSL 에디터)
+  - floater_avatar_textures.xml - (아바타 텍스처)
+  - floater_bumps.xml - (충돌, 밀침 및 타격)
+  - floater_display_name.xml - (표시 이름 변경)
+  - floater_my_scripts.xml - (내 스크립트)
+  - floater_notifications_tabbed.xml - (탭화된 알림)
+  - floater_sys_well.xml - (시스템 알림 웰)
+  - floater_goto_line.xml - (줄로 이동)
+  - floater_search_replace.xml - (찾기/바꾸기)
+  - floater_select_key.xml - (키 선택)
+  - floater_simple_snapshot.xml - (간단한 스크린샷)
+  - floater_task_properties.xml - (아이템 속성)
+  - floater_ui_preview.xml - (XUI 미리보기 도구)
+  - floater_url_entry.xml - (URL 입력)
 
 ### 진행 중인 작업
 - 추가 중요 UI 파일 식별 및 번역
@@ -346,9 +386,13 @@
 - **22차 고급 시스템 및 디버그 도구 완료** - 패스파인딩 링크셋, 기본 권한 설정, 빠른 설정, 지역 디버그 콘솔, 지역 재시작
 - **23차 시스템 및 서비스 도구 완료** - 아바타 선택, 대화 컨테이너, 그리드 상태, 스크립트 정보, 상위 객체, 서비스 약관, 채팅 번역 설정
 - **24차 추가 시스템 도구 및 메뉴 완료** - 웹 프로필, 내 웹 프로필, 화이트리스트 폴더, 창 크기, 어타치먼트 컨텍스트 메뉴
+- **25차 Firestorm 특화 기능 도구 완료** - 객체 지역 검색, 연락처 관리, 금전 추적기, 그래픽 성능 모니터, 실시간 LSL 에디터
+- **26차 아바타 및 시스템 도구 완료** - 아바타 텍스처, 충돌/밀침/타격, 표시 이름 변경, 내 스크립트, 탭화된 알림, 시스템 알림 웰
+- **27차: 텍스트 편집 및 작업 도구 완료** - 줄로 이동, 찾기/바꾸기, 키 선택, 간단한 스크린샷, 아이템 속성
+- **28차: UI 도구 및 유틸리티** - XUI 미리보기 도구, URL 입력
 
 ### 번역 완료율
-- **총 113개 파일 번역** (독일어 기준 약 400개 중 약 28.3%)
+- **총 135개 파일 번역** (독일어 기준 약 400개 중 약 33.8%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화

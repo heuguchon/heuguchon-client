@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="script goto" title="줄로 이동">
+	<button label="확인" label_selected="확인" name="goto_btn"/>
+	<text name="txt" width="80">
+		줄로 이동
+	</text>
+</floater>

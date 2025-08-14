@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="search replace" title="찾기/바꾸기">
+	<check_box label="대소문자 구분 안함" left="2" name="case_text" width="180"/>
+	<check_box label="위쪽으로 찾기" left_pad="5" name="find_previous"/>
+	<button label="찾기" label_selected="찾기" name="search_btn"/>
+	<button label="바꾸기" label_selected="바꾸기" name="replace_btn"/>
+	<button label="모두 바꾸기" label_selected="모두 바꾸기" name="replace_all_btn"/>
+	<text name="txt">
+		찾기
+	</text>
+	<text name="txt2">
+		바꾸기
+	</text>
+</floater>

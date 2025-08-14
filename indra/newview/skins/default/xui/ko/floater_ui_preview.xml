@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="gui_preview_tool" title="XUI 미리보기 도구">
+	<string name="ExternalEditorNotSet">
+		환경 변수 LL_XUI_EDITOR 또는 ExternalEditor 설정을 통해 편집기를 선택하거나 "편집기 경로" 필드에 경로를 지정하세요.
+	</string>
+</floater>

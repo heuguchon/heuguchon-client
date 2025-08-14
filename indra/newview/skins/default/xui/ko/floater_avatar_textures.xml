@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="avatar_texture_debug" title="아바타 텍스처">
+	<floater.string name="InvalidAvatar">
+		유효하지 않은 아바타
+	</floater.string>
+	<scroll_container name="profile_scroll">
+		<panel name="scroll_content_panel">
+			<text name="label">
+				베이크된
+텍스처
+			</text>
+			<text name="composite_label">
+				합성
+텍스처
+			</text>
+			<button label="ID를 콘솔에 덤프" label_selected="덤프" name="Dump"/>
+			<panel name="scroll_content_panel2">
+				<texture_picker label="머리카락" name="hair-baked"/>
+				<texture_picker label="머리카락" name="hair_grain"/>
+				<texture_picker label="머리카락 알파" name="hair_alpha"/>
+				<texture_picker label="머리카락 타투" name="hair_tattoo"/>
+				<texture_picker label="머리" name="head-baked"/>
+				<texture_picker label="화장" name="head_bodypaint"/>
+				<texture_picker label="머리 알파" name="head_alpha"/>
+				<texture_picker label="머리 타투" name="head_tattoo"/>
+				<texture_picker label="머리 범용 타투" name="head_universal_tattoo"/>
+				<texture_picker label="눈" name="eyes-baked"/>
+				<texture_picker label="눈" name="eyes_iris"/>
+				<texture_picker label="눈 알파" name="eyes_alpha"/>
+				<texture_picker label="눈 타투" name="eyes_tattoo"/>
+				<texture_picker label="상체" name="upper-baked"/>
+				<texture_picker label="상체 바디페인트" name="upper_bodypaint"/>
+				<texture_picker label="속옷" name="upper_undershirt"/>
+				<texture_picker label="장갑" name="upper_gloves"/>
+				<texture_picker label="셔츠" name="upper_shirt"/>
+				<texture_picker label="상의 재킷" name="upper_jacket"/>
+				<texture_picker label="상체 알파" name="upper_alpha"/>
+				<texture_picker label="상체 타투" name="upper_tattoo"/>
+				<texture_picker label="상체 범용 타투" name="upper_universal_tattoo"/>
+				<texture_picker label="하체" name="lower-baked"/>
+				<texture_picker label="하체 바디페인트" name="lower_bodypaint"/>
+				<texture_picker label="속바지" name="lower_underpants"/>
+				<texture_picker label="양말" name="lower_socks"/>
+				<texture_picker label="신발" name="lower_shoes"/>
+				<texture_picker label="바지" name="lower_pants"/>
+				<texture_picker label="재킷" name="lower_jacket"/>
+				<texture_picker label="하체 알파" name="lower_alpha"/>
+				<texture_picker label="하체 타투" name="lower_tattoo"/>
+				<texture_picker label="하체 범용 타투" name="lower_universal_tattoo"/>
+				<texture_picker label="치마" name="skirt-baked"/>
+				<texture_picker label="치마" name="skirt"/>
+				<texture_picker label="치마 타투" name="skirt_tattoo"/>
+				<texture_picker label="왼팔" name="leftarm-baked"/>
+				<texture_picker label="왼팔 타투" name="leftarm_tattoo"/>
+				<texture_picker label="왼다리" name="leftleg-baked"/>
+				<texture_picker label="왼다리 타투" name="leftleg_tattoo"/>
+				<texture_picker label="AUX 1" name="aux1-baked"/>
+				<texture_picker label="AUX 1 타투" name="aux1_tattoo"/>
+				<texture_picker label="AUX 2" name="aux2-baked"/>
+				<texture_picker label="AUX 2 타투" name="aux2_tattoo"/>
+				<texture_picker label="AUX 3" name="aux3-baked"/>
+				<texture_picker label="AUX 3 타투" name="aux3_tattoo"/>
+			</panel>
+		</panel>
+	</scroll_container>
+</floater>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="simple_snapshot" title="아이템 스크린샷">
+	<button label="사진 촬영" name="new_snapshot_btn"/>
+	<button label="저장" name="save_btn"/>
+	<button label="취소" name="cancel_btn"/>
+</floater>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="money_tracker" title="금전 추적기">
+	<name_list name="payment_list">
+		<name_list.columns name="time" label="시간"/>
+		<name_list.columns name="name" label="이름"/>
+		<name_list.columns name="amount" label="금액"/>
+	</name_list>
+	<text name="summary">
+		지출: L$ [PAID] - 수입: L$ [RECEIVED]
+	</text>
+	<check_box label="닫혀있을 때도 추적" name="FSAlwaysTrackPayments" tool_tip="금전 추적기가 닫혀 있어도 항상 지불을 추적합니다."/>
+	<button name="Clear" label="지우기"/>
+</floater>

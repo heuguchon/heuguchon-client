@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="url_entry" title="URL 입력">
+	<text name="media_label">
+		미디어 URL:
+	</text>
+	<button label="확인" name="ok_btn" width="30"/>
+	<button label="취소" name="cancel_btn" width="66"/>
+	<button label="지우기" name="clear_btn" left_pad="100"/>
+	<text name="loading_label" left="120">
+		로딩 중...
+	</text>
+</floater>

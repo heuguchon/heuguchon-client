@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="imcontacts" title="연락처">
+	<string name="no_friends" value="친구 없음"/>
+	<string name="no_filtered_groups_msg" value="&quot;[SEARCH_TERM]&quot;이 포함된 그룹을 찾을 수 없습니다."/>
+	<string name="no_groups_msg" value="가입할 그룹을 찾고 계세요? [secondlife:///app/search/groups 검색]을 시도해보세요."/>
+	<tab_container name="friends_and_groups">
+		<panel label="친구" name="friends_panel"/>
+		<panel label="그룹" name="groups_panel"/>
+		<panel label="연락처 세트" name="contact_sets_panel"/>
+	</tab_container>
+</floater>

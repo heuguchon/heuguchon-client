@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="script ed float" title="스크립트: 새 스크립트">
+	<floater.string name="not_allowed">
+		이 스크립트는 제한된 권한으로 설정되어 있어 보기나 편집할 수 없습니다. 객체 내부의 스크립트를 보거나 편집하려면 전체 권한이 필요합니다.
+	</floater.string>
+	<floater.string name="script_running">
+		실행 중
+	</floater.string>
+	<floater.string name="Title">
+		스크립트: [NAME]
+	</floater.string>
+	<floater.string name="experience_enabled">
+		현재 경험을 제거하려면 체크 해제하세요
+	</floater.string>
+	<floater.string name="no_experiences">
+		권한이 있는 경험이 없습니다
+	</floater.string>
+	<floater.string name="add_experiences">
+		경험을 추가하려면 선택하세요
+	</floater.string>
+	<floater.string name="show_experience_profile">
+		경험 프로필을 보려면 클릭하세요
+	</floater.string>
+	<floater.string name="loading">
+		로딩 중...
+	</floater.string>
+	<text name="obj_name">소스 객체: [SOURCE_OBJECT]</text>
+	<button label="재설정" label_selected="재설정" name="Reset"/>
+	<check_box initial_value="true" label="실행 중" name="running"/>
+	<check_box initial_value="true" label="모노" name="mono"/>
+	<check_box label="경험 사용:" name="enable_xp"/>
+	<button label="&gt;" name="view_profile"/>
+</floater>
