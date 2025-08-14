@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="구성원 및 역할" name="roles_tab">
+	<panel.string name="default_needs_apply_text">
+		저장되지 않은 변경사항이 있습니다
+	</panel.string>
+	<panel.string name="want_apply_text">
+		변경사항을 저장하시겠습니까?
+	</panel.string>
+	<tab_container name="roles_tab_container">
+		<panel label="구성원" name="members_sub_tab" tool_tip="구성원">
+			<panel.string name="help_text">
+				구성원에게 역할을 추가하거나 제거할 수 있습니다.
+Ctrl 키를 누르고 이름을 클릭하여
+여러 구성원을 선택하세요.
+			</panel.string>
+			<panel.string name="donation_area">
+				[AREA] m²
+			</panel.string>
+			<filter_editor label="구성원 필터" name="filter_input"/>
+			<name_list name="member_list">
+				<name_list.columns label="구성원" name="name"/>
+				<name_list.columns label="기부" name="donated"/>
+				<name_list.columns label="상태" name="online"/>
+				<name_list.columns label="직책" name="title"/>
+			</name_list>
+			<button label="초대" name="member_invite"/>
+			<button label="추방" name="member_eject"/>
+			<button label="차단" name="member_ban"/>
+			<button label="목록 내보내기" name="export_list"/>
+		</panel>
+		<panel label="역할" name="roles_sub_tab" tool_tip="역할">
+			<panel.string name="help_text">
+				역할에는 제목과 구성원이 수행할 수 있는
+허용된 능력 목록이 있습니다. 구성원은
+하나 이상의 역할에 속할 수 있습니다. 그룹은 
+모든 사람과 소유자 역할을 포함하여 최대 10개의 역할을 가질 수 있습니다.
+			</panel.string>
+			<panel.string name="cant_delete_role">
+				'모든 사람'과 '소유자' 역할은 특별하며 삭제할 수 없습니다.
+			</panel.string>
+			<panel.string name="power_folder_icon">
+				Inv_FolderClosed
+			</panel.string>
+			<panel.string name="power_all_have_icon">
+				Checkbox_On
+			</panel.string>
+			<panel.string name="power_partial_icon">
+				Checkbox_Off
+			</panel.string>
+			<filter_editor label="역할 필터" name="filter_input"/>
+			<name_list name="role_list">
+				<name_list.columns label="역할" name="name"/>
+				<name_list.columns label="제목" name="title"/>
+				<name_list.columns label="#" name="members"/>
+			</name_list>
+			<button label="새 역할" name="role_create"/>
+			<button label="역할 복사" name="role_copy"/>
+			<button label="역할 삭제" name="role_delete"/>
+		</panel>
+		<panel label="능력" name="actions_sub_tab" tool_tip="능력의 설명과 어떤 역할과 구성원이 해당 능력을 실행할 수 있는지 볼 수 있습니다.">
+			<panel.string name="help_text">
+				능력은 역할의 구성원이 이 그룹에서 
+특정한 일을 할 수 있게 합니다. 매우 다양한 능력이 있습니다.
+			</panel.string>
+			<filter_editor label="능력 필터" name="filter_input"/>
+			<scroll_list name="action_list" tool_tip="자세한 내용을 보려면 능력을 선택하세요.">
+				<scroll_list.columns label="" name="action"/>
+			</scroll_list>
+		</panel>
+		<panel label="차단된 주민" name="banlist_sub_tab" tool_tip="이 그룹에서 차단된 주민을 봅니다.">
+			<panel.string name="help_text">
+				차단 목록에 있는 주민은 그룹에 가입할 수 없습니다.
+			</panel.string>
+			<panel.string name="ban_count_template">
+				차단 수: [COUNT]/[LIMIT]
+			</panel.string>
+			<filter_editor label="차단 목록 필터" name="filter_input"/>
+			<name_list name="ban_list">
+				<name_list.columns label="주민" name="name"/>
+				<name_list.columns label="차단 날짜" name="ban_date"/>
+			</name_list>
+			<button label="주민 차단" name="ban_create" tool_tip="그룹에서 주민 차단"/>
+			<button label="차단 제거" name="ban_delete" tool_tip="선택된 주민의 그룹 차단 해제"/>
+			<button name="ban_refresh" tool_tip="차단 목록 새로고침"/>
+			<text name="ban_count"></text>
+		</panel>
+	</tab_container>
+	<panel name="members_footer">
+		<text name="assigned_roles_label">
+			할당된 역할
+		</text>
+		<scroll_list name="member_assigned_roles">
+			<scroll_list.columns label="" name="checkbox"/>
+			<scroll_list.columns label="" name="role"/>
+		</scroll_list>
+		<text name="static2">
+			허용된 능력
+		</text>
+		<scroll_list name="member_allowed_actions" tool_tip="각 허용된 능력의 자세한 내용은 능력 탭을 참조하세요.">
+			<scroll_list.columns label="" name="action"/>
+		</scroll_list>
+	</panel>
+	<panel name="roles_footer">
+		<text name="role_name_label">
+			역할 이름
+		</text>
+		<line_editor name="role_name"/>
+		<text name="role_title_label">
+			역할 제목
+		</text>
+		<line_editor name="role_title"/>
+		<text name="description_label">
+			설명
+		</text>
+		<text_editor name="role_description"/>
+		<check_box label="구성원 공개" name="role_visible_in_list" tool_tip="이 역할의 구성원이 그룹 외부 사람들에게 일반 탭에서 보이는지 설정합니다."/>
+		
+		<panel name="group_roles_layout_panel">
+			<text name="assigned_members_label">
+				할당된 구성원
+			</text>
+		</panel>
+		<panel name="group_roles_layout_panel2">
+			<text name="allowed_abilities_label" tool_tip="현재 선택된 역할의 능력 목록.">
+				허용된 능력
+			</text>
+			<scroll_list name="role_allowed_actions" tool_tip="각 허용된 능력의 자세한 내용은 능력 탭을 참조하세요.">
+				<scroll_list.columns label="" name="checkbox"/>
+				<scroll_list.columns label="" name="action"/>
+			</scroll_list>
+		</panel>
+	</panel>
+	<panel name="actions_footer">
+		<panel name="action_description_panel">
+			<text_editor name="action_description">
+				이 능력은 '이 그룹에서 구성원 추방'입니다. 소유자만이 다른 소유자를 추방할 수 있습니다.
+			</text_editor>
+		</panel>
+		<text name="action_roles_label">
+			이 능력을 가진 역할
+		</text>
+		<text name="action_members_label">
+			이 능력을 가진 구성원
+		</text>
+	</panel>
+</panel>

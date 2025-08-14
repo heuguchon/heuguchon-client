@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<panel label="공지" name="notices_tab">
+	<panel.string name="help_text">
+		공지를 통해 메시지와 선택적으로 첨부된 아이템을 보낼 수 있습니다.
+공지는 공지를 받을 수 있는 능력이 있는 역할의 그룹 구성원에게만 갑니다.
+일반 탭에서 공지를 끌 수 있습니다.
+	</panel.string>
+	<panel.string name="no_notices_text">
+		과거 공지가 없습니다
+	</panel.string>
+	<text name="lbl2">
+		공지는 14일 동안 보관됩니다.
+그룹당 하루에 최대 200개
+	</text>
+	<scroll_list name="notice_list">
+		<scroll_list.columns label="" name="icon"/>
+		<scroll_list.columns label="제목" name="subject"/>
+		<scroll_list.columns label="보낸이" name="from"/>
+		<scroll_list.columns label="날짜" name="date"/>
+	</scroll_list>
+	<button label="새 공지" label_selected="새 공지" name="create_new_notice" tool_tip="새 공지 만들기"/>
+	<button label="새로고침" label_selected="목록 새로고침" name="refresh_notices" tool_tip="공지 목록 새로고침"/>
+	<text name="notice_list_none_found">
+		찾지 못함
+	</text>
+
+	<panel label="새 공지 만들기" name="panel_create_new_notice">
+		<text name="lbl">
+			공지 작성
+		</text>
+		<text name="lbl3">
+			제목:
+		</text>
+		<text name="lbl4">
+			메시지:
+		</text>
+		<text name="lbl5">
+			첨부:
+		</text>
+		<text name="drag_and_drop_help">
+			첨부할 아이템을 여기에 드래그해서 놓으세요:
+		</text>
+		<button label="인벤토리" name="open_inventory" tool_tip="인벤토리 열기"/>
+		<button label="첨부 제거" label_selected="첨부 제거" name="remove_attachment" tool_tip="알림에서 첨부 파일 제거"/>
+		<button label="보내기" label_selected="보내기" name="send_notice"/>
+		<group_drop_target name="drop_target" tool_tip="이 공지와 함께 보내려면 인벤토리 아이템을 이 대상 상자에 드래그하세요. 첨부하려면 아이템을 복사하고 전송할 수 있는 권한이 있어야 합니다."/>
+	</panel>
+	
+	<panel label="과거 공지 보기" name="panel_view_past_notice">
+		<text name="lbl6">
+			보관된 공지
+		</text>
+		<text name="lbl7">
+			새 공지를 보내려면 + 버튼을 클릭하세요
+		</text>
+		<text name="lbl8">
+			제목:
+		</text>
+		<text name="lbl9">
+			메시지:
+		</text>
+		<text name="lbl10">
+			첨부:
+		</text>
+		<button label="첨부 열기" label_selected="첨부 열기" name="open_attachment"/>
+	</panel>
+</panel>
