@@ -96,7 +96,11 @@
   - [x] floater_object_weights.xml (객체 무게 정보)
   - [x] floater_particle_editor.xml (파티클 에디터)
   - [x] floater_openobject.xml (객체 열기)
-- [ ] 11차: 대용량 파일 도전 (menu_viewer.xml, notifications.xml 등)
+- [x] 11차: 3차 인벤토리/아이템 관리 관련 완료 (3개)
+  - [x] floater_inventory_settings.xml (인벤토리 설정)
+  - [x] floater_outfit_save_as.xml (의상 저장)
+  - [x] floater_inventory_view_finder.xml (인벤토리 검색)
+- [ ] 12차: 대용량 파일 도전 (menu_viewer.xml, notifications.xml 등)
 - [ ] 6차: 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -173,6 +177,9 @@
   - floater_object_weights.xml (객체 무게 정보)
   - floater_particle_editor.xml (파티클 에디터)
   - floater_openobject.xml (객체 열기)
+  - floater_inventory_settings.xml (인벤토리 설정)
+  - floater_outfit_save_as.xml (의상 저장)
+  - floater_inventory_view_finder.xml (인벤토리 검색)
 
 ### 진행 중인 작업
 - 추가 중요 UI 파일 식별 및 번역
@@ -192,7 +199,7 @@
 
 ### 오늘 수행한 작업 (2025-08-14)
 - 프로젝트 구조 분석 및 ko 폴더 생성
-- **50개 핵심 UI 파일 번역 완료**
+- **53개 핵심 UI 파일 번역 완료**
 - 기본 로그인, 메뉴, 채팅, 지도, 검색 등 핵심 기능 포함
 - 언어 설정 파일로 한국어 로케일 지원
 - **주요 컨텍스트 메뉴 번역 완료** (객체, 토지, 아바타 메뉴)
@@ -203,9 +210,10 @@
 - **Option B 추가 번역 완료** (토지 구매, 검색 시스템, 아이템 속성)
 - **1차 채팅/커뮤니케이션 번역 완료** (대화 기록, 음성 채팅 볼륨, 음성 변조)
 - **2차 빌드/편집 도구 번역 완료** (객체 무게, 파티클 에디터, 객체 열기)
+- **3차 인벤토리/아이템 관리 번역 완료** (인벤토리 설정, 의상 저장, 인벤토리 검색)
 
 ### 번역 완료율
-- **총 50개 파일 번역** (독일어 기준 약 400개 중 약 12.5%)
+- **총 53개 파일 번역** (독일어 기준 약 400개 중 약 13%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 

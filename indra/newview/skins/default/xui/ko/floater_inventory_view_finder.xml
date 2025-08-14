@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="Inventory Finder" title="INVENTORY_RECENT_ITEMS">
+	<check_box label="애니메이션" name="check_animation"/>
+	<check_box label="명함" name="check_calling_card"/>
+	<check_box label="의복" name="check_clothing"/>
+	<check_box label="제스처" name="check_gesture"/>
+	<check_box label="랜드마크" name="check_landmark"/>
+	<check_box label="재질" name="check_material"/>
+	<check_box label="노트카드" name="check_notecard"/>
+	<check_box label="메시" name="check_mesh"/>
+	<check_box label="객체" name="check_object"/>
+	<check_box label="스크립트" name="check_script"/>
+	<check_box label="사운드" name="check_sound"/>
+	<check_box label="텍스처" name="check_texture"/>
+	<check_box label="사진" name="check_snapshot"/>
+	<check_box label="설정" name="check_settings"/>
+	<button label="모두" label_selected="모두" name="All"/>
+	<button label="없음" label_selected="없음" name="None"/>
+	<check_box label="수정" name="check_modify"/>
+	<check_box label="복사" name="check_copy"/>
+	<check_box label="양도" name="check_transfer"/>
+	<check_box label="빈 폴더도 표시" name="check_show_empty"/>
+	<check_box label="통합된 것만" name="check_only_coalesced" width="110"/>
+	<combo_box tool_tip="연결된 객체 필터링" name="inventory_filter_show_links_combo">
+		<combo_box.item name="show_links" label="링크 표시"/>
+		<combo_box.item name="show_links_only" label="링크만 표시"/>
+		<combo_box.item name="hide_links" label="링크 숨기기"/>
+	</combo_box>
+	<check_box label="나에 의해 생성됨" name="check_created_by_me"/>
+	<check_box label="다른 사람이 생성" name="check_created_by_others"/>
+	<check_box label="로그오프 이후" name="check_since_logoff"/>
+	<text name="- OR -">
+		- 또는 -
+	</text>
+	<radio_group name="date_search_direction">
+		<radio_item label="다음보다 새로운" name="newer"/>
+		<radio_item label="다음보다 오래된" name="older"/>
+	</radio_group>
+	<spinner label="시간 전" label_width="80" name="spin_hours_ago"/>
+	<text name="label_hours">
+		시간
+	</text>
+	<spinner label="일 전" name="spin_days_ago"/>
+	<text name="label_days">
+		일
+	</text>
+	<button label="재설정" label_selected="재설정" name="btnReset"/>
+	<button label="닫기" label_selected="닫기" name="Close"/>
+</floater>
