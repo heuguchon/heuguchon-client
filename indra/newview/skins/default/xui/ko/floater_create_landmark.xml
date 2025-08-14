@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="create_landmark" title="랜드마크 생성">
+	<string name="favorites_bar">
+		즐겨찾기 바
+	</string>
+	<text name="title_label" value="랜드마크 상세정보"/>
+	<text name="name_label" value="이름:"/>
+	<text name="folder_label" value="저장 위치:"/>
+	<text name="new_folder_textbox">
+		[secondlife:/// 새 폴더 만들기]
+	</text>
+	<text name="notes_label" value="개인 메모:"/>
+	<button label="확인" name="ok_btn"/>
+	<button label="취소" name="cancel_btn"/>
+</floater>

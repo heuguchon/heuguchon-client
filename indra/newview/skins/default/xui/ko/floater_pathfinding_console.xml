@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_pathfinding_console" title="패스파인딩 뷰/테스트">
+	<floater.string name="no_havok">
+		패스파인딩용 내비메시
+	</floater.string>
+	<floater.string name="navmesh_viewer_status_library_not_implemented">
+		패스파인딩 라이브러리 구현을 찾을 수 없습니다.
+	</floater.string>
+	<floater.string name="navmesh_viewer_status_region_not_enabled">
+		이 지역에서는 패스파인딩이 활성화되지 않았습니다.
+	</floater.string>
+	<floater.string name="navmesh_viewer_status_region_loading">
+		지역 로딩을 기다리는 중입니다.
+	</floater.string>
+	<floater.string name="navmesh_viewer_status_checking_version">
+		내비메시 상태를 확인하는 중입니다.
+	</floater.string>
+	<floater.string name="navmesh_viewer_status_downloading">
+		내비메시를 다운로드하는 중입니다.
+	</floater.string>
+	<floater.string name="navmesh_viewer_status_updating">
+		서버에서 내비메시가 변경되었습니다. 최신 내비메시를 다운로드하는 중입니다.
+	</floater.string>
+	<floater.string name="navmesh_viewer_status_has_navmesh">
+		최신 내비메시를 다운로드했습니다.
+	</floater.string>
+	<floater.string name="navmesh_viewer_status_error">
+		내비메시를 다운로드할 수 없습니다.
+	</floater.string>
+	<floater.string name="navmesh_simulator_status_pending">
+		내비메시에 대기 중인 변경사항이 있습니다.
+	</floater.string>
+	<floater.string name="navmesh_simulator_status_building">
+		내비메시를 구축하는 중입니다.
+	</floater.string>
+	<floater.string name="navmesh_simulator_status_some_pending">
+		일부 내비메시 지역에 대기 중인 변경사항이 있습니다.
+	</floater.string>
+	<floater.string name="navmesh_simulator_status_some_building">
+		일부 내비메시 지역을 구축하는 중입니다.
+	</floater.string>
+	<floater.string name="navmesh_simulator_status_pending_and_building">
+		일부 내비메시 지역에는 대기 중인 변경사항이 있고, 다른 지역은 구축 중입니다.
+	</floater.string>
+	<floater.string name="navmesh_simulator_status_complete">
+		내비메시가 최신 상태입니다.
+	</floater.string>
+	<floater.string name="pathing_library_not_implemented">
+		패스파인딩 라이브러리 구현을 찾을 수 없습니다.
+	</floater.string>
+	<floater.string name="pathing_region_not_enabled">
+		이 지역에서는 패스파인딩이 활성화되지 않았습니다.
+	</floater.string>
+	<floater.string name="pathing_choose_start_and_end_points">
+		시작점과 끝점을 선택해주세요.
+	</floater.string>
+	<floater.string name="pathing_choose_start_point">
+		시작점을 선택해주세요.
+	</floater.string>
+	<floater.string name="pathing_choose_end_point">
+		끝점을 선택해주세요.
+	</floater.string>
+	<floater.string name="pathing_path_valid">
+		경로가 주황색으로 표시됩니다.
+	</floater.string>
+	<floater.string name="pathing_path_invalid">
+		선택한 점들 사이에서 경로를 찾을 수 없습니다.
+	</floater.string>
+	<floater.string name="pathing_error">
+		경로 생성 중 오류가 발생했습니다.
+	</floater.string>
+	<panel name="pathfinding_console_main">
+		<text name="viewer_status_label">
+			뷰어 상태
+		</text>
+	</panel>
+	<panel name="pathfinding_console_simulator">
+		<text name="simulator_status_label">
+			시뮬레이터 상태
+		</text>
+	</panel>
+	<tab_container name="view_test_tab_container">
+		<panel label="보기" name="view_panel">
+			<text name="show_label">
+				표시:
+			</text>
+			<check_box label="월드" name="show_world"/>
+			<check_box label="이동 가능한 객체만" name="show_world_movables_only"/>
+			<check_box label="내비메시" name="show_navmesh"/>
+			<text name="show_walkability_label">
+				보행 지도 표시:
+			</text>
+			<combo_box name="show_heatmap_mode">
+				<combo_box.item label="표시 안함" name="show_heatmap_mode_none"/>
+				<combo_box.item label="캐릭터 유형 A" name="show_heatmap_mode_a"/>
+				<combo_box.item label="캐릭터 유형 B" name="show_heatmap_mode_b"/>
+				<combo_box.item label="캐릭터 유형 C" name="show_heatmap_mode_c"/>
+				<combo_box.item label="캐릭터 유형 D" name="show_heatmap_mode_d"/>
+			</combo_box>
+			<check_box label="보행 가능한 객체" name="show_walkables"/>
+			<check_box label="재질 볼륨" name="show_material_volumes"/>
+			<check_box label="정적 장애물" name="show_static_obstacles"/>
+			<check_box label="제외 볼륨" name="show_exclusion_volumes"/>
+			<check_box label="수면" name="show_water_plane"/>
+			<check_box label="엑스레이로 보기" name="show_xray"/>
+		</panel>
+		<panel label="경로 테스트" name="test_panel">
+			<text name="ctrl_click_label" height="28">
+				Ctrl 키를 누르고 클릭하여 시작점을 선택하세요.
+			</text>
+			<text name="shift_click_label" height="28">
+				Shift 키를 누르고 클릭하여 끝점을 선택하세요.
+			</text>
+			<text name="character_width_label">
+				캐릭터 폭
+			</text>
+			<slider name="character_width" value="1"/>
+			<text name="character_width_unit_label">
+				m
+			</text>
+			<text name="character_type_label">
+				캐릭터 유형
+			</text>
+			<combo_box name="path_character_type">
+				<combo_box.item label="없음" name="path_character_type_none"/>
+				<combo_box.item label="A" name="path_character_type_a"/>
+				<combo_box.item label="B" name="path_character_type_b"/>
+				<combo_box.item label="C" name="path_character_type_c"/>
+				<combo_box.item label="D" name="path_character_type_d"/>
+			</combo_box>
+			<button label="경로 지우기" name="clear_path"/>
+		</panel>
+	</tab_container>
+</floater>

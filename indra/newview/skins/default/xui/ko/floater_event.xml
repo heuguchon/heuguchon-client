@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="Event" title="이벤트 상세정보">
+	<floater.string name="loading_text">
+		로딩 중...
+	</floater.string>
+	<floater.string name="done_text">
+		완료
+	</floater.string>
+</floater>

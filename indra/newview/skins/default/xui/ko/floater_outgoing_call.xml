@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="outgoing call" title="발신 전화">
+	<floater.string name="lifetime">
+		5
+	</floater.string>
+	<floater.string name="localchat">
+		주변 음성 채팅
+	</floater.string>
+	<floater.string name="anonymous">
+		익명
+	</floater.string>
+	<floater.string name="VoiceInviteP2P">
+		님을 호출 중입니다.
+	</floater.string>
+	<floater.string name="VoiceInviteAdHoc">
+		님이 음성 회의 채팅에 참여했습니다.
+	</floater.string>
+	<text name="connecting">
+		[CALLEE_NAME]님에게 연결 중입니다.
+	</text>
+	<text name="calling">
+		[CALLEE_NAME]님을 호출 중
+	</text>
+	<text name="noanswer">
+		통화에 응답하지 않았습니다. 나중에 다시 시도해주세요.
+	</text>
+	<text name="nearby">
+		[VOICE_CHANNEL_NAME] 연결이 끊어졌습니다. [RECONNECT_NEARBY]
+	</text>
+	<text name="nearby_P2P_by_other">
+		상대방이 통화를 종료했습니다. [RECONNECT_NEARBY]
+	</text>
+	<text name="nearby_P2P_by_agent">
+		통화를 종료했습니다. [RECONNECT_NEARBY]
+	</text>
+	<text name="leaving">
+		[CURRENT_CHAT]를 떠나는 중입니다.
+	</text>
+	<button label="취소" label_selected="취소" name="Cancel"/>
+</floater>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="incoming call" title="수신 전화">
+	<floater.string name="lifetime">
+		5
+	</floater.string>
+	<floater.string name="localchat">
+		주변 음성 채팅
+	</floater.string>
+	<floater.string name="anonymous">
+		익명
+	</floater.string>
+	<floater.string name="VoiceInviteP2P">
+		님이 전화를 걸었습니다.
+	</floater.string>
+	<floater.string name="VoiceInviteAdHoc">
+		님이 음성 회의 채팅에 참여했습니다.
+	</floater.string>
+	<floater.string name="VoiceInviteGroup">
+		님이 '[GROUP]' 음성 채널에 참여했습니다.
+	</floater.string>
+	<floater.string name="VoiceInviteQuestionGroup">
+		[CURRENT_CHAT]를 떠나고 '[GROUP]' 대화에 참여하시겠습니까?
+	</floater.string>
+	<floater.string name="VoiceInviteQuestionDefault">
+		[CURRENT_CHAT]를 떠나고 이 음성 채팅에 참여하시겠습니까?
+	</floater.string>
+	<text name="question">
+		응답하면 현재 음성 대화가 종료됩니다.
+	</text>
+	<button label="수락" label_selected="수락" name="Accept"/>
+	<button label="무시" label_selected="무시" name="Reject"/>
+	<button label="대신 IM 열기" name="Start IM"/>
+</floater>

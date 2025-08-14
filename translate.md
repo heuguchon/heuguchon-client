@@ -135,8 +135,24 @@
   - [x] floater_model_preview.xml (모델 미리보기)
   - [x] floater_script.xml (스크립트 에디터)
   - [x] floater_texture_ctrl.xml (텍스처 컨트롤)
-- [ ] 19차: 다음 중요 플로터들
-- [ ] 20차: 대용량 파일 도전 - menu_viewer.xml, notifications.xml
+- [x] 19차: UI 인터랙션 도구 번역 완료 (5개)
+  - [x] floater_activeim.xml (활성 IM 관리)
+  - [x] floater_choose_group.xml (그룹 선택)
+  - [x] floater_color_picker.xml (색상 선택기)
+  - [x] floater_create_landmark.xml (랜드마크 생성)
+  - [x] floater_delete_pref_preset.xml (프리셋 삭제)
+- [x] 20차: 이벤트/경험 시스템 번역 완료 (5개)
+  - [x] floater_event.xml (이벤트 상세정보)
+  - [x] floater_experienceprofile.xml (경험 프로필)
+  - [x] floater_experiences.xml (경험 관리)
+  - [x] floater_forget_user.xml (사용자 정보 삭제)
+  - [x] floater_hud.xml (HUD 도움말)
+- [x] 21차: 통신/패스파인딩 시스템 번역 완료 (5개)
+  - [x] floater_incoming_call.xml (수신 전화)
+  - [x] floater_outgoing_call.xml (발신 전화)
+  - [x] floater_mute_object.xml (객체 차단)
+  - [x] floater_pathfinding_characters.xml (패스파인딩 캐릭터)
+  - [x] floater_pathfinding_console.xml (패스파인딩 콘솔)
 - [ ] 기타 UI 요소
 
 ### 5단계: 검증 및 최적화
@@ -162,7 +178,7 @@
 - 프로젝트 구조 분석
 - 작업 계획 수립
 - ko 폴더 생성
-- **핵심 파일 68개 번역 완료:**
+- **핵심 파일 93개 번역 완룼:**
   - strings.xml (기본 문자열)
   - floater_about.xml (정보 창)
   - menu_login.xml (로그인 메뉴)
@@ -244,6 +260,16 @@
   - floater_model_preview.xml (모델 미리보기)
   - floater_script.xml (스크립트 에디터)
   - floater_texture_ctrl.xml (텍스처 컨트롤)
+  - floater_activeim.xml (활성 IM 관리)
+  - floater_choose_group.xml (그룹 선택)
+  - floater_color_picker.xml (색상 선택기)
+  - floater_create_landmark.xml (랜드마크 생성)
+  - floater_delete_pref_preset.xml (프리셋 삭제)
+  - floater_event.xml (이벤트 상세정보)
+  - floater_experienceprofile.xml (경험 프로필)
+  - floater_experiences.xml (경험 관리)
+  - floater_forget_user.xml (사용자 정보 삭제)
+  - floater_hud.xml (HUD 도움말)
 
 ### 진행 중인 작업
 - 추가 중요 UI 파일 식별 및 번역
@@ -281,9 +307,12 @@
 - **추가 플로터 창 번역 완료** - 신고 시스템, 관리자 도구, 조이스틱 설정, 이동 시점
 - **17차 고급 기능 번역 완료** - AO 시스템, 자동 치환, 아바타 렌더링, 분류광고, 목적지
 - **18차 콘텐츠 생성 도구 완료** - 대량 업로드, 머티리얼 에디터, 모델 미리보기, 스크립트 에디터, 텍스처 컨트롤
+- **19차 UI 인터랙션 도구 완료** - 활성 IM 관리, 그룹 선택, 색상 선택기, 랜드마크 생성, 프리셋 삭제
+- **20차 이벤트/경험 시스템 완료** - 이벤트 상세정보, 경험 프로필, 경험 관리, 사용자 정보 삭제, HUD 도움말
+- **21차 통신/패스파인딩 시스템 완료** - 수신/발신 전화, 객체 차단, 패스파인딩 캐릭터 및 콘솔
 
 ### 번역 완료율
-- **총 78개 파일 번역** (독일어 기준 약 400개 중 약 19.5%)
+- **총 93개 파일 번역** (독일어 기준 약 400개 중 약 23.3%)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화

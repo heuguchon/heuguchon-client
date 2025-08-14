@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="experience_profile" title="경험 프로필">
+	<floater.string name="empty_slurl">
+		(없음)
+	</floater.string>
+	<floater.string name="maturity_icon_general">
+		"Parcel_PG_Light"
+	</floater.string>
+	<floater.string name="maturity_icon_moderate">
+		"Parcel_M_Light"
+	</floater.string>
+	<floater.string name="maturity_icon_adult">
+		"Parcel_R_Light"
+	</floater.string>
+	<text name="edit_title" value="경험 프로필"/>
+	<tab_container name="tab_container">
+		<panel name="panel_experience_info">
+			<scroll_container name="xp_scroll">
+				<panel name="scrolling_panel">
+					<layout_stack name="ls1">
+						<layout_panel name="top panel">
+							<button label="편집" name="edit_btn"/>
+						</layout_panel>
+						<layout_panel name="maturity panel">
+							<text name="ContentRating">
+								등급:
+							</text>
+						</layout_panel>
+						<layout_panel name="location panel">
+							<text name="Location">
+								위치:
+							</text>
+						</layout_panel>
+						<layout_panel name="marketplace panel">
+							<text name="Marketplace">
+								마켓플레이스 상점:
+							</text>
+						</layout_panel>
+						<layout_panel name="owner panel">
+							<text name="Owner">
+								소유자:
+							</text>
+						</layout_panel>
+						<layout_panel name="group_panel">
+							<text name="Group">
+								그룹:
+							</text>
+						</layout_panel>
+						<layout_panel name="perm panel">
+							<button label="허용" name="allow_btn"/>
+							<button label="잊어버리기" name="forget_btn"/>
+							<button label="차단" name="block_btn"/>
+							<text name="privileged">
+								이 경험은 모든 주민에게 활성화되어 있습니다.
+							</text>
+							<button label="신고하기" name="report_btn" width="114" left="97"/>
+						</layout_panel>
+					</layout_stack>
+				</panel>
+			</scroll_container>
+		</panel>
+		<panel name="edit_panel_experience_info">
+			<scroll_container name="edit_xp_scroll">
+				<panel name="edit_scrolling_panel">
+					<text name="edit_experience_title_label" value="이름:"/>
+					<text name="edit_experience_desc_label" value="설명:"/>
+					<button label="그룹" name="Group_btn"/>
+					<text name="edit_ContentRating">
+						등급:
+					</text>
+					<icons_combo_box label="보통" name="edit_ContentRatingText" tool_tip="경험의 콘텐츠 등급을 높이면 해당 경험을 허용한 모든 주민의 권한이 재설정됩니다.">
+						<icons_combo_box.item label="성인" name="Adult" value="42"/>
+						<icons_combo_box.item label="보통" name="Mature" value="21"/>
+						<icons_combo_box.item label="일반" name="PG" value="13"/>
+					</icons_combo_box>
+					<text name="edit_Location">
+						위치:
+					</text>
+					<button label="현재 위치 사용" name="location_btn"/>
+					<button label="위치 지우기" name="clear_btn"/>
+					<text name="edit_marketplace">
+						마켓플레이스 상점:
+					</text>
+					<check_box label="경험 활성화" name="edit_enable_btn" tool_tip=""/>
+					<check_box label="검색에서 제외" name="edit_private_btn"/>
+					<text name="changes" value="경험 변경사항이 모든 지역에 반영되기까지 몇 분이 걸릴 수 있습니다."/>
+					<button label="뒤로" name="cancel_btn"/>
+					<button label="저장" name="save_btn"/>
+				</panel>
+			</scroll_container>
+		</panel>
+	</tab_container>
+</floater>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="ColorPicker" title="색상 선택">
+	<tab_container name="scale_type_container">
+		<panel name="RGB">
+	<text name="r_val_text">
+		빨강:
+	</text>
+	<text name="g_val_text">
+		초록:
+	</text>
+	<text name="b_val_text">
+		파랑:
+	</text>
+		</panel>
+		<panel name="LSL">
+	<text name="r_val_text_lsl">
+		빨강:
+	</text>
+	<text name="g_val_text_lsl">
+		초록:
+	</text>
+	<text name="b_val_text_lsl">
+		파랑:
+	</text>
+		</panel>
+		<panel name="Hex">
+			<text name="hex_text">
+				헥스 코드 (#rrggbb):
+			</text>
+		</panel>
+	</tab_container>
+	<text name="h_val_text">
+		색조:
+	</text>
+	<text name="s_val_text">
+		채도:
+	</text>
+	<text name="l_val_text">
+		밝기:
+	</text>
+	<check_box label="즉시 적용" name="apply_immediate"/>
+	<button label="" label_selected="" name="color_pipette" left_pad="40"/>
+	<button label="취소" label_selected="취소" name="cancel_btn"/>
+	<button label="확인" label_selected="확인" name="select_btn"/>
+	<button label="LSL 복사" label_selected="LSL 복사" name="copy_lsl_btn" tool_tip="색상 코드를 LSL 색상 벡터 형식 &lt;r, g, b&gt;로 복사합니다."/>
+	<text name="Current color:">
+		^ 현재 색상 ^
+	</text>
+	<text name="(Drag below to save.)">
+		(아래로 드래그하여 저장)
+	</text>
+</floater>

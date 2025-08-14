@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_pathfinding_characters" title="패스파인딩 캐릭터">
+	<floater.string name="messaging_get_inprogress">
+		패스파인딩 캐릭터를 가져오는 중...
+	</floater.string>
+	<floater.string name="messaging_get_error">
+		패스파인딩 캐릭터를 가져오는데 오류가 발생했습니다.
+	</floater.string>
+	<floater.string name="messaging_complete_none_found">
+		패스파인딩 캐릭터가 없습니다.
+	</floater.string>
+	<floater.string name="messaging_complete_available">
+		전체 [NUM_TOTAL]개 중 [NUM_SELECTED]개 캐릭터가 선택되었습니다.
+	</floater.string>
+	<floater.string name="messaging_not_enabled">
+		이 지역에서는 패스파인딩이 활성화되지 않았습니다.
+	</floater.string>
+	<floater.string name="character_cpu_time">
+		[CPU_TIME] µs
+	</floater.string>
+	<floater.string name="character_owner_loading">
+		[로딩 중]
+	</floater.string>
+	<floater.string name="character_owner_unknown">
+		[알 수 없음]
+	</floater.string>
+	<floater.string name="character_owner_group">
+		[그룹]
+	</floater.string>
+	<panel name="pathfinding_chars_main">
+		<scroll_list name="objects_scroll_list">
+			<scroll_list.columns label="이름" name="name"/>
+			<scroll_list.columns label="설명" name="description"/>
+			<scroll_list.columns label="소유자" name="owner"/>
+			<scroll_list.columns label="CPU" name="cpu_time"/>
+			<scroll_list.columns label="고도" name="altitude"/>
+		</scroll_list>
+		<text name="messaging_status">
+			캐릭터:
+		</text>
+		<button label="목록 새로고침" name="refresh_objects_list"/>
+		<button label="모두 선택" name="select_all_objects"/>
+		<button label="선택 해제" name="select_none_objects"/>
+	</panel>
+	<panel name="pathfinding_chars_actions">
+		<text name="actions_label">
+			선택된 캐릭터에 대한 작업:
+		</text>
+		<check_box label="비콘 표시" name="show_beacon"/>
+		<check_box label="물리 캡슐 표시" name="show_physics_capsule"/>
+		<button label="가져오기" name="take_objects"/>
+		<button label="사본 가져오기" name="take_copy_objects"/>
+		<button label="거기로 텔레포트" name="teleport_me_to_object" tool_tip="캐릭터가 선택되었을 때만 활성화됩니다."/>
+		<button label="반환" name="return_objects"/>
+		<button label="삭제" name="delete_objects"/>
+	</panel>
+</floater>
