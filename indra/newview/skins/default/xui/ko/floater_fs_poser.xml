@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="floater_poser" title="아바타와 애니메시 포즈 도구">
+	<!-- A matching bone name with the 'header_' prefix produces a sub-heading with the supplied name -->
+	<string name="header_mHead">몸체</string>
+	<string name="header_mFaceForeheadLeft">이마/눈썹</string>
+	<string name="header_mEyeLeft">눈/눈꺼풀</string>
+	<string name="header_mFaceCheekUpperLeft">볼/입술</string>
+	<string name="header_mHandThumb1Left">왼손</string>
+	<string name="header_mCollarLeft">왼쪽 팔</string>
+	<string name="header_mHandThumb1Right">오른손</string>
+	<string name="header_mCollarRight">오른쪽 팔</string>
+	<string name="header_mHipLeft">다리</string>
+	<string name="header_mTail1">꼬리</string>
+	<string name="header_mHindLimbsRoot">뒷다리</string>
+	<string name="header_mWingsRoot">날개</string>
+	<string name="header_mFaceEar1Left">귀/코</string>
+	<string name="header_mSkull">몸체</string>
+	<string name="header_HEAD">몸체</string>
+	<string name="header_L_UPPER_ARM">팔</string>
+	<string name="header_L_UPPER_LEG">다리</string>
+
+	<!-- These are names to appear on the UI for the joints/bones/thingos -->
+	<string name="title_mPelvis">전체 아바타</string>
+	<string name="title_mTorso">상체</string>
+	<string name="title_mSpine1">척추 1</string>
+	<string name="title_mSpine2">척추 2</string>
+	<string name="title_mSpine3">척추 3</string>
+	<string name="title_mSpine4">척추 4</string>
+	<string name="title_mChest">가슴</string>
+	<string name="title_mNeck">목</string>
+	<string name="title_mHead">머리</string>
+	<string name="title_mSkull">두개골</string>
+	<string name="title_mEyeRight">오른쪽 눈</string>
+	<string name="title_mEyeLeft">왼쪽 눈</string>
+	<string name="title_mFaceForeheadLeft">왼쪽 이마</string>
+	<string name="title_mFaceForeheadRight">오른쪽 이마</string>
+	<string name="title_mFaceEyebrowOuterLeft">왼쪽 바깥 눈썹</string>
+	<string name="title_mFaceEyebrowCenterLeft">왼쪽 중간 눈썹</string>
+	<string name="title_mFaceEyebrowInnerLeft">왼쪽 안쪽 눈썹</string>
+	<string name="title_mFaceEyebrowOuterRight">오른쪽 바깥 눈썹</string>
+	<string name="title_mFaceEyebrowCenterRight">오른쪽 중간 눈썹</string>
+	<string name="title_mFaceEyebrowInnerRight">오른쪽 안쪽 눈썹</string>
+	<string name="title_mFaceEyeLidUpperLeft">왼쪽 위 눈꺼풀</string>
+	<string name="title_mFaceEyecornerInnerLeft">왼쪽 안쪽 눈초리</string>
+	<string name="title_mFaceEyeLidLowerLeft">왼쪽 아래 눈꺼풀</string>
+	<string name="title_mFaceEyeLidUpperRight">오른쪽 위 눈꺼풀</string>
+	<string name="title_mFaceEyecornerInnerRight">오른쪽 안쪽 눈초리</string>
+	<string name="title_mFaceEyeLidLowerRight">오른쪽 아래 눈꺼풀</string>
+	<string name="title_mFaceEar1Left">왼쪽 위 귀</string>
+	<string name="title_mFaceEar2Left">왼쪽 아래 귀</string>
+	<string name="title_mFaceEar1Right">오른쪽 위 귀</string>
+	<string name="title_mFaceEar2Right">오른쪽 아래 귀</string>
+	<string name="title_mFaceNoseBase">코 기저부</string>
+	<string name="title_mFaceNoseBridge">콧등</string>
+	<string name="title_mFaceNoseLeft">코 왼쪽</string>
+	<string name="title_mFaceNoseCenter">코 중앙</string>
+	<string name="title_mFaceNoseRight">코 오른쪽</string>
+	<string name="title_mFaceCheekLowerLeft">왼쪽 아래 볼</string>
+	<string name="title_mFaceCheekUpperLeft">왼쪽 위 볼</string>
+	<string name="title_mFaceCheekLowerRight">오른쪽 아래 볼</string>
+	<string name="title_mFaceCheekUpperRight">오른쪽 위 볼</string>
+	<string name="title_mFaceJaw">턱</string>
+	<string name="title_mFaceTeethLower">아래 이</string>
+	<string name="title_mFaceLipLowerLeft">왼쪽 아래 입술</string>
+	<string name="title_mFaceLipLowerRight">오른쪽 아래 입술</string>
+	<string name="title_mFaceLipLowerCenter">중앙 아래 입술</string>
+	<string name="title_mFaceTongueBase">혀 기저부</string>
+	<string name="title_mFaceTongueTip">혀끝</string>
+	<string name="title_mFaceJawShaper">턱 모양</string>
+	<string name="title_mFaceForeheadCenter">이마 중앙</string>
+	<string name="title_mFaceTeethUpper">위 이</string>
+	<string name="title_mFaceLipUpperLeft">왼쪽 위 입술</string>
+	<string name="title_mFaceLipUpperRight">오른쪽 위 입술</string>
+	<string name="title_mFaceLipCornerLeft">왼쪽 입꼬리</string>
+	<string name="title_mFaceLipCornerRight">오른쪽 입꼬리</string>
+	<string name="title_mFaceLipUpperCenter">중앙 위 입술</string>
+	<string name="title_mCollarLeft">왼쪽 쇄골</string>
+	<string name="title_mShoulderLeft">전체 팔</string>
+	<string name="title_mElbowLeft">왼쪽 팔뚝</string>
+	<string name="title_mWristLeft">왼쪽 손목</string>
+	<string name="title_mHandMiddle1Left">왼쪽 중지 기저</string>
+	<string name="title_mHandMiddle2Left">왼쪽 중지 중간</string>
+	<string name="title_mHandMiddle3Left">왼쪽 중지 끝</string>
+	<string name="title_mHandIndex1Left">왼쪽 검지 기저</string>
+	<string name="title_mHandIndex2Left">왼쪽 검지 중간</string>
+	<string name="title_mHandIndex3Left">왼쪽 검지 끝</string>
+	<string name="title_mHandRing1Left">왼쪽 약지 기저</string>
+	<string name="title_mHandRing2Left">왼쪽 약지 중간</string>
+	<string name="title_mHandRing3Left">왼쪽 약지 끝</string>
+	<string name="title_mHandPinky1Left">왼쪽 새끼손가락 기저</string>
+	<string name="title_mHandPinky2Left">왼쪽 새끼손가락 중간</string>
+	<string name="title_mHandPinky3Left">왼쪽 새끼손가락 끝</string>
+	<string name="title_mHandThumb1Left">왼쪽 엄지 기저</string>
+	<string name="title_mHandThumb2Left">왼쪽 엄지 중간</string>
+	<string name="title_mHandThumb3Left">왼쪽 엄지 끝</string>
+	<string name="title_mCollarRight">오른쪽 쇄골</string>
+	<string name="title_mShoulderRight">전체 팔</string>
+	<string name="title_mElbowRight">오른쪽 팔뚝</string>
+	<string name="title_mWristRight">오른쪽 손목</string>
+	<string name="title_mHandMiddle1Right">오른쪽 중지 기저</string>
+	<string name="title_mHandMiddle2Right">오른쪽 중지 중간</string>
+	<string name="title_mHandMiddle3Right">오른쪽 중지 끝</string>
+	<string name="title_mHandIndex1Right">오른쪽 검지 기저</string>
+	<string name="title_mHandIndex2Right">오른쪽 검지 중간</string>
+	<string name="title_mHandIndex3Right">오른쪽 검지 끝</string>
+	<string name="title_mHandRing1Right">오른쪽 약지 기저</string>
+	<string name="title_mHandRing2Right">오른쪽 약지 중간</string>
+	<string name="title_mHandRing3Right">오른쪽 약지 끝</string>
+	<string name="title_mHandPinky1Right">오른쪽 새끼손가락 기저</string>
+	<string name="title_mHandPinky2Right">오른쪽 새끼손가락 중간</string>
+	<string name="title_mHandPinky3Right">오른쪽 새끼손가락 끝</string>
+	<string name="title_mHandThumb1Right">오른쪽 엄지 기저</string>
+	<string name="title_mHandThumb2Right">오른쪽 엄지 중간</string>
+	<string name="title_mHandThumb3Right">오른쪽 엄지 끝</string>
+	<string name="title_mWingsRoot">날개 기저</string>
+	<string name="title_mWing1Left">왼쪽 날개 1</string>
+	<string name="title_mWing2Left">왼쪽 날개 2</string>
+	<string name="title_mWing3Left">왼쪽 날개 3</string>
+	<string name="title_mWing4Left">왼쪽 날개 4</string>
+	<string name="title_mWing4FanLeft">왼쪽 날개 부채</string>
+	<string name="title_mWing1Right">오른쪽 날개 1</string>
+	<string name="title_mWing2Right">오른쪽 날개 2</string>
+	<string name="title_mWing3Right">오른쪽 날개 3</string>
+	<string name="title_mWing4Right">오른쪽 날개 4</string>
+	<string name="title_mWing4FanRight">오른쪽 날개 부채</string>
+	<string name="title_mHipRight">오른쪽 다리</string>
+	<string name="title_mKneeRight">오른쪽 무릎</string>
+	<string name="title_mAnkleRight">오른쪽 발목</string>
+	<string name="title_mFootRight">오른쪽 발</string>
+	<string name="title_mToeRight">오른쪽 발가락</string>
+	<string name="title_mHipLeft">왼쪽 다리</string>
+	<string name="title_mKneeLeft">왼쪽 무릎</string>
+	<string name="title_mAnkleLeft">왼쪽 발목</string>
+	<string name="title_mFootLeft">왼쪽 발</string>
+	<string name="title_mToeLeft">왼쪽 발가락</string>
+	<string name="title_mTail1">꼬리 기저</string>
+	<string name="title_mTail2">꼬리 2</string>
+	<string name="title_mTail3">꼬리 3</string>
+	<string name="title_mTail4">꼬리 4</string>
+	<string name="title_mTail5">꼬리 5</string>
+	<string name="title_mTail6">꼬리 끝</string>
+	<string name="title_mGroin">사타구니</string>
+	<string name="title_mHindLimbsRoot">뒷다리 기저</string>
+	<string name="title_mHindLimb1Left">왼쪽 뒷다리 기저</string>
+	<string name="title_mHindLimb2Left">왼쪽 뒷다리 2</string>
+	<string name="title_mHindLimb3Left">왼쪽 뒷다리 3</string>
+	<string name="title_mHindLimb4Left">왼쪽 뒷다리 4</string>
+	<string name="title_mHindLimb1Right">오른쪽 뒷다리 기저</string>
+	<string name="title_mHindLimb2Right">오른쪽 뒷다리 2</string>
+	<string name="title_mHindLimb3Right">오른쪽 뒷다리 3</string>
+	<string name="title_mHindLimb4Right">오른쪽 뒷다리 4</string>
+	<string name="title_HEAD">머리</string>
+	<string name="title_NECK">목</string>
+	<string name="title_CHEST">가슴</string>
+	<string name="title_BUTT">엉덩이</string>
+	<string name="title_BELLY">배</string>
+	<string name="title_LEFT_PEC">왼쪽 가슴근육</string>
+	<string name="title_RIGHT_PEC">오른쪽 가슴근육</string>
+	<string name="title_L_CLAVICLE">왼쪽 쇄골</string>
+	<string name="title_R_CLAVICLE">오른쪽 쇄골</string>
+	<string name="title_L_UPPER_ARM">왼쪽 상완</string>
+	<string name="title_R_UPPER_ARM">오른쪽 상완</string>
+	<string name="title_L_LOWER_ARM">왼쪽 하완</string>
+	<string name="title_R_LOWER_ARM">오른쪽 하완</string>
+	<string name="title_L_HAND">왼손</string>
+	<string name="title_R_HAND">오른손</string>
+	<string name="title_UPPER_BACK">등 위쪽</string>
+	<string name="title_LEFT_HANDLE">왼쪽 허리</string>
+	<string name="title_RIGHT_HANDLE">오른쪽 허리</string>
+	<string name="title_PELVIS">골반</string>
+	<string name="title_L_UPPER_LEG">왼쪽 허벅지</string>
+	<string name="title_R_UPPER_LEG">오른쪽 허벅지</string>
+	<string name="title_L_LOWER_LEG">왼쪽 정강이</string>
+	<string name="title_R_LOWER_LEG">오른쪽 정강이</string>
+	<string name="title_L_FOOT">왼발</string>
+	<string name="title_R_FOOT">오른발</string>
+	<string name="LoadPoseLabel">포즈 불러오기</string>
+	<string name="SavePoseLabel">포즈 저장</string>
+	<string name="LoadDiffLabel">차이 불러오기</string>
+	<string name="SaveDiffLabel">차이 저장</string>
+	<string name="OverWriteLabel">덮어쓰시겠습니까?</string>
+
+<!-- The layout is a vertical stack of 3 rows, and each row a horizontal stack of panels -->
+	<layout_stack name="poser_stack">
+		<layout_panel name="regular_controls_layout">
+			<panel name="joints_parent_panel">
+				<tab_container name="joints_tabs">
+					<panel title="이동" name="positionRotation_panel">
+						<panel name="title">
+							<text name="av_position_updown_label">
+								위/아래:
+							</text>
+							<slider name="av_position_updown" tool_tip="선택된 아바타를 위 또는 아래로 이동"/>
+							<text name="av_position_leftright_label">
+								좌/우:
+							</text>
+							<slider name="av_position_leftright" tool_tip="선택된 아바타를 왼쪽 또는 오른쪽으로 이동"/>
+							<text name="av_position_inout_label">
+								앞/뒤:
+							</text>
+							<slider name="av_position_inout" tool_tip="선택된 아바타를 앞 또는 뒤로 이동"/>
+							<!-- so this panel behaves like the others in the code behind, it has an invisible list... -->
+							<scroll_list name="entireAv_joint_scroll">
+								<scroll_list.columns label="신체 부위" name="joint"/>
+							</scroll_list>
+						</panel>
+					</panel>
+					<panel title="몸체" name="body_joints_panel">
+						<scroll_list name="body_joints_scroll">
+							<scroll_list.columns label="신체 부위" name="joint"/>
+						</scroll_list>
+					</panel>
+					<panel title="얼굴" name="face_joints_panel">
+						<scroll_list name="face_joints_scroll">
+							<scroll_list.columns label="신체 부위" name="joint"/>
+						</scroll_list>
+					</panel>
+					<tab_container title="손" name="hands_tabs">
+						<panel title="조정" name="hands_joints_panel">
+							<scroll_list name="hand_joints_scroll">
+								<scroll_list.columns label="신체 부위" name="joint"/>
+							</scroll_list>
+						</panel>
+						<panel title="프리셋" name="hands_presets_panel">
+							<scroll_list name="hand_presets_scroll">
+								<scroll_list.columns label="프리셋 이름" name="name"/>
+							</scroll_list>
+							<button label="왼쪽 적용" name="button_loadHandPoseLeft" tool_tip="선택된 프리셋을 왼손에 적용하려면 클릭"/>
+							<button label="오른쪽 적용" name="button_loadHandPoseRight" tool_tip="선택된 프리셋을 오른손에 적용하려면 클릭"/>
+						</panel>
+					</tab_container>
+					<panel title="기타" name="misc_joints_panel">
+						<scroll_list name="misc_joints_scroll">
+							<scroll_list.columns label="신체 부위" name="joint"/>
+						</scroll_list>
+					</panel>
+					<panel title="물리" name="collision_volumes_panel">
+						<scroll_list name="collision_volumes_scroll">
+							<scroll_list.columns label="물리" name="joint"/>
+						</scroll_list>
+					</panel>
+					<panel title="모델" name="avatarSelection_panel">
+						<scroll_list tool_tip="포즈를 취할 아바타나 애니메시를 선택하세요." name="avatarSelection_scroll">
+							<scroll_list.columns label="선택..." name="name"/>
+						</scroll_list>
+						<button name="refresh_avatars" tool_tip="아바타와 애니메시 목록 새로 고침"/>
+						<button label="포즈 시작" label_selected="포즈 중지" tool_tip="권한이 있는 경우 선택된 아바타나 애니메시의 포즈를 시작합니다" name="start_stop_posing_button"/>
+						<button label="T자 포즈 설정" tool_tip="선택된 아바타를 T자 포즈로 설정하려면 클릭" name="set_t_pose_button"/>
+					</panel>
+					<panel title="설정" name="settings_panel">
+						<text name="trackpad_sensitivity_label">
+							트랙볼 민감도:
+						</text>
+						<slider name="trackpad_sensitivity_slider" tool_tip="트랙볼의 민감도를 조정합니다"/>
+						<check_box name="stop_posing_on_close_checkbox" label="닫을 때 포즈 중지" tool_tip="닫을 때 포즈를 중지하지 않으면 지금까지의 작업을 잃지 않고 도움이 될 수 있습니다."/>
+						<check_box name="reset_base_rotation_on_edit_checkbox" label="편집 시 기본 회전 재설정" tool_tip="포즈를 처음 편집할 때 이를 0으로 재설정합니다. 이렇게 하면 차이점만이 아닌 전체 포즈가 저장됩니다. 0 기반으로 내보낸 각 관절 옆에 녹색 체크 표시가 나타납니다."/>
+						<check_box name="also_save_bvh_checkbox" label="저장 시 BVH 생성" tool_tip="포즈를 저장할 때 BVH 파일도 만들어집니다. 이는 빌드 > 업로드 > 애니메이션을 통해 업로드하고 자신의 아바타나 다른 아바타를 포즈하는 데 사용할 수 있습니다. 이를 위해서는 관절의 기준을 0으로 설정해야 합니다. BVH는 다른 포즈에서 파생되지 않기 때문입니다."/>
+						<check_box name="confirm_overwrite_on_save_checkbox" label="덮어쓰기 확인" tool_tip="포즈를 저장할 때 파일이 이미 존재하는 경우, 파일을 덮어쓸 것인지 확인하기 위해 저장 버튼을 다시 클릭해야 합니다."/>
+						<check_box name="natural_direction_checkbox" label="자연스러운 방향 사용" tool_tip="스켈레톤은 기본적으로 부자연스러운 관절 회전을 가지고 있어 포즈를 취하기 어렵게 만듭니다. 활성화되면 관절이 더 자연스러운 회전으로 설정됩니다."/>
+						<check_box name="show_joint_markers_checkbox" label="관절 표시자 보기" tool_tip="포즈를 취할 때 관절 선택을 쉽게 하기 위해 표시자를 보여줍니다."/>
+					</panel>
+				</tab_container>
+				<button name="toggleVisualManipulators" tool_tip="시각적 조작자 켜기/끄기" />
+			</panel>
+			<panel name="joint_manipulation_panel">
+				<tab_container name="modifier_tabs">
+					<panel label="회전" name="trackball_panel">
+						<fs_virtual_trackpad name="limb_rotation" tool_tip="현재 선택된 신체 부위의 회전을 변경합니다. Ctrl을 누른 채로 천천히 변경하세요. 마우스 휠을 돌려서 3번째 축을 조정하세요. Shift나 Alt를 사용하여 회전 축을 전환하세요."/>
+						<text name="limb_pitch_label">
+							위/아래:
+						</text>
+						<text name="limb_yaw_label">
+							좌/우:
+						</text>
+						<text name="limb_roll_label">
+							롤:
+						</text>
+					</panel>
+					<panel title="위치 / 크기" name="position_panel">
+						<text name="pos_x_label">
+							위치 X:
+						</text>
+						<text name="pos_y_label">
+							위치 Y:
+						</text>
+						<text name="pos_z_label">
+							위치 Z:
+						</text>
+						<text name="scale_x_label">
+							크기 X:
+						</text>
+						<text name="scale_y_label">
+							크기 Y:
+						</text>
+						<text name="scale_z_label">
+							크기 Z:
+						</text>
+					</panel>
+				</tab_container>
+				<panel name="trackball_button_panel">
+					<button name="undo_change" tool_tip="마지막 변경사항 실행 취소"/>
+					<button name="button_redo_change" tool_tip="마지막 회전 변경사항 다시 실행"/>
+					<button name="poser_joint_reset" tool_tip="선택된 모든 신체 부위를 원래 값으로 재설정하려면 클릭하세요."/>
+					<button name="delta_mode_toggle" tool_tip="여러 관절을 변경할 때, 같은 회전으로 설정하는 대신 같은 양만큼 변경합니다. 짐벌락 방지에도 사용됩니다."/>
+					<button label="대칭" name="button_toggleMirrorRotation" tool_tip="반대편 관절에 변경사항을 대칭으로 적용합니다."/>
+					<button label="동조" name="button_toggleSympatheticRotation" tool_tip="반대편 관절을 동일하게 조정합니다."/>
+					<button label="왼→오" name="button_symmetrize_left_to_right" tool_tip="왼쪽에서 오른쪽으로 변경사항을 복사하려면 클릭하세요." />
+					<button label="오→왼" name="button_symmetrize_right_to_left" tool_tip="오른쪽에서 왼쪽으로 변경사항을 복사하려면 클릭하세요." />
+				</panel>
+			</panel>
+			<panel name="poses_loadSave">
+				<scroll_list tool_tip="선택된 아바타에 포즈를 불러옵니다." name="poses_scroll">
+					<scroll_list.columns label="포즈 이름" name="name"/>
+				</scroll_list>
+				<line_editor label="저장할 포즈의 이름을 입력하세요..." name="pose_save_name"/>
+			</panel>
+		</layout_panel>
+		<layout_panel name="button_controls_layout">
+			<panel name="button_controls_panel">
+				<button name="FlipPose_avatar" tool_tip="전체 포즈를 좌/우 반전"/>
+				<button name="FlipJoint_avatar" tool_tip="선택된 신체 부위를 좌/우 대칭"/>
+				<button label="재포착" name="button_RecaptureParts" tool_tip="선택된 신체 부위가 포즈되지 않는 경우, 현재 포즈의 값을 포착합니다."/>
+				<button label="부위 켜기/끄기" name="toggle_PosingSelectedBones" tool_tip="선택된 신체 부위의 포즈 기능을 켜거나 끕니다. 꺼져 있으면 해당 신체 부위는 정상적으로 애니메이션됩니다 (예: AO, 포즈볼 등을 통해)."/>
+				<button label="내 포즈" name="toggleLoadSavePanel" tool_tip="자신이 만든 포즈를 불러오고, 저장하고, 관리합니다"/>
+				<button tool_tip="포즈 디렉토리 관리" name="open_poseDir_button"/>
+				<menu_button label="포즈 불러오기" tool_tip="현재 선택된 포즈를 불러옵니다." name="load_poses_button"/>
+				<button label="차이 저장" tool_tip="기존 포즈와의 차이를 저장합니다. T자 포즈에서 시작하여 새 작품을 시작하세요." name="save_poses_button"/>
+			</panel>
+		</layout_panel>
+	</layout_stack>
+</floater>

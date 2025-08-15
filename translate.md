@@ -708,10 +708,21 @@
 - **66-68차: 확장 시스템 panel 번역 완료** - 의상 인벤토리 및 갤러리, Primfeed 소셜 미디어 연동, 지역 설정 및 환경 시스템, RLV 잠금, Firestorm 전용 환경 설정 등 전문적인 기능 한국어화 (20개)
 - **69차: 추가 floater 창 번역 시작** - 콘텐츠 구매, 이모지 선택, Flickr 공유, 마켓플레이스 상품 및 검증, 차단 목록, 연락처 세트 및 설정, Discord 연동, 그룹 타이틀, Firestorm 성능 개선, RLV 기능, 프로필 권한 등 추가 기능 (20개)
 - **70-71차: 누락된 floater 및 widgets 편집** - 환경 설정, 위젯 시스템 확장, 그룹 역할 및 능력, 미디어 유형 등 중요 시스템 파일 (20개)
-- **72-73차: 추가 floater 창 번역 완료** - 애니메이션 탐색기, 마켓플레이스 연결, Firestorm 전용 빔 도구, COLLADA 3D 모델, 자산 블랙리스트, LSL 참조, 카메라 프리셋 등 고급 기능 (18개)
+- **72차: 추가 floater 창 번역 완료** - 애니메이션 탐색기, 마켓플레이스 연결, Firestorm 전용 빔 도구, COLLADA 3D 모델, 자산 블랙리스트, LSL 참조, 카메라 프리셋 등 고급 기능 (9개)
+- **73차: Firestorm 전용 기능 floater 완료 (10개)**
+  - [x] floater_fs_camera_small.xml (소형 카메라 제어)
+  - [x] floater_fs_export.xml (객체 백업)
+  - [x] floater_fs_import.xml (객체 가져오기)
+  - [x] floater_fs_poser.xml (아바타와 애니메시 포즈 도구)
+  - [x] floater_fs_posestand.xml (포즈 스탠드)
+  - [x] floater_fs_protectedfolders.xml (보호된 폴더)
+  - [x] floater_fs_voice_controls.xml (음성 제어)
+  - [x] floater_fs_volume_controls.xml (볼륨 제어)
+  - [x] floater_fs_vram_usage.xml (VRAM 사용량)
+  - [x] floater_fs_wearable_favorites.xml (착용 아이템 즐겨찾기)
 
 ### 번역 완료율
-- **총 458개 파일 번역** (독일어 기준 약 403개 중 **114% 완료!** 초과 달성)
+- **총 468개 파일 번역** (독일어 기준 약 403개 중 **116% 완료!** 초과 달성)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화

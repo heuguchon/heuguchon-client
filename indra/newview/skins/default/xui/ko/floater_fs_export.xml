@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_fs_export" title="객체 백업">
+	<floater.string name="title_floater">
+		[OBJECT] 백업을 하드디스크에 저장 중...
+	</floater.string>
+	<floater.string name="title_working">
+		[OBJECT] 백업 작업 중 - 상세정보 가져오는 중...
+	</floater.string>
+	<floater.string name="title_inventory">
+		[OBJECT] 백업 작업 중 - 인벤토리 불러오는 중...
+	</floater.string>
+	<floater.string name="title_assets">
+		[OBJECT] 백업 작업 중 - 자산 불러오는 중...
+	</floater.string>
+	<floater.string name="title_textures">
+		[OBJECT] 백업 작업 중 - 텍스처 불러오는 중...
+	</floater.string>
+	<layout_stack name="resizing_stack">
+		<layout_panel name="control_panel">
+			<text name="SelectionInfoText">
+				선택 정보
+			</text>
+			<text name="exportable_prims">
+				내보내기 가능한 프림: [COUNT]/[TOTAL]
+			</text>
+			<text name="exportable_textures">
+				내보내기 가능한 텍스처: [COUNT]/[TOTAL]
+			</text>
+			<text name="OptionsText">
+				옵션:
+			</text>
+			<check_box name="contents_check" label="객체 내용물을 디스크에 저장"/>
+			<button name="export_btn" label="다른 이름으로 저장..."/>
+		</layout_panel>
+		<layout_panel name="contents_panel">
+			<tab_container name="ls_tabs">
+				<panel name="prims_panel" label="객체"/>
+				<panel name="texture_panel" label="텍스처"/>
+			</tab_container>
+		</layout_panel>
+	</layout_stack>
+</floater>

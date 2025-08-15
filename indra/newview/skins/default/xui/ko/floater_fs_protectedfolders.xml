@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="floater_fs_protected_folders" title="보호된 폴더">
+	<floater.string name="UnknownFolder">
+		(알 수 없는 폴더)
+	</floater.string>
+	<panel name="buttons_panel">
+		<filter_editor label="보호된 폴더 필터" name="filter_input"/>
+		<button name="remove_btn" tool_tip="보호된 폴더 목록에서 폴더 제거"/>
+	</panel>
+	<panel name="panel_fs_protected_folders">
+		<scroll_list name="folder_list">
+			<scroll_list.columns label="이름" name="name"/>
+		</scroll_list>
+	</panel>
+</floater>

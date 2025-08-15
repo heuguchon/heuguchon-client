@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="fs_import" title="객체 가져오기">
+	<floater.string name="floater_title">
+		[FILENAME] 가져오는 중
+	</floater.string>
+	<floater.string name="file_status">
+		[LINKSETS] 링크셋. [PRIMS] 프림. [TEXTURES] 텍스처.
+[SOUNDS] 소리. [ANIMATIONS] 애니메이션.
+	</floater.string>
+	<floater.string name="file_status_error">
+		파일을 읽는 중 오류가 발생했습니다. 다른 파일을 선택해 주세요.
+	</floater.string>
+	<floater.string name="file_version_error">
+		파일 처리 중 오류: 잘못된 형식 또는 버전입니다.
+	</floater.string>
+	<floater.string name="file_status_running">
+		링크셋 [LINKSET]/[LINKSETS], 프림 [PRIM]/[PRIMS]
+	</floater.string>
+	<floater.string name="file_status_done">
+		가져오기 완료.
+	</floater.string>
+	<floater.string name="texture_uploading">
+		텍스처 [TEXTURE]/[TEXTURETOTAL] 업로드 중.
+	</floater.string>
+	<floater.string name="sound_uploading">
+		소리 [SOUND]/[SOUNDTOTAL] 업로드 중.
+	</floater.string>
+	<floater.string name="animation_uploading">
+		애니메이션 [ANIMATION]/[ANIMATIONTOTAL] 업로드 중.
+	</floater.string>
+	<floater.string name="asset_uploading">
+		자산 [ASSET]/[ASSETTOTAL] 업로드 중.
+	</floater.string>
+	<floater.string name="upload_cost">
+		총 업로드 비용: [COST] L$.
+	</floater.string>
+	<floater.string name="object">
+		객체
+	</floater.string>
+	<floater.string name="objects">
+		객체들
+	</floater.string>
+	<text name="filename_text">
+		[FILENAME]
+	</text>
+	<text name="creation_date_text">
+		[DATE_STRING]에 생성
+	</text>
+	<text name="author_text">
+		작성자 [AUTHOR] [GRID]
+	</text>
+	<text name="client_text">
+		클라이언트: [CLIENT] v.[VERSION]
+	</text>
+	<text name="file_status_text">
+		파일을 선택하세요.
+	</text>
+	<check_box name="do_not_attach" label="객체를 장착하지 않음"/>
+	<check_box name="region_position" label="지역 위치에 복원"/>
+	<check_box name="upload_asset" label="내용물 업로드"/>
+	<check_box name="temp_asset" label="임시"/>
+	<button name="import_btn" label="가져오기"/>
+</floater>

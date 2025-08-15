@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="floater_fs_wearable_favorites" title="착용 아이템 즐겨찾기">
+	<floater.string name="empty_list">
+		목록에 추가하려면 의복이나 객체를 여기로 드래그하세요.
+	</floater.string>
+	<floater.string name="search_no_items">
+		일치하는 객체를 찾을 수 없습니다.
+	</floater.string>
+	<panel name="buttons_panel">
+		<filter_editor label="착용 아이템 즐겨찾기 필터" name="wearable_filter_input"/>
+		<menu_button name="options_btn" tool_tip="착용 아이템 즐겨찾기 옵션"/>
+		<button name="remove_btn" tool_tip="착용 아이템 즐겨찾기에서 삭제"/>
+	</panel>
+</floater>
