@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<menu name="NearBy Chat Menu">
+	<menu_item_call label="근처 사람들 보기..." name="nearby_people"/>
+	<menu_item_check label="무시된 텍스트 표시" name="muted_text"/>
+	<menu_item_check label="친구 아이콘 표시" name="show_buddy_icons"/>
+	<menu_item_check label="이름 표시" name="show_names"/>
+	<menu_item_check label="이름 및 아이콘 표시" name="show_icons_and_names"/>
+	<menu_item_call label="글자 크기" name="font_size"/>
+</menu>

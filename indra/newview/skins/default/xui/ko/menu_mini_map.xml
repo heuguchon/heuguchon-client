@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<menu name="Popup" label="미니맵">
+	<menu_item_call label="프로필 보기" name="View Profile"/>
+	<menu label="프로필 보기" name="View Profiles"></menu>
+	<menu_item_call label="연락처 세트에 추가..." name="Add to Set Multiple"/>
+	<menu_item_call label="카메라로 추적" name="Cam"/>
+	<menu name="MarkAvatar" label="마커...">
+		<menu_item_call label="빨강" name="MarkRed"/>
+		<menu_item_call label="초록" name="MarkGreen"/>
+		<menu_item_call label="파랑" name="MarkBlue"/>
+		<menu_item_call label="보라" name="MarkPurple"/>
+		<menu_item_call label="노랑" name="MarkYellow"/>
+		<menu_item_call label="마커 제거" name="Clear Mark"/>
+		<menu_item_call label="모든 마커 제거" name="Clear Marks"/>
+	</menu>
+	<menu name="More Options" label="더 많은 옵션...">
+		<menu_item_call label="친구 추가" name="Add Friend"/>
+		<menu_item_call label="연락처 세트에 추가..." name="Add to Set"/>
+		<menu_item_call label="친구 제거" name="Remove Friend"/>
+		<menu_item_call label="IM" name="IM"/>
+		<menu_item_call label="전화" name="Call"/>
+		<menu_item_call label="지도" name="Map"/>
+		<menu_item_call label="공유" name="Share"/>
+		<menu_item_call label="지불" name="Pay"/>
+		<menu_item_call label="텔레포트 제안" name="teleport"/>
+		<menu_item_call label="텔레포트 요청" name="request_teleport"/>
+		<menu_item_call label="아바타에게 텔레포트" name="teleport_to"/>
+		<menu_item_call label="그룹 초대 보내기" name="GroupInvite"/>
+		<menu_item_call label="스크립트 정보 보기" name="ScriptInfo"/>
+		<menu_item_check label="차단/차단해제" name="Block/Unblock"/>
+		<menu_item_call label="악용 신고" name="report"/>
+		<menu_item_call label="얼리기" name="freeze"/>
+		<menu_item_call label="구획: 추방" name="eject"/>
+		<menu_item_call label="부동산: 내쫓기" name="kick"/>
+		<menu_item_call label="부동산: 집으로 텔레포트" name="teleport_home"/>
+		<menu_item_call label="부동산: 추방" name="estate_ban"/>
+		<menu_item_call label="숨기기" name="derender"/>
+		<menu_item_call label="숨기기 + 블랙리스트" name="derender_permanent"/>
+	</menu>
+	<menu_item_call label="추적 시작" name="Start Tracking"/>
+	<menu_item_call label="추적 중지" name="Stop Tracking"/>
+	<menu name="Minimap Zoom" label="줌">
+		<menu_item_check label="매우 가까이" name="Zoom very close"/>
+		<menu_item_check label="가까이" name="Zoom close"/>
+		<menu_item_check label="중간 (기본값)" name="Zoom medium"/>
+		<menu_item_check label="멀리" name="Zoom far"/>
+	</menu>
+	<menu name="Minimap Show" label="표시">
+		<menu_item_check label="객체" name="Objects"/>
+		<menu_item_check label="물리 객체" name="Physical Objects"/>
+		<menu_item_check label="스크립트 객체" name="Scripted Objects"/>
+		<menu_item_check label="임시 객체" name="Temp On Rez Objects"/>
+		<menu_item_check label="토지 경계선" name="Property Lines"/>
+		<menu_item_check label="판매용 토지" name="Parcels for Sale"/>
+	</menu>
+	<menu_item_check label="북쪽을 위로" name="North at top"/>
+	<menu_item_check label="카메라를 위로" name="Camera at top"/>
+	<menu_item_check label="자동 중앙 정렬" name="Auto-center map"/>
+	<menu_item_call label="지도 다시 중앙 정렬" name="Re-center map"/>
+
+	<menu label="채팅 거리 표시" name="Chat Distance Rings Menu">
+		<menu_item_check label="채팅 거리 표시" name="Chat Distance Rings"/>
+		<menu_item_check label="속삭임 표시" name="Whisper Distance Ring"/>
+		<menu_item_check label="대화 표시" name="Chat Distance Ring"/>
+		<menu_item_check label="외침 표시" name="Shout Distance Ring"/>
+	</menu>
+	<menu_item_call label="토지 정보 보기" name="About Land"/>
+	<menu_item_call label="장소 프로필 보기" name="Place Profile"/>
+	<menu_item_call label="세계 지도" name="World Map"/>
+</menu>
