@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="Map" title="미니맵">
+	<floater.string name="ParcelSalePriceMsg">
+		가격: [PRICE] L$ ([PRICE_PER_SQM] L$/m²)
+	</floater.string>
+	<floater.string name="ParcelSaleAreaMsg">
+		면적: [AREA]m²
+	</floater.string>
+	<floater.string name="ParcelOwnerMsg">
+		소유자: [PARCEL_OWNER]
+	</floater.string>
+	<floater.string name="RegionNameMsg">
+		지역: [REGION_NAME]
+	</floater.string>
+	<floater.string name="ToolTipHintMsg">
+		더블클릭으로 지도 열기
+	</floater.string>
+	<floater.string name="AltToolTipHintMsg">
+		더블클릭으로 텔레포트
+	</floater.string>
+	<floater.string name="mini_map_caption">
+		미니맵
+	</floater.string>
+	<text label="북" name="floater_map_north" text="북">
+		북
+	</text>
+	<text label="동" name="floater_map_east" text="동">
+		동
+	</text>
+	<text label="서" name="floater_map_west" text="서">
+		서
+	</text>
+	<text label="남" name="floater_map_south" text="남">
+		남
+	</text>
+	<text label="남동" name="floater_map_southeast" text="남동">
+		남동
+	</text>
+	<text label="북동" name="floater_map_northeast" text="북동">
+		북동
+	</text>
+	<text label="남서" name="floater_map_southwest" text="남서">
+		남서
+	</text>
+	<text label="북서" name="floater_map_northwest" text="북서">
+		북서
+	</text>
+</floater>

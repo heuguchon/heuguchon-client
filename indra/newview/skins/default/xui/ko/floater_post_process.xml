@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="Post-Process Floater" title="후처리 설정">
+	<tab_container name="Post-Process Tabs">
+		<panel label="색상 필터" name="wmiColorFilterPanel">
+			<check_box label="활성화" name="wmiColorFilterToggle" />
+			<text name="wmiColorFilterBrightnessText">
+				밝기
+			</text>
+			<text name="wmiColorFilterSaturationText">
+				채도
+			</text>
+			<text name="wmiColorFilterContrastText">
+				대비
+			</text>
+			<text name="wmiColorFilterBaseText">
+				대비 기본 색상
+			</text>
+			<slider label="R" name="wmiColorFilterBaseR" />
+			<slider label="G" name="wmiColorFilterBaseG" />
+			<slider label="B" name="wmiColorFilterBaseB" />
+			<slider label="I" name="wmiColorFilterBaseI" />
+		</panel>
+		<panel label="야간 투시경" name="wmiNightVisionPanel">
+			<check_box label="활성화" name="wmiNightVisionToggle" />
+			<text name="wmiNightVisionBrightMultText">
+				광 증폭 배수
+			</text>
+			<text name="wmiNightVisionNoiseSizeText">
+				노이즈 크기
+			</text>
+			<text name="wmiNightVisionNoiseStrengthText">
+				노이즈 강도
+			</text>
+		</panel>
+		<panel label="블룸" name="wmiBloomPanel">
+			<check_box label="활성화" name="wmiBloomToggle" />
+			<text name="wmiBloomExtractText">
+				휘도 추출
+			</text>
+			<text name="wmiBloomSizeText">
+				블룸 크기
+			</text>
+			<text name="wmiBloomStrengthText">
+				블룸 강도
+			</text>
+		</panel>
+		<panel label="추가 기능" name="Extras">
+			<button label="효과 불러오기" label_selected="효과 불러오기" name="PPLoadEffect" />
+			<button label="효과 저장" label_selected="효과 저장" name="PPSaveEffect" />
+			<line_editor label="효과 이름" name="PPEffectNameEditor" />
+		</panel>
+	</tab_container>
+</floater>

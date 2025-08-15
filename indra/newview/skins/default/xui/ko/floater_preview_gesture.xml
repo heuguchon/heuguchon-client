@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="gesture_preview">
+	<floater.string name="step_anim">
+		애니메이션 재생:
+	</floater.string>
+	<floater.string name="step_sound">
+		사운드 재생:
+	</floater.string>
+	<floater.string name="step_chat">
+		채팅에 표시:
+	</floater.string>
+	<floater.string name="step_wait">
+		대기:
+	</floater.string>
+	<floater.string name="stop_txt">
+		중지
+	</floater.string>
+	<floater.string name="preview_txt">
+		미리보기
+	</floater.string>
+	<floater.string name="none_text">
+		– 없음 –
+	</floater.string>
+	<floater.string name="Title">
+		제스처: [NAME]
+	</floater.string>
+	<text name="desc_label">
+		설명:
+	</text>
+	<text name="trigger_label">
+		트리거:
+	</text>
+	<text name="replace_text" tool_tip="트리거 텍스트를 이 텍스트로 교체합니다. 예를 들어 트리거 '안녕'을 '안녕하세요'로 교체하면, 채팅에서 '안녕하고 말하려고 했어' 대신 '안녕하세요라고 말하려고 했어'가 나타나고 해당 제스처가 재생됩니다.">
+		다음으로 교체:
+	</text>
+	<line_editor name="replace_editor" tool_tip="트리거 텍스트를 이 텍스트로 교체합니다. 예를 들어 트리거 '안녕'을 '안녕하세요'로 교체하면, 채팅에서 '안녕하고 말하려고 했어' 대신 '안녕하세요라고 말하려고 했어'가 나타나고 해당 제스처가 재생됩니다."/>
+	<text name="key_label">
+		단축키:
+	</text>
+	<combo_box label="없음" name="modifier_combo"/>
+	<combo_box label="없음" name="key_combo"/>
+	<text name="library_label">
+		라이브러리:
+	</text>
+	<scroll_list name="library_list" width="166">
+		<scroll_list.rows name="action_animation" value="애니메이션"/>
+		<scroll_list.rows name="action_sound" value="사운드"/>
+		<scroll_list.rows name="action_chat" value="채팅"/>
+		<scroll_list.rows name="action_wait" value="대기"/>
+	</scroll_list>
+	<button label="추가 &gt;&gt;" left_pad="6" name="add_btn" width="94"/>
+	<text name="steps_label">
+		단계:
+	</text>
+	<button label="위로" name="up_btn"/>
+	<button label="아래로" name="down_btn"/>
+	<button label="제거" name="delete_btn"/>
+	<text name="options_text">
+		(옵션)
+	</text>
+	<radio_group name="animation_trigger_type">
+		<radio_item label="시작" name="start"/>
+		<radio_item label="중지" name="stop"/>
+	</radio_group>
+	<check_box label="키를 놓을 때까지" name="wait_key_release_check"/>
+	<check_box label="모든 애니메이션이 끝날 때까지" name="wait_anim_check"/>
+	<check_box label="시간(초):" name="wait_time_check"/>
+	<line_editor name="wait_time_editor"/>
+	<text name="help_label">
+		일시정지가 추가되지 않은 경우 모든 단계가 동시에 실행됩니다.
+	</text>
+	<check_box label="활성" name="active_check" tool_tip="활성 제스처는 채팅에서 트리거 문구를 입력하거나 단축키를 눌러 실행됩니다. 중복 키 할당이 있을 경우 제스처가 일반적으로 작동하지 않습니다."/>
+	<button label="미리보기" name="preview_btn"/>
+	<button label="저장" name="save_btn"/>
+</floater>

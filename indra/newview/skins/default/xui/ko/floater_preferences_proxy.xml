@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="Proxy Settings Floater" title="프록시 설정">
+	<check_box initial_value="false" label="웹페이지용 HTTP 프록시 사용" name="web_proxy_enabled"/>
+	<text name="http_proxy_label">
+		HTTP 프록시:
+	</text>
+	<line_editor name="web_proxy_editor" tool_tip="원하는 HTTP 프록시의 DNS 이름 또는 IP 주소."/>
+	<spinner label="포트 번호:" name="web_proxy_port" tool_tip="원하는 HTTP 프록시의 포트 번호."/>
+	<check_box label="UDP 트래픽용 SOCKS 5 프록시 사용" name="socks_proxy_enabled"/>
+	<text name="socks5_proxy_label">
+		SOCKS 5 프록시:
+	</text>
+	<line_editor name="socks_proxy_editor" tool_tip="원하는 SOCKS 5 프록시의 DNS 이름 또는 IP 주소."/>
+	<spinner label="포트 번호:" name="socks_proxy_port" tool_tip="원하는 SOCKS 5 프록시의 포트 번호."/>
+	<text name="socks_auth_label">
+		SOCKS 인증:
+	</text>
+	<radio_group name="socks5_auth_type">
+		<radio_item label="인증 없음" name="Socks5NoAuth" tool_tip="SOCKS 5 프록시는 인증이 필요하지 않습니다." value="없음"/>
+		<radio_item label="사용자명/비밀번호" name="Socks5UserPass" tool_tip="SOCKS 5 프록시는 사용자명/비밀번호 인증이 필요합니다." value="UserPass"/>
+	</radio_group>
+	<text name="socks5_username_label">
+		사용자명:
+	</text>
+	<text name="socks5_password_label">
+		비밀번호:
+	</text>
+	<line_editor name="socks5_username" tool_tip="SOCKS 5 서버 인증을 위한 사용자명"/>
+	<line_editor name="socks5_password" tool_tip="SOCKS 5 서버 인증을 위한 비밀번호"/>
+	<text name="other_proxy_label">
+		기타 HTTP 트래픽 프록시:
+	</text>
+	<radio_group name="other_http_proxy_type">
+		<radio_item label="프록시 사용하지 않음" name="OtherNoProxy" tool_tip="웹이 아닌 HTTP 트래픽이 프록시를 통하지 않습니다." value="없음"/>
+		<radio_item label="HTTP 프록시 사용" name="OtherHTTPProxy" tool_tip="웹이 아닌 HTTP 트래픽이 설정된 웹 프록시를 통해 전달됩니다." value="웹"/>
+		<radio_item label="SOCKS 5 프록시 사용" name="OtherSocksProxy" tool_tip="웹이 아닌 HTTP 트래픽이 설정된 SOCKS 5 프록시를 통해 전달됩니다." value="SOCKS"/>
+	</radio_group>
+	<button label="확인" label_selected="확인" name="OK"/>
+	<button label="취소" label_selected="취소" name="Cancel"/>
+</floater>

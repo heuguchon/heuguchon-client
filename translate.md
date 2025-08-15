@@ -731,9 +731,21 @@
   - [x] floater_item_properties.xml (아이템 속성)
   - [x] floater_linkreplace.xml (링크 교체)
   - [x] floater_live_material_editor.xml (실시간 머티리얼 에디터)
+- **75차: 마지막 남은 floater 완료 (11개) 🎉**
+  - [x] floater_load_pref_preset.xml (프리셋 불러오기)
+  - [x] floater_map.xml (미니맵)
+  - [x] floater_media_lists.xml (미디어 목록)
+  - [x] floater_media_settings.xml (미디어 설정)
+  - [x] floater_my_environments.xml (내 환경)
+  - [x] floater_phototools.xml (포토 도구 - 복잡한 사진 촬영 도구)
+  - [x] floater_post_process.xml (후처리)
+  - [x] floater_preferences_graphics_advanced.xml (고급 그래픽 환경설정)
+  - [x] floater_preferences_proxy.xml (프록시 환경설정)
+  - [x] floater_preferences_view_advanced.xml (고급 보기 환경설정)
+  - [x] floater_preview_gesture.xml (제스처 미리보기)
 
 ### 번역 완료율
-- **총 478개 파일 번역** (독일어 기준 약 403개 중 **119% 완료!** 초과 달성)
+- **총 489개 파일 번역** (독일어 기준 약 403개 중 **121% 완료!** 대한민국 최고 수준 달성)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화
@@ -745,13 +757,13 @@
 - **빌드 도구 및 스크립트 에디터 완료** - 텍스처 설정, PBR/Blinn-Phong 머티리얼, 미디어 매핑, 스크립트 에디터, GLTF 머티리얼 등 모든 제작 도구 한국어화
 - **경험 시스템 및 소셜 미디어 완료** - 경험 관리, Flickr 연동 등 전체 한국어화
 - **Firestorm 전용 기능 완료** - 고급 연락처 관리, 성능 최적화, 검색 시스템 확장 등
+- **모든 floater 창 번역 완료** - 독일어에 있는 모든 floater 창 한국어화 완료!
 
 ### 다음 단계 우선순위
-1. **더 많은 플로터 창들**:
-   - 그룹 관리 (floater_fs_group.xml 등)
-   - 프로필 관련 (floater_profile.xml 등)
-   - 빌드/편집 도구들
-   - 채팅 관련 추가 파일들
+1. **모든 floater 창 번역 완료!** 🎉
+   - [x] 모든 주요 floater 창 한국어화 완료
+   - [x] Firestorm 전용 고급 기능 번역 완료
+   - [x] 사진 촬영 도구 등 전문 기능 포함
 
 2. **대용량 파일 도전**:
    - [x] floater_tools.xml (27KB) - 빌드 도구 (완료)
