@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<toggleable_menu name="menu_sorter_gear">
+	<menu_item_call label="모든 폴더 펼치기" name="expand_all"/>
+	<menu_item_call label="모든 폴더 접기" name="collapse_all"/>
+	<menu_item_check label="날짜별 정렬" name="sort_by_date"/>
+</toggleable_menu>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<context_menu name="Outfit Wearable Context Menu">
+	<menu_item_call label="교체" name="wear_replace"/>
+	<menu_item_call label="착용" name="wear_wear"/>
+	<menu_item_call label="추가" name="wear_add"/>
+	<menu_item_call label="터치" name="touch" />
+	<menu_item_call label="벗기/분리" name="take_off_or_detach"/>
+	<menu_item_call label="분리" name="detach"/>
+	<context_menu label="부착 위치" name="wearable_attach_to"/>
+	<context_menu label="HUD에 부착" name="wearable_attach_to_hud"/>
+	<menu_item_call label="벗기" name="take_off"/>
+	<menu_item_call label="편집" name="edit"/>
+	<menu_item_call label="객체 프로필" name="object_profile"/>
+	<menu_item_call label="원본 보기" name="show_original"/>
+</context_menu>
