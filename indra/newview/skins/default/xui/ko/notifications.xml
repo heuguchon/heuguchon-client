@@ -100,9 +100,202 @@
 		<usetemplate canceltext="취소" name="yesnocancelbuttons" notext="저장하지 않음" yestext="저장"/>
 	</notification>
 	<notification name="ConfirmNoCopyToOutbox">
-		이 아이템들 중 하나 이상을 판매자 보낼 상자로 복사할 권한이 없습니다. 이동하거나 그대로 두세요.
-		<usetemplate name="okcancelbuttons" notext="아이템을 이동하지 않음" yestext="아이템 이동"/>
+		이 아이템 중 하나 이상을 판매자 발송함에 복사할 권한이 없습니다. 아이템을 이동하거나 그대로 둘 수 있습니다.
+		<usetemplate name="okcancelbuttons" notext="아이템 이동 안 함" yestext="아이템 이동"/>
 	</notification>
+	<notification name="OutboxFolderCreated">
+		판매자 발송함의 최상위 레벨로 전송한 각 아이템에 대해 새 폴더가 생성되었습니다.
+		<usetemplate ignoretext="판매자 발송함에 새 폴더 생성됨" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="OutboxImportComplete">
+		성공
+
+모든 폴더가 마켓플레이스로 성공적으로 전송되었습니다.
+		<usetemplate ignoretext="모든 폴더가 마켓플레이스로 전송됨" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="OutboxImportHadErrors">
+		일부 폴더가 전송되지 않았습니다
+
+특정 폴더를 마켓플레이스로 전송하는 동안 오류가 발생했습니다. 이러한 폴더는 여전히 판매자 발송함에 있습니다.
+
+자세한 내용은 [[MARKETPLACE_IMPORTS_URL] 오류 로그]를 참조하십시오.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="OutboxImportFailed">
+		오류 "[ERROR_CODE]"(으)로 전송 실패
+
+시스템 또는 네트워크 오류로 인해 폴더가 마켓플레이스로 전송되지 않았습니다. 나중에 다시 시도하십시오.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="OutboxInitFailed">
+		오류 "[ERROR_CODE]"(으)로 마켓플레이스 초기화 실패
+
+시스템 또는 네트워크 오류로 인해 마켓플레이스 초기화에 실패했습니다. 나중에 다시 시도하십시오.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="StockPasteFailed">
+		다음 오류로 재고 폴더로 복사하거나 이동에 실패했습니다:
+        
+        "[ERROR_CODE]"
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MyOutfitsPasteFailed">
+		하나 이상의 객체를 "의상" 내에서 사용할 수 없습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantPasteFailed">
+		다음 오류로 마켓플레이스 목록 복사하거나 이동에 실패했습니다:
+        
+        "[ERROR_CODE]"
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantTransactionFailed">
+		다음 오류로 마켓플레이스 거래에 실패했습니다:
+        
+        [ERROR_REASON][ERROR_DESCRIPTION]
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantUnprocessableEntity">
+		이 제품을 등록하거나 버전 폴더를 활성화할 수 없습니다. 이는 대개 등록 설명 양식에 누락된 정보 때문이거나 잘못된 폴더 구조 때문일 수 있습니다. 등록을 편집하거나 등록 폴더에서 오류를 확인하십시오.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantListingFailed">
+		다음 오류로 마켓플레이스 등록에 실패했습니다:
+        
+        "[ERROR_CODE]"
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantFolderActivationFailed">
+		다음 오류로 이 버전 폴더 활성화에 실패했습니다:
+
+        "[ERROR_CODE]"
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantForceValidateListing">
+		등록을 생성하기 위해 등록 내용의 계층을 수정했습니다.
+		<usetemplate ignoretext="등록 생성 시 내용 계층이 수정될 때 경고 표시" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="ConfirmMerchantActiveChange">
+		이 작업은 이 등록의 활성 내용을 변경합니다. 계속하시겠습니까?
+		<usetemplate ignoretext="마켓플레이스에서 활성 등록 변경 전 확인" name="okcancelignore" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ConfirmMerchantMoveInventory">
+		마켓플레이스 등록 창으로 끌어온 객체는 복사가 아닌 이동됩니다. 계속하시겠습니까?
+		<usetemplate ignoretext="인벤토리에서 마켓플레이스로 아이템 이동 전 확인" name="okcancelignore" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ConfirmListingCutOrDelete">
+		등록 폴더를 이동하거나 삭제하면 마켓플레이스 등록이 삭제됩니다. 마켓플레이스 등록을 유지하려면 수정할 버전 폴더의 내용을 이동하거나 삭제하십시오. 계속하시겠습니까?
+		<usetemplate ignoretext="마켓플레이스에서 등록을 제거하거나 이동하기 전 확인" name="okcancelignore" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ConfirmCopyToMarketplace">
+		이 객체 중 하나 이상을 마켓플레이스에 복사할 권한이 없습니다. 객체를 이동하거나 그대로 둘 수 있습니다.
+		<usetemplate canceltext="취소" ignoretext="복사 금지 객체가 포함된 선택을 마켓플레이스로 복사 전 확인" name="yesnocancelbuttons" notext="아이템 이동 안 함" yestext="아이템 이동"/>
+	</notification>
+	<notification name="ConfirmMerchantUnlist">
+		이 작업은 이 등록을 제거합니다. 계속하시겠습니까?
+		<usetemplate ignoretext="마켓플레이스에서 활성 등록 제거 전 확인" name="okcancelignore" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ConfirmMerchantClearVersion">
+		이 작업은 현재 등록의 버전 폴더를 비활성화합니다. 계속하시겠습니까?
+		<usetemplate ignoretext="마켓플레이스 등록의 버전 폴더 비활성화 전 확인" name="okcancelignore" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="AlertMerchantListingNotUpdated">
+		이 등록을 업데이트할 수 없습니다.
+[[URL] 여기를 클릭]하여 마켓플레이스에서 편집하세요.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="AlertMerchantListingCannotWear">
+		마켓플레이스 등록 폴더에 포함된 의복이나 신체 부위를 착용할 수 없습니다
+	</notification>
+	<notification name="AlertMerchantListingInvalidID">
+		등록 ID가 유효하지 않습니다.
+	</notification>
+	<notification name="AlertMerchantListingActivateRequired">
+		이 등록에는 여러 개 또는 버전 폴더가 없습니다. 나중에 하나를 선택하고 활성화해야 합니다.
+		<usetemplate ignoretext="여러 버전 폴더가 있는 등록을 만들 때 버전 폴더 활성화 알림" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="AlertMerchantStockFolderSplit">
+		폴더를 등록하기 위해 다른 유형의 재고 객체를 별도의 재고 폴더로 나누었습니다.
+		<usetemplate ignoretext="등록 전에 재고 폴더가 분할될 때 알림" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="AlertMerchantStockFolderEmpty">
+		재고 폴더가 비어 있어 등록을 제거했습니다. 이 등록을 다시 게시하려면 재고 폴더에 더 많은 단위를 추가해야 합니다.
+		<usetemplate ignoretext="빈 재고 폴더로 인해 등록이 게시되지 않을 때 알림" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="AlertMerchantVersionFolderEmpty">
+		버전 폴더가 비어 있어 등록을 제거했습니다. 이 등록을 다시 게시하려면 버전 폴더에 아이템을 추가해야 합니다.
+		<usetemplate ignoretext="빈 버전 폴더로 인해 등록이 게시되지 않을 때 알림" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="WriteAnimationFail">
+		애니메이션 데이터 쓰기 오류. 다시 시도하십시오.
+	</notification>
+	<notification name="UploadAuctionSnapshotFail">
+		다음 이유로 경매 스크린샷을 업로드할 수 없습니다: [REASON]
+	</notification>
+	<notification name="UnableToViewContentsMoreThanOne">
+		한 번에 한 개의 객체의 내용만 볼 수 있습니다.
+단일 객체를 선택하고 다시 시도하세요.
+	</notification>
+	<notification name="SaveClothingBodyChanges">
+		의복/신체 부위에 대한 변경 사항을 저장하시겠습니까?
+		<usetemplate canceltext="취소" name="yesnocancelbuttons" notext="저장하지 않음" yestext="모두 저장"/>
+	</notification>
+	<notification name="FriendsAndGroupsOnly">
+		친구 목록에 없는 사람들은 그들의 전화와 인스턴트 메시지를 무시한다는 알림을 받지 않습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="FavoritesOnLogin">
+		참고: 이 옵션을 활성화하면 이 컴퓨터를 사용하는 모든 사람이 귀하의 즐겨찾기를 볼 수 있습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="AllowMultipleViewers">
+		여러 개의 [APP_NAME] 뷰어를 시작하는 것은 지원되지 않습니다. 이로 인해 텍스처 캠시 충돌, 오류 및 그래픽과 성능 저하가 발생할 수 있습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="GrantModifyRights">
+		다른 주민에게 수정 권한을 부여하면 그들은 귀하가 인월드에서 소유한 모든 객체를 변경, 삭제 또는 가져갈 수 있습니다. 이러한 권한을 부여할 때 매우 주의하십시오!
+[NAME]에게 수정 권한을 부여하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="GrantModifyRightsMultiple">
+		다른 주민에게 편집 권한을 부여하면 그들은 귀하가 인월드에서 소유한 모든 객체를 변경할 수 있습니다. 이 권한을 부여할 때 매우 주의하십시오!
+선택된 주민에게 수정 권한을 부여하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="RevokeModifyRights">
+		[NAME]에게서 수정 권한을 철회하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="RevokeModifyRightsMultiple">
+		선택된 주민에게서 수정 권한을 철회하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="GroupNameLengthWarning">
+		그룹 이름은 [MIN_LEN]자에서 [MAX_LEN]자 사이여야 합니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="UnableToCreateGroup">
+		그룹을 생성할 수 없습니다.
+[MESSAGE]
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="PanelGroupApply">
+		[NEEDS_APPLY_MESSAGE]
+[WANT_APPLY_MESSAGE]
+		<usetemplate canceltext="취소" name="yesnocancelbuttons" notext="변경 사항 취소" yestext="변경 사항 적용"/>
+	</notification>
+	<notification name="MustSpecifyGroupNoticeSubject">
+		그룹 공지를 보내려면 제목을 입력해야 합니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="AddGroupOwnerWarning">
+		그룹 구성원에게 [ROLE_NAME] 역할을 할당하려고 합니다.
+이 역할은 구성원에게서 다시 박탈할 수 없습니다.
+역할을 스스로 포기해야 합니다.
+계속하시겠습니까?
+		<usetemplate ignoretext="새 그룹 소유자를 추가하기 전 확인" name="okcancelignore" notext="아니오" yestext="예"/>
+	</notification>
+
 	<notification name="OutboxFolderCreated">
 		판매자 보낼 상자의 최상위 레벨로 전송한 각 아이템에 대해 새 폴더가 생성되었습니다.
 		<usetemplate ignoretext="판매자 보낼 상자에 새 폴더 생성됨" name="okignore" yestext="확인"/>
@@ -645,5 +838,104 @@ L$가 부족하여 이 그룹에 가입할 수 없습니다.
 		<form name="form">
 			<ignore name="ignore" text="내 그래픽 카드를 식별할 수 없습니다."/>
 		</form>
+	</notification>
+	<notification name="ReturnAllTopObjects">
+		나열된 모든 객체를 소유자에게 돌려보내시겠습니까? 이렇게 하면 지역의 모든 스크립트 객체가 반환됩니다.
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="DisableAllTopObjects">
+		이 지역의 모든 객체를 비활성화하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ReturnObjectsNotOwnedByGroup">
+		이 구획에서 "&lt;nolink&gt;[NAME]&lt;/nolink&gt;" 그룹과 공유되지 않은 객체들을 소유자에게 돌려보내시겠습니까? 
+
+객체: [N]
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="UnableToDisableOutsideScripts">
+		스크립트를 비활성화할 수 없습니다.
+전체 지역에 대해 피해가 활성화되어 있습니다.
+무기가 작동하려면 스크립트가 허용되어야 합니다.
+	</notification>
+	<notification name="MultipleFacesSelected">
+		여러 면이 선택되었습니다.
+계속하면 객체의 여러 면에 다른 미디어 인스턴스가 삽입됩니다.
+한 면에만 미디어를 삽입하려면 "표면 선택"을 선택하고 객체의 원하는 면을 클릭한 다음 "추가"를 클릭하십시오.
+		<usetemplate ignoretext="미디어가 선택된 여러 면으로 전송됩니다" name="okcancelignore" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="MustBeInParcel">
+		착륙 지점을 설정하려면 토지 구획 위에 서 있어야 합니다.
+	</notification>
+	<notification name="PromptRecipientEmail">
+		받는 사람의 유효한 이메일 주소를 입력하십시오.
+	</notification>
+	<notification name="PromptSelfEmail">
+		이메일 주소를 입력하십시오.
+	</notification>
+	<notification name="PromptMissingSubjMsg">
+		기본 제목 및 메시지로 사진을 이메일로 보내시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ErrorProcessingSnapshot">
+		사진 데이터 처리 오류
+	</notification>
+	<notification name="ErrorEncodingSnapshot">
+		사진 생성 오류!
+	</notification>
+	<notification name="ErrorPhotoCannotAfford">
+		사진을 인벤토리에 저장하는 데 L$[COST]가 듭니다. L$를 구매하거나 사진을 컴퓨터에 저장할 수 있습니다.
+	</notification>
+	<notification name="ErrorCannotAffordUpload">
+		이 아이템을 업로드하는 데 L$[COST]가 듭니다.
+	</notification>
+	<notification name="ErrorTextureCannotAfford">
+		텍스처를 인벤토리에 저장하는 데 L$[COST]가 듭니다. L$를 구매하거나 사진을 컴퓨터에 저장할 수 있습니다.
+	</notification>
+	<notification name="ErrorUploadingPostcard">
+		다음 이유로 사진을 보낼 수 없습니다: [REASON]
+	</notification>
+	<notification name="ErrorUploadingReportScreenshot">
+		다음 이유로 신고 스크린샷을 업로드할 수 없습니다: [REASON]
+	</notification>
+	<notification name="MustAgreeToLogIn">
+		[CURRENT_GRID]에 로그인하기 전에 이용 약관, 개인정보 보호정책 및 서비스 약관에 동의해야 합니다.
+	</notification>
+	<notification name="CouldNotBuyCurrency">
+[TITLE]
+[MESSAGE]
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="CouldNotBuyCurrencyOS">
+[TITLE]
+[MESSAGE]
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="확인"/>
+	</notification>
+	<notification name="CouldNotPutOnOutfit">
+		의상을 착용할 수 없습니다.
+의상 폴더에 의복, 신체 부위 또는 어타치먼트가 없습니다.
+	</notification>
+	<notification name="CannotWearTrash">
+		휴지통에 있는 의복이나 신체 부위는 착용할 수 없습니다
+	</notification>
+	<notification name="MaxAttachmentsOnOutfit">
+		객체를 부착할 수 없습니다.
+부착할 수 있는 최대 객체 수 [MAX_ATTACHMENTS]개를 초과합니다. 먼저 다른 객체를 분리하십시오.
+	</notification>
+	<notification name="CannotWearInfoNotComplete">
+		아직 로드되지 않아 해당 아이템을 착용할 수 없습니다. 잠시 기다렸다가 다시 시도하십시오.
+	</notification>
+	<notification name="MustEnterPasswordToLogIn">
+		로그인하려면 비밀번호를 입력하십시오.
+	</notification>
+	<notification name="MustHaveAccountToLogIn">
+		필드를 비워 두었습니다.
+아바타의 사용자 이름을 입력해야 합니다.
+
+[CURRENT_GRID]에 들어가려면 계정이 필요합니다. 지금 계정을 만드시겠습니까?
+		<url name="url">
+			[create_account_url]
+		</url>
+		<usetemplate name="okcancelbuttons" notext="다시 시도" yestext="새 사용자 계정 만들기"/>
 	</notification>
 </notifications>
