@@ -807,4 +807,35 @@
 - **핵심 시스템 파일 모두 완료** - 일반 사용자에게 필요한 모든 기능 한국어 지원
 - **고급 사용자 도구 완료** - 디버그 설정, 사진 도구 카메라, 사운드 탐색기 등 전문 도구 한국어화
 - **컨트롤 시스템 완료** - 카메라, 이동, 편집, 미디어 모든 컨트롤 옵션 한국어화
-- **남은 작업**: 대용량 notifications.xml (281KB), 일부 기타 파일들 (64개)
+- **남은 작업**: 대용량 notifications.xml (281KB), 일부 기타 파일들 (49개)
+
+## 77차 작업 (2025-08-15 추가)
+### 나머지 중요 floater 창 및 고급 기능 번역 완료 (15개)
+- [x] **floater_fs_avatar_render_settings.xml** - Firestorm 아바타 렌더링 예외 설정
+- [x] **floater_save_pref_preset.xml** - 그래픽 프리셋 저장
+- [x] **floater_settings_color.xml** - 색상 설정 도구
+- [x] **floater_settings_picker.xml** - 설정 선택기 (환경 설정)
+- [x] **floater_script_debug_panel.xml** - 스크립트 디버그 패널
+- [x] **floater_script_preview.xml** - 스크립트 미리보기
+- [x] **floater_script_queue.xml** - 스크립트 대기열 (일괄 처리)
+- [x] **floater_script_recover.xml** - 스크립트 복구 (충돌 후 복원)
+- [x] **floater_spellcheck.xml** - 맞춤법 검사 설정
+- [x] **floater_spellcheck_import.xml** - 사전 가져오기
+- [x] **floater_scene_load_stats.xml** - 씬 로딩 통계 (3.4KB 대용량)
+- [x] **floater_preview_trash.xml** - 휴지통 미리보기
+- [x] **floater_primfeed.xml** - Primfeed 소셜 미디어 공유
+- [x] **rlva_strings.xml** - RLVa 제한 시스템 문자열 (4.6KB 대용량)
+- [x] **xui_version.xml** - XUI 버전 정보
+
+### 주요 개선 사항
+- **스크립트 도구 완전 한국어화**: 디버그, 미리보기, 대기열, 복구 등 모든 스크립트 관련 도구 완성
+- **맞춤법 검사 시스템 완료**: 사전 관리 및 맞춤법 검사 기능 한국어화
+- **고급 설정 도구 완료**: 색상 설정, 환경 설정 선택기, 프리셋 저장 등
+- **성능 모니터링 도구**: 씬 로딩 통계로 고급 사용자 성능 분석 지원
+- **RLVa 시스템 완료**: Restrained Love Viewer 기능의 모든 메시지 한국어화
+
+### 현재 상태 (77차 완료)
+- **총 533개 파일 번역 완료** (독일어 582개 중 약 **92% 완료!** 🚀)
+- **스크립트 개발 도구 100% 완료** - LSL 스크립팅의 모든 기능 한국어 지원
+- **고급 사용자 도구 거의 완료** - 성능 분석, 디버깅, 설정 관리 도구 완성
+- **소셜 미디어 연동 완료** - Primfeed 등 외부 플랫폼 공유 기능 한국어화

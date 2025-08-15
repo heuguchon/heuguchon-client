@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<llsd>
+<map>
+
+	<key>strings</key>
+	<map>
+		<!-- Primarily used when @showloc restricted -->
+		<key>hidden_generic</key>
+		<map>
+			<key>value</key>
+			<string>(숨김)</string>
+		</map>
+		<key>hidden_parcel</key>
+		<map>
+			<key>value</key>
+			<string>(숨겨진 구획)</string>
+		</map>
+		<key>hidden_region</key>
+		<map>
+			<key>value</key>
+			<string>(숨겨진 지역)</string>
+		</map>
+
+		<!-- Received/sent IMs will be replaced by the matching string when @recvim/sendim restricted -->
+		<key>blocked_recvim</key>
+		<map>
+			<key>value</key>
+			<string>*** IM이 뷰어에 의해 차단되었습니다.</string>
+			<key>description</key>
+			<string>받는 IM이 차단될 때 원래 메시지 대신 표시됩니다.</string>
+			<key>label</key>
+			<string>차단된 받는 IM (로컬)</string>
+			<key>customizable</key>
+			<boolean>1</boolean>
+		</map>
+		<key>blocked_sendim</key>
+		<map>
+			<key>value</key>
+			<string>*** IM이 발신자의 뷰어에 의해 차단되었습니다.</string>
+			<key>description</key>
+			<string>보내는 IM이 차단될 때 표시됩니다 (상대방에게도 전송됨).</string>
+			<key>label</key>
+			<string>차단된 보내는 IM (로컬 + 원격)</string>
+			<key>customizable</key>
+			<boolean>1</boolean>
+		</map>
+
+		<!-- Shown as notifications -->
+		<key>blocked_autopilot</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 자동 조종을 사용할 수 없습니다.</string>
+		</map>
+		<key>blocked_generic</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 동작을 수행할 수 없습니다.</string>
+		</map>
+		<key>blocked_groupchange</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 활성 그룹을 변경할 수 없습니다. "[GROUP_SLURL]"로 재설정합니다.</string>
+		</map>
+		<key>blocked_invfolder</key>
+		<map>
+			<key>value</key>
+			<string>RLV 잠금 폴더로 인해 원하는 인벤토리 작업을 수행할 수 없습니다.</string>
+		</map>
+		<key>blocked_nearby</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 근처 아바타를 표시할 수 없습니다.</string>
+		</map>
+		<key>blocked_permattach</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 "[OBJECT]" 착용 시도가 거부되었습니다.</string>
+		</map>
+		<key>blocked_permteleport</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 "[OBJECT]"이 당신을 텔레포트시키는 것이 거부되었습니다.</string>
+		</map>
+		<key>blocked_scriptdialog</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 스크립트 대화상자나 텍스트박스를 표시할 수 없습니다.</string>
+		</map>
+		<key>blocked_share</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 [RECIPIENT]과(와) 인벤토리를 공유할 수 없습니다.</string>
+		</map>
+		<key>blocked_share_generic</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 인벤토리를 공유할 수 없습니다.</string>
+		</map>
+		<key>blocked_startim</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 [RECIPIENT]와(과) IM 세션을 시작할 수 없습니다.</string>
+		</map>
+		<key>blocked_startconf</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 회의를 시작할 수 없습니다.</string>
+		</map>
+		<key>blocked_teleport</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 텔레포트를 시작할 수 없습니다.</string>
+		</map>
+		<key>blocked_teleport_offer</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 텔레포트를 제안할 수 없습니다.</string>
+		</map>
+		<key>blocked_viewxxx</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 [TYPE]을(를) 열 수 없습니다.</string>
+		</map>
+		<key>blocked_wireframe</key>
+		<map>
+			<key>value</key>
+			<string>RLV 제한으로 인해 와이어프레임 모드를 활성화할 수 없습니다.</string>
+		</map>
+
+		<!-- System messages -->
+		<key>message_toggle_restart</key>
+		<map>
+			<key>value</key>
+			<string>RestrainedLove 지원이 재시작 후 %s됩니다.</string>
+		</map>
+		<key>message_toggle_restart_pending</key>
+		<map>
+			<key>value</key>
+			<string> (재시작 대기 중)</string>
+		</map>
+		<key>message_toggle_restart_enabled</key>
+		<map>
+			<key>value</key>
+			<string>활성화</string>
+		</map>
+		<key>message_toggle_restart_disabled</key>
+		<map>
+			<key>value</key>
+			<string>비활성화</string>
+		</map>
+	</map>
+</map>
+</llsd>

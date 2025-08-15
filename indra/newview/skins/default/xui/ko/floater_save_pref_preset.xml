@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<floater name="save_pref_preset" title="그래픽 프리셋 저장">
+	<text name="Preset">
+		프리셋 이름을 입력하거나 기존 프리셋을 선택하십시오.
+	</text>
+	<combo_box name="preset_combo" top_delta="45"/>
+	<button label="저장" name="save" top_delta="35"/>
+	<button label="취소" name="cancel"/>
+</floater>

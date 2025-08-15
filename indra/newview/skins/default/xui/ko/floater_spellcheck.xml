@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="spellcheck_floater" title="맞춤법 검사 설정">
+	<check_box label="맞춤법 검사 활성화" name="spellcheck_enable"/>
+	<text name="spellcheck_main" width="110">
+		주 사전:
+	</text>
+	<text label="기록:" name="spellcheck_additional">
+		추가 사전:
+	</text>
+	<text name="spellcheck_available">
+		사용 가능
+	</text>
+	<text name="spellcheck_active">
+		활성
+	</text>
+	<button label="제거" name="spellcheck_remove_btn"/>
+	<button label="가져오기..." name="spellcheck_import_btn"/>
+</floater>

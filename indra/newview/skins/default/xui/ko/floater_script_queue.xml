@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="queue" title="재설정">
+	<floater.string name="Starting">
+		[COUNT]개 객체 중 [START]번째.
+	</floater.string>
+	<floater.string name="Done">
+		완료.
+	</floater.string>
+	<floater.string name="Resetting">
+		재설정 중
+	</floater.string>
+	<floater.string name="Running">
+		실행 중
+	</floater.string>
+	<floater.string name="NotRunning">
+		실행되지 않음
+	</floater.string>
+	<floater.string name="Timeout">
+		시간 초과: [OBJECT_NAME]
+	</floater.string>
+	<floater.string name="LoadingObjInv">
+		인벤토리 로딩 중: [OBJECT_NAME]
+	</floater.string>
+	<floater.string name="Deleting">
+		삭제 중
+	</floater.string>
+	<floater.string name="SkippingPermissions">
+		건너뜀: [OBJECT_NAME] (권한 부족)
+	</floater.string>
+	<floater.string name="Compiling">
+		"[OBJECT_NAME]" 컴파일 중...
+	</floater.string>
+	<floater.string name="CompileSuccess">
+		"[OBJECT_NAME]" 컴파일 성공
+	</floater.string>
+	<floater.string name="CompileFailure">
+		"[OBJECT_NAME]" 컴파일 실패:
+	</floater.string>
+	<button label="닫기" label_selected="닫기" left="215" name="close" width="72"/>
+</floater>

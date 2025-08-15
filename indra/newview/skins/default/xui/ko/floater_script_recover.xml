@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="script_recover" title="스크립트 복구">
+	<text name="txt2">
+		[APP_NAME]이 이전 뷰어 충돌에서 유래될 수 있는 스크립트를 발견했습니다.
+
+"복구"를 선택하면 이들은 인벤토리의 "분실물함" 폴더로 복원됩니다.		
+	</text>
+	<scroll_list name="script_list">
+		<scroll_list.columns label="" name="script_check"/>
+		<scroll_list.columns label="스크립트 이름" name="script_name"/>
+	</scroll_list>
+	<button label="복구" left="55" name="recover_btn" width="120"/>
+	<button label="취소" name="cancel_btn"/>
+</floater>

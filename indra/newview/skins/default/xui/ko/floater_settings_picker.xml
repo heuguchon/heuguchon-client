@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="settings picker" title="설정 선택">
+	<floater.string name="pick title">
+		선택:
+	</floater.string>
+	<floater.string name="pick_track">
+		트랙 선택
+	</floater.string>
+	<floater.string name="pick_settings">
+		설정 선택
+	</floater.string>
+	<floater.string name="track_water">
+		물
+	</floater.string>
+	<floater.string name="track_ground">
+		땅
+	</floater.string>
+	<floater.string name="track_sky">
+		하늘[NUM]
+	</floater.string>
+	<layout_stack name="test_stack">
+		<layout_panel name="inv_list">
+			<filter_editor label="텍스처 필터링" name="flt_inventory_search"/>
+		</layout_panel>
+		<layout_panel name="temp">
+			<button label="확인" label_selected="확인" name="btn_select"/>
+			<button label="취소" label_selected="취소" name="btn_cancel"/>
+		</layout_panel>
+	</layout_stack>
+</floater>

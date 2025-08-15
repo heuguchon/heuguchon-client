@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="preview lsl text" title="스크립트: 회전 스크립트">
+	<floater.string name="Title">
+		스크립트: [NAME]
+	</floater.string>
+	<text name="path_txt" tool_tip="인벤토리 위치: [PATH]">인벤토리 위치: [PATH]</text>
+	<text name="desc txt" width="90">
+		설명:
+	</text>
+    <line_editor left_delta="90" name="desc"/>
+</floater>

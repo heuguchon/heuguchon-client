@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="settings_color">
+	<filter_editor label="검색어 입력" name="filter_input"/>
+	<scroll_list name="setting_list">
+		<scroll_list.columns label="색상" name="color"/>
+	</scroll_list>
+	<text name="color_name_txt">
+		색상명
+	</text>
+	<spinner label="알파" name="alpha_spinner"/>
+	<button label="기본값으로 재설정" name="default_btn"/>
+	<check_box label="변경된 색상만 표시" name="hide_default"/>
+</floater>
