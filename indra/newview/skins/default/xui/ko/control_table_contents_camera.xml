@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<contents>
+	<rows name="camera_actions">
+		<columns label="카메라" name="lst_action"/>
+	</rows>
+	<rows name="look_up">
+		<columns name="lst_action" value="위로 보기" />
+	</rows>
+	<rows name="look_down">
+		<columns name="lst_action" value="아래로 보기" />
+	</rows>
+	<rows name="move_forward">
+		<columns name="lst_action" value="카메라 전진" />
+	</rows>
+	<rows name="move_backward">
+		<columns name="lst_action" value="카메라 후진" />
+	</rows>
+	<rows name="move_forward_fast">
+		<columns name="lst_action" value="카메라 빠른 전진" />
+	</rows>
+	<rows name="move_backward_fast">
+		<columns name="lst_action" value="카메라 빠른 후진" />
+	</rows>
+	<rows name="spin_over">
+		<columns name="lst_action" value="카메라 위로 회전" />
+	</rows>
+	<rows name="spin_under">
+		<columns name="lst_action" value="카메라 아래로 회전" />
+	</rows>
+	<rows name="pan_up">
+		<columns name="lst_action" value="카메라 위로 팬" />
+	</rows>
+	<rows name="pan_down">
+		<columns name="lst_action" value="카메라 아래로 팬" />
+	</rows>
+	<rows name="pan_left">
+		<columns name="lst_action" value="카메라 왼쪽 팬" />
+	</rows>
+	<rows name="pan_right">
+		<columns name="lst_action" value="카메라 오른쪽 팬" />
+	</rows>
+	<rows name="pan_in">
+		<columns name="lst_action" value="카메라 줌인" />
+	</rows>
+	<rows name="pan_out">
+		<columns name="lst_action" value="카메라 줌아웃" />
+	</rows>
+	<rows name="spin_around_ccw">
+		<columns name="lst_action" tool_tip="카메라를 반시계방향으로 회전" value="회전 (반시계방향)" />
+	</rows>
+	<rows name="spin_around_cw">
+		<columns name="lst_action" tool_tip="카메라를 시계방향으로 회전" value="회전 (시계방향)" />
+	</rows>
+	<rows name="roll_left">
+		<columns name="lst_action" value="카메라 왼쪽 롤" />
+	</rows>
+	<rows name="roll_right">
+		<columns name="lst_action" value="카메라 오른쪽 롤" />
+	</rows>
+	<rows name="move_forward_sitting">
+		<columns name="lst_action" value="카메라 전진 (앉아서)" />
+	</rows>
+	<rows name="move_backward_sitting">
+		<columns name="lst_action" value="카메라 후진 (앉아서)" />
+	</rows>
+	<rows name="spin_over_sitting">
+		<columns name="lst_action" value="카메라 위로 회전 (앉아서)" />
+	</rows>
+	<rows name="spin_under_sitting">
+		<columns name="lst_action" value="카메라 아래로 회전 (앉아서)" />
+	</rows>
+	<rows name="spin_around_ccw_sitting">
+		<columns name="lst_action" tool_tip="앉은 상태에서 카메라를 반시계방향으로 회전" value="반시계방향 (앉아서)" />
+	</rows>
+	<rows name="spin_around_cw_sitting">
+		<columns name="lst_action" tool_tip="앉은 상태에서 카메라를 시계방향으로 회전" value="시계방향 (앉아서)" />
+	</rows>
+</contents>

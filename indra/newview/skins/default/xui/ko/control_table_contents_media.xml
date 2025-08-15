@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<contents>
+	<rows name="media_actions">
+		<columns label="사운드 및 미디어" name="lst_action"/>
+	</rows>
+	<rows name="toggle_pause_media">
+		<columns name="lst_action" value="미디어 재생/중지" />
+	</rows>
+	<rows name="toggle_enable_media">
+		<columns name="lst_action" value="모든 미디어 시작/중지" />
+	</rows>
+	<rows name="voice_follow_key">
+		<columns name="lst_action" value="음성 채팅" />
+	</rows>
+	<rows name="toggle_voice">
+		<columns name="lst_action" value="음성 채팅 전환" />
+	</rows>
+	<rows name="start_chat">
+		<columns name="lst_action" value="채팅 시작" />
+	</rows>
+	<rows name="start_gesture">
+		<columns name="lst_action" value="제스처 시작" />
+	</rows>
+	<rows name="script_trigger_lbutton">
+		<columns name="lst_action" value="상호작용 (좌클릭)" />
+	</rows>
+</contents>

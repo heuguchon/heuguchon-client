@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+  Not can_close / no title to avoid window chrome
+  Single instance - only have one at a time, recycle it each spawn
+-->
+<floater name="inspect_group">
+	<string name="PrivateGroup">
+		비공개 그룹
+	</string>
+	<string name="FreeToJoin">
+		가입 무료
+	</string>
+	<string name="CostToJoin">
+		가입비: [AMOUNT] L$
+	</string>
+	<string name="YouAreMember">
+		회원입니다
+	</string>
+	<text name="group_subtitle">
+		123명의 회원
+	</text>
+	<text name="group_details">
+		무스와 이야기하는 것을 좋아하는 사람들을 위한 그룹입니다.
+만세 무스! 무스 영원히! 그리고 몽구스도!
+	</text>
+	<text name="group_cost">
+		가입비: 123 L$
+	</text>
+	<button label="가입" name="join_btn"/>
+	<button label="탈퇴" name="leave_btn"/>
+	<button label="프로필 보기" name="view_profile_btn"/>
+</floater>

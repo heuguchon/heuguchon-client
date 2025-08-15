@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="settings_debug" title="디버그 설정">
+	<panel name="debug_settings_search_panel">
+		<search_editor label="여기서 검색" name="search_settings_input" tool_tip="검색어를 여기에 입력하세요. 설정 이름과 주석에서 전체 텍스트 검색 결과가 표시됩니다."/>
+		<scroll_list name="settings_scroll_list">
+			<scroll_list.columns label="설정" name="setting"/>
+		</scroll_list>
+		<check_box label="변경된 설정만 표시" name="hide_default"/>
+	</panel>
+
+	<panel name="debug_settings_values_panel">
+		<text_editor name="comment_text" tool_tip="디버그 설정 주석입니다. 선택한 설정에 대한 유용한 정보를 종종 제공합니다."/>
+		<combo_box name="boolean_combo">
+			<combo_box.item label="참" name="TRUE"/>
+			<combo_box.item label="거짓" name="FALSE"/>
+		</combo_box>
+		<color_swatch label="색상" name="val_color_swatch"/>
+		<spinner label="x" name="val_spinner_1"/>
+		<spinner label="x" name="val_spinner_2"/>
+		<spinner label="x" name="val_spinner_3"/>
+		<spinner label="x" name="val_spinner_4"/>
+		<button name="sanity_warning_btn" tool_tip="이 설정이 건전성 검사에 실패했습니다 - 값이 권장 범위를 벗어났습니다."/>
+		<button label="복사" name="copy_btn" tool_tip="설정 이름을 클립보드에 복사합니다." width="60"/>
+		<button label="기본값" name="default_btn" tool_tip="이 설정 값을 기본값으로 재설정합니다." width="85"/>
+	</panel>
+</floater>

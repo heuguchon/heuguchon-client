@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<contents>
+	<columns label="동작" name="lst_action" />
+	<columns label="주요 키" name="lst_ctrl1" />
+	<columns label="대체 키 1" name="lst_ctrl2" />
+	<columns label="대체 키 2" name="lst_ctrl3" />
+</contents>

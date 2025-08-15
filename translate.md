@@ -745,7 +745,7 @@
   - [x] floater_preview_gesture.xml (제스처 미리보기)
 
 ### 번역 완료율
-- **총 489개 파일 번역** (독일어 기준 약 403개 중 **121% 완료!** 대한민국 최고 수준 달성)
+- **총 500개 파일 번역** (독일어 582개 중 약 **86% 완료!** 지속적인 고품질 번역 진행)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화
@@ -774,3 +774,37 @@
    - 번역 품질 확인
    - UI 레이아웃 호환성 검증
    - 한글 인코딩 확인
+
+## 76차 작업 (2025-08-15 추가)
+### 누락된 중요 시스템 파일 번역 완료 (18개)
+- [x] **inspect_avatar.xml** - 아바타 검사 (사용자 정보 및 제어)
+- [x] **inspect_group.xml** - 그룹 검사 (그룹 정보 및 가입)
+- [x] **inspect_object.xml** - 객체 검사 (객체 정보 및 상호작용)
+- [x] **inspect_remote_object.xml** - 원격 객체 검사
+- [x] **emoji_categories.xml** - 이모지 카테고리 정의
+- [x] **outfit_accordion_tab.xml** - 의상 아코디언 탭
+- [x] **floater_settings_debug.xml** - 디버그 설정 창
+- [x] **floater_script_ed_prefs.xml** - 스크립트 에디터 환경설정
+- [x] **control_table_contents_camera.xml** - 카메라 컨트롤 테이블
+- [x] **control_table_contents_columns_basic.xml** - 기본 컬럼 테이블
+- [x] **control_table_contents_editing.xml** - 편집 컨트롤 테이블
+- [x] **control_table_contents_media.xml** - 미디어 컨트롤 테이블
+- [x] **control_table_contents_movement.xml** - 이동 컨트롤 테이블
+- [x] **widgets/flat_list_view.xml** - 플랫 리스트 뷰 위젯
+- [x] **widgets/inbox_folder_view_folder.xml** - 인박스 폴더 뷰 위젯
+- [x] **widgets/inbox_folder_view_item.xml** - 인박스 아이템 뷰 위젯
+- [x] **floater_NACL_explore_sounds.xml** - 사운드 탐색기 (고급 오디오 도구)
+- [x] **floater_phototools_camera.xml** - 사진 도구 카메라 (9.5KB 대용량)
+
+### 주요 개선 사항
+- **Inspect 시스템 완료**: 아바타, 그룹, 객체 검사 기능의 완전한 한국어 지원
+- **디버그 도구 완료**: 고급 사용자를 위한 디버그 설정 및 스크립트 에디터 환경설정 한국어화
+- **컨트롤 시스템 완료**: 카메라 조작 및 편집 도구의 키 바인딩 설정 한국어화
+- **이모지 시스템 완료**: 이모지 선택기의 카테고리 분류 한국어화
+
+### 현재 상태
+- **총 518개 파일 번역 완료** (독일어 582개 중 약 **89% 완료**)
+- **핵심 시스템 파일 모두 완료** - 일반 사용자에게 필요한 모든 기능 한국어 지원
+- **고급 사용자 도구 완료** - 디버그 설정, 사진 도구 카메라, 사운드 탐색기 등 전문 도구 한국어화
+- **컨트롤 시스템 완료** - 카메라, 이동, 편집, 미디어 모든 컨트롤 옵션 한국어화
+- **남은 작업**: 대용량 notifications.xml (281KB), 일부 기타 파일들 (64개)

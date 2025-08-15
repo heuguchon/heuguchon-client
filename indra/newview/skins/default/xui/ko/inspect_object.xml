@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+  Not can_close / no title to avoid window chrome
+  Single instance - only have one at a time, recycle it each spawn
+-->
+<floater name="inspect_object">
+	<string name="Creator">
+		제작자 [CREATOR]
+	</string>
+	<string name="CreatorAndOwner">
+		제작자 [CREATOR]
+소유자 [OWNER]
+	</string>
+	<string name="Price">
+		[AMOUNT] L$
+	</string>
+	<string name="PriceFree">
+		무료!
+	</string>
+	<string name="Touch">
+		터치
+	</string>
+	<string name="Sit">
+		앉기
+	</string>
+	<text name="object_name" value="매우 길어서 두 줄에 걸쳐 표시되는 객체명 테스트"/>
+	<text name="object_creator">
+		제작자 secondlife:///app/agent/0e346d8b-4433-4d66-a6b0-fd37083abc4c/about
+소유자 secondlife:///app/agent/0e346d8b-4433-4d66-a6b0-fd37083abc4c/about
+	</text>
+	<text name="price_text">
+		30,000 L$
+	</text>
+	<text name="object_description">
+		이것은 객체에 대한 정말 긴 설명입니다. 최소 80자 이상이거나 이미 120자 이상으로 영어 원문보다 길어졌습니다. 아무도 정확히 알지 못합니다.
+	</text>
+	<text name="object_media_url">
+		http://www.superdupertest.com
+	</text>
+	<button label="구매" name="buy_btn"/>
+	<button label="지불" name="pay_btn"/>
+	<button label="무료 복사본" name="take_free_copy_btn" width="100"/>
+	<button label="터치" name="touch_btn"/>
+	<button label="앉기" name="sit_btn"/>
+	<button label="열기" name="open_btn"/>
+	<icon name="secure_browsing" tool_tip="보안 브라우징"/>
+	<button label="더보기" name="more_info_btn"/>
+</floater>

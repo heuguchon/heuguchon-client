@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater title="카메라 도구" name="phototools_camera_floater">
+	<floater.string name="rotate_tooltip">
+		포커스 주위로 카메라 회전
+	</floater.string>
+	<floater.string name="zoom_tooltip">
+		포커스로 카메라 줌
+	</floater.string>
+	<floater.string name="move_tooltip">
+		카메라를 위, 아래, 왼쪽, 오른쪽으로 이동
+	</floater.string>
+	<floater.string name="free_mode_title">
+		객체 보기
+	</floater.string>
+	<string name="inactive_combo_text">
+		프리셋...
+	</string>
+
+	<tab_container name="tabs">
+		<panel name="P_Cam_Controls_1" label="제어 1">
+			<panel name="cameracontrolspanel">
+				<panel name="controls1">
+					<panel name="preset_views_list">
+						<panel_camera_item name="front_view">
+							<panel_camera_item.text name="front_view_text">
+								정면 보기
+							</panel_camera_item.text>
+						</panel_camera_item>
+						<panel_camera_item name="group_view">
+							<panel_camera_item.text name="side_view_text">
+								측면 보기
+							</panel_camera_item.text>
+						</panel_camera_item>
+						<panel_camera_item name="rear_view">
+							<panel_camera_item.text name="rear_view_text">
+								후면 보기
+							</panel_camera_item.text>
+						</panel_camera_item>
+					</panel>
+					<panel name="camera_modes_list">
+						<panel_camera_item name="object_view">
+							<panel_camera_item.text name="object_view_text">
+								객체 보기
+							</panel_camera_item.text>
+						</panel_camera_item>
+						<panel_camera_item name="mouselook_view">
+							<panel_camera_item.text name="mouselook_view_text">
+								마우스룩
+							</panel_camera_item.text>
+						</panel_camera_item>
+						<combo_box name="preset_combo">
+							<combo_box.item label="프리셋 사용" name="Use preset"/>
+						</combo_box>
+						<button name="gear_btn" tool_tip="카메라 프리셋"/>
+						<button label="위치..." name="camera_position_btn"/>
+					</panel>
+					<panel name="zoom">
+						<joystick_rotate name="cam_rotate_stick" tool_tip="포커스 주위로 카메라 회전"/>
+						<button name="roll_left" tool_tip="카메라를 왼쪽으로 롤" />
+						<button name="roll_right" tool_tip="카메라를 오른쪽으로 롤" />
+						<slider_bar name="zoom_slider" tool_tip="카메라를 앞뒤로 이동시킵니다. 참고: 이것은 실제 줌이 아니며 카메라의 시야각에 영향을 주지 않습니다. 실제 줌을 위해서는 '시야각' 슬라이더를 사용해야 합니다!"/>
+						<joystick_track name="cam_track_stick" tool_tip="카메라를 위, 아래, 왼쪽, 오른쪽으로 이동"/>
+					</panel>
+				</panel>
+
+				<panel name="buttons">
+					<button name="presets_btn" tool_tip="미리 정의된 뷰"/>
+					<button name="pan_btn" tool_tip="회전, 줌, 팬"/>
+					<button name="avatarview_btn" tool_tip="카메라 모드"/>
+					<button name="store_camera_view_btn" tool_tip="현재 카메라 뷰 저장"/>
+					<button name="load_camera_view_btn" tool_tip="저장된 카메라 뷰 로드"/>
+				</panel>
+			</panel>
+
+			<panel name="P_Cam_Mov_Settings">
+				<text name="T_Cam_Mov_Settings">
+					카메라 이동 설정
+				</text>
+			</panel>
+
+			<panel name="P_Zoom">
+				<text name="T_Zoom" tool_tip="실제 세계에서는 줌 기능입니다. 뷰어 창 내의 시야각을 변경합니다. Ctrl-0 또는 Ctrl-8을 누르는 것과 같은 기능입니다. 참고: 플라이캠이 활성화되어 있으면 이 기능은 작동하지 않습니다 (3D SpaceNavigator).">
+					시야각
+				</text>
+				<button name="Reset_Camera_Angle" label="S" tool_tip="기본값으로 재설정"/>
+
+				<text name="T_Zoom_Speed" tool_tip="카메라가 줌인/줌아웃하는 속도를 설정합니다. 높은 값일수록 더 느리고 부드러운 줌을 생성합니다.">
+					전환 시간
+				</text>
+				<button name="Reset_Zoom_Time" label="S" tool_tip="기본값으로 재설정"/>
+
+				<text name="T_Camera_Lag" tool_tip="카메라가 아바타 움직임에 얼마나 지연되어 따라가는지를 설정합니다 (0 = 지연 없음, 30 = 아바타 속도).">
+					지연
+				</text>
+				<button name="Reset_Camera_Lag" label="S" tool_tip="기본값으로 재설정"/>
+
+				<text name="T_Camera_Offset" tool_tip="카메라가 표준 위치로부터 얼마나 떨어져 있는지를 설정합니다.">
+					거리
+				</text>
+				<button name="Reset_Camera_Offset" label="S" tool_tip="기본값으로 재설정"/>
+
+				<text name="T_Camera_Smoothing" tool_tip="카메라 움직임이 시작하고 멈추는 부드러움을 설정합니다. 높은 값일수록 더 부드럽고 느린 움직임을 의미합니다.">
+					부드러움
+				</text>
+				<button name="Reset_Camera_Smoothing" label="S" tool_tip="기본값으로 재설정"/>
+			</panel>
+		</panel>
+
+		<panel name="P_Cam_Controls_2" label="제어 2">
+			<panel name="P_Mouse_Movement">
+				<text name="T_Mouse_Movement">
+					마우스 움직임 설정
+				</text>
+			</panel>
+
+			<panel name="P_Mouse_Movement_Settings">
+				<text name="T_Mouse_Sensitivity" tool_tip="마우스룩 모드에서 마우스의 감도를 설정합니다.">
+					감도
+				</text>
+				<button name="Reset_Mouse_Sensitivity" label="S" tool_tip="기본값으로 재설정"/>
+				<check_box label="마우스룩에서 아바타와 부착물 표시" tool_tip="마우스룩 모드에서 목 아래의 아바타와 부착물을 표시합니다. 기본값은 끄기입니다." name="first_person_avatar_visible"/>
+				<check_box label="부드러운 마우스룩 움직임" tool_tip="마우스룩 모드에서 마우스 움직임을 부드럽게 합니다." name="MouseSmooth"/>
+			</panel>
+
+			<panel name="P_Additional_Camera_Options">
+				<text name="T_Additional_Camera_Options">
+					추가 카메라 옵션
+				</text>
+			</panel>
+
+			<panel name="P_Add_Cam_Opt_Settings">
+				<check_box label="아바타 클릭 시 카메라 위치 유지" name="clickonavatarkeepscamera" tool_tip="일반적으로 아바타를 클릭하면 카메라 위치가 재설정됩니다. 이 옵션은 이 동작을 방지합니다."/>
+				<check_box label="텔레포트 후 카메라 위치 재설정" name="FSResetCameraOnTP" tool_tip="일반적으로 텔레포트 시 카메라 위치가 재설정됩니다. 이 옵션은 이 동작을 방지합니다."/>
+				<check_box label="프리미티브를 통한 카메라 이동 허용" name="ignorecameraconstraints" tool_tip="카메라가 기본 객체를 통과할 수 없다는 제한을 무시합니다. 재시작 필요!"/>
+				<check_box label="아바타 이동 시 카메라 재설정" name="resetcameraonmovement" tool_tip="아바타가 이동하자마자 카메라 위치를 재설정합니다."/>
+			</panel>
+		</panel>
+
+		<panel name="P_3D_Mouse" label="3D 마우스">
+			<panel name="P_3D_Mouse_Settings1">
+				<slider label="좌/우" name="FlycamAxisScale1b" tool_tip="좌/우 움직임의 감도를 설정합니다. 움직임 정밀도에 문제가 있다면 더 작은 값을 사용해야 합니다."/>
+				<slider label="위/아래" name="FlycamAxisScale2b" tool_tip="위/아래 움직임의 감도를 설정합니다. 움직임 정밀도에 문제가 있다면 더 작은 값을 사용해야 합니다."/>
+				<slider label="앞/뒤" name="FlycamAxisScale0b" tool_tip="앞/뒤 움직임의 감도를 설정합니다. 움직임 정밀도에 문제가 있다면 더 작은 값을 사용해야 합니다."/>
+				<slider label="피치" name="FlycamAxisScale4" tool_tip="피치 움직임의 감도를 설정합니다. 움직임 정밀도에 문제가 있다면 더 작은 값을 사용해야 합니다."/>
+				<slider label="요축" name="FlycamAxisScale5" tool_tip="요축 움직임의 감도를 설정합니다. 움직임 정밀도에 문제가 있다면 더 작은 값을 사용해야 합니다."/>
+				<slider label="롤축" name="FlycamAxisScale3" tool_tip="롤축 움직임의 감도를 설정합니다. 움직임 정밀도에 문제가 있다면 더 작은 값을 사용해야 합니다."/>
+				<slider label="줌" name="FlycamAxisScale6" tool_tip="줌 움직임의 감도를 설정합니다. 움직임 정밀도에 문제가 있다면 더 작은 값을 사용해야 합니다."/>
+				<slider label="가동범위" name="FlycamFeathering" tool_tip="슬라이더를 완전히 오른쪽으로 이동하면 카메라가 고정되어 조이스틱으로 직접 제어됩니다. 슬라이더를 완전히 왼쪽으로 이동하면 카메라가 관성을 갖습니다."/>
+			</panel>
+
+			<panel name="P_3D_Mouse_Settings2">
+				<spinner label="줌 축 매핑" name="JoystickAxis6" tool_tip="줌 기능이 어떤 마우스 축에 할당되는지를 설정합니다."/>
+				<check_box label="3D 마우스 활성화" tool_tip="이 설정은 3D 마우스를 활성화합니다." name="enable_joystick"/>
+				<check_box name="CB_Zoom_Control" label="줌 제어 활성화 (툴팁 참조!)" tool_tip="줌 제어가 작동하려면 '줌 축 매핑'을 4보다 큰 값으로 설정해야 합니다."/>
+				<check_box name="CB_Auto_Leveling" label="자동 수평 맞춤 (카메라 롤 없음)" tool_tip="활성화되면 카메라가 자동으로 수평을 맞춥니다."/>
+				<check_box name="CB_3D_Mouse_Avatar" label="아바타 제어에 3D 마우스 사용" tool_tip="활성화되면 마우스로 아바타를 제어합니다."/>
+				<check_box name="CB_3D_Mouse_Build" label="객체 이동에 3D 마우스 사용" tool_tip="활성화되면 건축 및 편집 시 객체 이동에 3D 마우스를 사용할 수 있습니다."/>
+			</panel>
+		</panel>
+	</tab_container>
+</floater>

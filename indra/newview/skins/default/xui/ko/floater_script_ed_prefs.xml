@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="floater_script_colors" title="스크립트 에디터 설정">
+	<text name="color_pickers_label">
+		원하는 색상 선택:
+	</text>
+	<text name="text_label">
+		텍스트
+	</text>
+	<text name="cursor_label">
+		커서
+	</text>
+	<text name="background_label">
+		배경
+	</text>
+	<text name="section_label">
+		섹션
+	</text>
+	<text name="datatype_label">
+		데이터 타입
+	</text>
+	<text name="event_label">
+		이벤트
+	</text>
+	<text name="comment_label">
+		주석
+	</text>
+	<text name="function_label">
+		함수
+	</text>
+	<text name="string_literal_label">
+		문자열 리터럴
+	</text>
+	<text name="constant_label">
+		상수
+	</text>
+	<text name="i_constant_label">
+		정수 상수
+	</text>
+	<text name="s_constant_label">
+		문자열 상수
+	</text>
+	<text name="f_constant_label">
+		부동소수점 상수
+	</text>
+	<text name="c_constant_label">
+		복합 상수
+	</text>
+	<text name="flow_control_label">
+		흐름 제어
+	</text>
+	<text name="preprocessor_label">
+		전처리기
+	</text>
+	<text name="prefs_label">
+		스크립트 에디터 옵션:
+	</text>
+	<check_box name="convert_tabs_to_spaces_checkbox" label="탭을 공백으로 변환" tool_tip="활성화되면 외부 에디터에서 스크립트를 붙여넣을 때 탭이 공백(일반적으로 4개)으로 변환됩니다."/>
+	<check_box label="LSL 전처리기 활성화" tool_tip="LSL 스크립트의 전처리기 지원을 활성화합니다" name="preproc_checkbox"/>
+	<check_box label="스크립트 최적화기" tool_tip="스크립트에 필요한 공간을 최적화합니다." name="preprocoptimizer_checkbox"/>
+	<check_box label="switch() 명령" tool_tip="흐름 제어를 위한 switch() 명령을 제공합니다." name="preprocswitch_checkbox"/>
+	<check_box label="Lazy Lists" tool_tip="리스트 연산을 위한 확장 구문을 활성화합니다." name="preproclazy_checkbox"/>
+	<check_box label="하드디스크에서 #include" tool_tip="로컬 하드디스크의 파일을 포함하는 #include 명령을 활성화합니다." name="preprocinclude_checkbox"/>
+	<text name="lslpreprocinclude_textbox">
+		전처리기 Include 디렉토리:
+	</text>
+	<button label="..." label_selected="찾아보기" name="SetPreprocInclude"/>
+	<text name="advanced_label">
+		고급 옵션:
+	</text>
+	<check_box label="llOwnerSay를 스크립트 디버그 창으로 라우팅" name="FSllOwnerSayToScriptDebugWindow_checkbox"/>
+	<check_box label="재컴파일 버튼 활성화 (#include 스크립트 등)" name="FSScriptEditorRecompileButton_checkbox"/>
+	<button name="close_btn" label="확인"/>
+</floater>

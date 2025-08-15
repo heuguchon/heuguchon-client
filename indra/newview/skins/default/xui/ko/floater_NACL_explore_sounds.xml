@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="sound_explorer" title="사운드 탐색기">
+	<floater.string name="Playing">
+		재생 중
+	</floater.string>
+	<floater.string name="NotPlaying">
+		[TIME]분 전
+	</floater.string>
+	<floater.string name="Type_UI">
+		UI
+	</floater.string>
+	<floater.string name="Type_Avatar">
+		아바타
+	</floater.string>
+	<floater.string name="Type_llTriggerSound">
+		llTriggerSound
+	</floater.string>
+	<floater.string name="Type_llLoopSound">
+		llLoopSound
+	</floater.string>
+	<floater.string name="Type_llPlaySound">
+		llPlaySound
+	</floater.string>
+	<check_box name="avatars_chk" label="아바타"/>
+	<check_box name="objects_chk" label="객체"/>
+	<check_box name="collision_chk" label="기본 충돌 사운드"/>
+	<check_box name="repeated_asset_chk" label="반복 자산" left_delta="165" width="120"/>
+	<check_box name="pause_chk" label="로그 일시정지" left_delta="125"/>
+	<scroll_list name="sound_list">
+		<columns label="재생 중" name="playing" width="95"/>
+		<columns label="유형" name="type"/>
+		<columns label="소유자" name="owner"/>
+		<columns label="사운드" name="sound"/>
+	</scroll_list>
+	<button label="로컬 재생" name="play_locally_btn" />
+	<button label="로컬 중지" name="stop_locally_btn" />
+	<button label="포커스" name="look_at_btn" />
+	<button label="중지" name="stop_btn"/>
+	<button label="블랙리스트" name="bl_btn"/>
+</floater>

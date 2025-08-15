@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--
+  Not can_close / no title to avoid window chrome
+  Single instance - only have one at a time, recycle it each spawn
+-->
+<floater name="inspect_remote_object">
+	<text name="object_name">
+		테스트용 정말 긴 객체 이름 입력하기
+	</text>
+	<text name="object_owner_label">
+		소유자:
+	</text>
+	<text name="object_owner">
+		긴아바타이름김철수박영희
+	</text>
+	<text name="object_slurl_label">
+		위치:
+	</text>
+	<text name="object_slurl">
+		http://slurl.com/Ahern/50/50/50
+	</text>
+	<button label="지도" name="map_btn"/>
+	<button label="차단" name="block_btn"/>
+	<button label="닫기" name="close_btn"/>
+</floater>
