@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<pie_menu name="Land Pie">
+	<pie_slice label="토지 정보..." name="Place Information..."/>
+	<pie_slice label="만들기" name="Create"/>
+	<pie_slice label="여기로 가기" name="Go Here"/>
+	<pie_slice label="여기 앉기" name="Sit Here"/>
+	<pie_slice label="파티클 소유자 차단" name="Mute Particle"/>
+	<pie_slice label="이용권 구매" name="Land Buy Pass Pie"/>
+	<pie_slice label="지형 편집" name="Edit Terrain"/>
+	<pie_slice label="토지 구매" name="Land Buy Pie"/>
+</pie_menu>

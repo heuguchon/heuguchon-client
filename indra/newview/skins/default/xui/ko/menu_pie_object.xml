@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<pie_menu name="Object Pie">
+	<pie_slice label="열기" name="Open"/>
+	<pie_slice label="만들기" name="Build"/>
+	<pie_slice label="터치" name="Pie Object Touch"/>
+	<pie_slice label="앉기" name="Pie Object Sit"/>
+	<pie_slice label="일어서기" name="Object Stand Up"/>
+	<pie_slice label="구매" name="Buy..."/>
+	<pie_menu label="가져가기 &gt;" name="Take Submenu">
+		<pie_slice label="개별 객체 복사" name="Take Copy Separate" />
+		<pie_slice label="복사 가져가기" name="Take Copy" />
+		<pie_slice label="가져가기" name="Take" />
+		<pie_slice label="결합된 객체" name="Take combined" />
+		<pie_slice label="결합된 객체 복사" name="Take Copy combined" />
+		<pie_slice label="개별 객체" name="Take Separate" />
+	</pie_menu>
+	<pie_slice label="지불" name="Pay..."/>
+	<pie_menu label="더보기 &gt;" name="Object Pie More 1">
+		<pie_slice label="삭제" name="Delete"/>
+		<pie_slice label="착용" name="Wear"/>
+		<pie_slice label="복사 가져가기" name="Take Copy" />
+		<pie_menu label="HUD 부착 &gt;" name="Pie Object Attach HUD"/>
+		<pie_menu label="부착 &gt;" name="Pie Object Attach">
+			<pie_menu label="확장 스켈레톤 &gt;" name="Enhanced Skeleton">
+				<pie_slice label="오른쪽 날개" name="Right Wing"/>
+				<pie_slice label="사타구니" name="Groin"/>
+				<pie_slice label="꼬리 시작" name="Tail Base"/>
+				<pie_slice label="꼬리 끝" name="Tail Tip"/>
+				<pie_slice label="왼쪽 날개" name="Left Wing"/>
+				<pie_slice label="왼쪽 뒷발" name="Left Hind Foot"/>
+				<pie_menu label="더보기 &gt;" name="Enhanced Skeleton More">
+					<pie_slice label="대체 오른쪽 귀" name="Alt Right Ear"/>
+					<pie_slice label="대체 오른쪽 눈" name="Alt Right Eye"/>
+					<pie_slice label="혀" name="Tongue"/>
+					<pie_slice label="대체 왼쪽 눈" name="Alt Left Eye"/>
+					<pie_slice label="대체 왼쪽 귀" name="Alt Left Ear"/>
+					<pie_slice label="왼쪽 약지" name="Left Ring Finger"/>
+					<pie_slice label="턱" name="Jaw"/>
+					<pie_slice label="오른쪽 약지" name="Right Ring Finger"/>
+				</pie_menu>
+				<pie_slice label="오른쪽 뒷발" name="Right Hind Foot"/>
+			</pie_menu>
+		</pie_menu>
+		<pie_slice label="반환" name="Return..."/>
+		<pie_menu label="더보기 &gt;" name="Object Pie More 2">
+			<pie_menu name="ResetMenu" label="리셋 &gt;">
+				<pie_slice label="텍스처 새로고침" name="Texture Refresh"/>
+				<pie_slice label="스켈레톤" name="Reset Skeleton"/>
+			</pie_menu>
+			<pie_menu name="DerenderMenu" label="숨기기 &gt;">
+				<pie_slice label="블랙리스트" name="DerenderPermanent"/>
+				<pie_slice label="임시" name="Derender"/>
+			</pie_menu>
+			<pie_slice label="신고..." name="Report Abuse..."/>
+			<pie_menu name="ExportMenu" label="내보내기 &gt;">
+				<pie_slice label="백업" name="Backup"/>
+				<pie_slice label="Collada" name="Collada"/>
+				<pie_slice label="XML 출력" name="Dump XML"/>
+			</pie_menu>
+			<pie_menu label="경로 찾기 &gt;" name="Pathfinding">
+				<pie_slice label="링크셋으로 보기" name="show_in_linksets"/>
+				<pie_slice label="캐릭터로 보기" name="show_in_characters"/>
+			</pie_menu>
+			<pie_menu name="mute_menu" label="차단 &gt;">
+				<pie_slice label="무시" name="Object Mute"/>
+				<pie_slice label="파티클 소유자" name="Mute Particle"/>
+			</pie_menu>
+			<pie_menu label="스크립트 &gt;" name="ScriptsMenu">
+				<pie_slice label="컴파일 (Mono)" name="CompileMono"/>
+				<pie_slice label="컴파일 (LSL)" name="CompileLSL"/>
+				<pie_slice label="스크립트 리셋" name="Object Reset Scripts"/>
+				<pie_slice label="스크립트 시작" name="Object Set Scripts to Running"/>
+				<pie_slice label="스크립트 정지" name="Object Set Scripts to Not Running"/>
+				<pie_slice label="스크립트 삭제" name="Remove Scripts From Selection"/>
+				<pie_slice label="스크립트 정보" name="ScriptInfo"/>
+			</pie_menu>
+			<pie_slice label="검사" name="Object Inspect"/>
+		</pie_menu>
+		<pie_slice label="구매..." name="Buy..."/>
+	</pie_menu>
+	<pie_slice label="편집" name="Edit..."/>
+</pie_menu>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<pie_menu name="Self Pie">
+	<pie_slice label="프로필" name="Profile..."/>
+	<pie_slice label="그룹" name="Groups..."/>
+	<pie_menu label="벗기 &gt;" name="Take Off &gt;">
+		<pie_menu label="의복 &gt;" name="Clothes &gt;">
+			<pie_slice label="셔츠" name="Shirt"/>
+			<pie_slice label="바지" name="Pants"/>
+			<pie_slice label="신발" name="Shoes"/>
+			<pie_slice label="양말" name="Socks"/>
+			<pie_slice label="재킷" name="Jacket"/>
+			<pie_slice label="장갑" name="Gloves"/>
+			<pie_menu label="더보기 &gt;" name="Clothes More">
+				<pie_slice label="속옷" name="Self Undershirt"/>
+				<pie_slice label="모든 의복" name="All Clothes"/>
+				<pie_slice label="속바지" name="Self Underpants"/>
+				<pie_slice label="타투" name="Self Tattoo"/>
+				<pie_slice label="피직스" name="Self Physics"/>
+				<pie_slice label="알파" name="Self Alpha"/>
+			</pie_menu>
+			<pie_slice label="치마" name="Skirt"/>
+		</pie_menu>
+		<pie_menu label="HUD &gt;" name="Pie Object Detach HUD"/>
+		<pie_menu label="떼어내기 &gt;" name="Pie Object Detach">
+			<pie_menu label="확장 스켈레톤 &gt;" name="Enhanced Skeleton">
+				<pie_slice label="오른쪽 날개" name="Right Wing"/>
+				<pie_slice label="사타구니" name="Groin"/>
+				<pie_slice label="꼬리 시작" name="Tail Base"/>
+				<pie_slice label="꼬리 끝" name="Tail Tip"/>
+				<pie_slice label="왼쪽 날개" name="Left Wing"/>
+				<pie_slice label="왼쪽 뒷발" name="Left Hind Foot"/>
+				<pie_menu label="더보기 &gt;" name="Enhanced Skeleton More">
+					<pie_slice label="대체 오른쪽 귀" name="Alt Right Ear"/>
+					<pie_slice label="대체 오른쪽 눈" name="Alt Right Eye"/>
+					<pie_slice label="혀" name="Tongue"/>
+					<pie_slice label="대체 왼쪽 눈" name="Alt Left Eye"/>
+					<pie_slice label="대체 왼쪽 귀" name="Alt Left Ear"/>
+					<pie_slice label="왼쪽 약지" name="Left Ring Finger"/>
+					<pie_slice label="턱" name="Jaw"/>
+					<pie_slice label="오른쪽 약지" name="Right Ring Finger"/>
+				</pie_menu>
+				<pie_slice label="오른쪽 뒷발" name="Right Hind Foot"/>
+			</pie_menu>
+		</pie_menu>
+		<pie_slice label="모두 떼어내기" name="Detach All"/>
+	</pie_menu>
+	<pie_slice label="여기 앉기" name="Sit Down Here"/>
+	<pie_slice label="일어서기" name="Stand Up"/>
+	<pie_slice label="스크립트 정보" name="ScriptInfo"/>
+	<pie_slice label="제스처..." name="Gestures"/>
+	<pie_menu label="외모 &gt;" name="Appearance &gt;">
+		<pie_slice label="체형 편집" name="Edit My Shape"/>
+		<pie_menu label="리셋 &gt;" name="ResetMenu">
+			<pie_slice label="스켈레톤 &amp; 애니메이션" name="Reset Skeleton And Animations"/>
+			<pie_slice label="스켈레톤" name="Reset Skeleton"/>
+			<pie_slice label="메쉬 LOD" name="Reset Mesh LOD"/>
+		</pie_menu>
+		<pie_slice label="텍스처 새로고침" name="Texture Refresh"/>
+		<pie_slice label="의상 편집" name="Edit My Outfit"/>
+		<pie_slice label="XML 출력" name="Dump XML"/>
+		<pie_slice label="부유 높이" name="Hover Height"/>
+	</pie_menu>
+	<pie_slice label="텍스처" name="Debug..."/>
+</pie_menu>
