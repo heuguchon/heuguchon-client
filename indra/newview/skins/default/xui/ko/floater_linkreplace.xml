@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="linkreplace" title="인벤토리 링크 교체">
+	<string name="Ready">
+		준비...
+	</string>
+	<string name="TargetNotFound">
+		대상 객체를 찾을 수 없습니다.
+	</string>
+	<string name="ItemsIdentical">
+		원본과 대상 객체가 동일합니다.
+	</string>
+	<string name="ItemsFound">
+		[NUM]개의 인벤토리 링크를 발견했습니다.
+	</string>
+	<string name="ItemsRemaining">
+		남은 객체: [NUM]
+	</string>
+	<string name="ReplaceFinished">
+		인벤토리 링크 교체가 완료되었습니다.
+	</string>
+	<text name="source_label">
+		이전:
+	</text>
+	<inventory_link_replace_drop_target name="source_uuid_editor" tool_tip="인벤토리에서 원본 객체를 여기로 드래그하세요."/>
+	<text name="delete_text">
+		이 객체에 대한 링크가 제거됩니다.
+	</text>
+	<text name="target_label">
+		새로운:
+	</text>
+	<inventory_link_replace_drop_target name="target_uuid_editor" tool_tip="인벤토리에서 대상 객체를 여기로 드래그하세요."/>
+	<check_box label="링크만 제거" name="delete_links_only"/>
+	<text name="status_text">
+		준비...
+	</text>
+	<button name="btn_refresh" label="새로 고침"/>
+	<button name="btn_start" label="시작"/>
+</floater>

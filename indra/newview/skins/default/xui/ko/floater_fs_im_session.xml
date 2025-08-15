@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="panel_im">
+	<floater.string name="participant_added" value="[NAME]이(가) 대화에 초대되었습니다."/>
+	<floater.string name="multiple_participants_added" value="[NAME]이(가) 대화에 초대되었습니다."/>
+	<layout_stack name="ls_control_panel">
+		<layout_panel name="gprofile_panel">
+			<button name="group_info_btn" tool_tip="그룹 프로필 보기"/>
+		</layout_panel>
+		<layout_panel name="profile_panel">
+			<button name="view_profile_btn" tool_tip="주민 프로필 보기"/>
+		</layout_panel>
+		<layout_panel name="trans_panel">
+			<button name="translate_btn" tool_tip="설정된 서비스로 채팅 번역"/>
+		</layout_panel>
+		<layout_panel name="friend_panel">
+			<button name="add_friend_btn" tool_tip="주민을 친구로 추가"/>
+		</layout_panel>
+		<layout_panel name="tp_panel">
+			<menu_button name="teleport_btn" tool_tip="텔레포트 제안 또는 요청"/>
+		</layout_panel>
+		<layout_panel name="share_panel">
+			<button name="share_btn" tool_tip="주민에게 객체 전송"/>
+		</layout_panel>
+		<layout_panel name="pay_panel">
+			<button name="pay_btn" tool_tip="주민에게 돈 전송"/>
+		</layout_panel>
+		<layout_panel name="call_btn_panel">
+			<button name="call_btn" tool_tip="음성으로 주민에게 전화"/>
+		</layout_panel>
+		<layout_panel name="end_call_btn_panel">
+			<button name="end_call_btn" tool_tip="통화 종료"/>
+		</layout_panel>
+		<layout_panel name="voice_ctrls_btn_panel">
+			<button name="voice_ctrls_btn" tool_tip="통화 속성"/>
+		</layout_panel>
+		<layout_panel name="im_history_btn_panel">
+			<button name="im_history_btn" tool_tip="대화 기록 열기"/>
+		</layout_panel>
+		<layout_panel name="add_participant_panel">
+			<button name="add_participant_btn" tool_tip="이 대화에 누군가 추가"/>
+		</layout_panel>
+		<layout_panel name="send_sysinfo_btn_panel">
+			<button name="send_sysinfo_btn" tool_tip="시스템 정보 전송"/>
+		</layout_panel>
+		<layout_panel name="lp_options_btn">
+			<button name="chat_options_btn" tool_tip="채팅 옵션"/>
+		</layout_panel>
+		<layout_panel name="lp_chat_search_btn">
+			<button name="chat_search_btn" tool_tip="채팅 검색"/>
+		</layout_panel>
+		<layout_panel name="support_panel">
+			<check_box label="버전 전송" name="FSSupportGroupChatPrefix_toggle" tool_tip="이 그룹에 보내는 모든 메시지 앞에 현재 뷰어 버전, 뷰어 스킨, 운영 체제 및 RLVa 상태를 추가하여, 지원 직원이 가능한 문제를 더 잘 진단하고 질문에 대한 답변의 정확성을 향상시킬 수 있도록 돕습니다."/>
+		</layout_panel>
+		<layout_panel name="testing_panel">
+			<check_box label="빌드 전송" name="FSSupportGroupChatPrefixTesting_toggle" tool_tip="이 그룹에 보내는 모든 메시지 앞에 현재 뷰어 버전, 뷰어 스킨, 운영 체제 및 RLVa 상태를 추가하여, 지원 직원이 가능한 문제를 더 잘 진단하고 질문에 대한 답변의 정확성을 향상시킬 수 있도록 돕습니다. (이 설정은 지원 그룹과 독립적입니다.)"/>
+		</layout_panel>
+	</layout_stack>
+	<layout_stack name="chat_stack">
+		<layout_panel name="panel_im_control_lp">
+			<layout_stack name="im_panels">
+				<layout_panel name="unread_messages_holder">
+					<text name="unread_messages_text">
+						읽지 않은 메시지: [NUM]
+					</text>
+				</layout_panel>
+				<layout_panel name="chat_layout_panel">
+					<layout_stack name="input_panels">
+						<layout_panel name="emoji_button_layout_panel">
+							<button name="emoji_picker_toggle_btn" tool_tip="이모지 선택기 열기"/>
+							<button name="emoji_recent_panel_toggle_btn" tool_tip="최근 사용한 이모지 선택기 열기/닫기"/>
+						</layout_panel>
+						<layout_panel name="input_button_layout_panel">
+							<button name="send_chat" label="전송"/>
+						</layout_panel>
+					</layout_stack>
+				</layout_panel>
+				<layout_panel name="emoji_recent_layout_panel">
+					<text name="emoji_recent_empty_text">
+						최근 사용한 이모지가 여기에 나타납니다
+					</text>
+				</layout_panel>
+			</layout_stack>
+		</layout_panel>
+	</layout_stack>
+</floater>

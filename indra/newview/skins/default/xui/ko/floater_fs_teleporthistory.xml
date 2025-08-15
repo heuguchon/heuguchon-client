@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<floater name="floater_tphistory" title="텔레포트 기록">
+	<filter_editor label="텔레포트 기록 필터" name="Filter"/>
+	<menu_button tool_tip="옵션 보기" name="options_gear_btn"/>
+	<menu_button tool_tip="정렬 옵션 보기" name="sorting_menu_btn"/>
+	<panel name="button_panel">
+		<layout_stack name="bottom_bar_ls0">
+			<layout_panel name="show_lm_panel">
+				<layout_stack name="bottom_bar_ls1">
+					<layout_panel name="teleport_btn_lp">
+						<button label="텔레포트" name="teleport_btn" tool_tip="선택된 위치로 텔레포트"/>
+					</layout_panel>
+					<layout_panel name="chat_btn_lp">
+						<button label="지도" name="map_btn" tool_tip="지도에서 해당 위치 표시"/>
+					</layout_panel>
+					<layout_panel name="profile_btn_lp">
+						<button label="프로필" name="profile_btn" tool_tip="장소 프로필 표시"/>
+					</layout_panel>
+				</layout_stack>
+			</layout_panel>
+		</layout_stack>	
+	</panel>
+</floater>

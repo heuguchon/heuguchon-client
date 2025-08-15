@@ -720,9 +720,20 @@
   - [x] floater_fs_volume_controls.xml (볼륨 제어)
   - [x] floater_fs_vram_usage.xml (VRAM 사용량)
   - [x] floater_fs_wearable_favorites.xml (착용 아이템 즐겨찾기)
+- **74차: 고급 시스템 기능 floater 완료 (10개)**
+  - [x] floater_fs_fixedenvironment.xml (고정 환경)
+  - [x] floater_fs_im_session.xml (Firestorm IM 세션)
+  - [x] floater_fs_partial_inventory.xml (부분 인벤토리)
+  - [x] floater_fs_placedetails.xml (장소 세부정보)
+  - [x] floater_fs_streamtitle.xml (스트림 제목)
+  - [x] floater_fs_streamtitlehistory.xml (스트림 제목 기록)
+  - [x] floater_fs_teleporthistory.xml (텔레포트 기록)
+  - [x] floater_item_properties.xml (아이템 속성)
+  - [x] floater_linkreplace.xml (링크 교체)
+  - [x] floater_live_material_editor.xml (실시간 머티리얼 에디터)
 
 ### 번역 완료율
-- **총 468개 파일 번역** (독일어 기준 약 403개 중 **116% 완료!** 초과 달성)
+- **총 478개 파일 번역** (독일어 기준 약 403개 중 **119% 완료!** 초과 달성)
 - **핵심 사용자 인터페이스 완료** - 기본적인 SecondLife 사용에 충분
 - **메뉴 시스템 완료** - 대부분의 메뉴 및 컨텍스트 메뉴 한국어화
 - **토지/부동산 관리 완료** - 토지 관련 모든 핵심 기능 한국어화
