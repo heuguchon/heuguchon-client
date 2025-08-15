@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<toggleable_menu name="menu_gear_default">
+	<menu_item_call label="새 인벤토리 창" name="new_window"/>
+	<menu_item_check label="보호된 폴더" name="Protected Folders"/>
+	<menu_item_check label="인벤토리 설정..." name="inv_settings"/>
+	<menu_item_check label="목록 보기" name="list_view"/>
+	<menu_item_check label="갤러리 보기" name="gallery_view"/>
+	<menu_item_check label="결합 보기" name="combination_view"/>
+	<menu_item_check label="이름순 정렬" name="sort_by_name"/>
+	<menu_item_check label="최근 항목순 정렬" name="sort_by_recent"/>
+	<menu_item_check label="폴더 항상 이름순" name="sort_folders_by_name"/>
+	<menu_item_check label="시스템 폴더 맨 위로" name="sort_system_folders_to_top"/>
+	<!-- ## Zi: Extended Inventory Search -->
+	<context_menu label="검색 대상..." name="inventory_search_menu">
+		<menu_item_check name="inventory_search_by_name" label="이름"/>
+		<menu_item_check name="inventory_search_by_creator" label="제작자"/>
+		<menu_item_check name="inventory_search_by_description" label="설명"/>
+		<menu_item_check name="inventory_search_by_uuid" label="UUID"/>
+		<menu_item_check name="inventory_search_by_all" label="모든 항목"/>
+<!-- Not implemented yet
+		<menu_item_check name="inventory_show_partial_results" label="부분 검색 결과 표시"/>
+-->
+	</context_menu>
+	<!-- ## Zi: Extended Inventory Search -->
+	<menu_item_check label="더블클릭으로 객체 부착" name="add_inv_toggle"/>
+	<menu_item_check label="더블클릭으로 의복 착용" name="add_invclothing_toggle"/>
+	<menu_item_call label="필터 표시..." name="show_filters"/>
+	<menu_item_call label="필터 초기화" name="reset_filters"/>
+	<menu_item_call label="모든 폴더 접기" name="close_folders"/>
+	<menu_item_call label="모든 창 닫기" name="close_windows"/>
+	<menu_item_call label="분실물 보관함 비우기" name="empty_lostnfound"/>
+	<menu_item_call label="텍스처를 다른 이름으로 저장" name="Save Texture As"/>
+	<menu_item_call label="공유" name="Share"/>
+	<menu_item_call label="원본 찾기" name="Find Original"/>
+	<menu_item_call label="모든 링크 찾기" name="Find All Links"/>
+	<menu_item_call label="링크 교체" name="Replace Links"/>
+	<!-- ## Zi: Filter Links Menu -->
+	<menu_item_check name="inventory_filter_show_links" label="링크 표시"/>
+	<menu_item_check name="inventory_filter_only_links" label="링크만 표시"/>
+	<menu_item_check name="inventory_filter_hide_links" label="링크 숨기기"/>
+	<menu_item_check name="inventory_filter_only_modify" label="수정 가능한 항목만"/>
+	<menu_item_check name="inventory_filter_only_copy" label="복사 가능한 항목만"/>
+	<menu_item_check name="inventory_filter_only_transfer" label="양도 가능한 항목만"/>
+	<!-- ## Zi: Filter Links Menu -->
+	<menu_item_check name="inventory_filter_coalesced_objects_only" label="연결된 객체만"/>
+	<menu_item_call label="휴지통 비우기" name="empty_trash"/>
+</toggleable_menu>

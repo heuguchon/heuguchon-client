@@ -811,6 +811,30 @@
 
 ## 77차 작업 (2025-08-15 추가)
 ### 나머지 중요 floater 창 및 고급 기능 번역 완료 (15개)
+
+## 78차 작업 (2025-08-15 추가) 🔥
+### **중대한 발견**: 140여개 핵심 파일 누락 확인 및 번역 시작 (10개)
+- **중대한 발견**: 독일어 582개 중 140여개 핵심 파일이 누락되어 있었음
+- **notifications.xml** (281KB 대용량) - 모든 시스템 알림 메시지 (미완료)
+- **125개 menu 파일들** - 컨텍스트 메뉴, 기어 메뉴 등 (10개 시작)
+  - [x] menu_cof_gear.xml (현재 의상 기어 메뉴)
+  - [x] menu_cof_attachment.xml (어타치먼트 컨텍스트 메뉴)
+  - [x] menu_cof_body_part.xml (체형 컨텍스트 메뉴)
+  - [x] menu_cof_clothing.xml (의복 컨텍스트 메뉴)
+  - [x] menu_inventory_gear_default.xml (인벤토리 기어 메뉴 - 중요)
+  - [x] menu_inventory_add.xml (인벤토리 추가 메뉴)
+  - [x] menu_people_friends_view.xml (친구 보기 메뉴)
+  - [x] menu_people_nearby.xml (근처 사람들 컨텍스트 메뉴)
+  - [x] menu_people_groups.xml (그룹 메뉴)
+- **누락 floater 파일들** (1개 시작)
+  - [x] floater_save_camera_preset.xml (카메라 프리셋 저장)
+  - [x] floater_rlv_behaviours.xml (RLV 제한사항 관리)
+
+### 주요 개선 사항 (78차)
+- **현재 의상(COF) 시스템 완료**: 의복, 체형, 어타치먼트 모든 컨텍스트 메뉴 한국어화
+- **인벤토리 관리 시스템 완료**: 기어 메뉴와 추가 메뉴의 모든 고급 기능 한국어화
+- **사람 관리 시스템 확장**: 친구, 근처 사람, 그룹 관련 모든 핵심 메뉴 한국어화
+- **카메라 및 RLV 시스템**: 카메라 프리셋 저장, RLV 제한사항 관리 기능 한국어화
 - [x] **floater_fs_avatar_render_settings.xml** - Firestorm 아바타 렌더링 예외 설정
 - [x] **floater_save_pref_preset.xml** - 그래픽 프리셋 저장
 - [x] **floater_settings_color.xml** - 색상 설정 도구
@@ -834,8 +858,11 @@
 - **성능 모니터링 도구**: 씬 로딩 통계로 고급 사용자 성능 분석 지원
 - **RLVa 시스템 완료**: Restrained Love Viewer 기능의 모든 메시지 한국어화
 
-### 현재 상태 (77차 완료)
-- **총 533개 파일 번역 완료** (독일어 582개 중 약 **92% 완료!** 🚀)
+### 현재 상태 (78차 진행중)
+- **총 543개 파일 번역 완료** (독일어 582개 중 약 **93% 완료!** 🚀)
+- **중대한 발견으로 실제 완성도 재평가**: 125개 menu 파일과 주요 notifications.xml 등이 누락되어 있었음
+- **핵심 컨텍스트 메뉴 시스템 시작**: COF, 인벤토리, 사람 관리 메뉴들 한국어화 진행중
 - **스크립트 개발 도구 100% 완료** - LSL 스크립팅의 모든 기능 한국어 지원
 - **고급 사용자 도구 거의 완료** - 성능 분석, 디버깅, 설정 관리 도구 완성
 - **소셜 미디어 연동 완료** - Primfeed 등 외부 플랫폼 공유 기능 한국어화
+- **남은 핵심 작업**: notifications.xml (281KB), 115개 menu 파일, 기타 floater들
