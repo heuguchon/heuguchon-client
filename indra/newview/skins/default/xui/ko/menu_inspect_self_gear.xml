@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<toggleable_menu name="Gear Menu">
+	<menu_item_call label="앉기" name="Sit Down Here"/>
+	<menu_item_call label="일어서기" name="Stand Up"/>
+	<context_menu label="벗기" name="Take Off &gt;">
+		<context_menu label="의복" name="Clothes &gt;">
+			<menu_item_call label="셔츠" name="Shirt"/>
+			<menu_item_call label="바지" name="Pants"/>
+			<menu_item_call label="치마" name="Skirt"/>
+			<menu_item_call label="신발" name="Shoes"/>
+			<menu_item_call label="양말" name="Socks"/>
+			<menu_item_call label="재킷" name="Jacket"/>
+			<menu_item_call label="장갑" name="Gloves"/>
+			<menu_item_call label="속옷" name="Self Undershirt"/>
+			<menu_item_call label="속바지" name="Self Underpants"/>
+			<menu_item_call label="타투" name="Self Tattoo"/>
+			<menu_item_call label="알파" name="Self Alpha"/>
+			<menu_item_call label="모든 의복" name="All Clothes"/>
+		</context_menu>
+		<context_menu label="HUD" name="Inspect Self Detach HUD"/>
+		<context_menu label="착용 해제" name="Inspect Self Detach"/>
+		<menu_item_call label="모두 해제" name="Detach All"/>
+	</context_menu>
+	<menu_item_call label="의상 바꾸기" name="Chenge Outfit"/>
+	<menu_item_call label="내 의상 편집" name="Edit Outfit"/>
+	<menu_item_call label="내 체형 편집" name="Edit My Shape"/>
+	<menu_item_call label="내 친구들" name="Friends..."/>
+	<menu_item_call label="내 그룹들" name="Groups..."/>
+	<menu_item_call label="내 프로필" name="Profile..."/>
+	<menu_item_call label="텍스처 디버그" name="Debug..."/>
+</toggleable_menu>

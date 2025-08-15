@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<context_menu name="Attachment Pie">
+	<menu_item_call label="터치" name="Attachment Object Touch"/>
+	<menu_item_call label="인벤토리에서 보기" name="Show original"/>
+	<menu_item_call label="편집" name="Edit..."/>
+	<menu_item_call label="PBR 머티리얼 편집" name="EditGLTFMaterial"/>
+	<menu_item_call label="착용 해제" name="Detach"/>
+	<context_menu label="다른 이름으로 저장" name="Export Menu">
+		<menu_item_call label="백업" name="Backup"/>
+		<menu_item_call label="Collada" name="Collada"/>
+	</context_menu>
+	<menu_item_call label="앉기" name="Sit Down Here"/>
+	<menu_item_call label="일어서기" name="Stand Up"/>
+	<context_menu label="외모" name="AppearanceSubmenu">
+		<menu_item_call label="현재 의상" name="NowWearing" />
+		<menu_item_call label="의상 바꾸기" name="Change Outfit" />
+		<menu_item_call label="체형 편집" name="Edit Shape" />
+		<menu_item_call label="의상 부분 편집" name="Edit Outfit Parts" />
+		<menu_item_call label="부유 높이" name="Hover Height"/>
+		<menu_item_call label="골격 초기화" name="Reset Skeleton"/>
+		<menu_item_call label="골격 및 애니메이션 초기화" name="Reset Skeleton And Animations"/>
+		<menu_item_call label="메시 LOD 초기화" name="Reset Mesh LOD"/>
+	</context_menu>
+	<context_menu label="벗기" name="Take Off &gt;">
+		<context_menu label="의복" name="Clothes &gt;">
+			<menu_item_call label="셔츠" name="Shirt"/>
+			<menu_item_call label="바지" name="Pants"/>
+			<menu_item_call label="치마" name="Skirt"/>
+			<menu_item_call label="신발" name="Shoes"/>
+			<menu_item_call label="양말" name="Socks"/>
+			<menu_item_call label="재킷" name="Jacket"/>
+			<menu_item_call label="장갑" name="Gloves"/>
+			<menu_item_call label="속옷" name="Self Undershirt"/>
+			<menu_item_call label="속바지" name="Self Underpants"/>
+			<menu_item_call label="타투" name="Self Tattoo"/>
+			<menu_item_call label="물리 효과" name="Self Physics"/>
+			<menu_item_call label="알파" name="Self Alpha"/>
+			<menu_item_call label="모든 의복" name="All Clothes"/>
+		</context_menu>
+		<context_menu label="HUD" name="Detach Self HUD"/>
+		<context_menu label="착용 해제" name="Detach Self"/>
+		<menu_item_call label="모두 해제" name="Detach All"/>
+	</context_menu>
+	<menu_item_call label="앉기 / 일어서기" name="Sit stand"/>
+	<menu_item_call label="날기 / 착륙" name="Fly land"/>
+	<menu_item_call label="애니메이션 중지" name="Stop Animating My Avatar"/>
+	<context_menu label="커뮤니티" name="CommunitySubmenu">
+		<menu_item_call label="친구" name="Friends..."/>
+		<menu_item_call label="그룹" name="Groups..."/>
+		<menu_item_call label="프로필" name="Profile..."/>
+	</context_menu>
+	<menu_item_call label="XML 내보내기" name="Dump XML"/>
+	<menu_item_call label="객체 프로필" name="Object Inspect"/>
+	<menu_item_call label="검사" name="Object_Inspect_Floater"/>
+	<menu_item_call label="스크립트 정보" name="ScriptInfo"/>
+	<menu_item_call label="렌더링 안 함" name="Derender"/>
+	<menu_item_call label="렌더링 안 함 + 블랙리스트" name="DerenderPermanent"/>
+	<menu_item_call label="텍스처 보기" name="Debug..."/>
+	<menu_item_call label="텍스처 새로고침" name="Texture Refresh"/>
+	<menu_item_call label="떨어뜨리기" name="Drop"/>
+	<menu_item_call label="파티클 소유자 차단" name="Mute Particle"/>
+</context_menu>

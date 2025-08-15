@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<toggleable_menu name="menu_blocked_gear">
+	<menu_item_call label="차단 해제" name="unblock"/>
+	<menu_item_check label="음성 차단" name="BlockVoice"/>
+	<menu_item_check label="채팅 차단" name="MuteText"/>
+	<menu_item_check label="파티클 차단" name="MuteParticles"/>
+	<menu_item_check label="소리 차단" name="BlockObjectSounds"/>
+	<menu_item_call label="프로필..." name="profile"/>
+</toggleable_menu>

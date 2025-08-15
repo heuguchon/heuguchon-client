@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<context_menu name="Outfit">
+	<menu_item_call label="현재 의상 교체" name="wear_replace"/>
+	<menu_item_call label="현재 의상에 추가" name="wear_add"/>
+	<menu_item_call label="현재 의상에서 제거" name="take_off"/>
+	<menu_item_call label="이미지..." name="thumbnail"/>
+	<menu_item_call label="의상 편집" name="edit"/>
+	<menu_item_call label="의상 이름 바꾸기" name="rename"/>
+	<menu_item_call label="의상 저장" name="save"/>
+	<menu_item_call label="의상 삭제" name="delete"/>
+</context_menu>

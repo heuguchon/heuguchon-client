@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<pie_menu name="Attachment Pie">
+	<pie_slice label="프로필..." name="Profile..."/>
+	<pie_slice label="떨어뜨리기" name="Drop"/>
+	<pie_menu name="Attachment Pie More" label="더보기 &gt;">
+		<pie_slice label="텍스처 새로고침" name="Texture Refresh"/>
+		<pie_slice label="스크립트 정보" name="ScriptInfo"/>
+		<pie_slice label="터치" name="Attachment Object Touch"/>
+		<pie_menu name="DerenderMenu" label="렌더링 안함 &gt;">
+			<pie_slice label="임시" name="Derender"/>
+			<pie_slice label="블랙리스트" name="DerenderPermanent"/>
+		</pie_menu>
+		<pie_menu label="저장 &gt;" name="ExportMenu">
+			<pie_slice label="백업" name="Backup"/>
+			<pie_slice label="Collada" name="Collada"/>
+		</pie_menu>
+		<pie_slice label="검사" name="Avatar Inspect"/>
+		<pie_slice label="인벤토리에서 보기" name="Show original"/>
+		<pie_slice label="텍스처" name="Debug..."/>
+	</pie_menu>
+	<pie_slice label="앉기" name="Sit Down Here"/>
+	<pie_slice label="일어서기" name="Stand Up"/>
+	<pie_slice label="착용 해제" name="Detach"/>
+	<pie_slice label="제스처..." name="Gestures"/>
+	<pie_menu label="외모 &gt;" name="Appearance &gt;">
+		<pie_slice label="체형 편집" name="Edit My Shape"/>
+		<pie_menu label="초기화 &gt;" name="ResetMenu">
+			<pie_slice label="골격 &amp; 애니메이션" name="Reset Skeleton And Animations"/>
+			<pie_slice label="골격" name="Reset Skeleton"/>
+			<pie_slice label="메시 LOD" name="Reset Mesh LOD"/>
+		</pie_menu>
+		<pie_slice label="의상 편집" name="Edit My Outfit"/>
+		<pie_slice label="XML 내보내기" name="Dump XML"/>
+		<pie_slice label="부유 높이" name="Hover Height"/>
+	</pie_menu>
+	<pie_slice label="편집" name="Edit..."/>
+</pie_menu>
