@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="region_tracker" title="지역 추적기">
+	<text name="region_label_text" value="지도에 지역 추가"/>
+	<button name="refresh" tool_tip="새로 고침"/>
+	<button name="remove" tool_tip="지역 제거"/>
+	<button name="open_map" tool_tip="지도 표시"/>
+	<scroll_list name="region_list" tool_tip="항목을 더블클릭하면 지도에서 지역을 표시합니다.">
+		<scroll_list.columns name="region_label" label="라벨"/>
+		<scroll_list.columns name="region_name" label="지역"/>
+		<scroll_list.columns name="region_agent_count" label="인원"/>
+	</scroll_list>
+</floater>

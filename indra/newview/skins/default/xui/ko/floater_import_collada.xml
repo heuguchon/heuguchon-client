@@ -18,6 +18,6 @@
 		[NAME] 업로드 중
 	</string>
 	<string name="status_creating">
-		객체명 [NAME] 생성 중
+		객체 [NAME] 생성 중
 	</string>
 </floater>

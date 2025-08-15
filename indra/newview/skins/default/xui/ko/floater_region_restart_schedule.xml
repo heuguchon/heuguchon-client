@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<floater name="floater_region_restart_schedule" title="지역 재시작 일정">
+
+<!-- This block shows Advanced Settings -->
+	<floater.string name="am_string">오전</floater.string>
+	<floater.string name="pm_string">오후</floater.string>
+
+	<text name="days_general">
+		다음 요일에 지역을 재시작:
+	</text>
+
+	<check_box name="s_chk" tool_tip="일요일"/>
+	<check_box name="m_chk" tool_tip="월요일"/>
+	<check_box name="t_chk" tool_tip="화요일"/>
+	<check_box name="w_chk" tool_tip="수요일"/>
+	<check_box name="r_chk" tool_tip="목요일"/>
+	<check_box name="f_chk" tool_tip="금요일"/>
+	<check_box name="a_chk" tool_tip="토요일"/>
+	<text name="su_label">
+		일
+	</text>
+	<text name="mo_label">
+		월
+	</text>
+	<text name="tu_label">
+		화
+	</text>
+	<text name="we_label">
+		수
+	</text>
+	<text name="th_label">
+		목
+	</text>
+	<text name="fr_label">
+		금
+	</text>
+	<text name="sa_label">
+		토
+	</text>
+	<text name="at_label">
+		시각
+	</text>
+	<button name="am_pm_btn" label="오전"/>
+	<text name="utc_label">
+		UTC
+	</text>
+	<button name="save_btn" label="저장"/>
+	<button name="cancel_btn" label="취소"/>
+</floater>

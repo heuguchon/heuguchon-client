@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<toggleable_menu name="menu_conversation_participant">
+	<menu_item_call label="대화 닫기" name="close_conversation"/>
+	<menu_item_call label="음성 대화 열기" name="open_voice_conversation"/>
+	<menu_item_call label="음성 연결 끊기" name="disconnect_from_voice"/>
+	<menu_item_call label="선택한 대화 닫기" name="close_selected_conversations"/>
+	<menu_item_call label="프로필 보기" name="view_profile"/>
+	<menu_item_call label="IM" name="im"/>
+	<menu_item_call label="순간이동 제안" name="offer_teleport"/>
+	<menu_item_call label="순간이동 요청" name="request_teleport"/>
+	<menu_item_call label="음성 통화" name="voice_call"/>
+	<menu_item_call label="채팅 기록..." name="chat_history"/>
+	<menu_item_call label="친구 추가" name="add_friend"/>
+	<menu_item_call label="친구 제거" name="remove_friend"/>
+	<menu_item_call label="친구들 제거" name="remove_friends"/>
+	<menu_item_call label="그룹에 초대..." name="invite_to_group"/>
+	<menu_item_call label="확대" name="zoom_in"/>
+	<menu_item_call label="지도" name="map"/>
+	<menu_item_call label="공유" name="share"/>
+	<menu_item_call label="지불" name="pay"/>
+	<menu_item_call label="신고하기" name="report_abuse"/>
+	<menu_item_check label="음성 차단" name="block_unblock"/>
+	<menu_item_check label="텍스트 차단" name="MuteText"/>
+	<menu_item_call label="그룹 프로필" name="group_profile"/>
+	<menu_item_call label="그룹 활성화" name="activate_group"/>
+	<menu_item_call label="그룹 떠나기" name="leave_group"/>
+	<context_menu label="중재자 옵션" name="Moderator Options">
+		<menu_item_check label="텍스트 채팅 허용" name="AllowTextChat"/>
+		<menu_item_call label="이 참가자 음성 차단" name="ModerateVoiceMuteSelected"/>
+		<menu_item_call label="이 참가자 음성 차단 해제" name="ModerateVoiceUnMuteSelected"/>
+		<menu_item_call label="모두 음성 차단" name="ModerateVoiceMute"/>
+		<menu_item_call label="모든 음성 차단 해제" name="ModerateVoiceUnmute"/>
+	</context_menu>
+	<menu_item_call label="멤버 추방" name="BanMember"/>
+</toggleable_menu>
