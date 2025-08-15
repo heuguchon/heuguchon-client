@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<toggleable_menu name="Conversation Gear Menu">
+	<menu_item_call label="프로필 보기" name="View Profile"/>
+	<menu_item_call label="친구 추가" name="Add Friend"/>
+	<menu_item_call label="친구 제거" name="remove_friend"/>
+	<menu_item_call label="순간이동 제안" name="offer_teleport"/>
+	<menu_item_call label="그룹에 초대..." name="invite_to_group"/>
+	<menu_item_call label="채팅 기록..." name="chat_history"/>
+	<menu_item_call label="확대" name="zoom_in"/>
+	<menu_item_call label="지도" name="map"/>
+	<menu_item_call label="공유" name="Share"/>
+	<menu_item_call label="지불" name="Pay"/>
+	<menu_item_call label="신고하기" name="Report Abuse"/>
+	<menu_item_check label="음성 차단" name="Block/Unblock"/>
+	<menu_item_check label="텍스트 차단" name="MuteText"/>
+</toggleable_menu>

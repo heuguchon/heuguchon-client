@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<context_menu name="Gallery">
+	<menu_item_call label="공유" name="Share"/>
+	<menu_item_call label="휴지통 비우기" name="Empty Trash"/>
+	<menu_item_call label="분실물 보관소 비우기" name="Empty Lost And Found"/>
+	<menu_item_call label="순간이동" name="Landmark Open"/>
+	<menu_item_call label="현재 의상 바꾸기" name="Replace Outfit"/>
+	<menu_item_call label="현재 의상에 추가" name="Add To Outfit"/>
+	<menu_item_call label="현재 의상에서 제거" name="Remove From Outfit"/>
+	<menu_item_call label="의상 목록을 클립보드에 복사" name="Copy outfit list to clipboard"/>
+	<menu_item_call label="원본 찾기" name="Find Original"/>
+	<menu_item_call label="아이템 삭제" name="Purge Item"/>
+	<menu_item_call label="아이템 복원" name="Restore Item"/>
+	<menu_item_call label="열기" name="Open"/>
+	<menu_item_call label="원본 열기" name="Open Original"/>
+	<menu_item_call label="속성" name="Properties"/>
+	<menu_item_call label="이미지..." name="thumbnail"/>
+	<menu_item_call label="자산 UUID 복사" name="Copy Asset UUID"/>
+	<menu_item_call label="열기" name="open_in_current_window"/>
+	<menu_item_call label="새 창에서 열기" name="open_in_new_window"/>
+	<menu_item_call label="이름 변경" name="Rename"/>
+	<menu_item_call label="잘라내기" name="Cut"/>
+	<menu_item_call label="복사" name="Copy"/>
+	<menu_item_call label="붙여넣기" name="Paste"/>
+	<menu_item_call label="링크로 붙여넣기" name="Paste As Link"/>
+	<menu_item_call label="링크 교체" name="Replace Links"/>
+	<menu_item_call label="삭제" name="Delete"/>
+	<menu_item_call label="시스템 폴더 삭제" name="Delete System Folder"/>
+	<menu_item_call label="재생" name="Sound Play"/>
+	<menu_item_call label="SLURL 복사" name="url_copy"/>
+	<menu_item_call label="랜드마크 정보" name="About Landmark"/>
+	<menu_item_call label="지도에서 보기" name="show_on_map"/>
+	<menu_item_call label="월드에서 재생" name="Animation Play"/>
+	<menu_item_call label="로컬에서 재생" name="Animation Audition"/>
+	<menu_item_call label="인스턴트 메시지 보내기" name="Send Instant Message"/>
+	<menu_item_call label="순간이동 제안..." name="Offer Teleport..."/>
+	<menu_item_call label="순간이동 요청..." name="Request Teleport..."/>
+	<menu_item_call label="활성화" name="Activate"/>
+	<menu_item_call label="비활성화" name="Deactivate"/>
+	<menu_item_call label="다른 이름으로 저장" name="Save As"/>
+	<menu_item_call label="선택항목을 다른 이름으로 저장" name="Save Selected As"/>
+	<menu_item_call label="착용" name="Wearable And Object Wear"/>
+	<menu label="부착" name="Attach To"/>
+	<menu label="HUD에 부착" name="Attach To HUD"/>
+	<menu_item_call label="터치" name="Attachment Touch" />
+	<menu_item_call label="편집" name="Wearable Edit"/>
+	<menu_item_call label="추가" name="Wearable Add"/>
+	<menu_item_call label="몸에서 분리" name="Detach From Yourself"/>
+	<menu_item_call label="벗기" name="Take Off"/>
+	<menu_item_call label="나에게만 적용" name="Settings Apply Local"/>
+	<menu_item_call label="토지에 적용" name="Settings Apply Parcel"/>
+	<menu_item_call label="새 폴더" name="New Folder"/>
+	<menu_item_call label="새 스크립트" name="New Script"/>
+	<menu_item_call label="새 노트카드" name="New Note"/>
+	<menu_item_call label="새 제스처" name="New Gesture"/>
+	<menu_item_call label="새 머티리얼" name="New Material"/>
+	<menu label="새 의복" name="New Clothes">
+		<menu_item_call label="새 셔츠" name="New Shirt"/>
+		<menu_item_call label="새 바지" name="New Pants"/>
+		<menu_item_call label="새 신발" name="New Shoes"/>
+		<menu_item_call label="새 양말" name="New Socks"/>
+		<menu_item_call label="새 재킷" name="New Jacket"/>
+		<menu_item_call label="새 치마" name="New Skirt"/>
+		<menu_item_call label="새 장갑" name="New Gloves"/>
+		<menu_item_call label="새 속옷" name="New Undershirt"/>
+		<menu_item_call label="새 속바지" name="New Underpants"/>
+		<menu_item_call label="새 알파 마스크" name="New Alpha Mask"/>
+		<menu_item_call label="새 타투" name="New Tattoo"/>
+		<menu_item_call label="새 유니버설" name="New Universal"/>
+		<menu_item_call label="새 물리" name="New Physics"/>
+	</menu>
+	<menu label="새 체형" name="New Body Parts">
+		<menu_item_call label="새 몸매" name="New Shape"/>
+		<menu_item_call label="새 피부" name="New Skin"/>
+		<menu_item_call label="새 헤어" name="New Hair"/>
+		<menu_item_call label="새 눈" name="New Eyes"/>
+	</menu>
+	<menu label="새 설정" name="New Settings">
+		<menu_item_call label="새 하늘" name="New Sky"/>
+		<menu_item_call label="새 물" name="New Water"/>
+		<menu_item_call label="새 주간 주기" name="New Day Cycle"/>
+	</menu>
+	<menu_item_call label="선택항목에서 새 폴더 만들기" name="New folder from selected"/>
+	<menu_item_call label="폴더 항목 그룹 해제" name="Ungroup folder items"/>
+	<menu label="기본값으로 사용" name="upload_def">
+		<menu_item_call label="업로드된 이미지" name="Image uploads"/>
+		<menu_item_call label="업로드된 사운드" name="Sound uploads"/>
+		<menu_item_call label="업로드된 애니메이션" name="Animation uploads"/>
+		<menu_item_call label="업로드된 모델" name="Model uploads"/>
+	</menu>
+	<menu_item_call label="마켓플레이스 목록에 복사" name="Marketplace Copy"/>
+	<menu_item_call label="마켓플레이스 목록으로 이동" name="Marketplace Move"/>
+	<menu_item_call label="--옵션 없음--" name="--no options--"/>
+</context_menu>

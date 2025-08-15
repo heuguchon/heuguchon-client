@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<toggleable_menu name="profile_overflow_menu">
+	<menu_item_call label="지도" name="show_on_map"/>
+	<menu_item_call label="지불" name="pay"/>
+	<menu_item_call label="공유" name="share"/>
+	<menu_item_call label="통화" name="call"/>
+	<menu_item_call label="연락처 세트에 추가" name="add_to_contact_set"/>
+	<menu_item_call label="이름 복사" name="copy_name_to_clipboard"/>
+	<menu_item_call label="URI 복사" name="copy_uri_to_clipboard"/>
+	<menu_item_call label="UUID 복사" name="copy_key_to_clipboard"/>
+	<menu_item_call label="차단" name="block"/>
+	<menu_item_call label="차단 해제" name="unblock"/>
+	<menu_item_call label="추방" name="kick"/>
+	<menu_item_call label="정지" name="freeze"/>
+	<menu_item_call label="정지 해제" name="unfreeze"/>
+	<menu_item_call label="고객지원" name="csr"/>
+	<menu_item_call label="신고하기" name="report"/>
+</toggleable_menu>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toggleable_menu name="Settings">
+	<menu_item_call label="선택적 로드" tool_tip="비활성화된 조인트만 로드하고 활성화합니다" name="load_selective"/>
+	<menu_item_call label="선택적 로드 - 회전만" tool_tip="비활성화된 조인트의 회전만 로드하고 활성화합니다" name="rotations_positions"/>
+	<menu_item_call label="로드 - 회전만" tool_tip="회전만 로드합니다. 다른 아바타/체형용으로 만들어진 포즈에 적합합니다." name="rotations"/>
+	<menu_item_call label="로드" tool_tip="회전, 위치, 크기를 로드합니다." name="load_all"/>
+</toggleable_menu>

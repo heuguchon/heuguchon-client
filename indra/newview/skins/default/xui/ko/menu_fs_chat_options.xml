@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toggleable_menu name="Chat Options Menu">
+	<menu_item_check label="레이더 표시..." name="nearby_people"/>
+	<menu_item_check label="근처 음성 표시..." name="nearby_voice"/>
+	<menu_item_check label="차단 목록 표시..." name="block_list"/>
+	<menu_item_check label="채팅 기록에 V1 스타일 사용" name="plain_text_chat_history"/>
+	<menu_item_check label="채팅 헤더에 프로필 이미지 표시" name="chat_header_icons"/>
+	<context_menu label="글꼴 크기..." name="font_size">
+		<menu_item_check label="작게" name="font_size_small"/>
+		<menu_item_check label="중간" name="font_size_medium"/>
+		<menu_item_check label="크게" name="font_size_large"/>
+		<menu_item_check label="매우 크게" name="font_size_huge"/>
+	</context_menu>
+	<menu_item_check label="추가 타이핑 표시기(&gt;) 표시" name="typing_chevron"/>
+	<menu_item_check label="새 메시지 알림 표시" name="new_message_notification"/>
+	<menu_item_check label="채팅 입력란 표시" name="show_chat_bar"/>
+	<menu_item_check label="채널 선택 표시" name="show_channel_selection"/>
+	<menu_item_check label="이모지 버튼 표시" name="show_emoji_button"/>
+	<menu_item_check label="채팅 타입/전송 버튼 표시" name="show_send_button"/>
+	<menu_item_check label="IM 세션에서 전송 버튼 표시" name="show_im_send_button"/>
+</toggleable_menu>

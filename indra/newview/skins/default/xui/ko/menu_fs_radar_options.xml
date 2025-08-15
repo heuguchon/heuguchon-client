@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<toggleable_menu name="menu_group_plus">
+	<menu_item_check label="레이더 위에 지도 표시" name="ShowRadarMinimap"/>
+	<menu_item_check label="정의된 범위로 표시 제한" name="LimitRadarByRange"/>
+	<menu_item_check label="차단 및 블랙리스트된 주민 표시" name="FSRadarShowMutedAndDerendered"/>
+	<context_menu label="레이더 이름 형식" name="radarNameFormat">
+		<menu_item_check label="표시 이름" name="radarFmtDN"/>
+		<menu_item_check label="사용자명" name="radarFmtUN"/>
+		<menu_item_check label="표시 이름 (사용자명)" name="radarFmtDNUN"/>
+		<menu_item_check label="사용자명 (표시 이름)" name="radarFmtUNDN"/>
+	</context_menu>
+	<context_menu label="표시할 컬럼" name="visible_columns">
+		<menu_item_check label="음성" name="voice_level"/>
+		<menu_item_check label="같은 지역" name="in_region"/>
+		<menu_item_check label="타이핑 상태" name="typing_status"/>
+		<menu_item_check label="앉기 상태" name="sitting_status"/>
+		<menu_item_check label="결제 정보 상태" name="flags"/>
+		<menu_item_check label="메모 상태" name="has_notes"/>
+		<menu_item_check label="나이" name="age"/>
+		<menu_item_check label="시간" name="seen"/>
+	</context_menu>
+	<menu_item_check label="거리에 따라 이름에 색상 적용" name="radarColorNamesBasedOnDistance"/>
+	<context_menu label="알림 방식" name="report_to_menu">
+		<menu_item_check label="근처 채팅" name="radar_nearby_chat"/>
+		<menu_item_check label="알림 토스트" name="radar_nearby_chat"/>
+	</context_menu>
+	<menu_item_check label="지도에 채팅 범위 표시" name="MiniMapChatRing"/>
+	<menu_item_check label="시야 거리 진입 알림" name="RadarReportDrawRangeEnter"/>
+	<menu_item_check label="시야 거리 이탈 알림" name="RadarReportDrawRangeLeave"/>
+	<menu_item_check label="채팅 범위 진입 알림" name="RadarReportChatRangeEnter"/>
+	<menu_item_check label="채팅 범위 이탈 알림" name="RadarReportChatRangeLeave"/>
+	<menu_item_check label="지역 진입 알림" name="RadarReportSimRangeEnter"/>
+	<menu_item_check label="지역 이탈 알림" name="RadarReportSimRangeLeave"/>
+	<menu_item_check label="나이 경고 발생 알림" name="RadarReportAgeAlert"/>
+	<menu_item_check label="스크립트에 진입 메시지 전송" name="RadarEnterChannelAlert"/>
+	<menu_item_check label="스크립트에 이탈 메시지 전송" name="RadarLeaveChannelAlert"/>
+	<menu_item_check label="정확도 향상을 위해 LSL 브릿지 사용" name="FSRadarEnhanceByBridge"/>
+	<menu_item_call label="차단된 주민 및 객체 목록 열기" name="show_blocked_list"/>
+</toggleable_menu>
