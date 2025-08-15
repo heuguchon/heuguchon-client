@@ -1912,7 +1912,7 @@ URL: [UNTRUSTED_URL]
 
 - 다른 주민들이 귀하의 방해 금지 응답을 받습니다(설정 &gt; 개인정보 &gt; 자동 응답에서 설정).
 - 음성 통화가 거부됩니다.
-		<usetemplate ignoretext="상태를 "방해 금지"로 변경할 때" name="okignore" yestext="확인"/>
+		<usetemplate ignoretext="상태를 &apos;방해 금지&apos;로 변경할 때" name="okignore" yestext="확인"/>
 	</notification>
 	<notification name="AutorespondModeSet">
 		자동 응답이 켜졌습니다.
@@ -2521,7 +2521,7 @@ Premium 멤버십은 최대 [MAX_PREMIUM]개까지 허용합니다. Premium Plus
 이 아이템은 복사되지 않고 객체 인벤토리로 이동됩니다.
 
 아이템을 이동하시겠습니까?
-		<usetemplate ignoretext=""복사 금지" 아이템을 객체에 적용하기 전에 경고 표시." name="okcancelignore" notext="취소" yestext="확인"/>
+		<usetemplate ignoretext="&apos;복사 금지&apos; 아이템을 객체에 적용하기 전에 경고 표시." name="okcancelignore" notext="취소" yestext="확인"/>
 	</notification>
 	<notification name="MoveInventoryFromObject">
 		"복사 불가" 인벤토리 객체를 선택했습니다.
@@ -2540,7 +2540,7 @@ Premium 멤버십은 최대 [MAX_PREMIUM]개까지 허용합니다. Premium Plus
 	<notification name="ClickActionNotPayable">
 		주의: "객체에 지불" 클릭 액션이 설정되었습니다. 하지만 money() 스크립트가 추가되면 작동하지 않습니다.
 		<form name="form">
-			<ignore name="ignore" text="money() 스크립트가 없는 객체를 만들 때 "객체에 지불" 액션을 설정했습니다."/>
+			<ignore name="ignore" text="money() 스크립트가 없는 객체를 만들 때 &apos;객체에 지불&apos; 액션을 설정했습니다."/>
 		</form>
 	</notification>
 	<notification name="PayConfirmation">
@@ -2686,8 +2686,8 @@ Linden Lab
 이 거래를 완료하기 전에 방해 금지 모드를 비활성화하시겠습니까?
 		<form name="form">
 			<ignore name="ignore" text="방해 금지 모드에서 사람이나 객체에게 지불하려고 합니다."/>
-			<button ignore="항상 "방해 금지" 모드 종료" name="Yes" text="확인"/>
-			<button ignore=""방해 금지" 모드 종료하지 않음" name="No" text="취소"/>
+			<button ignore="항상 &apos;방해 금지&apos; 모드 종료" name="Yes" text="확인"/>
+			<button ignore="&apos;방해 금지&apos; 모드 종료하지 않음" name="No" text="취소"/>
 		</form>
 	</notification>
 	<notification name="ConfirmDeleteProtectedCategory">
@@ -2929,7 +2929,7 @@ Linden Lab
 	</notification>
 	<notification name="CantSelectReflectionProbe">
 		반사 프로브를 배치했지만 "반사 프로브 선택"이 비활성화되어 있습니다. 반사 프로브를 선택하려면 빌드 메뉴 &gt; 옵션 &gt; 반사 프로브 선택을 활성화하세요.
-		<usetemplate ignoretext=""반사 프로브 선택"이 비활성화된 경우 경고." name="okignore" yestext="확인"/>
+		<usetemplate ignoretext="&apos;반사 프로브 선택&apos;이 비활성화된 경우 경고." name="okignore" yestext="확인"/>
 	</notification>
 	<notification name="ScriptMissing">
 		스크립트가 데이터베이스에서 누락되었습니다.
