@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<notifications>
+	<global name="skipnexttime">
+		다시 보지 않기
+	</global>
+	<global name="skipnexttimesessiononly">
+		다시 보지 않기 
+(현재 세션 동안만)
+	</global>
+	<global name="alwayschoose">
+		항상 이 옵션 선택
+	</global>
+	<global name="implicitclosebutton">
+		닫기
+	</global>
+	<template name="okbutton">
+		<form>
+			<button name="OK_okbutton" text="$yestext"/>
+		</form>
+	</template>
+	<template name="okignore">
+		<form>
+			<button name="OK_okignore" text="$yestext"/>
+		</form>
+	</template>
+	<template name="okcancelbuttons">
+		<form>
+			<button name="OK_okcancelbuttons" text="$yestext"/>
+			<button name="Cancel_okcancelbuttons" text="$notext"/>
+		</form>
+	</template>
+	<template name="okcancelignore">
+		<form>
+			<button name="OK_okcancelignore" text="$yestext"/>
+			<button name="Cancel_okcancelignore" text="$notext"/>
+		</form>
+	</template>
+	<template name="okhelpbuttons">
+		<form>
+			<button name="OK_okhelpbuttons" text="$yestext"/>
+			<button name="Help" text="$helptext"/>
+		</form>
+	</template>
+	<template name="okhelpignore">
+		<form>
+			<button name="OK_okhelpignore" text="$yestext"/>
+			<button name="Help_okhelpignore" text="$helptext"/>
+		</form>
+	</template>
+	<template name="yesnocancelbuttons">
+		<form>
+			<button name="Yes" text="$yestext"/>
+			<button name="No" text="$notext"/>
+			<button name="Cancel_yesnocancelbuttons" text="$canceltext"/>
+		</form>
+	</template>
+	<notification functor="GenericAcknowledge" label="알 수 없는 메시지" name="MissingAlert">
+		이 버전의 [APP_NAME]은 방금 받은 알림을 표시할 수 없습니다. 최신 버전의 뷰어를 설치했는지 확인해 주십시오.
+
+오류 세부 정보: 알림 &apos;[_NAME]&apos;을 notifications.xml에서 찾을 수 없습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="FloaterNotFound">
+		플로터 오류: 다음 컨트롤을 찾을 수 없습니다:
+
+[CONTROLS]
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="TutorialNotFound">
+		현재 사용할 수 있는 튜토리얼이 없습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="GenericAlert">
+		[MESSAGE]
+	</notification>
+	<notification name="GenericAlertYesCancel">
+		[MESSAGE]
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="예"/>
+	</notification>
+	<notification name="GenericAlertOK">
+		[MESSAGE]
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="BadInstallation">
+		[APP_NAME] 설치가 손상되었습니다. [https://www.firestormviewer.org/downloads 뷰어의 새 복사본을 다운로드]하여 다시 설치하십시오.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="LoginFailedNoNetwork">
+		[CURRENT_GRID]에 연결할 수 없습니다.
+    &apos;[DIAGNOSTIC]&apos;
+인터넷 연결 상태를 확인하십시오.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MessageTemplateNotFound">
+		메시지 템플릿 [PATH]을 찾을 수 없습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="WearableSave">
+		현재 의복/신체 부위에 대한 변경 사항을 저장하시겠습니까?
+		<usetemplate canceltext="취소" name="yesnocancelbuttons" notext="저장하지 않음" yestext="저장"/>
+	</notification>
+	<notification name="ConfirmNoCopyToOutbox">
+		이 아이템들 중 하나 이상을 판매자 보낼 상자로 복사할 권한이 없습니다. 이동하거나 그대로 두세요.
+		<usetemplate name="okcancelbuttons" notext="아이템을 이동하지 않음" yestext="아이템 이동"/>
+	</notification>
+	<notification name="OutboxFolderCreated">
+		판매자 보낼 상자의 최상위 레벨로 전송한 각 아이템에 대해 새 폴더가 생성되었습니다.
+		<usetemplate ignoretext="판매자 보낼 상자에 새 폴더 생성됨" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="OutboxImportComplete">
+		성공
+
+모든 폴더가 마켓플레이스로 성공적으로 전송되었습니다.
+		<usetemplate ignoretext="모든 폴더가 마켓플레이스로 전송됨" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="OutboxImportHadErrors">
+		일부 폴더가 전송되지 않았습니다
+
+특정 폴더를 마켓플레이스로 전송하는 중에 오류가 발생했습니다. 이러한 폴더는 여전히 판매자 보낼 상자에 있습니다.
+
+자세한 내용은 [[MARKETPLACE_IMPORTS_URL] 오류 로그]를 참조하십시오.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="OutboxImportFailed">
+		전송이 "[ERROR_CODE]" 오류로 실패했습니다
+
+시스템 또는 네트워크 오류로 인해 폴더가 마켓플레이스로 전송되지 않았습니다. 나중에 다시 시도하십시오.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="OutboxInitFailed">
+		마켓플레이스 초기화가 "[ERROR_CODE]" 오류로 실패했습니다
+
+시스템 또는 네트워크 오류로 인해 마켓플레이스 초기화에 실패했습니다. 나중에 다시 시도하십시오.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="StockPasteFailed">
+		재고 폴더로 복사 또는 이동이 다음 오류로 실패했습니다:
+        
+        "[ERROR_CODE]"
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MyOutfitsPasteFailed">
+		하나 이상의 객체를 "의상" 내에서 사용할 수 없습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantPasteFailed">
+		마켓플레이스 목록 복사 또는 이동이 다음 오류로 실패했습니다:
+        
+        "[ERROR_CODE]"
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantTransactionFailed">
+		마켓플레이스 거래가 다음 오류로 실패했습니다:
+        
+        [ERROR_REASON][ERROR_DESCRIPTION]
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantUnprocessableEntity">
+		이 제품을 등록하거나 버전 폴더를 활성화할 수 없습니다. 이는 보통 등록 설명 양식에서 누락된 정보 때문이지만 잘못된 폴더 구조 때문일 수도 있습니다. 등록을 편집하거나 등록 폴더에서 오류를 확인하십시오.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantListingFailed">
+		마켓플레이스 등록이 다음 오류로 실패했습니다:
+        
+        "[ERROR_CODE]"
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantFolderActivationFailed">
+		이 버전 폴더 활성화가 다음 오류로 실패했습니다:
+
+        "[ERROR_CODE]"
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="MerchantForceValidateListing">
+		등록을 생성하기 위해 등록 내용의 계층 구조를 수정했습니다.
+		<usetemplate ignoretext="등록 생성 시 내용 계층 구조가 수정될 때 경고 표시" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="ConfirmMerchantActiveChange">
+		이 작업은 이 등록의 활성 내용을 변경합니다. 계속하시겠습니까?
+		<usetemplate ignoretext="마켓플레이스에서 활성 등록 변경 전 확인" name="okcancelignore" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ConfirmMerchantMoveInventory">
+		마켓플레이스 등록 패널로 드래그된 객체는 복사가 아닌 이동됩니다. 계속하시겠습니까?
+		<usetemplate ignoretext="인벤토리에서 마켓플레이스로 객체 이동 전 확인" name="okcancelignore" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ConfirmListingCutOrDelete">
+		등록 폴더를 이동하거나 삭제하면 마켓플레이스 등록이 삭제됩니다. 마켓플레이스 등록을 유지하려면 수정하려는 버전 폴더의 내용을 이동하거나 삭제하십시오. 계속하시겠습니까?
+		<usetemplate ignoretext="마켓플레이스에서 등록 제거 또는 이동 전 확인" name="okcancelignore" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ConfirmCopyToMarketplace">
+		이 객체들 중 하나 이상을 마켓플레이스로 복사할 권한이 없습니다. 이동하거나 그대로 두세요.
+		<usetemplate canceltext="취소" ignoretext="복사 금지 객체가 포함된 선택 항목을 마켓플레이스로 복사하기 전 확인" name="yesnocancelbuttons" notext="아이템을 이동하지 않음" yestext="아이템 이동"/>
+	</notification>
+	<notification name="ConfirmMerchantUnlist">
+		이 작업은 이 등록을 제거합니다. 계속하시겠습니까?
+		<usetemplate ignoretext="마켓플레이스에서 활성 등록 제거 전 확인" name="okcancelignore" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ConfirmMerchantClearVersion">
+		이 작업은 현재 등록의 버전 폴더를 비활성화합니다. 계속하시겠습니까?
+		<usetemplate ignoretext="마켓플레이스 등록의 버전 폴더 비활성화 전 확인" name="okcancelignore" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="AlertMerchantListingNotUpdated">
+		이 등록을 업데이트할 수 없습니다.
+[[머켓플래이스에서 편집하려면 여기를 클릭하세요]].
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="AlertMerchantListingCannotWear">
+		마켓플레이스 등록 폴더에 있는 의류나 신체 부위를 착용할 수 없습니다
+	</notification>
+	<notification name="AlertMerchantListingInvalidID">
+		등록 ID가 유효하지 않습니다.
+	</notification>
+	<notification name="AlertMerchantListingActivateRequired">
+		이 등록에 여러개 또는 없는 버전 폴더가 있습니다. 나중에 하나를 선택하여 활성화해야 합니다.
+		<usetemplate ignoretext="여러 버전 폴더가 있는 등록을 만들 때 버전 폴더 활성화 알림" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="AlertMerchantStockFolderSplit">
+		폴더를 등록할 수 있도록 서로 다른 유형의 재고 객체를 별도의 재고 폴더로 나누었습니다.
+		<usetemplate ignoretext="등록 전 재고 폴더 분할 시 알림" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="AlertMerchantStockFolderEmpty">
+		재고 폴더가 비어 있어 등록을 제거했습니다. 이 등록을 다시 나열하려면 재고 폴더에 더 많은 단위를 추가해야 합니다.
+		<usetemplate ignoretext="빈 재고 폴더로 인해 등록이 해제될 때 알림" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="AlertMerchantVersionFolderEmpty">
+		버전 폴더가 비어 있어 등록을 제거했습니다. 이 등록을 다시 나열하려면 버전 폴더에 아이템을 추가해야 합니다.
+		<usetemplate ignoretext="빈 버전 폴더로 인해 등록이 해제될 때 알림" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="WriteAnimationFail">
+		애니메이션 데이터 쓰기에 실패했습니다. 다시 시도하세요.
+	</notification>
+	<notification name="UploadAuctionSnapshotFail">
+		다음 이유로 경매 스크린샷을 업로드할 수 없습니다: [REASON]
+	</notification>
+	<notification name="UnableToViewContentsMoreThanOne">
+		한 번에 하나의 객체 내용만 볼 수 있습니다.
+단일 객체를 선택하고 다시 시도하세요.
+	</notification>
+	<notification name="SaveClothingBodyChanges">
+		의류/신체 부위 변경 사항을 저장하시겠습니까?
+		<usetemplate canceltext="취소" name="yesnocancelbuttons" notext="저장하지 않음" yestext="모두 저장"/>
+	</notification>
+	<notification name="FriendsAndGroupsOnly">
+		친구 목록에 없는 사람들은 당신이 그들의 전화와 인스턴트 메시지를 무시한다는 것을 알리지 않을 것입니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="FavoritesOnLogin">
+		참고: 이 옵션을 활성화하면 이 컴퓨터를 사용하는 모든 사람이 당신의 즐겨찾는 장소를 볼 수 있습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="AllowMultipleViewers">
+		여러 [APP_NAME] 뷰어 실행은 지원되지 않습니다. 이로 인해 텍스처 캐시 충돌, 오류, 그리고 그래픽 및 성능 저하가 발생할 수 있습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="GrantModifyRights">
+		다른 주민에게 수정 권한을 부여하면 그들은 당신이 인월드에서 소유한 모든 객체를 수정, 삭제 또는 가져갈 수 있습니다. 이러한 권한을 부여할 때는 매우 주의하세요!
+[NAME]에게 수정 권한을 부여하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="GrantModifyRightsMultiple">
+		다른 주민에게 편집 권한을 부여하면 그들은 당신이 인월드에서 소유한 모든 객체를 변경할 수 있습니다. 이러한 권한을 부여할 때는 매우 주의하세요!
+선택한 주민들에게 수정 권한을 부여하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="RevokeModifyRights">
+		[NAME]의 수정 권한을 취소하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="RevokeModifyRightsMultiple">
+		선택한 주민들의 수정 권한을 취소하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="GroupNameLengthWarning">
+		그룹 이름은 [MIN_LEN]자에서 [MAX_LEN]자 사이여야 합니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="UnableToCreateGroup">
+		그룹을 만들 수 없습니다.
+[MESSAGE]
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="PanelGroupApply">
+		[NEEDS_APPLY_MESSAGE]
+[WANT_APPLY_MESSAGE]
+		<usetemplate canceltext="취소" name="yesnocancelbuttons" notext="변경 사항 취소" yestext="변경 사항 적용"/>
+	</notification>
+	<notification name="MustSpecifyGroupNoticeSubject">
+		그룹 공지의 제목을 입력하세요.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="AddGroupOwnerWarning">
+		그룹 구성원에게 [ROLE_NAME] 역할을 부여하려고 합니다.
+이 역할은 구성원에게서 더 이상 빼살 수 없습니다.
+역할을 직접 포기해야 합니다.
+계속하시겠습니까?
+		<usetemplate ignoretext="새 그룹 소유자 추가 전 확인" name="okcancelignore" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="AssignDangerousActionWarning">
+		"[ROLE_NAME]" 역할에 "[ACTION_NAME]" 능력을 부여하려고 합니다.
+
+ *경고*
+ 이 능력이 있는 역할의 구성원들은 자신과
+ 다른 모든 구성원들에게 현재보다 더 많은 권한을
+ 가진 역할을 부여할 수 있어 거의
+ 소유자 권한에 달하는 권력을 얻을 수 있습니다. 이 능력을
+ 누구에게 부여할지 신중하게 고려하세요.
+
+"[ROLE_NAME]" 역할에 이 능력을 부여하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="AssignDangerousAbilityWarning">
+		"[ROLE_NAME]" 역할에 "[ACTION_NAME]" 능력을 부여하려고 합니다.
+
+ *경고*
+ 이 능력이 있는 역할의 구성원들은 자신과
+ 다른 모든 구성원들에게 모든 능력을 부여할 수 있어
+ 거의 소유자 권한에 달할 수 있습니다.
+
+"[ROLE_NAME]" 역할에 이 능력을 부여하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="AssignBanAbilityWarning">
+		"[ROLE_NAME]" 역할에 "[ACTION_NAME]" 능력을 부여하려고 합니다.
+
+ *경고*
+이 능력이 있는 역할의 모든 구성원에게는 "[ACTION_NAME_2]"와 "[ACTION_NAME_3]" 능력도 부여됩니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="RemoveBanAbilityWarning">
+		"[ROLE_NAME]" 역할에서 "[ACTION_NAME]" 능력을 제거하려고 합니다.
+
+ *경고*
+이 능력을 제거해도 "[ACTION_NAME_2]"와 "[ACTION_NAME_3]" 능력은 제거되지 않습니다.
+ 
+이 역할에서 이러한 능력을 더 이상 가지지 않게 하려면 즉시 비활성화하세요.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="EjectGroupMemberWarning">
+		[AVATAR_NAME]을 그룹에서 추방하려고 합니다.
+		<usetemplate ignoretext="개별 그룹 구성원 추방 확인" name="okcancelignore" notext="취소" yestext="추방"/>
+	</notification>
+	<notification name="EjectGroupMembersWarning">
+		[COUNT]명의 구성원을 그룹에서 추방하려고 합니다.
+		<usetemplate ignoretext="여러 그룹 구성원 추방 확인" name="okcancelignore" notext="취소" yestext="추방"/>
+	</notification>
+	<notification name="BanGroupMemberWarning">
+		[AVATAR_NAME]을 그룹에서 차단하려고 합니다.
+		<usetemplate ignoretext="그룹 구성원 차단 확인" name="okcancelignore" notext="취소" yestext="차단"/>
+	</notification>
+	<notification name="BanGroupMembersWarning">
+		[COUNT]명의 구성원을 그룹에서 차단하려고 합니다.
+		<usetemplate ignoretext="여러 그룹 구성원 차단 확인" name="okcancelignore" notext="취소" yestext="차단"/>
+	</notification>
+	<notification name="GroupBanUserOnBanlist">
+		그룹에서 차단되어 일부 주민들에게 초대장을 보낼 수 없었습니다.
+	</notification>
+	<notification name="AttachmentDrop">
+		정말 부착물을 떨어뜨리시겠습니까?
+계속하시겠습니까?
+		<usetemplate ignoretext="부착물을 떨어뜨리기 전 확인" name="okcancelignore" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="JoinGroupCanAfford">
+		이 그룹 가입비는 [COST] L$입니다.
+계속하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="가입"/>
+	</notification>
+	<notification name="JoinGroupNoCost">
+		&lt;nolink&gt;[NAME]&lt;/nolink&gt; 그룹에 가입합니다.
+계속하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="가입"/>
+	</notification>
+	<notification name="JoinGroupCannotAfford">
+		이 그룹 가입비는 [COST] L$입니다.
+L$가 부족하여 이 그룹에 가입할 수 없습니다.
+	</notification>
+	<notification name="CreateGroupCost">
+		이 그룹을 만드는 데 [COST] L$가 듭니다.
+그룹은 두 명 이상의 구성원이 있어야 하므로 그렇지 않으면 삭제됩니다.
+48시간 이내에 그룹에 구성원을 초대하세요.
+		<usetemplate canceltext="취소" name="okcancelbuttons" notext="취소" yestext="[COST] L$로 그룹 만들기"/>
+	</notification>
+	<notification name="JoinGroupInaccessible">
+		이 그룹에 액세스할 수 없습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="JoinGroupError">
+		그룹 가입 요청을 처리하는 중에 오류가 발생했습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="JoinGroupErrorReason">
+		그룹에 가입할 수 없습니다: [reason]
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="JoinGroupTrialUser">
+		죄송합니다. 체험 사용자는 그룹에 가입할 수 없습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="JoinGroupMaxGroups">
+		"&lt;nolink&gt;[group_name]&lt;/nolink&gt;"에 가입할 수 없습니다: 
+이미 [group_count]개 그룹에 가입하셨으며, 최대 제한은 [max_groups]개입니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="JoinGroupClosedEnrollment">
+		"&lt;nolink&gt;[group_name]&lt;/nolink&gt;"에 가입할 수 없습니다: 
+자유로운 가입이 더 이상 가능하지 않습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="JoinGroupInsufficientFunds">
+		필요한 L$ [membership_fee] 가입비를 전송할 수 없습니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="LandBuyPass">
+		이 토지("박""이름"))에 [COST] L$로
+[TIME]시간 동안 입장할 수 있습니다.  패스를 구매하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="SalePriceRestriction">
+		일반 판매 시 판매 가격은 0 L$ 이상이어야 합니다.
+0 L$로 판매하려면 특정 인물을 선택하세요.
+	</notification>
+	<notification name="ConfirmLandSaleChange">
+		선택한 [LAND_SIZE]m² 토지를 판매를 위해 공개합니다.
+판매 가격은 [SALE_PRICE] L$입니다. [NAME]에게 이 가격으로 판매할 수 있습니다.
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ConfirmLandSaleToAnyoneChange">
+		주의: "모든 사람에게 판매"를 클릭하면 [CURRENT_GRID]의 누구나 다른 지역의 주민들도 당신의 토지를 살 수 있습니다.
+
+선택한 [LAND_SIZE]m² 토지를 판매를 위해 공개합니다.
+판매 가격은 [SALE_PRICE] L$입니다. [NAME]에게 이 가격으로 판매할 수 있습니다.
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="MustAgreeToLogIn">
+		[CURRENT_GRID]에 로그인하려면 일반 약관, 개인정보 보호 정책 및 서비스 약관에 동의해야 합니다.
+	</notification>
+	<notification name="CouldNotBuyCurrency">
+[TITLE]
+[MESSAGE]
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="CouldNotBuyCurrencyOS">
+[TITLE]
+[MESSAGE]
+		<usetemplate name="okcancelbuttons" notext="아니오" yestext="확인"/>
+	</notification>
+	<notification name="CouldNotPutOnOutfit">
+		의상을 입을 수 없습니다.
+의상 폴더에 의류, 신체 부위 또는 부착물이 없습니다.
+	</notification>
+	<notification name="CannotWearTrash">
+		휴지통에 있는 의류나 신체 부위는 착용할 수 없습니다
+	</notification>
+	<notification name="MaxAttachmentsOnOutfit">
+		객체를 부착할 수 없습니다.
+부착할 수 있는 최대 객체 수([MAX_ATTACHMENTS]개)를 초과했습니다. 먼저 다른 객체를 제거하세요.
+	</notification>
+	<notification name="CannotWearInfoNotComplete">
+		아직 로딩되지 않아 해당 객체를 입을 수 없습니다. 잠시 기다리고 다시 시도하세요.
+	</notification>
+	<notification name="MustEnterPasswordToLogIn">
+		로그인하려면 비밀번호를 입력하세요.
+	</notification>
+	<notification name="InvalidGrid">
+		"[GRID]"는 유효한 Grid ID가 아닙니다.
+	</notification>
+	<notification name="DeleteClassified">
+		분류 광고 "[NAME]"를 삭제하시겠습니까?
+비용은 환불되지 않습니다.
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="DeleteMedia">
+		이 면에서 미디어를 삭제하기로 결정했습니다.
+계속하시겠습니까?
+		<usetemplate ignoretext="객체에서 미디어를 제거하기 전 확인" name="okcancelignore" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="ClassifiedSave">
+		분류 광고 [NAME]의 변경 사항을 저장하시겠습니까?
+		<usetemplate canceltext="취소" name="yesnocancelbuttons" notext="저장하지 않음" yestext="저장"/>
+	</notification>
+	<notification name="ClassifiedInsufficientFunds">
+		분류 광고를 만들 돈이 부족합니다.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="ProfileDeleteClassified">
+		분류 광고 &lt;nolink&gt;[CLASSIFIED]&lt;/nolink&gt;를 삭제하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ProfileDeletePick">
+		추천장소 &lt;nolink&gt;[PICK]&lt;/nolink&gt;를 삭제하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ProfileUnpublishedClassified">
+		게시되지 않은 분류 광고가 있습니다. 지금 창을 닫으면 이 광고들이 사라집니다.
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="ProfileUnsavedChanges">
+		저장되지 않은 변경사항이 있습니다.
+		<usetemplate canceltext="취소" name="yesnocancelbuttons" notext="버리기" yestext="저장"/>
+	</notification>
+	<notification name="DeleteOutfits">
+		선택된 의상을 삭제하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="DeleteOutfitsWithName">
+		의상 "[NAME]"을 삭제하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="PromptGoToEventsPage">
+		[CURRENT_GRID] 이벤트 웹페이지로 이동하시겠습니까?
+		<url name="url">
+			http://secondlife.com/events/?lang=ko-KR
+		</url>
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="SelectProposalToView">
+		보려는 제안을 선택하십시오.
+	</notification>
+	<notification name="SelectHistoryItemToView">
+		보려는 기록 항목을 선택하십시오.
+	</notification>
+	<notification name="CacheWillClear">
+		[APP_NAME]을 다시 시작한 후 캐시가 지워집니다.
+	</notification>
+	<notification name="DisableJavascriptBreaksSearch">
+		JavaScript를 비활성화하면 검색 기능이 제대로 작동하지 않아 사용할 수 없게 됩니다.
+	</notification>
+	<notification name="CacheWillBeMoved">
+		[APP_NAME]을 다시 시작한 후 캐시가 이동됩니다.
+		참고: 이 과정에서 캐시가 삭제/지워집니다.
+	</notification>
+	<notification name="SoundCacheWillBeMoved">
+		[APP_NAME]을 다시 시작한 후 소리 캐시가 이동됩니다.
+	</notification>
+	<notification name="ChangeConnectionPort">
+		포트 설정은 [APP_NAME]을 다시 시작한 후 적용됩니다.
+	</notification>
+	<notification name="ChangeDeferredDebugSetting">
+		이 설정은 [APP_NAME]을 다시 시작한 후 적용됩니다.
+	</notification>
+	<notification name="ChangeSkin">
+		새로운 스킨은 [APP_NAME]을 다시 시작한 후 표시됩니다.
+		지금 뷰어를 종료하고 수동으로 다시 시작하여 변경사항을 적용하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="나중에" yestext="지금 종료"/>
+	</notification>
+	<notification name="ChangeLanguage">
+		언어 변경은 [APP_NAME]을 다시 시작한 후 적용됩니다.
+	</notification>
+	<notification name="GoToAuctionPage">
+		[CURRENT_GRID] 웹페이지로 이동하여 경매를 보거나 입찰하시겠습니까?
+		<url name="url">
+			http://secondlife.com/auctions/auction-detail.php?id=[AUCTION_ID]
+		</url>
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="SaveChanges">
+		변경사항을 저장하시겠습니까?
+		<usetemplate canceltext="취소" name="yesnocancelbuttons" notext="저장하지 않음" yestext="저장"/>
+	</notification>
+	<notification name="DeleteNotecard">
+		노트카드를 정말 삭제하시겠습니까?
+		<usetemplate name="okcancelignore" notext="취소" yestext="확인" ignoretext="노트카드 삭제시 확인"/>
+	</notification>
+	<notification name="LoadPreviousReportScreenshot">
+		이전 스크린샷을 신고서에 사용하시겠습니까?
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="GestureSaveFailedTooManySteps">
+		제스처 저장에 실패했습니다.
+		제스처에 단계가 너무 많습니다.
+		일부 단계를 삭제하고 다시 시도하십시오.
+	</notification>
+	<notification name="GestureSaveFailedTryAgain">
+		제스처 저장에 실패했습니다. 잠시 기다린 후 다시 시도하십시오.
+	</notification>
+	<notification name="GestureSaveFailedObjectNotFound">
+		객체 또는 관련 객체 인벤토리를 찾을 수 없어서 제스처를 저장할 수 없습니다.
+		객체가 범위를 벗어났거나 삭제되었을 수 있습니다.
+	</notification>
+	<notification name="GestureSaveFailedReason">
+		다음 이유로 제스처를 저장할 수 없습니다: [REASON]. 나중에 제스처를 저장해 주십시오.
+	</notification>
+	<notification name="SaveNotecardFailObjectNotFound">
+		객체 또는 관련 객체 인벤토리를 찾을 수 없어서 노트카드를 저장할 수 없습니다.
+		객체가 범위를 벗어났거나 삭제되었을 수 있습니다.
+	</notification>
+	<notification name="SaveNotecardFailReason">
+		다음 이유로 노트카드를 저장할 수 없습니다: [REASON]. 나중에 노트카드를 저장해 주십시오.
+	</notification>
+	<notification name="ScriptCannotUndo">
+		스크립트 버전의 모든 변경사항을 되돌릴 수 없습니다.
+		서버에서 마지막으로 저장된 버전을 불러오시겠습니까?
+		(**경고** 이 작업은 되돌릴 수 없습니다.)
+		<usetemplate name="okcancelbuttons" notext="취소" yestext="확인"/>
+	</notification>
+	<notification name="SaveScriptFailObjectNotFound">
+		관련 객체를 찾을 수 없어서 스크립트를 저장할 수 없습니다.
+		객체가 범위를 벗어났거나 삭제되었을 수 있습니다.
+	</notification>
+	<notification name="StartRegionEmpty">
+		시작 지역이 정의되지 않았습니다.
+		"시작 위치" 필드에 지역 이름을 입력하거나 시작 위치로 "내 마지막 위치" 또는 "내 집"을 선택하십시오.
+		<usetemplate name="okbutton" yestext="확인"/>
+	</notification>
+	<notification name="CouldNotStartStopScript">
+		관련 객체를 찾을 수 없어서 스크립트를 시작하거나 중지할 수 없습니다.
+		객체가 범위를 벗어났거나 삭제되었을 수 있습니다.
+	</notification>
+	<notification name="CannotDownloadFile">
+		파일을 다운로드할 수 없습니다
+	</notification>
+	<notification name="MediaFileDownloadUnsupported">
+		[APP_NAME]에서 지원하지 않는 파일 다운로드를 요청했습니다.
+		<usetemplate ignoretext="지원하지 않는 파일 다운로드 시 경고 표시" name="okignore" yestext="확인"/>
+	</notification>
+	<notification name="CannotWriteFile">
+		파일 [[FILE]]을 쓸 수 없습니다
+	</notification>
+	<notification name="UnsupportedHardware">
+		아쉽게도 컴퓨터가 [APP_NAME]의 최소 사양 요구사항을 충족하지 않습니다. 이로 인해 프로그램이 제대로 실행되지 않을 수 있습니다. 지원하지 않는 시스템 구성에 대해서는 [SUPPORT_SITE]에서 도움을 드릴 수 없습니다.
+
+[MINSPECS]
+
+자세한 정보는 [_URL]을 참조하십시오.
+		<url name="url" option="0">
+			https://wiki.firestormviewer.org/fs_system_requirements
+		</url>
+		<usetemplate ignoretext="내 하드웨어가 지원되지 않습니다" name="okcancelignore" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="RunLauncher">
+		뷰어 실행 파일을 직접 실행하지 마십시오. 기존의 모든 바로가기를 업데이트하여 대신 LS_Launcher를 실행하도록 하십시오.
+	</notification>
+	<notification name="OldGPUDriver">
+		그래픽 칩에 대한 새로운 드라이버가 있을 수 있습니다. 그래픽 드라이버를 업데이트하면 성능이 상당히 개선될 수 있습니다.
+
+    [URL]에서 업데이트된 드라이버를 찾아보시겠습니까?
+		<url name="url">
+			[URL]
+		</url>
+		<usetemplate ignoretext="내 그래픽 드라이버가 오래되었습니다" name="okcancelignore" notext="아니오" yestext="예"/>
+	</notification>
+	<notification name="UnknownGPU">
+		시스템에서 [APP_NAME]이 인식할 수 없는 그래픽 카드를 사용하고 있습니다.
+		이는 새로운 하드웨어가 아직 [APP_NAME]과 테스트되지 않았을 때 발생합니다. 프로그램이 정상적으로 실행될 가능성이 높지만, 일부 그래픽 설정을 조정해야 할 수도 있습니다.
+		(나 > 환경설정 > 그래픽).
+		<form name="form">
+			<ignore name="ignore" text="내 그래픽 카드를 식별할 수 없습니다."/>
+		</form>
+	</notification>
+</notifications>
