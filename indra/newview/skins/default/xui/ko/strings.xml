@@ -6265,7 +6265,7 @@ https://wiki.secondlife.com/wiki/LSL_Alternate_Editors 참조
 		브릿지의 이동잠금 기능을 활성화하여 아바타를 현재 위치에 고정 (Ctrl+Alt+P)
 	</string>
 	<string name="Command_Blocklist_Tooltip">
-		차단 목록 / 무시된 주민 & 객체 목록 열기
+		차단 목록 / 무시된 주민 &amp; 객체 목록 열기
 	</string>
 	<string name="Command_ResyncAnimations_Tooltip">
 		아바타 애니메이션 재동기화
@@ -6681,7 +6681,7 @@ www.secondlife.com 웹사이트에 접속할 수 있는지 확인하세요.
 		주사위(최대 100)와 면(최대 1000)에 양수 값을 지정해야 합니다.
 	</string>
 	<string name="FSCmdLineRollDiceModifiersInvalid">
-		수정자를 사용하려면 수정자에 대해 유효한 유형과 값을 지정해야 합니다. 값은 -1000에서 1000 범위에 있어야 합니다. 유효한 유형: "+" (보너스), "-" (페널티), ">", "<" (성공), "r<", "r" (재굴림), "!p>", "!>", "!p<", "!p" (관통), "!<", "!" (폭발). 굴림당 하나의 수정자 유형만 사용할 수 있습니다. 예: "[COMMAND] 1 20 + 5", "[COMMAND] 5 40 > 15", "[COMMAND] 10 25 ! 25", "[COMMAND] 15 25 !< 10".
+		수정자를 사용하려면 수정자에 대해 유효한 유형과 값을 지정해야 합니다. 값은 -1000에서 1000 범위에 있어야 합니다. 유효한 유형: "+" (보너스), "-" (페널티), "&gt;", "&lt;" (성공), "r&lt;", "r" (재굴림), "!p&gt;", "!&gt;", "!p&lt;", "!p" (관통), "!&lt;", "!" (폭발). 굴림당 하나의 수정자 유형만 사용할 수 있습니다. 예: "[COMMAND] 1 20 + 5", "[COMMAND] 5 40 > 15", "[COMMAND] 10 25 ! 25", "[COMMAND] 15 25 !&lt; 10".
 	</string>
 	<string name="FSCmdLineRollDiceExploded">
 		폭발
