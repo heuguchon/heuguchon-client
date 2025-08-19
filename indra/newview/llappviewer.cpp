@@ -5296,11 +5296,7 @@ void LLAppViewer::purgeCacheImmediate()
 
 std::string LLAppViewer::getSecondLifeTitle() const
 {
-#if ADDRESS_SIZE == 64
-    return LLTrans::getString( "APP_NAME" ) + "_x64";
-#else
-    return LLTrans::getString("APP_NAME");
-#endif
+	return LLTrans::getString("APP_NAME");
 }
 
 std::string LLAppViewer::getWindowTitle() const

@@ -4,6 +4,9 @@
      For example, the strings used in avatar chat bubbles, and strings
      that are returned from one component and may appear in many places-->
 <strings>
+	<string name="APP_NAME">
+		흑우촌
+	</string>
 	<string name="SECOND_LIFE_GRID">
 		Second Life 그리드:
 	</string>
