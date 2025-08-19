@@ -1,73 +1,542 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<floater
- can_close="true"
- can_drag_on_left="false"
- can_minimize="true"
- can_resize="true"
- height="590"
- min_height="625"
- width="960"
- min_width="960"
- name="Model Preview"
- title="모델 업로드"
- help_topic="upload_model">
-  <string name="no_havok">물리학이 포함된 메시 업로드</string>
+<floater name="Model Preview" title="모델 업로드">
+	<string name="no_havok">
+		물리학이 포함된 메시 업로드
+	</string>
+	<string name="status_idle"/>
+	<string name="status_parse_error">
+		오류: DAE 파싱 문제 - 자세한 내용은 로그를 확인하세요.
+	</string>
+	<string name="status_bind_shape_orientation">
+		경고: 바인드 형태 행렬이 표준 X축 전방 방향이 아닙니다.
+	</string>
+	<string name="status_material_mismatch">
+		오류: 모델의 머티리얼이 참조 모델의 하위 집합이 아닙니다.
+	</string>
+	<string name="status_lod_model_mismatch">
+		오류: LOD 모델에 상위 요소가 없습니다.
+	</string>
+	<string name="status_reading_file">
+		로딩 중...
+	</string>
+	<string name="status_generating_meshes">
+		메시 생성 중...
+	</string>
+	<string name="status_vertex_number_overflow">
+		오류: 정점 수가 65535를 초과합니다. 중단됨!
+	</string>
+	<string name="bad_element">
+		오류: 요소가 유효하지 않습니다
+	</string>
+	<string name="high">
+		높음
+	</string>
+	<string name="medium">
+		보통
+	</string>
+	<string name="low">
+		낮음
+	</string>
+	<string name="lowest">
+		최낮음
+	</string>
+	<string name="mesh_status_good">
+		배송 준비 완료!
+	</string>
+	<string name="mesh_status_na">
+		해당 없음
+	</string>
+	<string name="mesh_status_none">
+		없음
+	</string>
+	<string name="mesh_status_submesh_mismatch">
+		세부 수준별로 텍스처를 적용할 수 있는 면의 수가 다릅니다.
+	</string>
+	<string name="mesh_status_mesh_mismatch">
+		세부 수준별로 메시 인스턴스의 수가 다릅니다.
+	</string>
+	<string name="mesh_status_too_many_vertices">
+		세부 수준에 정점이 너무 많습니다.
+	</string>
+	<string name="mesh_status_missing_lod">
+		필수 세부 수준이 없습니다.
+	</string>
+	<string name="mesh_status_invalid_material_list">
+		LOD 머티리얼이 참조 모델의 하위 집합이 아닙니다.
+	</string>
+	<string name="phys_status_vertex_limit_exceeded">
+		일부 물리학 헐이 정점 제한(256)을 초과합니다. 대안적인 '분석 방법'을 시도해보세요.
+	</string>
+	<string name="phys_status_hull_limit_exceeded">
+		일부 모델이 헐 제한(256)을 초과합니다. '단순화'를 시도해보세요.
+	</string>
+	<string name="phys_status_degenerate_triangles">
+		물리학 메시가 너무 조밀하거나 변형된 삼각형을 포함합니다. 분석/단순화를 사용하여 해결하세요.
+	</string>
+	<string name="phys_status_no_havok">
+		이 버전은 Havok 지원이 없으며 Second Life에서 물리학 업로드에 권장되지 않습니다. 결과를 예측할 수 없습니다.
+	</string>
+	<string name="phys_status_too_thin">
+		하나 이상의 치수가 0.5m 미만입니다. 헐 기반(분석된) 물리학 모양만 올바르게 작동합니다.
+	</string>
+	<string name="phys_status_unknown_error">
+		인식되지 않은 오류가 발생되었습니다.
+	</string>
+	<string name="layer_all">
+		모두
+	</string>
+	<string name="decomposing">
+		분석 중...
+	</string>
+	<string name="simplifying">
+		단순화 중...
+	</string>
+	<string name="tbd">
+		미정
+	</string>
+	<string name="TooManyJoint">
+		조인트가 너무 많아 스키닝을 비활성화했습니다: [JOINTS], 최대: [MAX]
+	</string>
+	<string name="UnrecognizedJoint">
+		인식되지 않은 조인트 이름에 리깅됨 [NAME]
+	</string>
+	<string name="UnknownJoints">
+		[COUNT]개의 인식되지 않은 조인트로 인해 스키닝을 비활성화했습니다.
+	</string>
+	<string name="ModelLoaded">
+		모델 [MODEL_NAME]이 로드되었습니다.
+	</string>
+	<string name="IncompleteTC">
+		텍스처 좌표 데이터가 불완전합니다.
+	</string>
+	<string name="NormalsNaN">
+		DAE 모델 노멀 로드 중 NaN이 발견되었습니다. 모델이 유효하지 않습니다.
+	</string>
+	<string name="NegativeScaleTrans">
+		음수 스케일링이 감지되었습니다 - 지원되지 않는 변환. domInstance_geometry: [LABEL]
+	</string>
+	<string name="NegativeScaleNormTrans">
+		음수 스케일링이 감지되었습니다 - 지원되지 않는 정규화 후 변환. domInstance_geometry: [LABEL]
+	</string>
+	<string name="CantResolveGeometryUrl">
+		지오메트리 URL을 해결할 수 없습니다.
+	</string>
+	<string name="ParsingErrorBadElement">
+		유효하지 않은 요소.
+	</string>
+	<string name="ParsingErrorCantParseScene">
+		씬을 파싱할 수 없습니다.
+	</string>
+	<string name="ParsingErrorCorrupt">
+		DAE 오류 - 일반적으로 손상된 파일을 나타냅니다.
+	</string>
+	<string name="ParsingErrorNoController">
+		컨트롤러를 확인할 수 없습니다.
+	</string>
+	<string name="ParsingErrorNoDoc">
+		내부 문서를 찾을 수 없습니다.
+	</string>
+	<string name="ParsingErrorNoRoot">
+		문서에 루트가 없습니다.
+	</string>
+	<string name="ParsingErrorNoScene">
+		문서에 visual_scene이 없습니다.
+	</string>
+	<string name="ParsingErrorPositionInvalidModel">
+		위치 데이터 없이 메시를 처리할 수 없습니다 - 유효하지 않은 모델.
+	</string>
+	<string name="ParsingErrorEmptyInvBindInvalidModel">
+		InvBind 데이터 없이 리깅된 메시를 처리할 수 없습니다 - 유효하지 않은 모델.
+	</string>
 
-  <string name="status_idle"></string>
-  <string name="status_parse_error">오류: DAE 파싱 문제 - 자세한 내용은 로그를 확인하세요.</string>
-  <string name="status_bind_shape_orientation">경고: 바인드 형태 행렬이 표준 X축 전방 방향이 아닙니다.</string>
-  <string name="status_material_mismatch">오류: 모델의 머티리얼이 참조 모델의 하위 집합이 아닙니다.</string>
-  <string name="status_lod_model_mismatch">오류: LOD 모델에 상위 요소가 없습니다.</string>
-  <string name="status_reading_file">로딩 중...</string>
-  <string name="status_generating_meshes">메시 생성 중...</string>
-  <string name="status_vertex_number_overflow">오류: 정점 수가 65535를 초과합니다. 중단됨!</string>
-  <string name="bad_element">오류: 요소가 유효하지 않습니다</string>
-  <string name="high">높음</string>
-  <string name="medium">보통</string>
-  <string name="low">낮음</string>
-  <string name="lowest">최낮음</string>
-  <string name="mesh_status_good">배송 준비 완료!</string>
-  <string name="mesh_status_na">해당 없음</string>
-  <string name="mesh_status_none">없음</string>
-  <string name="mesh_status_submesh_mismatch">세부 수준별로 텍스처를 적용할 수 있는 면의 수가 다릅니다.</string>
-  <string name="mesh_status_mesh_mismatch">세부 수준별로 메시 인스턴스의 수가 다릅니다.</string>
-  <string name="mesh_status_too_many_vertices">세부 수준에 정점이 너무 많습니다.</string>
-  <string name="mesh_status_missing_lod">필수 세부 수준이 없습니다.</string>
-  <string name="mesh_status_invalid_material_list">LOD 머티리얼이 참조 모델의 하위 집합이 아닙니다.</string>
-  <string name="phys_status_vertex_limit_exceeded">일부 물리학 헐이 정점 제한(256)을 초과합니다. 대안적인 '분석 방법'을 시도해보세요.</string>
-  <string name="phys_status_hull_limit_exceeded">일부 모델이 헐 제한(256)을 초과합니다. '단순화'를 시도해보세요.</string>
-  <string name="phys_status_degenerate_triangles">물리학 메시가 너무 조밀하거나 변형된 삼각형을 포함합니다. 분석/단순화를 사용하여 해결하세요.</string>
-  <string name="phys_status_no_havok">이 버전은 Havok 지원이 없으며 Second Life에서 물리학 업로드에 권장되지 않습니다. 결과를 예측할 수 없습니다.</string>
-  <string name="phys_status_too_thin">하나 이상의 치수가 0.5m 미만입니다. 헐 기반(분석된) 물리학 모양만 올바르게 작동합니다.</string>
-  <string name="phys_status_unknown_error">인식되지 않은 오류가 감지되었습니다.</string>
-  <string name="layer_all">모두</string>
-  <string name="decomposing">분석 중...</string>
-  <string name="simplifying">단순화 중...</string>
-  <string name="tbd">미정</string>
-  
-  <!-- 모델 로더의 경고 및 정보 -->
-  <string name="TooManyJoint">조인트가 너무 많아 스키닝을 비활성화했습니다: [JOINTS], 최대: [MAX]</string>
-  <string name="UnrecognizedJoint">인식되지 않은 조인트 이름에 리깅됨 [NAME]</string>
-  <string name="UnknownJoints">[COUNT]개의 알 수 없는 조인트로 인해 스키닝이 비활성화됨</string>
-  <string name="ModelLoaded">모델 [MODEL_NAME] 로드됨</string>
-
-  <string name="IncompleteTC">텍스처 좌표 데이터가 완전하지 않습니다.</string>
-  <string name="PositionNaN">DAE 모델에서 위치 데이터를 로드하는 중 NaN을 발견했습니다. 유효하지 않은 모델입니다.</string>
-  <string name="NormalsNaN">DAE 모델에서 법선을 로드하는 중 NaN을 발견했습니다. 유효하지 않은 모델입니다.</string>
-  <string name="NegativeScaleTrans">음수 스케일이 감지되었습니다. 지원되지 않는 변환입니다. domInstance_geometry: [LABEL]</string>
-  <string name="NegativeScaleNormTrans">음수 스케일이 감지되었습니다. 지원되지 않는 정규화 후 변환입니다. domInstance_geometry: [LABEL]</string>
-  <string name="CantResolveGeometryUrl">지오메트리 URL을 해결할 수 없습니다.</string>
-  <string name="ParsingErrorBadElement">잘못된 요소</string>
-  <string name="ParsingErrorCantParseScene">장면을 파싱할 수 없습니다</string>
-  <string name="ParsingErrorCorrupt">DAE 오류 - 일반적으로 손상된 파일을 나타냅니다.</string>
-  <string name="ParsingErrorNoController">컨트롤러를 확인할 수 없습니다</string>
-  <string name="ParsingErrorNoDoc">내부 문서를 찾을 수 없습니다</string>
-  <string name="ParsingErrorNoRoot">문서에 루트가 없습니다</string>
-  <string name="ParsingErrorNoScene">문서에 visual_scene이 없습니다</string>
-  <string name="ParsingErrorPositionInvalidModel">위치 데이터 없이는 메시를 처리할 수 없습니다. 유효하지 않은 모델입니다.</string>
-  <string name="ParsingErrorEmptyInvBindInvalidModel">InvBind 데이터 없이는 리깅된 메시를 처리할 수 없습니다. 유효하지 않은 모델입니다.</string>
-
-  <!-- 나머지 복잡한 UI 요소들은 영어 원본의 구조를 유지하면서 주요 텍스트만 번역 -->
-  <!-- 전체 파일이 매우 크므로 핵심 문자열들만 번역하고 나머지는 원본 구조 유지 -->
-  
+	<panel name="left_panel">
+		<panel name="model_name_representation_panel">
+			<text name="name_label">
+				모델 이름:
+			</text>
+			<text name="model_category_label">
+				이 모델은 다음을 나타냅니다...
+			</text>
+			<combo_box name="model_category_combo">
+				<combo_item label="하나를 선택하세요..." name="Choose one"/>
+				<combo_item label="아바타 모양" name="Avatar shape"/>
+				<combo_item label="아바타 부착물" name="Avatar attachment"/>
+				<combo_item label="움직이는 객체 (차량, 동물)" name="Moving object (vehicle, animal)"/>
+				<combo_item label="건물 구성 요소" name="Building Component"/>
+				<combo_item label="크고 움직이지 않는 것 등" name="Large, non moving etc"/>
+				<combo_item label="작고 움직이지 않는 것 등" name="Smaller, non-moving etc"/>
+				<combo_item label="위 항목 중 해당 없음" name="Not really any of these"/>
+			</combo_box>
+		</panel>
+		<tab_container name="import_tab">
+			<panel label="세부 수준" name="lod_panel" title="세부 수준">
+				<text initial_value="소스" name="source" value="소스"/>
+				<text initial_value="삼각형" name="triangles" value="삼각형"/>
+				<text initial_value="정점" name="vertices" value="정점"/>
+				<text initial_value="높음" name="high_label" value="높음"/>
+				<combo_box name="lod_source_high">
+					<item name="Load from file" label="파일에서 로드"/>
+					<item name="MeshOpt Auto" label="자동 생성"/>
+					<item name="MeshOptCombine" label="정밀하게 생성"/>
+					<item name="MeshOptSloppy" label="대충 생성"/>
+					<item name="Generate" label="안정적으로 생성"/>
+				</combo_box>
+				<button label="선택" name="lod_browse_high"/>
+				<combo_box name="lod_mode_high">
+					<item name="Triangle Limit" label="삼각형 제한"/>
+					<item name="Error Threshold" label="오류 임계값"/>
+				</combo_box>
+				<text initial_value="0" name="high_triangles" value="0"/>
+				<text initial_value="0" name="high_vertices" value="0"/>
+				<text initial_value="보통" name="medium_label" value="보통"/>
+				<combo_box name="lod_source_medium">
+					<item name="Load from file" label="파일에서 로드"/>
+					<item name="MeshOpt Auto" label="자동 생성"/>
+					<item name="MeshOptCombine" label="정밀하게 생성"/>
+					<item name="MeshOptSloppy" label="대충 생성"/>
+					<item name="Generate" label="안정적으로 생성"/>
+					<item name="Use LoD above" label="위 LOD 사용"/>
+				</combo_box>
+				<button label="선택" name="lod_browse_medium"/>
+				<combo_box name="lod_mode_medium">
+					<item name="Triangle Limit" label="삼각형 제한"/>
+					<item name="Error Threshold" label="오류 임계값"/>
+				</combo_box>
+				<text initial_value="0" name="medium_triangles" value="0"/>
+				<text initial_value="0" name="medium_vertices" value="0"/>
+				<text initial_value="낮음" name="low_label" value="낮음"/>
+				<combo_box name="lod_source_low">
+					<item name="Load from file" label="파일에서 로드"/>
+					<item name="MeshOpt Auto" label="자동 생성"/>
+					<item name="MeshOptCombine" label="정밀하게 생성"/>
+					<item name="MeshOptSloppy" label="대충 생성"/>
+					<item name="Generate" label="안정적으로 생성"/>
+					<item name="Use LoD above" label="위 LOD 사용"/>
+				</combo_box>
+ 				<button label="선택" name="lod_browse_low"/>
+				<combo_box name="lod_mode_low">
+					<item name="Triangle Limit" label="삼각형 제한"/>
+					<item name="Error Threshold" label="오류 임계값"/>
+				</combo_box>
+				<text initial_value="0" name="low_triangles" value="0"/>
+				<text initial_value="0" name="low_vertices" value="0"/>
+				<text initial_value="최낮음" name="lowest_label" value="최낮음"/>
+				<combo_box name="lod_source_lowest">
+					<item name="Load from file" label="파일에서 로드"/>
+					<item name="MeshOpt Auto" label="자동 생성"/>
+					<item name="MeshOptCombine" label="정밀하게 생성"/>
+					<item name="MeshOptSloppy" label="대충 생성"/>
+					<item name="Generate" label="안정적으로 생성"/>
+					<item name="Use LoD above" label="위 LOD 사용"/>
+				</combo_box>
+ 				<button label="선택" name="lod_browse_lowest"/>
+				<combo_box name="lod_mode_lowest">
+					<item name="Triangle Limit" label="삼각형 제한"/>
+					<item name="Error Threshold" label="오류 임계값"/>
+				</combo_box>
+				<text initial_value="0" name="lowest_triangles" value="0"/>
+				<text initial_value="0" name="lowest_vertices" value="0"/>
+				<check_box label="노멀 생성" name="gen_normals"/>
+				<text initial_value="크리스 각도:" name="crease_label" value="크리스 각도:"/>
+				<spinner name="crease_angle" value="75"/>
+			</panel>
+			<panel label="물리학" name="physics_panel">
+				<panel name="physics geometry">
+					<text name="first_step_name">
+						단계 1: 물리학 모델 선택
+					</text>
+					<combo_box name="physics_lod_combo" tool_tip="물리학 모양의 세부 수준">
+						<combo_item name="choose_one">
+							하나를 선택하세요...
+						</combo_item>
+						<combo_item name="physics_high">
+							높음
+						</combo_item>
+						<combo_item name="physics_medium">
+							보통
+						</combo_item>
+						<combo_item name="physics_low">
+							낮음
+						</combo_item>
+						<combo_item name="physics_lowest">
+							최낮음
+						</combo_item>
+						<combo_item name="physics_bounding_box">
+							바운딩 박스
+						</combo_item>
+						<combo_item name="physics_cube">
+							정육면체
+						</combo_item>
+						<combo_item name="physics_hex">
+							육각형
+						</combo_item>
+						<combo_item name="physics_ud">
+							사용자 정의
+						</combo_item>
+						<combo_item name="load_from_file">
+							파일에서
+						</combo_item>
+					</combo_box>
+					<button label="선택" name="physics_browse"/>
+				</panel>
+				<panel name="physics analysis">
+					<text name="method_label">
+						단계 2: 헐로 변환 (선택사항)
+					</text>
+					<text name="analysis_method_label">
+						방법:
+					</text>
+					<text name="quality_label">
+						품질:
+					</text>
+					<text name="smooth_method_label">
+						스무딩:
+					</text>
+					<check_box label="구멍 닫기" name="Close Holes (Slow)"/>
+					<button label="분석" name="Decompose"/>
+					<button label="취소" name="decompose_cancel"/>
+				</panel>
+				<panel name="physics simplification">
+					<text name="second_step_label">
+						단계 3: 단순화
+					</text>
+					<text name="simp_method_header">
+						방법:
+					</text>
+					<text name="pass_method_header">
+						패스:
+					</text>
+					<text name="Detail Scale label">
+						세부 스케일:
+					</text>
+					<text name="Retain%_label">
+						유지:
+					</text>
+					<combo_box name="Combine Quality" value="1"/>
+					<button label="단순화" name="Simplify"/>
+					<button label="취소" name="simplify_cancel"/>
+				</panel>
+				<panel name="physics info">
+					<text name="results_text">
+						결과:
+					</text>
+					<text name="physics_triangles">
+						삼각형: [TRIANGLES],
+					</text>
+					<text name="physics_points">
+						정점: [POINTS],
+					</text>
+					<text name="physics_hulls">
+						헐: [HULLS]
+					</text>
+				</panel>
+			</panel>
+			<panel label="업로드 옵션" name="modifiers_panel">
+				<text name="scale_label">
+					스케일 (1=없음):
+				</text>
+				<spinner name="import_scale" value="1.0"/>
+				<text name="dimensions_label">
+					치수:
+				</text>
+				<text name="import_dimensions">
+					[X] X [Y] X [Z]
+				</text>
+				<check_box label="텍스처 포함" name="upload_textures"/>
+				</panel>
+			<panel label="리깅" title="아바타" name="rigging_panel">
+				<text name="scale_label">
+					스케일 (1=없음):
+				</text>
+				<spinner name="import_scale" value="1.0"/>
+				<text name="dimensions_label">
+					치수:
+				</text>
+				<text name="import_dimensions">
+					[X] X [Y] X [Z]
+				</text>
+				<check_box label="텍스처 포함" name="upload_textures"/>
+				<text name="include_label">
+					아바타 모델 전용:
+				</text>
+				<check_box label="스킨 가중치 포함" name="upload_skin" top_pad="0"/>
+				<check_box label="조인트 위치 포함" name="upload_joints" top_pad="2"/>
+				<check_box label="조인트 위치가 정의된 경우 스케일 잠금" name="lock_scale_if_joint_position" top_pad="15"/>
+				<check_box label="아바타 모양에 맞추기" name="deform"/>
+				<radio_group name="deform_base">
+					<radio_item label="남성" name="0"/>
+					<radio_item label="여성" name="1"/>
+					<radio_item label="남성 (슬림)" name="2"/>
+				</radio_group>
+				<text name="pelvis_offset_label">
+					Z 오프셋 (아바타 올리기 / 내리기):
+				</text>
+				<spinner name="pelvis_offset" value="0.0"/>
+				<text name="skin_too_many_joints" text_color="Orange">
+					스킨 가중치 조인트가 너무 많음
+				</text>
+				<text name="skin_unknown_joint">
+					모델에 알 수 없는 조인트가 있음
+				</text>
+				<text name="joints_descr">
+					조인트:
+				</text>
+				<text name="conflicts_description">
+					[JOINTS_COUNT]개 조인트에서 [CONFLICTS]개 충돌
+				</text>
+				<text name="pos_overrides_descr">
+					조인트 '[JOINT]'의 위치 재정의:
+				</text>
+				<scroll_list name="pos_overrides_list">
+					<scroll_list.columns label="모델" name="model_name"/>
+					<scroll_list.columns label="X" name="axis_x"/>
+					<scroll_list.columns label="Y" name="axis_y"/>
+					<scroll_list.columns label="Z" name="axis_z"/>
+				</scroll_list>
+			</panel>
+			<panel label="로그" name="logs_panel">
+				<check_box label="세부 로그 표시" name="verbose_logging"/>
+			</panel>
+			<panel label="미리보기 설정" name="mesh_preview_settings_panel">
+				<text name="mesh_upload_behaviour_label">
+					모델 업로드 동작 설정:
+				</text>
+				<check_box label="가중치 자동 활성화" tool_tip="리깅 정보가 있는 메시의 가중치를 자동으로 활성화" name="mesh_preview_auto_weights"/>
+				<check_box label="가중치 자동 미리보기" tool_tip="리깅 정보가 있는 메시의 가중치를 미리보기에 자동으로 표시" name="mesh_preview_auto_show_weights"/>
+				<check_box label="기본적으로 '안정적인' LOD 사용" tool_tip="기본적으로 '안정적인' 방법(GLOD) 사용" name="mesh_upload_default_to_reliable"/>
+				<text name="lod_suffix_label">
+					LOD 접미사:
+				</text>
+				<combo_box name="lod_suffix_combo" tool_tip="기본값을 선택하거나 사용자 정의">
+					<combo_item name="choose_one">기본값을 선택하거나 수동으로 편집...</combo_item>
+					<combo_item name="suff_sl">SL 표준 (최낮음=LOD0)</combo_item>
+					<combo_item name="suff_unity">게임 엔진 표준 (최낮음=LOD3)</combo_item>
+					<combo_item name="suff_descriptive">단어 (high,med...)</combo_item>
+				</combo_box>
+				<text name="suf_lowest_lab">
+					최낮음:
+				</text>
+				<line_editor name="suf_lowest" tool_tip="파일 이름 또는 파일 내 모델에서 최낮음 LOD를 식별하는 접미사." />
+				<text name="suf_low_lab">
+					낮음:
+				</text>
+				<line_editor name="suf_low" tool_tip="파일 이름 또는 파일 내 모델에서 낮음 LOD를 식별하는 접미사." />
+				<text name="suf_medium_lab" width="45">
+					보통:
+				</text>
+				<line_editor name="suf_medium" tool_tip="파일 이름 또는 파일 내 모델에서 보통 LOD를 식별하는 접미사." />
+				<text name="suf_high_lab">
+					높음:
+				</text>
+				<line_editor name="suf_high" tool_tip="파일 이름 또는 파일 내 모델에서 높음 LOD를 식별하는 접미사." />
+				<text name="suf_physics_lab">
+					물리학:
+				</text>
+				<line_editor name="suf_physics" tool_tip="파일 이름 또는 파일 내 모델에서 물리학을 식별하는 접미사." />
+				<text name="mesh_preview_ud_preset_label" width="190">
+					사용자 정의 물리학 설정:
+				</text>
+				<line_editor name="ud_physics" tool_tip="물리학에 사용할 간단한 Collada 메시 정의 파일 경로." />
+				<button label="찾아보기" label_selected="찾아보기" name="set_user_def_phys"/>
+				<text name="mesh_preview_colors_label">
+					모델 업로드 색상:
+				</text>
+				<text name="user_label">
+					일반:
+				</text>
+				<color_swatch label="배경" tool_tip="업로더의 배경 색상" name="mesh_preview_canvas_color"/>
+				<color_swatch label="모델 가장자리" tool_tip="미리보기 창에서 모델 가장자리 색상" name="mesh_preview_edge_color"/>
+				<color_swatch label="주변광" tool_tip="미리보기 창의 주변광(애니메이션 업로드 미리보기 등에도 영향)" name="preview_ambient_color"/>
+				<text name="physics_settings_label">
+					물리학:
+				</text>
+				<color_swatch label="물리학 가장자리" tool_tip="미리보기 창에서 물리학 삼각형의 가장자리 색상" name="mesh_preview_physics_edge_color"/>
+				<color_swatch label="물리학 채우기 색상" tool_tip="미리보기 창에서 물리학 모델의 채우기 색상" name="mesh_preview_physics_fill_color"/>
+				<text name="physics_issues_setting_label">
+					물리학 문제:
+				</text>
+				<color_swatch label="나쁜 가장자리" tool_tip="미리보기 창에서 변형된(얇은) 삼각형 가장자리 색상" name="mesh_preview_degenerate_edge_color"/>
+				<color_swatch label="나쁜 삼각형" tool_tip="미리보기 창에서 변형된(얇은) 삼각형 채우기 색상" name="mesh_degenerate_fill_color"/>
+			</panel>
+		</tab_container>
+		<panel name="weights_and_warning_panel">
+			<button label="가중치 및 수수료 계산" name="calculate_btn" tool_tip="가중치 및 수수료 계산" width="200"/>
+			<button label="취소" name="cancel_btn"/>
+			<button label="업로드" name="ok_btn" tool_tip="시뮬레이터에 업로드"/>
+			<button label="설정 지우고 양식 재설정" name="reset_btn" width="280"/>
+			<text name="upload_fee">
+				업로드 비용: [FEE] L$
+			</text>
+			<text name="prim_weight">
+				토지 영향: [EQ]
+			</text>
+			<text name="download_weight">
+				다운로드: [ST]
+			</text>
+			<text name="physics_weight">
+				물리학: [PH]
+			</text>
+			<text name="server_weight">
+				서버: [SIM]
+			</text>
+			<panel name="price_breakdown_panel">
+				<text name="price_breakdown_title">
+					비용 분석
+				</text>
+				<text name="price_breakdown_labels">
+다운로드:
+물리학:
+인스턴스:
+텍스처:
+모델:
+				</text>
+			</panel>
+			<panel name="physics_costs_panel">
+				<text name="physics_breakdown_title">
+					물리학 비용
+				</text>
+				<text name="physics_breakdown_labels">
+기본 헐:
+메시:
+분석됨:
+				</text>
+			</panel>
+			<panel name="preview_controls_panel">
+				<panel name="preview_controls_inner_panel">
+					<text name="preview_controls_title">
+						미리보기 제어
+					</text>
+					<combo_box name="preview_lod_combo" tool_tip="미리보기에 표시되는 LOD">
+						<combo_item name="high">높음</combo_item>
+						<combo_item name="medium">보통</combo_item>
+						<combo_item name="low">낮음</combo_item>
+						<combo_item name="lowest">최낮음</combo_item>
+					</combo_box>
+				</panel>
+				<check_box label="가장자리" name="show_edges"/>
+				<check_box label="텍스처" name="show_textures"/>
+				<check_box label="UV 가이드" name="show_uv_guide"/>
+				<check_box label="물리학" name="show_physics"/>
+				<text name="exploder_label" width="105">
+					미리보기 분해:
+				</text>
+				<slider name="physics_explode" width="75" />
+				<check_box label="조인트 위치" name="show_joint_positions"/>
+				<check_box label="조인트 위치 재정의" name="show_joint_overrides"/>
+				<check_box label="스킨 가중치" name="show_skin_weight"/>
+			</panel>
+			<text name="warning_title" width="60">
+				주의:
+			</text>
+			<text name="warning_message">
+				메시 모델 업로드 권한이 없습니다. 인증에 대한 [[VURL] 정보]를 확인하세요.
+			</text>
+			<text name="status">
+				[STATUS]
+			</text>
+		</panel>
+	</panel>
+	<text name="lod_label">
+		미리보기:
+	</text>
 </floater>

@@ -1,62 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<floater
- can_resize="true"
- positioning="cascading"
- height="200"
- min_height="100"
- min_width="230"
- layout="topleft"
- name="floater_avatar_render_settings"
- save_rect="true"
- single_instance="true"
- reuse_instance="true"
- title="아바타 표시 예외 설정"
- width="300">
-    <string
-     name="av_never_render"
-     value="표시 안 함"/>
-    <string
-     name="av_always_render"
-     value="항상 표시"/>
-    <name_list
-     bottom="-33"
-     draw_heading="true"
-     follows="all"
-     left="8"
-     multi_select="false"
-     name="render_settings_list"
-     right="-8"
-     top="0">
-        <name_list.columns
-         label="이름"
-         name="name"
-         relative_width="0.65" />
-        <name_list.columns
-         label="완전 세부사항"
-         name="setting"
-         relative_width="0.35" />
-     </name_list>
-    <panel
-     bg_alpha_color="ScrollBgWriteableColor"
-     background_visible="true"
-     background_opaque="false"
-     bevel_style="none"
-     follows="bottom|left|right"
-     name="add_subpanel"
-     layout="topleft"
-     height="28"
-     top_pad="0">
-     <menu_button
-       follows="bottom|left"
-       height="25"
-       label="사용자 추가..."
-       layout="topleft"
-       menu_filename="menu_avatar_rendering_settings_add.xml"
-       menu_position="bottomleft"
-       name="plus_btn"
-       tool_tip="선택한 사람에 대한 작업"
-       top="1"
-       left="8"
-       width="120" />
-     </panel>
+<floater name="floater_avatar_render_settings" title="아바타 표시 예외 설정">
+	<string name="av_never_render" value="표시 안 함"/>
+	<string name="av_always_render" value="항상 표시"/>
+	<name_list name="render_settings_list">
+		<name_list.columns label="이름" name="name"/>
+		<name_list.columns label="완전 세부사항" name="setting"/>
+	</name_list>
+	<panel name="add_subpanel">
+		<menu_button name="plus_btn" label="사용자 추가..." tool_tip="선택한 사람에 대한 작업"/>
+	</panel>
 </floater>
