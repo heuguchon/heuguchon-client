@@ -17,13 +17,14 @@
     <binding key="PGDN" mask="NONE" command="push_down"/>
     <binding key="HOME" mask="NONE" command="toggle_fly"/>
 
-    <binding key="SPACE" mask="NONE" command="stop_moving"/>
     <binding key="ENTER" mask="NONE" command="start_chat"/>
     <binding key="DIVIDE" mask="NONE" command="start_gesture"/>
 
     <binding key="" mask="NONE" mouse="MMB" command="toggle_voice"/>
 
     <binding key="" mask="NONE" mouse="LMB" command="script_trigger_lbutton"/>
+	
+    <binding key="SPACE" mask="NONE" command="jump"/>
   </first_person>
   <third_person>
     <binding key="A" mask="NONE" command="turn_left"/>
@@ -41,7 +42,6 @@
 <!-- </FS:Chanayane> -->
     <binding key="F" mask="NONE" command="toggle_fly"/>
 
-    <binding key="SPACE" mask="NONE" command="stop_moving"/>
     <binding key="ENTER" mask="NONE" command="start_chat"/>
     <binding key="DIVIDE" mask="NONE" command="start_gesture"/>
 
@@ -91,6 +91,8 @@
     <binding key="" mask="NONE" mouse="MMB" command="toggle_voice"/>
 
     <binding key="" mask="NONE" mouse="LMB" command="script_trigger_lbutton"/>
+	
+    <binding key="SPACE" mask="NONE" command="jump"/>
   </third_person>
   <sitting>
     <binding key="A" mask="ALT" command="spin_around_cw"/>
