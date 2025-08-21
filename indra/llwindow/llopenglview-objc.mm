@@ -27,6 +27,7 @@
 #import "llopenglview-objc.h"
 #import "llwindowmacosx-objc.h"
 #import "llappdelegate-objc.h"
+#import <Carbon/Carbon.h>
 
 extern BOOL gHiDPISupport;
 
@@ -519,11 +520,28 @@ attributedStringInfo getSegments(NSAttributedString *str)
     }
     
     // Korean input fix: Improved input source detection
-    NSString *inputSource = [[NSTextInputContext currentInputContext] selectedKeyboardInputSource];
-    BOOL isKoreanInput = [inputSource containsString:@"Korean"] || 
-                        [inputSource containsString:@"Hangul"] ||
-                        [inputSource containsString:@"2-Set Korean"] ||
-                        [inputSource containsString:@"390 Hangul"];
+    // Use a more reliable method to detect Korean input
+    BOOL isKoreanInput = NO;
+    @try {
+        NSTextInputContext *inputContext = [NSTextInputContext currentInputContext];
+        if (inputContext) {
+            // Try to get the current input source
+            TISInputSourceRef currentSource = TISCopyCurrentKeyboardInputSource();
+            if (currentSource) {
+                NSString *sourceID = (__bridge NSString *)(TISGetInputSourceProperty(currentSource, kTISPropertyInputSourceID));
+                if (sourceID) {
+                    isKoreanInput = [sourceID containsString:@"Korean"] || 
+                                   [sourceID containsString:@"Hangul"] ||
+                                   [sourceID containsString:@"2-Set"];
+                }
+                CFRelease(currentSource);
+            }
+        }
+    }
+    @catch (NSException *e) {
+        // Fallback: check if we're not using Roman script
+        isKoreanInput = ![(LLAppDelegate*)[NSApp delegate] romanScript];
+    }
     
     bool acceptsText = mHasMarkedText ? false : callKeyDown(&eventData, keycode, mModifiers, ch);
 
@@ -638,12 +656,8 @@ attributedStringInfo getSegments(NSAttributedString *str)
 
 - (BOOL)hasMarkedText
 {
-    // Korean input fix: Also check NSTextInputContext state
-    NSTextInputContext *context = [self inputContext];
-    if (context && [context respondsToSelector:@selector(hasMarkedText)])
-    {
-        return mHasMarkedText || [context hasMarkedText];
-    }
+    // Korean input fix: Check internal state only
+    // NSTextInputContext doesn't have hasMarkedText method
 	return mHasMarkedText;
 }
 
@@ -744,11 +758,24 @@ attributedStringInfo getSegments(NSAttributedString *str)
             
             // Notify the composition text update
             const wchar_t* wtext = reinterpret_cast<const wchar_t*>(text);
-            std::vector<int> seg_lengths_vec(segments.seg_lengths.begin(), segments.seg_lengths.end());
-            std::vector<bool> standouts_vec(segments.seg_standouts.begin(), segments.seg_standouts.end());
+            // Convert segment info to arrays for C interface
+            int* seg_lengths = new int[segments.seg_lengths.size()];
+            bool* standouts = new bool[segments.seg_standouts.size()];
+            
+            for (size_t i = 0; i < segments.seg_lengths.size(); i++) {
+                seg_lengths[i] = segments.seg_lengths[i];
+            }
+            for (size_t i = 0; i < segments.seg_standouts.size(); i++) {
+                standouts[i] = segments.seg_standouts[i];
+            }
+            
             callCompositionTextUpdate(wtext, string_length, (int)selectedRange.location,
-                                    seg_lengths_vec.data(), (int)seg_lengths_vec.size(),
-                                    standouts_vec.data());
+                                    seg_lengths, (int)segments.seg_lengths.size(),
+                                    standouts);
+            
+            // Clean up temporary arrays
+            delete[] seg_lengths;
+            delete[] standouts;
         }
         else
         {
@@ -940,11 +967,23 @@ attributedStringInfo getSegments(NSAttributedString *str)
 // Korean input fix: New utility methods
 - (BOOL)isKoreanInputActive
 {
-    NSString *inputSource = [[NSTextInputContext currentInputContext] selectedKeyboardInputSource];
-    return [inputSource containsString:@"Korean"] || 
-           [inputSource containsString:@"Hangul"] ||
-           [inputSource containsString:@"2-Set Korean"] ||
-           [inputSource containsString:@"390 Hangul"];
+    BOOL isKorean = NO;
+    @try {
+        TISInputSourceRef currentSource = TISCopyCurrentKeyboardInputSource();
+        if (currentSource) {
+            NSString *sourceID = (__bridge NSString *)(TISGetInputSourceProperty(currentSource, kTISPropertyInputSourceID));
+            if (sourceID) {
+                isKorean = [sourceID containsString:@"Korean"] || 
+                          [sourceID containsString:@"Hangul"] ||
+                          [sourceID containsString:@"2-Set"];
+            }
+            CFRelease(currentSource);
+        }
+    }
+    @catch (NSException *e) {
+        isKorean = NO;
+    }
+    return isKorean;
 }
 
 - (void)resetIMEState

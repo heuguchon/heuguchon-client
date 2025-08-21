@@ -27,6 +27,7 @@
 
 #include <AppKit/AppKit.h>
 #include <Cocoa/Cocoa.h>
+#include <Carbon/Carbon.h>
 #include <errno.h>
 #include "llopenglview-objc.h"
 #include "llwindowmacosx-objc.h"
@@ -487,11 +488,23 @@ void setTitleCocoa(NSWindowRef window, const std::string &title)
 bool isKoreanInputActive()
 {
     @autoreleasepool {
-        NSString *inputSource = [[NSTextInputContext currentInputContext] selectedKeyboardInputSource];
-        return [inputSource containsString:@"Korean"] || 
-               [inputSource containsString:@"Hangul"] ||
-               [inputSource containsString:@"2-Set Korean"] ||
-               [inputSource containsString:@"390 Hangul"];
+        BOOL isKorean = NO;
+        @try {
+            TISInputSourceRef currentSource = TISCopyCurrentKeyboardInputSource();
+            if (currentSource) {
+                NSString *sourceID = (__bridge NSString *)(TISGetInputSourceProperty(currentSource, kTISPropertyInputSourceID));
+                if (sourceID) {
+                    isKorean = [sourceID containsString:@"Korean"] || 
+                              [sourceID containsString:@"Hangul"] ||
+                              [sourceID containsString:@"2-Set"];
+                }
+                CFRelease(currentSource);
+            }
+        }
+        @catch (NSException *e) {
+            isKorean = NO;
+        }
+        return isKorean;
     }
 }
 
@@ -531,11 +544,8 @@ void resetIMEState()
 
 bool isIMEComposing()
 {
-    @autoreleasepool {
-        NSTextInputContext *context = [NSTextInputContext currentInputContext];
-        if (context && [context respondsToSelector:@selector(hasMarkedText)]) {
-            return [context hasMarkedText];
-        }
-        return false;
-    }
+    // Korean input fix: Check if IME is currently composing
+    // NSTextInputContext doesn't have hasMarkedText method
+    // We'll rely on our internal state tracking
+    return hasCompositionText();
 }
