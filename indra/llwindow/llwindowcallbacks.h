@@ -95,6 +95,16 @@ public:
     virtual std::string translateString(const char* tag);
     virtual std::string translateString(const char* tag,
         const std::map<std::string, std::string>& args);
+        
+    // Korean input handling callbacks - added for fixing Korean character decomposition
+    virtual void handleCompositionTextUpdate(LLWindow* window,
+                                           const LLWString& composition_text,
+                                           S32 cursor_position,
+                                           const std::vector<S32>& segment_lengths,
+                                           const std::vector<bool>& standouts) {}
+    
+    virtual void handleCompositionTextCommit(LLWindow* window) {}
+    virtual void handleDeleteChar(LLWindow* window) {}
 };
 
 

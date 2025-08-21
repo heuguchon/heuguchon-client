@@ -184,4 +184,19 @@ GLViewRef getGLView();
 
 unsigned int getModifiers();
 
+// Korean input handling functions - added for fixing Korean character decomposition issue
+void callDeleteRange(int start, int length);
+void callCompositionTextUpdate(const wchar_t* text, int text_length, 
+                              int cursor_position, 
+                              const int* segment_lengths, int segment_count,
+                              const bool* standouts);
+void callCompositionTextCommit();
+bool isKoreanInputActive();
+bool hasCompositionText();
+void clearCompositionText();
+bool detectKoreanInputMethod();
+void enableIMEForKorean(bool enable);
+void resetIMEState();
+bool isIMEComposing();
+
 #endif // LL_LLWINDOWMACOSX_OBJC_H

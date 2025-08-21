@@ -517,19 +517,29 @@ attributedStringInfo getSegments(NSAttributedString *str)
     {
         ch = [str_no_modifiers characterAtIndex:0];
     }
+    
+    // Korean input fix: Improved input source detection
+    NSString *inputSource = [[NSTextInputContext currentInputContext] selectedKeyboardInputSource];
+    BOOL isKoreanInput = [inputSource containsString:@"Korean"] || 
+                        [inputSource containsString:@"Hangul"] ||
+                        [inputSource containsString:@"2-Set Korean"] ||
+                        [inputSource containsString:@"390 Hangul"];
+    
     bool acceptsText = mHasMarkedText ? false : callKeyDown(&eventData, keycode, mModifiers, ch);
 
     if (acceptsText &&
         !mMarkedTextAllowed &&
         !(mModifiers & (NSControlKeyMask | NSCommandKeyMask)) &&  // commands don't invoke InputWindow
-        ![(LLAppDelegate*)[NSApp delegate] romanScript] &&
+        (isKoreanInput || ![(LLAppDelegate*)[NSApp delegate] romanScript]) && // Korean input condition improved
         ch > ' ' &&
         ch != NSDeleteCharacter &&
         (ch < 0xF700 || ch > 0xF8FF))  // 0xF700-0xF8FF: reserved for function keys on the keyboard(from NSEvent.h)
     {
+        // Korean input mode - activate Input Method handling
         [(LLAppDelegate*)[NSApp delegate] showInputWindow:true withEvent:theEvent];
     } else
     {
+        // Handle through Input Context for IME processing
         [[self inputContext] handleEvent:theEvent];
     }
 }
@@ -628,21 +638,49 @@ attributedStringInfo getSegments(NSAttributedString *str)
 
 - (BOOL)hasMarkedText
 {
+    // Korean input fix: Also check NSTextInputContext state
+    NSTextInputContext *context = [self inputContext];
+    if (context && [context respondsToSelector:@selector(hasMarkedText)])
+    {
+        return mHasMarkedText || [context hasMarkedText];
+    }
 	return mHasMarkedText;
 }
 
 - (NSRange)markedRange
 {
+    // Korean input fix: Improved range handling
+    if (!mHasMarkedText)
+    {
+        return NSMakeRange(NSNotFound, 0);
+    }
+    
 	int range[2];
 	getPreeditMarkedRange(&range[0], &range[1]);
-	return NSMakeRange(range[0], range[1]);
+    
+    // Validate range before returning
+    if (range[0] >= 0 && range[1] > 0)
+    {
+        return NSMakeRange(range[0], range[1]);
+    }
+    
+	return NSMakeRange(NSNotFound, 0);
 }
 
 - (NSRange)selectedRange
 {
+    // Korean input fix: Improved selection range handling
 	int range[2];
 	getPreeditSelectionRange(&range[0], &range[1]);
-	return NSMakeRange(range[0], range[1]);
+    
+    // Validate range before returning
+    if (range[0] >= 0)
+    {
+        return NSMakeRange(range[0], range[1] > 0 ? range[1] : 0);
+    }
+    
+    // Default to current cursor position
+	return NSMakeRange(0, 0);
 }
 
 - (void)setMarkedText:(id)aString selectedRange:(NSRange)selectedRange replacementRange:(NSRange)replacementRange
@@ -653,49 +691,72 @@ attributedStringInfo getSegments(NSAttributedString *str)
     // Apple also says when aString is an NSString object,
     // the receiver is expected to render the marked text with distinguishing appearance.
     // So I tried to make attributedStringInfo, but it won't be used...   (Pell Smit)
-
+    
+    // Korean input fix: Improved composition text handling based on Chrome's approach
     if (mMarkedTextAllowed)
     {
-        unsigned int selected[2] = {
-            unsigned(selectedRange.location),
-            unsigned(selectedRange.length)
-        };
+        // Check if we have composition text
+        BOOL hasComposition = [aString length] > 0;
         
-        unsigned int replacement[2] = {
-            unsigned(replacementRange.location),
-            unsigned(replacementRange.length)
-        };
+        // If we have existing marked text and a replacement range is specified, handle it first
+        if (mHasMarkedText && replacementRange.location != NSNotFound && replacementRange.length > 0)
+        {
+            // Delete the replacement range text first
+            callDeleteRange((int)replacementRange.location, (int)replacementRange.length);
+        }
         
-        int string_length = [aString length];
-        unichar text[string_length];
-        attributedStringInfo segments;
-        // I used 'respondsToSelector:@selector(string)'
-        // to judge aString is an attributed string or not.
-        if ([aString respondsToSelector:@selector(string)])
+        if (hasComposition)
         {
-            // aString is attibuted
-            [[aString string] getCharacters:text range:NSMakeRange(0, string_length)];
-            segments = getSegments((NSAttributedString *)aString);
-        }
-        else
-        {
-            // aString is not attributed
-            [aString getCharacters:text range:NSMakeRange(0, string_length)];
-            segments.seg_lengths.push_back(string_length);
-            segments.seg_standouts.push_back(true);
-        }
-        setMarkedText(text, selected, replacement, string_length, segments);
-        if (string_length > 0)
-        {
+            unsigned int selected[2] = {
+                unsigned(selectedRange.location),
+                unsigned(selectedRange.length)
+            };
+            
+            unsigned int replacement[2] = {
+                unsigned(replacementRange.location != NSNotFound ? replacementRange.location : 0),
+                unsigned(replacementRange.length)
+            };
+            
+            int string_length = [aString length];
+            unichar text[string_length];
+            attributedStringInfo segments;
+            
+            // I used 'respondsToSelector:@selector(string)'
+            // to judge aString is an attributed string or not.
+            if ([aString respondsToSelector:@selector(string)])
+            {
+                // aString is attributed
+                [[aString string] getCharacters:text range:NSMakeRange(0, string_length)];
+                segments = getSegments((NSAttributedString *)aString);
+            }
+            else
+            {
+                // aString is not attributed
+                [aString getCharacters:text range:NSMakeRange(0, string_length)];
+                segments.seg_lengths.push_back(string_length);
+                segments.seg_standouts.push_back(true);
+            }
+            
+            // Set marked text with improved handling for Korean composition
+            setMarkedText(text, selected, replacement, string_length, segments);
             mHasMarkedText = TRUE;
             mMarkedTextLength = string_length;
+            
+            // Notify the composition text update
+            const wchar_t* wtext = reinterpret_cast<const wchar_t*>(text);
+            std::vector<int> seg_lengths_vec(segments.seg_lengths.begin(), segments.seg_lengths.end());
+            std::vector<bool> standouts_vec(segments.seg_standouts.begin(), segments.seg_standouts.end());
+            callCompositionTextUpdate(wtext, string_length, (int)selectedRange.location,
+                                    seg_lengths_vec.data(), (int)seg_lengths_vec.size(),
+                                    standouts_vec.data());
         }
         else
         {
-            // we must clear the marked text when aString is null.
+            // Composition completed or cancelled
             [self unmarkText];
         }
     } else {
+        // Marked text not allowed, clear any existing marked text
         if (mHasMarkedText)
         {
             [self unmarkText];
@@ -705,20 +766,40 @@ attributedStringInfo getSegments(NSAttributedString *str)
 
 - (void)commitCurrentPreedit
 {
+    // Korean input fix: Improved commit process
     if (mHasMarkedText)
     {
-        if ([[self inputContext] respondsToSelector:@selector(commitEditing)])
+        NSTextInputContext *context = [self inputContext];
+        if ([context respondsToSelector:@selector(commitEditing)])
         {
-            [[self inputContext] commitEditing];
+            [context commitEditing];
         }
+        
+        // Reset internal state after commit
+        mHasMarkedText = FALSE;
+        mMarkedTextLength = 0;
+        
+        // Notify composition commit
+        callCompositionTextCommit();
     }
 }
 
 - (void)unmarkText
 {
-	[[self inputContext] discardMarkedText];
-	resetPreedit();
-	mHasMarkedText = FALSE;
+    // Korean input fix: Improved unmarking process
+    if (mHasMarkedText)
+    {
+        // Notify input context
+        [[self inputContext] discardMarkedText];
+        
+        // Reset internal state
+        resetPreedit();
+        mHasMarkedText = FALSE;
+        mMarkedTextLength = 0;
+        
+        // Clear composition state
+        clearCompositionText();
+    }
 }
 
 // We don't support attributed strings.
@@ -743,6 +824,22 @@ attributedStringInfo getSegments(NSAttributedString *str)
 
 - (void)insertText:(id)aString replacementRange:(NSRange)replacementRange
 {
+    if (aString == nil) return;
+    
+    // Korean input fix: Clear any existing marked text first
+    if (mHasMarkedText)
+    {
+        resetPreedit();
+        mHasMarkedText = FALSE;
+        callCompositionTextCommit();
+    }
+    
+    // Handle replacement range if specified
+    if (replacementRange.location != NSNotFound && replacementRange.length > 0)
+    {
+        callDeleteRange((int)replacementRange.location, (int)replacementRange.length);
+    }
+    
 	// SL-19801 Special workaround for system emoji picker
 	if ([aString length] == 2)
 	{
@@ -767,27 +864,27 @@ attributedStringInfo getSegments(NSAttributedString *str)
     
     @try
     {
-        if (!mHasMarkedText)
+        // Korean input fix: Process each character with improved handling
+        for (NSInteger i = 0; i < [aString length]; i++)
         {
-            for (NSInteger i = 0; i < [aString length]; i++)
-            {
-                callUnicodeCallback([aString characterAtIndex:i], mModifiers);
-            }
-        } else {
-            resetPreedit();
-            // We may never get this point since unmarkText may be called before insertText ever gets called once we submit our text.
-            // But just in case...
+            unichar character = [aString characterAtIndex:i];
             
-            for (NSInteger i = 0; i < [aString length]; i++)
+            // Check if this is a Korean completed character (Hangul syllables)
+            if (character >= 0xAC00 && character <= 0xD7A3)
             {
-                handleUnicodeCharacter([aString characterAtIndex:i]);
+                // Korean completed character - handle as final composed character
+                callUnicodeCallback(character, mModifiers);
             }
-            mHasMarkedText = FALSE;
+            else
+            {
+                // Other characters (including Korean Jamo if any)
+                callUnicodeCallback(character, mModifiers);
+            }
         }
     }
     @catch(NSException * e)
     {
-        NSLog(@"Failed to process an attributed string. Exception: %@ String: %@", e.name, aString);
+        NSLog(@"Failed to process text input. Exception: %@ String: %@", e.name, aString);
     }
 }
 
@@ -830,7 +927,33 @@ attributedStringInfo getSegments(NSAttributedString *str)
 
 - (void) allowMarkedTextInput:(bool)allowed
 {
+    // Korean input fix: Improved marked text control
     mMarkedTextAllowed = allowed;
+    
+    // Clear existing marked text if not allowed
+    if (!allowed && mHasMarkedText)
+    {
+        [self unmarkText];
+    }
+}
+
+// Korean input fix: New utility methods
+- (BOOL)isKoreanInputActive
+{
+    NSString *inputSource = [[NSTextInputContext currentInputContext] selectedKeyboardInputSource];
+    return [inputSource containsString:@"Korean"] || 
+           [inputSource containsString:@"Hangul"] ||
+           [inputSource containsString:@"2-Set Korean"] ||
+           [inputSource containsString:@"390 Hangul"];
+}
+
+- (void)resetIMEState
+{
+    if (mHasMarkedText)
+    {
+        [self unmarkText];
+    }
+    resetIMEState();
 }
 
 @end

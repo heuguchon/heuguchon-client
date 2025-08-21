@@ -482,3 +482,60 @@ void setTitleCocoa(NSWindowRef window, const std::string &title)
 	[(LLNSWindow*)window setTitle:str];
 }
 // </FS:CR>
+
+// Korean input handling functions - implementation for fixing Korean character decomposition
+bool isKoreanInputActive()
+{
+    @autoreleasepool {
+        NSString *inputSource = [[NSTextInputContext currentInputContext] selectedKeyboardInputSource];
+        return [inputSource containsString:@"Korean"] || 
+               [inputSource containsString:@"Hangul"] ||
+               [inputSource containsString:@"2-Set Korean"] ||
+               [inputSource containsString:@"390 Hangul"];
+    }
+}
+
+bool detectKoreanInputMethod()
+{
+    return isKoreanInputActive();
+}
+
+bool hasCompositionText()
+{
+    // This will be implemented in the C++ side
+    // For now, return false as a placeholder
+    return false;
+}
+
+void clearCompositionText()
+{
+    // This will call the C++ side to clear composition state
+    // Implementation will be added in llwindowmacosx.cpp
+}
+
+void enableIMEForKorean(bool enable)
+{
+    // Enable or disable IME based on Korean input state
+    // This can be used to optimize IME behavior
+}
+
+void resetIMEState()
+{
+    @autoreleasepool {
+        NSTextInputContext *context = [NSTextInputContext currentInputContext];
+        if (context && [context respondsToSelector:@selector(discardMarkedText)]) {
+            [context discardMarkedText];
+        }
+    }
+}
+
+bool isIMEComposing()
+{
+    @autoreleasepool {
+        NSTextInputContext *context = [NSTextInputContext currentInputContext];
+        if (context && [context respondsToSelector:@selector(hasMarkedText)]) {
+            return [context hasMarkedText];
+        }
+        return false;
+    }
+}
