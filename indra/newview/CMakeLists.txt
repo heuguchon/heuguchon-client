@@ -1869,7 +1869,7 @@ if (DARWIN)
   set(viewer_RESOURCE_FILES
     heuguchon_icon.icns
     Info-Heuguchon.plist
-    Firestorm.xib
+    Heuguchon.xib
     # CMake doesn't seem to support Xcode language variants well just yet
     English.lproj/InfoPlist.strings
     English.lproj/language.txt
@@ -2504,7 +2504,7 @@ if (WINDOWS)
 elseif (DARWIN)
     set_target_properties(${VIEWER_BINARY_NAME}
         PROPERTIES
-        RESOURCE Firestorm.xib
+        RESOURCE Heuguchon.xib
         LINK_FLAGS_RELEASE "${LINK_FLAGS_RELEASE} -Xlinker -dead_strip"
         #<FS:TS> Force the SDK version in the linked executable to be 10.12. This will fool
         # macOS into using the pre-Mojave display system, avoiding the blurry display that
