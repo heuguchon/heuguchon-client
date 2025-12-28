@@ -5727,6 +5727,8 @@ www.secondlife.com から最新バージョンをダウンロードしてくだ�
 	<string name="Command_Poser_Label">ポーザー</string>
 	<string name="Command_Poser_Tooltip">アバターとアニメーションオブジェクトにポーズをつけます。</string>
 	<string name="Command_Primfeed_Tooltip">Primfeedに直接投稿します。</string>
+	<string name="Command_Omnifilter_Label">包括フィルタ</string>
+
 	<string name="Command_360_Capture_Tooltip">
 		３６０度の正距円筒図法のスナップショット画像を撮影します。
 	</string>
@@ -5855,8 +5857,9 @@ www.secondlife.com から最新バージョンをダウンロードしてくだ�
 	<string name="Command_Group_Titles_Tooltip">アクティブなグループタグを変更します。</string>
 	<string name="Command_Wearable_Favorites_Tooltip">お気に入りの着用物のリストを開きます。</string>
 	<string name="Command_RFO_Tooltip">ビューアにはフレンドのアバターのみが表示され、他のすべてのアバターは削除されます。有効にすると、他のユーザを見えるようにするＴＰが必要になります。</string>
-	<string name="Command_DAO_Tooltip">アニメーションオブジェクトの描画解除（別名アニメッシュ）－現在表示されているすべてのアニメッシュ（装着されているもの、フリーローミングのもの）を一時的に描画解除します。描画解除されたアニメッシュは、ＴＰ後に再び表示されます。</string>
+	<string name="Command_DAO_Tooltip">アニメーションオブジェクトの（別名アニメッシュ）描画解除－現在表示されているすべてのアニメッシュ（装着されているもの、フリーローミングのもの）を一時的に描画解除します。描画解除されたアニメッシュは、ＴＰ後に再び表示されます。</string>
 	<string name="Command_Beacons_Tooltip">ビーコンを表示します。</string>
+	<string name="Command_Omnifilter_Tooltip">包括フィルタのルールを編集します。</string>
 	<string name="Toolbar_Bottom_Tooltip">
 		現在、下部のツールバー（↓）にあります。
 	</string>
@@ -6527,15 +6530,17 @@ Rez時間：[OBJECT_REZ_TIME]
 	<string name="All Items">全てのアイテム</string>
 	<string name="Recent Items">最近のアイテム</string>
 	<string name="Worn Items">着用中</string>
+	<string name="Favorites">お気に入り</string>
 
 	<string name="InvOfferGroupNoticeName">[NAME]というグループメンバー名</string>
 	<string name="CallingCardOnlineLabelSuffix">（オンライン）</string>
 
 	<string name="GroupNoticesPanelDateString">[year,datetime,local]年[mthnum,datetime,local]月[day,datetime,local]日　[hour,datetime,local]：[min,datetime,local]：[second,datetime,local]</string>
-	<string name="GroupNoticesToastDateString">[year,datetime,slt]年[mth,datetime,slt]月[day,datetime,slt]日（[wkday,datetime,slt]）　[ampm,datetime,slt][hour12,datetime,slt]：[min,datetime,slt]：[second,datetime,slt]　[timezone,datetime,slt]</string>
-	<string name="NotificationItemDateStringLocal">[year,datetime,local]年[mthnum,datetime,local]月[day,datetime,local]日　[hour,datetime,local]：[min,datetime,local]</string>
-	<string name="NotificationItemDateStringUTC">[year,datetime,utc]年[mth,datetime,utc]月[day,datetime,utc]日　[hour,datetime,utc]：[min,datetime,utc]　[timezone,datetime,utc]</string>
-	<string name="NotificationItemDateStringSLT">[year,datetime,slt]年[mthnum,datetime,slt]月[day,datetime,slt]日　[hour,datetime,slt]：[min,datetime,slt]　[timezone,datetime,slt]</string>
+	<string name="GroupNoticesPanelDateStringAMPM">[year,datetime,local]年[mthnum,datetime,local]月[day,datetime,local]日　[hour12,datetime,local]：[min,datetime,local]：[second,datetime,local]　[timezone,datetime,local]</string>
+	<string name="GroupNoticesToastDateString">[year,datetime,slt]年[mth,datetime,slt]月[day,datetime,slt]日（[wkday,datetime,slt]）[hour,datetime,slt]：[min,datetime,slt]：[second,datetime,slt]　[timezone,datetime,slt]</string>
+	<string name="GroupNoticesToastDateStringAMPM">[year,datetime,slt]年[mth,datetime,slt]月[day,datetime,slt]日（[wkday,datetime,slt]）[ampm,datetime,slt][hour12,datetime,slt]：[min,datetime,slt]：[second,datetime,slt]　[timezone,datetime,slt]</string>
+	<string name="NotificationItemDateString">[year,datetime,utc]年[mth,datetime,utc]月[day,datetime,utc]日　[hour,datetime,utc]：[min,datetime,utc]　[timezone,datetime,utc]</string>
+	<string name="NotificationItemDateStringAMPM">[year,datetime,utc]年[mth,datetime,utc]月[day,datetime,utc]日　[ampm,datetime,utc][hour12,datetime,utc]：[min,datetime,utc]　[timezone,datetime,utc]</string>
 
 	<string name="Pie_av_render_normally">通常</string>
 	<string name="Pie_av_render_never">しない</string>
@@ -6587,4 +6592,12 @@ Rez時間：[OBJECT_REZ_TIME]
 	<string name="NoValidUUIDs">インポートされたファイル内に有効なＵＵＩＤが見つかりません。</string>
 	<string name="ImportListTooLarge">エントリが多すぎます。ＣＳＶファイルには[COUNT]個のエントリがあり、残り使用可能なスロット数は[MAX]個です。</string>
 	<string name="ImportSuccessful">[COUNT]件のエントリを正常に処理しました。</string>
+
+	<!-- VHACD enum strings -->
+	<string name="Flood">乱立</string>
+	<string name="Surface Only">表面のみ</string>
+	<string name="Raycast">レイキャスト</string>
+	<string name="Very High">高品位</string>
+	<string name="Ultra">ウルトラ</string>
+	<string name="Maximum">最大</string>
 </strings>

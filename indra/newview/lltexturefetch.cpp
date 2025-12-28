@@ -49,6 +49,7 @@
 #include "llviewerregion.h"
 #include "llviewerstats.h"
 #include "llviewerstatsrecorder.h"
+#include "llviewerthrottle.h"
 #include "llviewerassetstats.h"
 #include "llworld.h"
 #include "llsdparam.h"
@@ -1418,10 +1419,19 @@ bool LLTextureFetchWorker::doWork(S32 param)
                 else
                 {
                     mCanUseCapability = false;
-                    mRegionRetryAttempt++;
-                    mRegionRetryTimer.setTimerExpirySec(CAP_MISSING_EXPIRATION_DELAY);
-                    // ex: waiting for caps
-                    LL_INFOS_ONCE(LOG_TXT) << "Texture not available via HTTP: empty URL." << LL_ENDL;
+                    if (gDisconnected)
+                    {
+                        // We lost connection or are shutting down.
+                        mCanUseHTTP = false;
+                        return true; // abort
+                    }
+                    else
+                    {
+                        // Ex: waiting for caps
+                        mRegionRetryAttempt++;
+                        mRegionRetryTimer.setTimerExpirySec(CAP_MISSING_EXPIRATION_DELAY);
+                        LL_INFOS_ONCE(LOG_TXT) << "Texture not available via HTTP: empty URL." << LL_ENDL;
+                    }
                 }
             }
             else
@@ -2718,7 +2728,7 @@ LLTextureFetch::LLTextureFetch(LLTextureCache* cache, bool threaded, bool qa_mod
       mOriginFetchSource(LLTextureFetch::FROM_ALL),
       mTextureInfoMainThread(false)
 {
-    mMaxBandwidth = gSavedSettings.getF32("ThrottleBandwidthKBPS");
+    mMaxBandwidth = LLViewerThrottle::getMaxBandwidthKbps();
     mTextureInfo.setLogging(true);
 
     LLAppCoreHttp & app_core_http(LLAppViewer::instance()->getAppCoreHttp());
@@ -3278,11 +3288,10 @@ void LLTextureFetch::commonUpdate()
 size_t LLTextureFetch::update(F32 max_time_ms)
 {
     LL_PROFILE_ZONE_SCOPED;
-    static LLCachedControl<F32> band_width(gSavedSettings,"ThrottleBandwidthKBPS", 3000.0);
 
     {
         mNetworkQueueMutex.lock();                                      // +Mfnq
-        mMaxBandwidth = band_width();
+        mMaxBandwidth = LLViewerThrottle::getMaxBandwidthKbps();
 
         add(LLStatViewer::TEXTURE_NETWORK_DATA_RECEIVED, mHTTPTextureBits);
         mHTTPTextureBits = (U32Bits)0;
