@@ -1042,7 +1042,7 @@ class Windows_x86_64_Manifest(ViewerManifest):
         #                dirs_exist_ok=True)
         # </FS:Ansariel>
 
-        tempfile = "firestorm_setup_tmp.nsi"
+        tempfile = "heuguchon_setup_tmp.nsi"
 
         self.fs_sign_win_binaries() # <FS:ND/> Sign files, step one. Sign compiled binaries
 

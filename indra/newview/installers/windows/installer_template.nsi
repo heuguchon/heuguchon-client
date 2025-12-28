@@ -50,34 +50,37 @@ Unicode true                # Enable unicode support
 ;; Ansariel notes: "Under certain circumstances the installer will fall back
 ;; to the first defined (aka default) language version. So you want to include
 ;; en-us as first language file."
+!include "%%SOURCE%%\installers\windows\lang_ko.nsi"
+
 !include "%%SOURCE%%\installers\windows\lang_en-us.nsi"
 
 # Danish and Polish no longer supported by the viewer itself
 ##!include "%%SOURCE%%\installers\windows\lang_da.nsi"
-!include "%%SOURCE%%\installers\windows\lang_de.nsi"
-!include "%%SOURCE%%\installers\windows\lang_es.nsi"
-!include "%%SOURCE%%\installers\windows\lang_fr.nsi"
-!include "%%SOURCE%%\installers\windows\lang_ja.nsi"
-!include "%%SOURCE%%\installers\windows\lang_it.nsi"
-!include "%%SOURCE%%\installers\windows\lang_pl.nsi" ;<FS:Ansariel> Polish is supported
+##!include "%%SOURCE%%\installers\windows\lang_de.nsi"
+##!include "%%SOURCE%%\installers\windows\lang_es.nsi"
+##!include "%%SOURCE%%\installers\windows\lang_fr.nsi"
+##!include "%%SOURCE%%\installers\windows\lang_ja.nsi"
+##!include "%%SOURCE%%\installers\windows\lang_it.nsi"
+##!include "%%SOURCE%%\installers\windows\lang_pl.nsi" ;<FS:Ansariel> Polish is supported
 ##!include "%%SOURCE%%\installers\windows\lang_pt-br.nsi"
-!include "%%SOURCE%%\installers\windows\lang_ru.nsi"
+##!include "%%SOURCE%%\installers\windows\lang_ru.nsi"
 ##!include "%%SOURCE%%\installers\windows\lang_tr.nsi"
-!include "%%SOURCE%%\installers\windows\lang_zh.nsi"
+##!include "%%SOURCE%%\installers\windows\lang_zh.nsi"
 
 # *TODO: Move these into the language files themselves
 ##LangString LanguageCode ${LANG_DANISH}   "da"
-LangString LanguageCode ${LANG_GERMAN}   "de"
+##LangString LanguageCode ${LANG_GERMAN}   "de"
 LangString LanguageCode ${LANG_ENGLISH}  "en"
-LangString LanguageCode ${LANG_SPANISH}  "es"
-LangString LanguageCode ${LANG_FRENCH}   "fr"
-LangString LanguageCode ${LANG_JAPANESE} "ja"
-LangString LanguageCode ${LANG_ITALIAN}  "it"
-LangString LanguageCode ${LANG_POLISH}   "pl"
+##LangString LanguageCode ${LANG_SPANISH}  "es"
+##LangString LanguageCode ${LANG_FRENCH}   "fr"
+##LangString LanguageCode ${LANG_JAPANESE} "ja"
+##LangString LanguageCode ${LANG_ITALIAN}  "it"
+##LangString LanguageCode ${LANG_POLISH}   "pl"
 ##LangString LanguageCode ${LANG_PORTUGUESEBR} "pt"
-LangString LanguageCode ${LANG_RUSSIAN}  "ru"
+##LangString LanguageCode ${LANG_RUSSIAN}  "ru"
 ##LangString LanguageCode ${LANG_TURKISH}  "tr"
-LangString LanguageCode ${LANG_TRADCHINESE}  "zh"
+##LangString LanguageCode ${LANG_TRADCHINESE}  "zh"
+LangString LanguageCode ${LANG_KOREAN}  "ko"
 
 # This placeholder is replaced by viewer_manifest.py
 %%INST_VARS%%
@@ -89,8 +92,8 @@ Name ${INSTNAME}
 # <FS:Ansariel> FIRE-24335: Use different icon for OpenSim version
 #!define MUI_ICON   "%%SOURCE%%\installers\windows\firestorm_icon_os.ico"
 #!define MUI_UNICON "%%SOURCE%%\installers\windows\firestorm_icon_os.ico"
-!define MUI_ICON   "%%SOURCE%%\installers\windows\firestorm_icon${ICON_SUFFIX}.ico"
-!define MUI_UNICON "%%SOURCE%%\installers\windows\firestorm_icon${ICON_SUFFIX}.ico"
+!define MUI_ICON   "%%SOURCE%%\installers\windows\heuguchon_icon.ico"
+!define MUI_UNICON "%%SOURCE%%\installers\windows\heuguchon_icon.ico"
 # </FS:Ansariel>
 
 BrandingText " "						# Bottom of window text
@@ -105,7 +108,7 @@ SetOverwrite on							# Overwrite files by default
 #AutoCloseWindow true					# After all files install, close window
 
 # Registry key paths, ours and Microsoft's
-!define LINDEN_KEY      "SOFTWARE\The Phoenix Firestorm Project"
+!define LINDEN_KEY      "SOFTWARE\Heuguchon"
 !define INSTNAME_KEY    "${LINDEN_KEY}\${INSTNAME}"
 !define MSCURRVER_KEY   "SOFTWARE\Microsoft\Windows\CurrentVersion"
 !define MSNTCURRVER_KEY "SOFTWARE\Microsoft\Windows NT\CurrentVersion"
@@ -664,10 +667,10 @@ WriteRegStr SHELL_CONTEXT "${INSTNAME_KEY}" "" "$INSTDIR"
 WriteRegStr SHELL_CONTEXT "${INSTNAME_KEY}" "Version" "${VERSION_LONG}"
 WriteRegStr SHELL_CONTEXT "${INSTNAME_KEY}" "Shortcut" "$INSTSHORTCUT"
 WriteRegStr SHELL_CONTEXT "${INSTNAME_KEY}" "Exe" "$VIEWER_EXE"
-WriteRegStr SHELL_CONTEXT "${MSUNINSTALL_KEY}" "Publisher" "The Phoenix Firestorm Project, Inc."
-WriteRegStr SHELL_CONTEXT "${MSUNINSTALL_KEY}" "URLInfoAbout" "https://www.firestormviewer.org"
-WriteRegStr SHELL_CONTEXT "${MSUNINSTALL_KEY}" "URLUpdateInfo" "https://www.firestormviewer.org/downloads"
-WriteRegStr SHELL_CONTEXT "${MSUNINSTALL_KEY}" "HelpLink" "https://www.firestormviewer.org/support"
+WriteRegStr SHELL_CONTEXT "${MSUNINSTALL_KEY}" "Publisher" "WISELIGHT"
+WriteRegStr SHELL_CONTEXT "${MSUNINSTALL_KEY}" "URLInfoAbout" "https://www.heuguchon.com"
+WriteRegStr SHELL_CONTEXT "${MSUNINSTALL_KEY}" "URLUpdateInfo" "https://www.heuguchon.com/downloads"
+WriteRegStr SHELL_CONTEXT "${MSUNINSTALL_KEY}" "HelpLink" "https://support.heuguchon.com"
 WriteRegStr SHELL_CONTEXT "${MSUNINSTALL_KEY}" "DisplayName" "$INSTNAME"
 WriteRegStr SHELL_CONTEXT "${MSUNINSTALL_KEY}" "UninstallString" '"$INSTDIR\uninst.exe"'
 WriteRegStr SHELL_CONTEXT "${MSUNINSTALL_KEY}" "DisplayVersion" "${VERSION_LONG}"
@@ -998,28 +1001,28 @@ Push $2
 # Required since ProfileImagePath is of type REG_EXPAND_SZ
     ExpandEnvStrings $2 $2
 
-# Delete files in \Users\<User>\AppData\Roaming\Firestorm
+# Delete files in \Users\<User>\AppData\Roaming\Heuguchon
 # Remove all settings files but leave any other .txt files to preserve the chat logs
-    RMDir /r "$2\AppData\Roaming\Firestorm\logs"
-    RMDir /r "$2\AppData\Roaming\Firestorm\browser_profile"
-    RMDir /r "$2\AppData\Roaming\Firestorm\user_settings"
-    Delete  "$2\AppData\Roaming\Firestorm\*.xml"
-    Delete  "$2\AppData\Roaming\Firestorm\*.bmp"
-    Delete  "$2\AppData\Roaming\Firestorm\search_history.txt"
-    Delete  "$2\AppData\Roaming\Firestorm\plugin_cookies.txt"
-    Delete  "$2\AppData\Roaming\Firestorm\typed_locations.txt"
-# Delete files in \Users\<User>\AppData\Local\Firestorm
+    RMDir /r "$2\AppData\Roaming\Heuguchon\logs"
+    RMDir /r "$2\AppData\Roaming\Heuguchon\browser_profile"
+    RMDir /r "$2\AppData\Roaming\Heuguchon\user_settings"
+    Delete  "$2\AppData\Roaming\Heuguchon\*.xml"
+    Delete  "$2\AppData\Roaming\Heuguchon\*.bmp"
+    Delete  "$2\AppData\Roaming\Heuguchon\search_history.txt"
+    Delete  "$2\AppData\Roaming\Heuguchon\plugin_cookies.txt"
+    Delete  "$2\AppData\Roaming\Heuguchon\typed_locations.txt"
+# Delete files in \Users\<User>\AppData\Local\Heuguchon
     ${If} ${ISOPENSIM} == "0"
         ${If} ${IS64BIT} == "0"
-            RMDir /r "$2\AppData\Local\Firestorm"				#Delete the Havok cache folder
+            RMDir /r "$2\AppData\Local\Heuguchon"				#Delete the Havok cache folder
         ${Else}
-            RMDir /r "$2\AppData\Local\Firestorm_x64"			#Delete the OpenSim cache folder
+            RMDir /r "$2\AppData\Local\Heuguchon_x64"			#Delete the OpenSim cache folder
         ${EndIf}
     ${Else}
         ${If} ${IS64BIT} == "0"
-            RMDir /r "$2\AppData\Local\FirestormOS"			#Delete the Havok cache folder
+            RMDir /r "$2\AppData\Local\HeuguchonOS"			#Delete the Havok cache folder
         ${Else}
-            RMDir /r "$2\AppData\Local\FirestormOS_x64"		#Delete the OpenSim cache folder
+            RMDir /r "$2\AppData\Local\HeuguchonOS_x64"		#Delete the OpenSim cache folder
         ${EndIf}
     ${EndIf}
 
@@ -1032,11 +1035,11 @@ Pop $2
 Pop $1
 Pop $0
 
-# Delete files in ProgramData\Firestorm
+# Delete files in ProgramData\Heuguchon
 Push $0
   ReadRegStr $0 SHELL_CONTEXT "${MSCURRVER_KEY}\Explorer\Shell Folders" "Common AppData"
   StrCmp $0 "" +2
-  RMDir /r "$0\Firestorm"
+  RMDir /r "$0\Heuguchon"
 Pop $0
 
 Keep:
