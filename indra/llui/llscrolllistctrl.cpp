@@ -431,7 +431,7 @@ bool LLScrollListCtrl::setMaxItemCount(S32 max_count)
 }
 
 // <FS:PP>
-S32 LLScrollListCtrl::getMaxItemCount()
+S32 LLScrollListCtrl::getMaxItemCount() const
 {
     return mMaxItemCount;
 }
@@ -1116,7 +1116,7 @@ void LLScrollListCtrl::deleteItems(const LLSD& sd)
 void LLScrollListCtrl::deleteSelectedItems()
 {
     item_list::iterator iter;
-    for (iter = mItemList.begin(); iter < mItemList.end(); )
+    for (iter = mItemList.begin(); iter != mItemList.end(); )
     {
         LLScrollListItem* itemp = *iter;
         if (itemp->getSelected())

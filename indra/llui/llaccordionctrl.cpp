@@ -303,8 +303,11 @@ void LLAccordionCtrl::ctrlSetLeftTopAndSize(LLView* panel, S32 left, S32 top, S3
         return;
     LLRect panel_rect = panel->getRect();
     panel_rect.setLeftTopAndSize( left, top, width, height);
-    panel->reshape( width, height, 1);
-    panel->setRect(panel_rect);
+    if (panel->getRect() != panel_rect)
+    {
+        panel->reshape( width, height, 1);
+        panel->setRect(panel_rect);
+    }
 }
 
 void LLAccordionCtrl::ctrlShiftVertical(LLView* panel, S32 delta)
@@ -316,11 +319,7 @@ void LLAccordionCtrl::ctrlShiftVertical(LLView* panel, S32 delta)
 
 //---------------------------------------------------------------------------------
 
-// <FS:ND> If adding a lot of controls rapidly, calling arrange will cost a lot of times, as it's running through n! controls.
-// In that case we can avvoid calling arrange over and over and just call it once when finished.
-//void LLAccordionCtrl::addCollapsibleCtrl(LLAccordionCtrlTab* accordion_tab)
-void LLAccordionCtrl::addCollapsibleCtrl(LLAccordionCtrlTab* accordion_tab, bool aArrange)
-// </FS:ND>
+void LLAccordionCtrl::addCollapsibleCtrl(LLAccordionCtrlTab* accordion_tab)
 {
     if (!accordion_tab)
         return;
@@ -329,14 +328,7 @@ void LLAccordionCtrl::addCollapsibleCtrl(LLAccordionCtrlTab* accordion_tab, bool
     mAccordionTabs.push_back(accordion_tab);
 
     accordion_tab->setDropDownStateChangedCallback( boost::bind(&LLAccordionCtrl::onCollapseCtrlCloseOpen, this, (S16)(mAccordionTabs.size() - 1)) );
-
-    // <FS:ND> If adding a lot of controls rapidly, calling arrange will cost a lot of times, as it's running through n! controls.
-    // In that case we can avvoid calling arrange over and over and just call it once when finished.
-
-    // arrange();
-    if( aArrange )
-        arrange();
-    // </FS:ND>
+    arrange();
 }
 
 void LLAccordionCtrl::removeCollapsibleCtrl(LLAccordionCtrlTab* accordion_tab)
@@ -505,6 +497,7 @@ void LLAccordionCtrl::arrangeMultiple()
 
 void LLAccordionCtrl::arrange()
 {
+    LL_PROFILE_ZONE_SCOPED;
     updateNoTabsHelpTextVisibility();
 
     if (mAccordionTabs.empty())

@@ -39,6 +39,7 @@ class LLLineEditor;
 class LLScrollListCtrl;
 class LLSliderCtrl;
 class LLTabContainer;
+class FSLoadPoseTimer;
 
 /// <summary>
 /// Describes how to load a pose file.
@@ -228,11 +229,13 @@ public:
     bool savePoseToBvh(LLVOAvatar* avatar, const std::string& posePath);
     void onClickBrowsePoseCache();
     void onPoseMenuAction(const LLSD& param);
-    void loadPoseFromXml(LLVOAvatar* avatar, const std::string& poseFileName, E_LoadPoseMethods loadMethod);
+    bool loadPoseFromXml(LLVOAvatar* avatar, const std::string& poseFileName, E_LoadPoseMethods loadMethod);
     bool poseFileStartsFromTeePose(const std::string& poseFileName);
+    S32  tryGetPoseVersion(std::string pathToPoseFile);
     void setPoseSaveFileTextBoxToUiSelectedAvatarSaveFileName();
     void setUiSelectedAvatarSaveFileName(const std::string& saveFileName);
-    bool confirmFileOverwrite(std::string fileName);
+    void timedReload();
+    void setLoadingProgress(bool started);
     void startPosingSelf();
     void stopPosingAllAvatars();
     // visual manipulators control
@@ -264,10 +267,11 @@ public:
     void onClickLoadLeftHandPose();
     void onClickLoadRightHandPose();
     void onClickLoadHandPose(bool isRightHand);
-    void onClickSetBaseRotZero();
+    void onClickSavingToBvh();
     void onCommitSpinner(const LLUICtrl* spinner, const S32 ID);
     void onCommitSlider(const LLUICtrl* slider, const S32 id);
     void onClickSymmetrize(const S32 ID);
+    void onClickLockWorldRotBtn();
 
     // UI Refreshments
     void refreshRotationSlidersAndSpinners();
@@ -351,12 +355,19 @@ public:
     void addBoldToScrollList(LLScrollListCtrl* list, LLVOAvatar* avatar);
 
     /// <summary>
-    /// Gets whether the user wishes to reset the base-rotation to zero when they start editing a joint.
+    /// Gets a string for a joint on a scroll-list.
     /// </summary>
-    /// <remarks>
-    /// If a joint has a base-rotation of zero, the rotation then appears to be the user's work and qualifies to save to a re-importable format.
-    /// </remarks>
-    bool getWhetherToResetBaseRotationOnEdit();
+    /// <param name="avatar">The avatar owning the supplied joint.</param>
+    /// <param name="joint">The joint to query.</param>
+    /// <returns>A string naming an icon to present with the joint.</returns>
+    std::string getScrollListIconForJoint(LLVOAvatar* avatar, FSPoserAnimator::FSPoserJoint joint);
+
+    /// <summary>
+    /// Tries to get the named string from the XUI.
+    /// </summary>
+    /// <param name="name">The name of the string.</param>
+    /// <returns>The named string, if it exists, otherwise an empty string.</returns>
+    std::string tryGetString(std::string name);
 
     /// <summary>
     /// Gets the name of an item from the supplied object ID.
@@ -426,7 +437,7 @@ public:
     /// <summary>
     /// Transforms the supplied vector into a string of three numbers, format suiting to writing into a BVH file.
     /// </summary>
-    std::string static vec3ToXYZString(const LLVector3& val);
+    std::string static positionToString(const LLVector3& val);
 
     /// <summary>
     /// Performs an angle module of the supplied value to between -180 & 180 (degrees).
@@ -483,6 +494,7 @@ public:
     LLButton* mFlipJointBtn{ nullptr };
     LLButton* mRecaptureBtn{ nullptr };
     LLButton* mTogglePosingBonesBtn{ nullptr };
+    LLButton* mToggleLockWorldRotBtn{ nullptr };
     LLButton* mToggleMirrorRotationBtn{ nullptr };
     LLButton* mToggleSympatheticRotationBtn{ nullptr };
     LLButton* mToggleDeltaModeBtn{ nullptr };
@@ -492,6 +504,8 @@ public:
     LLButton* mBtnJointRotate{ nullptr };
 
     LLLineEditor* mPoseSaveNameEditor{ nullptr };
+
+    FSLoadPoseTimer* mLoadPoseTimer;
 
     LLPanel* mJointsParentPnl{ nullptr };
     LLPanel* mTrackballPnl{ nullptr };
@@ -503,8 +517,8 @@ public:
     LLPanel* mCollisionVolumesPnl{ nullptr };
     LLPanel* mPosesLoadSavePnl{ nullptr };
 
-    LLCheckBoxCtrl* mResetBaseRotCbx{ nullptr };
     LLCheckBoxCtrl* mAlsoSaveBvhCbx{ nullptr };
+    LLCheckBoxCtrl* mUnlockPelvisInBvhSaveCbx{ nullptr };
 
     LLUICtrl* mTrackpadSensitivitySpnr{ nullptr };
     LLUICtrl* mYawSpnr{ nullptr };
@@ -519,6 +533,29 @@ public:
     LLUICtrl* mScaleXSpnr{ nullptr };
     LLUICtrl* mScaleYSpnr{ nullptr };
     LLUICtrl* mScaleZSpnr{ nullptr };
+};
+
+class FSLoadPoseTimer : public LLEventTimer
+{
+public:
+    typedef boost::function<void()> callback_t;
+
+    FSLoadPoseTimer(callback_t callback);
+    /*virtual*/ bool tick();
+
+    void              tryLoading(std::string filePath, E_LoadPoseMethods loadMethod);
+    bool              loadCompleteOrFailed() const { return !mAttemptLoading && mLoadAttempts > 0; }
+    void              completeLoading() { mAttemptLoading = false; }
+    std::string       getPosePath() { return mPoseFullPath; };
+    E_LoadPoseMethods getLoadMethod() const { return mLoadType; };
+
+private:
+    callback_t        mCallback;
+    bool              mAttemptLoading = false;
+    E_LoadPoseMethods mLoadType       = ROT_POS_AND_SCALES;
+    std::string       mPoseFullPath;
+    int               mLoadAttempts = 0;
+    const int         mMaxLoadAttempts = 5;
 };
 
 #endif

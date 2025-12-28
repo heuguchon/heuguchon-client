@@ -2417,6 +2417,12 @@ U32 LLViewerObject::processUpdateMessage(LLMessageSystem *mesgsys,
 
         // Set the rotation of the object followed by adjusting for the accumulated angular velocity (llSetTargetOmega)
         setRotation(new_rot * mAngularVelocityRot);
+        if ((mFlags & FLAGS_SERVER_AUTOPILOT) && asAvatar() && asAvatar()->isSelf())
+        {
+            gAgent.resetAxes();
+            gAgent.rotate(new_rot);
+            gAgentCamera.resetView();
+        }
         setChanged(ROTATED | SILHOUETTE);
     }
 
@@ -4330,32 +4336,39 @@ void LLViewerObject::boostTexturePriority(bool boost_children /* = true */)
     S32 tex_count = getNumTEs();
     for (i = 0; i < tex_count; i++)
     {
-        // <FS:minerjr>
-        // This isused to fix the textures becoming blury when object interacted with by the user and unselected.
+        // <FS:minerjr> [FIRE-36016] - Re-added Store/Restore boost levels of selected objects
+        // This fixes textures becoming blury (Esepecially with Bias > 1.0f) after an object is selected and unselected.
         // If this is changing the boost level for the TEImage for the first time, store the boost level before modifying it.
         if (getTEImage(i)->getBoostLevel() != LLGLTexture::BOOST_SELECTED)
         {
             getTEImage(i)->storeBoostLevel();
         }
-        // </FS:minerjr>
+        // </FS:minerjr> [FIRE-36016]
         getTEImage(i)->setBoostLevel(LLGLTexture::BOOST_SELECTED);
     }
 
     if (isSculpted() && !isMesh())
     {
         LLSculptParams *sculpt_params = (LLSculptParams *)getParameterEntry(LLNetworkData::PARAMS_SCULPT);
-        LLUUID sculpt_id = sculpt_params->getSculptTexture();
-        // <FS:minerjr>        
-        //LLViewerTextureManager::getFetchedTexture(sculpt_id, FTT_DEFAULT, true, LLGLTexture::BOOST_NONE, LLViewerTexture::LOD_TEXTURE)->setBoostLevel(LLGLTexture::BOOST_SELECTED);
-        // This isused to fix the textures becoming blury when object interacted with by the user and unselected.
-        // If this is changing the boost level for the sculpted for the first time, store the boost level before modifying it.
-        LLViewerFetchedTexture* sculptedTexture = LLViewerTextureManager::getFetchedTexture(sculpt_id, FTT_DEFAULT, true, LLGLTexture::BOOST_NONE, LLViewerTexture::LOD_TEXTURE);
-        if (sculptedTexture->getBoostLevel() != LLGLTexture::BOOST_SELECTED)
+        if (sculpt_params)
         {
-            sculptedTexture->storeBoostLevel();
+            LLUUID sculpt_id = sculpt_params->getSculptTexture();
+            // <FS:minerjr> [FIRE-36016] - Re-added Store/Restore boost levels of selected objects
+            //LLViewerTextureManager::getFetchedTexture(sculpt_id, FTT_DEFAULT, true, LLGLTexture::BOOST_NONE, LLViewerTexture::LOD_TEXTURE)->setBoostLevel(LLGLTexture::BOOST_SELECTED);
+            // This fixes textures becoming blury (Esepecially with Bias > 1.0f) after an object is selected and unselected.
+            // If this is changing the boost level for the sculpted for the first time, store the boost level before modifying it.
+            LLViewerFetchedTexture* sculptedTexture = LLViewerTextureManager::getFetchedTexture(sculpt_id, FTT_DEFAULT, true, LLGLTexture::BOOST_NONE, LLViewerTexture::LOD_TEXTURE);
+            if (sculptedTexture)
+            {
+                // If the texture is already boost selected, don't store the boost level again. Otherwise, it will overwrite the saved boost level with itself.
+                if (sculptedTexture->getBoostLevel() != LLGLTexture::BOOST_SELECTED)
+                {
+                    sculptedTexture->storeBoostLevel();
+                }
+                sculptedTexture->setBoostLevel(LLGLTexture::BOOST_SELECTED);
+            }
+            // </FS:minerjr> [FIRE-36016]
         }
-        // </FS:minerjr>
-        sculptedTexture->setBoostLevel(LLGLTexture::BOOST_SELECTED);
     }
 
     if (boost_children)
@@ -6597,8 +6610,19 @@ void LLViewerObject::setAttachedSound(const LLUUID &audio_uuid, const LLUUID& ow
     }
 
     // <FS:Ansariel> Asset blacklist
-    if (FSAssetBlacklist::getInstance()->isBlacklisted(audio_uuid, LLAssetType::AT_SOUND))
+    FSAssetBlacklist& blacklist = FSAssetBlacklist::instance();
+    if (blacklist.isBlacklisted(audio_uuid, LLAssetType::AT_SOUND))
     {
+        return;
+    }
+    else if (isAttachment() && blacklist.isBlacklisted(owner_id, LLAssetType::AT_SOUND, FSAssetBlacklist::eBlacklistFlag::WORN))
+    {
+        // Attachment sound
+        return;
+    }
+    else if (blacklist.isBlacklisted(owner_id, LLAssetType::AT_SOUND, FSAssetBlacklist::eBlacklistFlag::REZZED))
+    {
+        // Rezzed object sound
         return;
     }
     // </FS:Ansariel>

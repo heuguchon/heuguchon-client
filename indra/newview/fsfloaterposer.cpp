@@ -45,6 +45,7 @@
 #include "llvoavatarself.h"
 #include "llinventoryfunctions.h"
 #include "lltoolcomp.h"
+#include "llloadingindicator.h"
 
 namespace
 {
@@ -60,9 +61,9 @@ constexpr char             XML_JOINT_DELTAROT_STRING_PREFIX[]  = "joint_delta_ro
 constexpr char             BVH_JOINT_TRANSFORM_STRING_PREFIX[] = "bvh_joint_transform_";
 constexpr std::string_view POSER_TRACKPAD_SENSITIVITY_SAVE_KEY = "FSPoserTrackpadSensitivity";
 constexpr std::string_view POSER_STOPPOSINGWHENCLOSED_SAVE_KEY = "FSPoserStopPosingWhenClosed";
-constexpr std::string_view POSER_RESETBASEROTONEDIT_SAVE_KEY   = "FSPoserResetBaseRotationOnEdit";
 constexpr std::string_view POSER_SAVEEXTERNALFORMAT_SAVE_KEY   = "FSPoserSaveExternalFileAlso";
 constexpr std::string_view POSER_SAVECONFIRMREQUIRED_SAVE_KEY  = "FSPoserOnSaveConfirmOverwrite";
+constexpr std::string_view POSER_UNLOCKPELVISINBVH_SAVE_KEY    = "FSPoserPelvisUnlockedForBvhSave";
 constexpr char             ICON_SAVE_OK[]                      = "icon_rotation_is_own_work";
 constexpr char             ICON_SAVE_FAILED[]                  = "icon_save_failed_button";
 
@@ -110,6 +111,8 @@ FSFloaterPoser::FSFloaterPoser(const LLSD& key) : LLFloater(key)
     mCommitCallbackRegistrar.add("Poser.CommitSpinner", [this](LLUICtrl* spinner, const LLSD& data) { onCommitSpinner(spinner, data); });
     mCommitCallbackRegistrar.add("Poser.CommitSlider", [this](LLUICtrl* slider, const LLSD& data) { onCommitSlider(slider, data); });
     mCommitCallbackRegistrar.add("Poser.Symmetrize", [this](LLUICtrl*, const LLSD& data) { onClickSymmetrize(data); });
+
+    mLoadPoseTimer = new FSLoadPoseTimer(boost::bind(&FSFloaterPoser::timedReload, this));
 }
 
 bool FSFloaterPoser::postBuild()
@@ -193,6 +196,8 @@ bool FSFloaterPoser::postBuild()
     mFlipJointBtn = getChild<LLButton>("FlipJoint_avatar");
     mRecaptureBtn = getChild<LLButton>("button_RecaptureParts");
     mTogglePosingBonesBtn = getChild<LLButton>("toggle_PosingSelectedBones");
+    mToggleLockWorldRotBtn = getChild<LLButton>("toggle_LockWorldRotation");
+    mToggleLockWorldRotBtn->setClickedCallback([this](LLUICtrl*, const LLSD&) { onClickLockWorldRotBtn(); });
 
     mToggleMirrorRotationBtn = getChild<LLButton>("button_toggleMirrorRotation");
     mToggleSympatheticRotationBtn = getChild<LLButton>("button_toggleSympatheticRotation");
@@ -211,9 +216,10 @@ bool FSFloaterPoser::postBuild()
     mMiscJointsPnl = getChild<LLPanel>("misc_joints_panel");
     mCollisionVolumesPnl = getChild<LLPanel>("collision_volumes_panel");
 
+    mUnlockPelvisInBvhSaveCbx = getChild<LLCheckBoxCtrl>("unlock_pelvis_for_bvh_save_checkbox");
+    mUnlockPelvisInBvhSaveCbx->setVisible(getSavingToBvh());
     mAlsoSaveBvhCbx = getChild<LLCheckBoxCtrl>("also_save_bvh_checkbox");
-    mResetBaseRotCbx = getChild<LLCheckBoxCtrl>("reset_base_rotation_on_edit_checkbox");
-    mResetBaseRotCbx->setCommitCallback([this](LLUICtrl*, const LLSD&) { onClickSetBaseRotZero(); });
+    mAlsoSaveBvhCbx->setCommitCallback([this](LLUICtrl*, const LLSD&) { onClickSavingToBvh(); });
 
     mTrackpadSensitivitySpnr = getChild<LLUICtrl>("trackpad_sensitivity_spinner");
     mYawSpnr                 = getChild<LLUICtrl>("limb_yaw_spinner");
@@ -249,7 +255,6 @@ void FSFloaterPoser::onOpen(const LLSD& key)
     enableVisualManipulators();
     LLFloater::onOpen(key);
 }
-
 
 void FSFloaterPoser::onFocusReceived()
 {
@@ -299,6 +304,7 @@ void FSFloaterPoser::onClose(bool app_quitting)
     }
 
     disableVisualManipulators();
+    delete mLoadPoseTimer;
     LLFloater::onClose(app_quitting);
 }
 
@@ -366,10 +372,10 @@ void FSFloaterPoser::onPoseFileSelect()
     mPoseSaveNameEditor->setText(name);
 
     bool isDeltaSave = !poseFileStartsFromTeePose(name);
-    if (isDeltaSave && hasString("LoadDiffLabel"))
-        mLoadPosesBtn->setLabel(getString("LoadDiffLabel"));
-    else if (hasString("LoadPoseLabel"))
-        mLoadPosesBtn->setLabel(getString("LoadPoseLabel"));
+    if (isDeltaSave)
+        mLoadPosesBtn->setLabel(tryGetString("LoadDiffLabel"));
+    else
+        mLoadPosesBtn->setLabel(tryGetString("LoadPoseLabel"));
 }
 
 void FSFloaterPoser::doPoseSave(LLVOAvatar* avatar, const std::string& filename)
@@ -386,24 +392,21 @@ void FSFloaterPoser::doPoseSave(LLVOAvatar* avatar, const std::string& filename)
         if (getSavingToBvh())
             savePoseToBvh(avatar, filename);
 
-        if (hasString(ICON_SAVE_OK))
-            mSavePosesBtn->setImageOverlay(getString(ICON_SAVE_OK), mSavePosesBtn->getImageOverlayHAlign());
-
+        mSavePosesBtn->setImageOverlay(tryGetString(ICON_SAVE_OK), mSavePosesBtn->getImageOverlayHAlign());
         setSavePosesButtonText(!mPoserAnimator.allBaseRotationsAreZero(avatar));
     }
     else
     {
-        if (hasString(ICON_SAVE_FAILED))
-            mSavePosesBtn->setImageOverlay(getString(ICON_SAVE_FAILED), mSavePosesBtn->getImageOverlayHAlign());
-    }    
+         mSavePosesBtn->setImageOverlay(tryGetString(ICON_SAVE_FAILED), mSavePosesBtn->getImageOverlayHAlign());
+    }
 }
 
 void FSFloaterPoser::onClickPoseSave()
 {
     std::string filename = mPoseSaveNameEditor->getValue().asString();
-    if (filename.empty() && hasString(ICON_SAVE_FAILED))
+    if (filename.empty())
     {
-        mSavePosesBtn->setImageOverlay(getString(ICON_SAVE_FAILED), mSavePosesBtn->getImageOverlayHAlign());
+        mSavePosesBtn->setImageOverlay(tryGetString(ICON_SAVE_FAILED), mSavePosesBtn->getImageOverlayHAlign());
         return;
     }
     
@@ -444,8 +447,7 @@ void FSFloaterPoser::onClickPoseSave()
 
 void FSFloaterPoser::onMouseLeaveSavePoseBtn()
 {
-    if (hasString("icon_save_button"))
-        mSavePosesBtn->setImageOverlay(getString("icon_save_button"), mSavePosesBtn->getImageOverlayHAlign());
+    mSavePosesBtn->setImageOverlay(tryGetString("icon_save_button"), mSavePosesBtn->getImageOverlayHAlign());
 
     LLVOAvatar* avatar = getUiSelectedAvatar();
     if (!avatar)
@@ -460,28 +462,32 @@ void FSFloaterPoser::createUserPoseDirectoryIfNeeded()
         gDirUtilp->getExpandedFilename(LL_PATH_USER_SETTINGS, POSE_SAVE_SUBDIRECTORY);
 
     std::string userHandPresetsPath = userPath + gDirUtilp->getDirDelimiter() + std::string(POSE_PRESETS_HANDS_SUBDIRECTORY);
-    if (gDirUtilp->fileExists(userHandPresetsPath))
-        return;
 
     try
     {
-        if (!gDirUtilp->fileExists(userPath))
-        {
-            LL_WARNS("Poser") << "Couldn't find folder: " << userPath << " - creating one." << LL_ENDL;
-            LLFile::mkdir(userPath);
-        }
-
         if (!gDirUtilp->fileExists(userHandPresetsPath))
         {
-            LL_WARNS("Poser") << "Couldn't find folder: " << userHandPresetsPath << " - creating one." << LL_ENDL;
-            LLFile::mkdir(userHandPresetsPath);
+            if (!gDirUtilp->fileExists(userPath))
+            {
+                LL_WARNS("Poser") << "Couldn't find folder: " << userPath << " - creating one." << LL_ENDL;
+                LLFile::mkdir(userPath);
+            }
+
+            if (!gDirUtilp->fileExists(userHandPresetsPath))
+            {
+                LL_WARNS("Poser") << "Couldn't find folder: " << userHandPresetsPath << " - creating one." << LL_ENDL;
+                LLFile::mkdir(userHandPresetsPath);
+            }
         }
 
         std::string sourcePresetPath =
-            gDirUtilp->getExpandedFilename(LL_PATH_EXECUTABLE, POSE_SAVE_SUBDIRECTORY, std::string(POSE_PRESETS_HANDS_SUBDIRECTORY));
+            gDirUtilp->getExpandedFilename(LL_PATH_APP_SETTINGS, POSE_SAVE_SUBDIRECTORY, std::string(POSE_PRESETS_HANDS_SUBDIRECTORY));
 
         if (!gDirUtilp->fileExists(sourcePresetPath))
+        {
+            LL_WARNS("Poser") << "Can not copy poser presets because failed to find path: " << sourcePresetPath << LL_ENDL;
             return;
+        }
 
         auto posesToCopy = gDirUtilp->getFilesInDir(sourcePresetPath);
         for (const auto& pose : posesToCopy)
@@ -489,13 +495,24 @@ void FSFloaterPoser::createUserPoseDirectoryIfNeeded()
             std::string source      = sourcePresetPath + gDirUtilp->getDirDelimiter() + pose;
             std::string destination = userHandPresetsPath + gDirUtilp->getDirDelimiter() + pose;
 
+            S32 sourceVersion = tryGetPoseVersion(source);
+            S32 destinationVersion = tryGetPoseVersion(destination);
+            if (destinationVersion >= sourceVersion)
+                continue;
+
+            if (gDirUtilp->fileExists(destination))
+            {
+                LL_WARNS("Poser") << "Removing pose file " << destination << " to replace with updated version " << LL_ENDL;
+                LLFile::remove(destination);
+            }
+
             if (!LLFile::copy(source, destination))
                 LL_WARNS("Poser") << "Failed to copy " << source << " to " << destination << LL_ENDL;
         }
     }
     catch (const std::exception& e)
     {
-        LL_WARNS("Posing") << "Exception caught trying to create: " << userPath << e.what() << LL_ENDL;
+        LL_WARNS("Posing") << "Exception caught trying to create/update poses: " << e.what() << LL_ENDL;
     }
 }
 
@@ -513,8 +530,11 @@ bool FSFloaterPoser::savePoseToXml(LLVOAvatar* avatar, const std::string& poseFi
     {
         bool savingDiff = !mPoserAnimator.allBaseRotationsAreZero(avatar);
         LLSD record;
-        record["version"]["value"] = (S32)6;
+        record["version"]["value"] = (S32)7;
         record["startFromTeePose"]["value"] = !savingDiff;
+
+        if (savingDiff)
+            mPoserAnimator.savePosingState(avatar, &record);
 
         LLVector3 rotation, position, scale, zeroVector;
         bool      baseRotationIsZero;
@@ -523,11 +543,15 @@ bool FSFloaterPoser::savePoseToXml(LLVOAvatar* avatar, const std::string& poseFi
         {
             std::string bone_name = pj.jointName();
             bool posingThisJoint  = mPoserAnimator.isPosingAvatarJoint(avatar, pj);
+            bool jointRotLocked   = mPoserAnimator.getRotationIsWorldLocked(avatar, pj);
+            bool jointRotMirrored = mPoserAnimator.getRotationIsMirrored(avatar, pj);
 
-            record[bone_name]            = bone_name;
-            record[bone_name]["enabled"] = posingThisJoint;
+            record[bone_name]             = bone_name;
+            record[bone_name]["enabled"]  = posingThisJoint;
             if (!posingThisJoint)
                 continue;
+
+            record[bone_name]["mirrored"] = jointRotMirrored;
 
             if (!mPoserAnimator.tryGetJointSaveVectors(avatar, pj, &rotation, &position, &scale, &baseRotationIsZero))
                 continue;
@@ -538,9 +562,10 @@ bool FSFloaterPoser::savePoseToXml(LLVOAvatar* avatar, const std::string& poseFi
                 continue;
 
             record[bone_name]["jointBaseRotationIsZero"] = baseRotationIsZero;
-            record[bone_name]["rotation"] = rotation.getValue();
-            record[bone_name]["position"] = position.getValue();
-            record[bone_name]["scale"]    = scale.getValue();
+            record[bone_name]["rotation"]                = rotation.getValue();
+            record[bone_name]["position"]                = position.getValue();
+            record[bone_name]["scale"]                   = scale.getValue();
+            record[bone_name]["worldLocked"]             = jointRotLocked;
         }
 
         std::string fullSavePath =
@@ -561,7 +586,6 @@ bool FSFloaterPoser::savePoseToXml(LLVOAvatar* avatar, const std::string& poseFi
         LL_WARNS("Posing") << "Exception caught in saveToXml: " << e.what() << LL_ENDL;
         return false;
     }
-
 
     return true;
 }
@@ -662,6 +686,8 @@ void FSFloaterPoser::onClickRecaptureSelectedBones()
     if (!mPoserAnimator.isPosingAvatar(avatar))
         return;
 
+    mPoserAnimator.updatePosingState(avatar, selectedJoints);
+
     for (auto item : selectedJoints)
     {
         bool currentlyPosing = mPoserAnimator.isPosingAvatarJoint(avatar, *item);
@@ -691,7 +717,8 @@ void FSFloaterPoser::updatePosedBones(const std::string& jointName)
     if (!poserJoint)
         return;
 
-    mPoserAnimator.recaptureJointAsDelta(avatar, poserJoint, getUiSelectedBoneDeflectionStyle());
+    bool savingToExternal = getSavingToBvh();
+    mPoserAnimator.recaptureJointAsDelta(avatar, poserJoint, savingToExternal, getUiSelectedBoneDeflectionStyle());
 
     refreshRotationSlidersAndSpinners();
     refreshPositionSlidersAndSpinners();
@@ -723,6 +750,9 @@ void FSFloaterPoser::onClickSymmetrize(const S32 ID)
     refreshRotationSlidersAndSpinners();
     enableOrDisableRedoAndUndoButton();
     refreshTrackpadCursor();
+
+    if (getSavingToBvh())
+        refreshTextHighlightingOnJointScrollLists();
 }
 
 void FSFloaterPoser::onCommitSpinner(const LLUICtrl* spinner, const S32 id)
@@ -887,14 +917,39 @@ void FSFloaterPoser::onPoseMenuAction(const LLSD& param)
     else if (loadStyle == "selective_rot")
         loadType = SELECTIVE_ROT;
 
+    mLoadPoseTimer->tryLoading(poseName, loadType);
+    setLoadingProgress(true);
+}
+
+void FSFloaterPoser::timedReload()
+{
+    if (!mLoadPoseTimer)
+        return;
+
     LLVOAvatar* avatar = getUiSelectedAvatar();
     if (!avatar)
         return;
 
-    loadPoseFromXml(avatar, poseName, loadType);
-    onJointTabSelect();
-    refreshJointScrollListMembers();
-    setSavePosesButtonText(!mPoserAnimator.allBaseRotationsAreZero(avatar));
+    if (loadPoseFromXml(avatar, mLoadPoseTimer->getPosePath(), mLoadPoseTimer->getLoadMethod()))
+    {
+        mLoadPoseTimer->completeLoading();
+        onJointTabSelect();
+        refreshJointScrollListMembers();
+        setSavePosesButtonText(!mPoserAnimator.allBaseRotationsAreZero(avatar));
+    }
+
+    if (mLoadPoseTimer->loadCompleteOrFailed())
+        setLoadingProgress(false);
+}
+
+void FSFloaterPoser::setLoadingProgress(bool started)
+{
+    LLLoadingIndicator* mLoadingIndicator = findChild<LLLoadingIndicator>("progress_indicator");
+    if (!mLoadingIndicator)
+        return;
+
+    mLoadingIndicator->setVisible(started);
+    started ? mLoadingIndicator->start() : mLoadingIndicator->stop();
 }
 
 void FSFloaterPoser::onClickLoadLeftHandPose()
@@ -905,6 +960,51 @@ void FSFloaterPoser::onClickLoadLeftHandPose()
 void FSFloaterPoser::onClickLoadRightHandPose()
 {
     onClickLoadHandPose(true);
+}
+
+S32 FSFloaterPoser::tryGetPoseVersion(std::string pathToPoseFile)
+{
+    S32 version = -1;
+    if (pathToPoseFile.empty())
+        return version;
+
+    if (!gDirUtilp->fileExists(pathToPoseFile))
+        return version;
+
+    try
+    {
+        LLSD       pose;
+        llifstream infile;
+
+        infile.open(pathToPoseFile);
+        if (!infile.is_open())
+            return version;
+
+        while (!infile.eof())
+        {
+            S32 lineCount = LLSDSerialize::fromXML(pose, infile);
+            if (lineCount == LLSDParser::PARSE_FAILURE)
+            {
+                LL_WARNS("Posing") << "Failed to parse pose file: " << pathToPoseFile << LL_ENDL;
+                return version;
+            }
+
+            for (LLSD::map_const_iterator itr = pose.beginMap(); itr != pose.endMap(); ++itr)
+            {
+                std::string const& name        = itr->first;
+                LLSD const&        control_map = itr->second;
+
+                if (name == "version")
+                    return (S32)control_map["value"].asInteger();
+            }
+        }
+    }
+    catch (const std::exception& e)
+    {
+        LL_WARNS("Posing") << "Threw an exception trying read the pose file: " << pathToPoseFile << " exception: " << e.what() << LL_ENDL;
+    }
+
+    return version;
 }
 
 void FSFloaterPoser::onClickLoadHandPose(bool isRightHand)
@@ -964,6 +1064,8 @@ void FSFloaterPoser::onClickLoadHandPose(bool isRightHand)
                 mPoserAnimator.loadJointRotation(avatar, poserJoint, true, vec3);
             }
         }
+
+        addBoldToScrollList(mHandJointsScrollList, avatar);
     }
     catch ( const std::exception& e )
     {
@@ -1013,14 +1115,15 @@ bool FSFloaterPoser::poseFileStartsFromTeePose(const std::string& poseFileName)
     return false;
 }
 
-void FSFloaterPoser::loadPoseFromXml(LLVOAvatar* avatar, const std::string& poseFileName, E_LoadPoseMethods loadMethod)
+bool FSFloaterPoser::loadPoseFromXml(LLVOAvatar* avatar, const std::string& poseFileName, E_LoadPoseMethods loadMethod)
 {
+    bool        loadSuccess = false;
     std::string pathname = gDirUtilp->getExpandedFilename(LL_PATH_USER_SETTINGS, POSE_SAVE_SUBDIRECTORY);
     if (!gDirUtilp->fileExists(pathname))
-        return;
+        return loadSuccess;
 
     if (!mPoserAnimator.isPosingAvatar(avatar))
-        return;
+        return loadSuccess;
 
     std::string fullPath =
         gDirUtilp->getExpandedFilename(LL_PATH_USER_SETTINGS, POSE_SAVE_SUBDIRECTORY, poseFileName + POSE_INTERNAL_FORMAT_FILE_EXT);
@@ -1041,20 +1144,23 @@ void FSFloaterPoser::loadPoseFromXml(LLVOAvatar* avatar, const std::string& pose
         LLQuaternion quat;
         bool         enabled;
         bool         setJointBaseRotationToZero;
+        bool         worldLocked;
+        bool         mirroredJoint;
         S32          version = 0;
         bool startFromZeroRot = true;
 
         infile.open(fullPath);
         if (!infile.is_open())
-            return;
+            return loadSuccess;
 
+        loadSuccess = true;
         while (!infile.eof())
         {
             S32 lineCount = LLSDSerialize::fromXML(pose, infile);
             if (lineCount == LLSDParser::PARSE_FAILURE)
             {
                 LL_WARNS("Posing") << "Failed to parse file: " << poseFileName << LL_ENDL;
-                return;
+                return loadSuccess;
             }
 
             for (LLSD::map_const_iterator itr = pose.beginMap(); itr != pose.endMap(); ++itr)
@@ -1100,29 +1206,44 @@ void FSFloaterPoser::loadPoseFromXml(LLVOAvatar* avatar, const std::string& pose
                     setJointBaseRotationToZero = startFromZeroRot;
 
                 if (loadPositions && control_map.has("position"))
-                {
                     vec3.setValue(control_map["position"]);
-                    mPoserAnimator.loadJointPosition(avatar, poserJoint, loadPositionsAndScalesAsDeltas, vec3);
-                }
+                else
+                    vec3.clear();
+
+                mPoserAnimator.loadJointPosition(avatar, poserJoint, loadPositionsAndScalesAsDeltas, vec3);
 
                 if (loadRotations && control_map.has("rotation"))
-                {
                     vec3.setValue(control_map["rotation"]);
-                    mPoserAnimator.loadJointRotation(avatar, poserJoint, setJointBaseRotationToZero, vec3);
-                }
+                else
+                    vec3.clear();
+
+                mPoserAnimator.loadJointRotation(avatar, poserJoint, setJointBaseRotationToZero, vec3);
 
                 if (loadScales && control_map.has("scale"))
-                {
                     vec3.setValue(control_map["scale"]);
-                    mPoserAnimator.loadJointScale(avatar, poserJoint, loadPositionsAndScalesAsDeltas, vec3);
-                }
+                else
+                    vec3.clear();
+
+                mPoserAnimator.loadJointScale(avatar, poserJoint, loadPositionsAndScalesAsDeltas, vec3);
+
+                worldLocked = control_map.has("worldLocked") ? control_map["worldLocked"].asBoolean() : false;
+                mPoserAnimator.setRotationIsWorldLocked(avatar, *poserJoint, worldLocked);
+
+                mirroredJoint = control_map.has("mirrored") ? control_map["mirrored"].asBoolean() : false;
+                mPoserAnimator.setRotationIsMirrored(avatar, *poserJoint, mirroredJoint);
             }
+
+            if (version > 6 && !startFromZeroRot)
+                loadSuccess = mPoserAnimator.loadPosingState(avatar, pose);
         }
     }
     catch ( const std::exception & e )
     {
+        loadSuccess = false;
         LL_WARNS("Posing") << "Everything caught fire trying to load the pose: " << poseFileName << " exception: " << e.what() << LL_ENDL;
     }
+
+    return loadSuccess;
 }
 
 void FSFloaterPoser::startPosingSelf()
@@ -1310,8 +1431,8 @@ LLSD FSFloaterPoser::createRowForJoint(const std::string& jointName, bool isHead
         return NULL;
 
     std::string headerValue = "";
-    if (isHeaderRow && hasString("icon_category"))
-        headerValue = getString("icon_category");
+    if (isHeaderRow)
+        headerValue = tryGetString("icon_category");
 
     std::string jointValue    = jointName;
     std::string parameterName = (isHeaderRow ? XML_LIST_HEADER_STRING_PREFIX : XML_LIST_TITLE_STRING_PREFIX) + jointName;
@@ -1404,6 +1525,8 @@ void FSFloaterPoser::onUndoLastChange()
     refreshPositionSlidersAndSpinners();
     refreshScaleSlidersAndSpinners();
     refreshTrackpadCursor();
+    if (getSavingToBvh())
+        refreshTextHighlightingOnJointScrollLists();
 }
 
 void FSFloaterPoser::onSetAvatarToTpose()
@@ -1447,6 +1570,7 @@ void FSFloaterPoser::onResetJoint(const LLSD data)
     refreshScaleSlidersAndSpinners();
     refreshTrackpadCursor();
     enableOrDisableRedoAndUndoButton();
+    refreshTextHighlightingOnJointScrollLists();
 }
 
 void FSFloaterPoser::onRedoLastChange()
@@ -1474,6 +1598,8 @@ void FSFloaterPoser::onRedoLastChange()
     refreshTrackpadCursor();
     refreshScaleSlidersAndSpinners();
     refreshPositionSlidersAndSpinners();
+    if (getSavingToBvh())
+        refreshTextHighlightingOnJointScrollLists();
 }
 
 void FSFloaterPoser::enableOrDisableRedoAndUndoButton()
@@ -1761,6 +1887,9 @@ void FSFloaterPoser::setUiSelectedAvatarSaveFileName(const std::string& saveFile
 
 LLVOAvatar* FSFloaterPoser::getAvatarByUuid(const LLUUID& avatarToFind) const
 {
+    if (avatarToFind.isNull())
+        return nullptr;
+
     for (LLCharacter* character : LLCharacter::sInstances)
     {
         if (avatarToFind != character->getID())
@@ -1967,7 +2096,7 @@ void FSFloaterPoser::setSelectedJointsRotation(const LLVector3& absoluteRot, con
         return;
 
     auto                   selectedJoints   = getUiSelectedPoserJoints();
-    bool                   savingToExternal = getWhetherToResetBaseRotationOnEdit();
+    bool                   savingToExternal = getSavingToBvh();
     E_BoneDeflectionStyles defl             = getUiSelectedBoneDeflectionStyle();
 
     for (auto item : selectedJoints)
@@ -2081,7 +2210,6 @@ void FSFloaterPoser::onJointTabSelect()
     refreshTrackpadCursor();
     enableOrDisableRedoAndUndoButton();
     refreshScaleSlidersAndSpinners();
-    onClickSetBaseRotZero();
 }
 
 E_BoneAxisTranslation FSFloaterPoser::getJointTranslation(const std::string& jointName) const
@@ -2348,8 +2476,7 @@ void FSFloaterPoser::refreshTextHighlightingOnJointScrollLists()
 
 void FSFloaterPoser::setSavePosesButtonText(bool setAsSaveDiff)
 {
-    if (hasString("SavePoseLabel") && hasString("SaveDiffLabel"))
-        setAsSaveDiff ? mSavePosesBtn->setLabel(getString("SaveDiffLabel")) : mSavePosesBtn->setLabel(getString("SavePoseLabel"));
+    setAsSaveDiff ? mSavePosesBtn->setLabel(tryGetString("SaveDiffLabel")) : mSavePosesBtn->setLabel(tryGetString("SavePoseLabel"));
 }
 
 void FSFloaterPoser::addBoldToScrollList(LLScrollListCtrl* list, LLVOAvatar* avatar)
@@ -2361,30 +2488,54 @@ void FSFloaterPoser::addBoldToScrollList(LLScrollListCtrl* list, LLVOAvatar* ava
         return;
 
     std::string iconValue   = "";
-    bool considerExternalFormatSaving = getWhetherToResetBaseRotationOnEdit();
-
-    if (considerExternalFormatSaving && hasString("icon_rotation_is_own_work"))
-        iconValue = getString("icon_rotation_is_own_work");
+    bool        considerExternalFormatSaving = getSavingToBvh();
 
     for (auto listItem : list->getAllData())
     {
-        FSPoserAnimator::FSPoserJoint *userData = static_cast<FSPoserAnimator::FSPoserJoint *>(listItem->getUserdata());
-        if (!userData)
+        FSPoserAnimator::FSPoserJoint *poserJoint = static_cast<FSPoserAnimator::FSPoserJoint *>(listItem->getUserdata());
+        if (!poserJoint)
             continue;
 
-        if (considerExternalFormatSaving)
-        {
-            if (mPoserAnimator.baseRotationIsZero(avatar, *userData))
-                ((LLScrollListText*) listItem->getColumn(COL_ICON))->setValue(iconValue);
-            else
-                ((LLScrollListText*) listItem->getColumn(COL_ICON))->setValue("");
-        }
+        ((LLScrollListText*)listItem->getColumn(COL_ICON))->setValue(getScrollListIconForJoint(avatar, *poserJoint));
 
-        if (mPoserAnimator.isPosingAvatarJoint(avatar, *userData))
+        if (mPoserAnimator.isPosingAvatarJoint(avatar, *poserJoint))
             ((LLScrollListText *) listItem->getColumn(COL_NAME))->setFontStyle(LLFontGL::BOLD);
         else
             ((LLScrollListText *) listItem->getColumn(COL_NAME))->setFontStyle(LLFontGL::NORMAL);
     }
+}
+
+std::string FSFloaterPoser::getScrollListIconForJoint(LLVOAvatar* avatar, FSPoserAnimator::FSPoserJoint joint)
+{
+    if (!avatar)
+        return "";
+
+    if (mPoserAnimator.getRotationIsWorldLocked(avatar, joint))
+        return tryGetString("icon_rotation_is_world_locked");
+
+    if (!getSavingToBvh())
+        return "";
+
+    if (joint.boneType() == COL_VOLUMES)
+        return tryGetString("icon_rotation_does_not_export");
+
+    if (mPoserAnimator.userSetBaseRotationToZero(avatar, joint))
+    {
+        if (mPoserAnimator.exportRotationWillLockJoint(avatar, joint))
+            return tryGetString("icon_rotation_bvh_locked_edited");
+        else
+            return tryGetString("icon_rotation_bvh_locked_unedited");
+    }
+    else
+        return tryGetString("icon_rotation_bvh_unlocked");
+}
+
+std::string FSFloaterPoser::tryGetString(std::string name)
+{
+    if (name.empty())
+        return "";
+
+    return hasString(name) ? getString(name) : "";
 }
 
 bool FSFloaterPoser::savePoseToBvh(LLVOAvatar* avatar, const std::string& poseFileName)
@@ -2427,7 +2578,7 @@ bool FSFloaterPoser::savePoseToBvh(LLVOAvatar* avatar, const std::string& poseFi
         return false;
     }
 
-    return true;
+    return writeSuccess;
 }
 
 bool FSFloaterPoser::writePoseAsBvh(llofstream* fileStream, LLVOAvatar* avatar)
@@ -2454,7 +2605,6 @@ void FSFloaterPoser::writeBvhFragment(llofstream* fileStream, LLVOAvatar* avatar
     if (!joint)
         return;
 
-    auto position = mPoserAnimator.getJointPosition(avatar, *joint);
     auto saveAxis = getBvhJointTranslation(joint->jointName());
 
     switch (joint->boneType())
@@ -2553,13 +2703,15 @@ void FSFloaterPoser::writeBvhMotion(llofstream* fileStream, LLVOAvatar* avatar, 
     if (!joint)
         return;
 
-    auto rotation = mPoserAnimator.getJointRotation(avatar, *joint, SWAP_NOTHING, NEGATE_NOTHING);
+    bool lockPelvisJoint = gSavedSettings.getBOOL(POSER_UNLOCKPELVISINBVH_SAVE_KEY);
+
+    auto rotation = mPoserAnimator.getJointExportRotation(avatar, *joint, !lockPelvisJoint);
     auto position = mPoserAnimator.getJointPosition(avatar, *joint);
 
     switch (joint->boneType())
     {
         case WHOLEAVATAR:
-            *fileStream << vec3ToXYZString(position) + " " + rotationToString(rotation);
+            *fileStream << positionToString(position) + " " + rotationToString(rotation);
             break;
 
         default:
@@ -2575,9 +2727,10 @@ void FSFloaterPoser::writeBvhMotion(llofstream* fileStream, LLVOAvatar* avatar, 
     }
 }
 
-std::string FSFloaterPoser::vec3ToXYZString(const LLVector3& val)
+std::string FSFloaterPoser::positionToString(const LLVector3& val)
 {
-    return std::to_string(val[VX]) + " " + std::to_string(val[VY]) + " " + std::to_string(val[VZ]);
+    const float metresToInches = 39.37008f;
+    return std::to_string(metresToInches * val[VY]) + " " + std::to_string(metresToInches * val[VZ]) + " " + std::to_string(metresToInches * val[VX]);
 }
 
 std::string FSFloaterPoser::rotationToString(const LLVector3& val)
@@ -2644,12 +2797,66 @@ S32 FSFloaterPoser::getBvhJointNegation(const std::string& jointName) const
     return result;
 }
 
-bool FSFloaterPoser::getWhetherToResetBaseRotationOnEdit() { return gSavedSettings.getBOOL(POSER_RESETBASEROTONEDIT_SAVE_KEY); }
-
-void FSFloaterPoser::onClickSetBaseRotZero() { mAlsoSaveBvhCbx->setEnabled(getWhetherToResetBaseRotationOnEdit()); }
-
 bool FSFloaterPoser::getSavingToBvh()
 {
-    return getWhetherToResetBaseRotationOnEdit() && gSavedSettings.getBOOL(POSER_RESETBASEROTONEDIT_SAVE_KEY);
+    return gSavedSettings.getBOOL(POSER_SAVEEXTERNALFORMAT_SAVE_KEY);
 }
 
+void FSFloaterPoser::onClickSavingToBvh()
+{
+    mUnlockPelvisInBvhSaveCbx->setVisible(getSavingToBvh());
+    refreshTextHighlightingOnJointScrollLists();
+}
+
+void FSFloaterPoser::onClickLockWorldRotBtn()
+{
+    auto selectedJoints = getUiSelectedPoserJoints();
+    if (selectedJoints.size() < 1)
+        return;
+
+    LLVOAvatar* avatar = getUiSelectedAvatar();
+    if (!avatar)
+        return;
+
+    if (!mPoserAnimator.isPosingAvatar(avatar))
+        return;
+
+    for (auto item : selectedJoints)
+    {
+        bool currentlyPosingJoint = mPoserAnimator.isPosingAvatarJoint(avatar, *item);
+        if (!currentlyPosingJoint)
+            continue;
+
+        bool newLockState = !mPoserAnimator.getRotationIsWorldLocked(avatar, *item);
+        mPoserAnimator.setRotationIsWorldLocked(avatar, *item, newLockState);
+    }
+
+    refreshTextHighlightingOnJointScrollLists();
+}
+
+FSLoadPoseTimer::FSLoadPoseTimer(FSLoadPoseTimer::callback_t callback) : LLEventTimer(0.5f), mCallback(callback)
+{
+}
+
+bool FSLoadPoseTimer::tick()
+{
+    if (!mAttemptLoading)
+        return false;
+    if (mCallback.empty())
+        return false;
+
+    if (mLoadAttempts >= mMaxLoadAttempts)
+        mAttemptLoading = false;
+
+    mLoadAttempts++;
+    mCallback();
+    return false;
+}
+
+void FSLoadPoseTimer::tryLoading(std::string filePath, E_LoadPoseMethods loadMethod)
+{
+    mPoseFullPath   = filePath;
+    mLoadType       = loadMethod;
+    mLoadAttempts   = 0;
+    mAttemptLoading = true;
+}

@@ -147,7 +147,8 @@
 			<check_box name="FSChatbarNamePrediction" label="近くのチャットで周りにいる人の名前の自動補完を行う"/>
 			<check_box label="「:」を「/me」の代わりに使う" name="AllowMUpose"/>
 			<check_box label="((ＯＯＣ))のかっこを自動的に閉じる" name="AutoCloseOOC"/>
-			<check_box name="FSEnableEmojiWindowPopupWhileTyping" label="チャットバーに入力中に自動絵文字ピッカーウィンドウを有効にする"/>
+			<check_box name="FSUseChatMentionAutoComplete" label="チャットバー入力時に@入力で自動的にメンションウィンドウが表示されるのを有効にする"/>
+			<check_box name="FSEnableEmojiWindowPopupWhileTyping" label="チャットバー入力時に自動的に絵文字ピッカーウィンドウが表示されるのを有効にする"/>
 			<check_box name="FSShowEmojiButton" label="ＩＭセッションと近くのチャットのチャットバーに絵文字ボタンを表示する"/>
 			<check_box name="FSShowIMSendButton" label="ＩＭのチャットバーに「送信」ボタンを表示する"/>
 			<check_box label="近くのチャットウインドウにチャットバーを表示する" name="FSNearbyChatbar"/>
@@ -179,8 +180,9 @@
 			</text>
 			<spinner tool_tip="完全なグループ名の場合は-1、無効の場合は0にします。" name="FSShowGroupNameLength"/>
 			<check_box name="FSOpenIMContainerOnOfflineMessage" label="オフラインメッセージを受信したら会話ウィンドウを開く"/>
+			<check_box name="FSRestoreOpenIMs" label="前回のセッションで開いたＩＭウィンドウを復元する"/>
 			<check_box label="オフライン時に受け取ったＩＭをメールで受信 ([EMAIL])" name="send_im_to_email"/>
-			<text name="email_settings">[https://accounts.secondlife.com/change_email?lang=ja-JP オフラインＩＭのメール通知設定を開く]</text>
+			<text name="email_settings">[https://accounts.secondlife.com/change_email?lang=ja-JP オフライン時のＩＭのメール通知設定を開く]</text>
 			<text name="email_settings_login_to_change">
 				オフラインＩＭをメール設定に変更したい場合はログインしてください
 			</text>

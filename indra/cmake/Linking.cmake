@@ -42,6 +42,7 @@ endif ()
 link_directories(${AUTOBUILD_INSTALL_DIR}/lib/$<LOWER_CASE:$<CONFIG>>)
 link_directories(${AUTOBUILD_INSTALL_DIR}/lib/release)
 
+
 add_library( ll::oslibraries INTERFACE IMPORTED )
 
 if (LINUX)
@@ -67,24 +68,25 @@ elseif (WINDOWS)
           legacy_stdio_definitions
           )
 else()
-  include(CMakeFindFrameworks)
   find_library(COREFOUNDATION_LIBRARY CoreFoundation)
   find_library(CARBON_LIBRARY Carbon)
   find_library(COCOA_LIBRARY Cocoa)
   find_library(IOKIT_LIBRARY IOKit)
 
-  find_library(AGL_LIBRARY AGL)
   find_library(APPKIT_LIBRARY AppKit)
   find_library(COREAUDIO_LIBRARY CoreAudio)
+  find_library(COREGRAPHICS_LIBRARY CoreGraphics)
+  find_library(AUDIOTOOLBOX_LIBRARY AudioToolbox)
 
   target_link_libraries( ll::oslibraries INTERFACE
           ${COCOA_LIBRARY}
           ${IOKIT_LIBRARY}
           ${COREFOUNDATION_LIBRARY}
           ${CARBON_LIBRARY}
-          ${AGL_LIBRARY}
           ${APPKIT_LIBRARY}
           ${COREAUDIO_LIBRARY}
+          ${AUDIOTOOLBOX_LIBRARY}
+          ${COREGRAPHICS_LIBRARY}
           )
 endif()
 

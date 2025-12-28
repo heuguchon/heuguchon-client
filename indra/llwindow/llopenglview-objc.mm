@@ -705,85 +705,51 @@ attributedStringInfo getSegments(NSAttributedString *str)
     // Apple also says when aString is an NSString object,
     // the receiver is expected to render the marked text with distinguishing appearance.
     // So I tried to make attributedStringInfo, but it won't be used...   (Pell Smit)
-    
-    // Korean input fix: Improved composition text handling based on Chrome's approach
+
     if (mMarkedTextAllowed)
     {
-        // Check if we have composition text
-        BOOL hasComposition = [aString length] > 0;
+        unsigned int selected[2] = {
+            unsigned(selectedRange.location),
+            unsigned(selectedRange.length)
+        };
         
-        // If we have existing marked text and a replacement range is specified, handle it first
-        if (mHasMarkedText && replacementRange.location != NSNotFound && replacementRange.length > 0)
-        {
-            // Delete the replacement range text first
-            callDeleteRange((int)replacementRange.location, (int)replacementRange.length);
-        }
+        unsigned int replacement[2] = {
+            unsigned(replacementRange.location),
+            unsigned(replacementRange.length)
+        };
         
-        if (hasComposition)
+        int string_length = [aString length];
+        unichar *text = new unichar[string_length];
+        attributedStringInfo segments;
+        // I used 'respondsToSelector:@selector(string)'
+        // to judge aString is an attributed string or not.
+        if ([aString respondsToSelector:@selector(string)])
         {
-            unsigned int selected[2] = {
-                unsigned(selectedRange.location),
-                unsigned(selectedRange.length)
-            };
-            
-            unsigned int replacement[2] = {
-                unsigned(replacementRange.location != NSNotFound ? replacementRange.location : 0),
-                unsigned(replacementRange.length)
-            };
-            
-            int string_length = [aString length];
-            unichar text[string_length];
-            attributedStringInfo segments;
-            
-            // I used 'respondsToSelector:@selector(string)'
-            // to judge aString is an attributed string or not.
-            if ([aString respondsToSelector:@selector(string)])
-            {
-                // aString is attributed
-                [[aString string] getCharacters:text range:NSMakeRange(0, string_length)];
-                segments = getSegments((NSAttributedString *)aString);
-            }
-            else
-            {
-                // aString is not attributed
-                [aString getCharacters:text range:NSMakeRange(0, string_length)];
-                segments.seg_lengths.push_back(string_length);
-                segments.seg_standouts.push_back(true);
-            }
-            
-            // Set marked text with improved handling for Korean composition
-            setMarkedText(text, selected, replacement, string_length, segments);
-            mHasMarkedText = TRUE;
-            mMarkedTextLength = string_length;
-            
-            // Notify the composition text update
-            const wchar_t* wtext = reinterpret_cast<const wchar_t*>(text);
-            // Convert segment info to arrays for C interface
-            int* seg_lengths = new int[segments.seg_lengths.size()];
-            bool* standouts = new bool[segments.seg_standouts.size()];
-            
-            for (size_t i = 0; i < segments.seg_lengths.size(); i++) {
-                seg_lengths[i] = segments.seg_lengths[i];
-            }
-            for (size_t i = 0; i < segments.seg_standouts.size(); i++) {
-                standouts[i] = segments.seg_standouts[i];
-            }
-            
-            callCompositionTextUpdate(wtext, string_length, (int)selectedRange.location,
-                                    seg_lengths, (int)segments.seg_lengths.size(),
-                                    standouts);
-            
-            // Clean up temporary arrays
-            delete[] seg_lengths;
-            delete[] standouts;
+            // aString is attibuted
+            [[aString string] getCharacters:text range:NSMakeRange(0, string_length)];
+            segments = getSegments((NSAttributedString *)aString);
         }
         else
         {
-            // Composition completed or cancelled
+            // aString is not attributed
+            [aString getCharacters:text range:NSMakeRange(0, string_length)];
+            segments.seg_lengths.push_back(string_length);
+            segments.seg_standouts.push_back(true);
+        }
+        setMarkedText(text, selected, replacement, string_length, segments);
+        if (string_length > 0)
+        {
+            mHasMarkedText = TRUE;
+            mMarkedTextLength = string_length;
+        }
+        else
+        {
+            // we must clear the marked text when aString is null.
             [self unmarkText];
         }
+
+        delete [] text;
     } else {
-        // Marked text not allowed, clear any existing marked text
         if (mHasMarkedText)
         {
             [self unmarkText];

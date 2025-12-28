@@ -338,8 +338,10 @@ void LLFloater::initFloater(const Params& p)
 
     // Help button: '?'
     //SL-14050 Disable all Help question marks
-    // <FS:Ansariel> Nope!
-    mButtonsEnabled[BUTTON_HELP] = !mHelpTopic.empty();// false;
+    // <FS:TJ> Disable the help button only if the debug setting is on
+    static LLUICachedControl<bool> hide_help_buttons ("FSHideHelpButtons", false);
+    mButtonsEnabled[BUTTON_HELP] = !mHelpTopic.empty() && !hide_help_buttons;// false;
+    // </FS:TJ>
 
     // Minimize button only for top draggers
     if ( !mDragOnLeft && mCanMinimize )
@@ -2332,7 +2334,7 @@ void LLFloater::setCanDrag(bool can_drag)
     }
 }
 
-bool LLFloater::getCanDrag()
+bool LLFloater::getCanDrag() const
 {
     return mDragHandle->getEnabled();
 }
@@ -2462,7 +2464,7 @@ void LLFloater::drawConeToOwner(F32 &context_cone_opacity,
         LLRect local_rect = getLocalRect();
 
         gGL.getTexUnit(0)->unbind(LLTexUnit::TT_TEXTURE);
-        LLGLEnable(GL_CULL_FACE);
+        LLGLEnable cull_face(GL_CULL_FACE);
         gGL.begin(LLRender::TRIANGLE_STRIP);
         {
             gGL.color4f(0.f, 0.f, 0.f, contex_cone_in_alpha * context_cone_opacity);

@@ -354,6 +354,7 @@ public:
     void renderHighlights();
     bool renderVignette(LLRenderTarget* src, LLRenderTarget* dst);
     bool renderSnapshotFrame(LLRenderTarget* src, LLRenderTarget* dst); // <FS:Beq/> Add snapshot frame rendering
+    void renderSnapshotGuidesOverlay(); // <FS:Beq/> Add snapshot composition guide rendering
     void renderDebug();
     void renderPhysicsDisplay();
 
@@ -435,6 +436,12 @@ public:
     static void setRenderSoundBeacons(bool val);
     static void toggleRenderSoundBeacons();
     static bool getRenderSoundBeacons();
+
+    // <FS:PP> FIRE-33085 Region corner markers
+    static void setRenderRegionCornerBeacons(bool val);
+    static void toggleRenderRegionCornerBeacons();
+    static bool getRenderRegionCornerBeacons();
+    // </FS:PP>
 
     static void setRenderMOAPBeacons(bool val);
     static void toggleRenderMOAPBeacons();
@@ -690,6 +697,9 @@ public:
     static bool             sRenderAttachedParticles;
     static bool             sRenderDeferred;
     static bool             sReflectionProbesEnabled;
+    // <FS:Beq> [FIRE-35070] Address gradual slowdown issue
+    static S32              sReflectionProbeLevel;
+    // </FS:Beq>
     static S32              sVisibleLightCount;
     static bool             sRenderingHUDs;
     static F32              sDistortionWaterClipPlaneMargin;
@@ -1014,12 +1024,46 @@ protected:
     U32                     mLightMask;
     U32                     mLightMovingMask;
 
+    // <FS:Beq> Add snapshot guides as part of UI rendering to avoid issues in compositor
+    struct SnapshotGuideState
+    {
+        enum class Style : U8
+        {
+            RuleOfThirds,
+            GoldenRatio,
+            Diagonal
+        };
+
+        enum class GoldenOrientation : U8
+        {
+            TopLeft,
+            TopRight,
+            BottomLeft,
+            BottomRight
+        };
+
+        bool        active = false;
+        bool        show_guides = false;
+        F32         left = 0.f;
+        F32         right = 1.f;
+        F32         bottom = 0.f;
+        F32         top = 1.f;
+        LLColor3    color = LLColor3(1.f, 1.f, 1.f);
+        F32         thickness = 0.f;
+        F32         visibility = 0.f;
+        Style       style = Style::RuleOfThirds;
+        GoldenOrientation golden_orientation = GoldenOrientation::TopLeft;
+    };
+
+    SnapshotGuideState      mSnapshotGuideState;
+    // </FS:Beq>
     static bool             sRenderPhysicalBeacons;
     static bool             sRenderMOAPBeacons;
     static bool             sRenderScriptedTouchBeacons;
     static bool             sRenderScriptedBeacons;
     static bool             sRenderParticleBeacons;
     static bool             sRenderSoundBeacons;
+    static bool             sRenderRegionCornerBeacons; // <FS:PP> FIRE-33085 Region corner markers
 public:
     static bool             sRenderBeacons;
     static bool             sRenderHighlight;

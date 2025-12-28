@@ -4,9 +4,13 @@
 		<!--View-->
 		<panel label="Ansicht" name="tab-view">
 			<slider label="Sichtwinkel" name="camera_fov" tool_tip="In der echten Welt handelt es sich hierbei um ein Zoom-Feature. Es ändert den Sichtwinkel innerhalb des Viewer-Fensters. Er hat dieselbe Funktion wie das Drücken von Strg-0 oder Strg-8. HINWEIS: Diese Funktion funktioniert nicht, wenn Flycam aktiviert ist (3D SpaceNavigator)."/>
+			<button name="Def_CameraAngle" label="S" tool_tip="Auf Standardwert zurücksetzen." />
 			<slider label="Abstand" name="camera_offset_scale"/>
+			<button name="Def_CameraOffsetScale" label="S" tool_tip="Auf Standardwert zurücksetzen." />
 			<slider label="Übergangszeit" name="camera_transition_time"/>
+			<button name="Def_ZoomTime" label="S" tool_tip="Auf Standardwert zurücksetzen." />
 			<slider label="Glättung" name="camera_position_smoothing"/>
+			<button name="Def_CameraPositionSmoothing" label="S" tool_tip="Auf Standardwert zurücksetzen." />
 			<check_box label="Kamerabeschränkungen aufheben" name="DisableCameraConstraints" tool_tip="Erlaubt die Bewegungen der Kamera außerhalb der normalen Grenzen und der Erdoberfläche"/>
 			<check_box label="Mausrad nicht zum Zoomen verwenden" name="FSDisableMouseWheelCameraZoom"/>
 			<text name="heading2">
@@ -57,6 +61,7 @@
 			<check_box label="Avataren des Rückwärtsgehen in der lokalen Ansicht erlauben (SL-Standard)" name="FSDisableTurningAroundWhenWalkingBackwards" tool_tip="Falls aktiviert, gehen Avatare auf dem eigenen Bildschirm beim Rückwärtsgehen rückwärts, anstatt sich umzudrehen und anschließend vorwärts zu gehen. Diese Option hat nur lokalen Effekt und hat keinen Einfluss auf was andere sehen. Dies ist die Standardeinstellung im Second Life Viewer und kann u.U. durch den AO des Avatars übersteuert werden."/>
 			<check_box label="Avatar zum ausgewählten Objekt drehen" name="FSTurnAvatarToSelectedObject" tool_tip="Dreht den Avatar mit dem Gesicht zum aktuell ausgewählten Objekt."/>
 			<slider label_width="180" label="Avatar-Rotationsgeschwindigkeit:" name="av_turn_spd" tool_tip="Veränderte die Rate, mit der der Avatar sich dreht. 0 - 100 als geschätzte Prozent der maximalen Rotationsrate (Standard: 0). Hohe Werte führen zu zackigen und ruckartigen Bewegungen." width="305" />
+			<check_box label="Verbindung zu Nachbarregionen deaktivieren (Achtung: Tooltip lesen!)" name="FSDisableNeighbourRegionConnections" tool_tip="Zeigt/lädt nur die Region, in der Sie sich befinden. Dies kann die Performance und Netzwerkstabilität verbessern, jedoch sind Regionswechsel zu Fuß oder in Fahrzeugen weniger verlässlich und es kann ein manueller Teleport notwendig sein." />
 			<text name="Region_Crossing_Movement_Label" width="245">
 				Bewegungsvorhersage beim Regionswechsel:
 			</text>

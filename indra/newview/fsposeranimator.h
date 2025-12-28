@@ -28,6 +28,7 @@
 #define LL_FSPoserAnimator_H
 
 #include "fsposingmotion.h"
+#include "fsposestate.h"
 #include "llvoavatar.h"
 
 /// <summary>
@@ -197,27 +198,29 @@ public:
     /// </remarks>
     const std::vector<FSPoserJoint> PoserJoints{
         // head, torso, legs
-        { "mHead", "", BODY, { "mEyeLeft", "mEyeRight", "mFaceRoot", "mSkull" }, "0.000 0.076 0.000" },
-        { "mNeck", "", BODY, { "mHead" }, "0.000 0.251 -0.010" },
-        { "mPelvis", "", WHOLEAVATAR, { "mSpine1", "mHipLeft", "mHipRight", "mTail1", "mGroin", "mHindLimbsRoot" }, "0.000000 0.000000 0.000000" },
-        { "mChest", "", BODY, { "mNeck", "mCollarLeft", "mCollarRight", "mWingsRoot" }, "0.000 0.205 -0.015" },
-        { "mTorso", "", BODY, { "mSpine3" }, "0.000 0.084 0.000" },
-        { "mCollarLeft", "mCollarRight", BODY, { "mShoulderLeft" }, "0.085 0.165 -0.021" },
-        { "mShoulderLeft", "mShoulderRight", BODY, { "mElbowLeft" }, "0.079 0.000 0.000" },
-        { "mElbowLeft", "mElbowRight", BODY, { "mWristLeft" }, "0.248 0.000 0.000" },
-        { "mWristLeft", "mWristRight", BODY, { "mHandThumb1Left", "mHandIndex1Left", "mHandMiddle1Left", "mHandRing1Left", "mHandPinky1Left" }, "0.205 0.000 0.000" },
-        { "mCollarRight", "mCollarLeft", BODY, { "mShoulderRight" }, "-0.085 0.165 -0.021", "", true },
-        { "mShoulderRight", "mShoulderLeft", BODY, { "mElbowRight" }, "-0.079 0.000 0.000", "", true },
-        { "mElbowRight", "mElbowLeft", BODY, { "mWristRight" }, "-0.248 0.000 0.000", "", true },
-        { "mWristRight", "mWristLeft", BODY, { "mHandThumb1Right", "mHandIndex1Right", "mHandMiddle1Right", "mHandRing1Right", "mHandPinky1Right" }, "-0.205 0.000 0.000", "", true },
-        { "mHipLeft", "mHipRight", BODY, { "mKneeLeft" }, "0.127 -0.041 0.034" },
-        { "mKneeLeft", "mKneeRight", BODY, { "mAnkleLeft" }, "-0.046 -0.491 -0.001" },
-        { "mAnkleLeft", "mAnkleRight", BODY, { "mToeLeft" }, "0.001 -0.468 -0.029" },
-        { "mToeLeft", "mToeRight", BODY, {}, "0.000 0.109 0.000", "0.000 0.020 0.000" },
-        { "mHipRight", "mHipLeft", BODY, { "mKneeRight" }, "-0.129 -0.041 0.034", "", true },
-        { "mKneeRight", "mKneeLeft", BODY, { "mAnkleRight" }, "0.049 -0.491 -0.001", "", true },
-        { "mAnkleRight", "mAnkleLeft", BODY, { "mToeRight" }, "0.000 -0.468 -0.029", "", true },
-        { "mToeRight", "mToeLeft", BODY, {}, "0.000 0.109 0.000", "0.000 0.020 0.000", true },
+        { "mHead", "", BODY, { "mEyeLeft", "mEyeRight", "mFaceRoot", "mSkull", "HEAD" }, "0.000 0.076 0.000" },
+        { "mNeck", "", BODY, { "mHead", "NECK" }, "0.000 0.251 -0.010" },
+        { "mPelvis", "", WHOLEAVATAR, { "mSpine1", "mHipLeft", "mHipRight", "mTail1", "mGroin", "mHindLimbsRoot", "PELVIS", "BUTT" }, "0.000000 0.000000 0.000000" },
+        { "mChest", "", BODY, { "mNeck", "mCollarLeft", "mCollarRight", "mWingsRoot", "CHEST", "LEFT_PEC", "RIGHT_PEC", "UPPER_BACK" }, "0.000 0.205 -0.015" },
+        { "mTorso", "", BODY, { "mSpine3", "BELLY", "LEFT_HANDLE", "RIGHT_HANDLE", "LOWER_BACK" }, "0.000 0.084 0.000" },
+        { "mCollarLeft", "mCollarRight", BODY, { "mShoulderLeft", "L_CLAVICLE" }, "0.085 0.165 -0.021" },
+        { "mShoulderLeft", "mShoulderRight", BODY, { "mElbowLeft", "L_UPPER_ARM" }, "0.079 0.000 0.000" },
+        { "mElbowLeft", "mElbowRight", BODY, { "mWristLeft", "L_LOWER_ARM" }, "0.248 0.000 0.000" },
+        { "mWristLeft", "mWristRight", BODY, { "mHandThumb1Left", "mHandIndex1Left", "mHandMiddle1Left", "mHandRing1Left", "mHandPinky1Left", "L_HAND" }, "0.205 0.000 0.000" },
+        { "mCollarRight", "mCollarLeft", BODY, { "mShoulderRight", "R_CLAVICLE" }, "-0.085 0.165 -0.021", "", true },
+        { "mShoulderRight", "mShoulderLeft", BODY, { "mElbowRight", "R_UPPER_ARM" }, "-0.079 0.000 0.000", "", true },
+        { "mElbowRight", "mElbowLeft", BODY, { "mWristRight", "R_LOWER_ARM" }, "-0.248 0.000 0.000", "", true },
+        { "mWristRight", "mWristLeft", BODY, { "mHandThumb1Right", "mHandIndex1Right", "mHandMiddle1Right", "mHandRing1Right", "mHandPinky1Right", "R_HAND" }, "-0.205 0.000 0.000", "", true },
+        { "mHipLeft", "mHipRight", BODY, { "mKneeLeft", "L_UPPER_LEG" }, "0.127 -0.041 0.034" },
+        { "mKneeLeft", "mKneeRight", BODY, { "mAnkleLeft", "L_LOWER_LEG" }, "-0.046 -0.491 -0.001" },
+        { "mAnkleLeft", "mAnkleRight", BODY, { "mFootLeft", "L_FOOT" }, "0.001 -0.468 -0.029" },
+        { "mFootLeft", "mFootRight", BODY, { "mToeLeft" }, "0.000 -0.061 0.112" },
+        { "mToeLeft", "mToeRight", BODY, {}, "0.000 0.000 0.109", "0.000 0.020 0.000" },
+        { "mHipRight", "mHipLeft", BODY, { "mKneeRight", "R_UPPER_LEG" }, "-0.129 -0.041 0.034", "", true },
+        { "mKneeRight", "mKneeLeft", BODY, { "mAnkleRight", "R_LOWER_LEG" }, "0.049 -0.491 -0.001", "", true },
+        { "mAnkleRight", "mAnkleLeft", BODY, { "mFootRight", "R_FOOT" }, "0.000 -0.468 -0.029", "", true },
+        { "mFootRight", "mFootLeft", BODY, { "mToeRight" }, "0.000 -0.061 0.112", "", true },
+        { "mToeRight", "mToeLeft", BODY, {}, "0.000 0.000 0.109", "0.000 0.020 0.000", true },
 
         // face
         { "mFaceRoot",
@@ -390,7 +393,7 @@ public:
     /// </summary>
     /// <param name="jointName">The name of the joint to match.</param>
     /// <returns>The matching joint if found, otherwise nullptr</returns>
-    const FSPoserJoint* getPoserJointByName(const std::string& jointName);
+    const FSPoserJoint* getPoserJointByName(const std::string& jointName) const;
 
     /// <summary>
     /// Tries to start posing the supplied avatar.
@@ -491,6 +494,19 @@ public:
     LLVector3 getJointRotation(LLVOAvatar* avatar, const FSPoserJoint& joint, E_BoneAxisTranslation translation, S32 negation) const;
 
     /// <summary>
+    /// Gets the rotation of a joint for the supplied avatar for export.
+    /// </summary>
+    /// <param name="avatar">The avatar whose joint is being queried.</param>
+    /// <param name="joint">The joint to determine the rotation for.</param>
+    /// <param name="lockWholeAvatar">Whether the whole avatar should be rotation/position locked in the BVH export.</param>
+    /// <returns>The rotation of the requested joint for export.</returns>
+    /// <remarks>
+    /// The BVH export format requires some minimal amount of rotation so it animates the joint on upload.
+    /// The WHOLEAVATAR joint (mPelvis) never exports as 'free'.
+    /// </remarks>
+    LLVector3 getJointExportRotation(LLVOAvatar* avatar, const FSPoserJoint& joint, bool lockWholeAvatar) const;
+
+    /// <summary>
     /// Sets the rotation of a joint for the supplied avatar.
     /// </summary>
     /// <param name="avatar">The avatar whose joint is to be set.</param>
@@ -557,8 +573,9 @@ public:
     /// </summary>
     /// <param name="avatar">The avatar whose joint is to be recaptured.</param>
     /// <param name="joint">The joint to recapture.</param>
+    /// <param name="resetBaseRotationToZero">Whether to set the base rotation to zero on setting the rotation.</param>
     /// <param name="style">Any ancilliary action to be taken with the change to be made.</param>
-    void recaptureJointAsDelta(LLVOAvatar* avatar, const FSPoserJoint* joint, E_BoneDeflectionStyles style);
+    void recaptureJointAsDelta(LLVOAvatar* avatar, const FSPoserJoint* joint, bool resetBaseRotationToZero, E_BoneDeflectionStyles style);
 
     /// <summary>
     /// Sets all of the joint rotations of the supplied avatar to zero.
@@ -572,7 +589,50 @@ public:
     /// <param name="avatar">The avatar owning the supplied joint.</param>
     /// <param name="joint">The joint to query.</param>
     /// <returns>True if the supplied joint has a 'base' rotation of zero (thus user-supplied change only), otherwise false.</returns>
-    bool baseRotationIsZero(LLVOAvatar* avatar, const FSPoserJoint& joint) const;
+    bool userSetBaseRotationToZero(LLVOAvatar* avatar, const FSPoserJoint& joint) const;
+
+    /// <summary>
+    /// Gets whether the supplied joints position will be set in an export.
+    /// </summary>
+    /// <param name="avatar">The avatar owning the supplied joint.</param>
+    /// <param name="joint">The joint to query.</param>
+    /// <returns>True if the export will 'lock' the joint, otherwise false.</returns>
+    /// <remarks>
+    /// BVH import leaves a joint 'free' if its rotation is less than something arbitrary.
+    /// </remarks>
+    bool exportRotationWillLockJoint(LLVOAvatar* avatar, const FSPoserJoint& joint) const;
+
+    /// <summary>
+    /// Gets whether the supplied joint for the supplied avatar is rotationally locked to the world.
+    /// </summary>
+    /// <param name="avatar">The avatar owning the supplied joint.</param>
+    /// <param name="joint">The joint to query.</param>
+    /// <returns>True if the joint is maintaining a fixed-rotation in world, otherwise false.</returns>
+    bool getRotationIsWorldLocked(LLVOAvatar* avatar, const FSPoserJoint& joint) const;
+
+    /// <summary>
+    /// Sets the world-rotation-lock status for supplied joint for the supplied avatar.
+    /// </summary>
+    /// <param name="avatar">The avatar owning the supplied joint.</param>
+    /// <param name="joint">The joint to query.</param>
+    /// <param name="newState">The lock state to apply.</param>
+    void setRotationIsWorldLocked(LLVOAvatar* avatar, const FSPoserJoint& joint, bool newState);
+
+    /// <summary>
+    /// Gets whether the supplied joint for the supplied avatar has been mirrored.
+    /// </summary>
+    /// <param name="avatar">The avatar owning the supplied joint.</param>
+    /// <param name="joint">The joint to query.</param>
+    /// <returns>True if the joint is maintaining a fixed-rotation in world, otherwise false.</returns>
+    bool getRotationIsMirrored(LLVOAvatar* avatar, const FSPoserJoint& joint) const;
+
+    /// <summary>
+    /// Sets the mirrored status for supplied joint for the supplied avatar.
+    /// </summary>
+    /// <param name="avatar">The avatar owning the supplied joint.</param>
+    /// <param name="joint">The joint to query.</param>
+    /// <param name="newState">The mirror state to apply.</param>
+    void setRotationIsMirrored(LLVOAvatar* avatar, const FSPoserJoint& joint, bool newState);
 
     /// <summary>
     /// Determines if the kind of save to perform should be a 'delta' save, or a complete save.
@@ -647,6 +707,53 @@ public:
     /// </remarks>
     void loadJointScale(LLVOAvatar* avatar, const FSPoserJoint* joint, bool loadScaleAsDelta, LLVector3 scale);
 
+    /// <summary>
+    /// Loads the posing state (base rotations) to the supplied avatars posing-motion, from the supplied record.
+    /// </summary>
+    /// <param name="avatar">That avatar whose posing state should be loaded.</param>
+    /// <param name="pose">The record to read the posing state from.</param>
+    /// <returns>True if the pose loaded successfully, otherwise false.</returns>
+    /// <remarks>
+    /// When a save embeds animations that need to be restored at a certain time,
+    /// it can take several frames for the animation to be loaded and ready.
+    /// It may therefore be necessary to attempt this several times.
+    /// </remarks>
+    bool loadPosingState(LLVOAvatar* avatar, LLSD pose);
+
+    /// <summary>
+    /// Adds the posing state for the supplied avatar to the supplied record.
+    /// </summary>
+    /// <param name="avatar">That avatar whose posing state should be written.</param>
+    /// <param name="saveRecord">The record to write the posing state to.</param>
+    void savePosingState(LLVOAvatar* avatar, LLSD* saveRecord);
+
+    /// <summary>
+    /// Purges and recaptures the pose state for the supplied avatar.
+    /// </summary>
+    /// <param name="avatar">The avatar whose pose state is to be recapture.</param>
+    /// <param name="jointsRecaptured">The joints which were recaptured.</param>
+    void updatePosingState(LLVOAvatar* avatar, std::vector<FSPoserAnimator::FSPoserJoint*> jointsRecaptured);
+
+    /// <summary>
+    /// Add a new posing state, or updates the matching posing state with the supplied data.
+    /// </summary>
+    /// <param name="avatar">The avatar the posing state is intended for.</param>
+    /// <param name="animId">The ID of the animation.</param>
+    /// <param name="updateTime">The frame-time of the animation.</param>
+    /// <param name="jointNames">The names of the joints, if any, the animation should specifically be applied to.</param>
+    /// <param name="captureOrder">The capture order.</param>
+    /// <returns>True if the posing state was added or changed by the update data, otherwise false.</returns>
+    bool addOrUpdatePosingState(LLVOAvatar* avatar, LLUUID animId, F32 updateTime, std::string jointNames, int captureOrder);
+
+    /// <summary>
+    /// Traverses the joints and applies reversals to the base rotations if needed.
+    /// </summary>
+    /// <param name="posingMotion">The posing motion whose pose states require updating.</param>
+    /// <remarks>
+    /// Required after restoring a diff. The base rotations will be in their original arrangment.
+    /// </remarks>
+    void applyJointMirrorToBaseRotations(FSPosingMotion* posingMotion);
+
   private:
     /// <summary>
     /// Translates a rotation vector from the UI to a Quaternion for the bone.
@@ -691,6 +798,53 @@ public:
     bool isAvatarSafeToUse(LLVOAvatar* avatar) const;
 
     /// <summary>
+    /// Gets the depth of descendant joints for the supplied joint.
+    /// </summary>
+    /// <param name="joint">The joint to determine the depth for.</param>
+    /// <param name="depth">The depth of the supplied joint.</param>
+    /// <returns>The number of generations of descendents the joint has, if none, then zero.</returns>
+    int getChildJointDepth(const FSPoserJoint* joint, int depth) const;
+
+    /// <summary>
+    /// Derotates the first world-locked child joint to the supplied joint.
+    /// </summary>
+    /// <param name="joint">The edited joint, whose children may be world-locked.</param>
+    /// <param name="posingMotion">The posing motion.</param>
+    /// <param name="rotation">The rotation the supplied joint was/is being changed by.</param>
+    /// <remarks>
+    /// There are two ways to resolve this problem: before the rotation is applied in the PosingMotion (the animation) or after.
+    /// If performed after, a feedback loop is created, because you're noting the world-rotation in one frame, then correcting it back to that in another.
+    /// This implementation works by applying an opposing-rotation to the locked child joint which is corrected for the relative world-rotations of parent and child.
+    /// </remarks>
+    void deRotateWorldLockedDescendants(const FSPoserJoint* joint, FSPosingMotion* posingMotion, LLQuaternion rotation);
+
+    /// <summary>
+    /// Recursively tests the supplied joint and all its children for their world-locked status, and applies a de-rotation if it is world-locked.
+    /// </summary>
+    /// <param name="joint">The edited joint, whose children may be world-locked.</param>
+    /// <param name="posingMotion">The posing motion.</param>
+    /// <param name="parentWorldRot">The world-rotation of the joint that was edited.</param>
+    /// <param name="rotation">The rotation the joint was edit is being changed by.</param>
+    void deRotateJointOrFirstLockedChild(const FSPoserJoint* joint, FSPosingMotion* posingMotion, LLQuaternion parentWorldRot,
+                                         LLQuaternion rotation);
+
+    /// <summary>
+    /// Performs an undo or redo of an edit to the supplied joints world-locked descendants.
+    /// </summary>
+    /// <param name="joint">The edited joint, whose children may be world-locked.</param>
+    /// <param name="posingMotion">The posing motion.</param>
+    /// <param name="redo">Whether to redo the edit, otherwise the edit is undone.</param>
+    void undoOrRedoWorldLockedDescendants(const FSPoserJoint& joint, FSPosingMotion* posingMotion, bool redo);
+
+    /// <summary>
+    /// Recursively tests the supplied joint and all its children for their world-locked status, and applies an undo or redo if it is world-locked.
+    /// </summary>
+    /// <param name="joint">The joint which will have the undo or redo performed, if it is world locked.</param>
+    /// <param name="posingMotion">The posing motion.</param>
+    /// <param name="redo">Whether to redo the edit, otherwise the edit is undone.</param>
+    void undoOrRedoJointOrFirstLockedChild(const FSPoserJoint& joint, FSPosingMotion* posingMotion, bool redo);
+
+    /// <summary>
     /// Maps the avatar's ID to the animation registered to them.
     /// Thus we start/stop the same animation, and get/set the same rotations etc.
     /// Among other things this provides for the 'undo' of changes to shape/position when the poser stops animating someone.
@@ -698,6 +852,8 @@ public:
     /// Is static, so the animationId is not lost between sessions (such as when the UI floater is closed and reopened).
     /// </summary>
     static std::map<LLUUID, LLAssetID> sAvatarIdToRegisteredAnimationId;
+
+    FSPoseState mPosingState;
 };
 
 #endif // LL_FSPoserAnimator_H

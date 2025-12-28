@@ -52,6 +52,7 @@
 #include "llcachename.h"
 #include "llimview.h" // for LLIMMgr
 #include "llworld.h"
+#include "llviewerregion.h"
 #include "llparcel.h"
 #include "llviewerparcelmgr.h"
 #include "llfirstuse.h"
@@ -79,11 +80,20 @@
 
 const std::string WEBRTC_VOICE_SERVER_TYPE = "webrtc";
 
+// <FS:minerjr> [FIRE-36022] - Removing my USB headset crashes entire viewer
+using namespace std::chrono_literals; // Needed for shared timed mutex to use time
+// </FS:minerjr> [FIRE-36022]
 namespace {
 
-    const F32 MAX_AUDIO_DIST      = 50.0f;
-    const F32 VOLUME_SCALE_WEBRTC = 0.01f;
-    const F32 LEVEL_SCALE_WEBRTC  = 0.008f;
+    const F32      MAX_AUDIO_DIST           = 50.0f;
+    const F32      VOLUME_SCALE_WEBRTC      = 0.01f;
+    const F32      TUNING_LEVEL_SCALE       = 0.01f;
+    const F32      TUNING_LEVEL_START_POINT = 0.8f;
+    const F32      LEVEL_SCALE              = 0.005f;
+    const F32      LEVEL_START_POINT        = 0.18f;
+    const uint32_t SET_HIDDEN_RESTORE_DELAY_MS = 200;  // 200 ms to unmute again after hiding during teleport
+    const uint32_t MUTE_FADE_DELAY_MS       = 500;   // 20ms fade followed by 480ms silence gets rid of the click just after unmuting.
+                                                     // This is because the buffers and processing is cleared by the silence.
 
     const F32 SPEAKING_AUDIO_LEVEL = 0.30f; // <FS:minerjr> add missing f for float
 
@@ -200,7 +210,6 @@ bool LLWebRTCVoiceClient::sShuttingDown = false;
 
 LLWebRTCVoiceClient::LLWebRTCVoiceClient() :
     mHidden(false),
-    mTuningMode(false),
     mTuningMicGain(0.0),
     mTuningSpeakerVolume(50),  // Set to 50 so the user can hear themselves when he sets his mic volume
     mDevicesListUpdated(false),
@@ -267,9 +276,15 @@ void LLWebRTCVoiceClient::cleanupSingleton()
 void LLWebRTCVoiceClient::init(LLPumpIO* pump)
 {
     // constructor will set up LLVoiceClient::getInstance()
+    initWebRTC();
+}
+
+void LLWebRTCVoiceClient::initWebRTC()
+{
     llwebrtc::init(this);
 
     mWebRTCDeviceInterface = llwebrtc::getDeviceInterface();
+    mWebRTCDeviceInterface->unsetDevicesObserver(this); // <FS:Ansariel> initWebRTC() can get multiple times - make sure to unset previous observers before re-adding
     mWebRTCDeviceInterface->setDevicesObserver(this);
     mMainQueue = LL::WorkQueue::getInstance("mainloop");
     refreshDeviceLists();
@@ -282,8 +297,11 @@ void LLWebRTCVoiceClient::terminate()
         return;
     }
 
+    LL_INFOS("Voice") << "Terminating WebRTC" << LL_ENDL;
+
     mVoiceEnabled = false;
     llwebrtc::terminate();
+    mWebRTCDeviceInterface = nullptr;
 
     sShuttingDown = true;
 }
@@ -336,35 +354,57 @@ void LLWebRTCVoiceClient::updateSettings()
     LL_PROFILE_ZONE_SCOPED_CATEGORY_VOICE;
 
     setVoiceEnabled(LLVoiceClient::getInstance()->voiceEnabled());
-    static LLCachedControl<S32> sVoiceEarLocation(gSavedSettings, "VoiceEarLocation");
-    setEarLocation(sVoiceEarLocation);
+    if (mVoiceEnabled)
+    {
+        static LLCachedControl<S32> sVoiceEarLocation(gSavedSettings, "VoiceEarLocation");
+        setEarLocation(sVoiceEarLocation);
 
-    static LLCachedControl<std::string> sInputDevice(gSavedSettings, "VoiceInputAudioDevice");
-    setCaptureDevice(sInputDevice);
+        static LLCachedControl<std::string> sInputDevice(gSavedSettings, "VoiceInputAudioDevice");
+        setCaptureDevice(sInputDevice);
 
-    static LLCachedControl<std::string> sOutputDevice(gSavedSettings, "VoiceOutputAudioDevice");
-    setRenderDevice(sOutputDevice);
+        static LLCachedControl<std::string> sOutputDevice(gSavedSettings, "VoiceOutputAudioDevice");
+        setRenderDevice(sOutputDevice);
 
-    LL_INFOS("Voice") << "Input device: " << std::quoted(sInputDevice()) << ", output device: " << std::quoted(sOutputDevice()) << LL_ENDL;
+        LL_INFOS("Voice") << "Input device: " << std::quoted(sInputDevice()) << ", output device: " << std::quoted(sOutputDevice())
+                            << LL_ENDL;
 
-    static LLCachedControl<F32> sMicLevel(gSavedSettings, "AudioLevelMic");
-    setMicGain(sMicLevel);
+        static LLCachedControl<F32> sMicLevel(gSavedSettings, "AudioLevelMic");
+        setMicGain(sMicLevel);
 
-    llwebrtc::LLWebRTCDeviceInterface::AudioConfig config;
+        llwebrtc::LLWebRTCDeviceInterface::AudioConfig config;
 
-    static LLCachedControl<bool> sEchoCancellation(gSavedSettings, "VoiceEchoCancellation", true);
-    config.mEchoCancellation = sEchoCancellation;
+        bool audioConfigChanged = false;
 
-    static LLCachedControl<bool> sAGC(gSavedSettings, "VoiceAutomaticGainControl", true);
-    config.mAGC = sAGC;
+        static LLCachedControl<bool> sEchoCancellation(gSavedSettings, "VoiceEchoCancellation", true);
+        if (sEchoCancellation != config.mEchoCancellation)
+        {
+            config.mEchoCancellation = sEchoCancellation;
+            audioConfigChanged       = true;
+        }
 
-    static LLCachedControl<U32> sNoiseSuppressionLevel(gSavedSettings,
-                                                       "VoiceNoiseSuppressionLevel",
-                                                       llwebrtc::LLWebRTCDeviceInterface::AudioConfig::ENoiseSuppressionLevel::NOISE_SUPPRESSION_LEVEL_VERY_HIGH);
-    config.mNoiseSuppressionLevel = (llwebrtc::LLWebRTCDeviceInterface::AudioConfig::ENoiseSuppressionLevel) (U32)sNoiseSuppressionLevel;
+        static LLCachedControl<bool> sAGC(gSavedSettings, "VoiceAutomaticGainControl", true);
+        if (sAGC != config.mAGC)
+        {
+            config.mAGC        = sAGC;
+            audioConfigChanged = true;
+        }
 
-    mWebRTCDeviceInterface->setAudioConfig(config);
-
+        static LLCachedControl<U32> sNoiseSuppressionLevel(
+            gSavedSettings,
+            "VoiceNoiseSuppressionLevel",
+            llwebrtc::LLWebRTCDeviceInterface::AudioConfig::ENoiseSuppressionLevel::NOISE_SUPPRESSION_LEVEL_VERY_HIGH);
+        auto noiseSuppressionLevel =
+            (llwebrtc::LLWebRTCDeviceInterface::AudioConfig::ENoiseSuppressionLevel)(U32)sNoiseSuppressionLevel;
+        if (noiseSuppressionLevel != config.mNoiseSuppressionLevel)
+        {
+            config.mNoiseSuppressionLevel = noiseSuppressionLevel;
+            audioConfigChanged            = true;
+        }
+        if (audioConfigChanged)
+        {
+            mWebRTCDeviceInterface->setAudioConfig(config);
+        }
+    }
 }
 
 // Observers
@@ -469,6 +509,12 @@ void LLWebRTCVoiceClient::voiceConnectionCoro()
     try
     {
         LLMuteList::getInstance()->addObserver(this);
+        // <FS:minerjr> [FIRE-36022] - Removing my USB headset crashes entire viewer
+        // Add a counter to check if the main thread locked up
+        // to prevent this thread/corutine form filling up
+        // the mMainQueue.
+        static U32 crash_check = 0;
+        // </FS:minerjr> [FIRE-36022]
         while (!sShuttingDown)
         {
             LL_PROFILE_ZONE_NAMED_CATEGORY_VOICE("voiceConnectionCoroLoop")
@@ -554,6 +600,26 @@ void LLWebRTCVoiceClient::voiceConnectionCoro()
                     // to send position updates.
                     updatePosition();
                 }
+                // <FS:minerjr> [FIRE-36022] - Removing my USB headset crashes entire viewer
+                // If the device locked, count up by 1
+                if (gWebRTCUpdateDevices)
+                {
+                    crash_check++;
+                }
+                // Else if the device is not locked, then reset the counter back to 0
+                else
+                {
+                    crash_check = 0;
+                }
+                // If there are over 10 cycles of the devices being locked, there is a good
+                // chance that the thread failed due to hardware/audio engine issue.
+                if (crash_check > 10)
+                {
+                    LL_WARNS() << "WebRTC detected locked worker thread, will shutdown to prevent total viewer lockup." << LL_ENDL;
+                    // Exit out of the thread and flag WebRTC to shutdown, hopefully clearing the lock and allowing the viewer to continue.
+                    sShuttingDown = true;
+                }
+                // </FS:minerjr> [FIRE-36022]
             }
             LL::WorkQueue::postMaybe(mMainQueue,
                 [=, this] {
@@ -606,6 +672,14 @@ void LLWebRTCVoiceClient::updateNeighboringRegions()
 
     // add current region.
     mNeighboringRegions.insert(gAgent.getRegion()->getRegionID());
+
+    // <FS:PP> Do not connect to neighbouring regions
+    static LLCachedControl<bool> fsDisableNeighbourRegionConnections(gSavedSettings, "FSDisableNeighbourRegionConnections");
+    if (fsDisableNeighbourRegionConnections)
+    {
+        return;
+    }
+    // </FS:PP>
 
     // base off of speaker position as it'll move more slowly than camera position.
     // Once we have hysteresis, we may be able to track off of speaker and camera position at 50m
@@ -661,7 +735,10 @@ LLVoiceDeviceList& LLWebRTCVoiceClient::getCaptureDevices()
 
 void LLWebRTCVoiceClient::setCaptureDevice(const std::string& name)
 {
-    mWebRTCDeviceInterface->setCaptureDevice(name);
+    if (mWebRTCDeviceInterface)
+    {
+        mWebRTCDeviceInterface->setCaptureDevice(name);
+    }
 }
 void LLWebRTCVoiceClient::setDevicesListUpdated(bool state)
 {
@@ -683,6 +760,19 @@ void LLWebRTCVoiceClient::OnDevicesChanged(const llwebrtc::LLWebRTCVoiceDeviceLi
 void LLWebRTCVoiceClient::OnDevicesChangedImpl(const llwebrtc::LLWebRTCVoiceDeviceList &render_devices,
                                                const llwebrtc::LLWebRTCVoiceDeviceList &capture_devices)
 {
+    // <FS:minerjr> [FIRE-36022] - Removing my USB headset crashes entire viewer
+    try // Try catch needed for uniquie lock as will throw an exception if a second lock is attempted or the mutex is invalid
+    {
+    // Attempt to lock the access to the audio device, wait up to 1 second for other threads to unlock.
+    std::unique_lock lock(gAudioDeviceMutex, 1s);
+    // If the lock could not be accessed, return as we don't have hardware access and will need to try again another pass.
+    // Prevents threads from interacting with the hardware at the same time as other audio/voice threads.
+    if (!lock.owns_lock())
+    {
+        LL_INFOS() << "Could not access the audio device mutex, trying again later" << LL_ENDL;
+        return;
+    }
+    // </FS:minerjr> [FIRE-36022]
     if (sShuttingDown)
     {
         return;
@@ -692,23 +782,68 @@ void LLWebRTCVoiceClient::OnDevicesChangedImpl(const llwebrtc::LLWebRTCVoiceDevi
     std::string outputDevice = gSavedSettings.getString("VoiceOutputAudioDevice");
 
     LL_DEBUGS("Voice") << "Setting devices to-input: '" << inputDevice << "' output: '" << outputDevice << "'" << LL_ENDL;
-    clearRenderDevices();
-    for (auto &device : render_devices)
-    {
-        addRenderDevice(LLVoiceDevice(device.mDisplayName, device.mID));
-    }
-    setRenderDevice(outputDevice);
 
-    clearCaptureDevices();
-    for (auto &device : capture_devices)
+    // only set the render device if the device list has changed.
+    if (mRenderDevices.size() != render_devices.size() || !std::equal(mRenderDevices.begin(),
+                    mRenderDevices.end(),
+                    render_devices.begin(),
+                    [](const LLVoiceDevice& a, const llwebrtc::LLWebRTCVoiceDevice& b) {
+            return a.display_name == b.mDisplayName && a.full_name == b.mID; }))
     {
-        LL_DEBUGS("Voice") << "Checking capture device:'" << device.mID << "'" << LL_ENDL;
-
-        addCaptureDevice(LLVoiceDevice(device.mDisplayName, device.mID));
+        clearRenderDevices();
+        for (auto& device : render_devices)
+        {
+            addRenderDevice(LLVoiceDevice(device.mDisplayName, device.mID));
+        }
+        setRenderDevice(outputDevice);
     }
-    setCaptureDevice(inputDevice);
+
+    // only set the capture device if the device list has changed.
+    if (mCaptureDevices.size() != capture_devices.size() ||!std::equal(mCaptureDevices.begin(),
+                    mCaptureDevices.end(),
+                    capture_devices.begin(),
+                    [](const LLVoiceDevice& a, const llwebrtc::LLWebRTCVoiceDevice& b)
+                    { return a.display_name == b.mDisplayName && a.full_name == b.mID; }))
+    {
+        clearCaptureDevices();
+        for (auto& device : capture_devices)
+        {
+            LL_DEBUGS("Voice") << "Checking capture device:'" << device.mID << "'" << LL_ENDL;
+
+            addCaptureDevice(LLVoiceDevice(device.mDisplayName, device.mID));
+        }
+        setCaptureDevice(inputDevice);
+    }
 
     setDevicesListUpdated(true);
+    // <FS:minerjr> [FIRE-36022] - Removing my USB headset crashes entire viewer
+    }
+    catch (const std::system_error& e)
+    {
+        if (e.code() == std::errc::resource_deadlock_would_occur)
+        {
+            // When trying to lock the same lock a second time
+            LL_WARNS() << "Exception WebRTC: " << e.code() << " " << e.what() << LL_ENDL;
+        }
+        else if (e.code() == std::errc::operation_not_permitted)
+        {
+            // When the mutex is invalid
+            LL_WARNS() << "Exception WebRTC: " << e.code() << " " << e.what() << LL_ENDL;
+        }
+        else
+        {
+            // Everything else
+            LL_WARNS() << "Exception WebRTC: " << e.code() << " " << e.what() << LL_ENDL;
+        }
+
+        return;
+    }
+    catch (const std::exception& e)
+    {
+        LL_WARNS() << "Exception WebRTC: " << " " << e.what() << LL_ENDL;
+        return;
+    }
+    // </FS:minerjr> [FIRE-36022]
 }
 
 void LLWebRTCVoiceClient::clearRenderDevices()
@@ -731,7 +866,10 @@ LLVoiceDeviceList& LLWebRTCVoiceClient::getRenderDevices()
 
 void LLWebRTCVoiceClient::setRenderDevice(const std::string& name)
 {
-    mWebRTCDeviceInterface->setRenderDevice(name);
+    if (mWebRTCDeviceInterface)
+    {
+        mWebRTCDeviceInterface->setRenderDevice(name);
+    }
 }
 
 void LLWebRTCVoiceClient::tuningStart()
@@ -759,7 +897,14 @@ bool LLWebRTCVoiceClient::inTuningMode()
 
 void LLWebRTCVoiceClient::tuningSetMicVolume(float volume)
 {
-    mTuningMicGain      = volume;
+    if (volume != mTuningMicGain)
+    {
+        mTuningMicGain = volume;
+        if (mWebRTCDeviceInterface)
+        {
+            mWebRTCDeviceInterface->setTuningMicGain(volume);
+        }
+    }
 }
 
 void LLWebRTCVoiceClient::tuningSetSpeakerVolume(float volume)
@@ -771,21 +916,17 @@ void LLWebRTCVoiceClient::tuningSetSpeakerVolume(float volume)
     }
 }
 
-float LLWebRTCVoiceClient::getAudioLevel()
-{
-    if (mIsInTuningMode)
-    {
-        return (1.0f - mWebRTCDeviceInterface->getTuningAudioLevel() * LEVEL_SCALE_WEBRTC) * mTuningMicGain / 2.1f;
-    }
-    else
-    {
-        return (1.0f - mWebRTCDeviceInterface->getPeerConnectionAudioLevel() * LEVEL_SCALE_WEBRTC) * mMicGain / 2.1f;
-    }
-}
-
 float LLWebRTCVoiceClient::tuningGetEnergy(void)
 {
-    return getAudioLevel();
+    // <FS:minerjr> [FIRE-36022] - Removing my USB headset crashes entire viewer
+    // This can cause an error if device interface can be NULL.
+    if (!mWebRTCDeviceInterface)
+    {
+        return 0.0f;
+    }
+    // </FS:minerjr> [FIRE-36022]
+    float rms = mWebRTCDeviceInterface->getTuningAudioLevel();
+    return TUNING_LEVEL_START_POINT - TUNING_LEVEL_SCALE * rms;
 }
 
 bool LLWebRTCVoiceClient::deviceSettingsAvailable()
@@ -821,6 +962,11 @@ void LLWebRTCVoiceClient::setHidden(bool hidden)
 
     if (inSpatialChannel())
     {
+        if (mWebRTCDeviceInterface)
+        {
+            mWebRTCDeviceInterface->setMute(mHidden || mMuteMic,
+                                            mHidden ? 0 : SET_HIDDEN_RESTORE_DELAY_MS); // delay 200ms so as to not pile up mutes/unmutes.
+        }
         if (mHidden)
         {
             // get out of the channel entirely
@@ -985,7 +1131,9 @@ void LLWebRTCVoiceClient::updatePosition(void)
         LLWebRTCVoiceClient::participantStatePtr_t participant = findParticipantByID("Estate", gAgentID);
         if(participant)
         {
-            participant->mRegion = gAgent.getRegion()->getRegionID();
+            if (participant->mRegion != region->getRegionID()) {
+                participant->mRegion = region->getRegionID();
+            }
         }
     }
 }
@@ -1109,13 +1257,14 @@ void LLWebRTCVoiceClient::sendPositionUpdate(bool force)
 // Update our own volume on our participant, so it'll show up
 // in the UI.  This is done on all sessions, so switching
 // sessions retains consistent volume levels.
-void LLWebRTCVoiceClient::updateOwnVolume() {
-    F32 audio_level = 0.0;
-    if (!mMuteMic && !mTuningMode)
+void LLWebRTCVoiceClient::updateOwnVolume()
+{
+    F32 audio_level = 0.0f;
+    if (!mMuteMic)
     {
-        audio_level = getAudioLevel();
+        float rms = mWebRTCDeviceInterface->getPeerConnectionAudioLevel();
+        audio_level = LEVEL_START_POINT - LEVEL_SCALE * rms;
     }
-
     sessionState::for_each(boost::bind(predUpdateOwnVolume, _1, audio_level));
 }
 
@@ -1512,6 +1661,17 @@ void LLWebRTCVoiceClient::setMuteMic(bool muted)
     }
 
     mMuteMic = muted;
+
+    if (mIsInTuningMode)
+    {
+        return;
+    }
+
+    if (mWebRTCDeviceInterface)
+    {
+        mWebRTCDeviceInterface->setMute(muted, muted ? MUTE_FADE_DELAY_MS : 0);  // delay for 40ms on mute to allow buffers to empty
+    }
+
     // when you're hidden, your mic is always muted.
     if (!mHidden)
     {
@@ -1550,7 +1710,10 @@ void LLWebRTCVoiceClient::setMicGain(F32 gain)
     if (gain != mMicGain)
     {
         mMicGain = gain;
-        mWebRTCDeviceInterface->setPeerConnectionGain(gain);
+        if (mWebRTCDeviceInterface)
+        {
+            mWebRTCDeviceInterface->setMicGain(gain);
+        }
     }
 }
 
@@ -1731,6 +1894,15 @@ void LLWebRTCVoiceClient::onChangeDetailed(const LLMute& mute)
     {
         bool muted = ((mute.mFlags & LLMute::flagVoiceChat) == 0);
         sessionState::for_each(boost::bind(predSetUserMute, _1, mute.mID, muted));
+    }
+}
+
+void LLWebRTCVoiceClient::userAuthorized(const std::string& user_id, const LLUUID& agentID)
+{
+    if (sShuttingDown)
+    {
+        sShuttingDown = false; // was terminated, restart
+        initWebRTC();
     }
 }
 
@@ -1999,6 +2171,33 @@ bool LLWebRTCVoiceClient::sessionState::processConnectionStates()
     return !mWebRTCConnections.empty();
 }
 
+// Helper function to check if a region supports WebRTC voice
+bool LLWebRTCVoiceClient::estateSessionState::isRegionWebRTCEnabled(const LLUUID& regionID)
+{
+    LLViewerRegion* region = LLWorld::getInstance()->getRegionFromID(regionID);
+    if (!region)
+    {
+        LL_WARNS("Voice") << "Could not find region " << regionID
+                         << " for voice server type validation" << LL_ENDL;
+        return false;
+    }
+
+    LLSD simulatorFeatures;
+    region->getSimulatorFeatures(simulatorFeatures);
+
+    bool isWebRTCEnabled = simulatorFeatures.has("VoiceServerType") &&
+                          simulatorFeatures["VoiceServerType"].asString() == "webrtc";
+
+    if (!isWebRTCEnabled)
+    {
+        LL_DEBUGS("Voice") << "Region " << regionID << " VoiceServerType is not 'webrtc' (got: "
+                           << (simulatorFeatures.has("VoiceServerType") ? simulatorFeatures["VoiceServerType"].asString() : "none") << ")"
+                           << LL_ENDL;
+    }
+
+    return isWebRTCEnabled;
+}
+
 // processing of spatial voice connection states requires special handling.
 // as neighboring regions need to be started up or shut down depending
 // on our location.
@@ -2023,6 +2222,13 @@ bool LLWebRTCVoiceClient::estateSessionState::processConnectionStates()
                 // shut down connections to neighbors that are too far away.
                 spatialConnection.get()->shutDown();
             }
+            else if (!isRegionWebRTCEnabled(regionID))
+            {
+                // shut down connections to neighbors that no longer support WebRTC voice.
+                LL_DEBUGS("Voice") << "Shutting down connection to neighbor region " << regionID
+                                  << " - no longer supports WebRTC voice" << LL_ENDL;
+                spatialConnection.get()->shutDown();
+            }
             if (!spatialConnection.get()->isShuttingDown())
             {
                 neighbor_ids.erase(regionID);
@@ -2032,11 +2238,20 @@ bool LLWebRTCVoiceClient::estateSessionState::processConnectionStates()
         // add new connections for new neighbors
         for (auto &neighbor : neighbor_ids)
         {
-            connectionPtr_t connection(new LLVoiceWebRTCSpatialConnection(neighbor, INVALID_PARCEL_ID, mChannelID));
+            // Only connect if the region supports WebRTC voice server type
+            if (isRegionWebRTCEnabled(neighbor))
+            {
+                connectionPtr_t connection(new LLVoiceWebRTCSpatialConnection(neighbor, INVALID_PARCEL_ID, mChannelID));
 
-            mWebRTCConnections.push_back(connection);
-            connection->setMuteMic(mMuted);
-            connection->setSpeakerVolume(mSpeakerVolume);
+                mWebRTCConnections.push_back(connection);
+                connection->setMuteMic(mMuted);  // mute will be set for primary connection when that connection comes up
+                connection->setSpeakerVolume(mSpeakerVolume);
+            }
+            else
+            {
+                LL_DEBUGS("Voice") << "Skipping neighbor region " << neighbor
+                                  << " - does not support WebRTC voice" << LL_ENDL;
+            }
         }
     }
     return LLWebRTCVoiceClient::sessionState::processConnectionStates();
@@ -2259,7 +2474,7 @@ void LLVoiceWebRTCConnection::processIceUpdatesCoro(connectionPtr_t connection)
         return;
     }
 
-    bool iceCompleted = false;
+    // bool iceCompleted = false; // <FS:Beq/> Set but not used
     LLSD body;
     if (!connection->mIceCandidates.empty() || connection->mIceCompleted)
     {
@@ -2298,7 +2513,7 @@ void LLVoiceWebRTCConnection::processIceUpdatesCoro(connectionPtr_t connection)
             LLSD body_candidate;
             body_candidate["completed"] = true;
             body["candidate"]           = body_candidate;
-            iceCompleted                = connection->mIceCompleted;
+            // iceCompleted                = connection->mIceCompleted; // <FS:Beq/> Set but not used
             connection->mIceCompleted   = false;
         }
 
@@ -2386,6 +2601,7 @@ void LLVoiceWebRTCConnection::OnAudioEstablished(llwebrtc::LLWebRTCAudioInterfac
             }
             LL_DEBUGS("Voice") << "On AudioEstablished." << LL_ENDL;
             mWebRTCAudioInterface = audio_interface;
+            mWebRTCAudioInterface->setMute(true);  // mute will be set appropriately later when we finish setting up.
             setVoiceConnectionState(VOICE_STATE_SESSION_ESTABLISHED);
         });
 }
@@ -2747,7 +2963,12 @@ bool LLVoiceWebRTCConnection::connectionStateMachine()
             }
             // update the peer connection with the various characteristics of
             // this connection.
-            mWebRTCAudioInterface->setMute(mMuted);
+            // For spatial this connection will come up as muted, but will be set to the appropriate
+            // value later on when we determine the regions we connect to.
+            if (!isSpatial())
+            {
+                mWebRTCAudioInterface->setMute(mMuted);
+            }
             mWebRTCAudioInterface->setReceiveVolume(mSpeakerVolume);
             LLWebRTCVoiceClient::getInstance()->OnConnectionEstablished(mChannelID, mRegionID);
             setVoiceConnectionState(VOICE_STATE_WAIT_FOR_DATA_CHANNEL);
@@ -2792,6 +3013,10 @@ bool LLVoiceWebRTCConnection::connectionStateMachine()
                     if (primary != mPrimary)
                     {
                         mPrimary = primary;
+                        if (mWebRTCAudioInterface)
+                        {
+                            mWebRTCAudioInterface->setMute(mMuted || !mPrimary);
+                        }
                         sendJoin();
                     }
                 }
@@ -2923,7 +3148,7 @@ void LLVoiceWebRTCConnection::OnDataReceivedImpl(const std::string &data, bool b
             return;
         }
         boost::json::object voice_data = voice_data_parsed.as_object();
-        bool new_participant = false;
+        // bool new_participant = false; // <FS:Beq/> Set but not used
         boost::json::object mute;
         boost::json::object user_gain;
         for (auto &participant_elem : voice_data)
@@ -2976,7 +3201,7 @@ void LLVoiceWebRTCConnection::OnDataReceivedImpl(const std::string &data, bool b
                 }
             }
 
-            new_participant |= joined;
+            // new_participant |= joined; // <FS:Beq/> Set but not used
             if (!participant && joined && (primary || !isSpatial()))
             {
                 participant = LLWebRTCVoiceClient::getInstance()->addParticipantByID(mChannelID, agent_id, mRegionID);
@@ -3094,10 +3319,7 @@ LLVoiceWebRTCSpatialConnection::LLVoiceWebRTCSpatialConnection(const LLUUID &reg
     LLVoiceWebRTCConnection(regionID, channelID),
     mParcelLocalID(parcelLocalID)
 {
-    if (gAgent.getRegion())
-    {
-        mPrimary = (regionID == gAgent.getRegion()->getRegionID());
-    }
+    mPrimary = false;  // will be set to primary after connection established
 }
 
 LLVoiceWebRTCSpatialConnection::~LLVoiceWebRTCSpatialConnection()
@@ -3106,23 +3328,20 @@ LLVoiceWebRTCSpatialConnection::~LLVoiceWebRTCSpatialConnection()
 
 void LLVoiceWebRTCSpatialConnection::setMuteMic(bool muted)
 {
-    if (mMuted != muted)
+    mMuted = muted;
+    if (mWebRTCAudioInterface)
     {
-        mMuted = muted;
-        if (mWebRTCAudioInterface)
+        LLViewerRegion *regionp = gAgent.getRegion();
+        if (regionp && mRegionID == regionp->getRegionID())
         {
-            LLViewerRegion *regionp = gAgent.getRegion();
-            if (regionp && mRegionID == regionp->getRegionID())
-            {
-                mWebRTCAudioInterface->setMute(muted);
-            }
-            else
-            {
-                // Always mute this agent with respect to neighboring regions.
-                // Peers don't want to hear this agent from multiple regions
-                // as that'll echo.
-                mWebRTCAudioInterface->setMute(true);
-            }
+            mWebRTCAudioInterface->setMute(muted);
+        }
+        else
+        {
+            // Always mute this agent with respect to neighboring regions.
+            // Peers don't want to hear this agent from multiple regions
+            // as that'll echo.
+            mWebRTCAudioInterface->setMute(true);
         }
     }
 }

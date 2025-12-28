@@ -396,13 +396,13 @@ void pump_idle_startup_network(void)
 {
     // while there are message to process:
     //     process one then call display_startup()
-    S32 num_messages = 0;
+    // S32 num_messages = 0; // <FS:Beq/> Avoid set-but-unused in Clang
     {
         LockMessageChecker lmc(gMessageSystem);
         while (lmc.checkAllMessages(gFrameCount, gServicePump))
         {
             display_startup();
-            ++num_messages;
+            // ++num_messages; // <FS:Beq/> Avoid set-but-unused in Clang
         }
         lmc.processAcks();
     }
@@ -1112,6 +1112,10 @@ bool idle_startup()
         {
             LL_WARNS("AppInit") << "Unreliable timers detected (may be bad PCI chipset)!!" << LL_ENDL;
         }
+
+#ifdef LL_DISCORD
+        LLAppViewer::initDiscordSocial();
+#endif
 
         //
         // Log on to system
@@ -2914,9 +2918,6 @@ bool idle_startup()
 
         do_startup_frame();
 
-        // We're successfully logged in.
-        gSavedSettings.setBOOL("FirstLoginThisInstall", false);
-
         LLFloaterReg::showInitialVisibleInstances();
 
         LLFloaterGridStatus::getInstance()->startGridStatusTimer();
@@ -3346,6 +3347,30 @@ bool idle_startup()
 
         LLPerfStats::StatsRecorder::setAutotuneInit();
 
+        // Display Avatar Welcome Pack the first time a user logs in
+        // (or clears their settings....)
+        if (gSavedSettings.getBOOL("FirstLoginThisInstall"))
+        {
+            LLFloater* avatar_welcome_pack_floater = LLFloaterReg::findInstance("avatar_welcome_pack");
+            if (avatar_welcome_pack_floater != nullptr)
+            {
+                // There is a (very - 1 in ~50 times) hard to repro bug where the login
+                // page is not hidden when the AWP floater is presented. This (agressive)
+                // approach to always close it seems like the best fix for now.
+                // <FS:Ansariel> [FS Login Panel]
+                //LLPanelLogin::closePanel();
+                FSPanelLogin::closePanel();
+                // </FS:Ansariel> [FS Login Panel]
+
+                avatar_welcome_pack_floater->setVisible(true);
+            }
+        }
+
+        //// We're successfully logged in.
+        // 2025-06 Moved lower down in the state machine so the Avatar Welcome Pack
+        // floater display can be triggered correctly.
+        gSavedSettings.setBOOL("FirstLoginThisInstall", false);
+
         // <FS:Techwolf Lupindo> FIRE-6643 Display MOTD when login screens are disabled
         if (gSavedSettings.getBOOL("FSDisableLoginScreens"))
         {
@@ -3357,6 +3382,14 @@ bool idle_startup()
         {
             FSCoreHttpUtil::callbackHttpGetRaw(gSavedSettings.getString("AutoQueryGridStatusURL"),
                 downloadGridstatusComplete, [](const LLSD& data) { downloadGridstatusError(data, gSavedSettings.getString("AutoQueryGridStatusURL")); });
+        }
+        // </FS:PP>
+
+        // <FS:PP> Restore open IMs from previous session
+        if (gSavedSettings.getBOOL("FSRestoreOpenIMs"))
+        {
+            FSFloaterIMContainer* floater_imcontainer = FSFloaterIMContainer::getInstance();
+            floater_imcontainer->restoreOpenIMs();
         }
         // </FS:PP>
 
@@ -4595,7 +4628,7 @@ bool process_login_success_response(U32 &first_sim_size_x, U32 &first_sim_size_y
 
     // Agent id needed for parcel info request in LLUrlEntryParcel
     // to resolve parcel name.
-    LLUrlEntryParcel::setAgentID(gAgentID);
+    LLUrlEntryBase::setAgentID(gAgentID);
 
     text = response["session_id"].asString();
     if(!text.empty()) gAgentSessionID.set(text);
@@ -4850,6 +4883,13 @@ bool process_login_success_response(U32 &first_sim_size_x, U32 &first_sim_size_y
 
         //setup map of datetime strings to codes and slt & local time offset from utc
         LLStringOps::setupDatetimeInfo(pacific_daylight_time);
+        // <FS:TJ> [FIRE-34775] Use PST/PDT when logged into OpenSim
+        LLStringOps::setupUsingPacificTime(!LLGridManager::getInstance()->isInSecondLife());
+        // </FS:TJ>
+        // <FS:TJ> [FIRE-36028] Fix OpenSim object permissions
+        LLPermissions::setupIsInOpenSim(!LLGridManager::getInstance()->isInSecondLife());
+        // </FS:TJ>
+
     }
 
     // set up the voice configuration.  Ultimately, we should pass this up as part of each voice

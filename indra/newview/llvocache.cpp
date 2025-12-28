@@ -508,7 +508,7 @@ void LLVOCacheEntry::updateDebugSettings()
     sNearRadius = MIN_RADIUS + ((clamped_min_radius - MIN_RADIUS) * adjust_factor);
 
     // a percentage of draw distance beyond which all objects outside of view frustum will be unloaded, regardless of pixel threshold
-    static LLCachedControl<F32> rear_max_radius_frac(gSavedSettings,"SceneLoadRearMaxRadiusFraction");
+    static LLCachedControl<F32> rear_max_radius_frac(gSavedSettings,"SceneLoadRearMaxRadiusFraction", .75f);
     const F32 min_radius_plus_one = sNearRadius + 1.f;
     const F32 max_radius = rear_max_radius_frac * gAgentCamera.mDrawDistance;
     const F32 clamped_max_radius = llclamp(max_radius, min_radius_plus_one, draw_radius); // [sNearRadius, mDrawDistance]
@@ -1921,11 +1921,11 @@ void LLVOCache::removeGenericExtrasForHandle(U64 handle)
     }
 
     // NOTE: when removing the extras, we must also remove the objects so the simulator will send us a full upddate with the valid overrides
-    auto* entry = mHandleEntryMap[handle];
-    if (entry)
+    handle_entry_map_t::iterator iter = mHandleEntryMap.find(handle);
+    if (iter != mHandleEntryMap.end())
     {
-        LL_WARNS("GLTF", "VOCache") << "Removing generic extras for handle " << entry->mHandle << "Filename: " << getObjectCacheExtrasFilename(handle) << LL_ENDL;
-        removeEntry(entry);
+        LL_WARNS("GLTF", "VOCache") << "Removing generic extras for handle " << handle << "Filename: " << getObjectCacheExtrasFilename(handle) << LL_ENDL;
+        removeEntry(iter->second);
     }
     else
     {

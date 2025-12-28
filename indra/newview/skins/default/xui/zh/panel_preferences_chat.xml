@@ -114,7 +114,7 @@
 			<check_box name="FSChatbarNamePrediction" label="在本地聊天中啟用名稱自動完成" />
 			<check_box name="AllowMUpose" label="':' 為 '/me' 的同義詞" />
 			<check_box name="AutoCloseOOC" label="自動關閉雙括號 ((OOC))" />
-			<check_box name="FSSuppressEmojiWindowPopupWhileTyping" label="在聊天欄輸入時阻止表情選擇視窗自動彈出" />
+			<check_box name="FSUseChatMentionAutoComplete" label="在聊天欄輸入@時自動打開提及視窗"/>
 			<check_box name="FSEnableEmojiWindowPopupWhileTyping" label="在聊天欄輸入時自動打開表情選擇視窗" />
 			<check_box name="FSShowEmojiButton" label="在私聊和附近聊天中顯示表情符號按鈕" />
 			<check_box name="FSShowIMSendButton" label="在私聊中顯示傳送按鈕" />
@@ -139,6 +139,7 @@
 			<text name="FSShowGroupNameLength_label">在記錄中顯示的群組名稱長度</text>
 			<spinner tool_tip="設定為-1表示完整名稱，設定為0表示禁用" name="FSShowGroupNameLength" />
 			<check_box name="FSOpenIMContainerOnOfflineMessage" label="連線時顯示離線訊息" />
+			<check_box name="FSRestoreOpenIMs" label="啟動時恢復上次登入時開啟的私聊訊息"/>
 			<text name="email_settings">
 				[https://accounts.secondlife.com/change_email 設定離線私聊的電子郵件通知]
 			</text>

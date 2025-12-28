@@ -103,6 +103,8 @@ private:
     // values.
     bool mIsGroupOwned;
 
+    static bool sIsInOpenSim; // <FS:TJ/> [FIRE-36028] Fix OpenSim object permissions
+
     // Correct for fair use - you can never take away the right to
     // move stuff you own, and you can never take away the right to
     // transfer something you cannot otherwise copy.
@@ -288,6 +290,11 @@ public:
     inline bool allowOpenSimExportBy(const LLUUID& agent_id) const;    // <FS:CR> OpenSim export permission
 #endif
 
+    // <FS:TJ> [FIRE-36028] Fix OpenSim object permissions
+    static bool getIsInOpenSim() { return sIsInOpenSim; }
+    static void setupIsInOpenSim(bool is_in_open_sim) { sIsInOpenSim = is_in_open_sim; }
+    // </FS:TJ>
+
     //
     // MISC METHODS and OPERATORS
     //
@@ -301,6 +308,8 @@ public:
 
     bool    importLegacyStream(std::istream& input_stream);
     bool    exportLegacyStream(std::ostream& output_stream) const;
+
+    void importLLSD(const LLSD& sd_perm);
 
     bool operator==(const LLPermissions &rhs) const;
     bool operator!=(const LLPermissions &rhs) const;
@@ -447,6 +456,7 @@ protected:
 // like 'creator_id', 'owner_id', etc, with the value copied from the
 // permission object.
 LLSD ll_create_sd_from_permissions(const LLPermissions& perm);
+void ll_fill_sd_from_permissions(LLSD& rv, const LLPermissions& perm);
 LLPermissions ll_permissions_from_sd(const LLSD& sd_perm);
 
 #endif

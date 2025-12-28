@@ -89,6 +89,7 @@
 #include "lltoolface.h"
 #include "llhints.h"
 #include "llhudeffecttrail.h"
+#include "llhudeffectresetskeleton.h"
 #include "llhudmanager.h"
 #include "llimview.h"
 #include "llinventorybridge.h"
@@ -353,6 +354,7 @@ void force_error_coroutine_crash();
 void force_error_coroprocedure_crash();
 void force_error_work_queue_crash();
 void force_error_thread_crash();
+void force_exception_thread_crash();
 
 void handle_force_delete();
 void print_object_info();
@@ -2074,7 +2076,6 @@ class LLAdvancedAppearanceToXML : public view_listener_t
 {
     bool handleEvent(const LLSD& userdata)
     {
-        std::string emptyname;
         LLViewerObject *obj = LLSelectMgr::getInstance()->getSelection()->getPrimaryObject();
         LLVOAvatar *avatar = NULL;
         if (obj)
@@ -2101,7 +2102,7 @@ class LLAdvancedAppearanceToXML : public view_listener_t
         }
         if (avatar)
         {
-            avatar->dumpArchetypeXML(emptyname);
+            avatar->dumpArchetypeXML(LLStringUtil::null);
         }
         return true;
     }
@@ -3007,6 +3008,15 @@ class LLAdvancedForceErrorThreadCrash : public view_listener_t
     }
 };
 
+class LLAdvancedForceExceptionThreadCrash : public view_listener_t
+{
+    bool handleEvent(const LLSD& userdata)
+    {
+        force_exception_thread_crash();
+        return true;
+    }
+};
+
 class LLAdvancedForceErrorDisconnectViewer : public view_listener_t
 {
     bool handleEvent(const LLSD& userdata)
@@ -3327,7 +3337,7 @@ void derenderObject(bool permanent)
                 asset_type = LLAssetType::AT_OBJECT;
             }
 
-            FSAssetBlacklist::getInstance()->addNewItemToBlacklist(id, entry_name, region_name, asset_type, permanent, false);
+            FSAssetBlacklist::getInstance()->addNewItemToBlacklist(id, entry_name, region_name, asset_type, FSAssetBlacklist::eBlacklistFlag::NONE, permanent, false);
 
             if (permanent)
             {
@@ -6926,6 +6936,38 @@ class LLToolsEnablePathfindingRebakeRegion : public view_listener_t
     }
 };
 
+class LLToolsCheckSelectionLODMode : public view_listener_t
+{
+    bool handleEvent(const LLSD& userdata)
+    {
+        std::string param = userdata.asString();
+        static LLCachedControl<S32> debug_selection_lods(gSavedSettings, "DebugSelectionLODs", 0);
+        if ("default" == param)
+        {
+            return debug_selection_lods() < 0;
+        }
+        else if ("high" == param)
+        {
+            return debug_selection_lods() == 3;
+        }
+        else if ("medium" == param)
+        {
+            return debug_selection_lods() == 2;
+        }
+        else if ("low" == param)
+        {
+            return debug_selection_lods() == 1;
+        }
+        else if ("lowest" == param)
+        {
+            return debug_selection_lods() == 0;
+        }
+
+        return false;
+    }
+};
+
+
 // Round the position of all root objects to the grid
 class LLToolsSnapObjectXY : public view_listener_t
 {
@@ -8222,7 +8264,17 @@ class LLAvatarResetSkeleton : public view_listener_t
     {
         if (LLVOAvatar* avatar = find_avatar_from_object(LLSelectMgr::getInstance()->getSelection()->getPrimaryObject()))
         {
+            if(avatar->getID() == gAgentID)
+            {
+                LLHUDEffectResetSkeleton* effectp = (LLHUDEffectResetSkeleton*)LLHUDManager::getInstance()->createViewerEffect(LLHUDObject::LL_HUD_EFFECT_RESET_SKELETON, true);
+                effectp->setSourceObject(gAgentAvatarp);
+                effectp->setTargetObject((LLViewerObject*)avatar);
+                effectp->setResetAnimations(false);
+            }
+            else
+            {
             avatar->resetSkeleton(false);
+        }
         }
         return true;
     }
@@ -8232,7 +8284,7 @@ class LLAvatarEnableResetSkeleton : public view_listener_t
 {
     bool handleEvent(const LLSD& userdata)
     {
-        if (LLVOAvatar* avatar = find_avatar_from_object(LLSelectMgr::getInstance()->getSelection()->getPrimaryObject()))
+        if (find_avatar_from_object(LLSelectMgr::getInstance()->getSelection()->getPrimaryObject())) // <FS:Beq/> set but unused.
         {
             return true;
         }
@@ -8246,7 +8298,17 @@ class LLAvatarResetSkeletonAndAnimations : public view_listener_t
     {
         if (LLVOAvatar* avatar = find_avatar_from_object(LLSelectMgr::getInstance()->getSelection()->getPrimaryObject()))
         {
+            if(avatar->getID() == gAgentID)
+            {
+                LLHUDEffectResetSkeleton* effectp = (LLHUDEffectResetSkeleton*)LLHUDManager::getInstance()->createViewerEffect(LLHUDObject::LL_HUD_EFFECT_RESET_SKELETON, true);
+                effectp->setSourceObject(gAgentAvatarp);
+                effectp->setTargetObject((LLViewerObject*)avatar);
+                effectp->setResetAnimations(true);
+            }
+            else
+            {
             avatar->resetSkeleton(true);
+        }
         }
         return true;
     }
@@ -8274,11 +8336,24 @@ class LLAvatarResetSelfSkeletonAndAnimations : public view_listener_t
     {
         if (LLVOAvatar* avatar = find_avatar_from_object(LLSelectMgr::getInstance()->getSelection()->getPrimaryObject()))
         {
-            avatar->resetSkeleton(true);
+            if(avatar->getID() == gAgentID)
+            {
+                LLHUDEffectResetSkeleton* effectp = (LLHUDEffectResetSkeleton*)LLHUDManager::getInstance()->createViewerEffect(LLHUDObject::LL_HUD_EFFECT_RESET_SKELETON, true);
+                effectp->setSourceObject(gAgentAvatarp);
+                effectp->setTargetObject((LLViewerObject*)avatar);
+                effectp->setResetAnimations(true);
         }
         else
         {
-            gAgentAvatarp->resetSkeleton(true);
+                avatar->resetSkeleton(true);
+            }
+        }
+        else
+        {
+            LLHUDEffectResetSkeleton* effectp = (LLHUDEffectResetSkeleton*)LLHUDManager::getInstance()->createViewerEffect(LLHUDObject::LL_HUD_EFFECT_RESET_SKELETON, true);
+            effectp->setSourceObject(gAgentAvatarp);
+            effectp->setTargetObject(gAgentAvatarp);
+            effectp->setResetAnimations(true);
         }
         return true;
     }
@@ -10877,6 +10952,36 @@ class LLToolsSelectBySurrounding : public view_listener_t
     }
 };
 
+class LLToolsSelectionLODMode : public view_listener_t
+{
+    bool handleEvent(const LLSD& userdata)
+    {
+        std::string param = userdata.asString();
+        if ("default" == param)
+        {
+            gSavedSettings.setS32("DebugSelectionLODs", -1);
+        }
+        else if ("high" == param)
+        {
+            gSavedSettings.setS32("DebugSelectionLODs", 3);
+        }
+        else if ("medium" == param)
+        {
+            gSavedSettings.setS32("DebugSelectionLODs", 2);
+        }
+        else if ("low" == param)
+        {
+            gSavedSettings.setS32("DebugSelectionLODs", 1);
+        }
+        else if ("lowest" == param)
+        {
+            gSavedSettings.setS32("DebugSelectionLODs", 0);
+        }
+
+        return true;
+    }
+};
+
 class LLToolsShowHiddenSelection : public view_listener_t
 {
     bool handleEvent(const LLSD& userdata)
@@ -11115,6 +11220,11 @@ void force_error_work_queue_crash()
 void force_error_thread_crash()
 {
     LLAppViewer::instance()->forceErrorThreadCrash();
+}
+
+void force_exception_thread_crash()
+{
+    LLAppViewer::instance()->forceExceptionThreadCrash();
 }
 
 class LLToolsUseSelectionForGrid : public view_listener_t
@@ -11474,6 +11584,13 @@ class LLViewToggleBeacon : public view_listener_t
             LLPipeline::toggleRenderSoundBeacons();
             gSavedSettings.setBOOL( "soundsbeacon", LLPipeline::getRenderSoundBeacons() );
         }
+        // <FS:PP> FIRE-33085 Region corner markers
+        else if (beacon == "fsregioncornerbeacons")
+        {
+            LLPipeline::toggleRenderRegionCornerBeacons();
+            gSavedSettings.setBOOL( "fsregioncornerbeacons", LLPipeline::getRenderRegionCornerBeacons() );
+        }
+        // </FS:PP>
         else if (beacon == "particlesbeacon")
         {
             LLPipeline::toggleRenderParticleBeacons();
@@ -11551,6 +11668,13 @@ class LLViewCheckBeaconEnabled : public view_listener_t
             new_value = gSavedSettings.getBOOL( "soundsbeacon");
             LLPipeline::setRenderSoundBeacons(new_value);
         }
+        // <FS:PP> FIRE-33085 Region corner markers
+        else if (beacon == "fsregioncornerbeacons")
+        {
+            new_value = gSavedSettings.getBOOL( "fsregioncornerbeacons");
+            LLPipeline::setRenderRegionCornerBeacons(new_value);
+        }
+        // </FS:PP>
         else if (beacon == "particlesbeacon")
         {
             new_value = gSavedSettings.getBOOL( "particlesbeacon");
@@ -12621,6 +12745,7 @@ void initialize_menus()
     view_listener_t::addMenu(new LLToolsSelectInvisibleObjects(), "Tools.SelectInvisibleObjects");
     view_listener_t::addMenu(new LLToolsSelectReflectionProbes(), "Tools.SelectReflectionProbes");
     view_listener_t::addMenu(new LLToolsSelectBySurrounding(), "Tools.SelectBySurrounding");
+    view_listener_t::addMenu(new LLToolsSelectionLODMode(), "Tools.SelectionLODMode");
     view_listener_t::addMenu(new LLToolsShowHiddenSelection(), "Tools.ShowHiddenSelection");
     view_listener_t::addMenu(new LLToolsShowSelectionLightRadius(), "Tools.ShowSelectionLightRadius");
     view_listener_t::addMenu(new LLToolsEditLinkedParts(), "Tools.EditLinkedParts");
@@ -12657,6 +12782,7 @@ void initialize_menus()
     view_listener_t::addMenu(new LLToolsEnablePathfindingView(), "Tools.EnablePathfindingView");
     view_listener_t::addMenu(new LLToolsDoPathfindingRebakeRegion(), "Tools.DoPathfindingRebakeRegion");
     view_listener_t::addMenu(new LLToolsEnablePathfindingRebakeRegion(), "Tools.EnablePathfindingRebakeRegion");
+    view_listener_t::addMenu(new LLToolsCheckSelectionLODMode(), "Tools.ToolsCheckSelectionLODMode");
 
     // Help menu
     // most items use the ShowFloater method
@@ -12846,6 +12972,7 @@ void initialize_menus()
     view_listener_t::addMenu(new LLAdvancedForceErrorCoroprocedureCrash(), "Advanced.ForceErrorCoroprocedureCrash");
     view_listener_t::addMenu(new LLAdvancedForceErrorWorkQueueCrash(), "Advanced.ForceErrorWorkQueueCrash");
     view_listener_t::addMenu(new LLAdvancedForceErrorThreadCrash(), "Advanced.ForceErrorThreadCrash");
+    view_listener_t::addMenu(new LLAdvancedForceExceptionThreadCrash(), "Advanced.ForceExceptionThreadCrash");
     view_listener_t::addMenu(new LLAdvancedForceErrorDisconnectViewer(), "Advanced.ForceErrorDisconnectViewer");
 
     // Advanced (toplevel)
@@ -12874,9 +13001,6 @@ void initialize_menus()
     // Develop (Fonts debugging)
     commit.add("Develop.Fonts.Dump", boost::bind(&LLFontGL::dumpFonts));
     commit.add("Develop.Fonts.DumpTextures", boost::bind(&LLFontGL::dumpFontTextures));
-    
-    //Develop (dump data)
-    commit.add("Develop.TextureList.Dump", boost::bind(&LLViewerTextureList::dumpTexturelist));
 
     // <FS:Beq/> Add telemetry controls to the viewer Develop menu (Toggle profiling)
     view_listener_t::addMenu(new FSProfilerToggle(), "Develop.ToggleProfiling");

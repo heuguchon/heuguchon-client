@@ -58,7 +58,7 @@ bool LLEmojiHelper::isActive(const LLUICtrl* ctrl_p) const
 bool LLEmojiHelper::isCursorInEmojiCode(const LLWString& wtext, S32 cursorPos, S32* pShortCodePos)
 {
     // <FS:PP> FIRE-33735: Option to suppress emoji chooser window from automatically popping up while typing in chat bars
-    static LLUICachedControl<bool> FSEnableEmojiWindowPopupWhileTyping("FSEnableEmojiWindowPopupWhileTyping");
+    static LLUICachedControl<bool> FSEnableEmojiWindowPopupWhileTyping("FSEnableEmojiWindowPopupWhileTyping", true);
     if (!FSEnableEmojiWindowPopupWhileTyping)
     {
         return false;
@@ -114,6 +114,7 @@ void LLEmojiHelper::showHelper(LLUICtrl* hostctrl_p, S32 local_x, S32 local_y, c
         // </FS:Beq>
         mHelperHandle = pHelperFloater->getHandle();
         mHelperCommitConn = pHelperFloater->setCommitCallback(std::bind([&](const LLSD& sdValue) { onCommitEmoji(utf8str_to_wstring(sdValue.asStringRef())[0]); }, std::placeholders::_2));
+        mHelperCloseConn = pHelperFloater->setCloseCallback([this](LLUICtrl* ctrl, const LLSD& param) { onCloseHelper(ctrl, param); });
     }
     setHostCtrl(hostctrl_p);
     mEmojiCommitCb = cb;
@@ -168,6 +169,16 @@ void LLEmojiHelper::onCommitEmoji(llwchar emoji)
     {
         mEmojiCommitCb(emoji);
     }
+}
+
+void LLEmojiHelper::onCloseHelper(LLUICtrl* ctrl, const LLSD& param)
+{
+    mCloseSignal(ctrl, param);
+}
+
+boost::signals2::connection LLEmojiHelper::setCloseCallback(const commit_signal_t::slot_type& cb)
+{
+    return mCloseSignal.connect(cb);
 }
 
 void LLEmojiHelper::setHostCtrl(LLUICtrl* hostctrl_p)

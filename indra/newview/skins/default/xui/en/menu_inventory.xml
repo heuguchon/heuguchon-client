@@ -160,6 +160,14 @@
          parameter="category" />
     </menu_item_call>
     <menu_item_call
+     label="New Folder"
+     layout="topleft"
+     name="New Outfit Folder">
+        <menu_item_call.on_click
+         function="Inventory.DoCreate"
+         parameter="category" />
+    </menu_item_call>
+    <menu_item_call
      label="New Outfit"
      layout="topleft"
      name="New Outfit">
@@ -392,7 +400,7 @@
        name="Image uploads">
         <menu_item_call.on_click
          function="Inventory.FileUploadLocation"
-         parameter="texture" />
+         parameter="def_texture" />
       </menu_item_call>
       <menu_item_call
        label="Sound uploads"
@@ -400,7 +408,7 @@
        name="Sound uploads">
         <menu_item_call.on_click
          function="Inventory.FileUploadLocation"
-         parameter="sound" />
+         parameter="def_sound" />
       </menu_item_call>
       <menu_item_call
        label="Animation uploads"
@@ -408,7 +416,7 @@
        name="Animation uploads">
         <menu_item_call.on_click
          function="Inventory.FileUploadLocation"
-         parameter="animation" />
+         parameter="def_animation" />
       </menu_item_call>
       <menu_item_call
        label="Model uploads"
@@ -416,7 +424,7 @@
        name="Model uploads">
         <menu_item_call.on_click
          function="Inventory.FileUploadLocation"
-         parameter="model" />
+         parameter="def_model" />
       </menu_item_call>
       <menu_item_call
        label="PBR material uploads"
@@ -424,7 +432,7 @@
        name="PBR uploads">
         <menu_item_call.on_click
          function="Inventory.FileUploadLocation"
-         parameter="pbr_material" />
+         parameter="def_pbr_material" />
       </menu_item_call>
     </menu>
     <menu
@@ -841,6 +849,22 @@
        function="Inventory.DoToSelected"
        parameter="ungroup_folder_items" />
     </menu_item_call>
+  <menu_item_call
+   label="Add to Favorites"
+   layout="topleft"
+   name="Add to Favorites">
+    <menu_item_call.on_click
+     function="Inventory.DoToSelected"
+     parameter="add_to_favorites" />
+  </menu_item_call>
+  <menu_item_call
+   label="Remove from Favorites"
+   layout="topleft"
+   name="Remove from Favorites">
+    <menu_item_call.on_click
+     function="Inventory.DoToSelected"
+     parameter="remove_from_favorites" />
+  </menu_item_call>
     <menu_item_separator
      layout="topleft" />
     <menu_item_separator

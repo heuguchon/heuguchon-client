@@ -2,7 +2,7 @@
 <panel
  border="true"
  follows="all"
- height="440"
+ height="480"
  layout="topleft"
  left="1"
  top="1"
@@ -921,6 +921,14 @@
 		 top_pad="1"
 		 height="16"
 		 width="400"
+		 control_name="FSUseChatMentionAutoComplete"
+		 name="FSUseChatMentionAutoComplete"
+		 label="Enable automatic @ mentions window while typing in chat bars"/>
+		<check_box
+		 layout="topleft"
+		 top_pad="1"
+		 height="16"
+		 width="400"
 		 control_name="FSEnableEmojiWindowPopupWhileTyping"
 		 name="FSEnableEmojiWindowPopupWhileTyping"
 		 label="Enable automatic emoji picker window while typing in chat bars"/>
@@ -1144,6 +1152,16 @@
 		 name="FSOpenIMContainerOnOfflineMessage"
 		 control_name="FSOpenIMContainerOnOfflineMessage"
 		 label="Open Conversations when an offline message has been received"/>
+		<check_box
+		 layout="topleft"
+		 follows="left|top"
+		 top_pad="-2"
+		 left="20"
+		 width="400"
+		 height="18"
+		 name="FSRestoreOpenIMs"
+		 control_name="FSRestoreOpenIMs"
+		 label="Restore conversations with residents from previous session"/>
 		<check_box
 		 enabled="false"
 		 layout="topleft"

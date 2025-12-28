@@ -2190,7 +2190,7 @@ void LLPanelRegionTerrainInfo::initMaterialCtrl(LLTextureCtrl*& ctrl, const std:
     if (!ctrl) return;
 
     // consume cancel events, otherwise they will trigger commit callbacks
-    ctrl->setOnCancelCallback([](LLUICtrl* ctrl, const LLSD& param) {});
+    ctrl->setOnCancelCallback(+[](LLUICtrl* ctrl, const LLSD& param) {}); // <FS:Beq/> force the empty callback to decay to a function pointer, which triggers warnings on gcc
     ctrl->setCommitCallback(
         [this, index](LLUICtrl* ctrl, const LLSD& param)
     {
@@ -4678,7 +4678,7 @@ void LLPanelEstateAccess::exportListCallback(LLNameListCtrl* list, const std::ve
     }
 
     std::string filename = filenames[0];
-    std::ofstream file(filename.c_str());
+    llofstream file(filename.c_str());
     if (!file.is_open())
     {
         LLNotificationsUtil::add("ExportFailed");
@@ -4761,30 +4761,25 @@ void LLPanelEstateAccess::importListCallback(LLNameListCtrl* list, const std::ve
 
     std::string filename = filenames[0];
 
-    std::ifstream file(filename.c_str());
+    llifstream file(filename.c_str());
     if (!file.is_open())
     {
         return;
     }
 
-    std::string line;
-    std::vector<LLUUID> uuids;
+    uuid_vec_t uuids;
+    LLSD       csvData = ll_sd_from_csv(file);
+    file.close();
 
-    while (std::getline(file, line))
+    for (const auto& entry : llsd::inArray(csvData))
     {
-        LLStringUtil::trim(line);
-        if (line.empty())
+        if (entry.has("UUID"))
         {
-            continue;
-        }
-
-        LLUUID uuid;
-        if (uuid.set(line))
-        {
-            uuids.push_back(uuid);
+            LLUUID id{ entry["UUID"].asUUID() };
+            if (id.notNull())
+                uuids.push_back(std::move(id));
         }
     }
-    file.close();
 
     if (uuids.empty())
     {

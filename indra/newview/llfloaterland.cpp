@@ -3326,7 +3326,7 @@ void LLPanelLandAccess::exportListCallback(LLNameListCtrl* list, const std::vect
     }
 
     std::string filename = filenames[0];
-    std::ofstream file(filename.c_str());
+    llofstream file(filename.c_str());
     if (!file.is_open())
     {
         LLNotificationsUtil::add("ExportFailed");
@@ -3383,7 +3383,7 @@ void LLPanelLandAccess::importListCallback(LLNameListCtrl* list, const std::vect
 
     std::string filename = filenames[0];
 
-    std::ifstream file(filename.c_str());
+    llifstream file(filename.c_str());
     if (!file.is_open())
     {
         return;
@@ -3395,24 +3395,19 @@ void LLPanelLandAccess::importListCallback(LLNameListCtrl* list, const std::vect
         return;
     }
 
-    std::string line;
-    std::vector<LLUUID> uuids;
+    uuid_vec_t uuids;
+    LLSD       csvData = ll_sd_from_csv(file);
+    file.close();
 
-    while (std::getline(file, line))
+    for (const auto& entry : llsd::inArray(csvData))
     {
-        LLStringUtil::trim(line);
-        if (line.empty())
+        if (entry.has("UUID"))
         {
-            continue;
-        }
-
-        LLUUID uuid;
-        if (uuid.set(line))
-        {
-            uuids.push_back(uuid);
+            LLUUID id{ entry["UUID"].asUUID() };
+            if (id.notNull())
+                uuids.push_back(std::move(id));
         }
     }
-    file.close();
 
     if (uuids.empty())
     {
